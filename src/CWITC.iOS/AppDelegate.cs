@@ -21,6 +21,7 @@ using System.Threading.Tasks;
 using Google.AppIndexing;
 using HockeyApp.iOS;
 using Auth0.OidcClient;
+using Xamarin.Auth;
 
 namespace CWITC.iOS
 {
@@ -40,21 +41,33 @@ namespace CWITC.iOS
 
         public override bool OpenUrl(UIApplication application, NSUrl url, string sourceApplication, NSObject annotation)
         {
-            bool? isAuth0 = url.AbsoluteString?.Contains("auth0");
-            bool? isLogout = url.AbsoluteString?.Contains("logout");
+#if DEBUG
+            System.Text.StringBuilder sb = new System.Text.StringBuilder();
+            sb.AppendLine("OpenURL Called");
+            sb.Append("     url         = ").AppendLine(url.AbsoluteUrl.ToString());
+            sb.Append("     application = ").AppendLine(sourceApplication);
+            sb.Append("     annotation  = ").AppendLine(annotation?.ToString());
+            System.Diagnostics.Debug.WriteLine(sb.ToString());
+#endif
 
-            if (isAuth0.HasValue && isAuth0.Value)
-            {
-                if (isLogout.HasValue && isLogout.Value)
-                    MessagingService.Current.SendMessage(MessageKeys.LogoutCallback);
-                else
-                    ActivityMediator.Instance.Send(url.AbsoluteString);
+            //=================================================================
+            // Walthrough Step 4.1
+            //      Intercepting redirect_url and Loading it
 
-                return true;
-            }
+            // Convert iOS NSUrl to C#/netxf/BCL System.Uri - common API
+            System.Uri uri_netfx = new System.Uri(url.AbsoluteString);
 
-            return false;
-		}
+            WebRedirectAuthenticator wre = null;
+            wre = (WebRedirectAuthenticator)
+                        global::Xamarin.Auth.XamarinForms.XamarinIOS.
+                               AuthenticatorPageRenderer.Authenticator;
+
+            // load redirect_url Page
+            wre?.OnPageLoading(uri_netfx);
+            //=================================================================
+
+            return true;
+        }
 
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {

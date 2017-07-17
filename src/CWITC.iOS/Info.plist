@@ -138,7 +138,7 @@
 			<key>CFBundleTypeRole</key>
 			<string>None</string>
 			<key>CFBundleURLName</key>
-			<string>Auth0</string>
+			<string>org.cenwidev.cwitc</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>org.cenwidev.cwitc</string>

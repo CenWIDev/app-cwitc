@@ -4,73 +4,82 @@ using System.Threading.Tasks;
 using Auth0.OidcClient;
 using CoreGraphics;
 using CWITC.Clients.Portable;
+//using Firebase.Auth;
 using FormsToolkit;
 using Foundation;
 using SafariServices;
 using UIKit;
+using Xamarin.Auth;
+using Xamarin.Forms;
 
 namespace CWITC.iOS
 {
-    public class iOSAuthSSOClient : ISSOClient
+    public partial class iOSAuthSSOClient : NSObject, ISFSafariViewControllerDelegate
     {
-        public async Task<AccountResponse> LoginAsync()
+        public Task<AccountResponse> LoginAsync(string email, string password)
         {
-            var client = new Auth0Client(new Auth0ClientOptions
+            throw new NotImplementedException();
+        }
+
+        public async Task<AccountResponse> LoginWithFacebook()
+        {
+            TaskCompletionSource<AccountResponse> tcs = new TaskCompletionSource<AccountResponse>();
+
+            var auth = new OAuth2Authenticator(
+                clientId: "8c9063efe1ff709ecc09",
+                scope: "user:email",
+                authorizeUrl: new Uri("http://github.com/login/oauth/authorize"),
+                redirectUrl: new Uri("org.cenwidev.cwitc://localhost"));
+
+            var url = await auth.GetInitialUrlAsync();
+            //auth.plat
+            var loginViewController = auth.GetUI();
+
+            auth.Completed += (sender, eventArgs) =>
             {
-                Domain = "cwitc.auth0.com",
-                ClientId = "r2xGTXLZeEgCmqYIgLOaRJwD1sDoySzh",
-                Controller = GetViewController()
-            });
+                // We presented the UI, so it's up to us to dimiss it on iOS.
+                loginViewController.DismissViewController(true, null);
 
-            var loginResult = await client.LoginAsync();
-
-            if (loginResult.IsError)
-            {
-                Debug.WriteLine($"An error occurred during login: {loginResult.Error}");
-
-                return new AccountResponse { Error = loginResult.Error, Success = false };
-            }
-
-            string token = loginResult.IdentityToken;
-            string accesstoken = loginResult.AccessToken;
-            string name = loginResult.User.FindFirst(c => c.Type == "name")?.Value;
-            string email = loginResult.User.FindFirst(c => c.Type == "email")?.Value;
-
-            string[] nameParts = name?.Split(' ');
-
-            return new AccountResponse
-            {
-                Success = true,
-                Token = token,
-                User = new User
+                if (eventArgs.IsAuthenticated)
                 {
-                    FirstName = nameParts[0],
-                    LastName = nameParts[1],
-                    Email = email
+                    tcs.SetResult(new AccountResponse
+                    {
+                        Success = true,
+                        User = new User
+                        {
+
+                        },
+                        Token = eventArgs.Account.Properties["access_token"]
+                    });
+                    // Use eventArgs.Account to do wonderful things
+                }
+                else
+                {
+                    tcs.SetResult(new AccountResponse
+                    {
+                        Success = false
+                    });
                 }
             };
-        }
+
+            var vc = new Xamarin.Auth.XamarinForms.AuthenticatorPage()
+            {
+                Authenticator = auth,
+            }.CreateViewController();
+
+            GetViewController().PresentViewController(vc, true, () => { });
+			return await tcs.Task;
+		}
+       
 
         public Task LogoutAsync()
         {
-            var redirect = "org.cenwidev.cwitc%3A%2F%2Fcwitc.auth0.com/ios/org.cenwidev.cwitc/logout";
-            string logoutUri = $"https://cwitc.auth0.com/v2/logout?returnTo={redirect}";
-            var controller = new SFSafariViewController(new NSUrl(logoutUri));
+            NSError error;
+            //Firebase.Auth.Auth.DefaultInstance.SignOut(out error);
 
-            TaskCompletionSource<bool> tcs = new TaskCompletionSource<bool>();
+            // todo: handle errors
 
-            var topVC = GetViewController();
-            MessagingService.Current.Subscribe(MessageKeys.LogoutCallback, (IMessagingService arg1) =>
-            {
-                topVC.DismissViewController(true, () => { });
-
-                tcs.SetResult(true);
-
-            });
-
-            topVC.PresentViewController(controller, true, () => { });
-
-            return tcs.Task;
+            return Task.CompletedTask;
         }
 
         private UIViewController GetViewController()

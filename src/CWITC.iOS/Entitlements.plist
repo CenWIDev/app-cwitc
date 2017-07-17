@@ -2,10 +2,9 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>com.apple.developer.associated-domains</key>
+	<key>keychain-access-groups</key>
 	<array>
-		<string>applinks:evolve.xamarin.com</string>
-		<string>applinks:www.evolve.xamarin.com</string>
+		<string>$(AppIdentifierPrefix)org.cenwidev.cwitc</string>
 	</array>
 </dict>
 </plist>

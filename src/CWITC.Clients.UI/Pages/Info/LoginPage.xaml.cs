@@ -24,9 +24,9 @@ namespace CWITC.Clients.UI
                 var cancel = new ToolbarItem
                 {
                     Text = "Cancel",
-                    Command = new Command(async() => 
+                    Command = new Command(async () =>
                             {
-                                if(vm.IsBusy)
+                                if (vm.IsBusy)
                                     return;
                                 await Navigation.PopModalAsync();
                             })
@@ -36,13 +36,11 @@ namespace CWITC.Clients.UI
                 if (Device.OS != TargetPlatform.iOS)
                     cancel.Icon = "toolbar_close.png";
             }
-            
-            CircleImageAvatar.Source = placeholder = ImageSource.FromFile("profile_generic_big.png");
         }
 
         protected override bool OnBackButtonPressed()
         {
-            if(Settings.Current.FirstRun)
+            if (Settings.Current.FirstRun)
                 return true;
 
             return base.OnBackButtonPressed();

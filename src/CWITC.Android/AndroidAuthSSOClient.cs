@@ -13,7 +13,12 @@ namespace CWITC.Droid
 {
 	public partial class AndroidAuthSSOClient : ISSOClient
 	{
-		public async Task<AccountResponse> LoginAsync()
+        public async Task<AccountResponse> LoginAsync(string email, string password)
+        {
+            throw new NotImplementedException();
+        }
+
+		public async Task<AccountResponse> LoginWithFacebook()
 		{
 			var client = new Auth0Client(new Auth0ClientOptions
 			{

@@ -5,7 +5,9 @@ namespace CWITC.Clients.Portable
 {
     public interface ISSOClient
     {
-        Task<AccountResponse> LoginAsync();
+        Task<AccountResponse> LoginAsync(string email, string password);
+
+        Task<AccountResponse> LoginWithFacebook();
 
         Task LogoutAsync();
     }

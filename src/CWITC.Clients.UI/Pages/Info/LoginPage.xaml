@@ -40,21 +40,13 @@
                        LineBreakMode="WordWrap"
                        FontSize="Large"
                        TextColor="{DynamicResource DetailTextColor}"
-                       Text="Sign in with your CWITC account to save and sync favorites and session feedback.">
+                       Text="Sign in to save and sync favorites and session feedback.">
 
                     <Label.FontSize>
                         <OnPlatform x:TypeArguments="x:Double" Android="15" iOS="15" WinPhone="15"/>
                     </Label.FontSize>
                 </Label>
             </StackLayout>
-            <StackLayout>
-                <StackLayout.Padding>
-                    <OnPlatform x:TypeArguments="Thickness" Android="32,0" iOS="32,0" WinPhone="32,0"/>
-                </StackLayout.Padding>
-                <StackLayout.Spacing>
-                    <OnPlatform x:TypeArguments="x:Double" Android="0" iOS="15" WinPhone="10"/>
-                </StackLayout.Spacing>
-           </StackLayout>
            <StackLayout>
            <StackLayout.Padding>
                     <OnPlatform x:TypeArguments="Thickness" Android="32,16,32,0" iOS="32,25,32,0" WinPhone="32,16,32,0"/>
@@ -62,19 +54,21 @@
                 <StackLayout.Spacing>
                     <OnPlatform x:TypeArguments="x:Double" Android="0" iOS="16" WinPhone="10"/>
                 </StackLayout.Spacing>
-                <Button 
-                    Text="Sign In"
-                    Command="{Binding LoginCommand}"
+
+               <Button 
+                    Text="Github"
+                    Command="{Binding FacebookLoginCommand}"
                     HorizontalOptions="FillAndExpand"
                     IsEnabled="{Binding IsNotBusy}"
-                    StyleId="SignInButton"
+                    StyleId="FacebookSignInButton"
                     TextColor="White"
-                    BackgroundColor="{StaticResource Primary}">
+                    BackgroundColor="Black">
 
                     <Button.FontAttributes>
                         <OnPlatform x:TypeArguments="FontAttributes" iOS="Bold"/>
                     </Button.FontAttributes>
                 </Button>
+
                 <Button
                     Text="Not Now"                                     
                     Command="{Binding CancelCommand}"
@@ -97,6 +91,7 @@
                        <OnPlatform x:TypeArguments="Color" iOS="{StaticResource ButtonBorder}"/>
                     </Button.BorderColor> 
                 </Button>
+                    
            </StackLayout>
         </StackLayout>
         <StackLayout Grid.Row="1" Padding="16,0" VerticalOptions="Center" Orientation="Horizontal" HorizontalOptions="Center">
