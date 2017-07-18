@@ -56,13 +56,13 @@
                 </StackLayout.Spacing>
 
                <Button 
-                    Text="Github"
+                    Text="Facebook"
                     Command="{Binding FacebookLoginCommand}"
                     HorizontalOptions="FillAndExpand"
                     IsEnabled="{Binding IsNotBusy}"
                     StyleId="FacebookSignInButton"
                     TextColor="White"
-                    BackgroundColor="Black">
+                    BackgroundColor="#3B5998">
 
                     <Button.FontAttributes>
                         <OnPlatform x:TypeArguments="FontAttributes" iOS="Bold"/>

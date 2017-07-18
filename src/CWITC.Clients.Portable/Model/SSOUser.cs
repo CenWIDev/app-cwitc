@@ -14,7 +14,6 @@ namespace CWITC.Clients.Portable
         public bool Success { get; set; }
         public string Error { get; set; }
         public User User { get; set; }
-        public string Token { get; set; }
     }
 
     [Flags]

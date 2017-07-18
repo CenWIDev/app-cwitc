@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Linq;
 using System.Threading.Tasks;
 using Auth0.OidcClient;
 using CoreGraphics;
 using CWITC.Clients.Portable;
+using Firebase.Auth;
 //using Firebase.Auth;
 using FormsToolkit;
 using Foundation;
@@ -23,12 +25,11 @@ namespace CWITC.iOS
 
         public async Task<AccountResponse> LoginWithFacebook()
         {
-            TaskCompletionSource<AccountResponse> tcs = new TaskCompletionSource<AccountResponse>();
             TaskCompletionSource<string> tokenTask = new TaskCompletionSource<string>();
             var topVC = GetViewController();
 
             new Facebook.LoginKit.LoginManager().LogInWithReadPermissions(
-                new string[] { "public_profile" },
+                new string[] { "public_profile email" },
                 topVC,
                 (Facebook.LoginKit.LoginManagerLoginResult result, NSError error) =>
                 {
@@ -46,7 +47,7 @@ namespace CWITC.iOS
 					else
 					{
                         var token = Facebook.CoreKit.AccessToken.CurrentAccessToken;
-                        tokenTask.SetResult(accessToken.TokenString);
+                        tokenTask.SetResult(token.TokenString);
                         //accessToken.pr
                     //result.acc
 						//NSLog(@"Logged in");
@@ -55,9 +56,12 @@ namespace CWITC.iOS
 
             string accessToken = await tokenTask.Task;
 
-			return await tcs.Task;
+			// Get access token for the signed-in user and exchange it for a Firebase credential
+			var credential = Firebase.Auth.FacebookAuthProvider.GetCredential(accessToken);
+            var firebaseResult = await LoginToFirebase(credential);
+
+            return firebaseResult;
 		}
-       
 
         public Task LogoutAsync()
         {
@@ -74,6 +78,63 @@ namespace CWITC.iOS
             var vc = TrackCurrentViewControllerRenderer.CurrentViewController;
 
             return vc;
+        }
+
+        async Task<AccountResponse> LoginToFirebase(AuthCredential credential)
+        {
+			TaskCompletionSource<AccountResponse> tcs = new TaskCompletionSource<AccountResponse>();
+
+            // Authenticate with Firebase using the credential
+            Auth.DefaultInstance.SignIn(credential, (user, error) =>
+            {
+                if (error != null)
+                {
+                    AuthErrorCode errorCode;
+                    if (IntPtr.Size == 8) // 64 bits devices
+                        errorCode = (AuthErrorCode)((long)error.Code);
+                    else // 32 bits devices
+                        errorCode = (AuthErrorCode)((int)error.Code);
+
+                    // Posible error codes that SignIn method with credentials could throw
+                    // Visit https://firebase.google.com/docs/auth/ios/errors for more information
+                    switch (errorCode)
+                    {
+                        case AuthErrorCode.InvalidCredential:
+                        case AuthErrorCode.InvalidEmail:
+                        case AuthErrorCode.OperationNotAllowed:
+                        case AuthErrorCode.EmailAlreadyInUse:
+                        case AuthErrorCode.UserDisabled:
+                        case AuthErrorCode.WrongPassword:
+                        default:
+                            // Print error
+                            break;
+                    }
+
+                    tcs.SetResult(new AccountResponse
+                    {
+                        Success = false,
+                        Error = error.LocalizedDescription
+                    });
+                }
+                else
+                {
+					// Do your magic to handle authentication result
+                    var split = user.DisplayName.Split(' ');
+
+                    tcs.SetResult(new AccountResponse
+                    {
+                        Success = true,
+                        User = new Clients.Portable.User()
+                        {
+                            Email = user.Email,
+                            FirstName = split?.FirstOrDefault(),
+                            LastName = split?.LastOrDefault()
+                        }
+                    });
+                }
+            });
+
+			return await tcs.Task;
         }
     }
 }

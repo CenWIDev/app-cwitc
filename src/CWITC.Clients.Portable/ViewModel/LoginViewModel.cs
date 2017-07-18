@@ -62,7 +62,7 @@ namespace CWITC.Clients.Portable
                     Message = "Updating schedule...";
                     Settings.FirstName = result.User?.FirstName ?? string.Empty;
                     Settings.LastName = result.User?.LastName ?? string.Empty;
-                    Settings.Email = email.ToLowerInvariant();
+                    Settings.Email = email?.ToLowerInvariant();
                     MessagingService.Current.SendMessage(MessageKeys.LoggedIn);
                     Logger.Track(EvolveLoggerKeys.LoginSuccess);
                     try
@@ -92,12 +92,13 @@ namespace CWITC.Clients.Portable
             }
             catch (Exception ex)
             {
+                System.Diagnostics.Debug.WriteLine(ex.Message);
                 Logger.Track(EvolveLoggerKeys.LoginFailure, "Reason", ex?.Message ?? string.Empty);
 
                 MessagingService.Current.SendMessage<MessagingServiceAlert>(MessageKeys.Message, new MessagingServiceAlert
                 {
                     Title = "Unable to Sign in",
-                    Message = "The email or password provided is incorrect.",
+                    Message = "Facebook Sign In Failed",
                     Cancel = "OK"
                 });
             }

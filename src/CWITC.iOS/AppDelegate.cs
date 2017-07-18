@@ -45,7 +45,8 @@ namespace CWITC.iOS
 
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
-            
+            ConfigureFirebase();
+
             var tint = UIColor.FromRGB(255, 47, 75);
             UINavigationBar.Appearance.BarTintColor = UIColor.FromRGB(250, 250, 250); //bar background
             UINavigationBar.Appearance.TintColor = tint; //Tint color of button items
@@ -117,7 +118,6 @@ namespace CWITC.iOS
 			// 
 			return  base.FinishedLaunching(app, options);
         }
-
 
         void DidBecomeActive(NSNotification notification)
         {
@@ -334,7 +334,12 @@ namespace CWITC.iOS
             }
         }
 
-        #endregion
+		#endregion
+
+		void ConfigureFirebase()
+		{
+            Firebase.Analytics.App.Configure();
+		}
     }
 }
 
