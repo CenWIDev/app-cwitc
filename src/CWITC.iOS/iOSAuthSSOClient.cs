@@ -24,50 +24,37 @@ namespace CWITC.iOS
         public async Task<AccountResponse> LoginWithFacebook()
         {
             TaskCompletionSource<AccountResponse> tcs = new TaskCompletionSource<AccountResponse>();
+            TaskCompletionSource<string> tokenTask = new TaskCompletionSource<string>();
+            var topVC = GetViewController();
 
-            var auth = new OAuth2Authenticator(
-                clientId: "8c9063efe1ff709ecc09",
-                scope: "user:email",
-                authorizeUrl: new Uri("http://github.com/login/oauth/authorize"),
-                redirectUrl: new Uri("org.cenwidev.cwitc://localhost"));
-
-            var url = await auth.GetInitialUrlAsync();
-            //auth.plat
-            var loginViewController = auth.GetUI();
-
-            auth.Completed += (sender, eventArgs) =>
-            {
-                // We presented the UI, so it's up to us to dimiss it on iOS.
-                loginViewController.DismissViewController(true, null);
-
-                if (eventArgs.IsAuthenticated)
+            new Facebook.LoginKit.LoginManager().LogInWithReadPermissions(
+                new string[] { "public_profile" },
+                topVC,
+                (Facebook.LoginKit.LoginManagerLoginResult result, NSError error) =>
                 {
-                    tcs.SetResult(new AccountResponse
-                    {
-                        Success = true,
-                        User = new User
-                        {
+					if (error != null)
+					{
+                    
+						//NSLog(@"Process error");
+					}
+					else if (result.IsCancelled)
+					{
+                        tokenTask.SetCanceled();
+						//NSLog(@"Cancelled");
 
-                        },
-                        Token = eventArgs.Account.Properties["access_token"]
-                    });
-                    // Use eventArgs.Account to do wonderful things
-                }
-                else
-                {
-                    tcs.SetResult(new AccountResponse
-                    {
-                        Success = false
-                    });
-                }
-            };
+					}
+					else
+					{
+                        var token = Facebook.CoreKit.AccessToken.CurrentAccessToken;
+                        tokenTask.SetResult(accessToken.TokenString);
+                        //accessToken.pr
+                    //result.acc
+						//NSLog(@"Logged in");
+					}
+                });
 
-            var vc = new Xamarin.Auth.XamarinForms.AuthenticatorPage()
-            {
-                Authenticator = auth,
-            }.CreateViewController();
+            string accessToken = await tokenTask.Task;
 
-            GetViewController().PresentViewController(vc, true, () => { });
 			return await tcs.Task;
 		}
        

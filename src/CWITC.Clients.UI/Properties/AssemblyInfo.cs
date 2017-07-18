@@ -28,4 +28,5 @@ using Xamarin.Forms.Xaml;
 
 //[assembly: AssemblyDelaySign(false)]
 //[assembly: AssemblyKeyFile("")]
+[assembly:InternalsVisibleTo("CWITC.iOS")]
 

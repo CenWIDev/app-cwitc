@@ -30,7 +30,6 @@ namespace CWITC.iOS
     [Register("AppDelegate")]
     public partial class AppDelegate : FormsApplicationDelegate
     {
-
         public static class ShortcutIdentifier
         {
             public const string Tweet = "org.cenwidev.cwitc.tweet";
@@ -38,35 +37,10 @@ namespace CWITC.iOS
             public const string Events = "org.cenwidev.cwitc.events";
         }
 
-
         public override bool OpenUrl(UIApplication application, NSUrl url, string sourceApplication, NSObject annotation)
         {
-#if DEBUG
-            System.Text.StringBuilder sb = new System.Text.StringBuilder();
-            sb.AppendLine("OpenURL Called");
-            sb.Append("     url         = ").AppendLine(url.AbsoluteUrl.ToString());
-            sb.Append("     application = ").AppendLine(sourceApplication);
-            sb.Append("     annotation  = ").AppendLine(annotation?.ToString());
-            System.Diagnostics.Debug.WriteLine(sb.ToString());
-#endif
-
-            //=================================================================
-            // Walthrough Step 4.1
-            //      Intercepting redirect_url and Loading it
-
-            // Convert iOS NSUrl to C#/netxf/BCL System.Uri - common API
-            System.Uri uri_netfx = new System.Uri(url.AbsoluteString);
-
-            WebRedirectAuthenticator wre = null;
-            wre = (WebRedirectAuthenticator)
-                        global::Xamarin.Auth.XamarinForms.XamarinIOS.
-                               AuthenticatorPageRenderer.Authenticator;
-
-            // load redirect_url Page
-            wre?.OnPageLoading(uri_netfx);
-            //=================================================================
-
-            return true;
+			// We need to handle URLs by passing them to their own OpenUrl in order to make the SSO authentication works.
+            return Facebook.CoreKit.ApplicationDelegate.SharedInstance.OpenUrl(application, url, sourceApplication, annotation);
         }
 
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
@@ -99,7 +73,6 @@ namespace CWITC.iOS
 
                 manager.StartManager();
                 //manager.Authenticator.AuthenticateInstallation();
-                   
             }
 
             Forms.Init();
@@ -134,17 +107,15 @@ namespace CWITC.iOS
             PullToRefreshLayoutRenderer.Init();
             LoadApplication(new App());
 
-
-           
-
             // Process any potential notification data from launch
             ProcessNotification(options);
 
             NSNotificationCenter.DefaultCenter.AddObserver(UIApplication.DidBecomeActiveNotification, DidBecomeActive);
 
-
-
-            return base.FinishedLaunching(app, options);
+			// This method verifies if you have been logged into the app before, and keep you logged in after you reopen or kill your app.
+			//bool valid = Facebook.CoreKit.ApplicationDelegate.SharedInstance.FinishedLaunching(app, options);
+			// 
+			return  base.FinishedLaunching(app, options);
         }
 
 
