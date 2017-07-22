@@ -13,28 +13,6 @@ namespace CWITC.Clients.Portable
 {
     public static class SessionStateExtensions
     {
-        public static AppLinkEntry GetAppLink(this Session session)
-        {
-            var url = $"http://cwitc.org/session/{session.RemoteId.ToString()}";
-            
-            var entry = new AppLinkEntry
-            {
-                Title = session.Title,
-                Description = session.Abstract,
-                AppLinkUri = new Uri(url, UriKind.RelativeOrAbsolute),
-                IsLinkActive = true
-            };
-
-            if (Device.OS == TargetPlatform.iOS)
-                entry.Thumbnail = ImageSource.FromFile("Icon.png");
-
-            entry.KeyValues.Add("contentType", "Session");
-            entry.KeyValues.Add("appName", "CWITC17");
-            entry.KeyValues.Add("companyName", "CENWIDEV");
-
-            return entry;
-        }
-
         public static string GetIndexName(this Session e)
         {
             if(!e.StartTime.HasValue || !e.EndTime.HasValue || e.StartTime.Value.IsTBA())

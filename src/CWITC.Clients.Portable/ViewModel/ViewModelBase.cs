@@ -23,12 +23,12 @@ namespace CWITC.Clients.Portable
         {
             if (mock) 
             {
-                DependencyService.Register<ISessionStore, CWITC.DataStore.Mock.SessionStore> ();
+                //DependencyService.Register<ISessionStore, CWITC.DataStore.Mock.SessionStore> ();
                 //DependencyService.Register<IFavoriteStore, CWITC.DataStore.Mock.FavoriteStore> ();
                 DependencyService.Register<IFeedbackStore, CWITC.DataStore.Mock.FeedbackStore> ();
-                DependencyService.Register<ISpeakerStore, CWITC.DataStore.Mock.SpeakerStore> ();
+                //DependencyService.Register<ISpeakerStore, CWITC.DataStore.Mock.SpeakerStore> ();
                 DependencyService.Register<ISponsorStore, CWITC.DataStore.Mock.SponsorStore> ();
-                DependencyService.Register<ICategoryStore, CWITC.DataStore.Mock.CategoryStore> ();
+                //DependencyService.Register<ICategoryStore, CWITC.DataStore.Mock.CategoryStore> ();
                 DependencyService.Register<IEventStore, CWITC.DataStore.Mock.EventStore> ();
                 DependencyService.Register<INotificationStore, CWITC.DataStore.Mock.NotificationStore> ();
                 DependencyService.Register<IStoreManager, CWITC.DataStore.Mock.StoreManager> ();

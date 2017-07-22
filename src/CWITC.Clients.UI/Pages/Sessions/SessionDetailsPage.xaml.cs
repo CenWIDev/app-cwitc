@@ -77,9 +77,6 @@ namespace CWITC.Clients.UI
             base.OnAppearing();
             MainScroll.Scrolled += MainScroll_Scrolled;
             ListViewSpeakers.ItemTapped += ListViewTapped;
-            
-            if(Device.OS == TargetPlatform.Android || Device.OS == TargetPlatform.iOS)
-            Application.Current.AppLinks.RegisterLink(ViewModel.Session.GetAppLink());
 
             var count = ViewModel?.Session?.Speakers?.Count ?? 0;
             var adjust = Device.OS != TargetPlatform.Android ? 1 : -count + 1;

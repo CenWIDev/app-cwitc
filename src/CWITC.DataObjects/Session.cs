@@ -138,6 +138,5 @@ namespace CWITC.DataObjects
                 SetProperty(ref feedbackLeft, value);
             }
         }
-
     }
 }

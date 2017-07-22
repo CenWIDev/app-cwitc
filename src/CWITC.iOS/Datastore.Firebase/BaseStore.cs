@@ -12,6 +12,29 @@ using Newtonsoft.Json;
 
 namespace CWITC.iOS.DataStore.Firebase
 {
+    public abstract class ReadonlyStore<T> : BaseStore<T> where T: IBaseDataObject
+    {
+        public override void DropTable()
+        {
+            throw new NotSupportedException();
+        }
+
+        public override Task<bool> RemoveAsync(T item)
+        {
+            throw new NotSupportedException();
+        }
+
+        public override Task<bool> UpdateAsync(T item)
+        {
+            throw new NotSupportedException();
+        }
+
+        public override Task<bool> InsertAsync(T item)
+        {
+            throw new NotSupportedException();
+        }
+    }
+
     public abstract class BaseStore<T> : IBaseStore<T>
         where T : IBaseDataObject
     {
@@ -25,7 +48,7 @@ namespace CWITC.iOS.DataStore.Firebase
 
         public abstract string Identifier { get; }
 
-        public void DropTable()
+        public virtual void DropTable()
         {
             if (!initialized) InitializeStore();
             entityNode
@@ -35,14 +58,14 @@ namespace CWITC.iOS.DataStore.Firebase
             });
         }
 
-        public Task<T> GetItemAsync(string id)
+        public virtual Task<T> GetItemAsync(string id)
         {
             if (!initialized) InitializeStore();
 
             throw new NotImplementedException();
         }
 
-        public Task<System.Collections.Generic.IEnumerable<T>> GetItemsAsync(bool forceRefresh = false)
+        public virtual Task<System.Collections.Generic.IEnumerable<T>> GetItemsAsync(bool forceRefresh = false)
         {
             if (!initialized) InitializeStore();
 
@@ -77,7 +100,7 @@ namespace CWITC.iOS.DataStore.Firebase
             return getData.Task;
         }
 
-        public Task InitializeStore()
+        public virtual Task InitializeStore()
         {
             var rootNode = global::Firebase.Database.Database.DefaultInstance.GetRootReference();
             entityNode = GetEntityNode(rootNode);
@@ -87,7 +110,7 @@ namespace CWITC.iOS.DataStore.Firebase
             return Task.CompletedTask;
         }
 
-        public async Task<bool> InsertAsync(T item)
+        public virtual async Task<bool> InsertAsync(T item)
         {
             if (!initialized) await InitializeStore();
 
@@ -99,7 +122,7 @@ namespace CWITC.iOS.DataStore.Firebase
             return await SaveValues(GetArray(existingItems));
         }
 
-        public async Task<bool> RemoveAsync(T item)
+        public virtual async Task<bool> RemoveAsync(T item)
         {
             if (!initialized) await InitializeStore();
 
@@ -118,7 +141,7 @@ namespace CWITC.iOS.DataStore.Firebase
             return false;
         }
 
-        public Task<bool> SyncAsync()
+        public virtual Task<bool> SyncAsync()
         {
             // todo: ??
 
@@ -126,7 +149,7 @@ namespace CWITC.iOS.DataStore.Firebase
             return Task.FromResult(true);
         }
 
-        public async Task<bool> UpdateAsync(T item)
+        public virtual async Task<bool> UpdateAsync(T item)
         {
             if (!initialized) await InitializeStore();
 
