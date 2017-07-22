@@ -304,6 +304,21 @@ namespace CWITC.Clients.Portable
             return DatabaseId++;
         }
 
+        const string UserIdKey = "userid_key";
+        readonly string UserIdDefault = string.Empty;
+		public string UserId
+		{
+            get { return AppSettings.GetValueOrDefault<string>(UserIdKey, UserIdDefault); }
+			set
+			{
+                if (AppSettings.AddOrUpdateValue(UserIdKey, value))
+				{
+					OnPropertyChanged();
+					OnPropertyChanged(nameof(UserId));
+				}
+			}
+		}
+
         const string FirstNameKey = "firstname_key";
         readonly string FirstNameDefault =  string.Empty;
         public string FirstName 

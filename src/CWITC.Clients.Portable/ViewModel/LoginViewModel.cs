@@ -62,7 +62,8 @@ namespace CWITC.Clients.Portable
                     Message = "Updating schedule...";
                     Settings.FirstName = result.User?.FirstName ?? string.Empty;
                     Settings.LastName = result.User?.LastName ?? string.Empty;
-                    Settings.Email = email?.ToLowerInvariant();
+                    Settings.Email = result.User?.Email.ToLowerInvariant();
+                    Settings.UserId = result.User?.Id;
                     MessagingService.Current.SendMessage(MessageKeys.LoggedIn);
                     Logger.Track(EvolveLoggerKeys.LoginSuccess);
                     try
@@ -107,29 +108,6 @@ namespace CWITC.Clients.Portable
                 Message = string.Empty;
                 IsBusy = false;
             }
-        }
-
-        ICommand signupCommand;
-        public ICommand SignupCommand =>
-            signupCommand ?? (signupCommand = new Command(async () => await ExecuteSignupAsync()));
-
-        async Task ExecuteSignupAsync()
-        {
-            Logger.Track(EvolveLoggerKeys.Signup);
-            await CrossShare.Current.OpenBrowser("https://auth.xamarin.com/account/register",
-                new BrowserOptions
-                {
-                    ChromeShowTitle = true,
-                    ChromeToolbarColor = new ShareColor
-                    {
-                        A = 255,
-                        R = 118,
-                        G = 53,
-                        B = 235
-                    },
-                    UseSafairReaderMode = false,
-                    UseSafariWebViewController = true
-                });
         }
 
         ICommand cancelCommand;

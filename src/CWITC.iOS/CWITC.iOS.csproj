@@ -356,6 +356,9 @@
     <Reference Include="Firebase.Auth">
       <HintPath>..\packages\Xamarin.Firebase.iOS.Auth.3.1.0\lib\Xamarin.iOS10\Firebase.Auth.dll</HintPath>
     </Reference>
+    <Reference Include="Firebase.Database">
+      <HintPath>..\packages\Xamarin.Firebase.iOS.Database.3.1.1.2\lib\Xamarin.iOS10\Firebase.Database.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\heart_empty.png" />
@@ -448,6 +451,9 @@
     <Compile Include="iOSAuthSSOClient.cs" />
     <Compile Include="Renderers\TrackCurrentViewControllerRenderer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Datastore.Firebase\BaseStore.cs" />
+    <Compile Include="Datastore.Firebase\FavoriteStore.cs" />
+    <Compile Include="Datastore.Firebase\BaseUserDataStore.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
@@ -482,6 +488,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />
+    <Folder Include="Datastore.Firebase\" />
   </ItemGroup>
   <Import Project="..\CWITC.Shared\CWITC.Shared.projitems" Label="Shared" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
@@ -499,4 +506,5 @@
   <Import Project="..\packages\Xamarin.Firebase.iOS.InstanceID.1.0.8.1\build\Xamarin.Firebase.iOS.InstanceID.targets" Condition="Exists('..\packages\Xamarin.Firebase.iOS.InstanceID.1.0.8.1\build\Xamarin.Firebase.iOS.InstanceID.targets')" />
   <Import Project="..\packages\Xamarin.Firebase.iOS.Analytics.3.6.0.2\build\Xamarin.Firebase.iOS.Analytics.targets" Condition="Exists('..\packages\Xamarin.Firebase.iOS.Analytics.3.6.0.2\build\Xamarin.Firebase.iOS.Analytics.targets')" />
   <Import Project="..\packages\Xamarin.Firebase.iOS.Auth.3.1.0\build\Xamarin.Firebase.iOS.Auth.targets" Condition="Exists('..\packages\Xamarin.Firebase.iOS.Auth.3.1.0\build\Xamarin.Firebase.iOS.Auth.targets')" />
+  <Import Project="..\packages\Xamarin.Firebase.iOS.Database.3.1.1.2\build\Xamarin.Firebase.iOS.Database.targets" Condition="Exists('..\packages\Xamarin.Firebase.iOS.Database.3.1.1.2\build\Xamarin.Firebase.iOS.Database.targets')" />
 </Project>

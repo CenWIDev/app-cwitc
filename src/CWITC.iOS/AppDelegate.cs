@@ -339,6 +339,9 @@ namespace CWITC.iOS
 		void ConfigureFirebase()
 		{
             Firebase.Analytics.App.Configure();
+
+            // we want to persist everything locally
+            Firebase.Database.Database.DefaultInstance.PersistenceEnabled = true;
 		}
     }
 }

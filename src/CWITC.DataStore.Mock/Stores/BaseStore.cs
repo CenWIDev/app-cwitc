@@ -41,6 +41,11 @@ namespace CWITC.DataStore.Mock
             return Task.FromResult(true);
         }
 
+        public Task<bool> UpdateAsync(int index, T item)
+        {
+            throw new NotImplementedException();
+        }
+
         public string Identifier => "store";
         #endregion
     }

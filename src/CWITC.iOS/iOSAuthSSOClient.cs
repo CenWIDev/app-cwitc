@@ -33,35 +33,53 @@ namespace CWITC.iOS
                 topVC,
                 (Facebook.LoginKit.LoginManagerLoginResult result, NSError error) =>
                 {
-					if (error != null)
-					{
-                    
-						//NSLog(@"Process error");
-					}
-					else if (result.IsCancelled)
-					{
-                        tokenTask.SetCanceled();
-						//NSLog(@"Cancelled");
+                    if (error != null)
+                    {
 
-					}
-					else
-					{
+                        //NSLog(@"Process error");
+                    }
+                    else if (result.IsCancelled)
+                    {
+                        tokenTask.SetCanceled();
+                        //NSLog(@"Cancelled");
+
+                    }
+                    else
+                    {
                         var token = Facebook.CoreKit.AccessToken.CurrentAccessToken;
                         tokenTask.SetResult(token.TokenString);
-                        //accessToken.pr
-                    //result.acc
-						//NSLog(@"Logged in");
-					}
+                    }
                 });
 
             string accessToken = await tokenTask.Task;
 
-			// Get access token for the signed-in user and exchange it for a Firebase credential
-			var credential = Firebase.Auth.FacebookAuthProvider.GetCredential(accessToken);
+            TaskCompletionSource<string> getEmailTask = new TaskCompletionSource<string>();
+            // gets the email & name for this user
+            var graphRequest = new Facebook.CoreKit.GraphRequest("me", NSDictionary.FromObjectAndKey(new NSString("id,email"), new NSString("fields")));
+            graphRequest.Start((connection, result, error) =>
+                {
+                    if (error != null)
+                    {
+                        //result.
+                    }
+                    var email = (NSString)result.ValueForKey(new NSString("email"));
+                    var name = (NSString)result.ValueForKey(new NSString("name"));
+
+                    getEmailTask.SetResult(email);
+                });
+
+            string emailAddress = await getEmailTask.Task;
+
+            // Get access token for the signed-in user and exchange it for a Firebase credential
+            var credential = Firebase.Auth.FacebookAuthProvider.GetCredential(accessToken);
             var firebaseResult = await LoginToFirebase(credential);
+            if (firebaseResult.Success)
+            {
+                firebaseResult.User.Email = emailAddress;
+            }
 
             return firebaseResult;
-		}
+        }
 
         public Task LogoutAsync()
         {
@@ -82,7 +100,7 @@ namespace CWITC.iOS
 
         async Task<AccountResponse> LoginToFirebase(AuthCredential credential)
         {
-			TaskCompletionSource<AccountResponse> tcs = new TaskCompletionSource<AccountResponse>();
+            TaskCompletionSource<AccountResponse> tcs = new TaskCompletionSource<AccountResponse>();
 
             // Authenticate with Firebase using the credential
             Auth.DefaultInstance.SignIn(credential, (user, error) =>
@@ -118,7 +136,7 @@ namespace CWITC.iOS
                 }
                 else
                 {
-					// Do your magic to handle authentication result
+                    // Do your magic to handle authentication result
                     var split = user.DisplayName.Split(' ');
 
                     tcs.SetResult(new AccountResponse
@@ -126,6 +144,7 @@ namespace CWITC.iOS
                         Success = true,
                         User = new Clients.Portable.User()
                         {
+                            Id = user.Uid,
                             Email = user.Email,
                             FirstName = split?.FirstOrDefault(),
                             LastName = split?.LastOrDefault()
@@ -134,7 +153,7 @@ namespace CWITC.iOS
                 }
             });
 
-			return await tcs.Task;
+            return await tcs.Task;
         }
     }
 }

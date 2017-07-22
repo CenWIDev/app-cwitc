@@ -22,6 +22,7 @@ namespace CWITC.Clients.Portable
                     await ToggleFavorite(sessionQueued);
                 });
         }
+
         public async Task<bool> ToggleFavorite(Session session)
         {
             if(!Settings.Current.IsLoggedIn)
@@ -57,4 +58,3 @@ namespace CWITC.Clients.Portable
         }
     }
 }
-

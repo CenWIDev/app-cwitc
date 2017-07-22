@@ -24,7 +24,7 @@ namespace CWITC.Clients.Portable
             if (mock) 
             {
                 DependencyService.Register<ISessionStore, CWITC.DataStore.Mock.SessionStore> ();
-                DependencyService.Register<IFavoriteStore, CWITC.DataStore.Mock.FavoriteStore> ();
+                //DependencyService.Register<IFavoriteStore, CWITC.DataStore.Mock.FavoriteStore> ();
                 DependencyService.Register<IFeedbackStore, CWITC.DataStore.Mock.FeedbackStore> ();
                 DependencyService.Register<ISpeakerStore, CWITC.DataStore.Mock.SpeakerStore> ();
                 DependencyService.Register<ISponsorStore, CWITC.DataStore.Mock.SponsorStore> ();
@@ -38,7 +38,7 @@ namespace CWITC.Clients.Portable
                 // todo: some other data store that is real
 
                 //DependencyService.Register<ISessionStore, CWITC.DataStore.Azure.SessionStore> ();
-                //DependencyService.Register<IFavoriteStore, CWITC.DataStore.Azure.FavoriteStore> ();
+                //DependencyService.Register<IFavoriteStore, CWITC.IOS.FavoriteStore> ();
                 //DependencyService.Register<IFeedbackStore, CWITC.DataStore.Azure.FeedbackStore> ();
                 //DependencyService.Register<ISpeakerStore, CWITC.DataStore.Azure.SpeakerStore> ();
                 //DependencyService.Register<ISponsorStore, CWITC.DataStore.Azure.SponsorStore> ();

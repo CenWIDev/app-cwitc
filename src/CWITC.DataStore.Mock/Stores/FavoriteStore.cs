@@ -16,13 +16,13 @@ namespace CWITC.DataStore.Mock
 
         public override Task<bool> InsertAsync(Favorite item)
         {
-            Settings.SetFavorite(item.SessionId, true);
+            //Settings.SetFavorite(item.SessionId, true);
             return Task.FromResult(true);
         }
 
         public override Task<bool> RemoveAsync(Favorite item)
         {
-            Settings.SetFavorite(item.SessionId, false);
+            //Settings.SetFavorite(item.SessionId, false);
             return Task.FromResult(true);
         }
 
