@@ -19,21 +19,21 @@ namespace CWITC.Clients.Portable
             Navigation = navigation;
         }
 
-        public static void Init (bool mock = true)
+        public static void Init(bool mock = true)
         {
-            if (mock) 
+            if (mock)
             {
                 //DependencyService.Register<ISessionStore, CWITC.DataStore.Mock.SessionStore> ();
                 //DependencyService.Register<IFavoriteStore, CWITC.DataStore.Mock.FavoriteStore> ();
-                DependencyService.Register<IFeedbackStore, CWITC.DataStore.Mock.FeedbackStore> ();
+                //DependencyService.Register<IFeedbackStore, CWITC.DataStore.Mock.FeedbackStore> ();
                 //DependencyService.Register<ISpeakerStore, CWITC.DataStore.Mock.SpeakerStore> ();
                 //DependencyService.Register<ISponsorStore, CWITC.DataStore.Mock.SponsorStore> ();
                 //DependencyService.Register<ICategoryStore, CWITC.DataStore.Mock.CategoryStore> ();
                 //DependencyService.Register<IScheduleStore, CWITC.DataStore.Mock.EventStore> ();
-                DependencyService.Register<INotificationStore, CWITC.DataStore.Mock.NotificationStore> ();
+                DependencyService.Register<INotificationStore, CWITC.DataStore.Mock.NotificationStore>();
                 //DependencyService.Register<IStoreManager, CWITC.DataStore.Mock.StoreManager> ();
-            } 
-            else 
+            }
+            else
             {
                 // todo: some other data store that is real
 
@@ -48,14 +48,11 @@ namespace CWITC.Clients.Portable
                 //DependencyService.Register<ISSOClient, CWITC.Clients.Portable.Auth.Azure.XamarinSSOClient> ();
                 //DependencyService.Register<IStoreManager, CWITC.DataStore.Azure.StoreManager> ();
             }
-
-            DependencyService.Register<FavoriteService>();
         }
 
-
         protected ILogger Logger { get; } = DependencyService.Get<ILogger>();
-        protected IStoreManager StoreManager { get; }  = DependencyService.Get<IStoreManager>();
-        protected IToast Toast { get; }  = DependencyService.Get<IToast>();
+        protected IStoreManager StoreManager { get; } = DependencyService.Get<IStoreManager>();
+        protected IToast Toast { get; } = DependencyService.Get<IToast>();
 
         protected FavoriteService FavoriteService { get; } = DependencyService.Get<FavoriteService>();
 
@@ -65,37 +62,37 @@ namespace CWITC.Clients.Portable
             get { return Settings.Current; }
         }
 
-        ICommand  launchBrowserCommand;
+        ICommand launchBrowserCommand;
         public ICommand LaunchBrowserCommand =>
-        launchBrowserCommand ?? (launchBrowserCommand = new Command<string>(async (t) => await ExecuteLaunchBrowserAsync(t))); 
+        launchBrowserCommand ?? (launchBrowserCommand = new Command<string>(async (t) => await ExecuteLaunchBrowserAsync(t)));
 
         async Task ExecuteLaunchBrowserAsync(string arg)
         {
-            if(IsBusy)
+            if (IsBusy)
                 return;
 
-            if (!arg.StartsWith ("http://", StringComparison.OrdinalIgnoreCase) && !arg.StartsWith("https://", StringComparison.OrdinalIgnoreCase))
+            if (!arg.StartsWith("http://", StringComparison.OrdinalIgnoreCase) && !arg.StartsWith("https://", StringComparison.OrdinalIgnoreCase))
                 arg = "http://" + arg;
-            
+
             Logger.Track(EvolveLoggerKeys.LaunchedBrowser, "Url", arg);
 
             var lower = arg.ToLowerInvariant();
-            if(Device.OS == TargetPlatform.iOS && lower.Contains("twitter.com"))
+            if (Device.OS == TargetPlatform.iOS && lower.Contains("twitter.com"))
             {
                 try
                 {
                     var id = arg.Substring(lower.LastIndexOf("/", StringComparison.Ordinal) + 1);
                     var launchTwitter = DependencyService.Get<ILaunchTwitter>();
-                    if(lower.Contains("/status/"))
+                    if (lower.Contains("/status/"))
                     {
                         //status
-                        if(launchTwitter.OpenStatus(id))
+                        if (launchTwitter.OpenStatus(id))
                             return;
                     }
                     else
                     {
                         //user
-                        if(launchTwitter.OpenUserName(id))
+                        if (launchTwitter.OpenUserName(id))
                             return;
                     }
                 }
@@ -104,11 +101,13 @@ namespace CWITC.Clients.Portable
                 }
             }
 
-            try 
+            try
             {
-                await CrossShare.Current.OpenBrowser (arg, new BrowserOptions {
+                await CrossShare.Current.OpenBrowser(arg, new BrowserOptions
+                {
                     ChromeShowTitle = true,
-                    ChromeToolbarColor = new ShareColor {
+                    ChromeToolbarColor = new ShareColor
+                    {
                         A = 255,
                         R = 118,
                         G = 53,
@@ -117,13 +116,13 @@ namespace CWITC.Clients.Portable
                     UseSafairReaderMode = true,
                     UseSafariWebViewController = true
                 });
-            } 
-            catch 
+            }
+            catch
             {
             }
         }
 
-       
+
 
     }
 }
