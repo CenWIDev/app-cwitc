@@ -29,7 +29,7 @@ namespace CWITC.Clients.Portable
                 //DependencyService.Register<ISpeakerStore, CWITC.DataStore.Mock.SpeakerStore> ();
                 DependencyService.Register<ISponsorStore, CWITC.DataStore.Mock.SponsorStore> ();
                 //DependencyService.Register<ICategoryStore, CWITC.DataStore.Mock.CategoryStore> ();
-                DependencyService.Register<IEventStore, CWITC.DataStore.Mock.EventStore> ();
+                //DependencyService.Register<IScheduleStore, CWITC.DataStore.Mock.EventStore> ();
                 DependencyService.Register<INotificationStore, CWITC.DataStore.Mock.NotificationStore> ();
                 //DependencyService.Register<IStoreManager, CWITC.DataStore.Mock.StoreManager> ();
             } 

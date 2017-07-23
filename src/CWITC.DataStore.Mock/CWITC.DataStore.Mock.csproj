@@ -37,7 +37,6 @@
     <Compile Include="Stores\SponsorStore.cs" />
     <Compile Include="Stores\BaseStore.cs" />
     <Compile Include="Helpers\Settings.cs" />
-    <Compile Include="Stores\EventStore.cs" />
     <Compile Include="Stores\NotificationStore.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />

@@ -458,6 +458,7 @@
     <Compile Include="Datastore.Firebase\SpeakerStore.cs" />
     <Compile Include="Datastore.Firebase\CategoryStore.cs" />
     <Compile Include="Datastore.Firebase\StoreManager.cs" />
+    <Compile Include="Datastore.Firebase\EventStore.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
