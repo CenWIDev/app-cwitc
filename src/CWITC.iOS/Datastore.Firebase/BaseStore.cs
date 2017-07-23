@@ -174,6 +174,11 @@ namespace CWITC.iOS.DataStore.Firebase
             return rootNode.GetChild(Identifier);
         }
 
+        protected void ReloadEntityNode()
+        {
+            InitializeStore().Wait();
+        }
+
         async Task<bool> SaveValues(NSArray data)
         {
             TaskCompletionSource<bool> task = new TaskCompletionSource<bool>();

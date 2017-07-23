@@ -52,10 +52,7 @@ namespace CWITC.Clients.Portable
 #if DEBUG
                 await Task.Delay(1000);
 #endif
-                AccountResponse result = null;
-
-                if (result == null)
-                    result = await client.LoginWithFacebook();
+                AccountResponse result = await client.LoginWithFacebook();
 
                 if (result?.Success ?? false)
                 {
@@ -119,27 +116,45 @@ namespace CWITC.Clients.Portable
             Logger.Track(EvolveLoggerKeys.LoginCancel);
             if (Settings.FirstRun)
             {
-                try
+                AccountResponse result = await client.LoginAnonymously();
+
+                if (result?.Success ?? false)
                 {
-                    Message = "Updating schedule...";
-                    IsBusy = true;
-                    await StoreManager.SyncAllAsync(false);
-                    Settings.Current.LastSync = DateTime.UtcNow;
-                    Settings.Current.HasSyncedData = true;
+                    try
+                    {
+                        Message = "Updating schedule...";
+                        IsBusy = true;
+                        Settings.UserId = result.User?.Id;
+                        MessagingService.Current.SendMessage(MessageKeys.LoggedIn);
+                        await StoreManager.SyncAllAsync(false);
+                        Settings.Current.LastSync = DateTime.UtcNow;
+                        Settings.Current.HasSyncedData = true;
+                    }
+                    catch (Exception ex)
+                    {
+                        //if sync doesn't work don't worry it is alright we can recover later
+                        Logger.Report(ex);
+                    }
+                    finally
+                    {
+                        Message = string.Empty;
+                        IsBusy = false;
+                    }
+
+                    await Finish();
+                    Settings.FirstRun = false;
                 }
-                catch (Exception ex)
+                else
                 {
-                    //if sync doesn't work don't worry it is alright we can recover later
-                    Logger.Report(ex);
-                }
-                finally
-                {
-                    Message = string.Empty;
-                    IsBusy = false;
+                    Logger.Track(EvolveLoggerKeys.LoginFailure, "Reason", result.Error);
+                    MessagingService.Current.SendMessage<MessagingServiceAlert>(MessageKeys.Message, new MessagingServiceAlert
+                    {
+                        Title = "Anonymous Sign In Failed",
+                        Message = result.Error,
+                        Cancel = "OK"
+                    });
                 }
             }
-            await Finish();
-            Settings.FirstRun = false;
         }
 
         async Task Finish()

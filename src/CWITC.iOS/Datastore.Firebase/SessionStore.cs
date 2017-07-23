@@ -21,18 +21,21 @@ namespace CWITC.iOS.DataStore.Firebase
         {
             var sessions = await base.GetItemsAsync(forceRefresh);
 
-			var favStore = DependencyService.Get<IFavoriteStore>();
-            await favStore.GetItemsAsync(true).ConfigureAwait(false);//pull latest
-
-            foreach (var session in sessions)
+            if (sessions != null)
             {
-                var isFav = await favStore.IsFavorite(session.Id).ConfigureAwait(false);
-                session.IsFavorite = isFav;
+                var favStore = DependencyService.Get<IFavoriteStore>();
+                await favStore.GetItemsAsync(true).ConfigureAwait(false);//pull latest
 
-                //session.spe
+                foreach (var session in sessions)
+                {
+                    var isFav = await favStore.IsFavorite(session.Id).ConfigureAwait(false);
+                    session.IsFavorite = isFav;
+
+                    //session.spe
+                }
             }
 
-            return sessions;
+            return sessions ?? new List<Session>();
         }
 
         public async Task<IEnumerable<Session>> GetSpeakerSessionsAsync(string speakerId)

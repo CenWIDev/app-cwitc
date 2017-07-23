@@ -23,6 +23,49 @@ namespace CWITC.iOS
             throw new NotImplementedException();
         }
 
+        public async Task<AccountResponse> LoginAnonymously()
+        {
+            TaskCompletionSource<AccountResponse> task = new TaskCompletionSource<AccountResponse>();
+			Auth.DefaultInstance.SignInAnonymously((user, error) =>
+			{
+				if (error != null)
+				{
+					AuthErrorCode errorCode;
+					if (IntPtr.Size == 8) // 64 bits devices
+						errorCode = (AuthErrorCode)((long)error.Code);
+					else // 32 bits devices
+						errorCode = (AuthErrorCode)((int)error.Code);
+
+					// Posible error codes that SignInAnonymously method could throw
+					// Visit https://firebase.google.com/docs/auth/ios/errors for more information
+					switch (errorCode)
+					{
+						case AuthErrorCode.OperationNotAllowed:
+						default:
+							// Print error
+							break;
+					}
+
+					task.SetResult(new AccountResponse
+					{
+						Success = false,
+						Error = error.LocalizedDescription
+					});
+				}
+				else
+				{
+                    // Do your magic to handle authentication result
+                    task.SetResult(new AccountResponse
+                    {
+                        User = new Clients.Portable.User { IsAnonymous = true, Id = user.Uid },
+                        Success = true
+                    });
+				}
+			});
+
+            return await task.Task;
+        }
+
         public async Task<AccountResponse> LoginWithFacebook()
         {
             TaskCompletionSource<string> tokenTask = new TaskCompletionSource<string>();

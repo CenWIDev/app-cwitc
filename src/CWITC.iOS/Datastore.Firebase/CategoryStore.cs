@@ -20,8 +20,9 @@ namespace CWITC.iOS.DataStore.Firebase
 			var sessions = await sessionStore.GetItemsAsync();
 
             var categories = sessions.Select(s => s.MainCategory).ToList();
+            var categoryIds = categories.Select(x => x.Id).Distinct();
 
-			return categories;
+            return categoryIds.Select(id => categories.FirstOrDefault(x2 => x2.Id == id)).ToList();
 		}
 
         public override async Task<Category> GetItemAsync(string id)

@@ -31,7 +31,7 @@ namespace CWITC.Clients.Portable
                 //DependencyService.Register<ICategoryStore, CWITC.DataStore.Mock.CategoryStore> ();
                 DependencyService.Register<IEventStore, CWITC.DataStore.Mock.EventStore> ();
                 DependencyService.Register<INotificationStore, CWITC.DataStore.Mock.NotificationStore> ();
-                DependencyService.Register<IStoreManager, CWITC.DataStore.Mock.StoreManager> ();
+                //DependencyService.Register<IStoreManager, CWITC.DataStore.Mock.StoreManager> ();
             } 
             else 
             {

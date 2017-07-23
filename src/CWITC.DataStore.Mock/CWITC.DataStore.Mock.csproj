@@ -33,15 +33,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Stores\FavoriteStore.cs" />
     <Compile Include="Stores\FeedbackStore.cs" />
-    <Compile Include="Stores\SpeakerStore.cs" />
     <Compile Include="Stores\SponsorStore.cs" />
-    <Compile Include="Stores\SessionStore.cs" />
     <Compile Include="Stores\BaseStore.cs" />
     <Compile Include="Helpers\Settings.cs" />
-    <Compile Include="Stores\CategoryStore.cs" />
-    <Compile Include="StoreManager.cs" />
     <Compile Include="Stores\EventStore.cs" />
     <Compile Include="Stores\NotificationStore.cs" />
   </ItemGroup>

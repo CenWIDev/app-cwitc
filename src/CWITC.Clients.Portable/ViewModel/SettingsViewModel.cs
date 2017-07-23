@@ -201,7 +201,7 @@ namespace CWITC.Clients.Portable
                 {
                     MessagingService.Current.SendMessage<MessagingServiceAlert>(MessageKeys.Message, new MessagingServiceAlert
                         {
-                            Title = "Evolve Data Synced",
+                            Title = "CWITC Data Synced",
                             Message = "You now have the latest conference data, however to sync your favorites and feedback you must sign in with your CWITC account.",
                             Cancel = "OK"
                         });
