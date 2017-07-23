@@ -602,5 +602,77 @@
       "StartTime": "2017-09-30T12:30:00-06:00",
       "Title": "Making the A-List: using actors to achieve fame and fortune"
     }
+  ],
+  "sponsors": [
+    {
+      "Name": "CWITA",
+      "Description": "",
+      "SponsorLevel": {
+        "Name": "Organizer",
+        "Rank": 0
+      },
+      "ImageUrl": "https://static.wixstatic.com/media/615d66_0a380afe71f24ec3a4438aac44d0da0f~mv2.png/v1/fill/w_220,h_68,al_c,usm_0.66_1.00_0.01/615d66_0a380afe71f24ec3a4438aac44d0da0f~mv2.png",
+      "WebsiteUrl": "http://cwita.org",
+      "Rank": 0
+    },
+    {
+      "Name": "CENWIDEV",
+      "Description": "",
+      "SponsorLevel": {
+        "Name": "Organizer",
+        "Rank": 1
+      },
+      "ImageUrl": "https://static.wixstatic.com/media/615d66_25923432d6974e4d9babd26c8e608f3d~mv2.jpg/v1/fill/w_208,h_97,al_c,q_80,usm_0.66_1.00_0.01/615d66_25923432d6974e4d9babd26c8e608f3d~mv2.jpg",
+      "WebsiteUrl": "http://cenwidev.org",
+      "TwitterUrl": "cenwidev",
+      "Rank": 1
+    },
+    {
+      "Name": "Mid-State Technical College",
+      "Description": "",
+      "SponsorLevel": {
+        "Name": "Organizer",
+        "Rank": 2
+      },
+      "ImageUrl": "https://static.wixstatic.com/media/615d66_7e995f8d8fef408985da8bfaefd4d561~mv2.jpg/v1/fill/w_219,h_50,al_c,q_80,usm_0.66_1.00_0.01/615d66_7e995f8d8fef408985da8bfaefd4d561~mv2.jpg",
+      "WebsiteUrl": "https://www.mstc.edu",
+      "Rank": 2
+    },
+    {
+      "Name": "Create Portage County",
+      "Description": "",
+      "SponsorLevel": {
+        "Name": "Community Partner",
+        "Rank": 0
+      },
+      "ImageUrl": "https://static.wixstatic.com/media/615d66_2cc6da6194ff4187b631ee21e9218a4a~mv2.png/v1/fill/w_207,h_78,al_c,usm_0.66_1.00_0.01/615d66_2cc6da6194ff4187b631ee21e9218a4a~mv2.png",
+      "WebsiteUrl": "http://www.createportagecounty.org",
+      "TwitterUrl": "createpoco",
+      "Rank": 3
+    },
+    {
+      "Name": "Red Arrow Labs",
+      "Description": "",
+      "SponsorLevel": {
+        "Name": "Gold Sponsor",
+        "Rank": 0
+      },
+      "ImageUrl": "https://static.wixstatic.com/media/615d66_bd03accec2de4645bceace5107b9098b~mv2.jpg/v1/fill/w_214,h_93,al_c,q_80,usm_0.66_1.00_0.01/615d66_bd03accec2de4645bceace5107b9098b~mv2.jpg",
+      "WebsiteUrl": "http://redarrowlabs.com",
+      "TwitterUrl": "RedArrowLabs",
+      "Rank": 4
+    },
+    {
+      "Name": "Skyward",
+      "Description": "",
+      "SponsorLevel": {
+        "Name": "Gold Sponsor",
+        "Rank": 1
+      },
+      "ImageUrl": "https://static.wixstatic.com/media/615d66_4bd0173adda347bbb3184523a7f8e91a~mv2.jpg/v1/fill/w_204,h_110,al_c,q_80,usm_0.66_1.00_0.01/615d66_4bd0173adda347bbb3184523a7f8e91a~mv2.jpg",
+      "WebsiteUrl": "https://www.skyward.com",
+      "TwitterUrl": "skyward_inc",
+      "Rank": 5
+    }
   ]
 }
