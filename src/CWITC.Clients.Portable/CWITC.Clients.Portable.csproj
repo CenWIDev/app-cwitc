@@ -220,10 +220,6 @@
       <Project>{dfa0f0f6-c396-412e-86a9-e9095f71cc36}</Project>
       <Name>CWITC.Utils</Name>
     </ProjectReference>
-    <ProjectReference Include="..\CWITC.DataStore.Mock\CWITC.DataStore.Mock.csproj">
-      <Project>{4DF18ED7-0E19-4866-8D9B-B1CB5C86A366}</Project>
-      <Name>CWITC.DataStore.Mock</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="sampletweets.txt">

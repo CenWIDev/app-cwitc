@@ -674,5 +674,12 @@
       "TwitterUrl": "skyward_inc",
       "Rank": 5
     }
+  ],
+  "notifications" : [
+    {
+      "Text": "Welcome to the Central Wisconsin IT Conference!",
+      "Date" : "2017-09-30T08:00:00-06:00",
+      "IsVisible" : true
+    }
   ]
 }

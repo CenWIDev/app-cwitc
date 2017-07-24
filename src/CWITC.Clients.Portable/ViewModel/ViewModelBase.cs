@@ -20,34 +20,7 @@ namespace CWITC.Clients.Portable
         }
 
         public static void Init(bool mock = true)
-        {
-            if (mock)
-            {
-                //DependencyService.Register<ISessionStore, CWITC.DataStore.Mock.SessionStore> ();
-                //DependencyService.Register<IFavoriteStore, CWITC.DataStore.Mock.FavoriteStore> ();
-                //DependencyService.Register<IFeedbackStore, CWITC.DataStore.Mock.FeedbackStore> ();
-                //DependencyService.Register<ISpeakerStore, CWITC.DataStore.Mock.SpeakerStore> ();
-                //DependencyService.Register<ISponsorStore, CWITC.DataStore.Mock.SponsorStore> ();
-                //DependencyService.Register<ICategoryStore, CWITC.DataStore.Mock.CategoryStore> ();
-                //DependencyService.Register<IScheduleStore, CWITC.DataStore.Mock.EventStore> ();
-                DependencyService.Register<INotificationStore, CWITC.DataStore.Mock.NotificationStore>();
-                //DependencyService.Register<IStoreManager, CWITC.DataStore.Mock.StoreManager> ();
-            }
-            else
-            {
-                // todo: some other data store that is real
-
-                //DependencyService.Register<ISessionStore, CWITC.DataStore.Azure.SessionStore> ();
-                //DependencyService.Register<IFavoriteStore, CWITC.IOS.FavoriteStore> ();
-                //DependencyService.Register<IFeedbackStore, CWITC.DataStore.Azure.FeedbackStore> ();
-                //DependencyService.Register<ISpeakerStore, CWITC.DataStore.Azure.SpeakerStore> ();
-                //DependencyService.Register<ISponsorStore, CWITC.DataStore.Azure.SponsorStore> ();
-                //DependencyService.Register<ICategoryStore, CWITC.DataStore.Azure.CategoryStore> ();
-                //DependencyService.Register<IEventStore, CWITC.DataStore.Azure.EventStore> ();
-                //DependencyService.Register<INotificationStore, CWITC.DataStore.Azure.NotificationStore> ();
-                //DependencyService.Register<ISSOClient, CWITC.Clients.Portable.Auth.Azure.XamarinSSOClient> ();
-                //DependencyService.Register<IStoreManager, CWITC.DataStore.Azure.StoreManager> ();
-            }
+        {  
         }
 
         protected ILogger Logger { get; } = DependencyService.Get<ILogger>();

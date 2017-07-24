@@ -72,6 +72,13 @@ namespace CWITC.Clients.Portable
             set { SetProperty(ref loadingNotifications, value); }
         }
 
+        bool noNotifications;
+        public bool NoNotifications
+		{
+            get { return noNotifications; }
+			set { SetProperty(ref noNotifications, value); }
+		}
+
         ICommand  loadNotificationsCommand;
         public ICommand LoadNotificationsCommand =>
             loadNotificationsCommand ?? (loadNotificationsCommand = new Command(async () => await ExecuteLoadNotificationsCommandAsync())); 
@@ -102,6 +109,7 @@ namespace CWITC.Clients.Portable
             finally
             {
                 LoadingNotifications = false;
+                NoNotifications = Notification == null;
             }
         }
 
@@ -182,6 +190,12 @@ namespace CWITC.Clients.Portable
             set { SetProperty(ref loadingSocial, value); }
         }
 
+        bool noSocial;
+        public bool NoSocial
+        {
+            get { return noSocial; }
+            set { SetProperty(ref noSocial, value);}
+        }
 
         ICommand  loadSocialCommand;
         public ICommand LoadSocialCommand =>
@@ -197,36 +211,8 @@ namespace CWITC.Clients.Portable
             {
                 SocialError = false;
                 Tweets.Clear();
-               
-                using(var client = new HttpClient())
-                {
-                    // todo: hook this up to a store manager
-                    IStoreManager manager = null;
-                    //var manager = DependencyService.Get<IStoreManager>() as CWITC.DataStore.Azure.StoreManager;
-                    if (manager == null)
-                        return;
 
-                    await manager.InitializeAsync ();
-
-
-                    // azure mobile service client was here
-                    return;
-                    ////var mobileClient = CWITC.DataStore.Azure.StoreManager.MobileService;
-                    //if (mobileClient == null)
-                    //    return;
-                    
-                    //var json =  await mobileClient.InvokeApiAsync<string> ("Tweet", System.Net.Http.HttpMethod.Get, null);
-
-                    //if (string.IsNullOrWhiteSpace(json)) 
-                    //{
-                    //    SocialError = true;
-                    //    return;
-                    //}
-
-
-                    //Tweets.ReplaceRange(JsonConvert.DeserializeObject<List<Tweet>>(json));
-                }
-
+                // todo: implement this
             }
             catch (Exception ex)
             {
@@ -237,6 +223,7 @@ namespace CWITC.Clients.Portable
             finally
             {
                 LoadingSocial = false;
+                NoSocial = Tweets.Count == 0;
             }
 
         }

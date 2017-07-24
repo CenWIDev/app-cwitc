@@ -61,15 +61,24 @@
                                   Padding="{StaticResource StandardPadding}"
                                   x:Name="NotificationStack"
                                   StyleId="AnnouncementItem" >
-                        <Label Text="{Binding Text}" 
-                               BindingContext="{Binding Notification}"
+                        <Label 
+                                IsVisible="{Binding NoNotifications, Converter={StaticResource InvertedBooleanConverter}" 
+                                Text="{Binding Notification.Text}" 
                                Style="{DynamicResource EvolveListItemTextStyle}"
                                StyleId="AnnouncementTitle" />
-
-                        <Label Text="{Binding Date, Converter={StaticResource HumanizeDateConverter}}"  
+                            
+                        <Label 
+                                IsVisible="{Binding NoNotifications, Converter={StaticResource InvertedBooleanConverter}" 
+                                Text="{Binding Notification.Date, Converter={StaticResource HumanizeDateConverter}}"  
                                BindingContext="{Binding Notification}"
                                Style="{DynamicResource EvolveListItemDetailTextStyle}"
                                StyleId="AnnouncementTime" />
+
+                            <Label
+                                IsVisible="{Binding NoNotifications}" 
+                                Text="No Announcements" 
+                               HorizontalOptions="Center" 
+                               Style="{DynamicResource EvolveListItemTextStyle}"/>
                    </StackLayout>
                     <local:FooterDivider/>
                 </StackLayout>
@@ -163,6 +172,16 @@
                                   Padding="{StaticResource StandardPadding}">
                        
                         <Label Text="Unable to load social feed" 
+                               HorizontalOptions="Center" 
+                               Style="{DynamicResource EvolveListItemTextStyle}"/>
+                   </StackLayout>
+                        <StackLayout IsVisible="{Binding NoSocial}" 
+                                 HorizontalOptions="FillAndExpand" 
+                                 VerticalOptions="Center" 
+                                  BackgroundColor="White"
+                                  Padding="{StaticResource StandardPadding}">
+                       
+                        <Label Text="No Social Updates" 
                                HorizontalOptions="Center" 
                                Style="{DynamicResource EvolveListItemTextStyle}"/>
                    </StackLayout>

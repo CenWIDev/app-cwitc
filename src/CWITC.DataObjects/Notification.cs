@@ -6,6 +6,7 @@ namespace CWITC.DataObjects
     {
         public string Text { get; set; }
         public DateTime Date { get; set; }
+        public bool IsVisible { get; set; }
     }
 }
 

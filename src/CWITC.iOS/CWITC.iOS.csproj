@@ -461,6 +461,7 @@
     <Compile Include="Datastore.Firebase\EventStore.cs" />
     <Compile Include="Datastore.Firebase\SponsorStore.cs" />
     <Compile Include="Datastore.Firebase\FeedbackStore.cs" />
+    <Compile Include="Datastore.Firebase\NotificationStore.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
