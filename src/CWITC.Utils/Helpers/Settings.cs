@@ -35,6 +35,33 @@ namespace CWITC.Clients.Portable
             get { return settings ?? (settings = new Settings()); }
         }
 
+        const string TwitterApiKeyKey = "twitter_api_key";
+        readonly string TwitterApiKeyDefault = string.Empty;
+		public string TwitterApiKey
+		{
+			get { return AppSettings.GetValueOrDefault<string>(TwitterApiKeyKey, TwitterApiKeyDefault); }
+			set
+			{
+				if (AppSettings.AddOrUpdateValue(TwitterApiKeyKey, value))
+				{
+					OnPropertyChanged();
+				}
+			}
+		}
+
+		const string TwitterApiSecretKey = "twitter_api_secret";
+		readonly string TwitterApiSecretDefault = string.Empty;
+		public string TwitterApiSecret
+		{
+			get { return AppSettings.GetValueOrDefault<string>(TwitterApiSecretKey, TwitterApiSecretDefault); }
+			set
+			{
+				if (AppSettings.AddOrUpdateValue(TwitterApiSecretKey, value))
+				{
+					OnPropertyChanged();
+				}
+			}
+		}
 
         const string GcmTokenKey = "gcm_token";
         readonly string GcmTokenDefault = string.Empty;

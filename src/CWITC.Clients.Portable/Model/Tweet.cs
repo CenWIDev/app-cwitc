@@ -9,7 +9,7 @@ namespace CWITC.Clients.Portable
 {
     public class Tweet
     {
-        public Tweet()
+        public  Tweet()
         {
         }
         string tweetedImage;

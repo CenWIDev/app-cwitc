@@ -37,6 +37,7 @@ namespace CWITC.Clients.Portable
         public const string Message = "message";
         public const string Question = "question";
         public const string Choice = "choice";
+        public const string TwitterAuthRefreshed = "refresh_tweets";
     }
 }
 

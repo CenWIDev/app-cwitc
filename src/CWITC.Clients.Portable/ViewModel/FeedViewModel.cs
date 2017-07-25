@@ -13,6 +13,7 @@ using CWITC.DataObjects;
 using System.Net.Http;
 using System.Collections.Generic;
 using CWITC.DataStore.Abstractions;
+using CWITC.Clients.Portable.Services;
 
 namespace CWITC.Clients.Portable
 {
@@ -25,6 +26,8 @@ namespace CWITC.Clients.Portable
         public FeedViewModel()
         {
             NextForceRefresh = DateTime.UtcNow.AddMinutes(45);
+
+            MessagingService.Current.Subscribe(MessageKeys.TwitterAuthRefreshed, (msg) => LoadSocialCommand.Execute(null));
         }
 
 
@@ -212,6 +215,9 @@ namespace CWITC.Clients.Portable
                 SocialError = false;
                 Tweets.Clear();
 
+                var tweetService = DependencyService.Get<ITweetsService>();
+
+                Tweets.ReplaceRange(await tweetService.GetTweets());
                 // todo: implement this
             }
             catch (Exception ex)

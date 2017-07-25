@@ -11,5 +11,9 @@
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)EvolveLogger.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AuthSSOClient.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\TweetsService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)Services\" />
   </ItemGroup>
 </Project>

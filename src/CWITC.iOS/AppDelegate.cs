@@ -22,6 +22,7 @@ using Google.AppIndexing;
 using HockeyApp.iOS;
 using Auth0.OidcClient;
 using Xamarin.Auth;
+using Firebase.RemoteConfig;
 
 namespace CWITC.iOS
 {
@@ -342,6 +343,37 @@ namespace CWITC.iOS
 
             // we want to persist everything locally
             Firebase.Database.Database.DefaultInstance.PersistenceEnabled = true;
+
+			// Enabling developer mode, allows for frequent refreshes of the cache
+			Firebase.RemoteConfig.RemoteConfig.SharedInstance.ConfigSettings = new RemoteConfigSettings(true);
+
+			// listen for any changes to the remote config. 
+            // in this case, we only care about the twitter API key auth info
+            RemoteConfig.SharedInstance.Fetch((status, error) =>
+    			{
+				switch (status)
+				{
+					case RemoteConfigFetchStatus.Success:
+						Console.WriteLine("Config Fetched!");
+
+						// Call this method to make fetched parameter values available to your app
+						RemoteConfig.SharedInstance.ActivateFetched();
+
+                        var keys = RemoteConfig.SharedInstance.GetKeys("");
+                        Settings.Current.TwitterApiKey = RemoteConfig.SharedInstance["twitter_api_key"].StringValue;
+                        Settings.Current.TwitterApiSecret = RemoteConfig.SharedInstance["twitter_api_secret"].StringValue;
+
+                            MessagingService.Current.SendMessage(MessageKeys.TwitterAuthRefreshed);
+
+						break;
+
+					case RemoteConfigFetchStatus.Throttled:
+					case RemoteConfigFetchStatus.NoFetchYet:
+					case RemoteConfigFetchStatus.Failure:
+						Console.WriteLine("Config not fetched...");
+						break;
+				}
+			});
 		}
     }
 }

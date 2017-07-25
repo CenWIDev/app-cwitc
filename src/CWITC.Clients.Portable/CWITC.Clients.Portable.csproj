@@ -53,7 +53,6 @@
     <Compile Include="ViewModel\EventDetailsViewModel.cs" />
     <Compile Include="Model\Extensions\EventExtensions.cs" />
     <Compile Include="ViewModel\FeedViewModel.cs" />
-    <Compile Include="Model\Tweet.cs" />
     <Compile Include="ViewModel\VenueViewModel.cs" />
     <Compile Include="Interfaces\IWiFIConfig.cs" />
     <Compile Include="ViewModel\ConferenceInfoViewModel.cs" />
@@ -66,6 +65,8 @@
     <Compile Include="Interfaces\ILaunchTwitter.cs" />
     <Compile Include="ViewModel\EvaluationsViewModel.cs" />
     <Compile Include="Language.cs" />
+    <Compile Include="Model\Tweet.cs" />
+    <Compile Include="Services\TweetsService.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
