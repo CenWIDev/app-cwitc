@@ -12,11 +12,6 @@ namespace CWITC.iOS.DataStore.Firebase
 {
     public class SessionStore : ReadonlyStore<Session>, ISessionStore
     {
-        public override Task<Session> GetItemAsync(string id)
-        {
-            return base.GetItemAsync(id);
-        }
-
         public override async Task<IEnumerable<Session>> GetItemsAsync(bool forceRefresh = false)
         {
             var sessions = await base.GetItemsAsync(forceRefresh);

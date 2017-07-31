@@ -13,12 +13,6 @@ namespace CWITC.iOS.DataStore.Firebase
     {
         public override string Identifier => "user_session_feedback";
 
-        public Task DropFeedback()
-        {
-            base.DropTable();
-            return Task.CompletedTask;
-        }
-
         public async Task<bool> LeftFeedback(Session session)
         {
             var userFeedback = await base.GetItemsAsync();

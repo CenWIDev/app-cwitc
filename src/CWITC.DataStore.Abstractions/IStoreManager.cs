@@ -17,7 +17,6 @@ namespace CWITC.DataStore.Abstractions
         INotificationStore NotificationStore { get; }
 
         Task<bool> SyncAllAsync(bool syncUserSpecific);
-        Task DropEverythingAsync();
     }
 }
 

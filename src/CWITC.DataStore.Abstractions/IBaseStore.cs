@@ -15,8 +15,6 @@ namespace CWITC.DataStore.Abstractions
         Task<bool> RemoveAsync(T item);
         Task<bool> SyncAsync();
 
-        void DropTable();
-
         string Identifier { get; }
     }
 }

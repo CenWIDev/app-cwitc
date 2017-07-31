@@ -8,7 +8,7 @@ using CWITC.iOS.DataStore.Firebase;
 using Firebase.Database;
 using Xamarin.Forms;
 
-[assembly: Dependency(typeof(SessionStore))]
+[assembly: Dependency(typeof(SpeakerStore))]
 
 namespace CWITC.iOS.DataStore.Firebase
 {

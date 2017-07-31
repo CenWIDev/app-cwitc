@@ -14,11 +14,6 @@ namespace CWITC.iOS.DataStore.Firebase
 {
     public abstract class ReadonlyStore<T> : BaseStore<T> where T: IBaseDataObject
     {
-        public override void DropTable()
-        {
-            throw new NotSupportedException();
-        }
-
         public override Task<bool> RemoveAsync(T item)
         {
             throw new NotSupportedException();
@@ -47,16 +42,6 @@ namespace CWITC.iOS.DataStore.Firebase
         }
 
         public abstract string Identifier { get; }
-
-        public virtual void DropTable()
-        {
-            if (!initialized) InitializeStore();
-            entityNode
-                .RemoveValue((NSError error, DatabaseReference reference) =>
-            {
-                // oh well
-            });
-        }
 
         public virtual Task<T> GetItemAsync(string id)
         {

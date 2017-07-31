@@ -3,6 +3,7 @@ using CWITC.DataStore.Abstractions;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using CWITC.iOS.DataStore.Firebase;
+using System.Collections.Generic;
 
 [assembly: Dependency(typeof(StoreManager))]
 
@@ -12,10 +13,26 @@ namespace CWITC.iOS.DataStore.Firebase
     {
         #region IStoreManager implementation
 
-        public Task<bool> SyncAllAsync(bool syncUserSpecific)
+        public async Task<bool> SyncAllAsync(bool syncUserSpecific)
         {
-            // todo: download all data on start
-            return Task.FromResult(true);
+            var tasks = new List<Task> {
+                CategoryStore.GetItemsAsync(true),
+                SessionStore.GetItemsAsync(true),
+                SpeakerStore.GetItemsAsync(true),
+                SponsorStore.GetItemsAsync(true),
+                EventStore.GetItemsAsync(true),
+                NotificationStore.GetItemsAsync(true)
+            };
+
+            if (syncUserSpecific)
+            {
+                tasks.Add(FavoriteStore.GetItemsAsync(true));
+                tasks.Add(FeedbackStore.GetItemsAsync(true));
+            }
+
+            await Task.WhenAll(tasks);
+
+            return true;
         }
 
         public bool IsInitialized { get { return true; }  }
@@ -25,11 +42,6 @@ namespace CWITC.iOS.DataStore.Firebase
         }
 
         #endregion
-
-        public Task DropEverythingAsync()
-        {
-            return Task.FromResult(true);
-        }
 
         INotificationStore notificationStore;
         public INotificationStore NotificationStore => notificationStore ?? (notificationStore  = DependencyService.Get<INotificationStore>());

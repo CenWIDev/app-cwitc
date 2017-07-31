@@ -142,10 +142,6 @@ namespace CWITC.Clients.Portable
                 Settings.LastName = string.Empty;
                 Settings.Email = string.Empty; //this triggers login text changed!
 
-                //drop favorites and feedback because we logged out.
-                await StoreManager.FavoriteStore.DropFavorites();
-                await StoreManager.FeedbackStore.DropFeedback();
-                await StoreManager.DropEverythingAsync();
                 await ExecuteSyncCommandAsync();
             }
             catch(Exception ex)

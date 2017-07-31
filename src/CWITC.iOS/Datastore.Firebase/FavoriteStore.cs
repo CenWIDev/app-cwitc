@@ -17,13 +17,6 @@ namespace CWITC.iOS.DataStore.Firebase
     {
         public override string Identifier => "user_favorites";
 
-        public Task DropFavorites()
-        {
-            base.DropTable();
-
-            return Task.CompletedTask;
-        }
-
         public async Task<bool> IsFavorite(string sessionId)
         {
             var items = (await GetItemsAsync()) ?? new List<Favorite>();

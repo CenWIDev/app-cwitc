@@ -7,6 +7,7 @@ using CWITC.DataStore.Abstractions;
 using FormsToolkit;
 using System.Linq;
 
+[assembly: Dependency(typeof(FavoriteService))]
 namespace CWITC.Clients.Portable
 {
     public class FavoriteService
