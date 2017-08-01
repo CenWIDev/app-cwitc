@@ -161,11 +161,31 @@ namespace CWITC.Shared.DataStore.Firebase
 
             void IValueEventListener.OnCancelled(DatabaseError error)
             {
-                throw new NotImplementedException();
+                this.getTask.TrySetCanceled();
             }
 
             void IValueEventListener.OnDataChange(DataSnapshot snapshot)
             {
+                var values = (snapshot.Value as ArrayList)?.ToArray();
+
+                if(values != null)
+                {
+                    List<T> items = new List<T>();
+                    //var data = GoogleGson.Gson.FromArray(values);
+                    foreach(var value in values)
+                    {
+                        var data = new GoogleGson.Gson().ToJson(value);
+
+						var item = JsonConvert.DeserializeObject<T>(data);
+						items.Add(item);
+                    }
+
+                    getTask.TrySetResult(items);
+                }
+                else 
+                {
+                    getTask.TrySetResult(null);
+                }
                 //snapshot.Value
                 //throw new NotImplementedException();
             }
