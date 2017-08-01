@@ -85,8 +85,12 @@ namespace CWITC.Droid
 		DataPathPrefix = "/android/@PACKAGE_NAME@/logout")]
     public class MainActivity : FormsAppCompatActivity
     {
+        public Xamarin.Facebook.ICallbackManager CallbackManager { get; private set; }
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
+            CallbackManager = Xamarin.Facebook.CallbackManagerFactory.Create();
+
             ToolbarResource = Resource.Layout.toolbar;
             TabLayoutResource = Resource.Layout.tabs;
 
@@ -159,6 +163,12 @@ namespace CWITC.Droid
             }
         }
 
+        protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)
+        {
+            base.OnActivityResult(requestCode, resultCode, data);
+
+            CallbackManager.OnActivityResult(requestCode, (int)resultCode, data);
+        }
 
         void InitializeHockeyApp()
         {

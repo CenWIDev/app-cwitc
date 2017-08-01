@@ -11,6 +11,7 @@ using Firebase.Auth;
 using FormsToolkit;
 using IdentityModel.OidcClient;
 using Java.Lang;
+using Java.Util;
 using Plugin.CurrentActivity;
 using Xamarin.Facebook;
 using Xamarin.Facebook.Login;
@@ -49,14 +50,15 @@ namespace CWITC.Droid
 
         public async Task<AccountResponse> LoginWithFacebook()
         {
+			var mainActivity = Plugin.CurrentActivity.CrossCurrentActivity.Current.Activity as MainActivity;
+
             var tokenTask = new TaskCompletionSource<AccessToken>();
 
-            var callbackManager = CallbackManagerFactory.Create();
-
             var loginManager = DeviceLoginManager.Instance;
-            loginManager.RegisterCallback(
-                callbackManager, new FacebookLoginCallback(tokenTask));
 
+			loginManager.RegisterCallback(
+				mainActivity.CallbackManager, new FacebookLoginCallback(tokenTask));
+            
             loginManager
                    .LogInWithReadPermissions(
                        Plugin.CurrentActivity.CrossCurrentActivity.Current.Activity,
@@ -68,13 +70,17 @@ namespace CWITC.Droid
             try
             {
                 var accessToken = await tokenTask.Task;
-                loginManager.UnregisterCallback(callbackManager);
+                loginManager.UnregisterCallback(mainActivity.CallbackManager);
 
                 TaskCompletionSource<string> getEmailTask = new TaskCompletionSource<string>();
 
-                var graphResponse = (await new GraphRequest(accessToken, "me")
+                // todo: need to request email;
+                var graphRequestResult = (await new GraphRequest(accessToken, "me")
                     .ExecuteAsync()
-                    .GetAsync()) as GraphResponse;
+                    .GetAsync() as ArrayList).ToArray();
+
+                var graphResponse = graphRequestResult.FirstOrDefault() as GraphResponse;
+
                 string emailAddress = graphResponse.JSONObject.Get("email").ToString();
                 //string name = graphResponse.JSONObject.Get("name").ToString();
 
