@@ -148,7 +148,6 @@ namespace CWITC.Droid
 			global::HockeyApp.Resource.Style.HockeyApp_ButtonStyle = global::CWITC.Droid.Resource.Style.HockeyApp_ButtonStyle;
 			global::HockeyApp.Resource.Style.HockeyApp_EditTextStyle = global::CWITC.Droid.Resource.Style.HockeyApp_EditTextStyle;
 			global::HockeyApp.Resource.Style.HockeyApp_SingleLineInputStyle = global::CWITC.Droid.Resource.Style.HockeyApp_SingleLineInputStyle;
-			global::ModernHttpClient.Resource.String.library_name = global::CWITC.Droid.Resource.String.library_name;
 			global::PCLStorage.Resource.String.ApplicationName = global::CWITC.Droid.Resource.String.ApplicationName;
 			global::PCLStorage.Resource.String.Hello = global::CWITC.Droid.Resource.String.Hello;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarSize = global::CWITC.Droid.Resource.Attribute.actionBarSize;

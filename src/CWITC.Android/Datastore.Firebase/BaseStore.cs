@@ -42,7 +42,7 @@ namespace CWITC.Shared.DataStore.Firebase
 
             var query = entityNode.OrderByPriority();
             query
-                .AddListenerForSingleValueEvent(new ValueEventListenerCallback<T>(getData));
+                .AddListenerForSingleValueEvent(new ValueEventListenerCallback(getData));
 
             return getData.Task;
         }
@@ -144,7 +144,7 @@ namespace CWITC.Shared.DataStore.Firebase
             throw new NotImplementedException();
         }
 
-        class ValueEventListenerCallback<T> : Java.Lang.Object, IValueEventListener
+        class ValueEventListenerCallback : Java.Lang.Object, IValueEventListener
         {
             TaskCompletionSource<bool> saveTask;
             TaskCompletionSource<IEnumerable<T>> getTask;
