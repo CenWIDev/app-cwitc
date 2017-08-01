@@ -10,7 +10,7 @@ using Foundation;
 using Newtonsoft.Json;
 //using 
 
-namespace CWITC.iOS.DataStore.Firebase
+namespace CWITC.Shared.DataStore.Firebase
 {
     public abstract class ReadonlyStore<T> : BaseStore<T> where T: IBaseDataObject
     {

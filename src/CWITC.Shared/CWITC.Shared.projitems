@@ -12,8 +12,18 @@
     <Compile Include="$(MSBuildThisFileDirectory)EvolveLogger.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AuthSSOClient.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\TweetsService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Datastore.Firebase\CategoryStore.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Datastore.Firebase\EventStore.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Datastore.Firebase\FavoriteStore.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Datastore.Firebase\FeedbackStore.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Datastore.Firebase\NotificationStore.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Datastore.Firebase\SessionStore.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Datastore.Firebase\SpeakerStore.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Datastore.Firebase\SponsorStore.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Datastore.Firebase\StoreManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Services\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Datastore.Firebase\" />
   </ItemGroup>
 </Project>

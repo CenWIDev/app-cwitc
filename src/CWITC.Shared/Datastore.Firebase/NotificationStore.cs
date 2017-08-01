@@ -5,10 +5,11 @@ using System.Threading.Tasks;
 using System.Collections.Generic;
 using System.Linq;
 using Xamarin.Forms;
-using CWITC.iOS.DataStore.Firebase;
+using CWITC.Shared.DataStore.Firebase;
+using CWITC.Shared.DataStore.Firebase;
 
 [assembly: Dependency(typeof(NotificationStore))]
-namespace CWITC.iOS.DataStore.Firebase
+namespace CWITC.Shared.DataStore.Firebase
 {
     public class NotificationStore  : BaseStore<Notification>, INotificationStore
     {

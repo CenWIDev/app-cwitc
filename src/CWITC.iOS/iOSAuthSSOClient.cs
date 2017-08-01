@@ -18,11 +18,6 @@ namespace CWITC.iOS
 {
     public partial class iOSAuthSSOClient : NSObject, ISFSafariViewControllerDelegate
     {
-        public Task<AccountResponse> LoginAsync(string email, string password)
-        {
-            throw new NotImplementedException();
-        }
-
         public async Task<AccountResponse> LoginAnonymously()
         {
             TaskCompletionSource<AccountResponse> task = new TaskCompletionSource<AccountResponse>();
@@ -127,9 +122,10 @@ namespace CWITC.iOS
         public Task LogoutAsync()
         {
             NSError error;
-            //Firebase.Auth.Auth.DefaultInstance.SignOut(out error);
-
-            // todo: handle errors
+            if(!Firebase.Auth.Auth.DefaultInstance.SignOut(out error))
+            {
+                // todo: handle error
+            }
 
             return Task.CompletedTask;
         }

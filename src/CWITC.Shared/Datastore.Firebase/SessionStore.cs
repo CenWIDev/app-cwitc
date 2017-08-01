@@ -5,10 +5,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System;
 using Xamarin.Forms;
-using CWITC.iOS.DataStore.Firebase;
+using CWITC.Shared.DataStore.Firebase;
+using CWITC.Shared.DataStore.Firebase;
 
 [assembly: Dependency(typeof(SessionStore))]
-namespace CWITC.iOS.DataStore.Firebase
+namespace CWITC.Shared.DataStore.Firebase
 {
     public class SessionStore : ReadonlyStore<Session>, ISessionStore
     {

@@ -1,11 +1,12 @@
 ﻿using System;
 using CWITC.DataObjects;
 using CWITC.DataStore.Abstractions;
-using CWITC.iOS.DataStore.Firebase;
+using CWITC.Shared.DataStore.Firebase;
+using CWITC.Shared.DataStore.Firebase;
 using Xamarin.Forms;
 
 [assembly: Dependency(typeof(EventStore))]
-namespace CWITC.iOS.DataStore.Firebase
+namespace CWITC.Shared.DataStore.Firebase
 {
     public class EventStore : BaseStore<FeaturedEvent>, IEventStore
     {

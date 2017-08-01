@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "762321594546",
+    "firebase_url": "https://cwitc-mobile.firebaseio.com",
+    "project_id": "cwitc-mobile",
+    "storage_bucket": "cwitc-mobile.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:762321594546:android:8a7ea6fc7206bd28",
+        "android_client_info": {
+          "package_name": "org.cenwidev.cwitc"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "762321594546-57ib9mso1jk0opout0hd12vaqqn25s8f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB0cg_4QKfwylXoxcad6eFy9eZwjntr6wk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

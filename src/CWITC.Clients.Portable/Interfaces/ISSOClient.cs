@@ -7,8 +7,6 @@ namespace CWITC.Clients.Portable
     {
         Task<AccountResponse> LoginAnonymously();
 
-        Task<AccountResponse> LoginAsync(string email, string password);
-
         Task<AccountResponse> LoginWithFacebook();
 
         Task LogoutAsync();

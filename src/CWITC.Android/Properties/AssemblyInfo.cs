@@ -26,6 +26,22 @@ using Android.App;
 //[assembly: AssemblyDelaySign(false)]
 //[assembly: AssemblyKeyFile("")]
 
+[assembly: Permission(Name = Android.Manifest.Permission.Internet)]
+[assembly: Permission(Name = Android.Manifest.Permission.WriteExternalStorage)]
+[assembly: Permission(Name = Android.Manifest.Permission.AccessCoarseLocation)]
+[assembly: Permission(Name = Android.Manifest.Permission.AccessFineLocation)]
+[assembly: Permission(Name = Android.Manifest.Permission.AccessLocationExtraCommands)]
+[assembly: Permission(Name = Android.Manifest.Permission.AccessMockLocation)]
+[assembly: Permission(Name = Android.Manifest.Permission.AccessNetworkState)]
+[assembly: Permission(Name = Android.Manifest.Permission.AccessWifiState)]
+[assembly: Permission(Name = Android.Manifest.Permission.ChangeWifiState)]
+[assembly: Permission(Name = Android.Manifest.Permission.WakeLock)]
+[assembly: Permission(Name = Android.Manifest.Permission.ReceiveBootCompleted)]
+[assembly: Permission(Name = Android.Manifest.Permission.ReadCalendar)]
+[assembly: Permission(Name = Android.Manifest.Permission.WriteCalendar)]
+[assembly: Permission(Name = Android.Manifest.Permission.Camera)]
+[assembly: Permission(Name = Android.Manifest.Permission.Flashlight)]
+
 // This will prevent other apps on the device from receiving GCM messages for this app
 // It is crucial that the package name does not start with an uppercase letter - this is forbidden by Android.
 [assembly: Permission(Name = "@PACKAGE_NAME@.permission.C2D_MESSAGE")]
@@ -33,3 +49,8 @@ using Android.App;
 
 // Gives the app permission to register and receive messages.
 [assembly: UsesPermission(Name = "com.google.android.c2dm.permission.RECEIVE")]
+
+// NOTE: Facebook SDK rquires that the 'Value' point to a string resource
+//       in your values/ folder (eg: strings.xml file).
+//       It will not allow you to use the app_id value directly here!
+[assembly: MetaData("com.facebook.sdk.ApplicationId", Value = "@string/facebook_app_id")]

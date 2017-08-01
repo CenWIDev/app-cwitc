@@ -23,7 +23,6 @@ using Xamarin.Forms.Platform.Android;
 using CWITC.Clients.Portable;
 using CWITC.Clients.UI;
 using CWITC.DataObjects;
-using Xamarin.Forms.Platform.Android.AppLinks;
 using Xamarin;
 //using Gcm;
 //using Gcm.Client;
@@ -95,7 +94,6 @@ namespace CWITC.Droid
 
             Forms.Init(this, savedInstanceState);
             FormsMaps.Init(this, savedInstanceState);
-            AndroidAppLinks.Init(this);
             Toolkit.Init();
 
             DependencyService.Register<ISSOClient, AndroidAuthSSOClient>();

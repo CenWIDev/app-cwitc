@@ -4,11 +4,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using CWITC.DataObjects;
 using CWITC.DataStore.Abstractions;
-using CWITC.iOS.DataStore.Firebase;
+using CWITC.Shared.DataStore.Firebase;
+using CWITC.Shared.DataStore.Firebase;
 using Xamarin.Forms;
 
 [assembly: Dependency(typeof(CategoryStore))]
-namespace CWITC.iOS.DataStore.Firebase
+namespace CWITC.Shared.DataStore.Firebase
 {
     public class CategoryStore : ReadonlyStore<Category>, ICategoryStore
     {

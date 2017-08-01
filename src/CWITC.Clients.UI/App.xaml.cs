@@ -158,30 +158,6 @@ namespace CWITC.Clients.UI
             }
         }
 
- 
-
-        protected override void OnAppLinkRequestReceived(Uri uri)
-        {
-            var data = uri.ToString().ToLowerInvariant();
-            //only if deep linking
-            if (!data.Contains("/session/"))
-                return;
-
-            var id = data.Substring(data.LastIndexOf("/", StringComparison.Ordinal) + 1);
-
-            if (!string.IsNullOrWhiteSpace(id))
-            {
-                MessagingService.Current.SendMessage<DeepLinkPage>("DeepLinkPage", new DeepLinkPage
-                {
-                    Page = AppPage.Session,
-                    Id = id
-                });
-            }
-
-            base.OnAppLinkRequestReceived(uri);
-        }
-
-
         protected override void OnSleep()
         {
             if (!registered)

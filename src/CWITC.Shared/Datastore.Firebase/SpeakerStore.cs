@@ -4,13 +4,13 @@ using System.Linq;
 using System.Threading.Tasks;
 using CWITC.DataObjects;
 using CWITC.DataStore.Abstractions;
-using CWITC.iOS.DataStore.Firebase;
+using CWITC.Shared.DataStore.Firebase;
+using CWITC.Shared.DataStore.Firebase;
 using Firebase.Database;
 using Xamarin.Forms;
 
 [assembly: Dependency(typeof(SpeakerStore))]
-
-namespace CWITC.iOS.DataStore.Firebase
+namespace CWITC.Shared.DataStore.Firebase
 {
     public class SpeakerStore : ReadonlyStore<Speaker>, ISpeakerStore
     {
