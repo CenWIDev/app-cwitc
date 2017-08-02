@@ -484,6 +484,7 @@
     <AndroidResource Include="Resources\drawable-xxhdpi\newicon.png" />
     <AndroidResource Include="Resources\drawable\venue_logo.jpeg" />
     <AndroidResource Include="Resources\drawable\campus_map.jpg" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_launcher.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\toolbar.axml" />
@@ -634,6 +635,7 @@
   <ItemGroup>
     <Folder Include="Datastore.Firebase\" />
     <Folder Include="Extensions\" />
+    <Folder Include="Resources\drawable-xxxhdpi\" />
   </ItemGroup>
   <ItemGroup>
     <GoogleServicesJson Include="google-services.json" />

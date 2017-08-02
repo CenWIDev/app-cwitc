@@ -436,9 +436,6 @@
     <BundleResource Include="Resources\icon_sessions_big_purple.png" />
     <BundleResource Include="Resources\icon_sessions_big_purple%402x.png" />
     <BundleResource Include="Resources\icon_sessions_big_purple%403x.png" />
-    <BundleResource Include="Resources\Icon.png" />
-    <BundleResource Include="Resources\Icon%402x.png" />
-    <BundleResource Include="Resources\Icon%403x.png" />
     <BundleResource Include="Resources\profile_pic_shadow%403x.png" />
     <BundleResource Include="Resources\profile_pic_shadow.png" />
     <BundleResource Include="Resources\profile_pic_shadow%402x.png" />
@@ -447,6 +444,7 @@
     <BundleResource Include="Resources\venue_logo.jpeg" />
     <BundleResource Include="Resources\campus_map.jpg" />
     <BundleResource Include="GoogleService-Info.plist" />
+    <BundleResource Include="Resources\logo=expanded.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
@@ -501,6 +499,23 @@
   <ItemGroup>
     <ImageAsset Include="Images.xcassets\Contents.json" />
     <ImageAsset Include="Images.xcassets\AppIcon.appiconset\Contents.json" />
+    <ImageAsset Include="Images.xcassets\AppIcon.appiconset\Icon-App-29x29%401x.png" />
+    <ImageAsset Include="Images.xcassets\AppIcon.appiconset\Icon-App-29x29%402x.png" />
+    <ImageAsset Include="Images.xcassets\AppIcon.appiconset\Icon-App-29x29%403x.png" />
+    <ImageAsset Include="Images.xcassets\AppIcon.appiconset\Icon-App-40x40%402x.png" />
+    <ImageAsset Include="Images.xcassets\AppIcon.appiconset\Icon-App-40x40%403x.png" />
+    <ImageAsset Include="Images.xcassets\AppIcon.appiconset\Icon-App-57x57%401x.png" />
+    <ImageAsset Include="Images.xcassets\AppIcon.appiconset\Icon-App-57x57%402x.png" />
+    <ImageAsset Include="Images.xcassets\AppIcon.appiconset\Icon-App-60x60%402x.png" />
+    <ImageAsset Include="Images.xcassets\AppIcon.appiconset\Icon-App-60x60%403x.png" />
+    <ImageAsset Include="Images.xcassets\AppIcon.appiconset\Icon-App-40x40%401x.png" />
+    <ImageAsset Include="Images.xcassets\AppIcon.appiconset\Icon-Small-50x50%401x.png" />
+    <ImageAsset Include="Images.xcassets\AppIcon.appiconset\Icon-Small-50x50%402x.png" />
+    <ImageAsset Include="Images.xcassets\AppIcon.appiconset\Icon-App-72x72%401x.png" />
+    <ImageAsset Include="Images.xcassets\AppIcon.appiconset\Icon-App-72x72%402x.png" />
+    <ImageAsset Include="Images.xcassets\AppIcon.appiconset\Icon-App-76x76%401x.png" />
+    <ImageAsset Include="Images.xcassets\AppIcon.appiconset\Icon-App-76x76%402x.png" />
+    <ImageAsset Include="Images.xcassets\AppIcon.appiconset\Icon-App-83.5x83.5%402x.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />

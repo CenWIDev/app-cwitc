@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -21,24 +23,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CWITC 2017" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Wk-2q-d0w">
-                                <rect key="frame" x="38" y="309.5" width="299" height="48"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo=expanded.png" translatesAutoresizingMaskIntoConstraints="NO" id="JXh-IM-dI1">
+                                <rect key="frame" x="30" y="302" width="314" height="62"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="JXh-IM-dI1" secondAttribute="height" multiplier="157:31" id="som-uc-BEX"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.92549019607843142" green="0.18431372549019609" blue="0.29411764705882354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.18431372549019609" green="0.1803921568627451" blue="0.1803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="0Wk-2q-d0w" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="22" id="9Ud-ij-hb6"/>
-                            <constraint firstItem="0Wk-2q-d0w" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="BMU-87-29l"/>
-                            <constraint firstItem="0Wk-2q-d0w" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Iug-3E-9nD"/>
+                            <constraint firstItem="JXh-IM-dI1" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="9X5-0w-NoR"/>
+                            <constraint firstItem="JXh-IM-dI1" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="14" id="U83-3w-oXE"/>
+                            <constraint firstItem="JXh-IM-dI1" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="ez8-Oo-NQT"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="JXh-IM-dI1" secondAttribute="trailing" constant="15" id="moD-Ae-0py"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="50.625" y="373.75"/>
+            <point key="canvasLocation" x="50.399999999999999" y="372.86356821589209"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="logo=expanded.png" width="410" height="81"/>
+    </resources>
 </document>
