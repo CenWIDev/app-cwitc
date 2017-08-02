@@ -20,8 +20,12 @@ namespace CWITC.Shared.DataStore.Firebase
 
         protected override DatabaseReference GetEntityNode(DatabaseReference rootNode)
         {
-            // nodes will be keyed by the user
+			// nodes will be keyed by the user
+#if __ANDROID__
+            return rootNode.Child(Identifier).Child(Settings.Current.UserId);
+#elif __IOS__
             return rootNode.GetChild(Identifier).GetChild(Settings.Current.UserId);
+#endif
         }
     }
 }

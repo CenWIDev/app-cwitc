@@ -4,7 +4,7 @@ using CWITC.DataObjects;
 
 namespace CWITC.Shared.DataStore.Firebase
 {
-    public abstract class ReadonlyStore<T> : BaseStore<T> where T: IBaseDataObject
+    public abstract class ReadonlyStore<T> : BaseStore<T> where T : IBaseDataObject
     {
         public override Task<bool> RemoveAsync(T item)
         {
@@ -21,5 +21,4 @@ namespace CWITC.Shared.DataStore.Firebase
             throw new NotSupportedException();
         }
     }
-
 }

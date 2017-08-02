@@ -7,32 +7,18 @@ using CWITC.DataObjects;
 using CWITC.DataStore.Abstractions;
 using Firebase.Database;
 using GoogleGson.Reflect;
+using Java.Lang;
 using Java.Util;
 using Newtonsoft.Json;
 using Org.Json;
-//using 
+using JsonHelper = CWITC.Droid.JavaJsonHelperExtensions;
 
 namespace CWITC.Shared.DataStore.Firebase
 {
-    public abstract class BaseStore<T> : IBaseStore<T> where T : IBaseDataObject
+    public abstract partial class BaseStore<T> : IBaseStore<T> where T : IBaseDataObject
     {
         TaskCompletionSource<bool> saveTask;
         DatabaseReference entityNode;
-
-        bool initialized = false;
-
-        public BaseStore()
-        {
-        }
-
-        public abstract string Identifier { get; }
-
-        public virtual Task<T> GetItemAsync(string id)
-        {
-            if (!initialized) InitializeStore();
-
-            throw new NotImplementedException();
-        }
 
         public virtual Task<System.Collections.Generic.IEnumerable<T>> GetItemsAsync(bool forceRefresh = false)
         {
@@ -57,91 +43,37 @@ namespace CWITC.Shared.DataStore.Firebase
             return Task.CompletedTask;
         }
 
-        public virtual async Task<bool> InsertAsync(T item)
-        {
-            if (!initialized) await InitializeStore();
-
-            TaskCompletionSource<bool> task = new TaskCompletionSource<bool>();
-
-            var existingItems = (await GetItemsAsync(true))?.ToList() ?? new List<T>();
-            existingItems.Add(item);
-
-            throw new NotImplementedException();
-        }
-
-        public virtual async Task<bool> RemoveAsync(T item)
-        {
-            if (!initialized) await InitializeStore();
-
-            TaskCompletionSource<bool> task = new TaskCompletionSource<bool>();
-
-            var existingItems = (await GetItemsAsync(true))?.ToList() ?? new List<T>();
-            var foundItem = existingItems.FirstOrDefault((x) => x.Id == item.Id);
-            if (foundItem != null)
-            {
-                var index = existingItems.IndexOf(foundItem);
-
-                existingItems.RemoveAt(index);
-
-                throw new NotImplementedException();
-            }
-            return false;
-        }
-
-        public virtual Task<bool> SyncAsync()
-        {
-            // todo: ??
-
-            // nothing to do here for firebase, its automagical
-            return Task.FromResult(true);
-        }
-
-        public virtual async Task<bool> UpdateAsync(T item)
-        {
-            if (!initialized) await InitializeStore();
-
-            TaskCompletionSource<bool> task = new TaskCompletionSource<bool>();
-
-            var existingItems = (await GetItemsAsync(true))?.ToList() ?? new List<T>();
-            var foundItem = existingItems.FirstOrDefault((x) => x.Id == item.Id);
-            if (foundItem != null)
-            {
-                var index = existingItems.IndexOf(foundItem);
-
-                existingItems[index] = item;
-
-                throw new NotImplementedException();
-            }
-
-            return false;
-        }
-
-
-
         protected virtual DatabaseReference GetEntityNode(DatabaseReference rootNode)
         {
             return rootNode.Child(Identifier);
         }
 
-        protected void ReloadEntityNode()
-        {
-            InitializeStore().Wait();
-        }
-
-        async Task<bool> SaveValues(object data)
+        Task<bool> SaveValues(ArrayList data)
         {
             saveTask = new TaskCompletionSource<bool>();
-            //entityNode.SetValue(data, this);
-            //entityNode.SetValue(data,
-            //                    (NSError error, DatabaseReference reference) =>
-            //{
-            //    if (error != null) task.SetResult(false);
 
-            //    task.SetResult(true);
-            //});
+            entityNode.SetValue(data,
+                                new SaveCompletionListener(saveTask) as DatabaseReference.ICompletionListener);
 
-            //return await task.Task;
-            throw new NotImplementedException();
+            return saveTask.Task;
+        }
+
+        IMap GetDictionary(T item)
+        {
+            string jsonString = JsonConvert.SerializeObject(item);
+            var jsonObject = new JSONObject(jsonString);
+
+            return JsonHelper.ToJavaMap(jsonObject);
+        }
+
+        ArrayList GetArray(IEnumerable<T> existingItems)
+        {
+            var arrayList = new ArrayList();
+
+            string jsonString = JsonConvert.SerializeObject(existingItems);
+            var jsonArray = new JSONArray(jsonString);
+
+            return JsonHelper.ToJavaList(jsonArray);
         }
 
         class ValueEventListenerCallback : Java.Lang.Object, IValueEventListener
@@ -151,7 +83,7 @@ namespace CWITC.Shared.DataStore.Firebase
 
             public ValueEventListenerCallback(TaskCompletionSource<bool> saveTask)
             {
-                this.saveTask = saveTask;    
+                this.saveTask = saveTask;
             }
 
             public ValueEventListenerCallback(TaskCompletionSource<IEnumerable<T>> getTask)
@@ -168,26 +100,42 @@ namespace CWITC.Shared.DataStore.Firebase
             {
                 var values = (snapshot.Value as ArrayList)?.ToArray();
 
-                if(values != null)
+                if (values != null)
                 {
                     List<T> items = new List<T>();
-                    //var data = GoogleGson.Gson.FromArray(values);
-                    foreach(var value in values)
+
+                    foreach (var value in values)
                     {
                         var data = new GoogleGson.Gson().ToJson(value);
 
-						var item = JsonConvert.DeserializeObject<T>(data);
-						items.Add(item);
+                        var item = JsonConvert.DeserializeObject<T>(data);
+                        items.Add(item);
                     }
 
                     getTask.TrySetResult(items);
                 }
-                else 
+                else
                 {
                     getTask.TrySetResult(null);
                 }
-                //snapshot.Value
-                //throw new NotImplementedException();
+            }
+        }
+
+        class SaveCompletionListener : Java.Lang.Object, DatabaseReference.ICompletionListener
+        {
+            TaskCompletionSource<bool> saveTask;
+
+            public SaveCompletionListener(TaskCompletionSource<bool> saveTask)
+            {
+                this.saveTask = saveTask;
+            }
+
+            void DatabaseReference.ICompletionListener.OnComplete(DatabaseError error, DatabaseReference @ref)
+            {
+                if (error == null)
+                    saveTask.TrySetResult(true);
+                else
+                    saveTask.TrySetResult(false);
             }
         }
     }

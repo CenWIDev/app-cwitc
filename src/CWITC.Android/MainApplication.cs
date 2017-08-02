@@ -5,6 +5,7 @@ using Android.OS;
 using Android.Runtime;
 using Plugin.CurrentActivity;
 using CWITC.Clients.Portable;
+using Firebase;
 
 namespace CWITC.Droid
 {
@@ -22,7 +23,6 @@ namespace CWITC.Droid
             base.OnCreate();
             RegisterActivityLifecycleCallbacks(this);
             Microsoft.WindowsAzure.MobileServices.CurrentPlatform.Init();
-
         }
 
         public override void OnTerminate()

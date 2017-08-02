@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using System;
 using Xamarin.Forms;
 using CWITC.Shared.DataStore.Firebase;
-using CWITC.Shared.DataStore.Firebase;
 
 [assembly: Dependency(typeof(SessionStore))]
 namespace CWITC.Shared.DataStore.Firebase

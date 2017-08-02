@@ -202,10 +202,6 @@
     <Reference Include="Plugin.ExternalMaps.Abstractions">
       <HintPath>..\packages\Xam.Plugin.ExternalMaps.3.0.0\lib\MonoAndroid10\Plugin.ExternalMaps.Abstractions.dll</HintPath>
     </Reference>
-    <Reference Include="Xamarin.Azure.NotificationHubs.Android, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Xamarin.Azure.NotificationHubs.Android.0.4.0\lib\MonoAndroid403\Xamarin.Azure.NotificationHubs.Android.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="Xamarin.Forms.CarouselView, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Xamarin.Forms.CarouselView.2.3.0-pre2\lib\MonoAndroid10\Xamarin.Forms.CarouselView.dll</HintPath>
       <Private>True</Private>
@@ -434,6 +430,10 @@
     <Reference Include="Square.Picasso">
       <HintPath>..\packages\Square.Picasso.2.5.2.1\lib\MonoAndroid\Square.Picasso.dll</HintPath>
     </Reference>
+    <Reference Include="Xamarin.Azure.NotificationHubs.Android, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Xamarin.Azure.NotificationHubs.Android.0.4.0\lib\MonoAndroid403\Xamarin.Azure.NotificationHubs.Android.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainActivity.cs" />
@@ -458,8 +458,7 @@
     <Compile Include="Helpers\ListViewSelectionOnTopEffect.cs" />
     <Compile Include="AndroidAuthSSOClient.cs" />
     <Compile Include="Datastore.Firebase\BaseStore.cs" />
-    <Compile Include="Datastore.Firebase\BaseUserDataStore.cs" />
-    <Compile Include="Datastore.Firebase\ReadOnlyStore.cs" />
+    <Compile Include="Extensions\JavaJsonHelperExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
@@ -609,9 +608,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <AndroidEnvironment Include="environment.txt" />
-  </ItemGroup>
-  <ItemGroup>
     <AndroidResource Include="Resources\drawable-mdpi\ic_notification.png" />
   </ItemGroup>
   <ItemGroup>
@@ -636,11 +632,14 @@
     <AndroidResource Include="Resources\xml\shortcuts.xml" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Datastore.Firebase\" />
+    <Folder Include="Extensions\" />
+  </ItemGroup>
+  <ItemGroup>
     <GoogleServicesJson Include="google-services.json" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Datastore.Firebase\" />
-    <Folder Include="Datastore.Firebase\Models\" />
+    <AndroidEnvironment Include="environment.txt" />
   </ItemGroup>
   <Import Project="..\CWITC.Shared\CWITC.Shared.projitems" Label="Shared" />
   <Import Project="..\packages\Xamarin.Forms.2.3.4.247\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.3.4.247\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />

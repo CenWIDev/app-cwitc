@@ -21,6 +21,9 @@
     <Compile Include="$(MSBuildThisFileDirectory)Datastore.Firebase\SpeakerStore.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Datastore.Firebase\SponsorStore.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Datastore.Firebase\StoreManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Datastore.Firebase\ReadonlyStore.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Datastore.Firebase\BaseUserDataStore.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Datastore.Firebase\BaseStore.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Services\" />

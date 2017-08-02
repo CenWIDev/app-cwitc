@@ -8,47 +8,23 @@ using CWITC.DataStore.Abstractions;
 using Firebase.Database;
 using Foundation;
 using Newtonsoft.Json;
-//using 
 
 namespace CWITC.Shared.DataStore.Firebase
 {
-    public abstract class ReadonlyStore<T> : BaseStore<T> where T: IBaseDataObject
-    {
-        public override Task<bool> RemoveAsync(T item)
-        {
-            throw new NotSupportedException();
-        }
-
-        public override Task<bool> UpdateAsync(T item)
-        {
-            throw new NotSupportedException();
-        }
-
-        public override Task<bool> InsertAsync(T item)
-        {
-            throw new NotSupportedException();
-        }
-    }
-
-    public abstract class BaseStore<T> : IBaseStore<T>
+    public abstract partial class BaseStore<T> : IBaseStore<T>
         where T : IBaseDataObject
     {
         DatabaseReference entityNode;
 
-        bool initialized = false;
+		public virtual Task InitializeStore()
+		{
+			var rootNode = global::Firebase.Database.Database.DefaultInstance.GetRootReference();
+			entityNode = GetEntityNode(rootNode);
 
-        public BaseStore()
-        {
-        }
-
-        public abstract string Identifier { get; }
-
-        public virtual Task<T> GetItemAsync(string id)
-        {
-            if (!initialized) InitializeStore();
-
-            throw new NotImplementedException();
-        }
+			entityNode.KeepSynced(true);
+			initialized = true;
+			return Task.CompletedTask;
+		}
 
         public virtual Task<System.Collections.Generic.IEnumerable<T>> GetItemsAsync(bool forceRefresh = false)
         {
@@ -85,83 +61,9 @@ namespace CWITC.Shared.DataStore.Firebase
             return getData.Task;
         }
 
-        public virtual Task InitializeStore()
-        {
-            var rootNode = global::Firebase.Database.Database.DefaultInstance.GetRootReference();
-            entityNode = GetEntityNode(rootNode);
-
-            entityNode.KeepSynced(true);
-            initialized = true;
-            return Task.CompletedTask;
-        }
-
-        public virtual async Task<bool> InsertAsync(T item)
-        {
-            if (!initialized) await InitializeStore();
-
-            TaskCompletionSource<bool> task = new TaskCompletionSource<bool>();
-
-            var existingItems = (await GetItemsAsync(true))?.ToList() ?? new List<T>();
-            existingItems.Add(item);
-
-            return await SaveValues(GetArray(existingItems));
-        }
-
-        public virtual async Task<bool> RemoveAsync(T item)
-        {
-            if (!initialized) await InitializeStore();
-
-            TaskCompletionSource<bool> task = new TaskCompletionSource<bool>();
-
-            var existingItems = (await GetItemsAsync(true))?.ToList() ?? new List<T>();
-            var foundItem = existingItems.FirstOrDefault((x) => x.Id == item.Id);
-            if (foundItem != null)
-            {
-                var index = existingItems.IndexOf(foundItem);
-
-                existingItems.RemoveAt(index);
-
-                return await SaveValues(GetArray(existingItems));
-            }
-            return false;
-        }
-
-        public virtual Task<bool> SyncAsync()
-        {
-            // todo: ??
-
-            // nothing to do here for firebase, its automagical
-            return Task.FromResult(true);
-        }
-
-        public virtual async Task<bool> UpdateAsync(T item)
-        {
-            if (!initialized) await InitializeStore();
-
-            TaskCompletionSource<bool> task = new TaskCompletionSource<bool>();
-
-            var existingItems = (await GetItemsAsync(true))?.ToList() ?? new List<T>();
-            var foundItem = existingItems.FirstOrDefault((x) => x.Id == item.Id);
-            if (foundItem != null)
-            {
-                var index = existingItems.IndexOf(foundItem);
-
-                existingItems[index] = item;
-
-                return await SaveValues(GetArray(existingItems));
-            }
-
-            return false;
-        }
-
         protected virtual DatabaseReference GetEntityNode(DatabaseReference rootNode)
         {
             return rootNode.GetChild(Identifier);
-        }
-
-        protected void ReloadEntityNode()
-        {
-            InitializeStore().Wait();
         }
 
         async Task<bool> SaveValues(NSArray data)
