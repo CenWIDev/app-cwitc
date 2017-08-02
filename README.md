@@ -10,4 +10,4 @@ This mobile app was forked and modified from the [Xamarin Evolve Mobile App](htt
 Many thanks to the original developers of the Xamarin Evolve App. The CWITC implementation was done by:
 
 **Development:**
-* [Drew Frisk](http://github.com/keanan5390)
+* [Drew Frisk](https://github.com/keannan5390)
