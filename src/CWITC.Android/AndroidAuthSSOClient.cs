@@ -29,6 +29,8 @@ namespace CWITC.Droid
 
                 var user = authResult.User;
 
+                Settings.Current.AuthType = "anonymous";
+
                 return new AccountResponse
                 {
                     User = new Clients.Portable.User
@@ -90,6 +92,7 @@ namespace CWITC.Droid
                 var firebaseResult = await LoginToFirebase(credential);
                 if (firebaseResult.Success)
                 {
+                    Settings.Current.AuthType = "facebook";
                     firebaseResult.User.Email = emailAddress;
                 }
 
@@ -111,8 +114,12 @@ namespace CWITC.Droid
             {
                 FirebaseAuth.Instance.SignOut();
 
-                var loginManager = DeviceLoginManager.Instance;
-                loginManager.LogOut();
+				if (Settings.Current.AuthType == "facebook")
+				{
+					var loginManager = DeviceLoginManager.Instance;
+					loginManager.LogOut();
+                    Settings.Current.AuthType = string.Empty;
+                }
             }
             catch (System.Exception ex)
             {

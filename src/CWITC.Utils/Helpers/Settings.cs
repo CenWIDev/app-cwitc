@@ -35,6 +35,20 @@ namespace CWITC.Clients.Portable
             get { return settings ?? (settings = new Settings()); }
         }
 
+		const string AuthTypeKey = "auth_type_key";
+		readonly string AuthTypeDefault = string.Empty;
+		public string AuthType
+		{
+			get { return AppSettings.GetValueOrDefault<string>(AuthTypeKey, AuthTypeDefault); }
+			set
+			{
+				if (AppSettings.AddOrUpdateValue(AuthTypeKey, value))
+				{
+					OnPropertyChanged();
+				}
+			}
+		}
+
         const string TwitterApiKeyKey = "twitter_api_key";
         readonly string TwitterApiKeyDefault = string.Empty;
 		public string TwitterApiKey

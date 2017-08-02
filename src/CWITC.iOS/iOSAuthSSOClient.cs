@@ -49,6 +49,7 @@ namespace CWITC.iOS
 				}
 				else
 				{
+                    Settings.Current.AuthType = "anonymous";
                     // Do your magic to handle authentication result
                     task.SetResult(new AccountResponse
                     {
@@ -112,6 +113,7 @@ namespace CWITC.iOS
             var firebaseResult = await LoginToFirebase(credential);
             if (firebaseResult.Success)
             {
+                Settings.Current.AuthType = "facebook";
                 firebaseResult.User.Email = emailAddress;
             }
 
@@ -123,7 +125,11 @@ namespace CWITC.iOS
             NSError error;
             if(!Firebase.Auth.Auth.DefaultInstance.SignOut(out error))
             {
-                // todo: handle error
+                if(Settings.Current.AuthType == "facebook")
+                {
+                    new Facebook.LoginKit.LoginManager().LogOut();
+                    Settings.Current.AuthType = string.Empty;
+                }
             }
             //Facebook.LoginKit.LoginManager.in
 
