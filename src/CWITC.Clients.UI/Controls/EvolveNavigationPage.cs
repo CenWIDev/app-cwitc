@@ -19,15 +19,16 @@ namespace CWITC.Clients.UI
 
         void Init()
         {
-            if (Device.OS == TargetPlatform.iOS)
-            {
-                BarBackgroundColor = Color.FromHex("FAFAFA");
-            }
-            else
-            {   
+            
+    //        if (Device.OS == TargetPlatform.iOS)
+    //        {
+				//BarBackgroundColor = Color.FromHex("FAFAFA");
+            //}
+            //else
+            //{   
                 BarBackgroundColor = (Color)Application.Current.Resources["Primary"];
                 BarTextColor = (Color)Application.Current.Resources["NavigationText"];
-            }
+            //}
         }
     }
 }

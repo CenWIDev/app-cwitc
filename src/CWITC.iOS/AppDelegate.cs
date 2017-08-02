@@ -48,8 +48,8 @@ namespace CWITC.iOS
         {
             ConfigureFirebase();
 
-            var tint = UIColor.FromRGB(255, 47, 75);
-            UINavigationBar.Appearance.BarTintColor = UIColor.FromRGB(250, 250, 250); //bar background
+            var tint = UIColor.FromRGB(236, 47, 75);
+            UINavigationBar.Appearance.BarTintColor = UIColor.FromRGB(47, 46, 46); //bar background
             UINavigationBar.Appearance.TintColor = tint; //Tint color of button items
 
             UIBarButtonItem.Appearance.TintColor = tint; //Tint color of button items
