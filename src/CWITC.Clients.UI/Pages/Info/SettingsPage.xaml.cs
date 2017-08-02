@@ -38,7 +38,9 @@ namespace CWITC.Clients.UI
                                "The CWITC mobile apps were created by the Central Wisconsin Developers Group! \n\n" +
                                 "Development:\n" +
                                 "Drew Frisk\n" +
-                                "Josh Evenson\n" + 
+                                "\n" +
+								"Iconography & Color Palette:\n" +
+								"Amelia Ruzek\n" +
                                 "\n" 
                                 +
                                 "Special thanks to the Xamarin Evolve mobile app team for creating the original code base."

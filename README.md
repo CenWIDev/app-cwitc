@@ -11,3 +11,6 @@ Many thanks to the original developers of the Xamarin Evolve App. The CWITC impl
 
 **Development:**
 * [Drew Frisk](https://github.com/keannan5390)
+
+**Iconography & Color Palette**
+* [Amelia Ruzek](https://github.com/ARuzek)
