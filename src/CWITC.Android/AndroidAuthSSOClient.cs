@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Android.Content;
+using Android.OS;
 using Android.Runtime;
 using Auth0.OidcClient;
 using CWITC.Clients.Portable;
@@ -74,15 +75,15 @@ namespace CWITC.Droid
 
                 TaskCompletionSource<string> getEmailTask = new TaskCompletionSource<string>();
 
-                // todo: need to request email;
-                var graphRequestResult = (await new GraphRequest(accessToken, "me")
+				Bundle parameters = new Bundle();
+                parameters.PutString("fields", "id,email");
+                var graphRequestResult = (await new GraphRequest(accessToken, "me", parameters, HttpMethod.Get)
                     .ExecuteAsync()
                     .GetAsync() as ArrayList).ToArray();
 
                 var graphResponse = graphRequestResult.FirstOrDefault() as GraphResponse;
 
-                string emailAddress = graphResponse.JSONObject.Get("email").ToString();
-                //string name = graphResponse.JSONObject.Get("name").ToString();
+                string emailAddress = graphResponse.JSONObject.GetString("email");
 
                 var credential = FacebookAuthProvider.GetCredential(accessToken.Token);
 

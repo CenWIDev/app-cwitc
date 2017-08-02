@@ -101,7 +101,6 @@ namespace CWITC.iOS
                         //result.
                     }
                     var email = (NSString)result.ValueForKey(new NSString("email"));
-                    var name = (NSString)result.ValueForKey(new NSString("name"));
 
                     getEmailTask.SetResult(email);
                 });
