@@ -31,7 +31,8 @@
                         WidthRequest="95" HeightRequest="95"
                         BorderColor="{StaticResource Primary}"
                         Aspect="AspectFill"
-                        x:Name="CircleImageAvatar"/>
+                        x:Name="CircleImageAvatar"
+                        Source="profile_generic_big.png"/>
 
                 <Label HorizontalTextAlignment="Center"
                        HorizontalOptions="FillAndExpand"
@@ -102,26 +103,6 @@
             </ActivityIndicator>
              <Label Text="{Binding Message}" VerticalOptions="Center"  HorizontalOptions="Center" Style="{DynamicResource EvolveListItemTextStyle}"/>
       </StackLayout>
-
-        <StackLayout Grid.Row="2" HorizontalOptions="Center" Orientation="Horizontal" Padding="16,0,16,12" Spacing="{StaticResource SmallSpacing}">
-            <Label
-                Text="Don't have an account yet?" 
-                Style="{DynamicResource EvolveListTextStyle}"
-                TextColor="{DynamicResource DetailTextColor}"/>
-            <Label Text="Sign Up." 
-                   TextColor="{StaticResource Accent}"
-                   Style="{DynamicResource EvolveListTextStyleBold}"
-                   FontAttributes="Bold"
-                   VerticalOptions="Center"
-                   IsEnabled="{Binding IsNotBusy}">
-                <Label.Font>
-                    <OnPlatform x:TypeArguments="Font" iOS="Semibold" Android="Semibold"/>
-                </Label.Font>
-              <Label.GestureRecognizers>
-                <TapGestureRecognizer Command="{Binding SignupCommand}"/>
-              </Label.GestureRecognizers>
-            </Label>
-        </StackLayout>
     </Grid>
     </ScrollView>
 </ContentPage>

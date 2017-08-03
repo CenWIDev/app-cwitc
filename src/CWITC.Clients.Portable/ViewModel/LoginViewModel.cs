@@ -23,19 +23,6 @@ namespace CWITC.Clients.Portable
             set { SetProperty(ref message, value); }
         }
 
-        string email;
-        public string Email
-        {
-            get { return email; }
-            set { SetProperty(ref email, value); }
-        }
-        string password;
-        public string Password
-        {
-            get { return password; }
-            set { SetProperty(ref password, value); }
-        }
-
         ICommand facebookLoginCommand;
         public ICommand FacebookLoginCommand =>
         facebookLoginCommand ?? (facebookLoginCommand = new Command(async () => await ExecuteFacebookLoginAsync()));
@@ -155,13 +142,16 @@ namespace CWITC.Clients.Portable
                     });
                 }
             }
+            else 
+            {
+                await Finish();
+            }
         }
 
         async Task Finish()
         {
             if (Device.OS == TargetPlatform.iOS && Settings.FirstRun)
             {
-
                 var push = DependencyService.Get<IPushNotifications>();
                 if (push != null)
                     await push.RegisterForNotifications();

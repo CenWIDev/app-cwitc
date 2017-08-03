@@ -478,13 +478,10 @@
     <AndroidResource Include="Resources\drawable-mdpi\menu_evals.png" />
     <AndroidResource Include="Resources\drawable-xhdpi\menu_evals.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\menu_evals.png" />
-    <AndroidResource Include="Resources\drawable-hdpi\newicon.png" />
-    <AndroidResource Include="Resources\drawable-mdpi\newicon.png" />
-    <AndroidResource Include="Resources\drawable-xhdpi\newicon.png" />
-    <AndroidResource Include="Resources\drawable-xxhdpi\newicon.png" />
     <AndroidResource Include="Resources\drawable\venue_logo.jpeg" />
     <AndroidResource Include="Resources\drawable\campus_map.jpg" />
     <AndroidResource Include="Resources\drawable-xxxhdpi\ic_launcher.png" />
+    <AndroidResource Include="Resources\drawable\heroplaceholder.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\toolbar.axml" />

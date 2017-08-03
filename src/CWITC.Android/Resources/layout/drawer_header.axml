@@ -4,10 +4,11 @@
     android:layout_width="match_parent"
     android:layout_height="172dp"
     android:theme="@style/ThemeOverlay.AppCompat.Dark">
-    <View
+    <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/primary" />
+        android:scaleType="centerCrop"
+        android:src="@drawable/heroplaceholder" />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
