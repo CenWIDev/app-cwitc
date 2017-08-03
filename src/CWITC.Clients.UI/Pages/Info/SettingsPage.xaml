@@ -47,13 +47,15 @@
                                 <ColumnDefinition Width="*"/>
                                 <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
-                            <Button Text="{Binding LoginText}" Command="{Binding LoginCommand}"
-                                    BackgroundColor="{StaticResource PrimaryDark}"
+                            <Button Text="{Binding LoginText}" 
+                                    Command="{Binding LoginCommand}"
+                                    BackgroundColor="{StaticResource Accent}"
                                     IsEnabled="{Binding IsNotBusy}"
                                     TextColor="White"/>
                             <Button Grid.Column="1"
-                                    Text="Sync Now" Command="{Binding SyncCommand}"
-                                    BackgroundColor="{StaticResource PrimaryDark}"
+                                    Text="Sync Now" 
+                                    Command="{Binding SyncCommand}"
+                                    BackgroundColor="{StaticResource Accent}"
                                     IsEnabled="{Binding IsNotBusy}"
                                     TextColor="White"/>
                          </Grid>

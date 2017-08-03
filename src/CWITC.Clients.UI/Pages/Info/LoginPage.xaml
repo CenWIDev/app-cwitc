@@ -82,7 +82,7 @@
                         <OnPlatform x:TypeArguments="Color" iOS="Transparent"/>
                     </Button.BackgroundColor>
                     <Button.TextColor>
-                        <OnPlatform x:TypeArguments="Color" iOS="{StaticResource PrimaryDark}"/>
+                        <OnPlatform x:TypeArguments="Color" iOS="{StaticResource Accent}"/>
                     </Button.TextColor>
                     <Button.BorderWidth>
                         <OnPlatform x:TypeArguments="x:Double" iOS="1"/>
@@ -109,7 +109,7 @@
                 Style="{DynamicResource EvolveListTextStyle}"
                 TextColor="{DynamicResource DetailTextColor}"/>
             <Label Text="Sign Up." 
-                   TextColor="{StaticResource Primary}"
+                   TextColor="{StaticResource Accent}"
                    Style="{DynamicResource EvolveListTextStyleBold}"
                    FontAttributes="Bold"
                    VerticalOptions="Center"

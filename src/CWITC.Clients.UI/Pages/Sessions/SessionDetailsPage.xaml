@@ -90,6 +90,18 @@
                         </StackLayout>
                     </local:CardView>
 
+                <!--Abstract-->
+                    <local:CardView IsVisible="{Binding Session.Abstract, Converter={StaticResource GenericIsVisibleConverter}}">
+                      <StackLayout Spacing="0">
+                            <local:LabelSection Text="Abstract"/> 
+                            <local:HeaderDivider/>
+                             <StackLayout Padding="{StaticResource StandardPadding}" BackgroundColor="White">
+                                <Label Text="{Binding Session.Abstract}" Style="{DynamicResource EvolveListItemTextStyle}" StyleId="SessionAbstract"/>
+                             </StackLayout>
+                            <local:FooterDivider/>
+                         </StackLayout>
+                     </local:CardView>
+
 				<local:CardView IsVisible="{Binding Session, Converter={StaticResource RatingVisibleConverter}}">
                         <StackLayout Spacing="0">
                             <!--Rate-->
@@ -108,10 +120,10 @@
                                                 <OnPlatform x:TypeArguments="FontAttributes" iOS="Bold"/>
                                             </Button.FontAttributes>
                                             <Button.BackgroundColor>
-                                                <OnPlatform x:TypeArguments="Color" Android="{StaticResource PrimaryDark}" iOS="Transparent"/>
+                                                <OnPlatform x:TypeArguments="Color" Android="{StaticResource Accent}" iOS="Transparent"/>
                                             </Button.BackgroundColor>
                                             <Button.TextColor>
-                                                <OnPlatform x:TypeArguments="Color" Android="White" iOS="{StaticResource PrimaryDark}"/>
+                                                <OnPlatform x:TypeArguments="Color" Android="White" iOS="{StaticResource Accent}"/>
                                             </Button.TextColor>
                                             <Button.BorderWidth>
                                                 <OnPlatform x:TypeArguments="x:Double" iOS="1"/>
@@ -135,18 +147,6 @@
                                         <TapGestureRecognizer Command="{Binding GoToRoom}"/>
                                     </Label.GestureRecognizers>
                                 </Label>
-                             </StackLayout>
-                            <local:FooterDivider/>
-                         </StackLayout>
-                     </local:CardView>
-
-                    <!--Abstract-->
-                    <local:CardView IsVisible="{Binding Session.Abstract, Converter={StaticResource GenericIsVisibleConverter}}">
-                      <StackLayout Spacing="0">
-                            <local:LabelSection Text="Abstract"/> 
-                            <local:HeaderDivider/>
-                             <StackLayout Padding="{StaticResource StandardPadding}" BackgroundColor="White">
-                                <Label Text="{Binding Session.Abstract}" Style="{DynamicResource EvolveListItemTextStyle}" StyleId="SessionAbstract"/>
                              </StackLayout>
                             <local:FooterDivider/>
                          </StackLayout>

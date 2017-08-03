@@ -181,20 +181,20 @@ namespace CWITC.Clients.UI
 
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
+            var accent = (Color)Application.Current.Resources["Accent"];;
             try
             {
+                if (!(value is DateTime))
+                    return accent;
 
-                if(!(value is DateTime))
-                    return Color.FromHex("753BE4");
-
-                return DateTime.UtcNow > ((DateTime)value).ToUniversalTime() ? Color.FromHex("D3D2D2") : Color.FromHex("753BE4");
+                return DateTime.UtcNow > ((DateTime)value).ToUniversalTime() ? Color.FromHex("D3D2D2") : accent;
             }
             catch (Exception ex)
             {
                 Debug.WriteLine("Unable to convert: " + ex);
             }
 
-            return Color.FromHex("753BE4");
+            return accent;
         }
 
 
