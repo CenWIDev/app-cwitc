@@ -4857,116 +4857,116 @@ namespace CWITC.Droid
 		public partial class String
 		{
 			
-			// aapt resource value: 0x7f080080
-			public const int ApplicationName = 2131230848;
-			
 			// aapt resource value: 0x7f08007f
-			public const int Hello = 2131230847;
+			public const int ApplicationName = 2131230847;
+			
+			// aapt resource value: 0x7f08007e
+			public const int Hello = 2131230846;
+			
+			// aapt resource value: 0x7f080055
+			public const int abc_action_bar_home_description = 2131230805;
 			
 			// aapt resource value: 0x7f080056
-			public const int abc_action_bar_home_description = 2131230806;
+			public const int abc_action_bar_home_description_format = 2131230806;
 			
 			// aapt resource value: 0x7f080057
-			public const int abc_action_bar_home_description_format = 2131230807;
+			public const int abc_action_bar_home_subtitle_description_format = 2131230807;
 			
 			// aapt resource value: 0x7f080058
-			public const int abc_action_bar_home_subtitle_description_format = 2131230808;
+			public const int abc_action_bar_up_description = 2131230808;
 			
 			// aapt resource value: 0x7f080059
-			public const int abc_action_bar_up_description = 2131230809;
+			public const int abc_action_menu_overflow_description = 2131230809;
 			
 			// aapt resource value: 0x7f08005a
-			public const int abc_action_menu_overflow_description = 2131230810;
+			public const int abc_action_mode_done = 2131230810;
 			
 			// aapt resource value: 0x7f08005b
-			public const int abc_action_mode_done = 2131230811;
+			public const int abc_activity_chooser_view_see_all = 2131230811;
 			
 			// aapt resource value: 0x7f08005c
-			public const int abc_activity_chooser_view_see_all = 2131230812;
+			public const int abc_activitychooserview_choose_application = 2131230812;
 			
 			// aapt resource value: 0x7f08005d
-			public const int abc_activitychooserview_choose_application = 2131230813;
+			public const int abc_capital_off = 2131230813;
 			
 			// aapt resource value: 0x7f08005e
-			public const int abc_capital_off = 2131230814;
+			public const int abc_capital_on = 2131230814;
 			
-			// aapt resource value: 0x7f08005f
-			public const int abc_capital_on = 2131230815;
+			// aapt resource value: 0x7f08006a
+			public const int abc_font_family_body_1_material = 2131230826;
 			
 			// aapt resource value: 0x7f08006b
-			public const int abc_font_family_body_1_material = 2131230827;
+			public const int abc_font_family_body_2_material = 2131230827;
 			
 			// aapt resource value: 0x7f08006c
-			public const int abc_font_family_body_2_material = 2131230828;
+			public const int abc_font_family_button_material = 2131230828;
 			
 			// aapt resource value: 0x7f08006d
-			public const int abc_font_family_button_material = 2131230829;
+			public const int abc_font_family_caption_material = 2131230829;
 			
 			// aapt resource value: 0x7f08006e
-			public const int abc_font_family_caption_material = 2131230830;
+			public const int abc_font_family_display_1_material = 2131230830;
 			
 			// aapt resource value: 0x7f08006f
-			public const int abc_font_family_display_1_material = 2131230831;
+			public const int abc_font_family_display_2_material = 2131230831;
 			
 			// aapt resource value: 0x7f080070
-			public const int abc_font_family_display_2_material = 2131230832;
+			public const int abc_font_family_display_3_material = 2131230832;
 			
 			// aapt resource value: 0x7f080071
-			public const int abc_font_family_display_3_material = 2131230833;
+			public const int abc_font_family_display_4_material = 2131230833;
 			
 			// aapt resource value: 0x7f080072
-			public const int abc_font_family_display_4_material = 2131230834;
+			public const int abc_font_family_headline_material = 2131230834;
 			
 			// aapt resource value: 0x7f080073
-			public const int abc_font_family_headline_material = 2131230835;
+			public const int abc_font_family_menu_material = 2131230835;
 			
 			// aapt resource value: 0x7f080074
-			public const int abc_font_family_menu_material = 2131230836;
+			public const int abc_font_family_subhead_material = 2131230836;
 			
 			// aapt resource value: 0x7f080075
-			public const int abc_font_family_subhead_material = 2131230837;
+			public const int abc_font_family_title_material = 2131230837;
 			
-			// aapt resource value: 0x7f080076
-			public const int abc_font_family_title_material = 2131230838;
+			// aapt resource value: 0x7f08005f
+			public const int abc_search_hint = 2131230815;
 			
 			// aapt resource value: 0x7f080060
-			public const int abc_search_hint = 2131230816;
+			public const int abc_searchview_description_clear = 2131230816;
 			
 			// aapt resource value: 0x7f080061
-			public const int abc_searchview_description_clear = 2131230817;
+			public const int abc_searchview_description_query = 2131230817;
 			
 			// aapt resource value: 0x7f080062
-			public const int abc_searchview_description_query = 2131230818;
+			public const int abc_searchview_description_search = 2131230818;
 			
 			// aapt resource value: 0x7f080063
-			public const int abc_searchview_description_search = 2131230819;
+			public const int abc_searchview_description_submit = 2131230819;
 			
 			// aapt resource value: 0x7f080064
-			public const int abc_searchview_description_submit = 2131230820;
+			public const int abc_searchview_description_voice = 2131230820;
 			
 			// aapt resource value: 0x7f080065
-			public const int abc_searchview_description_voice = 2131230821;
+			public const int abc_shareactionprovider_share_with = 2131230821;
 			
 			// aapt resource value: 0x7f080066
-			public const int abc_shareactionprovider_share_with = 2131230822;
+			public const int abc_shareactionprovider_share_with_application = 2131230822;
 			
 			// aapt resource value: 0x7f080067
-			public const int abc_shareactionprovider_share_with_application = 2131230823;
+			public const int abc_toolbar_collapse_description = 2131230823;
 			
-			// aapt resource value: 0x7f080068
-			public const int abc_toolbar_collapse_description = 2131230824;
+			// aapt resource value: 0x7f0800ce
+			public const int app_name = 2131230926;
 			
-			// aapt resource value: 0x7f080040
-			public const int app_name = 2131230784;
+			// aapt resource value: 0x7f080076
+			public const int appbar_scrolling_view_behavior = 2131230838;
 			
 			// aapt resource value: 0x7f080077
-			public const int appbar_scrolling_view_behavior = 2131230839;
+			public const int bottom_sheet_behavior = 2131230839;
 			
 			// aapt resource value: 0x7f080078
-			public const int bottom_sheet_behavior = 2131230840;
-			
-			// aapt resource value: 0x7f080079
-			public const int character_counter_pattern = 2131230841;
+			public const int character_counter_pattern = 2131230840;
 			
 			// aapt resource value: 0x7f080012
 			public const int com_facebook_device_auth_instructions = 2131230738;
@@ -5155,226 +5155,244 @@ namespace CWITC.Droid
 			public const int common_signin_button_text_long = 2131230737;
 			
 			// aapt resource value: 0x7f0800c9
-			public const int facebook_app_id = 2131230921;
+			public const int default_web_client_id = 2131230921;
+			
+			// aapt resource value: 0x7f0800cf
+			public const int facebook_app_id = 2131230927;
+			
+			// aapt resource value: 0x7f0800d0
+			public const int fb_login_protocol_scheme = 2131230928;
 			
 			// aapt resource value: 0x7f0800ca
-			public const int fb_login_protocol_scheme = 2131230922;
+			public const int firebase_database_url = 2131230922;
+			
+			// aapt resource value: 0x7f0800c7
+			public const int gcm_defaultSenderId = 2131230919;
+			
+			// aapt resource value: 0x7f0800cb
+			public const int google_api_key = 2131230923;
 			
 			// aapt resource value: 0x7f0800c8
 			public const int google_app_id = 2131230920;
 			
+			// aapt resource value: 0x7f0800cc
+			public const int google_crash_reporting_api_key = 2131230924;
+			
+			// aapt resource value: 0x7f0800cd
+			public const int google_storage_bucket = 2131230925;
+			
+			// aapt resource value: 0x7f080080
+			public const int hockeyapp_crash_dialog_app_name_fallback = 2131230848;
+			
 			// aapt resource value: 0x7f080081
-			public const int hockeyapp_crash_dialog_app_name_fallback = 2131230849;
+			public const int hockeyapp_crash_dialog_message = 2131230849;
 			
 			// aapt resource value: 0x7f080082
-			public const int hockeyapp_crash_dialog_message = 2131230850;
+			public const int hockeyapp_crash_dialog_negative_button = 2131230850;
 			
 			// aapt resource value: 0x7f080083
-			public const int hockeyapp_crash_dialog_negative_button = 2131230851;
+			public const int hockeyapp_crash_dialog_neutral_button = 2131230851;
 			
 			// aapt resource value: 0x7f080084
-			public const int hockeyapp_crash_dialog_neutral_button = 2131230852;
+			public const int hockeyapp_crash_dialog_positive_button = 2131230852;
 			
 			// aapt resource value: 0x7f080085
-			public const int hockeyapp_crash_dialog_positive_button = 2131230853;
+			public const int hockeyapp_crash_dialog_title = 2131230853;
 			
 			// aapt resource value: 0x7f080086
-			public const int hockeyapp_crash_dialog_title = 2131230854;
+			public const int hockeyapp_dialog_error_message = 2131230854;
 			
 			// aapt resource value: 0x7f080087
-			public const int hockeyapp_dialog_error_message = 2131230855;
+			public const int hockeyapp_dialog_error_title = 2131230855;
 			
 			// aapt resource value: 0x7f080088
-			public const int hockeyapp_dialog_error_title = 2131230856;
+			public const int hockeyapp_dialog_negative_button = 2131230856;
 			
 			// aapt resource value: 0x7f080089
-			public const int hockeyapp_dialog_negative_button = 2131230857;
+			public const int hockeyapp_dialog_positive_button = 2131230857;
 			
 			// aapt resource value: 0x7f08008a
-			public const int hockeyapp_dialog_positive_button = 2131230858;
+			public const int hockeyapp_download_failed_dialog_message = 2131230858;
 			
 			// aapt resource value: 0x7f08008b
-			public const int hockeyapp_download_failed_dialog_message = 2131230859;
+			public const int hockeyapp_download_failed_dialog_negative_button = 2131230859;
 			
 			// aapt resource value: 0x7f08008c
-			public const int hockeyapp_download_failed_dialog_negative_button = 2131230860;
+			public const int hockeyapp_download_failed_dialog_positive_button = 2131230860;
 			
 			// aapt resource value: 0x7f08008d
-			public const int hockeyapp_download_failed_dialog_positive_button = 2131230861;
+			public const int hockeyapp_download_failed_dialog_title = 2131230861;
 			
 			// aapt resource value: 0x7f08008e
-			public const int hockeyapp_download_failed_dialog_title = 2131230862;
+			public const int hockeyapp_error_no_network_message = 2131230862;
 			
 			// aapt resource value: 0x7f08008f
-			public const int hockeyapp_error_no_network_message = 2131230863;
+			public const int hockeyapp_expiry_info_text = 2131230863;
 			
 			// aapt resource value: 0x7f080090
-			public const int hockeyapp_expiry_info_text = 2131230864;
+			public const int hockeyapp_expiry_info_title = 2131230864;
 			
 			// aapt resource value: 0x7f080091
-			public const int hockeyapp_expiry_info_title = 2131230865;
+			public const int hockeyapp_feedback_attach_file = 2131230865;
 			
 			// aapt resource value: 0x7f080092
-			public const int hockeyapp_feedback_attach_file = 2131230866;
+			public const int hockeyapp_feedback_attach_picture = 2131230866;
 			
 			// aapt resource value: 0x7f080093
-			public const int hockeyapp_feedback_attach_picture = 2131230867;
+			public const int hockeyapp_feedback_attachment_button_text = 2131230867;
 			
 			// aapt resource value: 0x7f080094
-			public const int hockeyapp_feedback_attachment_button_text = 2131230868;
+			public const int hockeyapp_feedback_attachment_error = 2131230868;
 			
 			// aapt resource value: 0x7f080095
-			public const int hockeyapp_feedback_attachment_error = 2131230869;
+			public const int hockeyapp_feedback_attachment_loading = 2131230869;
 			
 			// aapt resource value: 0x7f080096
-			public const int hockeyapp_feedback_attachment_loading = 2131230870;
+			public const int hockeyapp_feedback_email_hint = 2131230870;
 			
 			// aapt resource value: 0x7f080097
-			public const int hockeyapp_feedback_email_hint = 2131230871;
+			public const int hockeyapp_feedback_failed_text = 2131230871;
 			
 			// aapt resource value: 0x7f080098
-			public const int hockeyapp_feedback_failed_text = 2131230872;
+			public const int hockeyapp_feedback_failed_title = 2131230872;
 			
 			// aapt resource value: 0x7f080099
-			public const int hockeyapp_feedback_failed_title = 2131230873;
+			public const int hockeyapp_feedback_fetching_feedback_text = 2131230873;
 			
 			// aapt resource value: 0x7f08009a
-			public const int hockeyapp_feedback_fetching_feedback_text = 2131230874;
+			public const int hockeyapp_feedback_generic_error = 2131230874;
 			
 			// aapt resource value: 0x7f08009b
-			public const int hockeyapp_feedback_generic_error = 2131230875;
+			public const int hockeyapp_feedback_last_updated_text = 2131230875;
 			
 			// aapt resource value: 0x7f08009c
-			public const int hockeyapp_feedback_last_updated_text = 2131230876;
+			public const int hockeyapp_feedback_max_attachments_allowed = 2131230876;
 			
 			// aapt resource value: 0x7f08009d
-			public const int hockeyapp_feedback_max_attachments_allowed = 2131230877;
+			public const int hockeyapp_feedback_message_hint = 2131230877;
 			
 			// aapt resource value: 0x7f08009e
-			public const int hockeyapp_feedback_message_hint = 2131230878;
+			public const int hockeyapp_feedback_name_hint = 2131230878;
 			
 			// aapt resource value: 0x7f08009f
-			public const int hockeyapp_feedback_name_hint = 2131230879;
+			public const int hockeyapp_feedback_refresh_button_text = 2131230879;
 			
 			// aapt resource value: 0x7f0800a0
-			public const int hockeyapp_feedback_refresh_button_text = 2131230880;
+			public const int hockeyapp_feedback_response_button_text = 2131230880;
 			
 			// aapt resource value: 0x7f0800a1
-			public const int hockeyapp_feedback_response_button_text = 2131230881;
+			public const int hockeyapp_feedback_select_file = 2131230881;
 			
 			// aapt resource value: 0x7f0800a2
-			public const int hockeyapp_feedback_select_file = 2131230882;
+			public const int hockeyapp_feedback_select_picture = 2131230882;
 			
 			// aapt resource value: 0x7f0800a3
-			public const int hockeyapp_feedback_select_picture = 2131230883;
+			public const int hockeyapp_feedback_send_button_text = 2131230883;
 			
 			// aapt resource value: 0x7f0800a4
-			public const int hockeyapp_feedback_send_button_text = 2131230884;
+			public const int hockeyapp_feedback_send_generic_error = 2131230884;
 			
 			// aapt resource value: 0x7f0800a5
-			public const int hockeyapp_feedback_send_generic_error = 2131230885;
+			public const int hockeyapp_feedback_send_network_error = 2131230885;
 			
 			// aapt resource value: 0x7f0800a6
-			public const int hockeyapp_feedback_send_network_error = 2131230886;
+			public const int hockeyapp_feedback_sending_feedback_text = 2131230886;
 			
 			// aapt resource value: 0x7f0800a7
-			public const int hockeyapp_feedback_sending_feedback_text = 2131230887;
+			public const int hockeyapp_feedback_subject_hint = 2131230887;
 			
 			// aapt resource value: 0x7f0800a8
-			public const int hockeyapp_feedback_subject_hint = 2131230888;
+			public const int hockeyapp_feedback_title = 2131230888;
 			
 			// aapt resource value: 0x7f0800a9
-			public const int hockeyapp_feedback_title = 2131230889;
+			public const int hockeyapp_feedback_validate_email_empty = 2131230889;
 			
 			// aapt resource value: 0x7f0800aa
-			public const int hockeyapp_feedback_validate_email_empty = 2131230890;
+			public const int hockeyapp_feedback_validate_email_error = 2131230890;
 			
 			// aapt resource value: 0x7f0800ab
-			public const int hockeyapp_feedback_validate_email_error = 2131230891;
+			public const int hockeyapp_feedback_validate_name_error = 2131230891;
 			
 			// aapt resource value: 0x7f0800ac
-			public const int hockeyapp_feedback_validate_name_error = 2131230892;
+			public const int hockeyapp_feedback_validate_subject_error = 2131230892;
 			
 			// aapt resource value: 0x7f0800ad
-			public const int hockeyapp_feedback_validate_subject_error = 2131230893;
+			public const int hockeyapp_feedback_validate_text_error = 2131230893;
 			
 			// aapt resource value: 0x7f0800ae
-			public const int hockeyapp_feedback_validate_text_error = 2131230894;
+			public const int hockeyapp_login_email_hint = 2131230894;
 			
 			// aapt resource value: 0x7f0800af
-			public const int hockeyapp_login_email_hint = 2131230895;
+			public const int hockeyapp_login_headline_text = 2131230895;
 			
 			// aapt resource value: 0x7f0800b0
-			public const int hockeyapp_login_headline_text = 2131230896;
+			public const int hockeyapp_login_headline_text_email_only = 2131230896;
 			
 			// aapt resource value: 0x7f0800b1
-			public const int hockeyapp_login_headline_text_email_only = 2131230897;
+			public const int hockeyapp_login_login_button_text = 2131230897;
 			
 			// aapt resource value: 0x7f0800b2
-			public const int hockeyapp_login_login_button_text = 2131230898;
+			public const int hockeyapp_login_missing_credentials_toast = 2131230898;
 			
 			// aapt resource value: 0x7f0800b3
-			public const int hockeyapp_login_missing_credentials_toast = 2131230899;
+			public const int hockeyapp_login_password_hint = 2131230899;
 			
 			// aapt resource value: 0x7f0800b4
-			public const int hockeyapp_login_password_hint = 2131230900;
+			public const int hockeyapp_paint_dialog_message = 2131230900;
 			
 			// aapt resource value: 0x7f0800b5
-			public const int hockeyapp_paint_dialog_message = 2131230901;
+			public const int hockeyapp_paint_dialog_negative_button = 2131230901;
 			
 			// aapt resource value: 0x7f0800b6
-			public const int hockeyapp_paint_dialog_negative_button = 2131230902;
+			public const int hockeyapp_paint_dialog_neutral_button = 2131230902;
 			
 			// aapt resource value: 0x7f0800b7
-			public const int hockeyapp_paint_dialog_neutral_button = 2131230903;
+			public const int hockeyapp_paint_dialog_positive_button = 2131230903;
 			
 			// aapt resource value: 0x7f0800b8
-			public const int hockeyapp_paint_dialog_positive_button = 2131230904;
+			public const int hockeyapp_paint_indicator_toast = 2131230904;
 			
 			// aapt resource value: 0x7f0800b9
-			public const int hockeyapp_paint_indicator_toast = 2131230905;
+			public const int hockeyapp_paint_menu_clear = 2131230905;
 			
 			// aapt resource value: 0x7f0800ba
-			public const int hockeyapp_paint_menu_clear = 2131230906;
+			public const int hockeyapp_paint_menu_save = 2131230906;
 			
 			// aapt resource value: 0x7f0800bb
-			public const int hockeyapp_paint_menu_save = 2131230907;
+			public const int hockeyapp_paint_menu_undo = 2131230907;
 			
 			// aapt resource value: 0x7f0800bc
-			public const int hockeyapp_paint_menu_undo = 2131230908;
+			public const int hockeyapp_permission_dialog_negative_button = 2131230908;
 			
 			// aapt resource value: 0x7f0800bd
-			public const int hockeyapp_permission_dialog_negative_button = 2131230909;
+			public const int hockeyapp_permission_dialog_positive_button = 2131230909;
 			
 			// aapt resource value: 0x7f0800be
-			public const int hockeyapp_permission_dialog_positive_button = 2131230910;
+			public const int hockeyapp_permission_update_message = 2131230910;
 			
 			// aapt resource value: 0x7f0800bf
-			public const int hockeyapp_permission_update_message = 2131230911;
+			public const int hockeyapp_permission_update_title = 2131230911;
 			
 			// aapt resource value: 0x7f0800c0
-			public const int hockeyapp_permission_update_title = 2131230912;
+			public const int hockeyapp_update_button = 2131230912;
 			
 			// aapt resource value: 0x7f0800c1
-			public const int hockeyapp_update_button = 2131230913;
+			public const int hockeyapp_update_dialog_message = 2131230913;
 			
 			// aapt resource value: 0x7f0800c2
-			public const int hockeyapp_update_dialog_message = 2131230914;
+			public const int hockeyapp_update_dialog_negative_button = 2131230914;
 			
 			// aapt resource value: 0x7f0800c3
-			public const int hockeyapp_update_dialog_negative_button = 2131230915;
+			public const int hockeyapp_update_dialog_positive_button = 2131230915;
 			
 			// aapt resource value: 0x7f0800c4
-			public const int hockeyapp_update_dialog_positive_button = 2131230916;
+			public const int hockeyapp_update_dialog_title = 2131230916;
 			
 			// aapt resource value: 0x7f0800c5
-			public const int hockeyapp_update_dialog_title = 2131230917;
+			public const int hockeyapp_update_mandatory_toast = 2131230917;
 			
 			// aapt resource value: 0x7f0800c6
-			public const int hockeyapp_update_mandatory_toast = 2131230918;
-			
-			// aapt resource value: 0x7f0800c7
-			public const int hockeyapp_update_version_details_label = 2131230919;
+			public const int hockeyapp_update_version_details_label = 2131230918;
 			
 			// aapt resource value: 0x7f080000
 			public const int library_name = 2131230720;
@@ -5382,95 +5400,95 @@ namespace CWITC.Droid
 			// aapt resource value: 0x7f080029
 			public const int messenger_send_button_text = 2131230761;
 			
+			// aapt resource value: 0x7f080040
+			public const int mr_button_content_description = 2131230784;
+			
 			// aapt resource value: 0x7f080041
-			public const int mr_button_content_description = 2131230785;
+			public const int mr_cast_button_connected = 2131230785;
 			
 			// aapt resource value: 0x7f080042
-			public const int mr_cast_button_connected = 2131230786;
+			public const int mr_cast_button_connecting = 2131230786;
 			
 			// aapt resource value: 0x7f080043
-			public const int mr_cast_button_connecting = 2131230787;
+			public const int mr_cast_button_disconnected = 2131230787;
 			
 			// aapt resource value: 0x7f080044
-			public const int mr_cast_button_disconnected = 2131230788;
+			public const int mr_chooser_searching = 2131230788;
 			
 			// aapt resource value: 0x7f080045
-			public const int mr_chooser_searching = 2131230789;
+			public const int mr_chooser_title = 2131230789;
 			
 			// aapt resource value: 0x7f080046
-			public const int mr_chooser_title = 2131230790;
+			public const int mr_controller_album_art = 2131230790;
 			
 			// aapt resource value: 0x7f080047
-			public const int mr_controller_album_art = 2131230791;
+			public const int mr_controller_casting_screen = 2131230791;
 			
 			// aapt resource value: 0x7f080048
-			public const int mr_controller_casting_screen = 2131230792;
+			public const int mr_controller_close_description = 2131230792;
 			
 			// aapt resource value: 0x7f080049
-			public const int mr_controller_close_description = 2131230793;
+			public const int mr_controller_collapse_group = 2131230793;
 			
 			// aapt resource value: 0x7f08004a
-			public const int mr_controller_collapse_group = 2131230794;
+			public const int mr_controller_disconnect = 2131230794;
 			
 			// aapt resource value: 0x7f08004b
-			public const int mr_controller_disconnect = 2131230795;
+			public const int mr_controller_expand_group = 2131230795;
 			
 			// aapt resource value: 0x7f08004c
-			public const int mr_controller_expand_group = 2131230796;
+			public const int mr_controller_no_info_available = 2131230796;
 			
 			// aapt resource value: 0x7f08004d
-			public const int mr_controller_no_info_available = 2131230797;
+			public const int mr_controller_no_media_selected = 2131230797;
 			
 			// aapt resource value: 0x7f08004e
-			public const int mr_controller_no_media_selected = 2131230798;
+			public const int mr_controller_pause = 2131230798;
 			
 			// aapt resource value: 0x7f08004f
-			public const int mr_controller_pause = 2131230799;
-			
-			// aapt resource value: 0x7f080050
-			public const int mr_controller_play = 2131230800;
-			
-			// aapt resource value: 0x7f080055
-			public const int mr_controller_stop = 2131230805;
-			
-			// aapt resource value: 0x7f080051
-			public const int mr_controller_stop_casting = 2131230801;
-			
-			// aapt resource value: 0x7f080052
-			public const int mr_controller_volume_slider = 2131230802;
-			
-			// aapt resource value: 0x7f080053
-			public const int mr_system_route_name = 2131230803;
+			public const int mr_controller_play = 2131230799;
 			
 			// aapt resource value: 0x7f080054
-			public const int mr_user_route_category_name = 2131230804;
+			public const int mr_controller_stop = 2131230804;
+			
+			// aapt resource value: 0x7f080050
+			public const int mr_controller_stop_casting = 2131230800;
+			
+			// aapt resource value: 0x7f080051
+			public const int mr_controller_volume_slider = 2131230801;
+			
+			// aapt resource value: 0x7f080052
+			public const int mr_system_route_name = 2131230802;
+			
+			// aapt resource value: 0x7f080053
+			public const int mr_user_route_category_name = 2131230803;
+			
+			// aapt resource value: 0x7f080079
+			public const int password_toggle_content_description = 2131230841;
 			
 			// aapt resource value: 0x7f08007a
-			public const int password_toggle_content_description = 2131230842;
+			public const int path_password_eye = 2131230842;
 			
 			// aapt resource value: 0x7f08007b
-			public const int path_password_eye = 2131230843;
+			public const int path_password_eye_mask_strike_through = 2131230843;
 			
 			// aapt resource value: 0x7f08007c
-			public const int path_password_eye_mask_strike_through = 2131230844;
+			public const int path_password_eye_mask_visible = 2131230844;
 			
 			// aapt resource value: 0x7f08007d
-			public const int path_password_eye_mask_visible = 2131230845;
+			public const int path_password_strike_through = 2131230845;
 			
-			// aapt resource value: 0x7f08007e
-			public const int path_password_strike_through = 2131230846;
+			// aapt resource value: 0x7f080068
+			public const int search_menu_title = 2131230824;
+			
+			// aapt resource value: 0x7f0800d1
+			public const int shortcut_events = 2131230929;
+			
+			// aapt resource value: 0x7f0800d2
+			public const int shortcut_sessions = 2131230930;
 			
 			// aapt resource value: 0x7f080069
-			public const int search_menu_title = 2131230825;
-			
-			// aapt resource value: 0x7f0800cb
-			public const int shortcut_events = 2131230923;
-			
-			// aapt resource value: 0x7f0800cc
-			public const int shortcut_sessions = 2131230924;
-			
-			// aapt resource value: 0x7f08006a
-			public const int status_bar_notification_info_overflow = 2131230826;
+			public const int status_bar_notification_info_overflow = 2131230825;
 			
 			static String()
 			{

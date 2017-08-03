@@ -26,13 +26,12 @@ using CWITC.DataObjects;
 using Xamarin;
 //using Gcm;
 //using Gcm.Client;
-using CWITC.Droid.Notifications;
 
 namespace CWITC.Droid
 {
 
 
-    [Activity(Label = "CWITC 17",
+    [Activity(Label = "@string/app_name",
         Name = "org.cenwidev.cwitc.MainActivity",
         Exported = true,
         Icon = "@drawable/ic_launcher",
@@ -78,11 +77,11 @@ namespace CWITC.Droid
         DataScheme = "@PACKAGE_NAME@",
         DataHost = "cwitc.auth0.com",
         DataPathPrefix = "/android/@PACKAGE_NAME@/callback")]
-	[IntentFilter(new[] { Intent.ActionView },
-		Categories = new[] { Intent.CategoryDefault, Intent.CategoryBrowsable },
-		DataScheme = "@PACKAGE_NAME@",
-		DataHost = "cwitc.auth0.com",
-		DataPathPrefix = "/android/@PACKAGE_NAME@/logout")]
+    [IntentFilter(new[] { Intent.ActionView },
+        Categories = new[] { Intent.CategoryDefault, Intent.CategoryBrowsable },
+        DataScheme = "@PACKAGE_NAME@",
+        DataHost = "cwitc.auth0.com",
+        DataPathPrefix = "/android/@PACKAGE_NAME@/logout")]
     public class MainActivity : FormsAppCompatActivity
     {
         public Xamarin.Facebook.ICallbackManager CallbackManager { get; private set; }
@@ -113,11 +112,7 @@ namespace CWITC.Droid
 
             LoadApplication(new App());
 
-            var gpsAvailable = IsPlayServicesAvailable();
-            Settings.Current.PushNotificationsEnabled = gpsAvailable;
-
             OnNewIntent(Intent);
-
 
             if (!string.IsNullOrWhiteSpace(Intent?.Data?.LastPathSegment))
             {
@@ -138,11 +133,6 @@ namespace CWITC.Droid
                         break;
                 }
             }
-
-            if (!Settings.Current.PushNotificationsEnabled)
-                return;
-
-            RegisterWithGCM();
 
             DataRefreshService.ScheduleRefresh(this);
         }
@@ -183,20 +173,6 @@ namespace CWITC.Droid
 
         }
 
-        private void RegisterWithGCM()
-        {
-            // Check to ensure everything's set up right
-            //GcmClient.CheckDevice(this);
-            //GcmClient.CheckManifest(this);
-
-            EvolveRegistrationService.Register(this);
-
-            // Register for push notifications
-            //System.Diagnostics.Debug.WriteLine("MainActivity", "Registering...");
-            //GcmService.Initialize(this);
-            //GcmService.Register(this);
-        }
-
         public bool IsPlayServicesAvailable()
         {
             int resultCode = GoogleApiAvailability.Instance.IsGooglePlayServicesAvailable(this);
@@ -210,15 +186,10 @@ namespace CWITC.Droid
                     Settings.Current.GooglePlayChecked = true;
                     Toast.MakeText(this, "Google Play services is not installed, push notifications have been disabled.", ToastLength.Long).Show();
                 }
-                else
-                {
-                    Settings.Current.PushNotificationsEnabled = false;
-                }
                 return false;
             }
             else
             {
-                Settings.Current.PushNotificationsEnabled = true;
                 return true;
             }
         }

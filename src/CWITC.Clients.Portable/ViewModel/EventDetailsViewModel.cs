@@ -24,13 +24,6 @@ namespace CWITC.Clients.Portable
                 Sponsors.Add(e.Sponsor);
         }
 
-        bool isReminderSet;
-        public bool IsReminderSet
-        {
-            get { return isReminderSet; }
-            set { SetProperty(ref isReminderSet, value); }
-        }
-
         ICommand  loadEventDetailsCommand;
         public ICommand LoadEventDetailsCommand =>
             loadEventDetailsCommand ?? (loadEventDetailsCommand = new Command(async () => await ExecuteLoadEventDetailsCommandAsync())); 
@@ -43,10 +36,7 @@ namespace CWITC.Clients.Portable
 
             try 
             {
-
-
                 IsBusy = true;
-                IsReminderSet = await ReminderService.HasReminderAsync("event_" + Event.Id);
             } 
             catch (Exception ex) 
             {
@@ -57,44 +47,6 @@ namespace CWITC.Clients.Portable
             {
                 IsBusy = false;
             }
-        }
-
-        ICommand  reminderCommand;
-        public ICommand ReminderCommand =>
-            reminderCommand ?? (reminderCommand = new Command(async () => await ExecuteReminderCommandAsync())); 
-
-
-        async Task ExecuteReminderCommandAsync()
-        {
-            if(!IsReminderSet)
-            {
-                var result = await ReminderService.AddReminderAsync("event_" + Event.Id, 
-                    new Plugin.Calendars.Abstractions.CalendarEvent
-                    {
-                        Description = Event.Description,
-                        Location = Event.LocationName,
-                        AllDay = Event.IsAllDay,
-                        Name = Event.Title,
-                        Start = Event.StartTime.Value,
-                        End = Event.EndTime.Value
-                    });
-
-
-                if(!result)
-                    return;
-
-                Logger.Track(EvolveLoggerKeys.ReminderAdded, "Title", Event.Title);
-                IsReminderSet = true;
-            }
-            else
-            {
-                var result = await ReminderService.RemoveReminderAsync("event_" + Event.Id);
-                if(!result)
-                    return;
-                Logger.Track(EvolveLoggerKeys.ReminderRemoved, "Title", Event.Title);
-                IsReminderSet = false;
-            }
-
         }
 
         Sponsor selectedSponsor;

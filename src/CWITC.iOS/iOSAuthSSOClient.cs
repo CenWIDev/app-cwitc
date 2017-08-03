@@ -2,7 +2,6 @@
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
-using Auth0.OidcClient;
 using CoreGraphics;
 using CWITC.Clients.Portable;
 using Firebase.Auth;

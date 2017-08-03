@@ -119,26 +119,6 @@ namespace CWITC.Clients.Portable
             }
         }
 
-        public void SaveReminderId(string id, string calId)
-        {
-            AppSettings.AddOrUpdateValue<string>(GetReminderId(id), calId);
-        }
-
-        string GetReminderId(string id)
-        {
-            return "reminder_" + id;
-        }
-
-        public string GetEventId(string id)
-        {
-            return AppSettings.GetValueOrDefault(GetReminderId(id), string.Empty);
-        }
-
-        public void RemoveReminderId(string id)
-        {
-            AppSettings.Remove(GetReminderId(id));
-        }
-
         const string LastFavoriteTimeKey = "last_favorite_time";
 
         public DateTime LastFavoriteTime
@@ -147,41 +127,6 @@ namespace CWITC.Clients.Portable
             set
             {
                 AppSettings.AddOrUpdateValue<DateTime>(LastFavoriteTimeKey, value);
-            }
-        }
-
-
-        const string HasSetReminderKey = "set_a_reminder";
-        static readonly bool HasSetReminderDefault = false;
-
-        public bool HasSetReminder
-        {
-            get { return AppSettings.GetValueOrDefault<bool>(HasSetReminderKey, HasSetReminderDefault); }
-            set
-            {
-                AppSettings.AddOrUpdateValue<bool>(HasSetReminderKey, value);
-            }
-        }
-
-        const string EvolveCalendarIdKey = "evolve_calendar";
-        static readonly string EvolveCalendarIdDefault = string.Empty;
-        public string EvolveCalendarId
-        {
-            get { return AppSettings.GetValueOrDefault<string>(EvolveCalendarIdKey, EvolveCalendarIdDefault); }
-            set { AppSettings.AddOrUpdateValue<string>(EvolveCalendarIdKey, value); }
-        }
-          
-
-        const string PushNotificationsEnabledKey = "push_enabled";
-        static readonly bool PushNotificationsEnabledDefault = false;
-
-        public bool PushNotificationsEnabled
-        {
-            get { return AppSettings.GetValueOrDefault<bool>(PushNotificationsEnabledKey, PushNotificationsEnabledDefault); }
-            set
-            {
-                if (AppSettings.AddOrUpdateValue<bool>(PushNotificationsEnabledKey, value))
-                    OnPropertyChanged();
             }
         }
 

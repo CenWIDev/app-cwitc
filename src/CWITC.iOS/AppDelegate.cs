@@ -11,7 +11,6 @@ using Xamarin.Forms.Platform.iOS;
 using Xamarin;
 using FormsToolkit;
 using CWITC.Clients.Portable;
-using WindowsAzure.Messaging;
 using Refractored.XamForms.PullToRefresh.iOS;
 using Social;
 using CoreSpotlight;
@@ -20,7 +19,6 @@ using HockeyApp;
 using System.Threading.Tasks;
 using Google.AppIndexing;
 using HockeyApp.iOS;
-using Auth0.OidcClient;
 using Xamarin.Auth;
 using Firebase.RemoteConfig;
 
@@ -90,8 +88,6 @@ namespace CWITC.iOS
             SetMinimumBackgroundFetchInterval();
 
             //Random Inits for Linking out.
-            Microsoft.WindowsAzure.MobileServices.CurrentPlatform.Init();
-            SQLitePCL.CurrentPlatform.Init();
             Plugin.Share.ShareImplementation.ExcludedUIActivityTypes = new List<NSString>
             {
                 UIActivityType.PostToFacebook,
@@ -108,9 +104,6 @@ namespace CWITC.iOS
             TextViewValue1Renderer.Init();
             PullToRefreshLayoutRenderer.Init();
             LoadApplication(new App());
-
-            // Process any potential notification data from launch
-            ProcessNotification(options);
 
             NSNotificationCenter.DefaultCenter.AddObserver(UIApplication.DidBecomeActiveNotification, DidBecomeActive);
 
@@ -130,71 +123,6 @@ namespace CWITC.iOS
         {
             base.WillEnterForeground(uiApplication);
             ((CWITC.Clients.UI.App)Xamarin.Forms.Application.Current).SecondOnResume();
-        }
-
-
-
-        public override void RegisteredForRemoteNotifications(UIApplication app, NSData deviceToken)
-        {
-            if (ApiKeys.AzureServiceBusUrl == nameof(ApiKeys.AzureServiceBusUrl))
-                return;
-
-            // Connection string from your azure dashboard
-            var cs = SBConnectionString.CreateListenAccess(
-                new NSUrl(ApiKeys.AzureServiceBusUrl),
-                ApiKeys.AzureKey);
-
-            // Register our info with Azure
-            var hub = new SBNotificationHub (cs, ApiKeys.AzureHubName);
-            hub.RegisterNativeAsync (deviceToken, null, err => {
-                if (err != null)
-                    Console.WriteLine("Error: " + err.Description);
-                else
-                    Console.WriteLine("Success");
-            });
-        }
-
-        public override void ReceivedRemoteNotification(UIApplication app, NSDictionary userInfo)
-        {
-            // Process a notification received while the app was already open
-            ProcessNotification(userInfo);
-        }
-
-        void ProcessNotification(NSDictionary userInfo)
-        {
-            if (userInfo == null)
-                return;
-
-            Console.WriteLine("Received Notification");
-
-            var apsKey = new NSString("aps");
-
-            if (userInfo.ContainsKey(apsKey))
-            {
-
-                var alertKey = new NSString("alert");
-
-                var aps = (NSDictionary)userInfo.ObjectForKey(apsKey);
-
-                if (aps.ContainsKey(alertKey))
-                {
-                    var alert = (NSString)aps.ObjectForKey(alertKey);
-
-                    try 
-                    {
-
-                        var avAlert = new UIAlertView ("Evolve Update", alert, null, "OK", null);
-                        avAlert.Show ();
-                      
-                    } 
-                    catch (Exception ex) 
-                    {
-                        
-                    }
-
-                    Console.WriteLine("Notification: " + alert);
-                }
-            }
         }
 
         #region Quick Action

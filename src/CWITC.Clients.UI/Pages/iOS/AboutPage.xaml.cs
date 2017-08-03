@@ -10,12 +10,12 @@ namespace CWITC.Clients.UI
     public partial class AboutPage : ContentPage
     {
         AboutViewModel vm;
-        IPushNotifications push;
+
         public AboutPage()
         {
             InitializeComponent();
             BindingContext = vm = new AboutViewModel();
-            push = DependencyService.Get<IPushNotifications>();
+
             var adjust = Device.OS != TargetPlatform.Android ? 1 : -vm.AboutItems.Count + 1;
             ListViewAbout.HeightRequest = (vm.AboutItems.Count * ListViewAbout.RowHeight) - adjust;
             ListViewAbout.ItemTapped += (sender, e) => ListViewAbout.SelectedItem = null;
@@ -78,19 +78,11 @@ namespace CWITC.Clients.UI
 
                     ListViewInfo.SelectedItem = null;
                 };
-            isRegistered = push.IsRegistered;
         }
 
-        bool isRegistered;
         protected override void OnAppearing()
         {
             base.OnAppearing();
-
-            if (!isRegistered && Settings.Current.AttemptedPush)
-            {
-                push.RegisterForNotifications();
-            }
-            isRegistered = push.IsRegistered;
             vm.UpdateItems();
         }
 

@@ -22,7 +22,6 @@ namespace CWITC.Droid
         {
             base.OnCreate();
             RegisterActivityLifecycleCallbacks(this);
-            Microsoft.WindowsAzure.MobileServices.CurrentPlatform.Init();
         }
 
         public override void OnTerminate()

@@ -16,8 +16,6 @@ namespace CWITC.Clients.Portable
         public const string Signup = "Signup";
         public const string FavoriteAdded = "FavoriteAdded";
         public const string FavoriteRemoved = "FavoriteRemoved";
-        public const string ReminderAdded = "ReminderAdded";
-        public const string ReminderRemoved = "ReminderRemoved";
         public const string Share = "Share";
         public const string LeaveFeedback = "LeaveFeedback";
         public const string ManualSync = "ManualSync";

@@ -18,13 +18,10 @@ namespace CWITC.Clients.Portable
 
         MenuItem syncItem;
         MenuItem accountItem;
-        MenuItem pushItem;
-        IPushNotifications push;
         public AboutViewModel()
         {
             AboutItems.Clear ();
             AboutItems.Add(new MenuItem { Name = "About this app", Icon = "icon_venue.png" });
-            push = DependencyService.Get<IPushNotifications>();
 
             InfoItems.AddRange(new []
                 {
@@ -47,46 +44,10 @@ namespace CWITC.Clients.Portable
                     Name = "Last Sync:"
                 };
 
-            pushItem = new MenuItem
-            {
-                Name="Enable push notifications"    
-            };
-
-            pushItem.Command = new Command(() =>
-                {
-                    if(push.IsRegistered)
-                    {
-                        UpdateItems();
-                        return;
-                    }
-
-                    if(Settings.AttemptedPush)
-                    {
-                        MessagingService.Current.SendMessage<MessagingServiceQuestion>(MessageKeys.Question, new MessagingServiceQuestion
-                            {
-                                Title = "Push Notification",
-                                Question = "To enable push notifications, please go into Settings, Tap Notifications, and set Allow Notifications to on.",
-                                Positive = "Settings",
-                                Negative = "Maybe Later",
-                                OnCompleted = (result) =>
-                                    {
-                                        if(result)
-                                        {
-                                            push.OpenSettings();
-                                        }
-                                    }
-                            });
-                        return;
-                    }
-
-                    push.RegisterForNotifications();
-                });
-
             UpdateItems();
 
             AccountItems.Add(accountItem);
             AccountItems.Add(syncItem);
-            AccountItems.Add(pushItem);
 
             //This will be triggered wen 
             Settings.PropertyChanged += (sender, e) => 
@@ -103,9 +64,7 @@ namespace CWITC.Clients.Portable
         {
             syncItem.Subtitle = LastSyncDisplay;
             accountItem.Subtitle = Settings.Current.IsLoggedIn ? Settings.Current.UserDisplayName : "Not signed in";
-           
-            pushItem.Name = push.IsRegistered ? "Push notifications enabled" : "Enable push notifications";
-        }
+                   }
 
     }
 }

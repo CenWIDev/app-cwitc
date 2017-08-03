@@ -152,10 +152,6 @@ namespace CWITC.Clients.Portable
         {
             if (Device.OS == TargetPlatform.iOS && Settings.FirstRun)
             {
-                var push = DependencyService.Get<IPushNotifications>();
-                if (push != null)
-                    await push.RegisterForNotifications();
-
                 await Navigation.PopModalAsync();
             }
             else

@@ -14,7 +14,6 @@
         <toolkit:HexToColorConverter x:Key="StringToColorConverter" />
         <local:SessionDateDisplayConverter x:Key="SessionDateDisplayConverter" />
         <local:IsFavoriteDetailTextConverter x:Key="IsFavoriteDetailTextConverter" />
-        <local:HasReminderTextConverter x:Key="HasReminderTextConverter" />
         <local:IsFilledIconConverter x:Key="IsFilledIconConverter" />
         <toolkit:HasDataConverter x:Key="GenericIsVisibleConverter"/>
         <local:RatingVisibleConverter x:Key="RatingVisibleConverter" />
@@ -162,7 +161,6 @@
                                            ColumnSpacing="{StaticResource StandardSpacing}">
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="Auto"/>
-                                    <RowDefinition Height="Auto"/>
                                 </Grid.RowDefinitions> 
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="*"/>
@@ -171,13 +169,7 @@
                                <Grid.IsVisible>
                                 <OnPlatform x:TypeArguments="x:Boolean" iOS="false" Android="true" WinPhone="true"/>
                                </Grid.IsVisible>
-                                <Button StyleId="ReminderButton"
-                                        IsVisible="{Binding ShowReminder}"
-                                        Text="{Binding IsReminderSet, Converter={StaticResource HasReminderTextConverter}"
-                                        BackgroundColor="{StaticResource PrimaryDark}"
-                                        Command="{Binding ReminderCommand}"
-                                        TextColor="White"/>
-                                <Button Grid.Row="1"
+                                <Button Grid.Row="0"
                                         StyleId="FavoriteButton"
                                         x:Name="FavoriteButtonAndroid"
                                         Text="{Binding Session.IsFavorite, Converter={StaticResource IsFavoriteDetailTextConverter}}"
@@ -196,19 +188,6 @@
                                         
                              </Grid>
    
-                             <StackLayout Padding="16,0" Spacing="8" Orientation="Horizontal" BackgroundColor="White">
-                                <StackLayout.IsVisible>
-                                    <OnPlatform x:TypeArguments="x:Boolean" iOS="true" Android="false" WinPhone="false"/>
-                                </StackLayout.IsVisible>
-                                <Button 
-                                    StyleId="ReminderButton"
-                                    IsVisible="{Binding ShowReminder}"
-                                    Text="{Binding IsReminderSet, Converter={StaticResource HasReminderTextConverter}}"
-                                    FontAttributes="Bold"
-                                    HorizontalOptions="StartAndExpand"
-                                    TextColor="{DynamicResource Primary}"
-                                    Command="{Binding ReminderCommand}" />
-                             </StackLayout>
                              <local:SectionDivider/>
                                 
                               <StackLayout Padding="16,0" Spacing="8" Orientation="Horizontal" BackgroundColor="White">
