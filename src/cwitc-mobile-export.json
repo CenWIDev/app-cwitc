@@ -606,7 +606,7 @@
   "sponsors": [
     {
       "Name": "CWITA",
-      "Description": "",
+      "Description": "CWITA is a group of action focused employers in central Wisconsin working together to enhance the image of IT careers and position the region as a hub for IT opportunities. CWITA collaborates with the K-16 education system to strengthen IT career pathways and assist in growing our regional IT workforce.",
       "SponsorLevel": {
         "Name": "Organizer",
         "Rank": 0
@@ -617,7 +617,7 @@
     },
     {
       "Name": "CENWIDEV",
-      "Description": "",
+      "Description": "Central Wisconsin is FULL of technical enthusists. Let's meet and learn from one another. Great minds are in your backyard!",
       "SponsorLevel": {
         "Name": "Organizer",
         "Rank": 1
@@ -629,18 +629,19 @@
     },
     {
       "Name": "Mid-State Technical College",
-      "Description": "",
+      "Description": "Mid-State is one of 16 colleges in the Wisconsin Technical College System. It is a leading provider of higher education offering many career opportunities through associate degrees, technical diplomas and certificates. Student-focused and community-based, Mid-State serves a resident population of approximately 165,000 in central Wisconsin.\n\nThe college has campuses in Marshfield, Stevens Point and Wisconsin Rapids, and a learning center in Adams. Visit the College’s website at mstc.edu.\n\n92% of Mid-State alumni are employed within six months after graduation; 79% of graduates work in the Mid-State District comprising all or portions of Adams, Clark, Jackson, Juneau, Marathon, Portage, Waushara, and Wood Counties.",
       "SponsorLevel": {
         "Name": "Organizer",
         "Rank": 2
       },
       "ImageUrl": "https://static.wixstatic.com/media/615d66_7e995f8d8fef408985da8bfaefd4d561~mv2.jpg/v1/fill/w_219,h_50,al_c,q_80,usm_0.66_1.00_0.01/615d66_7e995f8d8fef408985da8bfaefd4d561~mv2.jpg",
       "WebsiteUrl": "https://www.mstc.edu",
+      "TwitterUrl": "followmstc",
       "Rank": 2
     },
     {
       "Name": "Create Portage County",
-      "Description": "",
+      "Description": "CREATE is a 501(c)3 nonprofit that sees community challenges as opportunities to envision a more vibrant and engaging community. We are building partnerships and streamlining resources to ensure that those creative visions have a real impact on Central Wisconsin. We are making creativity central to community development, economic growth, and our quality of life.",
       "SponsorLevel": {
         "Name": "Community Partner",
         "Rank": 0
@@ -651,8 +652,20 @@
       "Rank": 3
     },
     {
+      "Name": "Renaissance Learning",
+      "Description": "Every student can become their most amazing self with the guidance of an expert teacher to unlock their full potential. Renaissance exists to salute those teachers at the heart of every classroom.\n\nWe bring the best of data analytics and research-based practice to support teachers nationwide. Teachers take it from there – after all, their guidance and warmth are the key component of student growth.",
+      "SponsorLevel": {
+        "Name": "Platinum Sponsor",
+        "Rank": 0
+      },
+      "ImageUrl": "https://static.wixstatic.com/media/615d66_fd56f3314ec44641a613005d88090194~mv2.jpg/v1/fill/w_579,h_52,al_c,q_80,usm_0.66_1.00_0.01/615d66_fd56f3314ec44641a613005d88090194~mv2.jpg",
+      "WebsiteUrl": "https://www.renaissance.com",
+      "TwitterUrl": "RenLearnUS",
+      "Rank": 4
+    },
+    {
       "Name": "Red Arrow Labs",
-      "Description": "",
+      "Description": "We are developers, designers, project managers, researchers, analysts and social innovators. We are experts in our fields with diverse backgrounds. While each of us is unique, the one thing we all share is a passion to create great software that positively impacts people’s health. We view every new project as an opportunity to do our best work. The goal, to develop solutions that use technology the right way, employ creative solutions and empower the people who use them.",
       "SponsorLevel": {
         "Name": "Gold Sponsor",
         "Rank": 0
@@ -660,11 +673,11 @@
       "ImageUrl": "https://static.wixstatic.com/media/615d66_bd03accec2de4645bceace5107b9098b~mv2.jpg/v1/fill/w_214,h_93,al_c,q_80,usm_0.66_1.00_0.01/615d66_bd03accec2de4645bceace5107b9098b~mv2.jpg",
       "WebsiteUrl": "http://redarrowlabs.com",
       "TwitterUrl": "RedArrowLabs",
-      "Rank": 4
+      "Rank": 5
     },
     {
       "Name": "Skyward",
-      "Description": "",
+      "Description": "A better SIS and ERP experience for school districts and municipalities. We're about more than just software.",
       "SponsorLevel": {
         "Name": "Gold Sponsor",
         "Rank": 1
@@ -672,7 +685,19 @@
       "ImageUrl": "https://static.wixstatic.com/media/615d66_4bd0173adda347bbb3184523a7f8e91a~mv2.jpg/v1/fill/w_204,h_110,al_c,q_80,usm_0.66_1.00_0.01/615d66_4bd0173adda347bbb3184523a7f8e91a~mv2.jpg",
       "WebsiteUrl": "https://www.skyward.com",
       "TwitterUrl": "skyward_inc",
-      "Rank": 5
+      "Rank": 6
+    },
+    {
+      "Name": "BHTP",
+      "Description": "We make it easy to choose the right trip protection for you, and then we add fast claims processing and speedy claims payment. It's travel insurance your way.",
+      "SponsorLevel": {
+        "Name": "Gold Sponsor",
+        "Rank": 1
+      },
+      "ImageUrl": "https://static.wixstatic.com/media/615d66_2eea6f2ae1d14d78a3c89b8b2cd70da5~mv2.jpg/v1/fill/w_220,h_70,al_c,q_80,usm_0.66_1.00_0.01/615d66_2eea6f2ae1d14d78a3c89b8b2cd70da5~mv2.jpg",
+      "WebsiteUrl": "https://www.bhtp.com",
+      "TwitterUrl": "BHTP",
+      "Rank": 6
     }
   ],
   "notifications" : [
