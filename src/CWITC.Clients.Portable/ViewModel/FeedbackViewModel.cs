@@ -26,9 +26,9 @@ namespace CWITC.Clients.Portable
 
         ICommand  submitRatingCommand;
         public ICommand SubmitRatingCommand =>
-            submitRatingCommand ?? (submitRatingCommand = new Command<int>(async (rating) => await ExecuteSubmitRatingCommandAsync(rating))); 
+            submitRatingCommand ?? (submitRatingCommand = new Command<double>(async (rating) => await ExecuteSubmitRatingCommandAsync(rating))); 
 
-        async Task ExecuteSubmitRatingCommandAsync(int rating)
+        async Task ExecuteSubmitRatingCommandAsync(double rating)
         {
             if(IsBusy)
                 return;

@@ -173,7 +173,7 @@
                                         StyleId="FavoriteButton"
                                         x:Name="FavoriteButtonAndroid"
                                         Text="{Binding Session.IsFavorite, Converter={StaticResource IsFavoriteDetailTextConverter}}"
-                                        BackgroundColor="{StaticResource PrimaryDark}" 
+                                        BackgroundColor="{StaticResource Accent}" 
                                         Command="{Binding FavoriteCommand}"
                                         TextColor="White"/>
 

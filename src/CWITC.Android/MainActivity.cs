@@ -108,6 +108,7 @@ namespace CWITC.Droid
 
             ZXing.Net.Mobile.Forms.Android.Platform.Init();
 
+
             InitializeHockeyApp();
 
             LoadApplication(new App());

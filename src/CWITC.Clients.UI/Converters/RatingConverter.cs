@@ -14,7 +14,7 @@ namespace CWITC.Clients.UI
         
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            var rating = (int)value;
+            var rating = (double)value;
             if(rating == 0)
                 return "Choose a rating";
             if (rating == 1)

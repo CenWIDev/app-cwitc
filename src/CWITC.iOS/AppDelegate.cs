@@ -100,6 +100,8 @@ namespace CWITC.iOS
             SelectedTabPageRenderer.Initialize();
             TextViewValue1Renderer.Init();
             PullToRefreshLayoutRenderer.Init();
+            Syncfusion.SfRating.XForms.iOS.SfRatingRenderer.Init();
+
             LoadApplication(new App());
 
             NSNotificationCenter.DefaultCenter.AddObserver(UIApplication.DidBecomeActiveNotification, DidBecomeActive);

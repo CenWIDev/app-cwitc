@@ -1,9 +1,10 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage 
     xmlns="http://xamarin.com/schemas/2014/forms" 
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:CWITC.Clients.UI;assembly=CWITC.Clients.UI"
     xmlns:toolkit="clr-namespace:FormsToolkit;assembly=FormsToolkit" 
+    xmlns:rating="clr-namespace:Syncfusion.SfRating.XForms;assembly=Syncfusion.SfRating.XForms"
     x:Class="CWITC.Clients.UI.FeedbackPage"
     BackgroundColor="{DynamicResource WindowBackground}"
     Title="Rate Session">
@@ -17,6 +18,7 @@
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Cancel" Command="{Binding DoneCommand}" x:Name="ToolbarDone"/>
     </ContentPage.ToolbarItems>
+    
     <Grid Padding="24">
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
@@ -32,86 +34,19 @@
                 Style="{DynamicResource EvolveListItemTextStyle}"/>
 
             <Grid RowSpacing="18" HorizontalOptions="Center">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-            </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
 
-            <StackLayout Orientation="Horizontal" Spacing="{StaticResource StandardSpacing}" HorizontalOptions="Center" Grid.Column="1">
-              <Grid HeightRequest="24" WidthRequest="24" x:Name="StarGrid">
-                <Grid.Behaviors>
-                   <!--Do not remove name as it is used in binding-->
-                  <local:StarBehavior x:Name="starOne" GroupName="myStar"/>
-                </Grid.Behaviors>
-                <Image 
-                        Source="{local:ImageResource CWITC.Clients.UI.Images.star_outline.png}" />
-
-                <Image 
-                        Source="{local:ImageResource CWITC.Clients.UI.Images.star_selected.png}"
-                        IsVisible="{Binding Source={x:Reference starOne},
-                                            Path=IsStarred}"/>
+                <rating:SfRating Margin="30, 0, 0, 0" HorizontalOptions="Center" x:Name="rating" ItemCount="5" Grid.Column="0" Grid.Row="0" Precision="Standard"  />
+                    
               </Grid>
-              <Grid HeightRequest="24" WidthRequest="24" HorizontalOptions="Center">
-                <Grid.Behaviors>
-                   <!--Do not remove name as it is used in binding-->
-                  <local:StarBehavior x:Name="starTwo" GroupName="myStar"/>
-                </Grid.Behaviors>
-                <Image 
-                        Source="{local:ImageResource CWITC.Clients.UI.Images.star_outline.png}" />
 
-                <Image 
-                        Source="{local:ImageResource CWITC.Clients.UI.Images.star_selected.png}"
-                        IsVisible="{Binding Source={x:Reference starTwo},
-                                            Path=IsStarred}"/>
-              </Grid>
-              <Grid HeightRequest="24" WidthRequest="24" HorizontalOptions="Center">
-                <Grid.Behaviors>
-                   <!--Do not remove name as it is used in binding-->
-                  <local:StarBehavior x:Name="starThree" GroupName="myStar"/>
-                </Grid.Behaviors>
-                <Image 
-                        Source="{local:ImageResource CWITC.Clients.UI.Images.star_outline.png}" />
-
-                <Image
-                        Source="{local:ImageResource CWITC.Clients.UI.Images.star_selected.png}"
-                        IsVisible="{Binding Source={x:Reference starThree},
-                                            Path=IsStarred}"/>
-              </Grid>
-              <Grid HeightRequest="24" WidthRequest="24" HorizontalOptions="Center">
-                <Grid.Behaviors>
-                <!--Do not remove name as it is used in binding-->
-                  <local:StarBehavior x:Name="starFour" GroupName="myStar"/>
-                </Grid.Behaviors>
-                <Image 
-                        Source="{local:ImageResource CWITC.Clients.UI.Images.star_outline.png}" />
-
-                <Image 
-                        Source="{local:ImageResource CWITC.Clients.UI.Images.star_selected.png}"
-                        IsVisible="{Binding Source={x:Reference starFour},
-                                            Path=IsStarred}"/>
-              </Grid>
-              <Grid HeightRequest="24" WidthRequest="24" HorizontalOptions="Center">
-                <Grid.Behaviors>
-                  <!--D not remove name as it is used in binding-->
-                  <local:StarBehavior x:Name="starFive" GroupName="myStar"/>
-                </Grid.Behaviors>
-                <Image
-                        Source="{local:ImageResource CWITC.Clients.UI.Images.star_outline.png}" />
-
-                <Image 
-                        Source="{local:ImageResource CWITC.Clients.UI.Images.star_selected.png}"
-                        IsVisible="{Binding Source={x:Reference starFive},
-                                            Path=IsStarred}"/>
-              </Grid>
-          </StackLayout>
-          </Grid>
-
-            <Label Text="{Binding Source={x:Reference starFive},
-                   Path=Rating, Converter={StaticResource RatingConverter}}" 
+            <Label Text="{Binding Source={x:Reference rating},
+                   Path=Value, Converter={StaticResource RatingConverter}}" 
                    Style="{DynamicResource EvolveListItemDetailTextStyle}"
                    StyleId="Status"
                    HorizontalOptions="Center"/>
@@ -121,7 +56,7 @@
                 Text="Submit"  
                 StyleId="ButtonSubmit"
                 Command="{Binding SubmitRatingCommand}"
-                CommandParameter="{Binding Source={x:Reference starFive},Path=Rating}"
+                CommandParameter="{Binding Source={x:Reference rating},Path=Value}"
                 IsEnabled="{Binding IsNotBusy}">
 
                 <Button.FontAttributes>
@@ -131,7 +66,7 @@
                     <OnPlatform x:TypeArguments="Color" Android="{StaticResource PrimaryDark}" iOS="Transparent"/>
                 </Button.BackgroundColor>
                 <Button.TextColor>
-                    <OnPlatform x:TypeArguments="Color" Android="White" iOS="{StaticResource PrimaryDark}"/>
+                    <OnPlatform x:TypeArguments="Color" Android="White" iOS="{StaticResource Accent}"/>
                 </Button.TextColor>
                 <Button.BorderWidth>
                     <OnPlatform x:TypeArguments="x:Double" iOS="1"/>

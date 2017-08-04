@@ -150,6 +150,7 @@ namespace CWITC.Droid
 			global::HockeyApp.Resource.Style.HockeyApp_SingleLineInputStyle = global::CWITC.Droid.Resource.Style.HockeyApp_SingleLineInputStyle;
 			global::PCLStorage.Resource.String.ApplicationName = global::CWITC.Droid.Resource.String.ApplicationName;
 			global::PCLStorage.Resource.String.Hello = global::CWITC.Droid.Resource.String.Hello;
+			global::Com.Syncfusion.Rating.Resource.String.library_name = global::CWITC.Droid.Resource.String.library_name;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarSize = global::CWITC.Droid.Resource.Attribute.actionBarSize;
 			global::ZXing.Net.Mobile.Forms.Android.Resource.Layout.zxingscanneractivitylayout = global::CWITC.Droid.Resource.Layout.zxingscanneractivitylayout;
 			global::ZXing.Net.Mobile.Forms.Android.Resource.Layout.zxingscannerfragmentlayout = global::CWITC.Droid.Resource.Layout.zxingscannerfragmentlayout;
