@@ -17,7 +17,6 @@ using CoreSpotlight;
 using CWITC.DataStore.Abstractions;
 using HockeyApp;
 using System.Threading.Tasks;
-using Google.AppIndexing;
 using HockeyApp.iOS;
 using Xamarin.Auth;
 using Firebase.RemoteConfig;
@@ -80,8 +79,6 @@ namespace CWITC.iOS
             Toolkit.Init();
 
             DependencyService.Register<ISSOClient, iOSAuthSSOClient>();
-
-			AppIndexing.SharedInstance.RegisterApp (618319027);
 
             ZXing.Net.Mobile.Forms.iOS.Platform.Init();
 

@@ -34,18 +34,10 @@
 	<false/>
 	<key>UIPrerenderedIcon</key>
 	<true/>
-	<key>UILaunchStoryboardName~ipad</key>
-	<string>LaunchScreen~ipad</string>
 	<key>XSAppIconAssets</key>
 	<string>Images.xcassets/AppIcon.appiconset</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Location is needed to display your current location on maps.</string>
-	<key>NSRemindersUsageDescription</key>
-	<string>Add reminders for events.</string>
-	<key>NSCameraUsageDescription</key>
-	<string>Scan Barcodes</string>
-	<key>NSCalendarsUsageDescription</key>
-	<string>Add events to calendar.</string>
 	<key>UIApplicationShortcutItems</key>
 	<array>
 		<dict>
