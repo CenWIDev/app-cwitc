@@ -118,8 +118,9 @@ namespace CWITC.Droid
 				{
 					var loginManager = DeviceLoginManager.Instance;
 					loginManager.LogOut();
-                    Settings.Current.AuthType = string.Empty;
                 }
+
+				Settings.Current.AuthType = string.Empty;
             }
             catch (System.Exception ex)
             {

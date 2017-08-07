@@ -4957,8 +4957,8 @@ namespace CWITC.Droid
 			// aapt resource value: 0x7f080067
 			public const int abc_toolbar_collapse_description = 2131230823;
 			
-			// aapt resource value: 0x7f0800ce
-			public const int app_name = 2131230926;
+			// aapt resource value: 0x7f0800c7
+			public const int app_name = 2131230919;
 			
 			// aapt resource value: 0x7f080076
 			public const int appbar_scrolling_view_behavior = 2131230838;
@@ -5156,31 +5156,13 @@ namespace CWITC.Droid
 			public const int common_signin_button_text_long = 2131230737;
 			
 			// aapt resource value: 0x7f0800c9
-			public const int default_web_client_id = 2131230921;
-			
-			// aapt resource value: 0x7f0800cf
-			public const int facebook_app_id = 2131230927;
-			
-			// aapt resource value: 0x7f0800d0
-			public const int fb_login_protocol_scheme = 2131230928;
+			public const int facebook_app_id = 2131230921;
 			
 			// aapt resource value: 0x7f0800ca
-			public const int firebase_database_url = 2131230922;
-			
-			// aapt resource value: 0x7f0800c7
-			public const int gcm_defaultSenderId = 2131230919;
-			
-			// aapt resource value: 0x7f0800cb
-			public const int google_api_key = 2131230923;
+			public const int fb_login_protocol_scheme = 2131230922;
 			
 			// aapt resource value: 0x7f0800c8
 			public const int google_app_id = 2131230920;
-			
-			// aapt resource value: 0x7f0800cc
-			public const int google_crash_reporting_api_key = 2131230924;
-			
-			// aapt resource value: 0x7f0800cd
-			public const int google_storage_bucket = 2131230925;
 			
 			// aapt resource value: 0x7f080080
 			public const int hockeyapp_crash_dialog_app_name_fallback = 2131230848;
@@ -5482,11 +5464,11 @@ namespace CWITC.Droid
 			// aapt resource value: 0x7f080068
 			public const int search_menu_title = 2131230824;
 			
-			// aapt resource value: 0x7f0800d1
-			public const int shortcut_events = 2131230929;
+			// aapt resource value: 0x7f0800cb
+			public const int shortcut_events = 2131230923;
 			
-			// aapt resource value: 0x7f0800d2
-			public const int shortcut_sessions = 2131230930;
+			// aapt resource value: 0x7f0800cc
+			public const int shortcut_sessions = 2131230924;
 			
 			// aapt resource value: 0x7f080069
 			public const int status_bar_notification_info_overflow = 2131230825;

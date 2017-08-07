@@ -70,6 +70,20 @@
                     </Button.FontAttributes>
                 </Button>
 
+                <Button 
+                    Text="Google"
+                    Command="{Binding GoogleLoginCommand}"
+                    HorizontalOptions="FillAndExpand"
+                    IsEnabled="{Binding IsNotBusy}"
+                    StyleId="GoogleSignInButton"
+                    TextColor="White"
+                    BackgroundColor="#dd4b39">
+
+                    <Button.FontAttributes>
+                        <OnPlatform x:TypeArguments="FontAttributes" iOS="Bold"/>
+                    </Button.FontAttributes>
+                </Button>                    
+
                 <Button
                     Text="Not Now"                                     
                     Command="{Binding CancelCommand}"
