@@ -24,6 +24,7 @@ using CWITC.Clients.Portable;
 using CWITC.Clients.UI;
 using CWITC.DataObjects;
 using Xamarin;
+using Android.Gms.Auth.Api.SignIn;
 //using Gcm;
 //using Gcm.Client;
 
@@ -84,6 +85,9 @@ namespace CWITC.Droid
         DataPathPrefix = "/android/@PACKAGE_NAME@/logout")]
     public class MainActivity : FormsAppCompatActivity
     {
+        const int RC_SIGN_IN = 9001;
+        TaskCompletionSource<GoogleSignInAccount> googleSignInTask = null;
+
         public Xamarin.Facebook.ICallbackManager CallbackManager { get; private set; }
 
         protected override void OnCreate(Bundle savedInstanceState)
@@ -158,7 +162,24 @@ namespace CWITC.Droid
         {
             base.OnActivityResult(requestCode, resultCode, data);
 
-            CallbackManager.OnActivityResult(requestCode, (int)resultCode, data);
+            // Result returned from launching the Intent from GoogleSignInApi.getSignInIntent(...);
+            if (requestCode == RC_SIGN_IN)
+            {
+                var result = Android.Gms.Auth.Api.Auth.GoogleSignInApi.GetSignInResultFromIntent(data);
+                if (result.IsSuccess)
+                {
+                    //result.SignInAccount.
+                    googleSignInTask.SetResult(result.SignInAccount);
+                }
+                else
+                {
+                    googleSignInTask.SetCanceled();
+                }   
+            }
+            else
+            {
+                CallbackManager.OnActivityResult(requestCode, (int)resultCode, data);
+            }
         }
 
         void InitializeHockeyApp()
@@ -201,6 +222,13 @@ namespace CWITC.Droid
             PermissionsImplementation.Current.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
 
+        public void GoogleSignIn(GoogleApiClient apiClient, TaskCompletionSource<GoogleSignInAccount> tcs)
+        {
+            this.googleSignInTask = tcs;
+
+            Intent signInIntent = Android.Gms.Auth.Api.Auth.GoogleSignInApi.GetSignInIntent(apiClient);
+			StartActivityForResult(signInIntent, RC_SIGN_IN);
+        }
     }
 }
 
