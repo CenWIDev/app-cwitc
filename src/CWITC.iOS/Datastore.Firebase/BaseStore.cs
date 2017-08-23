@@ -54,7 +54,7 @@ namespace CWITC.Shared.DataStore.Firebase
                 }
                 else
                 {
-                    getData.SetResult(null);
+                    getData.SetResult(new List<T>());
                 }
             });
 

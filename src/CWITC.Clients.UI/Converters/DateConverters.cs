@@ -122,32 +122,7 @@ namespace CWITC.Clients.UI
         }
     }
 
-    class EventDayNumberDisplayConverter : IValueConverter
-    {
 
-        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
-        {
-            try
-            {
-                if(!(value is DateTime))
-                    return string.Empty;
-
-                return ((DateTime)value).ToEasternTimeZone().Day;
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine("Unable to convert: " + ex);
-            }
-
-            return string.Empty;
-        }
-
-
-        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
-        {
-            throw new NotImplementedException();
-        }
-    }
 
     class EventDayDisplayConverter : IValueConverter
     {

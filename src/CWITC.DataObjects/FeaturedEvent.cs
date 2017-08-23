@@ -5,6 +5,12 @@ namespace CWITC.DataObjects
     public class FeaturedEvent : BaseDataObject
     {
         /// <summary>
+        /// Gets or sets the type of the event such as: offsite, session, break, etc
+        /// </summary>
+        /// <value>The type.</value>
+        public string Type { get; set; }
+
+        /// <summary>
         /// Gets or sets the title of the event such as: Evolve Keynote
         /// </summary>
         /// <value>The title.</value>
@@ -28,7 +34,6 @@ namespace CWITC.DataObjects
         /// <value>The end time.</value>
         public DateTime? EndTime { get; set; }
 
-
         /// <summary>
         /// Gets or sets a value indicating whether this instance is all day.
         /// Such as Darwin Lounge for instance
@@ -38,6 +43,8 @@ namespace CWITC.DataObjects
 
         public string LocationName { get; set; }
 
+        public string SponsorId { get; set; }
+
         /// <summary>
         /// Gets or sets the sponsor if there is one for the event
         /// </summary>
@@ -46,6 +53,7 @@ namespace CWITC.DataObjects
 
         [JsonIgnore]
         public bool HasSponsor => Sponsor != null;
+
         [JsonIgnore]
         public DateTime StartTimeOrderBy { get { return StartTime.HasValue ? StartTime.Value : DateTime.MinValue; } }
     }

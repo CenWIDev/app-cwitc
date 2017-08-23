@@ -49,6 +49,15 @@ namespace CWITC.Clients.Portable
             }
         }
 
+        ICommand viewExtraCommand;
+        public ICommand ViewExtraCommand =>
+        viewExtraCommand ?? (viewExtraCommand = new Command(async () => { await ExecuteViewExtraCommandAsync(); });
+
+        Task ExecuteViewExtraCommandAsync()
+        {
+            throw new NotImplementedException();
+        }
+
         Sponsor selectedSponsor;
         public Sponsor SelectedSponsor
         {

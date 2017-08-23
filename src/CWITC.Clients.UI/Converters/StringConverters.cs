@@ -1,6 +1,7 @@
 ﻿using System;
 using Xamarin.Forms;
 using System.Globalization;
+using System.Diagnostics;
 
 namespace CWITC.Clients.UI
 {
@@ -42,6 +43,33 @@ namespace CWITC.Clients.UI
         {
             throw new NotImplementedException();
         }
-    }  
+    }
+
+	class EventTitleAbbrDisplayConverter : IValueConverter
+	{
+
+		public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+		{
+			try
+			{
+				if (!(value is string))
+					return string.Empty;
+
+                return value.ToString().Substring(0, 1);
+			}
+			catch (Exception ex)
+			{
+				Debug.WriteLine("Unable to convert: " + ex);
+			}
+
+			return string.Empty;
+		}
+
+
+		public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+		{
+			throw new NotImplementedException();
+		}
+	}
 }
 

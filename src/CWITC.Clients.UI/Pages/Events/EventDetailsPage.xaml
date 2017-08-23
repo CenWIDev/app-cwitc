@@ -64,6 +64,24 @@
                 <local:FooterDivider/>
             </StackLayout>
             </local:CardView>
+
+           <local:CardView >
+            <StackLayout Spacing="0">
+            <local:LabelSection Text="Extra Info"/>
+                <local:HeaderDivider/>
+                    <StackLayout Padding="{StaticResource StandardPadding}" BackgroundColor="White">
+                       <Button 
+                            StyleId="FavoriteButton"
+                            x:Name="FavoriteButtoniOS"
+                            Text="blargh"
+                            FontAttributes="Bold"
+                            HorizontalOptions="StartAndExpand"
+                            TextColor="{DynamicResource Primary}"
+                            Command="{Binding FavoriteCommand}" />
+                    </StackLayout>
+                <local:FooterDivider/>
+            </StackLayout>
+            </local:CardView>
         </StackLayout>
         </StackLayout>
     </local:AlwaysScrollView>
