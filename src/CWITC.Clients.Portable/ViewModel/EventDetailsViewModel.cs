@@ -22,6 +22,16 @@ namespace CWITC.Clients.Portable
             Sponsors = new ObservableRangeCollection<Sponsor>();
             if (e.Sponsor != null)
                 Sponsors.Add(e.Sponsor);
+
+            switch(Event.Type)
+            {
+                case "sessions":
+                    HasExtraInfo = true;
+                    break;
+                default:
+                    HasExtraInfo = false;
+                    break;
+            }
         }
 
         ICommand  loadEventDetailsCommand;
@@ -49,14 +59,7 @@ namespace CWITC.Clients.Portable
             }
         }
 
-        ICommand viewExtraCommand;
-        public ICommand ViewExtraCommand =>
-        viewExtraCommand ?? (viewExtraCommand = new Command(async () => { await ExecuteViewExtraCommandAsync(); });
-
-        Task ExecuteViewExtraCommandAsync()
-        {
-            throw new NotImplementedException();
-        }
+        public bool HasExtraInfo { get; private set; }
 
         Sponsor selectedSponsor;
         public Sponsor SelectedSponsor

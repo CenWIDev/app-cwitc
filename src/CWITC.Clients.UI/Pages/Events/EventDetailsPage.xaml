@@ -11,6 +11,7 @@
    <ContentPage.Resources>
      <ResourceDictionary>
         <local:EventDateDisplayConverter x:Key="EventDateDisplayConverter" />
+        <local:EventExtraInfoButtonTitleConverter x:Key="EventExtraInfoButtonTitleConverter" />
      </ResourceDictionary>
     </ContentPage.Resources>
    <local:AlwaysScrollView>
@@ -65,22 +66,36 @@
             </StackLayout>
             </local:CardView>
 
-           <local:CardView >
-            <StackLayout Spacing="0">
-            <local:LabelSection Text="Extra Info"/>
-                <local:HeaderDivider/>
-                    <StackLayout Padding="{StaticResource StandardPadding}" BackgroundColor="White">
-                       <Button 
-                            StyleId="FavoriteButton"
-                            x:Name="FavoriteButtoniOS"
-                            Text="blargh"
-                            FontAttributes="Bold"
-                            HorizontalOptions="StartAndExpand"
-                            TextColor="{DynamicResource Primary}"
-                            Command="{Binding FavoriteCommand}" />
-                    </StackLayout>
-                <local:FooterDivider/>
-            </StackLayout>
+          <local:CardView IsVisible="{Binding HasExtraInfo}">
+                <StackLayout Spacing="0">
+                    <!--Rate-->
+                    <local:LabelSection Text="Extra Info" StyleId="ExtraInfoTitle"/>
+                        <local:HeaderDivider/>
+                        <StackLayout Padding="{StaticResource StandardPadding}" BackgroundColor="White" StyleId="ViewMoreCardBox">
+                                <Button
+                                    IsVisible="true"
+                                    Text="{Binding Event.Type, Converter={StaticResource EventExtraInfoButtonTitleConverter}}"                                     
+                                    x:Name="ButtonRate"
+                                    Clicked="HandleViewClicked">
+                                    <Button.FontAttributes>
+                                        <OnPlatform x:TypeArguments="FontAttributes" iOS="Bold"/>
+                                    </Button.FontAttributes>
+                                    <Button.BackgroundColor>
+                                        <OnPlatform x:TypeArguments="Color" Android="{StaticResource Accent}" iOS="Transparent"/>
+                                    </Button.BackgroundColor>
+                                    <Button.TextColor>
+                                        <OnPlatform x:TypeArguments="Color" Android="White" iOS="{StaticResource Accent}"/>
+                                    </Button.TextColor>
+                                    <Button.BorderWidth>
+                                        <OnPlatform x:TypeArguments="x:Double" iOS="1"/>
+                                    </Button.BorderWidth> 
+                                    <Button.BorderColor>
+                                        <OnPlatform x:TypeArguments="Color" iOS="{StaticResource ButtonBorder}"/>
+                                    </Button.BorderColor> 
+                                </Button>
+                            </StackLayout>
+                        <local:FooterDivider/>
+                </StackLayout>
             </local:CardView>
         </StackLayout>
         </StackLayout>

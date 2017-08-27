@@ -71,5 +71,37 @@ namespace CWITC.Clients.UI
 			throw new NotImplementedException();
 		}
 	}
+
+    public class EventExtraInfoButtonTitleConverter : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+			try
+			{
+				if (!(value is string))
+					return string.Empty;
+                var str = value as string;
+                if (str.ToLower().Equals("offsite") || str.ToLower().Equals("lunch"))
+                    return "View Map";
+
+				if (str.ToLower().Equals("sessions"))
+					return "View Sessions";
+
+                if (str.ToLower().Equals("keynote"))
+					return "View Keynote";
+			}
+			catch (Exception ex)
+			{
+				Debug.WriteLine("Unable to convert: " + ex);
+			}
+
+			return "View";
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            throw new NotImplementedException();
+        }
+    }
 }
 

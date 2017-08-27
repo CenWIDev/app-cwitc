@@ -10,7 +10,7 @@ using FormsToolkit;
 using Android.Views;
 using Square.Picasso;
 
-[assembly: ExportRenderer (typeof(CWITC.Clients.UI.NavigationView), typeof(NavigationViewRenderer))]
+[assembly: ExportRenderer(typeof(CWITC.Clients.UI.NavigationView), typeof(NavigationViewRenderer))]
 namespace CWITC.Droid
 {
     public class NavigationViewRenderer : ViewRenderer<CWITC.Clients.UI.NavigationView, NavigationView>
@@ -20,7 +20,7 @@ namespace CWITC.Droid
         TextView profileName;
         protected override void OnElementChanged(ElementChangedEventArgs<CWITC.Clients.UI.NavigationView> e)
         {
-            
+
             base.OnElementChanged(e);
             if (e.OldElement != null || Element == null)
                 return;
@@ -46,6 +46,15 @@ namespace CWITC.Droid
             UpdateImage();
 
             navView.SetCheckedItem(Resource.Id.nav_feed);
+
+            MessagingService.Current.Subscribe(MessageKeys.NavigateToSessionList, m =>
+            {
+                navView.SetCheckedItem(Resource.Id.nav_sessions);
+                this.Element.OnNavigationItemSelected(new CWITC.Clients.UI.NavigationItemSelectedEventArgs
+                {
+                    Index = (int)AppPage.Sessions
+                });
+            });
         }
 
         void NavigateToLogin()
@@ -57,7 +66,7 @@ namespace CWITC.Droid
             MessagingService.Current.SendMessage(MessageKeys.NavigateLogin);
         }
 
-        void SettingsPropertyChanged (object sender, System.ComponentModel.PropertyChangedEventArgs e)
+        void SettingsPropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
         {
             if (e.PropertyName == nameof(Settings.Current.Email))
             {
@@ -89,11 +98,11 @@ namespace CWITC.Droid
 
         IMenuItem previousItem;
 
-        void NavView_NavigationItemSelected (object sender, NavigationView.NavigationItemSelectedEventArgs e)
+        void NavView_NavigationItemSelected(object sender, NavigationView.NavigationItemSelectedEventArgs e)
         {
 
 
-            if (previousItem != null )
+            if (previousItem != null)
                 previousItem.SetChecked(false);
 
             navView.SetCheckedItem(e.MenuItem.ItemId);
@@ -132,13 +141,13 @@ namespace CWITC.Droid
                     break;
             }
             this.Element.OnNavigationItemSelected(new CWITC.Clients.UI.NavigationItemSelectedEventArgs
-                {
-                   
-                    Index = id
-                });
+            {
+
+                Index = id
+            });
         }
 
-      
+
     }
 }
 
