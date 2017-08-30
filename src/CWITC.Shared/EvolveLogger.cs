@@ -5,6 +5,9 @@ using System.Collections.Generic;
 using Xamarin.Forms;
 using CWITC.Clients.Portable;
 using System.Diagnostics;
+#if __IOS__
+using Microsoft.Azure.Mobile.Analytics;
+#endif
 
 [assembly:Dependency(typeof(EvolveLogger))]
 namespace CWITC.Clients.Portable
@@ -13,7 +16,7 @@ namespace CWITC.Clients.Portable
     {
         bool enableHockeyApp = false;
 
-        #region ILogger implementation
+#region ILogger implementation
        
         public virtual void TrackPage(string page, string id = null)
         {
@@ -22,10 +25,9 @@ namespace CWITC.Clients.Portable
             if (!enableHockeyApp)
                 return;
 #if __ANDROID__
-
-            HockeyApp.Android.Metrics.MetricsManager.TrackEvent($"{page}Page");
+            Com.Microsoft.Azure.Mobile.Analytics.AndroidAnalytics.TrackEvent($"{page}Page");
 #elif __IOS__
-            HockeyApp.MetricsManager.TrackEvent($"{page}Page");
+            Analytics.TrackEvent($"{page}Page");
 #endif
         }
 
@@ -38,9 +40,9 @@ namespace CWITC.Clients.Portable
                 return;
 
 #if __ANDROID__
-            HockeyApp.Android.Metrics.MetricsManager.TrackEvent(trackIdentifier);
+            Com.Microsoft.Azure.Mobile.Analytics.AndroidAnalytics.TrackEvent(trackIdentifier);
 #elif __IOS__
-            HockeyApp.MetricsManager.TrackEvent(trackIdentifier);
+            Analytics.TrackEvent(trackIdentifier);
 #endif
         }
 
@@ -54,16 +56,15 @@ namespace CWITC.Clients.Portable
             trackIdentifier = $"{trackIdentifier}-{key}-{@value}";
 
 #if __ANDROID__
-            HockeyApp.Android.Metrics.MetricsManager.TrackEvent(trackIdentifier);
+            Com.Microsoft.Azure.Mobile.Analytics.AndroidAnalytics.TrackEvent(trackIdentifier);
 #elif __IOS__
-            HockeyApp.MetricsManager.TrackEvent(trackIdentifier);
+            Analytics.TrackEvent(trackIdentifier);
 #endif
         }
        
         public virtual void Report(Exception exception = null, Severity warningLevel = Severity.Warning)
         {
             Debug.WriteLine("Evolve Logger: Report: " + exception);
-
         }
         public virtual void Report(Exception exception, IDictionary extraData, Severity warningLevel = Severity.Warning)
         {

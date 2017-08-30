@@ -5,16 +5,8 @@ namespace CWITC.Clients.Portable
    
     public static class ApiKeys
     {
-		// todo: change these values
-		public const string HockeyAppiOS = "HockeyAppiOS";
-        public const string HockeyAppAndroid = "HockeyAppAndroid";
-        public const string HockeyAppUWP = "HockeyAppUWP";
-
-		// todo: change these values
-		public const string AzureServiceBusName = "AzureServiceBusName";
-        public const string AzureServiceBusUrl = "AzureServiceBusUrl";
-        public const string AzureKey ="AzureKey";
-
+        public const string VSMobileCenterApiKeyAndroid = "";
+        public const string VSMobileCenterApiKeyIOS = "4db3b3ce-08d1-4c01-be8f-a01921f2019e";
 
         // todo: change these values
         public const string GoogleSenderId ="xamarinawareness";

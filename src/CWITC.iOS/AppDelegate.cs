@@ -15,11 +15,12 @@ using Refractored.XamForms.PullToRefresh.iOS;
 using Social;
 using CoreSpotlight;
 using CWITC.DataStore.Abstractions;
-using HockeyApp;
 using System.Threading.Tasks;
-using HockeyApp.iOS;
 using Xamarin.Auth;
 using Firebase.RemoteConfig;
+using Microsoft.Azure.Mobile;
+using Microsoft.Azure.Mobile.Analytics;
+using Microsoft.Azure.Mobile.Crashes;
 
 namespace CWITC.iOS
 {
@@ -69,17 +70,13 @@ namespace CWITC.iOS
             UIView.AppearanceWhenContainedIn(typeof(UIActivityViewController)).TintColor = tint;
             UIView.AppearanceWhenContainedIn(typeof(SLComposeViewController)).TintColor = tint;
 
-            if (!string.IsNullOrWhiteSpace(ApiKeys.HockeyAppiOS) && ApiKeys.HockeyAppiOS != nameof(ApiKeys.HockeyAppiOS)) 
+            if (!string.IsNullOrWhiteSpace(ApiKeys.VSMobileCenterApiKeyIOS) && ApiKeys.VSMobileCenterApiKeyIOS != nameof(ApiKeys.VSMobileCenterApiKeyIOS)) 
             {
-               
-                var manager = BITHockeyManager.SharedHockeyManager;
-                manager.Configure(ApiKeys.HockeyAppiOS);
-
-                //Disable update manager
-                manager.DisableUpdateManager = true;
-
-                manager.StartManager();
-                //manager.Authenticator.AuthenticateInstallation();
+				MobileCenter
+                    .Start(
+                        ApiKeys.VSMobileCenterApiKeyIOS,
+				        typeof(Analytics), 
+                        typeof(Crashes));
             }
 
             Forms.Init();
