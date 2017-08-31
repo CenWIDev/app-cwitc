@@ -59,7 +59,7 @@
     <ConsolePause>false</ConsolePause>
     <DefineConstants>MOBILE</DefineConstants>
     <RunCodeAnalysis>false</RunCodeAnalysis>
-    <AndroidSupportedAbis>armeabi-v7a;x86</AndroidSupportedAbis>
+    <AndroidSupportedAbis>armeabi-v7a;x86;armeabi;arm64-v8a;x86_64</AndroidSupportedAbis>
     <DebugType>
     </DebugType>
     <AndroidLinkSkip />
