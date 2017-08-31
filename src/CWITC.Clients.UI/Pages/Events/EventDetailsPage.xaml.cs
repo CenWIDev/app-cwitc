@@ -62,6 +62,17 @@ namespace CWITC.Clients.UI
         {
             base.OnDisappearing();
         }
+
+        async void HandleViewClicked(object sender, System.EventArgs e)
+        {
+			if (Event.Type.ToLower() == "sessions")
+			{
+                App.Logger.TrackPage(AppPage.Sessions.ToString());
+                //await NavigationService.PushAsync(Navigation, new EvolveNavigationPage(new SessionsPage()));
+
+                MessagingService.Current.SendMessage(MessageKeys.NavigateToSessionList);
+			}
+        }
     }
 }
 

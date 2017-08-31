@@ -12,7 +12,7 @@
    <ContentPage.Resources>
      <ResourceDictionary>
         <local:EventTimeDisplayConverter x:Key="EventTimeDisplayConverter" />
-        <local:EventDayNumberDisplayConverter x:Key="EventDayNumberDisplayConverter" />
+        <local:EventTitleAbbrDisplayConverter x:Key="EventTitleAbbrDisplayConverter" />
         <local:EventDayDisplayConverter x:Key="EventDayDisplayConverter" />
         <local:EventColorDisplayConverter x:Key="EventColorDisplayConverter" />
      </ResourceDictionary>
@@ -48,7 +48,8 @@
         </ListView.GroupHeaderTemplate>
       <ListView.ItemTemplate>
         <DataTemplate>
-          <ViewCell StyleId="disclosure">
+          <ViewCell StyleId="disclosure"
+                        Height="85">
             <Grid Padding="{StaticResource StandardPadding}" ColumnSpacing="{StaticResource StandardSpacing}">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="50"/>
@@ -58,18 +59,13 @@
                     <Grid>
                         <imagecircle:CircleImage WidthRequest="35" HeightRequest="35" VerticalOptions="Center" HorizontalOptions="Center"
                             FillColor="{Binding StartTime, Converter={StaticResource EventColorDisplayConverter}}"/>
-                        <Label Text="{Binding  StartTime, Converter={StaticResource EventDayNumberDisplayConverter}}" 
+                        <Label Text="{Binding  Title, Converter={StaticResource EventTitleAbbrDisplayConverter}}" 
                                VerticalTextAlignment="Center" 
                                HorizontalTextAlignment="Center"
                                Style="{DynamicResource EvolveListItemTextStyle}"
                                TextColor="White"
                                StyleId="EventItemCircleDate"/>
                     </Grid>
-                    <Label  Text="{Binding StartTime, Converter={StaticResource EventDayDisplayConverter}}" 
-                               VerticalTextAlignment="Center" 
-                               HorizontalTextAlignment="Center"
-                               Style="{DynamicResource EvolveListItemDetailTextStyle}"
-                               StyleId="EventItemDay"/>
                 </StackLayout>
 
                 <StackLayout Grid.Column="1" VerticalOptions="Center" HorizontalOptions="FillAndExpand">

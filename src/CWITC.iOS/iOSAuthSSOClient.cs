@@ -8,6 +8,7 @@ using Firebase.Auth;
 //using Firebase.Auth;
 using FormsToolkit;
 using Foundation;
+using Google.SignIn;
 using SafariServices;
 using UIKit;
 using Xamarin.Auth;
@@ -15,39 +16,46 @@ using Xamarin.Forms;
 
 namespace CWITC.iOS
 {
-    public partial class iOSAuthSSOClient : NSObject, ISFSafariViewControllerDelegate
+    public partial class iOSAuthSSOClient :
+        NSObject, ISFSafariViewControllerDelegate, ISignInDelegate, ISignInUIDelegate
     {
+        static iOSAuthSSOClient()
+        {
+            var googleServiceDictionary = NSDictionary.FromFile("GoogleService-Info.plist");
+            Google.SignIn.SignIn.SharedInstance.ClientID = googleServiceDictionary["CLIENT_ID"].ToString();
+        }
+
         public async Task<AccountResponse> LoginAnonymously()
         {
             TaskCompletionSource<AccountResponse> task = new TaskCompletionSource<AccountResponse>();
-			Auth.DefaultInstance.SignInAnonymously((user, error) =>
-			{
-				if (error != null)
-				{
-					AuthErrorCode errorCode;
-					if (IntPtr.Size == 8) // 64 bits devices
-						errorCode = (AuthErrorCode)((long)error.Code);
-					else // 32 bits devices
-						errorCode = (AuthErrorCode)((int)error.Code);
+            Auth.DefaultInstance.SignInAnonymously((user, error) =>
+            {
+                if (error != null)
+                {
+                    AuthErrorCode errorCode;
+                    if (IntPtr.Size == 8) // 64 bits devices
+                        errorCode = (AuthErrorCode)((long)error.Code);
+                    else // 32 bits devices
+                        errorCode = (AuthErrorCode)((int)error.Code);
 
-					// Posible error codes that SignInAnonymously method could throw
-					// Visit https://firebase.google.com/docs/auth/ios/errors for more information
-					switch (errorCode)
-					{
-						case AuthErrorCode.OperationNotAllowed:
-						default:
-							// Print error
-							break;
-					}
+                    // Posible error codes that SignInAnonymously method could throw
+                    // Visit https://firebase.google.com/docs/auth/ios/errors for more information
+                    switch (errorCode)
+                    {
+                        case AuthErrorCode.OperationNotAllowed:
+                        default:
+                            // Print error
+                            break;
+                    }
 
-					task.SetResult(new AccountResponse
-					{
-						Success = false,
-						Error = error.LocalizedDescription
-					});
-				}
-				else
-				{
+                    task.SetResult(new AccountResponse
+                    {
+                        Success = false,
+                        Error = error.LocalizedDescription
+                    });
+                }
+                else
+                {
                     Settings.Current.AuthType = "anonymous";
                     // Do your magic to handle authentication result
                     task.SetResult(new AccountResponse
@@ -55,11 +63,70 @@ namespace CWITC.iOS
                         User = new Clients.Portable.User { IsAnonymous = true, Id = user.Uid },
                         Success = true
                     });
-				}
-			});
+                }
+            });
 
             return await task.Task;
         }
+
+        #region Google Sign In
+        TaskCompletionSource<GoogleUser> googleSignInTask;
+        public async Task<AccountResponse> LoginWithGoogle()
+        {
+            googleSignInTask = new TaskCompletionSource<GoogleUser>();
+
+            Google.SignIn.SignIn.SharedInstance.Delegate = this;
+            Google.SignIn.SignIn.SharedInstance.UIDelegate = this;
+
+            Google.SignIn.SignIn.SharedInstance.SignInUser();
+            var googleUser = await googleSignInTask.Task;
+
+            var googleAuth = Firebase.Auth.GoogleAuthProvider.GetCredential(
+                googleUser.Authentication.IdToken,
+                googleUser.Authentication.AccessToken
+            );
+
+			Google.SignIn.SignIn.SharedInstance.Delegate = null;
+			Google.SignIn.SignIn.SharedInstance.UIDelegate = null;
+
+            var firebaseResult = await LoginToFirebase(googleAuth);
+            //googleUser.Authentication.tok
+
+			if (firebaseResult.Success)
+			{
+				Settings.Current.AuthType = "google";
+				//firebaseResult.User.Email = emailAddress;
+			}
+
+			return firebaseResult;
+        }
+
+        [Export("signIn:didSignInForUser:withError:")]
+        public void DidSignIn(SignIn signIn, GoogleUser user, NSError error)
+        {
+            if (error == null)
+            {
+                googleSignInTask.TrySetResult(user);
+            }
+            else
+            {
+                googleSignInTask.TrySetException(new Exception(error.LocalizedDescription));
+            }
+        }
+
+        [Export("signIn:presentViewController:")]
+        public void ShowGoogleSignIn(SignIn signIn, UIViewController viewController)
+        {
+            GetViewController().PresentViewController(viewController, true, () => { });
+        }
+
+        [Export("signIn:dismissViewController:")]
+        public void DismissGoogleSignIn(SignIn signIn, UIViewController viewController)
+        {
+            viewController.DismissViewController(true, () => { });
+        }
+
+        #endregion
 
         public async Task<AccountResponse> LoginWithFacebook()
         {
@@ -122,9 +189,9 @@ namespace CWITC.iOS
         public Task LogoutAsync()
         {
             NSError error;
-            if(!Firebase.Auth.Auth.DefaultInstance.SignOut(out error))
+            if (!Firebase.Auth.Auth.DefaultInstance.SignOut(out error))
             {
-                if(Settings.Current.AuthType == "facebook")
+                if (Settings.Current.AuthType == "facebook")
                 {
                     new Facebook.LoginKit.LoginManager().LogOut();
                     Settings.Current.AuthType = string.Empty;

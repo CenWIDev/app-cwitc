@@ -65,11 +65,8 @@ namespace CWITC.Clients.Portable
 
             var day = start.DayOfWeek.ToString();
             var monthDay = start.ToString("M");
-            return $"{day}, {monthDay}, {startString}–{endString}";
+            return $"{startString}–{endString}";
         }
-
-
-      
 
         public static string GetDisplayTime(this FeaturedEvent e)
         {

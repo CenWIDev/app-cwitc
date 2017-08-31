@@ -90,6 +90,8 @@ namespace CWITC.Clients.UI
                     q?.OnCompleted?.Invoke(result);
                 });
 
+
+
             MessagingService.Current.Subscribe(MessageKeys.NavigateLogin, async m =>
                 {
                     if(Device.OS == TargetPlatform.Android)

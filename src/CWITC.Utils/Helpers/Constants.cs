@@ -18,14 +18,13 @@ namespace CWITC.Clients.Portable
 
         // todo: change these values
         public const string GoogleSenderId ="xamarinawareness";
-        public const string AzureHubName = "EvolveTest";
-        public const string AzureListenConneciton = "Endpoint=sb://evolvetest.servicebus.windows.net/;SharedAccessKeyName=DefaultListenSharedAccessSignature;SharedAccessKey=nC00PmSAZu5jv1v8qRGBvS6PwpiW9R5V7CrMhf0lWiA=";
     }
     public static class MessageKeys
     {
         public const string LoginCallback = "auth_login_callback";
         public const string LogoutCallback = "auth_logout_callback";
         public const string NavigateToEvent = "navigate_event";
+        public const string NavigateToSessionList = "navigate_session_list";
         public const string NavigateToSession = "navigate_session";
         public const string NavigateToSpeaker = "navigate_speaker";
         public const string NavigateToSponsor = "navigate_sponsor";

@@ -29,70 +29,17 @@ namespace CWITC.Clients.Portable
 
         async Task ExecuteFacebookLoginAsync()
         {
-            if (IsBusy)
-                return;
-
-            try
-            {
-                IsBusy = true;
-                Message = "Signing in...";
-#if DEBUG
-                await Task.Delay(1000);
-#endif
-                AccountResponse result = await client.LoginWithFacebook();
-
-                if (result?.Success ?? false)
-                {
-                    Message = "Updating schedule...";
-                    Settings.FirstName = result.User?.FirstName ?? string.Empty;
-                    Settings.LastName = result.User?.LastName ?? string.Empty;
-                    Settings.Email = result.User?.Email.ToLowerInvariant();
-                    Settings.UserId = result.User?.Id;
-                    MessagingService.Current.SendMessage(MessageKeys.LoggedIn);
-                    Logger.Track(EvolveLoggerKeys.LoginSuccess);
-                    try
-                    {
-                        await StoreManager.SyncAllAsync(true);
-                        Settings.Current.LastSync = DateTime.UtcNow;
-                        Settings.Current.HasSyncedData = true;
-                    }
-                    catch (Exception ex)
-                    {
-                        //if sync doesn't work don't worry it is alright we can recover later
-                        Logger.Report(ex);
-                    }
-                    await Finish();
-                    Settings.FirstRun = false;
-                }
-                else
-                {
-                    Logger.Track(EvolveLoggerKeys.LoginFailure, "Reason", result.Error);
-                    MessagingService.Current.SendMessage<MessagingServiceAlert>(MessageKeys.Message, new MessagingServiceAlert
-                    {
-                        Title = "Unable to Sign in",
-                        Message = result.Error,
-                        Cancel = "OK"
-                    });
-                }
-            }
-            catch (Exception ex)
-            {
-                System.Diagnostics.Debug.WriteLine(ex.Message);
-                Logger.Track(EvolveLoggerKeys.LoginFailure, "Reason", ex?.Message ?? string.Empty);
-
-                MessagingService.Current.SendMessage<MessagingServiceAlert>(MessageKeys.Message, new MessagingServiceAlert
-                {
-                    Title = "Unable to Sign in",
-                    Message = "Facebook Sign In Failed",
-                    Cancel = "OK"
-                });
-            }
-            finally
-            {
-                Message = string.Empty;
-                IsBusy = false;
-            }
+            await LoginForProvider("Facebook", () => client.LoginWithFacebook());
         }
+
+		ICommand googleLoginCommand;
+		public ICommand GoogleLoginCommand =>
+		googleLoginCommand ?? (googleLoginCommand = new Command(async () => await ExecuteGoogleLoginAsync()));
+
+		async Task ExecuteGoogleLoginAsync()
+		{
+            await LoginForProvider("Google", () => client.LoginWithGoogle());
+		}
 
         ICommand cancelCommand;
         public ICommand CancelCommand =>
@@ -147,6 +94,73 @@ namespace CWITC.Clients.Portable
                 await Finish();
             }
         }
+
+        async Task LoginForProvider(string providerName, Func<Task<AccountResponse>> providerLogin)
+		{
+			if (IsBusy)
+				return;
+
+			try
+			{
+				IsBusy = true;
+				Message = "Signing in...";
+#if DEBUG
+				await Task.Delay(1000);
+#endif
+				AccountResponse result = await providerLogin();
+
+				if (result?.Success ?? false)
+				{
+					Message = "Updating schedule...";
+					Settings.FirstName = result.User?.FirstName ?? string.Empty;
+					Settings.LastName = result.User?.LastName ?? string.Empty;
+					Settings.Email = result.User?.Email.ToLowerInvariant();
+					Settings.UserId = result.User?.Id;
+					MessagingService.Current.SendMessage(MessageKeys.LoggedIn);
+					Logger.Track(EvolveLoggerKeys.LoginSuccess);
+					try
+					{
+						await StoreManager.SyncAllAsync(true);
+						Settings.Current.LastSync = DateTime.UtcNow;
+						Settings.Current.HasSyncedData = true;
+					}
+					catch (Exception ex)
+					{
+						//if sync doesn't work don't worry it is alright we can recover later
+						Logger.Report(ex);
+					}
+					await Finish();
+					Settings.FirstRun = false;
+				}
+				else
+				{
+					Logger.Track(EvolveLoggerKeys.LoginFailure, "Reason", result.Error);
+					MessagingService.Current.SendMessage<MessagingServiceAlert>(MessageKeys.Message, new MessagingServiceAlert
+					{
+						Title = "Unable to Sign in",
+						Message = result.Error,
+						Cancel = "OK"
+					});
+				}
+			}
+			catch (Exception ex)
+			{
+				System.Diagnostics.Debug.WriteLine(ex.Message);
+				Logger.Track(EvolveLoggerKeys.LoginFailure, "Reason", ex?.Message ?? string.Empty);
+
+				MessagingService.Current.SendMessage<MessagingServiceAlert>(MessageKeys.Message, new MessagingServiceAlert
+				{
+					Title = "Unable to Sign in",
+                    Message = $"{providerName} Sign In Failed",
+					Cancel = "OK"
+				});
+			}
+			finally
+			{
+				Message = string.Empty;
+				IsBusy = false;
+			}
+		}
 
         async Task Finish()
         {

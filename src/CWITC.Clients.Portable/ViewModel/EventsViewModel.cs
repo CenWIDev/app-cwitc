@@ -21,7 +21,6 @@ namespace CWITC.Clients.Portable
         public ObservableRangeCollection<Grouping<string, FeaturedEvent>> EventsGrouped { get; } = new ObservableRangeCollection<Grouping<string, FeaturedEvent>>();
 
 
-
         #region Properties
         FeaturedEvent selectedEvent;
         public FeaturedEvent SelectedEvent
@@ -79,13 +78,7 @@ namespace CWITC.Clients.Portable
             {
                 IsBusy = true;
 
-                #if DEBUG
-                await Task.Delay(1000);
-                #endif
-
                 Events.ReplaceRange(await StoreManager.EventStore.GetItemsAsync(force));
-
-                Title = "Events (" + Events.Count(e => e.StartTime.HasValue && e.StartTime.Value > DateTime.UtcNow) + ")";
 
                 SortEvents();
 

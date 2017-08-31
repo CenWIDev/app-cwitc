@@ -116,7 +116,7 @@ namespace CWITC.Shared.DataStore.Firebase
                 }
                 else
                 {
-                    getTask.TrySetResult(null);
+                    getTask.TrySetResult(new List<T>());
                 }
             }
         }

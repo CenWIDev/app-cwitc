@@ -19,7 +19,7 @@ namespace CWITC.Clients.UI
 
             MessagingService.Current.Subscribe<DeepLinkPage>("DeepLinkPage", async (m, p) =>
                 {
-                    switch(p.Page)
+                    switch (p.Page)
                     {
                         case AppPage.Notification:
                             NavigateAsync(AppPage.Notification);
@@ -32,7 +32,7 @@ namespace CWITC.Clients.UI
                             break;
                         case AppPage.Session:
                             NavigateAsync(AppPage.Sessions);
-                            var session = await DependencyService.Get<ISessionStore>().GetAppIndexSession (p.Id);
+                            var session = await DependencyService.Get<ISessionStore>().GetAppIndexSession(p.Id);
                             if (session == null)
                                 break;
                             await CurrentPage.Navigation.PushAsync(new SessionDetailsPage(session));
@@ -40,6 +40,11 @@ namespace CWITC.Clients.UI
                     }
 
                 });
+
+            MessagingService.Current.Subscribe(MessageKeys.NavigateToSessionList, m =>
+            {
+                CurrentPage = Children[1];
+            });
         }
 
         protected override void OnCurrentPageChanged()
@@ -84,7 +89,7 @@ namespace CWITC.Clients.UI
             }
         }
 
-       
+
     }
 }
 

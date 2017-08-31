@@ -9,6 +9,8 @@ namespace CWITC.Clients.Portable
 
         Task<AccountResponse> LoginWithFacebook();
 
+        Task<AccountResponse> LoginWithGoogle();
+
         Task LogoutAsync();
     }
 }

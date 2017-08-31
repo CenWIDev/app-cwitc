@@ -4,6 +4,9 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Android.Content;
+using Android.Gms.Auth.Api.SignIn;
+using Android.Gms.Common;
+using Android.Gms.Common.Apis;
 using Android.OS;
 using Android.Runtime;
 using Auth0.OidcClient;
@@ -13,14 +16,21 @@ using FormsToolkit;
 using IdentityModel.OidcClient;
 using Java.Lang;
 using Java.Util;
-using Plugin.CurrentActivity;
+//using Plugin.CurrentActivity;
 using Xamarin.Facebook;
 using Xamarin.Facebook.Login;
 
 namespace CWITC.Droid
 {
-    public partial class AndroidAuthSSOClient : Java.Lang.Object, ISSOClient
+    public partial class AndroidAuthSSOClient :
+        Java.Lang.Object,
+        ISSOClient,
+        GoogleApiClient.IConnectionCallbacks,
+        GoogleApiClient.IOnConnectionFailedListener
     {
+        TaskCompletionSource<GoogleSignInAccount> googleSignInTask;
+        private GoogleApiClient _apiClient;
+
         public async Task<AccountResponse> LoginAnonymously()
         {
             try
@@ -51,17 +61,65 @@ namespace CWITC.Droid
             }
         }
 
+        public async Task<AccountResponse> LoginWithGoogle()
+        {
+            try
+            {
+                googleSignInTask = new TaskCompletionSource<GoogleSignInAccount>();
+
+				var activity = Plugin.CurrentActivity.CrossCurrentActivity.Current.Activity;
+                var gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DefaultSignIn)
+                    .RequestIdToken(activity.GetString(Resource.String.default_web_client_id))
+                    .RequestEmail()
+                    .Build();
+
+                _apiClient = new GoogleApiClient.Builder(activity)
+						//.EnableAutoManage() //activity,  this /* OnCon    nectionFailedListener */)
+					.AddConnectionCallbacks(this)
+					.AddOnConnectionFailedListener(this)
+                    .AddApi(Android.Gms.Auth.Api.Auth.GOOGLE_SIGN_IN_API, gso)
+					.Build();
+
+                						           //_apiClient = new GoogleApiClient.Builder(Xamarin.Forms.Forms.Context)
+
+                //   .AddApi(Android.Gms.Auth.Api.Auth.GOOGLE_SIGN_IN_API)
+                //    .Build();
+                
+                _apiClient.Connect();
+
+                var googleAccount = await googleSignInTask.Task;
+
+                var credential = Firebase.Auth.GoogleAuthProvider.GetCredential(
+                    googleAccount.IdToken,
+                    null);
+
+                var firebaseResult = await LoginToFirebase(credential);
+
+                Settings.Current.AuthType = "google";
+
+                return firebaseResult;
+            }
+			catch (System.Exception ex)
+			{
+				return new AccountResponse
+				{
+					Success = false,
+					Error = ex.Message
+				};
+			}
+        }
+
         public async Task<AccountResponse> LoginWithFacebook()
         {
-			var mainActivity = Plugin.CurrentActivity.CrossCurrentActivity.Current.Activity as MainActivity;
+            var mainActivity = Plugin.CurrentActivity.CrossCurrentActivity.Current.Activity as MainActivity;
 
             var tokenTask = new TaskCompletionSource<AccessToken>();
 
             var loginManager = DeviceLoginManager.Instance;
 
-			loginManager.RegisterCallback(
-				mainActivity.CallbackManager, new FacebookLoginCallback(tokenTask));
-            
+            loginManager.RegisterCallback(
+                mainActivity.CallbackManager, new FacebookLoginCallback(tokenTask));
+
             loginManager
                    .LogInWithReadPermissions(
                        Plugin.CurrentActivity.CrossCurrentActivity.Current.Activity,
@@ -77,7 +135,7 @@ namespace CWITC.Droid
 
                 TaskCompletionSource<string> getEmailTask = new TaskCompletionSource<string>();
 
-				Bundle parameters = new Bundle();
+                Bundle parameters = new Bundle();
                 parameters.PutString("fields", "id,email");
                 var graphRequestResult = (await new GraphRequest(accessToken, "me", parameters, HttpMethod.Get)
                     .ExecuteAsync()
@@ -114,12 +172,13 @@ namespace CWITC.Droid
             {
                 FirebaseAuth.Instance.SignOut();
 
-				if (Settings.Current.AuthType == "facebook")
-				{
-					var loginManager = DeviceLoginManager.Instance;
-					loginManager.LogOut();
-                    Settings.Current.AuthType = string.Empty;
+                if (Settings.Current.AuthType == "facebook")
+                {
+                    var loginManager = DeviceLoginManager.Instance;
+                    loginManager.LogOut();
                 }
+
+                Settings.Current.AuthType = string.Empty;
             }
             catch (System.Exception ex)
             {
@@ -160,6 +219,32 @@ namespace CWITC.Droid
             }
         }
 
+        #region Google Login
+
+        void GoogleApiClient.IConnectionCallbacks.OnConnected(Bundle connectionHint)
+        {
+            var activity = Plugin.CurrentActivity.CrossCurrentActivity.Current.Activity as MainActivity;
+            activity.GoogleSignIn(_apiClient, googleSignInTask);
+
+
+            //Xamarin.Forms.Forms.Context.StartActivityForResult(signInIntent, RC_SIGN_IN);
+            //Intent signInIntent =  GoogleSignInApi. .getSignInIntent(mGoogleApiClient);
+            //startActivityForResult(signInIntent, RC_AUTHORIZE_CONTACTS);
+        }
+
+        void GoogleApiClient.IConnectionCallbacks.OnConnectionSuspended(int cause)
+        {
+            //throw new NotImplementedException();
+        }
+
+        void GoogleApiClient.IOnConnectionFailedListener.OnConnectionFailed(ConnectionResult result)
+        {
+            //throw new NotImplementedException();
+        }
+
+        #endregion
+
+        #region Facebook Login
 
         class FacebookLoginCallback : Java.Lang.Object, IFacebookCallback
         {
@@ -189,6 +274,8 @@ namespace CWITC.Droid
                 //throw new NotImplementedException();
             }
         }
+
+        #endregion
 
     }
 }

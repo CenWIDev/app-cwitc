@@ -31,8 +31,6 @@ namespace CWITC.Clients.UI
                 });
         }
 
-
-
         public async Task NavigateAsync(int menuId)
         {
             EvolveNavigationPage newPage = null;

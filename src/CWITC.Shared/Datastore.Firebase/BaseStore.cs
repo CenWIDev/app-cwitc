@@ -14,11 +14,11 @@ namespace CWITC.Shared.DataStore.Firebase
 
 		public abstract string Identifier { get; }
 
-		public virtual Task<T> GetItemAsync(string id)
+		public virtual async Task<T> GetItemAsync(string id)
 		{
 			if (!initialized) InitializeStore();
 
-			throw new NotImplementedException();
+            return (await GetItemsAsync(false)).FirstOrDefault(x  => x.Id == id);
 		}
 
 		public virtual async Task<bool> InsertAsync(T item)

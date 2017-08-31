@@ -37,9 +37,17 @@ namespace CWITC.iOS
 
         public override bool OpenUrl(UIApplication application, NSUrl url, string sourceApplication, NSObject annotation)
         {
-			// We need to handle URLs by passing them to their own OpenUrl in order to make the SSO authentication works.
-            return Facebook.CoreKit.ApplicationDelegate.SharedInstance.OpenUrl(application, url, sourceApplication, annotation);
+            bool isGoogle = Google.SignIn.SignIn.SharedInstance.HandleUrl(url, sourceApplication, annotation);
+            bool isFacebook = Facebook.CoreKit.ApplicationDelegate.SharedInstance.OpenUrl(application, url, sourceApplication, annotation);
+
+            return isGoogle || isFacebook;
         }
+
+		public override bool OpenUrl(UIApplication app, NSUrl url, NSDictionary options)
+		{
+            var openUrlOptions = new UIApplicationOpenUrlOptions(options);
+            return OpenUrl(app, url, openUrlOptions.SourceApplication, options);
+		}
 
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
