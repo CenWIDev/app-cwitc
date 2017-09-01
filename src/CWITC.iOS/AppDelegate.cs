@@ -44,11 +44,11 @@ namespace CWITC.iOS
             return isGoogle || isFacebook;
         }
 
-		public override bool OpenUrl(UIApplication app, NSUrl url, NSDictionary options)
-		{
+        public override bool OpenUrl(UIApplication app, NSUrl url, NSDictionary options)
+        {
             var openUrlOptions = new UIApplicationOpenUrlOptions(options);
             return OpenUrl(app, url, openUrlOptions.SourceApplication, options);
-		}
+        }
 
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
@@ -70,6 +70,7 @@ namespace CWITC.iOS
             UIView.AppearanceWhenContainedIn(typeof(UIActivityViewController)).TintColor = tint;
             UIView.AppearanceWhenContainedIn(typeof(SLComposeViewController)).TintColor = tint;
 
+#if !DEBUG
             if (!string.IsNullOrWhiteSpace(ApiKeys.VSMobileCenterApiKeyIOS) && ApiKeys.VSMobileCenterApiKeyIOS != nameof(ApiKeys.VSMobileCenterApiKeyIOS)) 
             {
 				MobileCenter
@@ -78,6 +79,7 @@ namespace CWITC.iOS
 				        typeof(Analytics), 
                         typeof(Crashes));
             }
+#endif
 
             Forms.Init();
             FormsMaps.Init();
@@ -129,7 +131,7 @@ namespace CWITC.iOS
             ((CWITC.Clients.UI.App)Xamarin.Forms.Application.Current).SecondOnResume();
         }
 
-        #region Quick Action
+#region Quick Action
 
         public UIApplicationShortcutItem LaunchedShortcutItem { get; set; }
 
@@ -139,8 +141,6 @@ namespace CWITC.iOS
 
             // Handle any shortcut item being selected
             HandleShortcutItem(LaunchedShortcutItem);
-
-
 
             // Clear shortcut after it's been handled
             LaunchedShortcutItem = null;
@@ -220,9 +220,9 @@ namespace CWITC.iOS
                 });
         }
 
-        #endregion
+#endregion
 
-        #region Background Refresh
+#region Background Refresh
 
         private void SetMinimumBackgroundFetchInterval()
         {
@@ -267,7 +267,7 @@ namespace CWITC.iOS
             }
         }
 
-		#endregion
+#endregion
 
 		void ConfigureFirebase()
 		{

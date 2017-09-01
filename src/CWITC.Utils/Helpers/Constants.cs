@@ -5,11 +5,8 @@ namespace CWITC.Clients.Portable
    
     public static class ApiKeys
     {
-        public const string VSMobileCenterApiKeyAndroid = "";
+        public const string VSMobileCenterApiKeyAndroid = "ea8830bf-0486-40f8-96b5-52f5cd93761b";
         public const string VSMobileCenterApiKeyIOS = "4db3b3ce-08d1-4c01-be8f-a01921f2019e";
-
-        // todo: change these values
-        public const string GoogleSenderId ="xamarinawareness";
     }
     public static class MessageKeys
     {

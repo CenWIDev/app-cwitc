@@ -11,12 +11,12 @@ using Microsoft.Azure.Mobile.Crashes;
 
 namespace CWITC.Droid
 {
-	//You can specify additional application information in this attribute
+    //You can specify additional application information in this attribute
     [Application]
     public class MainApplication : Application, Application.IActivityLifecycleCallbacks
     {
         public MainApplication(IntPtr handle, JniHandleOwnership transer)
-          :base(handle, transer)
+          : base(handle, transer)
         {
         }
 
@@ -25,13 +25,15 @@ namespace CWITC.Droid
             base.OnCreate();
             RegisterActivityLifecycleCallbacks(this);
 
-			if (!string.IsNullOrWhiteSpace(ApiKeys.VSMobileCenterApiKeyAndroid) && ApiKeys.VSMobileCenterApiKeyIOS != nameof(ApiKeys.VSMobileCenterApiKeyAndroid))
+#if !DEBUG
+            if (!string.IsNullOrWhiteSpace(ApiKeys.VSMobileCenterApiKeyAndroid) && ApiKeys.VSMobileCenterApiKeyIOS != nameof(ApiKeys.VSMobileCenterApiKeyAndroid))
 			{
 				MobileCenter
 					.Start(ApiKeys.VSMobileCenterApiKeyAndroid,
-					typeof(Com.Microsoft.Azure.Mobile.Analytics.AndroidAnalytics),
+					typeof(Microsoft.Azure.Mobile.Analytics.Analytics),
 					typeof(Crashes));
 			}
+#endif
         }
 
         public override void OnTerminate()

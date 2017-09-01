@@ -4,6 +4,12 @@ This is the companion mobile app for the 2017 Central Wisconsin IT Conference. E
 
 [Conference Website](https://cwitc.org)
 
+#### iOS
+[![Build status](https://build.mobile.azure.com/v0.1/apps/2ab09ac6-1ba5-4d77-82f5-9554271abe51/branches/development/badge)](https://mobile.azure.com)
+
+#### Android
+[![Build status](https://build.mobile.azure.com/v0.1/apps/a42bb2d5-c340-4639-9ff3-7e91361e4fb2/branches/development/badge)](https://mobile.azure.com)
+
 # About
 This mobile app was forked and modified from the [Xamarin Evolve Mobile App](https://github.com/xamarinhq/app-evolve). 
 
