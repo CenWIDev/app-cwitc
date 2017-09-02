@@ -461,6 +461,12 @@
     <AndroidResource Include="Resources\drawable\campus_map.jpg" />
     <AndroidResource Include="Resources\drawable-xxxhdpi\ic_launcher.png" />
     <AndroidResource Include="Resources\drawable\heroplaceholder.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\menu_gallery.png" />
+	<AndroidResource Include="Resources\drawable-mdpi\menu_gallery.png" />
+	<AndroidResource Include="Resources\drawable-xhdpi\menu_gallery.png" />
+	<AndroidResource Include="Resources\drawable-xxhdpi\menu_gallery.png" />
+	<AndroidResource Include="Resources\drawable-xxxhdpi\menu_gallery.png" />
+	<AndroidResource Include="Resources\drawable\grouve_primary.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\toolbar.axml" />

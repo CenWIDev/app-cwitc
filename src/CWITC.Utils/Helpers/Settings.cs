@@ -35,47 +35,47 @@ namespace CWITC.Clients.Portable
             get { return settings ?? (settings = new Settings()); }
         }
 
-		const string AuthTypeKey = "auth_type_key";
-		readonly string AuthTypeDefault = string.Empty;
-		public string AuthType
-		{
-			get { return AppSettings.GetValueOrDefault<string>(AuthTypeKey, AuthTypeDefault); }
-			set
-			{
-				if (AppSettings.AddOrUpdateValue(AuthTypeKey, value))
-				{
-					OnPropertyChanged();
-				}
-			}
-		}
+        const string AuthTypeKey = "auth_type_key";
+        readonly string AuthTypeDefault = string.Empty;
+        public string AuthType
+        {
+            get { return AppSettings.GetValueOrDefault<string>(AuthTypeKey, AuthTypeDefault); }
+            set
+            {
+                if (AppSettings.AddOrUpdateValue(AuthTypeKey, value))
+                {
+                    OnPropertyChanged();
+                }
+            }
+        }
 
         const string TwitterApiKeyKey = "twitter_api_key";
         readonly string TwitterApiKeyDefault = string.Empty;
-		public string TwitterApiKey
-		{
-			get { return AppSettings.GetValueOrDefault<string>(TwitterApiKeyKey, TwitterApiKeyDefault); }
-			set
-			{
-				if (AppSettings.AddOrUpdateValue(TwitterApiKeyKey, value))
-				{
-					OnPropertyChanged();
-				}
-			}
-		}
+        public string TwitterApiKey
+        {
+            get { return AppSettings.GetValueOrDefault<string>(TwitterApiKeyKey, TwitterApiKeyDefault); }
+            set
+            {
+                if (AppSettings.AddOrUpdateValue(TwitterApiKeyKey, value))
+                {
+                    OnPropertyChanged();
+                }
+            }
+        }
 
-		const string TwitterApiSecretKey = "twitter_api_secret";
-		readonly string TwitterApiSecretDefault = string.Empty;
-		public string TwitterApiSecret
-		{
-			get { return AppSettings.GetValueOrDefault<string>(TwitterApiSecretKey, TwitterApiSecretDefault); }
-			set
-			{
-				if (AppSettings.AddOrUpdateValue(TwitterApiSecretKey, value))
-				{
-					OnPropertyChanged();
-				}
-			}
-		}
+        const string TwitterApiSecretKey = "twitter_api_secret";
+        readonly string TwitterApiSecretDefault = string.Empty;
+        public string TwitterApiSecret
+        {
+            get { return AppSettings.GetValueOrDefault<string>(TwitterApiSecretKey, TwitterApiSecretDefault); }
+            set
+            {
+                if (AppSettings.AddOrUpdateValue(TwitterApiSecretKey, value))
+                {
+                    OnPropertyChanged();
+                }
+            }
+        }
 
         const string GcmTokenKey = "gcm_token";
         readonly string GcmTokenDefault = string.Empty;
@@ -93,28 +93,28 @@ namespace CWITC.Clients.Portable
 
         const string WiFiSSIDKey = "ssid_key";
         readonly string WiFiSSIDDefault = "Xamarin_Evolve";
-        public string WiFiSSID 
+        public string WiFiSSID
         {
-            get { return AppSettings.GetValueOrDefault<string> (WiFiSSIDKey, WiFiSSIDDefault); }
-            set 
+            get { return AppSettings.GetValueOrDefault<string>(WiFiSSIDKey, WiFiSSIDDefault); }
+            set
             {
-                if (AppSettings.AddOrUpdateValue (WiFiSSIDKey, value)) 
+                if (AppSettings.AddOrUpdateValue(WiFiSSIDKey, value))
                 {
-                    OnPropertyChanged ();
+                    OnPropertyChanged();
                 }
             }
         }
 
         const string WiFiPassKey = "wifi_pass_key";
         readonly string WiFiPassDefault = "";
-        public string WiFiPass 
+        public string WiFiPass
         {
-            get { return AppSettings.GetValueOrDefault<string> (WiFiPassKey, WiFiPassDefault); }
-            set 
+            get { return AppSettings.GetValueOrDefault<string>(WiFiPassKey, WiFiPassDefault); }
+            set
             {
-                if (AppSettings.AddOrUpdateValue (WiFiPassKey, value)) 
+                if (AppSettings.AddOrUpdateValue(WiFiPassKey, value))
                 {
-                    OnPropertyChanged ();
+                    OnPropertyChanged();
                 }
             }
         }
@@ -171,7 +171,7 @@ namespace CWITC.Clients.Portable
             }
         }
 
-       
+
         const string PushRegisteredKey = "push_registered";
         static readonly bool PushRegisteredDefault = false;
 
@@ -228,13 +228,13 @@ namespace CWITC.Clients.Portable
         /// <value><c>true</c> if show past sessions; otherwise, <c>false</c>.</value>
         public bool ShowPastSessions
         {
-            get 
+            get
             {
                 //if end of evolve
                 if (DateTime.UtcNow > EndOfEvolve)
                     return true;
-                
-                return AppSettings.GetValueOrDefault<bool>(ShowPastSessionsKey, ShowPastSessionsDefault); 
+
+                return AppSettings.GetValueOrDefault<bool>(ShowPastSessionsKey, ShowPastSessionsDefault);
             }
             set
             {
@@ -260,7 +260,7 @@ namespace CWITC.Clients.Portable
 
         const string EmailKey = "email_key";
         readonly string EmailDefault = string.Empty;
-        public string Email 
+        public string Email
         {
             get { return AppSettings.GetValueOrDefault<string>(EmailKey, EmailDefault); }
             set
@@ -292,22 +292,22 @@ namespace CWITC.Clients.Portable
 
         const string UserIdKey = "userid_key";
         readonly string UserIdDefault = string.Empty;
-		public string UserId
-		{
+        public string UserId
+        {
             get { return AppSettings.GetValueOrDefault<string>(UserIdKey, UserIdDefault); }
-			set
-			{
+            set
+            {
                 if (AppSettings.AddOrUpdateValue(UserIdKey, value))
-				{
-					OnPropertyChanged();
-					OnPropertyChanged(nameof(UserId));
-				}
-			}
-		}
+                {
+                    OnPropertyChanged();
+                    OnPropertyChanged(nameof(UserId));
+                }
+            }
+        }
 
         const string FirstNameKey = "firstname_key";
-        readonly string FirstNameDefault =  string.Empty;
-        public string FirstName 
+        readonly string FirstNameDefault = string.Empty;
+        public string FirstName
         {
             get { return AppSettings.GetValueOrDefault<string>(FirstNameKey, FirstNameDefault); }
             set
@@ -321,8 +321,8 @@ namespace CWITC.Clients.Portable
         }
 
         const string LastNameKey = "lastname_key";
-        readonly string LastNameDefault =  string.Empty;
-        public string LastName 
+        readonly string LastNameDefault = string.Empty;
+        public string LastName
         {
             get { return AppSettings.GetValueOrDefault<string>(LastNameKey, LastNameDefault); }
             set
@@ -381,14 +381,29 @@ namespace CWITC.Clients.Portable
                 if (AppSettings.AddOrUpdateValue<DateTime>(LastSyncKey, value))
                     OnPropertyChanged();
             }
-        } 
+        }
+
+        const string GrouveEventCodeKey = "grouve_event_code";
+        static readonly string GrouveEventCodeDefault = "GZ49ME";
+        public string GrouveEventCode
+        {
+            get
+            {
+                return AppSettings.GetValueOrDefault<string>(GrouveEventCodeKey, GrouveEventCodeDefault);
+            }
+            set
+            {
+                if (AppSettings.AddOrUpdateValue<string>(GrouveEventCodeKey, value))
+                    OnPropertyChanged();
+            }
+        }
 
         bool isConnected;
         public bool IsConnected
         {
             get { return isConnected; }
-            set 
-            { 
+            set
+            {
                 if (isConnected == value)
                     return;
                 isConnected = value;

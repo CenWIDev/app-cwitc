@@ -15,6 +15,7 @@ namespace CWITC.Clients.UI
             Children.Add(new EvolveNavigationPage(new FeedPage()));
             Children.Add(new EvolveNavigationPage(new SessionsPage()));
             Children.Add(new EvolveNavigationPage(new EventsPage()));
+            Children.Add(new EvolveNavigationPage(new GalleryPage()));
             Children.Add(new EvolveNavigationPage(new AboutPage()));
 
             MessagingService.Current.Subscribe<DeepLinkPage>("DeepLinkPage", async (m, p) =>
@@ -61,7 +62,10 @@ namespace CWITC.Clients.UI
                 case 2:
                     App.Logger.TrackPage(AppPage.Events.ToString());
                     break;
-                case 3:
+				case 3:
+					App.Logger.TrackPage(AppPage.Gallery.ToString());
+					break;
+                case 4:
                     App.Logger.TrackPage(AppPage.Information.ToString());
                     break;
             }

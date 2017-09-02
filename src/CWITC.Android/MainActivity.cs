@@ -140,6 +140,13 @@ namespace CWITC.Droid
             DataRefreshService.ScheduleRefresh(this);
         }
 
+        protected override void OnResume()
+        {
+            base.OnResume();
+
+            //UpdateRemoteConfig();
+        }
+
         protected override void OnNewIntent(Intent intent)
         {
             base.OnNewIntent(intent);
@@ -213,6 +220,16 @@ namespace CWITC.Droid
 
             Intent signInIntent = Android.Gms.Auth.Api.Auth.GoogleSignInApi.GetSignInIntent(apiClient);
 			StartActivityForResult(signInIntent, RC_SIGN_IN);
+        }
+    
+        async void UpdateRemoteConfig()
+        {
+			var fbRemoteConfig = Firebase.RemoteConfig.FirebaseRemoteConfig.Instance;
+			await fbRemoteConfig.FetchAsync();
+
+            Settings.Current.TwitterApiKey = fbRemoteConfig.GetString("twitter_api_key");
+            Settings.Current.TwitterApiSecret = fbRemoteConfig.GetString("twitter_api_secret");
+            Settings.Current.GrouveEventCode = fbRemoteConfig.GetString("grouve_event_code");
         }
     }
 }

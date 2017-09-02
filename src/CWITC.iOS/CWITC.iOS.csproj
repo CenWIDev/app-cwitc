@@ -426,6 +426,10 @@
     <BundleResource Include="Resources\campus_map.jpg" />
     <BundleResource Include="GoogleService-Info.plist" />
     <BundleResource Include="Resources\logo=expanded.png" />
+    <BundleResource Include="Resources\grouve_primary.png" />
+    <BundleResource Include="Resources\tab_gallery.png" />
+    <BundleResource Include="Resources\tab_gallery%402x.png" />
+    <BundleResource Include="Resources\tab_gallery%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

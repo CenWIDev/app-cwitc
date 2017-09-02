@@ -48,6 +48,9 @@ namespace CWITC.Clients.UI
                     case (int)AppPage.Events://events
                         pages.Add(menuId, new EvolveNavigationPage(new EventsPage()));
                         break;
+                    case (int)AppPage.Gallery://gallery
+                        pages.Add(menuId, new EvolveNavigationPage(new GalleryPage()));
+						break;
                     case (int)AppPage.Sponsors://sponsors
                         newPage = new EvolveNavigationPage(new SponsorsPage());
                         break;

@@ -121,6 +121,9 @@ namespace CWITC.Droid
                 case Resource.Id.nav_events:
                     id = (int)AppPage.Events;
                     break;
+                case Resource.Id.nav_gallery:
+                    id = (int)AppPage.Gallery;
+					break;
                 case Resource.Id.nav_sponsors:
                     id = (int)AppPage.Sponsors;
                     break;
@@ -142,7 +145,6 @@ namespace CWITC.Droid
             }
             this.Element.OnNavigationItemSelected(new CWITC.Clients.UI.NavigationItemSelectedEventArgs
             {
-
                 Index = id
             });
         }
