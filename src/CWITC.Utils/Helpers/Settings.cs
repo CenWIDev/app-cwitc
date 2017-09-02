@@ -384,7 +384,7 @@ namespace CWITC.Clients.Portable
         }
 
         const string GrouveEventCodeKey = "grouve_event_code";
-        static readonly string GrouveEventCodeDefault = "GZ49ME";
+        static readonly string GrouveEventCodeDefault = ApiKeys.GrouveEventCode;
         public string GrouveEventCode
         {
             get

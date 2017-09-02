@@ -28,6 +28,8 @@ using Android.Gms.Auth.Api.SignIn;
 using Microsoft.Azure.Mobile;
 using Microsoft.Azure.Mobile.Crashes;
 using Microsoft.Azure.Mobile.Analytics;
+using Firebase.RemoteConfig;
+using Android.Gms.Tasks;
 
 namespace CWITC.Droid
 {
@@ -84,7 +86,7 @@ namespace CWITC.Droid
         DataScheme = "@PACKAGE_NAME@",
         DataHost = "cwitc.auth0.com",
         DataPathPrefix = "/android/@PACKAGE_NAME@/logout")]
-    public class MainActivity : FormsAppCompatActivity
+    public class MainActivity : FormsAppCompatActivity, Android.Gms.Tasks.IOnCompleteListener
     {
         const int RC_SIGN_IN = 9001;
         TaskCompletionSource<GoogleSignInAccount> googleSignInTask = null;
@@ -138,13 +140,8 @@ namespace CWITC.Droid
             }
 
             DataRefreshService.ScheduleRefresh(this);
-        }
 
-        protected override void OnResume()
-        {
-            base.OnResume();
-
-            //UpdateRemoteConfig();
+            InitializeFirebase();
         }
 
         protected override void OnNewIntent(Intent intent)
@@ -179,7 +176,7 @@ namespace CWITC.Droid
                 else
                 {
                     googleSignInTask.SetCanceled();
-                }   
+                }
             }
             else
             {
@@ -219,17 +216,45 @@ namespace CWITC.Droid
             this.googleSignInTask = tcs;
 
             Intent signInIntent = Android.Gms.Auth.Api.Auth.GoogleSignInApi.GetSignInIntent(apiClient);
-			StartActivityForResult(signInIntent, RC_SIGN_IN);
+            StartActivityForResult(signInIntent, RC_SIGN_IN);
         }
-    
+
         async void UpdateRemoteConfig()
         {
-			var fbRemoteConfig = Firebase.RemoteConfig.FirebaseRemoteConfig.Instance;
-			await fbRemoteConfig.FetchAsync();
+            var fbRemoteConfig = Firebase.RemoteConfig.FirebaseRemoteConfig.Instance;
+            await fbRemoteConfig.FetchAsync();
 
             Settings.Current.TwitterApiKey = fbRemoteConfig.GetString("twitter_api_key");
             Settings.Current.TwitterApiSecret = fbRemoteConfig.GetString("twitter_api_secret");
             Settings.Current.GrouveEventCode = fbRemoteConfig.GetString("grouve_event_code");
+        }
+
+        void InitializeFirebase()
+        {
+            FirebaseRemoteConfig.Instance.SetDefaults(new Dictionary<string, Java.Lang.Object>
+            {
+                { "grouve_event_code", ApiKeys.GrouveEventCode }
+            });
+
+            FirebaseRemoteConfig.Instance
+                                .Fetch()
+                                .AddOnCompleteListener(this, this);
+        }
+
+        public void OnComplete(Android.Gms.Tasks.Task task)
+        {
+            if (task.IsSuccessful)
+            {
+                bool isFetched = FirebaseRemoteConfig.Instance.ActivateFetched();
+            }
+            else
+            {
+
+            }
+
+			Settings.Current.TwitterApiKey = FirebaseRemoteConfig.Instance.GetString("twitter_api_key");
+			Settings.Current.TwitterApiSecret = FirebaseRemoteConfig.Instance.GetString("twitter_api_secret");
+            Settings.Current.GrouveEventCode = FirebaseRemoteConfig.Instance.GetString("grouve_event_code");
         }
     }
 }
