@@ -19,15 +19,12 @@ namespace CWITC.Clients.UI
                 new EvolveMap
                 {
                     Local = "campus_map.jpg",
-                    Url = "http://www.mstc.edu/sites/default/files/styles/campus-map/public/StevensPointCampusMap_0.jpg?itok=UNMMfqBA",
                     Title = "Campus Maps"
                 }
             };
-            
 
             if (Device.OS == TargetPlatform.Android || Device.OS == TargetPlatform.iOS)
             {
-                Title = "Campus Map";
                 CarouselMaps.ItemSelected += (sender, args) =>
                 {
                     var current = args.SelectedItem as EvolveMap;
