@@ -40,6 +40,7 @@
     <Compile Include="IStoreManager.cs" />
     <Compile Include="IEventStore.cs" />
     <Compile Include="INotificationStore.cs" />
+    <Compile Include="ILunchStore.cs" />
   </ItemGroup>
   <Import Project="..\CWITC.DataObjects\CWITC.Backend.Shared.projitems" Label="Shared" Condition="Exists('..\CWITC.DataObjects\CWITC.Backend.Shared.projitems')" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />

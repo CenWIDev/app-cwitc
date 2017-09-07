@@ -26,6 +26,8 @@ namespace CWITC.Clients.Portable
             switch(Event.Type)
             {
                 case "sessions":
+                case "lunch" :
+                case "keynote" :
                     HasExtraInfo = true;
                     break;
                 default:

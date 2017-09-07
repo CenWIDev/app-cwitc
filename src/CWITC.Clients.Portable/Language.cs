@@ -7,7 +7,10 @@ namespace CWITC.Clients.Portable
         public static string More = "More";
 
         public static string VenueName = "Mid-State";
-        public static string CallVenue = "Call Venue";
+        public static string CallVenue => string.Format(CallLocationFormat, "Venu");
         public static string GetDirections = "Get Directions";
+        public static string CallLocationFormat = "Call {0}";
+
+        public static string ViewMenu = "View Menu";    
     }
 }

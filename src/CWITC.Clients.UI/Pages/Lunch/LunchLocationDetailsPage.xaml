@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="CWITC.Clients.UI.LunchLocationDetailsPage"
+    xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+    Title="Lunch Info"
+    NavigationPage.BackButtonTitle="Lunch"
+    BackgroundColor="{DynamicResource WindowBackgroundTable}">
+	 <ContentPage.Content>
+        <Grid RowSpacing="0" ColumnSpacing="{StaticResource StandardSpacing}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <maps:Map 
+                    x:Name="CWITC_Map"
+                    IsShowingUser="false" 
+                    MapType="Street" />
+            <StackLayout Grid.Row="1" HorizontalOptions="FillAndExpand" VerticalOptions="End"
+             BackgroundColor="#99FFFFFF" Padding="{DynamicResource StandardPadding}">
+                <Image Source="{Binding Location.ImageUri}" HorizontalOptions="Center" VerticalOptions="Center"/>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

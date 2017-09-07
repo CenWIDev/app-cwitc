@@ -21,7 +21,8 @@ namespace CWITC.Shared.DataStore.Firebase
                 SpeakerStore.GetItemsAsync(true),
                 SponsorStore.GetItemsAsync(true),
                 EventStore.GetItemsAsync(true),
-                NotificationStore.GetItemsAsync(true)
+                NotificationStore.GetItemsAsync(true),
+                LunchStore.GetItemsAsync(true)
             };
 
             if (syncUserSpecific)
@@ -67,6 +68,8 @@ namespace CWITC.Shared.DataStore.Firebase
         ISponsorStore sponsorStore;
         public ISponsorStore SponsorStore => sponsorStore ?? (sponsorStore  = DependencyService.Get<ISponsorStore>());
 
+        ILunchStore lunchStore;
+        public ILunchStore LunchStore => lunchStore ?? (lunchStore = DependencyService.Get<ILunchStore>());
     }
 }
 

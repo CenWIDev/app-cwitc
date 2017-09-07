@@ -30,7 +30,9 @@ namespace CWITC.Clients.Portable
         Filter,
         Information,
         Tweet,
-        Evals
+        Evals,
+        LunchLocations,
+        LunchLocation
     }
 }
 

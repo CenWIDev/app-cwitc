@@ -166,6 +166,13 @@
     <Compile Include="Pages\Gallery\GalleryPage.xaml.cs">
       <DependentUpon>GalleryPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Lunch\LunchLocationsPage.xaml.cs">
+      <DependentUpon>LunchLocationsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Lunch\LunchLocationDetailsPage.xaml.cs">
+      <DependentUpon>LunchLocationDetailsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\BaseMapPage.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
 <ItemGroup>
@@ -437,6 +444,14 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <LogicalName>GalleryPage.xaml</LogicalName>
     </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Lunch\LunchLocationsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <LogicalName>LunchLocationsPage.xaml</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Lunch\LunchLocationDetailsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <LogicalName>LunchLocationDetailsPage.xaml</LogicalName>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Pages\Windows\MenuPageUWP.xaml">
@@ -461,6 +476,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Pages\Gallery\" />
+    <Folder Include="Pages\Lunch\" />
   </ItemGroup>
   <Import Project="..\packages\Xamarin.Forms.2.3.4.247\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.3.4.247\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />
 </Project>

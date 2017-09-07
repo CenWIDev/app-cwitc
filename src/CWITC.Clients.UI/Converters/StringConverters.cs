@@ -81,7 +81,8 @@ namespace CWITC.Clients.UI
 				if (!(value is string))
 					return string.Empty;
                 var str = value as string;
-                if (str.ToLower().Equals("offsite") || str.ToLower().Equals("lunch"))
+
+                if (str.ToLower().Equals("offsite"))
                     return "View Map";
 
 				if (str.ToLower().Equals("sessions"))
@@ -89,6 +90,9 @@ namespace CWITC.Clients.UI
 
                 if (str.ToLower().Equals("keynote"))
 					return "View Keynote";
+
+                if (str.ToLower().Equals("lunch"))
+                    return "View Locations";
 			}
 			catch (Exception ex)
 			{

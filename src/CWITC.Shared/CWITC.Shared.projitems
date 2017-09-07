@@ -24,6 +24,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Datastore.Firebase\ReadonlyStore.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Datastore.Firebase\BaseUserDataStore.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Datastore.Firebase\BaseStore.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Datastore.Firebase\LunchStore.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Services\" />

@@ -68,10 +68,15 @@ namespace CWITC.Clients.UI
 			if (Event.Type.ToLower() == "sessions")
 			{
                 App.Logger.TrackPage(AppPage.Sessions.ToString());
-                //await NavigationService.PushAsync(Navigation, new EvolveNavigationPage(new SessionsPage()));
 
                 MessagingService.Current.SendMessage(MessageKeys.NavigateToSessionList);
 			}
+            else if(Event.Type.ToLower() == "lunch")
+            {
+                App.Logger.TrackPage(AppPage.LunchLocations.ToString());
+
+                await NavigationService.PushAsync(Navigation, new LunchLocationsPage());
+            }
         }
     }
 }
