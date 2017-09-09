@@ -57,9 +57,6 @@ namespace CWITC.Clients.UI
                     case (int)AppPage.Venue: //venue
                         newPage = new EvolveNavigationPage(new VenuePage());
                         break;
-                    case (int)AppPage.ConferenceInfo://Conference info
-                        newPage = new EvolveNavigationPage(new ConferenceInformationPage());
-                        break;
                     case (int)AppPage.FloorMap://Floor Maps
                         newPage = new EvolveNavigationPage(new FloorMapsPage());
                         break;
@@ -68,9 +65,6 @@ namespace CWITC.Clients.UI
 						break;
                     case (int)AppPage.Settings://Settings
                         newPage = new EvolveNavigationPage(new SettingsPage());
-                        break;
-                    case (int)AppPage.Evals:
-                        newPage = new EvolveNavigationPage (new EvaluationsPage ());
                         break;
                 }
             }

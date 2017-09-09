@@ -23,16 +23,13 @@ namespace CWITC.Clients.UI
                 new MenuItem { Name = "Sessions", Icon = "menu_sessions.png", Page = AppPage.Sessions },
                 new MenuItem { Name = "Events", Icon = "menu_events.png", Page = AppPage.Events },
                 new MenuItem { Name = "Sponsors", Icon = "menu_sponsors.png", Page = AppPage.Sponsors },
-                new MenuItem { Name = "Evaluations", Icon = "menu_evals.png", Page = AppPage.Evals },
                 new MenuItem { Name = "Venue", Icon = "menu_venue.png", Page = AppPage.Venue },
                 new MenuItem { Name = "Floor Maps", Icon = "menu_plan.png", Page = AppPage.FloorMap },
-                new MenuItem { Name = "Conference Info", Icon = "menu_info.png", Page = AppPage.ConferenceInfo },
                 new MenuItem { Name = "Settings", Icon = "menu_settings.png", Page = AppPage.Settings }
             };
 
             menu = new MenuPageUWP();
             menu.MenuList.ItemsSource = items;
-
 
             menu.MenuList.ItemSelected +=  (sender, args) =>
             {
@@ -74,14 +71,8 @@ namespace CWITC.Clients.UI
                     case AppPage.Sponsors://sponsors
                         newPage = new EvolveNavigationPage(new SponsorsPage());
                         break;
-                    case AppPage.Evals: //venue
-                        newPage = new EvolveNavigationPage(new EvaluationsPage());
-                        break;
                     case AppPage.Venue: //venue
                         newPage = new EvolveNavigationPage(new VenuePage());
-                        break;
-                    case AppPage.ConferenceInfo://Conference info
-                        newPage = new EvolveNavigationPage(new ConferenceInformationPage());
                         break;
                     case AppPage.FloorMap://Floor Maps
                         newPage = new EvolveNavigationPage(new FloorMapsPage());

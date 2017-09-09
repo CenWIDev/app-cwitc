@@ -16,7 +16,6 @@ namespace CWITC.Clients.Portable
         Sponsors,
         Venue,
         FloorMap,
-        ConferenceInfo,
         Settings,
         Session,
         Speaker,
@@ -25,12 +24,9 @@ namespace CWITC.Clients.Portable
         Event,
         Notification,
         TweetImage,
-        WiFi,
-        CodeOfConduct,
         Filter,
         Information,
         Tweet,
-        Evals,
         LunchLocations,
         LunchLocation
     }

@@ -43,21 +43,9 @@ namespace CWITC.Clients.UI
                     Page page = null;
                     switch(item.Parameter)
                     {
-                        case "evaluations":
-                            App.Logger.TrackPage ("Evaluations");
-                            page = new EvaluationsPage ();
-                            break;
                         case "venue":
                             App.Logger.TrackPage(AppPage.Venue.ToString());
                             page = new VenuePage();
-                            break;
-                        case "code-of-conduct":
-                            App.Logger.TrackPage(AppPage.CodeOfConduct.ToString());
-                            page = new CodeOfConductPage();
-                            break;
-                        case "wi-fi":
-                            App.Logger.TrackPage(AppPage.WiFi.ToString());
-                            page = new WiFiInformationPage();
                             break;
                         case "sponsors":
                             App.Logger.TrackPage(AppPage.Sponsors.ToString());

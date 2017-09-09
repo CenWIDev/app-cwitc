@@ -91,34 +91,6 @@ namespace CWITC.Clients.Portable
             }
         }
 
-        const string WiFiSSIDKey = "ssid_key";
-        readonly string WiFiSSIDDefault = "Xamarin_Evolve";
-        public string WiFiSSID
-        {
-            get { return AppSettings.GetValueOrDefault<string>(WiFiSSIDKey, WiFiSSIDDefault); }
-            set
-            {
-                if (AppSettings.AddOrUpdateValue(WiFiSSIDKey, value))
-                {
-                    OnPropertyChanged();
-                }
-            }
-        }
-
-        const string WiFiPassKey = "wifi_pass_key";
-        readonly string WiFiPassDefault = "";
-        public string WiFiPass
-        {
-            get { return AppSettings.GetValueOrDefault<string>(WiFiPassKey, WiFiPassDefault); }
-            set
-            {
-                if (AppSettings.AddOrUpdateValue(WiFiPassKey, value))
-                {
-                    OnPropertyChanged();
-                }
-            }
-        }
-
         const string LastFavoriteTimeKey = "last_favorite_time";
 
         public DateTime LastFavoriteTime

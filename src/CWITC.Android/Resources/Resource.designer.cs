@@ -3932,26 +3932,20 @@ namespace CWITC.Droid
 			// aapt resource value: 0x7f0d004d
 			public const int multiply = 2131558477;
 			
-			// aapt resource value: 0x7f0d00fc
-			public const int nav_conference_info = 2131558652;
-			
-			// aapt resource value: 0x7f0d00f8
-			public const int nav_evals = 2131558648;
-			
 			// aapt resource value: 0x7f0d00f5
 			public const int nav_events = 2131558645;
 			
 			// aapt resource value: 0x7f0d00f3
 			public const int nav_feed = 2131558643;
 			
-			// aapt resource value: 0x7f0d00fa
-			public const int nav_floor_map = 2131558650;
+			// aapt resource value: 0x7f0d00f9
+			public const int nav_floor_map = 2131558649;
 			
 			// aapt resource value: 0x7f0d00f6
 			public const int nav_gallery = 2131558646;
 			
-			// aapt resource value: 0x7f0d00fb
-			public const int nav_lunch_locations = 2131558651;
+			// aapt resource value: 0x7f0d00fa
+			public const int nav_lunch_locations = 2131558650;
 			
 			// aapt resource value: 0x7f0d00f2
 			public const int nav_section_main = 2131558642;
@@ -3959,14 +3953,14 @@ namespace CWITC.Droid
 			// aapt resource value: 0x7f0d00f4
 			public const int nav_sessions = 2131558644;
 			
-			// aapt resource value: 0x7f0d00fd
-			public const int nav_settings = 2131558653;
+			// aapt resource value: 0x7f0d00fb
+			public const int nav_settings = 2131558651;
 			
 			// aapt resource value: 0x7f0d00f7
 			public const int nav_sponsors = 2131558647;
 			
-			// aapt resource value: 0x7f0d00f9
-			public const int nav_venue = 2131558649;
+			// aapt resource value: 0x7f0d00f8
+			public const int nav_venue = 2131558648;
 			
 			// aapt resource value: 0x7f0d00d6
 			public const int nav_view = 2131558614;

@@ -136,14 +136,8 @@ namespace CWITC.Droid
                 case Resource.Id.nav_lunch_locations:
                     id = (int)AppPage.LunchLocations;
 					break;
-                case Resource.Id.nav_conference_info:
-                    id = (int)AppPage.ConferenceInfo;
-                    break;
                 case Resource.Id.nav_settings:
                     id = (int)AppPage.Settings;
-                    break;
-                case Resource.Id.nav_evals:
-                    id = (int)AppPage.Evals;
                     break;
             }
             this.Element.OnNavigationItemSelected(new CWITC.Clients.UI.NavigationItemSelectedEventArgs

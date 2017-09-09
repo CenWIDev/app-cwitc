@@ -30,11 +30,6 @@
                 android:title="Sponsors"
                 android:checkable="true" />
             <item
-                android:id="@+id/nav_evals"
-                android:icon="@drawable/menu_evals"
-                android:title="Evaluations"
-                android:checkable="true" />
-            <item
                 android:id="@+id/nav_venue"
                 android:icon="@drawable/menu_venue"
                 android:title="Venue"
@@ -48,11 +43,6 @@
                 android:id="@+id/nav_lunch_locations"
                 android:icon="@drawable/ic_restaurant_menu"
                 android:title="Lunch Locations"
-                android:checkable="true" />
-            <item
-                android:id="@+id/nav_conference_info"
-                android:icon="@drawable/menu_info"
-                android:title="Conference Info"
                 android:checkable="true" />
             <item
                 android:title="Settings"

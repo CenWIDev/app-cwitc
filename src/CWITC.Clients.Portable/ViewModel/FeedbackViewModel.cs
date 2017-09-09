@@ -48,7 +48,6 @@ namespace CWITC.Clients.Portable
                         return;
                 }
 
-                EvaluationsViewModel.ForceRefresh = true;
                 Logger.Track(EvolveLoggerKeys.LeaveFeedback, "Title", rating.ToString());
                 
                 MessagingService.Current.SendMessage<MessagingServiceAlert>(MessageKeys.Message, new MessagingServiceAlert

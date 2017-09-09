@@ -55,13 +55,11 @@
     <Compile Include="ViewModel\FeedViewModel.cs" />
     <Compile Include="ViewModel\VenueViewModel.cs" />
     <Compile Include="Interfaces\IWiFIConfig.cs" />
-    <Compile Include="ViewModel\ConferenceInfoViewModel.cs" />
     <Compile Include="Model\AppPage.cs" />
     <Compile Include="Interfaces\IToast.cs" />
     <Compile Include="ViewModel\NotificationsViewModel.cs" />
     <Compile Include="ViewModel\FeedbackViewModel.cs" />
     <Compile Include="Interfaces\ILaunchTwitter.cs" />
-    <Compile Include="ViewModel\EvaluationsViewModel.cs" />
     <Compile Include="Language.cs" />
     <Compile Include="Model\Tweet.cs" />
     <Compile Include="Services\TweetsService.cs" />
