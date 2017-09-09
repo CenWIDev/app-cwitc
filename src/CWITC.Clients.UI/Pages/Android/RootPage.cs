@@ -63,6 +63,9 @@ namespace CWITC.Clients.UI
                     case (int)AppPage.FloorMap://Floor Maps
                         newPage = new EvolveNavigationPage(new FloorMapsPage());
                         break;
+                    case (int)AppPage.LunchLocations://Lunch!
+                        newPage = new EvolveNavigationPage(new LunchLocationsPage());
+						break;
                     case (int)AppPage.Settings://Settings
                         newPage = new EvolveNavigationPage(new SettingsPage());
                         break;

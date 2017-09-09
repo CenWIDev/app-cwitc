@@ -29,9 +29,9 @@ namespace CWITC.Clients.Portable
                     new MenuItem { Name = "Evaluations", Icon = "icon_venue.png", Parameter="evaluations"},
                     new MenuItem { Name = "Venue", Icon = "icon_venue.png", Parameter = "venue"},
                     new MenuItem { Name = "Event Map", Icon = "icon_venue.png", Parameter = "floor-maps"},
+                    new MenuItem { Name = "Lunch Locations", Icon = "ic_restaurant_menu.png", Parameter = "lunch-locations"},
                     new MenuItem { Name = "Code of Conduct", Icon = "icon_code_of_conduct.png", Parameter="code-of-conduct" },
                     new MenuItem { Name = "Wi-Fi Information", Icon = "icon_wifi.png", Parameter="wi-fi" },
-
                 });
 
             accountItem = new MenuItem

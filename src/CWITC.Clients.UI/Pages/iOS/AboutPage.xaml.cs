@@ -67,6 +67,10 @@ namespace CWITC.Clients.UI
                             App.Logger.TrackPage(AppPage.FloorMap.ToString());
                             page = new FloorMapsPage();
                             break;
+						case "lunch-locations":
+                            App.Logger.TrackPage(AppPage.LunchLocations.ToString());
+                            page = new LunchLocationsPage();
+							break;
                     }
 
                     if(page == null)

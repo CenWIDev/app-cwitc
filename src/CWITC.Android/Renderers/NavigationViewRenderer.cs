@@ -133,6 +133,9 @@ namespace CWITC.Droid
                 case Resource.Id.nav_floor_map:
                     id = (int)AppPage.FloorMap;
                     break;
+                case Resource.Id.nav_lunch_locations:
+                    id = (int)AppPage.LunchLocations;
+					break;
                 case Resource.Id.nav_conference_info:
                     id = (int)AppPage.ConferenceInfo;
                     break;

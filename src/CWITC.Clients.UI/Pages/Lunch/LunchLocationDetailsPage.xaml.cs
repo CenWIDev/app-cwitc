@@ -45,9 +45,17 @@ namespace CWITC.Clients.UI
                     {
                         Order = ToolbarItemOrder.Secondary,
                         Text = Language.GetDirections,
-                        Command = vm.NavigateCommand
-
+                        Command = vm.NavigateCommand,
+                        Icon = "toolbar_navigate.png"
                     });
+
+					ToolbarItems.Add(new ToolbarItem
+					{
+                        Order = ToolbarItemOrder.Secondary,
+						Text = Language.ViewMenu,
+						Command = vm.ViewMenuCommand,
+						Icon = "ic_restaurant_menu.png"
+					});
 
                     if (vm.CanMakePhoneCall)
                     {
@@ -88,25 +96,6 @@ namespace CWITC.Clients.UI
 
                         })
                     });
-                }
-                else
-                {
-                    ToolbarItems.Add(new ToolbarItem
-                    {
-                        Text = Language.GetDirections,
-                        Command = vm.NavigateCommand,
-                        Icon = "toolbar_navigate.png"
-                    });
-
-                    if (vm.CanMakePhoneCall)
-                    {
-                        ToolbarItems.Add(new ToolbarItem
-                        {
-                            Text = Language.CallVenue,
-                            Command = vm.CallCommand,
-                            Icon = "toolbar_call.png"
-                        });
-                    }
                 }
 
                 didInit = true;

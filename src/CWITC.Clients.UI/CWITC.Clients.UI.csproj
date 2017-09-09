@@ -172,7 +172,6 @@
     <Compile Include="Pages\Lunch\LunchLocationDetailsPage.xaml.cs">
       <DependentUpon>LunchLocationDetailsPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\BaseMapPage.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
 <ItemGroup>

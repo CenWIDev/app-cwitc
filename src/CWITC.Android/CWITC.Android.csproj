@@ -411,10 +411,10 @@
       <HintPath>..\packages\Microsoft.Azure.Mobile.Analytics.0.15.0\lib\MonoAndroid403\Microsoft.Azure.Mobile.Analytics.dll</HintPath>
     </Reference>
     <Reference Include="Plugin.Share.Abstractions">
-      <HintPath>..\packages\Plugin.Share.7.0.1\lib\MonoAndroid10\Plugin.Share.Abstractions.dll</HintPath>
+      <HintPath>..\packages\Plugin.Share.4.0.3\lib\MonoAndroid10\Plugin.Share.Abstractions.dll</HintPath>
     </Reference>
     <Reference Include="Plugin.Share">
-      <HintPath>..\packages\Plugin.Share.7.0.1\lib\MonoAndroid10\Plugin.Share.dll</HintPath>
+      <HintPath>..\packages\Plugin.Share.4.0.3\lib\MonoAndroid10\Plugin.Share.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -465,6 +465,11 @@
 	<AndroidResource Include="Resources\drawable-xxhdpi\menu_gallery.png" />
 	<AndroidResource Include="Resources\drawable-xxxhdpi\menu_gallery.png" />
 	<AndroidResource Include="Resources\drawable\grouve_primary.png" />
+	<AndroidResource Include="Resources\drawable-hdpi\ic_restaurant_menu.png" />
+	<AndroidResource Include="Resources\drawable-mdpi\ic_restaurant_menu.png" />
+	<AndroidResource Include="Resources\drawable-xhdpi\ic_restaurant_menu.png" />
+	<AndroidResource Include="Resources\drawable-xxhdpi\ic_restaurant_menu.png" />
+	<AndroidResource Include="Resources\drawable-xxxhdpi\ic_restaurant_menu.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\toolbar.axml" />

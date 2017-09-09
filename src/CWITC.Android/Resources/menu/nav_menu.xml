@@ -45,6 +45,11 @@
                 android:title="Event Map"
                 android:checkable="true" />
             <item
+                android:id="@+id/nav_lunch_locations"
+                android:icon="@drawable/ic_restaurant_menu"
+                android:title="Lunch Locations"
+                android:checkable="true" />
+            <item
                 android:id="@+id/nav_conference_info"
                 android:icon="@drawable/menu_info"
                 android:title="Conference Info"
