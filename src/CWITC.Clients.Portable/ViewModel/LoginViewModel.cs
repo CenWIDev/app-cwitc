@@ -75,8 +75,8 @@ namespace CWITC.Clients.Portable
                         IsBusy = false;
                     }
 
+					Settings.FirstRun = false;
                     await Finish();
-                    Settings.FirstRun = false;
                 }
                 else
                 {
@@ -129,8 +129,9 @@ namespace CWITC.Clients.Portable
 						//if sync doesn't work don't worry it is alright we can recover later
 						Logger.Report(ex);
 					}
-					await Finish();
+
 					Settings.FirstRun = false;
+                    await Finish();
 				}
 				else
 				{
