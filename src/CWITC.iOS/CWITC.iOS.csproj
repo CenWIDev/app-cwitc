@@ -351,10 +351,10 @@
       <HintPath>..\packages\Microsoft.Azure.Mobile.Crashes.0.14.2\lib\Xamarin.iOS10\Microsoft.Azure.Mobile.Crashes.iOS.Bindings.dll</HintPath>
     </Reference>
     <Reference Include="Plugin.Share.Abstractions">
-      <HintPath>..\packages\Plugin.Share.4.0.3\lib\Xamarin.iOS10\Plugin.Share.Abstractions.dll</HintPath>
+      <HintPath>..\packages\Plugin.Share.7.0.1\lib\Xamarin.iOS10\Plugin.Share.Abstractions.dll</HintPath>
     </Reference>
     <Reference Include="Plugin.Share">
-      <HintPath>..\packages\Plugin.Share.4.0.3\lib\Xamarin.iOS10\Plugin.Share.dll</HintPath>
+      <HintPath>..\packages\Plugin.Share.7.0.1\lib\Xamarin.iOS10\Plugin.Share.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

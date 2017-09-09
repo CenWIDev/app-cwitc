@@ -6,6 +6,7 @@ using CWITC.DataObjects;
 using System.Windows.Input;
 using Plugin.Share;
 using FormsToolkit;
+using Plugin.Share.Abstractions;
 
 namespace CWITC.Clients.Portable
 {
@@ -59,7 +60,9 @@ namespace CWITC.Clients.Portable
         async Task ExecuteShareCommandAsync()
         {
             Logger.Track(EvolveLoggerKeys.Share, "Title", Session.Title);
-            await CrossShare.Current.Share($"Can't wait for {Session.Title} at #CWITC!", "Share");
+            await CrossShare.Current.Share(
+                new ShareMessage { Title = "Share", Text = $"Can't wait for {Session.Title} at #CWITC!" },
+                new ShareOptions { });
         }
 
         ICommand  loadSessionCommand;

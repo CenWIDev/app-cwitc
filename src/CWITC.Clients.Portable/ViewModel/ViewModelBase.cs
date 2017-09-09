@@ -86,7 +86,7 @@ namespace CWITC.Clients.Portable
                         G = 53,
                         B = 235
                     },
-                    UseSafairReaderMode = true,
+                    UseSafariReaderMode = true,
                     UseSafariWebViewController = true
                 });
             }
