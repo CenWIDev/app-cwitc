@@ -8,6 +8,11 @@ using CWITC.Clients.Portable;
 using Android.Widget;
 using FormsToolkit;
 using Android.Views;
+using FFImageLoading;
+using FFImageLoading.Views;
+using FFImageLoading.Transformations;
+using FFImageLoading.Work;
+using System.Collections.Generic;
 
 [assembly: ExportRenderer(typeof(CWITC.Clients.UI.NavigationView), typeof(NavigationViewRenderer))]
 namespace CWITC.Droid
@@ -15,7 +20,7 @@ namespace CWITC.Droid
     public class NavigationViewRenderer : ViewRenderer<CWITC.Clients.UI.NavigationView, NavigationView>
     {
         NavigationView navView;
-        ImageView profileImage;
+        ImageViewAsync profileImage;
         TextView profileName;
         protected override void OnElementChanged(ElementChangedEventArgs<CWITC.Clients.UI.NavigationView> e)
         {
@@ -35,8 +40,10 @@ namespace CWITC.Droid
             SetNativeControl(navView);
 
             var header = navView.GetHeaderView(0);
-            profileImage = header.FindViewById<ImageView>(Resource.Id.profile_image);
+            profileImage = header.FindViewById<ImageViewAsync>(Resource.Id.profile_image);
             profileName = header.FindViewById<TextView>(Resource.Id.profile_name);
+
+            //new CircleTransformation().tra
 
             profileImage.Click += (sender, e2) => NavigateToLogin();
             profileName.Click += (sender, e2) => NavigateToLogin();
@@ -81,10 +88,17 @@ namespace CWITC.Droid
 
         void UpdateImage()
         {
-            //Picasso.With(Forms.Context)
-               //.Load(Settings.Current.UserAvatar)
-               //.Error(Resource.Drawable.profile_generic)
-               //.Into(profileImage);
+            ImageService
+                      .Instance
+                        .LoadUrl(Settings.Current.UserAvatar)
+                        //.ErrorPlaceholder("profile_generic.png", FFImageLoading.Work.ImageSource.ApplicationBundle)
+                        .Error(ex =>
+                        {
+                            profileImage.SetImageResource(Resource.Drawable.profile_generic);
+                        })
+                        .Transform(new List<ITransformation>() { new CircleTransformation() })
+                        .TransformPlaceholders(true)
+                        .Into(profileImage);
         }
 
         public override void OnViewRemoved(Android.Views.View child)
@@ -119,7 +133,7 @@ namespace CWITC.Droid
                     break;
                 case Resource.Id.nav_gallery:
                     id = (int)AppPage.Gallery;
-					break;
+                    break;
                 case Resource.Id.nav_sponsors:
                     id = (int)AppPage.Sponsors;
                     break;
@@ -131,7 +145,7 @@ namespace CWITC.Droid
                     break;
                 case Resource.Id.nav_lunch_locations:
                     id = (int)AppPage.LunchLocations;
-					break;
+                    break;
                 case Resource.Id.nav_settings:
                     id = (int)AppPage.Settings;
                     break;
