@@ -7,6 +7,7 @@ using CWITC.Clients.Portable.Services;
 using Censored;
 using Xamarin.Forms;
 using CWITC.Shared.Services;
+using LinqToTwitter;
 
 [assembly: Dependency(typeof(TweetsService))]
 namespace CWITC.Shared.Services
@@ -24,48 +25,45 @@ namespace CWITC.Shared.Services
         {
 			var tweets = new List<Tweet>();
 
-            // can't use linqtotwitter b/c it requires ModernHttpClient
-            // which depends on OkHttp, and that has a conflict w/ other libraries on android
+			var auth = new ApplicationOnlyAuthorizer()
+            {
+                CredentialStore = new InMemoryCredentialStore
+                {
+                    ConsumerKey = Clients.Portable.Settings.Current.TwitterApiKey,
+                    ConsumerSecret = Clients.Portable.Settings.Current.TwitterApiSecret
+                },
+            };
+            await auth.AuthorizeAsync();
 
-			//var auth = new ApplicationOnlyAuthorizer()
-			//{
-			//	CredentialStore = new InMemoryCredentialStore
-			//	{
-   //                 ConsumerKey = Clients.Portable.Settings.Current.TwitterApiKey,
-			//		ConsumerSecret = Clients.Portable.Settings.Current.TwitterApiSecret
-			//	},
-			//};
-			//await auth.AuthorizeAsync();
+            var twitterContext = new TwitterContext(auth);
 
-			//var twitterContext = new TwitterContext(auth);
+            var queryResponse = await
+                //twitterContext.Search.W
+                (from tweet in twitterContext.Search
+                 where tweet.Type == SearchType.Search &&
+                     (tweet.Query == "%23CWITC") &&
+                     tweet.Count == 100
+                 select tweet).SingleOrDefaultAsync();
 
-			//var queryResponse = await
-   //             //twitterContext.Search.W
-			//	(from tweet in twitterContext.Search
-   //              where tweet.Type == SearchType.Search &&
-			//		 (tweet.Query == "%23CWITC") &&
-			//		 tweet.Count == 100
-			//	 select tweet).SingleOrDefaultAsync();
+            if (queryResponse == null || queryResponse.Statuses == null)
+            {
+                return tweets;
+            }
 
-   //         if (queryResponse == null || queryResponse.Statuses == null)
-   //         {
-   //             return tweets;
-   //         }
-
-			//tweets =
-				//(from tweet in queryResponse.Statuses
-				 //where tweet.RetweetedStatus.StatusID == 0 && !tweet.PossiblySensitive && !censor.HasCensoredWord(tweet.Text)
-				 //select new Tweet
-				 //{
-					// TweetedImage = tweet.Entities?.MediaEntities.Count > 0 ? tweet.Entities?.MediaEntities?[0].MediaUrlHttps ?? string.Empty : string.Empty,
-					// ScreenName = tweet.User?.ScreenNameResponse ?? string.Empty,
-					// Text = tweet.Text,
-					// Name = tweet.User.Name,
-					// CreatedDate = tweet.CreatedAt,
-					// Url = string.Format("https://twitter.com/{0}/status/{1}", tweet.User.ScreenNameResponse, tweet.StatusID),
-					// Image = (tweet.RetweetedStatus != null && tweet.RetweetedStatus.User != null ?
-					//		 tweet.RetweetedStatus.User.ProfileImageUrl.Replace("http://", "https://") : tweet.User.ProfileImageUrl.Replace("http://", "https://"))
-				 //}).Take(15).ToList();
+            tweets =
+                (from tweet in queryResponse.Statuses
+                 where tweet.RetweetedStatus.StatusID == 0 && !tweet.PossiblySensitive && !censor.HasCensoredWord(tweet.Text)
+                 select new Tweet
+                 {
+                     TweetedImage = tweet.Entities?.MediaEntities.Count > 0 ? tweet.Entities?.MediaEntities?[0].MediaUrlHttps ?? string.Empty : string.Empty,
+                     ScreenName = tweet.User?.ScreenNameResponse ?? string.Empty,
+                     Text = tweet.Text,
+                     Name = tweet.User.Name,
+                     CreatedDate = tweet.CreatedAt,
+                     Url = string.Format("https://twitter.com/{0}/status/{1}", tweet.User.ScreenNameResponse, tweet.StatusID),
+                     Image = (tweet.RetweetedStatus != null && tweet.RetweetedStatus.User != null ?
+                             tweet.RetweetedStatus.User.ProfileImageUrl.Replace("http://", "https://") : tweet.User.ProfileImageUrl.Replace("http://", "https://"))
+                 }).Take(15).ToList();
 
             return tweets;
         }

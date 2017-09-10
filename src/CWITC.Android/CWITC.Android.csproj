@@ -365,15 +365,6 @@
     <Reference Include="Xamarin.Firebase.AppIndexing">
       <HintPath>..\packages\Xamarin.Firebase.AppIndexing.42.1021.1\lib\MonoAndroid70\Xamarin.Firebase.AppIndexing.dll</HintPath>
     </Reference>
-    <Reference Include="Square.OkIO">
-      <HintPath>..\packages\Square.OkIO.1.5.0.0\lib\MonoAndroid\Square.OkIO.dll</HintPath>
-    </Reference>
-    <Reference Include="Square.OkHttp">
-      <HintPath>..\packages\Square.OkHttp.2.4.0.0\lib\MonoAndroid\Square.OkHttp.dll</HintPath>
-    </Reference>
-    <Reference Include="Square.Picasso">
-      <HintPath>..\packages\Square.Picasso.2.5.2.1\lib\MonoAndroid\Square.Picasso.dll</HintPath>
-    </Reference>
     <Reference Include="Syncfusion.SfRating.Android">
       <HintPath>..\packages\Syncfusion.Xamarin.SfRating.15.2.0.46\lib\MonoAndroid10\Syncfusion.SfRating.Android.dll</HintPath>
     </Reference>
@@ -415,6 +406,15 @@
     </Reference>
     <Reference Include="Plugin.Share">
       <HintPath>..\packages\Plugin.Share.7.0.1\lib\MonoAndroid10\Plugin.Share.dll</HintPath>
+    </Reference>
+    <Reference Include="ModernHttpClient">
+      <HintPath>..\packages\modernhttpclient.2.4.2\lib\MonoAndroid\ModernHttpClient.dll</HintPath>
+    </Reference>
+    <Reference Include="OkHttp">
+      <HintPath>..\packages\modernhttpclient.2.4.2\lib\MonoAndroid\OkHttp.dll</HintPath>
+    </Reference>
+    <Reference Include="LinqToTwitter.xamarin">
+      <HintPath>..\packages\linqtotwitter.4.2.0-beta2\lib\monoandroid\LinqToTwitter.xamarin.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

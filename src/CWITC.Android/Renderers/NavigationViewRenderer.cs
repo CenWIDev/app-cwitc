@@ -8,7 +8,6 @@ using CWITC.Clients.Portable;
 using Android.Widget;
 using FormsToolkit;
 using Android.Views;
-using Square.Picasso;
 
 [assembly: ExportRenderer(typeof(CWITC.Clients.UI.NavigationView), typeof(NavigationViewRenderer))]
 namespace CWITC.Droid
@@ -82,11 +81,10 @@ namespace CWITC.Droid
 
         void UpdateImage()
         {
-            Picasso.With(Forms.Context)
-               .Load(Settings.Current.UserAvatar)
-               .Error(Resource.Drawable.profile_generic)
-               .Into(profileImage);
-
+            //Picasso.With(Forms.Context)
+               //.Load(Settings.Current.UserAvatar)
+               //.Error(Resource.Drawable.profile_generic)
+               //.Into(profileImage);
         }
 
         public override void OnViewRemoved(Android.Views.View child)
@@ -100,8 +98,6 @@ namespace CWITC.Droid
 
         void NavView_NavigationItemSelected(object sender, NavigationView.NavigationItemSelectedEventArgs e)
         {
-
-
             if (previousItem != null)
                 previousItem.SetChecked(false);
 

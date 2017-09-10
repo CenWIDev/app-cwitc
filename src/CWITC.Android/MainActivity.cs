@@ -219,28 +219,6 @@ namespace CWITC.Droid
             StartActivityForResult(signInIntent, RC_SIGN_IN);
         }
 
-        async void UpdateRemoteConfig()
-        {
-            var fbRemoteConfig = Firebase.RemoteConfig.FirebaseRemoteConfig.Instance;
-            await fbRemoteConfig.FetchAsync();
-
-            Settings.Current.TwitterApiKey = fbRemoteConfig.GetString("twitter_api_key");
-            Settings.Current.TwitterApiSecret = fbRemoteConfig.GetString("twitter_api_secret");
-            Settings.Current.GrouveEventCode = fbRemoteConfig.GetString("grouve_event_code");
-        }
-
-        void InitializeFirebase()
-        {
-            FirebaseRemoteConfig.Instance.SetDefaults(new Dictionary<string, Java.Lang.Object>
-            {
-                { "grouve_event_code", ApiKeys.GrouveEventCode }
-            });
-
-            FirebaseRemoteConfig.Instance
-                                .Fetch()
-                                .AddOnCompleteListener(this, this);
-        }
-
         public void OnComplete(Android.Gms.Tasks.Task task)
         {
             if (task.IsSuccessful)
@@ -249,13 +227,28 @@ namespace CWITC.Droid
             }
             else
             {
-
+                
             }
 
 			Settings.Current.TwitterApiKey = FirebaseRemoteConfig.Instance.GetString("twitter_api_key");
 			Settings.Current.TwitterApiSecret = FirebaseRemoteConfig.Instance.GetString("twitter_api_secret");
             Settings.Current.GrouveEventCode = FirebaseRemoteConfig.Instance.GetString("grouve_event_code");
+
+            MessagingService.Current.SendMessage(MessageKeys.TwitterAuthRefreshed);
         }
-    }
+
+       async void InitializeFirebase()
+		{
+			FirebaseRemoteConfig.Instance.SetDefaults(new Dictionary<string, Java.Lang.Object>
+			{
+				{ "grouve_event_code", ApiKeys.GrouveEventCode }
+			});
+
+			FirebaseRemoteConfig.Instance
+								.Fetch()
+								.AddOnCompleteListener(this, this);
+		}
+
+	}
 }
 
