@@ -32,15 +32,6 @@ using Android.App;
 [assembly: Permission(Name = Android.Manifest.Permission.AccessFineLocation)]
 [assembly: Permission(Name = Android.Manifest.Permission.AccessLocationExtraCommands)]
 [assembly: Permission(Name = Android.Manifest.Permission.AccessMockLocation)]
-[assembly: Permission(Name = Android.Manifest.Permission.AccessNetworkState)]
-[assembly: Permission(Name = Android.Manifest.Permission.AccessWifiState)]
-[assembly: Permission(Name = Android.Manifest.Permission.ChangeWifiState)]
-[assembly: Permission(Name = Android.Manifest.Permission.WakeLock)]
-[assembly: Permission(Name = Android.Manifest.Permission.ReceiveBootCompleted)]
-[assembly: Permission(Name = Android.Manifest.Permission.ReadCalendar)]
-[assembly: Permission(Name = Android.Manifest.Permission.WriteCalendar)]
-[assembly: Permission(Name = Android.Manifest.Permission.Camera)]
-[assembly: Permission(Name = Android.Manifest.Permission.Flashlight)]
 
 // This will prevent other apps on the device from receiving GCM messages for this app
 // It is crucial that the package name does not start with an uppercase letter - this is forbidden by Android.
