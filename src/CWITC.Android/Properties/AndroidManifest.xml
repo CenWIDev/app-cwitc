@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="org.cenwidev.cwitc" android:versionCode="0" android:versionName="1.0.2">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="org.cenwidev.cwitc" android:versionCode="0" android:versionName="1.0.3">
 	<uses-sdk android:minSdkVersion="21" />
 	<application android:icon="@drawable/Ic_launcher" android:theme="@style/MyTheme" android:label="CWITC 17">
 		<meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyDGJm9aaiulhbUTlnXWA680ueDP-Ru4mpY" />
