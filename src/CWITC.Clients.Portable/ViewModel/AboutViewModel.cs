@@ -10,7 +10,7 @@ using Plugin.Share;
 namespace CWITC.Clients.Portable
 {
     public class AboutViewModel : SettingsViewModel
-    {   
+    {
         public ObservableRangeCollection<Grouping<string, MenuItem>> MenuItems { get; }
         public ObservableRangeCollection<MenuItem> InfoItems { get; } = new ObservableRangeCollection<MenuItem>();
         public ObservableRangeCollection<MenuItem> AccountItems { get; } = new ObservableRangeCollection<MenuItem>();
@@ -19,26 +19,26 @@ namespace CWITC.Clients.Portable
         MenuItem accountItem;
         public AboutViewModel()
         {
-            AboutItems.Clear ();
+            AboutItems.Clear();
             AboutItems.Add(new MenuItem { Name = "About this app", Icon = "icon_venue.png" });
 
-            InfoItems.AddRange(new []
+            InfoItems.AddRange(new[]
                 {
                     new MenuItem { Name = "Sponsors", Icon = "icon_venue.png", Parameter="sponsors"},
-    				new MenuItem { Name = "Event Map", Icon = "icon_venue.png", Parameter = "floor-maps"},
-    				new MenuItem { Name = "Lunch Locations", Icon = "ic_restaurant_menu.png", Parameter = "lunch-locations"},
+                    new MenuItem { Name = "Event Map", Icon = "icon_venue.png", Parameter = "floor-maps"},
+                    new MenuItem { Name = "Lunch Locations", Icon = "ic_restaurant_menu.png", Parameter = "lunch-locations"},
                     new MenuItem { Name = "Venue", Icon = "icon_venue.png", Parameter = "venue"},
                 });
 
             accountItem = new MenuItem
-                {
-                    Name = "Logged in as:"
-                };
+            {
+                Name = "Logged in as:"
+            };
 
             syncItem = new MenuItem
-                {
-                    Name = "Last Sync:"
-                };
+            {
+                Name = "Last Sync:"
+            };
 
             UpdateItems();
 
@@ -46,9 +46,9 @@ namespace CWITC.Clients.Portable
             AccountItems.Add(syncItem);
 
             //This will be triggered wen 
-            Settings.PropertyChanged += (sender, e) => 
+            Settings.PropertyChanged += (sender, e) =>
                 {
-                    if(e.PropertyName == "Email" || e.PropertyName == "LastSync" || e.PropertyName == "PushNotificationsEnabled")
+                    if (e.PropertyName == "Email" || e.PropertyName == "LastSync" || e.PropertyName == "PushNotificationsEnabled")
                     {
                         UpdateItems();
                         OnPropertyChanged("AccountItems");
@@ -60,7 +60,7 @@ namespace CWITC.Clients.Portable
         {
             syncItem.Subtitle = LastSyncDisplay;
             accountItem.Subtitle = Settings.Current.IsLoggedIn ? Settings.Current.UserDisplayName : "Not signed in";
-                   }
+        }
 
     }
 }

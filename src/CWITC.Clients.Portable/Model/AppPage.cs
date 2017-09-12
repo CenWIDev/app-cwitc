@@ -11,7 +11,7 @@ namespace CWITC.Clients.Portable
     {
         Feed,
         Sessions,
-        Events,
+        Schedule,
         Gallery,
         Sponsors,
         Venue,

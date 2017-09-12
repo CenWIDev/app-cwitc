@@ -45,7 +45,7 @@ namespace CWITC.Clients.UI
                     case (int)AppPage.Sessions://sessions
                         pages.Add(menuId, new EvolveNavigationPage(new SessionsPage()));
                         break;
-                    case (int)AppPage.Events://events
+                    case (int)AppPage.Schedule://events
                         pages.Add(menuId, new EvolveNavigationPage(new EventsPage()));
                         break;
                     case (int)AppPage.Gallery://gallery
@@ -121,8 +121,8 @@ namespace CWITC.Clients.UI
                         break;
                     await Detail.Navigation.PushAsync(new SessionDetailsPage(session));
                     break;
-                case AppPage.Events:
-                    await NavigateAsync((int)AppPage.Events);
+                case AppPage.Schedule:
+                    await NavigateAsync((int)AppPage.Schedule);
                     break;
             }
 

@@ -118,7 +118,7 @@
                     </StackLayout>
                 </local:CardView>
 
-                <local:CardView>
+<!--                <local:CardView>
                      <StackLayout Spacing="0">
                         <local:LabelSection Text="Technology Used"/>
                         <local:HeaderDivider/>
@@ -154,7 +154,7 @@
 							</Label>
                         </StackLayout>
                     </StackLayout>
-                </local:CardView>
+                </local:CardView>-->
             </StackLayout>
         </StackLayout>
     </local:AlwaysScrollView>

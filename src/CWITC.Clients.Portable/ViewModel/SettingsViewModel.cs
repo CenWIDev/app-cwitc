@@ -38,14 +38,13 @@ namespace CWITC.Clients.Portable
                 {
                     new MenuItem { Name = "Created by CENWIDEV with <3", Command=LaunchBrowserCommand, Parameter="http://cenwidev.org" },
                     new MenuItem { Name = "Open source on GitHub!", Command=LaunchBrowserCommand, Parameter="https://github.com/CenWIDev/app-cwitc"},
-                    new MenuItem { Name = "Terms of Use", Command=LaunchBrowserCommand, Parameter="https://cwitc.org"},
-                    new MenuItem { Name = "Privacy Policy", Command=LaunchBrowserCommand, Parameter="https://cwitc.org"},
+                    new MenuItem { Name = "Terms of Use", Command=LaunchBrowserCommand, Parameter="https://github.com/CenWIDev/app-cwitc/wiki/Terms-&-Conditions"},
+                    new MenuItem { Name = "Privacy Policy", Command=LaunchBrowserCommand, Parameter="https://github.com/CenWIDev/app-cwitc/wiki/Privacy-Policy"},
                     new MenuItem { Name = "Open Source Notice", Command=LaunchBrowserCommand, Parameter="https://github.com/CenWIDev/app-cwitc/tree/master/oss-licenses"}
                 });
 
             TechnologyItems.AddRange(new[]
                 {
-                    new MenuItem { Name = "Azure Mobile Apps", Command=LaunchBrowserCommand, Parameter="https://github.com/Azure/azure-mobile-apps-net-client/" },
                     new MenuItem { Name = "Censored", Command=LaunchBrowserCommand, Parameter="https://github.com/jamesmontemagno/Censored"},
                     new MenuItem { Name = "Calendar Plugin", Command=LaunchBrowserCommand, Parameter="https://github.com/TheAlmightyBob/Calendars"},
                     new MenuItem { Name = "Connectivity Plugin", Command=LaunchBrowserCommand, Parameter="https://github.com/jamesmontemagno/Xamarin.Plugins/tree/master/Connectivity"},

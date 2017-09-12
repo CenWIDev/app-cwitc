@@ -129,7 +129,7 @@ namespace CWITC.Droid
                     id = (int)AppPage.Sessions;
                     break;
                 case Resource.Id.nav_events:
-                    id = (int)AppPage.Events;
+                    id = (int)AppPage.Schedule;
                     break;
                 case Resource.Id.nav_gallery:
                     id = (int)AppPage.Gallery;

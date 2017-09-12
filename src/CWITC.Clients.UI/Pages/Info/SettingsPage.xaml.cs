@@ -20,8 +20,8 @@ namespace CWITC.Clients.UI
             ListViewAbout.HeightRequest = (vm.AboutItems.Count * ListViewAbout.RowHeight) - adjust;
             ListViewAbout.ItemTapped += (sender, e) => ListViewAbout.SelectedItem = null;
             adjust = Device.OS != TargetPlatform.Android ? 1 : -vm.TechnologyItems.Count + 1;
-            ListViewTechnology.HeightRequest = (vm.TechnologyItems.Count * ListViewTechnology.RowHeight) - adjust;
-            ListViewTechnology.ItemTapped += (sender, e) => ListViewTechnology.SelectedItem = null;
+            //ListViewTechnology.HeightRequest = (vm.TechnologyItems.Count * ListViewTechnology.RowHeight) - adjust;
+            //ListViewTechnology.ItemTapped += (sender, e) => ListViewTechnology.SelectedItem = null;
         }
 
         bool dialogShown;

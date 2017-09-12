@@ -39,35 +39,27 @@
 			<key>UIApplicationShortcutItemTitle</key>
 			<string>Tweet</string>
 			<key>UIApplicationShortcutItemType</key>
-			<string>com.sample.evolve.tweet</string>
+			<string>org.cenwidev.cwitc.tweet</string>
 			<key>UIApplicationShortcutItemIconFile</key>
 			<string>quickaction_tweet</string>
 			<key>UIApplicationShortcutItemSubtitle</key>
-			<string>#XamarinEvolve</string>
+			<string>#CWITC</string>
 		</dict>
 		<dict>
 			<key>UIApplicationShortcutItemTitle</key>
-			<string>Announcements</string>
+			<string>Schedule</string>
 			<key>UIApplicationShortcutItemType</key>
-			<string>com.sample.evolve.announcements</string>
-			<key>UIApplicationShortcutItemIconFile</key>
-			<string>quickaction_announcements</string>
-		</dict>
-		<dict>
-			<key>UIApplicationShortcutItemTitle</key>
-			<string>Events</string>
-			<key>UIApplicationShortcutItemType</key>
-			<string>com.sample.evolve.events</string>
+			<string>org.cenwidev.cwitc.schedule</string>
 			<key>UIApplicationShortcutItemIconFile</key>
 			<string>quickaction_events</string>
 		</dict>
 		<dict>
 			<key>UIApplicationShortcutItemTitle</key>
-			<string>Mini-Hacks</string>
+			<string>Lunch Locations</string>
 			<key>UIApplicationShortcutItemType</key>
-			<string>com.sample.evolve.minihacks</string>
+			<string>org.cenwidev.cwitc.lunch</string>
 			<key>UIApplicationShortcutItemIconFile</key>
-			<string>quickaction_mini-hacks</string>
+			<string>quickaction_lunch</string>
 		</dict>
 	</array>
 	<key>UILaunchImages</key>

@@ -133,7 +133,7 @@ namespace CWITC.Droid
                     case "events":
                         MessagingService.Current.SendMessage<DeepLinkPage>("DeepLinkPage", new DeepLinkPage
                         {
-                            Page = AppPage.Events
+                            Page = AppPage.Schedule
                         });
                         break;
                 }

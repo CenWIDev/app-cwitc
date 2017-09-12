@@ -475,6 +475,9 @@
     <BundleResource Include="Resources\ic_restaurant_menu.png" />
     <BundleResource Include="Resources\ic_restaurant_menu%402x.png" />
     <BundleResource Include="Resources\ic_restaurant_menu%403x.png" />
+    <BundleResource Include="Resources\quickaction_lunch.png" />
+    <BundleResource Include="Resources\quickaction_lunch%402x.png" />
+    <BundleResource Include="Resources\quickaction_lunch%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

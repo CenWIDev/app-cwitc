@@ -33,7 +33,8 @@ namespace CWITC.iOS
         {
             public const string Tweet = "org.cenwidev.cwitc.tweet";
             public const string Announcements = "org.cenwidev.cwitc.announcements";
-            public const string Events = "org.cenwidev.cwitc.events";
+            public const string Schedule = "org.cenwidev.cwitc.schedule";
+            public const string Lunch = "org.cenwidev.cwitc.lunch";
         }
 
         public override bool OpenUrl(UIApplication application, NSUrl url, string sourceApplication, NSObject annotation)
@@ -145,6 +146,7 @@ namespace CWITC.iOS
             // Clear shortcut after it's been handled
             LaunchedShortcutItem = null;
         }
+
         // if app is already running
         public override void PerformActionForShortcutItem(UIApplication application, UIApplicationShortcutItem shortcutItem, UIOperationHandler completionHandler)
         {
@@ -162,7 +164,6 @@ namespace CWITC.iOS
             // Anything to process?
             if (shortcutItem == null)
                 return false;
-
 
             // Take action based on the shortcut type
             switch (shortcutItem.Type)
@@ -195,11 +196,16 @@ namespace CWITC.iOS
                     ContinueNavigation(AppPage.Notification);
                     handled = true;
                     break;
-                case ShortcutIdentifier.Events:
-                    Console.WriteLine("QUICKACTION: Events");
-                    ContinueNavigation(AppPage.Events);
+                case ShortcutIdentifier.Schedule:
+                    Console.WriteLine("QUICKACTION: Schedule");
+                    ContinueNavigation(AppPage.Schedule);
                     handled = true;
                     break;
+                case ShortcutIdentifier.Lunch:
+					Console.WriteLine("QUICKACTION: Lunhc Locations");
+                    ContinueNavigation(AppPage.LunchLocations);
+					handled = true;
+					break;
             }
 
             Console.Write(handled);
@@ -213,11 +219,11 @@ namespace CWITC.iOS
 
             // TODO: display UI in Forms somehow
             System.Console.WriteLine("Show the page for " + page);
-            MessagingService.Current.SendMessage<DeepLinkPage>("DeepLinkPage", new DeepLinkPage
-                {
-                    Page = page,
-                    Id = id
-                });
+            MessagingService.Current.SendMessage("DeepLinkPage", new DeepLinkPage
+            {
+                Page = page,
+                Id = id
+            });
         }
 
 #endregion
