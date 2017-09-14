@@ -117,44 +117,6 @@
                         </StackLayout>
                     </StackLayout>
                 </local:CardView>
-
-<!--                <local:CardView>
-                     <StackLayout Spacing="0">
-                        <local:LabelSection Text="Technology Used"/>
-                        <local:HeaderDivider/>
-                        <local:NonScrollableListView 
-                            x:Name="ListViewTechnology"
-                            ItemsSource="{Binding TechnologyItems}"
-                            RowHeight="44"> 
-                            <local:NonScrollableListView.SeparatorColor>
-                                <OnPlatform x:TypeArguments="Color" iOS="{StaticResource ListSeparator}"/>
-                            </local:NonScrollableListView.SeparatorColor>
-                            <local:NonScrollableListView.ItemTemplate>
-                                <DataTemplate>
-                                    <TextCell Text="{Binding Name}" 
-                                               Detail="{Binding Subtitle}" 
-                                               Command="{Binding Command}" 
-                                               CommandParameter="{Binding Parameter}" 
-                                               StyleId="disclosure"/>
-                                </DataTemplate>
-                            </local:NonScrollableListView.ItemTemplate>
-                        </local:NonScrollableListView>
-                         <local:FooterDivider/>
-                        <StackLayout>
-                            <StackLayout.Padding>
-                                <OnPlatform x:TypeArguments="Thickness" iOS="16,8,16,0" Android="16,8" WinPhone="16,8"/>
-                            </StackLayout.Padding>
-							<StackLayout.GestureRecognizers>
-                                        <TapGestureRecognizer
-                                                Tapped="OnTapGestureRecognizerTapped" />
-                                  </StackLayout.GestureRecognizers>
-                            <Label Text="8 more than 92" 
-                                   Style="{DynamicResource EvolveListItemDetailTextStyle}">
-                                    
-							</Label>
-                        </StackLayout>
-                    </StackLayout>
-                </local:CardView>-->
             </StackLayout>
         </StackLayout>
     </local:AlwaysScrollView>
