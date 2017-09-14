@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "762321594546-rn9l0qg0r8aikv0n5vm87kf9jh6hhq2h.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "org.cenwidev.cwitc",
+            "certificate_hash": "9714f5e653b2267b69fc0b46ca4cc43e1f576bde"
+          }
+        },
+        {
           "client_id": "762321594546-kekh6kktokph8i9jltpedtklbfsktn7n.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
