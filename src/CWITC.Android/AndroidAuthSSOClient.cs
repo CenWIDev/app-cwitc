@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Android.Content;
+using Android.Gms.Auth.Api;
 using Android.Gms.Auth.Api.SignIn;
 using Android.Gms.Common;
 using Android.Gms.Common.Apis;
@@ -67,25 +68,7 @@ namespace CWITC.Droid
             {
                 googleSignInTask = new TaskCompletionSource<GoogleSignInAccount>();
 
-				var activity = Plugin.CurrentActivity.CrossCurrentActivity.Current.Activity;
-                var gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DefaultSignIn)
-                    .RequestIdToken(activity.GetString(Resource.String.default_web_client_id))
-                    .RequestEmail()
-                    .Build();
-
-                _apiClient = new GoogleApiClient.Builder(activity)
-						//.EnableAutoManage() //activity,  this /* OnCon    nectionFailedListener */)
-					.AddConnectionCallbacks(this)
-					.AddOnConnectionFailedListener(this)
-                    .AddApi(Android.Gms.Auth.Api.Auth.GOOGLE_SIGN_IN_API, gso)
-					.Build();
-
-                						           //_apiClient = new GoogleApiClient.Builder(Xamarin.Forms.Forms.Context)
-
-                //   .AddApi(Android.Gms.Auth.Api.Auth.GOOGLE_SIGN_IN_API)
-                //    .Build();
-                
-                _apiClient.Connect();
+                GetGoogleApiClient();
 
                 var googleAccount = await googleSignInTask.Task;
 
@@ -107,6 +90,27 @@ namespace CWITC.Droid
 					Error = ex.Message
 				};
 			}
+        }
+
+        private void GetGoogleApiClient()
+        {
+            if (_apiClient == null)
+            {
+                var activity = Plugin.CurrentActivity.CrossCurrentActivity.Current.Activity;
+                var gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DefaultSignIn)
+                    .RequestIdToken(activity.GetString(Resource.String.default_web_client_id))
+                    .RequestEmail()
+                    .Build();
+
+                _apiClient = new GoogleApiClient.Builder(activity)
+                    //.EnableAutoManage() //activity,  this /* OnCon    nectionFailedListener */)
+                    .AddConnectionCallbacks(this)
+                    .AddOnConnectionFailedListener(this)
+                    .AddApi(Android.Gms.Auth.Api.Auth.GOOGLE_SIGN_IN_API, gso)
+                    .Build();
+
+                _apiClient.Connect();
+            }
         }
 
         public async Task<AccountResponse> LoginWithFacebook()
@@ -166,7 +170,7 @@ namespace CWITC.Droid
             }
         }
 
-        public Task LogoutAsync()
+        public async Task LogoutAsync()
         {
             try
             {
@@ -178,14 +182,28 @@ namespace CWITC.Droid
                     loginManager.LogOut();
                 }
 
+				if (Settings.Current.AuthType == "google")
+				{
+                    GetGoogleApiClient();
+
+                    TaskCompletionSource<Statuses> signoutTaks = new TaskCompletionSource<Statuses>();
+                        
+                    Auth.GoogleSignInApi.SignOut(_apiClient)
+                        .SetResultCallback<IResult>(result => 
+                        {
+                            signoutTaks.SetResult(result.Status);
+                        });
+
+                    var logoutStatus = await signoutTaks.Task;
+                    _apiClient = null;
+				}
+
                 Settings.Current.AuthType = string.Empty;
             }
             catch (System.Exception ex)
             {
                 // todo: handle errors
             }
-
-            return Task.CompletedTask;
         }
 
         async Task<AccountResponse> LoginToFirebase(AuthCredential credential)
@@ -225,11 +243,6 @@ namespace CWITC.Droid
         {
             var activity = Plugin.CurrentActivity.CrossCurrentActivity.Current.Activity as MainActivity;
             activity.GoogleSignIn(_apiClient, googleSignInTask);
-
-
-            //Xamarin.Forms.Forms.Context.StartActivityForResult(signInIntent, RC_SIGN_IN);
-            //Intent signInIntent =  GoogleSignInApi. .getSignInIntent(mGoogleApiClient);
-            //startActivityForResult(signInIntent, RC_AUTHORIZE_CONTACTS);
         }
 
         void GoogleApiClient.IConnectionCallbacks.OnConnectionSuspended(int cause)

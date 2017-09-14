@@ -194,8 +194,14 @@ namespace CWITC.iOS
                 if (Settings.Current.AuthType == "facebook")
                 {
                     new Facebook.LoginKit.LoginManager().LogOut();
-                    Settings.Current.AuthType = string.Empty;
                 }
+
+                if(Settings.Current.AuthType == "google")
+                {
+                    Google.SignIn.SignIn.SharedInstance.SignOutUser();
+                }
+
+                Settings.Current.AuthType = string.Empty;
             }
             //Facebook.LoginKit.LoginManager.in
 
