@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Plugin.Share;
 using FormsToolkit;
 using Plugin.Share.Abstractions;
+using Newtonsoft.Json;
 
 namespace CWITC.Clients.Portable
 {
@@ -112,10 +113,12 @@ namespace CWITC.Clients.Portable
 				if (result?.Success ?? false)
 				{
 					Message = "Updating schedule...";
+
+					Settings.UserId = result.User?.Id;
 					Settings.FirstName = result.User?.FirstName ?? string.Empty;
 					Settings.LastName = result.User?.LastName ?? string.Empty;
-					Settings.Email = result.User?.Email.ToLowerInvariant();
-					Settings.UserId = result.User?.Id;
+                    Settings.Email = (result.User?.Email ?? string.Empty).ToLowerInvariant();
+
 					MessagingService.Current.SendMessage(MessageKeys.LoggedIn);
 					Logger.Track(EvolveLoggerKeys.LoginSuccess);
 					try

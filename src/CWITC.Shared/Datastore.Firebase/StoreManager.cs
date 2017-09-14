@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using CWITC.Shared.DataStore.Firebase;
 using System.Collections.Generic;
+using CWITC.Clients.Portable;
 
 [assembly: Dependency(typeof(StoreManager))]
 
@@ -25,7 +26,7 @@ namespace CWITC.Shared.DataStore.Firebase
                 LunchStore.GetItemsAsync(true)
             };
 
-            if (syncUserSpecific)
+            if (syncUserSpecific && Settings.Current.IsLoggedIn)
             {
                 tasks.Add(FavoriteStore.GetItemsAsync(true));
                 tasks.Add(FeedbackStore.GetItemsAsync(true));

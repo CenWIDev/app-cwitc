@@ -3,6 +3,7 @@ using CWITC.Clients.Portable;
 using CWITC.DataObjects;
 using Firebase.Database;
 using FormsToolkit;
+using Xamarin.Forms;
 
 namespace CWITC.Shared.DataStore.Firebase
 {
@@ -15,6 +16,7 @@ namespace CWITC.Shared.DataStore.Firebase
             {
                 ReloadEntityNode();
             });
+
             return base.InitializeStore();
         }
 
@@ -25,7 +27,7 @@ namespace CWITC.Shared.DataStore.Firebase
             return rootNode.Child(Identifier).Child(Settings.Current.UserId);
 #elif __IOS__
             return rootNode.GetChild(Identifier).GetChild(Settings.Current.UserId);
-#endif
+#endif  
         }
     }
 }

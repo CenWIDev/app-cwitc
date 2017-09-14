@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System;
 using Xamarin.Forms;
 using CWITC.Shared.DataStore.Firebase;
+using CWITC.Clients.Portable;
 
 [assembly: Dependency(typeof(SessionStore))]
 namespace CWITC.Shared.DataStore.Firebase
@@ -18,15 +19,16 @@ namespace CWITC.Shared.DataStore.Firebase
 
             if (sessions != null)
             {
-                var favStore = DependencyService.Get<IFavoriteStore>();
-                await favStore.GetItemsAsync(true).ConfigureAwait(false);//pull latest
-
-                foreach (var session in sessions)
+                if (Settings.Current.IsLoggedIn)
                 {
-                    var isFav = await favStore.IsFavorite(session.Id).ConfigureAwait(false);
-                    session.IsFavorite = isFav;
+                    var favStore = DependencyService.Get<IFavoriteStore>();
+                    await favStore.GetItemsAsync(true).ConfigureAwait(false);//pull latest
 
-                    //session.spe
+                    foreach (var session in sessions)
+                    {
+                        var isFav = await favStore.IsFavorite(session.Id).ConfigureAwait(false);
+                        session.IsFavorite = isFav;
+                    }
                 }
             }
 
