@@ -144,20 +144,11 @@ namespace CWITC.Droid
             InitializeFirebase();
         }
 
-        protected override void OnNewIntent(Intent intent)
+        public override void OnBackPressed()
         {
-            base.OnNewIntent(intent);
-
-            bool? isAuth0 = intent?.DataString?.Contains("auth0");
-            bool? isLogout = intent.DataString?.Contains("logout");
-
-            if (isAuth0.HasValue && isAuth0.Value)
-            {
-                if (isLogout.HasValue && isLogout.Value)
-                    MessagingService.Current.SendMessage(MessageKeys.LogoutCallback);
-                else
-                    MessagingService.Current.SendMessage(MessageKeys.LoginCallback, intent.DataString);
-            }
+            // treat the back button as the home button and "dismiss" to background
+            // rather than kill the app
+            this.MoveTaskToBack(true);
         }
 
         protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)
@@ -184,27 +175,6 @@ namespace CWITC.Droid
             }
         }
 
-        public bool IsPlayServicesAvailable()
-        {
-            int resultCode = GoogleApiAvailability.Instance.IsGooglePlayServicesAvailable(this);
-            if (resultCode != ConnectionResult.Success)
-            {
-                if (GoogleApiAvailability.Instance.IsUserResolvableError(resultCode))
-                {
-                    if (Settings.Current.GooglePlayChecked)
-                        return false;
-
-                    Settings.Current.GooglePlayChecked = true;
-                    Toast.MakeText(this, "Google Play services is not installed, push notifications have been disabled.", ToastLength.Long).Show();
-                }
-                return false;
-            }
-            else
-            {
-                return true;
-            }
-        }
-
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, Permission[] grantResults)
         {
             global::ZXing.Net.Mobile.Forms.Android.PermissionsHandler.OnRequestPermissionsResult(requestCode, permissions, grantResults);
@@ -227,28 +197,27 @@ namespace CWITC.Droid
             }
             else
             {
-                
+
             }
 
-			Settings.Current.TwitterApiKey = FirebaseRemoteConfig.Instance.GetString("twitter_api_key");
-			Settings.Current.TwitterApiSecret = FirebaseRemoteConfig.Instance.GetString("twitter_api_secret");
+            Settings.Current.TwitterApiKey = FirebaseRemoteConfig.Instance.GetString("twitter_api_key");
+            Settings.Current.TwitterApiSecret = FirebaseRemoteConfig.Instance.GetString("twitter_api_secret");
             Settings.Current.GrouveEventCode = FirebaseRemoteConfig.Instance.GetString("grouve_event_code");
 
             MessagingService.Current.SendMessage(MessageKeys.TwitterAuthRefreshed);
         }
 
-       async void InitializeFirebase()
-		{
-			FirebaseRemoteConfig.Instance.SetDefaults(new Dictionary<string, Java.Lang.Object>
-			{
-				{ "grouve_event_code", ApiKeys.GrouveEventCode }
-			});
+        async void InitializeFirebase()
+        {
+            FirebaseRemoteConfig.Instance.SetDefaults(new Dictionary<string, Java.Lang.Object>
+            {
+                { "grouve_event_code", ApiKeys.GrouveEventCode }
+            });
 
-			FirebaseRemoteConfig.Instance
-								.Fetch()
-								.AddOnCompleteListener(this, this);
-		}
-
-	}
+            FirebaseRemoteConfig.Instance
+                                .Fetch()
+                                .AddOnCompleteListener(this, this);
+        }
+    }
 }
 
