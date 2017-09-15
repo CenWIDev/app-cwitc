@@ -41,51 +41,6 @@ namespace CWITC.Droid
         Icon = "@drawable/ic_launcher",
         LaunchMode = LaunchMode.SingleTask,
         ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
-    [IntentFilter(new[] { Intent.ActionView },
-        Categories = new[]
-        {
-            Intent.CategoryDefault,
-            Intent.CategoryBrowsable
-        },
-        DataScheme = "http",
-        DataPathPrefix = "/session/",
-        DataHost = "cwitc.org")]
-    [IntentFilter(new[] { Intent.ActionView },
-        Categories = new[]
-        {
-            Intent.CategoryDefault,
-            Intent.CategoryBrowsable
-        },
-        DataScheme = "https",
-        DataPathPrefix = "/session/",
-        DataHost = "cwitc.org")]
-
-    [IntentFilter(new[] { Intent.ActionView },
-        Categories = new[]
-        {
-            Intent.CategoryDefault,
-            Intent.CategoryBrowsable
-        },
-        DataScheme = "http",
-        DataHost = "cwitc.org")]
-    [IntentFilter(new[] { Intent.ActionView },
-        Categories = new[]
-        {
-            Intent.CategoryDefault,
-            Intent.CategoryBrowsable
-        },
-        DataScheme = "https",
-        DataHost = "cwitc.org")]
-    [IntentFilter(new[] { Intent.ActionView },
-        Categories = new[] { Intent.CategoryDefault, Intent.CategoryBrowsable },
-        DataScheme = "@PACKAGE_NAME@",
-        DataHost = "cwitc.auth0.com",
-        DataPathPrefix = "/android/@PACKAGE_NAME@/callback")]
-    [IntentFilter(new[] { Intent.ActionView },
-        Categories = new[] { Intent.CategoryDefault, Intent.CategoryBrowsable },
-        DataScheme = "@PACKAGE_NAME@",
-        DataHost = "cwitc.auth0.com",
-        DataPathPrefix = "/android/@PACKAGE_NAME@/logout")]
     public class MainActivity : FormsAppCompatActivity, Android.Gms.Tasks.IOnCompleteListener
     {
         const int RC_SIGN_IN = 9001;
