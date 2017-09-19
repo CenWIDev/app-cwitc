@@ -400,6 +400,9 @@
     <Reference Include="LinqToTwitter.xamarin">
       <HintPath>..\packages\linqtotwitter.4.2.0-beta2\lib\xamarin.ios\LinqToTwitter.xamarin.dll</HintPath>
     </Reference>
+    <Reference Include="Cirrious.FluentLayouts.Touch">
+      <HintPath>..\packages\Cirrious.FluentLayout.2.6.0\lib\Xamarin.iOS10\Cirrious.FluentLayouts.Touch.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\heart_empty.png" />
@@ -499,6 +502,7 @@
     <Compile Include="Renderers\TrackCurrentViewControllerRenderer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Datastore.Firebase\BaseStore.cs" />
+    <Compile Include="Renderers\PlaceholderEditorRenderer.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />

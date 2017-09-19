@@ -25,8 +25,6 @@ namespace CWITC.Shared.DataStore.Firebase
 		{
 			if (!initialized) await InitializeStore();
 
-			TaskCompletionSource<bool> task = new TaskCompletionSource<bool>();
-
 			var existingItems = (await GetItemsAsync(true))?.ToList() ?? new List<T>();
 			existingItems.Add(item);
 

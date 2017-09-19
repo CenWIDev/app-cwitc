@@ -450,6 +450,7 @@
     <Compile Include="AndroidAuthSSOClient.cs" />
     <Compile Include="Datastore.Firebase\BaseStore.cs" />
     <Compile Include="Extensions\JavaJsonHelperExtensions.cs" />
+    <Compile Include="Renderers\PlaceholderEditorRenderer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

@@ -16,7 +16,7 @@ namespace CWITC.Clients.UI
         {
             var rating = (double)value;
             if(rating == 0)
-                return "Choose a rating";
+                return "Tap a Star to Rate";
             if (rating == 1)
                 return "Not a fan";
             if (rating == 2)

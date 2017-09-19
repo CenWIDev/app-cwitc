@@ -10,11 +10,20 @@ namespace CWITC.Clients.UI
     public partial class FeedbackPage : ContentPage
     {
         FeedbackViewModel vm;
-        public FeedbackPage(Session session)
+
+
+        public FeedbackPage()
         {
             InitializeComponent();
 
-            BindingContext = vm = new FeedbackViewModel(Navigation, session);
+            var row = (TextEditor.Parent.Parent as StackLayout);
+            row.SizeChanged += (sender, e) => 
+            {
+                var frame = TextEditor.Bounds;
+                frame.Height = row.Height - 1;
+                TextEditor.Layout(frame);
+            };
+
             if (Device.OS != TargetPlatform.iOS)
                 ToolbarDone.Icon = "toolbar_close.png";
 
@@ -27,6 +36,13 @@ namespace CWITC.Clients.UI
                     await Navigation.PopModalAsync();
                 });
         }
+
+		public FeedbackPage WithSession(Session session)
+		{
+			BindingContext = vm = new FeedbackViewModel(Navigation, session);
+			
+			return this;
+		}
     }
 }
 

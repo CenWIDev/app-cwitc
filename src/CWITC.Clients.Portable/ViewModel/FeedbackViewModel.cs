@@ -24,6 +24,8 @@ namespace CWITC.Clients.Portable
             Session = session;
         }
 
+        public string Text { get; set; }
+
         ICommand  submitRatingCommand;
         public ICommand SubmitRatingCommand =>
             submitRatingCommand ?? (submitRatingCommand = new Command<double>(async (rating) => await ExecuteSubmitRatingCommandAsync(rating))); 
@@ -65,10 +67,11 @@ namespace CWITC.Clients.Portable
 
                 Session.FeedbackLeft = true;
                 await StoreManager.FeedbackStore.InsertAsync(new Feedback
-                    {
-                        SessionId = session.Id,
-                        SessionRating = rating
-                    });
+                {
+                    SessionId = session.Id,
+                    SessionRating = rating,
+                    FeedbackText = Text
+                });
             }
             catch(Exception ex)
             {
@@ -79,8 +82,6 @@ namespace CWITC.Clients.Portable
                 IsBusy = false;
             }
         }
-
-
     }
 }
 

@@ -8,5 +8,6 @@
         public string UserId { get; set; }
         public string SessionId { get; set; }
         public double SessionRating { get; set; }
+        public string FeedbackText { get; set; }
     }
 }

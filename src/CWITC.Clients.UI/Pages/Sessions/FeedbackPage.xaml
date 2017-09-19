@@ -21,17 +21,14 @@
     
     <Grid Padding="24">
         <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-
-        <StackLayout VerticalOptions="Center" Spacing="{StaticResource StandardSpacing}">
-            <Image Source="icon_sessions_big_purple.png" HorizontalOptions="Center" />
-            <Label Text="{Binding Session.Title}" 
-                HorizontalTextAlignment="Center" HorizontalOptions="Center" 
-                StyleId="LabelSessionName"
-                Style="{DynamicResource EvolveListItemTextStyle}"/>
+        <StackLayout VerticalOptions="Center" Spacing="{StaticResource StandardSpacing}" Grid.Row="0">
 
             <Grid RowSpacing="18" HorizontalOptions="Center">
                 <Grid.ColumnDefinitions>
@@ -50,8 +47,33 @@
                    Style="{DynamicResource EvolveListItemDetailTextStyle}"
                    StyleId="Status"
                    HorizontalOptions="Center"/>
+
         </StackLayout>
-        <StackLayout Padding="{StaticResource StandardPadding}" Grid.Row="1">
+
+        <local:SectionDivider Grid.Row="1" />
+
+        <StackLayout Padding="{StaticResource StandardPadding}" Grid.Row="2">
+
+            <ContentView
+                VerticalOptions="Fill">
+                <local:PlaceholderEditor 
+                    x:Name="TextEditor"
+                    Placeholder="Leave Feedback (Optional)" 
+                    Text="{Binding Text}"
+                    VerticalOptions="Fill"/>
+            </ContentView>
+
+        </StackLayout>
+        
+        <local:SectionDivider Grid.Row="3" />
+        
+        <StackLayout Padding="{StaticResource StandardPadding}" Grid.Row="4">
+
+            <Label
+                Text="Your feedback will be used for evaluating speakers for next year." 
+                Style="{DynamicResource EvolveListItemDetailTextStyle}"
+                HorizontalTextAlignment="Center"/>
+
             <Button
                 Text="Submit"  
                 StyleId="ButtonSubmit"

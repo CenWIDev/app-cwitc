@@ -47,7 +47,8 @@ namespace CWITC.Clients.UI
                         MessagingService.Current.SendMessage(MessageKeys.NavigateLogin);
                         return;
                     }
-                    await NavigationService.PushModalAsync(Navigation, new EvolveNavigationPage(new FeedbackPage(ViewModel.Session)));
+                await NavigationService.PushModalAsync(Navigation, new EvolveNavigationPage(new FeedbackPage()
+                                                                                            .WithSession(ViewModel.Session)));
             };
             BindingContext = new SessionDetailsViewModel(Navigation, session); 
             ViewModel.LoadSessionCommand.Execute(null);

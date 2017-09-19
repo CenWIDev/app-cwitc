@@ -72,7 +72,11 @@ namespace CWITC.Shared.DataStore.Firebase
             entityNode.SetValue(data,
                                 (NSError error, DatabaseReference reference) =>
             {
-                if (error != null) task.SetResult(false);
+                if (error != null)
+                {
+                    task.SetResult(false);
+                    return;
+                }
 
                 task.SetResult(true);
             });
