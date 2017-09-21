@@ -41,7 +41,7 @@
                        LineBreakMode="WordWrap"
                        FontSize="Large"
                        TextColor="{DynamicResource DetailTextColor}"
-                       Text="Sign in to save and sync favorites and session feedback.">
+                       Text="Sign in to save and sync favorites and leave session feedback.">
 
                     <Label.FontSize>
                         <OnPlatform x:TypeArguments="x:Double" Android="15" iOS="15" WinPhone="15"/>
