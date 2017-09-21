@@ -4,11 +4,22 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
     xmlns:local="clr-namespace:CWITC.Clients.UI;assembly=CWITC.Clients.UI"
     xmlns:imagecircle="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
+    xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
     x:Class="CWITC.Clients.UI.LunchLocationsPage"
     BackgroundColor="{DynamicResource WindowBackground}"
     Title="Lunch Locations">
     <AbsoluteLayout  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
 
+    <StackLayout
+        IsVisible="{Binding IsNotBusy}"
+        AbsoluteLayout.LayoutFlags="All" 
+        AbsoluteLayout.LayoutBounds="0,0,1,1">
+            <ContentView Padding="{StaticResource StandardPadding}">
+                    <Label 
+                        Text="We've partnered with local restaraunts in downtown Stevens Point to offer lunch for conference attendees. Take your lunch voucher to a participating restaraunt and enjoy some delicious local food!"
+                        VerticalTextAlignment="Center"
+                        Style="{StaticResource EvolveListItemDetailPrimaryTextStyle}"/>
+                </ContentView>
 	<ListView 
             x:Name="ListViewLocations"
             ItemsSource="{Binding Locations}"
@@ -17,21 +28,10 @@
             IsRefreshing="{Binding IsBusy, Mode=OneWay}"
             HasUnevenRows ="true"
             CachingStrategy="RecycleElement"
-            IsVisible="{Binding IsNotBusy}"
-            BackgroundColor="White"
-            AbsoluteLayout.LayoutFlags="All" 
-            AbsoluteLayout.LayoutBounds="0,0,1,1">
+            BackgroundColor="White">
             <ListView.SeparatorColor>
                 <OnPlatform x:TypeArguments="Color" iOS="{StaticResource ListSeparator}" WinPhone="{StaticResource ListSeparator}"/>
             </ListView.SeparatorColor>
-            <ListView.Header>
-                <ContentView Padding="{StaticResource StandardPadding}">
-                    <Label 
-                        Text="We've partnered with local restaraunts in downtown Stevens Point to offer lunch for conference attendees. Take your lunch voucher to a participating restaraunt and enjoy some delicious local food!"
-                        VerticalTextAlignment="Center"
-                        Style="{StaticResource EvolveListItemDetailPrimaryTextStyle}"/>
-                </ContentView>
-            </ListView.Header>
        <ListView.ItemTemplate>
         <DataTemplate>
              <ViewCell StyleId="disclosure"
@@ -59,6 +59,27 @@
         </DataTemplate>
       </ListView.ItemTemplate>
     </ListView>
+
+        <ContentView
+            x:Name="MapWrapper"
+            VerticalOptions="FillAndExpand"
+            HorizontalOptions="FillAndExpand"
+                IsVisible="false">
+            <maps:Map
+                x:Name="Map"
+                MapType="Street" 
+                VerticalOptions="Fill"
+                HorizontalOptions="Fill"
+                IsShowingUser ="true">
+              <maps:Map.Behaviors>
+                <local:MapBehavior 
+                    x:Name="MapBehavior"   
+                    ItemsSource="{Binding PinLocations}" />
+              </maps:Map.Behaviors>
+            </maps:Map>
+        </ContentView>
+
+    </StackLayout>
     <StackLayout IsVisible="{Binding IsBusy}"
                                    AbsoluteLayout.LayoutFlags="PositionProportional"
                                    AbsoluteLayout.LayoutBounds="0.5,0.5,-1,-1">

@@ -162,6 +162,8 @@
     </Compile>
     <Compile Include="Controls\EvolveModalNavigationPage.cs" />
     <Compile Include="Controls\PlaceholderEditor.cs" />
+    <Compile Include="Behaviors\BindableBehavior.cs" />
+    <Compile Include="Behaviors\MapSourceBehavior.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
 <ItemGroup>

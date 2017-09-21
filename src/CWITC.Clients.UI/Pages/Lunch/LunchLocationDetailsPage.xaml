@@ -15,7 +15,7 @@
             </Grid.RowDefinitions>
             <maps:Map 
                     x:Name="CWITC_Map"
-                    IsShowingUser="false" 
+                    IsShowingUser="true" 
                     MapType="Street" />
             <StackLayout Grid.Row="1" HorizontalOptions="FillAndExpand" VerticalOptions="End"
              BackgroundColor="#99FFFFFF" Padding="{DynamicResource StandardPadding}">
