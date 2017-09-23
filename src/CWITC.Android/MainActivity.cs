@@ -98,14 +98,6 @@ namespace CWITC.Droid
 
             InitializeFirebase();
         }
-
-        public override void OnBackPressed()
-        {
-            // treat the back button as the home button and "dismiss" to background
-            // rather than kill the app
-            this.MoveTaskToBack(true);
-        }
-
         protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)
         {
             base.OnActivityResult(requestCode, resultCode, data);

@@ -31,6 +31,7 @@ namespace CWITC.Clients.UI
                 });
         }
 
+
         public async Task NavigateAsync(int menuId)
         {
             EvolveNavigationPage newPage = null;
@@ -88,7 +89,6 @@ namespace CWITC.Clients.UI
         {
             base.OnAppearing();
 
-
             if (Settings.Current.FirstRun)
             {
                 MessagingService.Current.SendMessage(MessageKeys.NavigateLogin);
@@ -99,6 +99,7 @@ namespace CWITC.Clients.UI
             await GoToDeepLink();
 
         }
+
         async Task GoToDeepLink()
         {
             if (page == null)
