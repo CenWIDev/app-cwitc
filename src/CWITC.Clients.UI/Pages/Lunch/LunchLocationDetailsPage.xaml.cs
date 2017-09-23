@@ -49,13 +49,12 @@ namespace CWITC.Clients.UI
                         Icon = "toolbar_navigate.png"
                     });
 
-					//ToolbarItems.Add(new ToolbarItem
-					//{
-     //                   Order = ToolbarItemOrder.Secondary,
-					//	Text = Language.ViewMenu,
-					//	Command = vm.ViewMenuCommand,
-					//	Icon = "ic_restaurant_menu.png"
-					//});
+					ToolbarItems.Add(new ToolbarItem
+					{
+						Order = ToolbarItemOrder.Secondary,
+                        Text = Language.ViewWebsite,
+                        Command = vm.ViewMenuCommand,
+					});
 
                     if (vm.CanMakePhoneCall)
                     {
@@ -79,19 +78,20 @@ namespace CWITC.Clients.UI
                             string[] items = null;
                             if (!vm.CanMakePhoneCall)
                             {
-                                items = new[] { Language.GetDirections };
+                                items = new[] { Language.GetDirections, Language.ViewWebsite };
                             }
                             else
                             {
-                                items = new[] { Language.GetDirections, string.Format(Language.CallLocationFormat, vm.Location.Name) };
+                                items = new[] { Language.GetDirections, Language.ViewWebsite, string.Format(Language.CallLocationFormat, vm.Location.Name) };
                             }
 
                             var action = await DisplayActionSheet(vm.Location.Name, Language.Cancel, null, items);
                             if (action == items[0])
                                 vm.NavigateCommand.Execute(null);
-                            else if (items.Length > 1 && action == items[1] && vm.CanMakePhoneCall)
+							if (action == items[1])
+                                vm.ViewMenuCommand.Execute(null);
+                            else if (items.Length > 2 && action == items[3] && vm.CanMakePhoneCall)
                                 vm.CallCommand.Execute(null);
-
                         })
                     });
                 }

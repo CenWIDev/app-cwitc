@@ -12,5 +12,6 @@ namespace CWITC.Clients.Portable
         public static string CallLocationFormat = "Call {0}";
 
         public static string ViewMenu = "View Menu";    
-    }
+        public static string ViewWebsite = "View Website";
+	}
 }

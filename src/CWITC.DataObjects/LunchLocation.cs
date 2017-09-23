@@ -21,6 +21,8 @@ namespace CWITC.DataObjects
 
         public string Menu { get; set; }
 
+        public string Website { get; set; }
+
         public LunchLocation()
         {
         }

@@ -58,19 +58,19 @@ namespace CWITC.Clients.Portable
 
         void ExecuteViewMenuCommand(object obj)
         {
-    //        if (!CrossShare.IsSupported)
-    //        {
-				//MessagingService.Current.SendMessage(MessageKeys.Message, new MessagingServiceAlert
-				//{
-				//	Title = "Unable to Open Menu",
-				//	Message = "A menu is not available for this locaiton.",
-				//	Cancel = "OK"
-				//});
-            //    return;
-            //}
-
-			//CrossShare.Current.OpenBrowser(Location.Menu);
-            this.LaunchBrowserCommand.Execute(Location.Menu);
+            try
+            {
+                Xamarin.Forms.Device.OpenUri(new Uri(Location.Website));
+            }
+            catch
+            {
+                MessagingService.Current.SendMessage(MessageKeys.Message, new MessagingServiceAlert
+                {
+                    Title = "Unable to Open Website",
+                    Message = "A website is not available for this locaiton.",
+                    Cancel = "OK"
+                });
+            }
         }
 
         public LunchLocationsDetailViewModel(INavigation navigation, LunchLocation item) 
