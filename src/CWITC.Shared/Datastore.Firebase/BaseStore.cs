@@ -16,7 +16,7 @@ namespace CWITC.Shared.DataStore.Firebase
 
 		public virtual async Task<T> GetItemAsync(string id)
 		{
-			if (!initialized) InitializeStore();
+			if (!initialized) await InitializeStore();
 
             return (await GetItemsAsync(false)).FirstOrDefault(x  => x.Id == id);
 		}
@@ -44,7 +44,7 @@ namespace CWITC.Shared.DataStore.Firebase
 				var index = existingItems.IndexOf(foundItem);
 
 				existingItems.RemoveAt(index);
-
+					
 				return await SaveValues(GetArray(existingItems));
 			}
 			return false;

@@ -146,19 +146,12 @@ namespace CWITC.Droid
             {
 
             }
-
-            Settings.Current.TwitterApiKey = FirebaseRemoteConfig.Instance.GetString("twitter_api_key");
-            Settings.Current.TwitterApiSecret = FirebaseRemoteConfig.Instance.GetString("twitter_api_secret");
-            Settings.Current.GrouveEventCode = FirebaseRemoteConfig.Instance.GetString("grouve_event_code");
-
-            MessagingService.Current.SendMessage(MessageKeys.TwitterAuthRefreshed);
         }
 
         async void InitializeFirebase()
         {
             FirebaseRemoteConfig.Instance.SetDefaults(new Dictionary<string, Java.Lang.Object>
             {
-                { "grouve_event_code", ApiKeys.GrouveEventCode }
             });
 
             FirebaseRemoteConfig.Instance
@@ -167,4 +160,3 @@ namespace CWITC.Droid
         }
     }
 }
-

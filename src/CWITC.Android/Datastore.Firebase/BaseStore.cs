@@ -45,7 +45,7 @@ namespace CWITC.Shared.DataStore.Firebase
 
         protected virtual DatabaseReference GetEntityNode(DatabaseReference rootNode)
         {
-            return rootNode.Child(Identifier);
+			return rootNode.Child("2018").Child(Identifier);
         }
 
         Task<bool> SaveValues(ArrayList data)

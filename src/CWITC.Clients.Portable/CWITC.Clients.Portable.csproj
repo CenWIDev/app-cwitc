@@ -62,8 +62,6 @@
     <Compile Include="Interfaces\ILaunchTwitter.cs" />
     <Compile Include="Language.cs" />
     <Compile Include="Model\Tweet.cs" />
-    <Compile Include="Services\TweetsService.cs" />
-    <Compile Include="ViewModel\GalleryViewModel.cs" />
     <Compile Include="ViewModel\LunchLocationsViewModel.cs" />
     <Compile Include="ViewModel\LunchLocationsDetailViewModel.cs" />
     <Compile Include="ViewModel\ILocationViewModel.cs" />

@@ -297,14 +297,6 @@ namespace CWITC.iOS
 						// Call this method to make fetched parameter values available to your app
 						RemoteConfig.SharedInstance.ActivateFetched();
 
-                        var keys = RemoteConfig.SharedInstance.GetKeys("");
-                        Settings.Current.TwitterApiKey = RemoteConfig.SharedInstance["twitter_api_key"].StringValue;
-                        Settings.Current.TwitterApiSecret = RemoteConfig.SharedInstance["twitter_api_secret"].StringValue;
-                        var grouveCode = RemoteConfig.SharedInstance["grouve_event_code"].StringValue;
-                        Settings.Current.GrouveEventCode = grouveCode;
-
-                        MessagingService.Current.SendMessage(MessageKeys.TwitterAuthRefreshed);
-
 						break;
 
 					case RemoteConfigFetchStatus.Throttled:

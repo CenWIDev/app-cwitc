@@ -12,7 +12,6 @@ namespace CWITC.Clients.Portable
         Feed,
         Sessions,
         Schedule,
-        Gallery,
         Sponsors,
         Venue,
         FloorMap,

@@ -15,7 +15,7 @@
     <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
     <AndroidApplication>True</AndroidApplication>
     <AndroidUseLatestPlatformSdk>False</AndroidUseLatestPlatformSdk>
-    <TargetFrameworkVersion>v7.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v7.1</TargetFrameworkVersion>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
     <JavaMaximumHeapSize>1G</JavaMaximumHeapSize>
@@ -23,6 +23,8 @@
 	<AndroidEnableMultipleDex>true</AndroidEnableMultipleDex>
 	<AndroidEnableMultiDex>true</AndroidEnableMultiDex>
 	<AndroidLinkMode>None</AndroidLinkMode>
+	<AndroidLinkSkip></AndroidLinkSkip>
+	<AndroidStoreUncompressedFileExtensions></AndroidStoreUncompressedFileExtensions>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>True</DebugSymbols>
@@ -35,10 +37,8 @@
     <ConsolePause>false</ConsolePause>
     <RunCodeAnalysis>false</RunCodeAnalysis>
     <AndroidUseSharedRuntime>True</AndroidUseSharedRuntime>
-    <AndroidLinkSkip />
     <EmbedAssembliesIntoApk>False</EmbedAssembliesIntoApk>
     <AndroidSupportedAbis />
-    <AndroidStoreUncompressedFileExtensions />
     <MandroidI18n />
     <JavaMaximumHeapSize>1G</JavaMaximumHeapSize>
     <AndroidKeyStore>True</AndroidKeyStore>
@@ -62,9 +62,7 @@
     <AndroidSupportedAbis>armeabi-v7a;x86;armeabi;arm64-v8a;x86_64</AndroidSupportedAbis>
     <DebugType>
     </DebugType>
-    <AndroidLinkSkip />
     <EmbedAssembliesIntoApk>True</EmbedAssembliesIntoApk>
-    <AndroidStoreUncompressedFileExtensions />
     <MandroidI18n />
     <JavaMaximumHeapSize>1G</JavaMaximumHeapSize>
     <Debugger>Xamarin</Debugger>
@@ -365,15 +363,6 @@
     <Reference Include="Xamarin.Firebase.AppIndexing">
       <HintPath>..\packages\Xamarin.Firebase.AppIndexing.42.1021.1\lib\MonoAndroid70\Xamarin.Firebase.AppIndexing.dll</HintPath>
     </Reference>
-    <Reference Include="Syncfusion.SfRating.Android">
-      <HintPath>..\packages\Syncfusion.Xamarin.SfRating.15.2.0.46\lib\MonoAndroid10\Syncfusion.SfRating.Android.dll</HintPath>
-    </Reference>
-    <Reference Include="Syncfusion.SfRating.XForms.Android">
-      <HintPath>..\packages\Syncfusion.Xamarin.SfRating.15.2.0.46\lib\MonoAndroid10\Syncfusion.SfRating.XForms.Android.dll</HintPath>
-    </Reference>
-    <Reference Include="Syncfusion.SfRating.XForms">
-      <HintPath>..\packages\Syncfusion.Xamarin.SfRating.15.2.0.46\lib\MonoAndroid10\Syncfusion.SfRating.XForms.dll</HintPath>
-    </Reference>
     <Reference Include="Xamarin.GooglePlayServices.Auth.Base">
       <HintPath>..\packages\Xamarin.GooglePlayServices.Auth.Base.42.1021.1\lib\MonoAndroid70\Xamarin.GooglePlayServices.Auth.Base.dll</HintPath>
     </Reference>
@@ -430,6 +419,12 @@
     </Reference>
     <Reference Include="FFImageLoading.Transformations">
       <HintPath>..\packages\Xamarin.FFImageLoading.Transformations.2.2.11\lib\MonoAndroid10\FFImageLoading.Transformations.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Licensing">
+      <HintPath>..\packages\Syncfusion.Licensing.16.2.0.50\lib\MonoAndroid10\Syncfusion.Licensing.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfRating.Android">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfRating.Android.16.2.0.50\lib\MonoAndroid10\Syncfusion.SfRating.Android.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

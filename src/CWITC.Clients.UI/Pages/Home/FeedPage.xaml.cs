@@ -31,11 +31,6 @@ namespace CWITC.Clients.UI
             }
 
             favoritesTime = Settings.Current.LastFavoriteTime;
-            ViewModel.Tweets.CollectionChanged += (sender, e) => 
-                {
-                    var adjust = Device.OS != TargetPlatform.Android ? 1 : -ViewModel.Tweets.Count + 2;
-                    ListViewSocial.HeightRequest = (ViewModel.Tweets.Count * ListViewSocial.RowHeight)  - adjust;
-                };
 
             ViewModel.Sessions.CollectionChanged += (sender, e) => 
                 {
@@ -100,13 +95,6 @@ namespace CWITC.Clients.UI
             }
             else
             {
-
-                if (ViewModel.Tweets.Count == 0)
-                {
-
-                    ViewModel.LoadSocialCommand.Execute(null);
-                }
-
                 if ((firstLoad && ViewModel.Sessions.Count == 0) || favoritesTime != Settings.Current.LastFavoriteTime)
                 {
                     if (firstLoad)
