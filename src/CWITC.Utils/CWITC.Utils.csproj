@@ -45,22 +45,20 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Plugin.Settings, Version=2.5.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Xam.Plugins.Settings.2.5.1.0\lib\portable-net45+wp80+win8+wpa81\Plugin.Settings.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Plugin.Settings.Abstractions, Version=2.5.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Xam.Plugins.Settings.2.5.1.0\lib\portable-net45+wp80+win8+wpa81\Plugin.Settings.Abstractions.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="Xamarin.Insights">
       <HintPath>..\packages\Xamarin.Insights.1.12.3\lib\portable-win+net45+wp80+windows8+wpa+MonoAndroid10+MonoTouch10\Xamarin.Insights.dll</HintPath>
     </Reference>
     <Reference Include="Plugin.Share.Abstractions">
-      <HintPath>..\packages\Plugin.Share.7.0.1\lib\netstandard1.0\Plugin.Share.Abstractions.dll</HintPath>
+      <HintPath>..\packages\Plugin.Share.7.1.1\lib\netstandard1.0\Plugin.Share.Abstractions.dll</HintPath>
     </Reference>
     <Reference Include="Plugin.Share">
-      <HintPath>..\packages\Plugin.Share.7.0.1\lib\netstandard1.0\Plugin.Share.dll</HintPath>
+      <HintPath>..\packages\Plugin.Share.7.1.1\lib\netstandard1.0\Plugin.Share.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Settings.Abstractions">
+      <HintPath>..\packages\Xam.Plugins.Settings.3.1.1\lib\netstandard1.0\Plugin.Settings.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Settings">
+      <HintPath>..\packages\Xam.Plugins.Settings.3.1.1\lib\netstandard1.0\Plugin.Settings.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
