@@ -1,0 +1,338 @@
+{
+  "sessions": [
+    {
+      "Abstract": "Community, is a word we started using at the start of the 14th century, as a way to define a set of common people. In today’s tech scene, we hear this word used everywhere but do you really feel part of one? For the past decade I’ve spent over 10k hours fostering and developing different communities. Some small, and some large efforts such as THAT Conference but what I’ve come to learn is what I’m here to share.\n\nBeing part of a community is easy, being present and active is something completely different. Many will sign up but won’t even bother showing up, The networks, the opportunities, the support are all right in front of you but you have to take the step, that second step. I’ll explain today’s landscape, explore a few techniques, and help you take that second step.",
+      "EndTime": "2018-10-06T14:45:00-06:00",
+      "Id": "b34417eb-dc35-419f-b434-cce65b6155cd",
+      "MainCategory": {
+        "Color": "#4B637E",
+        "Id": "ba93bcc2-0ca4-4041-be41-8eb885128a5f",
+        "Name": "Community",
+        "ShortName": "Community"
+      },
+      "Room": {
+        "Name": "Keynote"
+      },
+      "Speakers": [
+        {
+          "AvatarUrl": "https://pbs.twimg.com/profile_images/633659267292131328/ZKVDMwub_400x400.jpg",
+          "Biography": "People have said, I'm like a fine wine. I just get better with age but that first sip might make you twitch a bit. Founder of Unspecified and That Conference",
+          "CompanyName": "Unspecified",
+          "CompanyWebsiteUrl": "http://unspecified.io",
+          "FirstName": "Clark",
+          "Id": "ae77f207-03a6-46e7-bdd6-067b02fff0a2",
+          "LastName": "Sell",
+          "PhotoUrl": "https://pbs.twimg.com/profile_images/633659267292131328/ZKVDMwub_400x400.jpg",
+          "PositionName": "Founder of THAT Conference"
+        }
+      ],
+      "StartTime": "2018-10-06T13:30:00-06:00",
+      "Title": "Don't just show up."
+    },
+    {
+      "Id": "b34417eb-dc35-419f-b434-cce65b6155cd",
+      "Title": "Get the Boring Stuff Right: A Guide to Keeping Up with the Latest Tech",
+      "Abstract": "Technology is a treadmill. Every year, there's a pile of shiny new things to learn. It's impossible to keep up with all of it. You're constantly asking yourself: \"Which technology stack is going to keep me employed?\"\n\nAs a developer, I love chasing shiny new technologies, but over the years I've learned that making my users happy is way more fulfilling than using the latest technology. After over a decade of building software, I've learned the key to good software is getting the boring stuff right.\n\nIn this talk, you'll learn about why you should spend more time working on evergreen skills. These include skills like creating maintainable code, learning how to learn, and building the right thing. You'll learn what skills have maximum impact and how to improve them. You'll learn how to plan your personal education and make the most of your time. After this talk, you'll be able to sort through the morass of new technologies and make the most of your limited time.",
+      "StartTime": "2018-10-06T16:00:00-06:00",
+      "EndTime": "2018-10-06T16:45:00-06:00",
+      "MainCategory": {
+        "Color": "#B8E986",
+        "Id": "a5d66c8b-eef1-4ede-892a-d6e808ac9808",
+        "Name": "Soft Skill",
+        "ShortName": "Soft Skills"
+      },
+      "Room": {
+        "Name": "113"
+      },
+      "Speakers": [
+        {
+          "AvatarUrl": "https://avatars1.githubusercontent.com/u/466287?v=4&s=150",
+          "Biography": "Dustin Ewers is a consultant at Centare, where he works to help businesses build better software. Dustin has been building software for over 10 years, specializing in Microsoft technologies. He is an active member of the technical community, speaking at user groups and conferences in and around Wisconsin.",
+          "CompanyName": "Centare",
+          "CompanyWebsiteUrl": "http://www.centare.com",
+          "FirstName": "Dustin",
+          "Id": "bac1d6b0-07f3-4638-8d5a-56a153e5d4c7",
+          "LastName": "Ewers",
+          "PhotoUrl": "https://avatars1.githubusercontent.com/u/466287?v=4&s=400",
+          "PositionName": "Consultant"
+        }
+      ]
+    },
+    {
+      "Id": "7f57558d-cc72-4bca-a7c0-2440fd2af2e8",
+      "Title": "Google + Alexa: Cross-Assistant Apps",
+      "Abstract": "Let's develop an Action/Skill for Google and Alexa in one neat little package.\n\nRemember when the Echo was made available back in late 2014? It was invite only, then Prime only, then finally available for everyone the next summer. Only, most people didn't really seem to care. What does it even do? Why should I bother? Can't I just use my phone?\n\nFast forward to 2018, and it seems like everyone at least knows the Echo, and probably the Google Home. People know how to use them and why you'd have one. The question now has become \"Which one should I get?\" rather than \"Why would I ever buy that?\"\n\nWe've hit the point where people can reasonably expect skills to be on both the Amazon Echo and the Google Home. Both devices are in enough houses where it's worth the investment to create skills and actions for each platform. Luckily, this isn't nearly as difficult as it may seem.\n\nWe'll walk through the creation of both Alexa Skills and Actions on Google, look at the differences (there are a few, mostly names), look at what's the same, and see just how we can build a single application to serve both smart assistants. By the end of the session, we'll have a sample application running on both platforms from a single set of REST endpoints.",
+      "StartTime": "2018-10-06T16:00:00-06:00",
+      "EndTime": "2018-10-06T16:45:00-06:00",
+      "MainCategory": {
+        "Color": "#B8E986",
+        "Id": "a5d66c8b-eef1-4ede-892a-d6e808ac9808",
+        "Name": "Soft Skill",
+        "ShortName": "Soft Skills"
+      },
+      "Room": {
+        "Name": "114"
+      },
+      "Speakers": [
+        {
+          "AvatarUrl": "https://media.licdn.com/mpr/mpr/shrinknp_150_150/AAEAAQAAAAAAAAJQAAAAJDhjOGQyYmQyLTBmYjktNDZmMy05MGE0LTNlZTY1NWM1M2U2Nw.jpg",
+          "Biography": "Web + mobile + cloud developer with an affinity for JavaScript, Android, and REST APIs",
+          "CompanyName": "Skyline Technologies",
+          "CompanyWebsiteUrl": "https://www.skylinetechnologies.com",
+          "FirstName": "Michael",
+          "Id": "00dd7e69-68eb-47ec-b064-481124d817e5",
+          "LastName": "Fazio",
+          "PhotoUrl": "https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAJQAAAAJDhjOGQyYmQyLTBmYjktNDZmMy05MGE0LTNlZTY1NWM1M2U2Nw.jpg",
+          "PositionName": "Senior Software Engineer"
+        }
+      ]
+    },
+    {
+      "Id": "b494ae14-2a15-4ec6-b306-8a5a41ba3b8e",
+      "Title": "Using CTFs to enforce security awareness in your organization",
+      "Abstract": "Remember those \"security awareness\" trainings that are sent out to employees at least once a year? These trainings typically require you to answer multiple choice questions, listen to some boring lecture, and then get a participation certificate. Do employees remember anything from these \"trainings\"? The answer is no, they don't. You may choose this method because it is easy and it checks off the proverbial box, but employees gain very little from this type of self-paced learning. During this session, I will be describing authentic learning activities that use CTFs (Capture the Flag) events to engage and motivate students. Furthermore, you will walk away with a new perspective on how to get employees to naturally think critically about security.",
+      "StartTime": "2018-10-06T16:00:00-06:00",
+      "EndTime": "2018-10-06T16:45:00-06:00",
+      "MainCategory": {
+        "Color": "#F88F73",
+        "Id": "f48b3d7b-a99c-4a69-b0c8-90d066758404",
+        "Name": "Security",
+        "ShortName": "Security"
+      },
+      "Room": {
+        "Name": "115"
+      },
+      "Speakers": [
+        {
+          "AvatarUrl": "https://ncgfonline.org/wp-content/uploads/2017/12/blank-avatar.png",
+          "Biography": "Coming Soon...",
+          "CompanyName": "Midstate Technical College",
+          "CompanyWebsiteUrl": "https://www.mstc.edu",
+          "FirstName": "Casey",
+          "Id": "92d93aef-4125-41b6-87d0-2b143cee320d",
+          "LastName": "Trader",
+          "PhotoUrl": "https://ncgfonline.org/wp-content/uploads/2017/12/blank-avatar.png",
+          "PositionName": "Faculty"
+        }
+      ]
+    },
+    {
+      "Id": "808124af-11d0-4fc1-978e-b7209d663e9d",
+      "Title": "How Your Corporate Culture Impacts Talent Attraction and Retention - Are You Looking Inside Out?",
+      "Abstract": "An organization and the individuals within the organization need to start looking inside themselves to solve the talent attraction and retention puzzle. How your organization and the people inside it communicate, grow, lead, prioritize shapes people coming to your organization and how long they stay.",
+      "StartTime": "2018-10-06T16:00:00-06:00",
+      "EndTime": "2018-10-06T16:45:00-06:00",
+      "MainCategory": {
+        "Color": "#F88F73",
+        "Id": "47b39781-8876-40e3-83d0-3e0c8845fdfc",
+        "Name": "Leadership",
+        "ShortName": "Leadership"
+      },
+      "Room": {
+        "Name": "116"
+      },
+      "Speakers": [
+        {
+          "AvatarUrl": "https://portagecountybiz.com/wp-content/uploads/2014/06/Kuckkahn-Todd-225x300.jpg",
+          "Biography": "Coming Soon...",
+          "CompanyName": "Portage County Business Council",
+          "CompanyWebsiteUrl": "https://portagecountybiz.com/",
+          "FirstName": "Todd",
+          "Id": "23c31891-d89c-4f6b-8f2c-ee78b8aa13f1",
+          "LastName": "Kuckkahn",
+          "PhotoUrl": "https://portagecountybiz.com/wp-content/uploads/2014/06/Kuckkahn-Todd-225x300.jpg",
+          "PositionName": "Executive Directory"
+        }
+      ]
+    },
+    {
+      "Id": "b120c811-f817-43b9-9121-0b6cfbf2e1e6",
+      "Title": "Dawn of the Smart Enterprise",
+      "Abstract": "We have a smart phone, even a smart home but why not a smart office? Actually, the dawn of the smart enterprise is here - pragmatic AI will enable companies to draw upon data across marketing, sales, and elsewhere to unify marketing automation, CRM, customer success analytics etc. There is nothing more intuitive in interaction than a conversation, whether it is with a human or a bot. We will share our thoughts on we are seeing with our customers and how the move to smart enterprise is starting to happen. We will demo some use-cases that the folks can relate to and also encourage an open discussion during our session.",
+      "StartTime": "2018-10-06T16:00:00-06:00",
+      "EndTime": "2018-10-06T16:45:00-06:00",
+      "MainCategory": {
+        "Color": "#F88F73",
+        "Id": "f6d520f7-b869-44dc-a46e-5cbb41b83d42",
+        "Name": "Artificial Intelligence",
+        "ShortName": "AI"
+      },
+      "Room": {
+        "Name": "117"
+      },
+      "Speakers": [
+        {
+          "AvatarUrl": "https://ncgfonline.org/wp-content/uploads/2017/12/blank-avatar.png",
+          "Biography": "Coming Soon...",
+          "CompanyName": "Probosys, LLC",
+          "FirstName": "Bala",
+          "Id": "c89fb862-3b95-4d1f-9ceb-c93a7106c946",
+          "LastName": "Raghuraman",
+          "PhotoUrl": "https://ncgfonline.org/wp-content/uploads/2017/12/blank-avatar.png"
+        }
+      ]
+    },
+    {
+      "Id": "b120c811-f817-43b9-9121-0b6cfbf2e1e6",
+      "Title": "Web Developer to Mobile Apps Developer using NativeScript",
+      "Abstract": "Nativescript is a free and open source solution to develop android and IOS based mobile applications. This session will go through the fundamentals of developing Native Mobile Apps using Native Script leveraging the power of Angular, Typescript or JavaScript as your scripting language. A working session will be conducted covering the basics of Native Script and the steps which are required to develop mobile apps.",
+      "StartTime": "2018-10-06T16:00:00-06:00",
+      "EndTime": "2018-10-06T16:45:00-06:00",
+      "MainCategory": {
+        "Color": "#F88F73",
+        "Id": "65af047a-b248-4b28-8a00-ea824fabe37e",
+        "Name": "Mobile Development",
+        "ShortName": "Mobile Dev"
+      },
+      "Room": {
+        "Name": "212"
+      },
+      "Speakers": [
+        {
+          "AvatarUrl": "https://ncgfonline.org/wp-content/uploads/2017/12/blank-avatar.png",
+          "Biography": "Coming Soon...",
+          "CompanyName": "Compunnel Software Group",
+          "CompanyWebsite": "https://www.compunnel.com/",
+          "FirstName": "Baskar",
+          "Id": "7de1e3ae-54f2-4268-a3aa-dcb51f6c13a1",
+          "LastName": "Rao",
+          "PhotoUrl": "https://ncgfonline.org/wp-content/uploads/2017/12/blank-avatar.png"
+        }
+      ]
+    }
+  ],
+  "sponsors": [
+    {
+      "Description": "CWITA is a group of action focused employers in central Wisconsin working together to enhance the image of IT careers and position the region as a hub for IT opportunities. CWITA collaborates with the K-16 education system to strengthen IT career pathways and assist in growing our regional IT workforce.",
+      "Id": "ebd8e1f6-0b60-4f92-bc0f-9916f68f678f",
+      "ImageUrl": "https://static.wixstatic.com/media/615d66_0a380afe71f24ec3a4438aac44d0da0f~mv2.png/v1/fill/w_220,h_68,al_c,usm_0.66_1.00_0.01/615d66_0a380afe71f24ec3a4438aac44d0da0f~mv2.png",
+      "Name": "CWITA",
+      "Rank": 0,
+      "SponsorLevel": {
+        "Name": "Organizer",
+        "Rank": 0
+      },
+      "WebsiteUrl": "http://cwita.org"
+    },
+    {
+      "Description": "Central Wisconsin is FULL of technical enthusists. Let's meet and learn from one another. Great minds are in your backyard!",
+      "Id": "eed0480d-220c-430a-b1b1-8d332462edcd",
+      "ImageUrl": "https://static.wixstatic.com/media/615d66_25923432d6974e4d9babd26c8e608f3d~mv2.jpg/v1/fill/w_208,h_97,al_c,q_80,usm_0.66_1.00_0.01/615d66_25923432d6974e4d9babd26c8e608f3d~mv2.jpg",
+      "Name": "CENWIDEV",
+      "Rank": 1,
+      "SponsorLevel": {
+        "Name": "Organizer",
+        "Rank": 1
+      },
+      "TwitterUrl": "cenwidev",
+      "WebsiteUrl": "http://cenwidev.org"
+    },
+    {
+      "Description": "Mid-State is one of 16 colleges in the Wisconsin Technical College System. It is a leading provider of higher education offering many career opportunities through associate degrees, technical diplomas and certificates. Student-focused and community-based, Mid-State serves a resident population of approximately 165,000 in central Wisconsin.\n\nThe college has campuses in Marshfield, Stevens Point and Wisconsin Rapids, and a learning center in Adams. Visit the College’s website at mstc.edu.\n\n92% of Mid-State alumni are employed within six months after graduation; 79% of graduates work in the Mid-State District comprising all or portions of Adams, Clark, Jackson, Juneau, Marathon, Portage, Waushara, and Wood Counties.",
+      "Id": "3941eb01-ba31-4374-ae9b-57dce7d475f2",
+      "ImageUrl": "https://static.wixstatic.com/media/615d66_7e995f8d8fef408985da8bfaefd4d561~mv2.jpg/v1/fill/w_219,h_50,al_c,q_80,usm_0.66_1.00_0.01/615d66_7e995f8d8fef408985da8bfaefd4d561~mv2.jpg",
+      "Name": "Mid-State Technical College",
+      "Rank": 2,
+      "SponsorLevel": {
+        "Name": "Organizer",
+        "Rank": 2
+      },
+      "TwitterUrl": "followmstc",
+      "WebsiteUrl": "https://www.mstc.edu"
+    },
+    {
+      "Description": "CREATE is a 501(c)3 nonprofit that sees community challenges as opportunities to envision a more vibrant and engaging community. We are building partnerships and streamlining resources to ensure that those creative visions have a real impact on Central Wisconsin. We are making creativity central to community development, economic growth, and our quality of life.",
+      "Id": "0e766c8a-15f6-43de-b10d-2aefd6814299",
+      "ImageUrl": "https://static.wixstatic.com/media/615d66_2cc6da6194ff4187b631ee21e9218a4a~mv2.png/v1/fill/w_207,h_78,al_c,usm_0.66_1.00_0.01/615d66_2cc6da6194ff4187b631ee21e9218a4a~mv2.png",
+      "Name": "Create Portage County",
+      "Rank": 3,
+      "SponsorLevel": {
+        "Name": "Community Partner",
+        "Rank": 0
+      },
+      "TwitterUrl": "createpoco",
+      "WebsiteUrl": "http://www.createportagecounty.org"
+    },
+    {
+      "Description": "Every student can become their most amazing self with the guidance of an expert teacher to unlock their full potential. Renaissance exists to salute those teachers at the heart of every classroom.\n\nWe bring the best of data analytics and research-based practice to support teachers nationwide. Teachers take it from there – after all, their guidance and warmth are the key component of student growth.",
+      "Id": "a83098df-e346-4e6a-9537-dff0e7f5710e",
+      "ImageUrl": "https://static.wixstatic.com/media/615d66_fd56f3314ec44641a613005d88090194~mv2.jpg/v1/fill/w_579,h_52,al_c,q_80,usm_0.66_1.00_0.01/615d66_fd56f3314ec44641a613005d88090194~mv2.jpg",
+      "Name": "Renaissance Learning",
+      "Rank": 4,
+      "SponsorLevel": {
+        "Name": "Silver Sponsor",
+        "Rank": 0
+      },
+      "TwitterUrl": "RenLearnUS",
+      "WebsiteUrl": "https://www.renaissance.com"
+    },
+    {
+      "Description": "A better SIS and ERP experience for school districts and municipalities. We're about more than just software.",
+      "Id": "57e28728-701f-4d9a-9a2e-7fb4a0cae7fd",
+      "ImageUrl": "https://static.wixstatic.com/media/615d66_4bd0173adda347bbb3184523a7f8e91a~mv2.jpg/v1/fill/w_204,h_110,al_c,q_80,usm_0.66_1.00_0.01/615d66_4bd0173adda347bbb3184523a7f8e91a~mv2.jpg",
+      "Name": "Skyward",
+      "Rank": 6,
+      "SponsorLevel": {
+        "Name": "Gold Sponsor",
+        "Rank": 1
+      },
+      "TwitterUrl": "skyward_inc",
+      "WebsiteUrl": "https://www.skyward.com"
+    },
+    {
+      "Description": "Heartland Farms mission is to produce a healthy and safe food product, maximize profitability, and maintain good ethical values. We are a family-owned and operated farm and plan to ensure this opportunity to the next generation. We strive to make efficient use of inputs, maintain excellent land stewardship practices, and produce high quality commodities for the end user.",
+      "ImageUrl": "https://static.wixstatic.com/media/615d66_4757288db2714da7ad76d07711cd834a~mv2.jpg/v1/fill/w_261,h_166,al_c,q_80,usm_0.66_1.00_0.01/615d66_4757288db2714da7ad76d07711cd834a~mv2.webp",
+      "Name": "Heartland Farms",
+      "Rank": 9,
+      "SponsorLevel": {
+        "Name": "Silver Sponsor",
+        "Rank": 2
+      },
+      "WebsiteUrl": "http://www.hfinc.biz/"
+    },
+    {
+      "ImageUrl": "https://static.wixstatic.com/media/615d66_83d4a1f106c84adbad97514067d650b1~mv2.png/v1/fill/w_468,h_46,al_c,q_80,usm_0.66_1.00_0.01/615d66_83d4a1f106c84adbad97514067d650b1~mv2.webp",
+      "Name": "Delta Dental",
+      "Rank": 9,
+      "SponsorLevel": {
+        "Name": "Silver Sponsor",
+        "Rank": 2
+      },
+      "WebsiteUrl": "https://www.deltadentalwi.com/"
+    },
+    {
+      "Description": "CyberOne Data owns and operates it's own private data center with multiple carriers, redundant power, climate controlled cooling, clean agent fire suppression and network systems that allow us to quickly deploy dedicated servers, facilitate simple colocation arrangements and provide reliable performance at all times.",
+      "ImageUrl": "https://static.wixstatic.com/media/615d66_3385b6dae94d44e5955e97751fb3d76c~mv2.jpg/v1/fill/w_307,h_56,al_c,q_80,usm_0.66_1.00_0.01/615d66_3385b6dae94d44e5955e97751fb3d76c~mv2.jpg",
+      "Name": "CyberOne Data",
+      "Rank": 9,
+      "SponsorLevel": {
+        "Name": "Silver Sponsor",
+        "Rank": 2
+      },
+      "WebsiteUrl": "https://www.cyberonedata.com"
+    },
+    {
+      "Id": "78a29e04-f16f-4ecd-b2fd-55287177fc09",
+      "ImageUrl": "http://www.nrconsults.com/wp-content/themes/nrc_theme-2/images/logo-nrc.png",
+      "Name": "New Resources Consulting",
+      "Rank": 10,
+      "SponsorLevel": {
+        "Name": "Networking Sponsor",
+        "Rank": 1
+      },
+      "WebsiteUrl": "http://www.nrconsults.com"
+    },
+    {
+      "Description": "CyberOne Data owns and operates it's own private data center with multiple carriers, redundant power, climate controlled cooling, clean agent fire suppression and network systems that allow us to quickly deploy dedicated servers, facilitate simple colocation arrangements and provide reliable performance at all times.",
+      "ImageUrl": "https://static.wixstatic.com/media/615d66_93905e998df046078b5ef3cbf67abfc5~mv2.jpg/v1/fill/w_307,h_74,al_c,q_80,usm_0.66_1.00_0.01/615d66_93905e998df046078b5ef3cbf67abfc5~mv2.jpg",
+      "Name": "EO Johnson Business Technologies",
+      "Rank": 11,
+      "SponsorLevel": {
+        "Name": "Sponsor",
+        "Rank": 1
+      },
+      "TwitterUrl": "EOJohnsonCo",
+      "WebsiteUrl": "https://www.eojohnson.com"
+    }
+  ]
+}
