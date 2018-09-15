@@ -9,29 +9,29 @@ using Newtonsoft.Json;
 
 namespace CWITC.Clients.Portable
 {
-    public class LoginViewModel : ViewModelBase
-    {
-        ISSOClient client;
-        public LoginViewModel(INavigation navigation) : base(navigation)
-        {
-            client = DependencyService.Get<ISSOClient>();
-        }
+	public class LoginViewModel : ViewModelBase
+	{
+		IAuthClient client;
+		public LoginViewModel(INavigation navigation) : base(navigation)
+		{
+			client = DependencyService.Get<IAuthClient>();
+		}
 
-        string message;
-        public string Message
-        {
-            get { return message; }
-            set { SetProperty(ref message, value); }
-        }
+		string message;
+		public string Message
+		{
+			get { return message; }
+			set { SetProperty(ref message, value); }
+		}
 
-        ICommand facebookLoginCommand;
-        public ICommand FacebookLoginCommand =>
-        facebookLoginCommand ?? (facebookLoginCommand = new Command(async () => await ExecuteFacebookLoginAsync()));
+		ICommand facebookLoginCommand;
+		public ICommand FacebookLoginCommand =>
+		facebookLoginCommand ?? (facebookLoginCommand = new Command(async () => await ExecuteFacebookLoginAsync()));
 
-        async Task ExecuteFacebookLoginAsync()
-        {
-            await LoginForProvider("Facebook", () => client.LoginWithFacebook());
-        }
+		async Task ExecuteFacebookLoginAsync()
+		{
+			await LoginForProvider("Facebook", () => client.LoginAsync());
+		}
 
 		ICommand googleLoginCommand;
 		public ICommand GoogleLoginCommand =>
@@ -39,64 +39,48 @@ namespace CWITC.Clients.Portable
 
 		async Task ExecuteGoogleLoginAsync()
 		{
-            await LoginForProvider("Google", () => client.LoginWithGoogle());
+			await LoginForProvider("Google", () => client.LoginAsync());
 		}
 
-        ICommand cancelCommand;
-        public ICommand CancelCommand =>
-            cancelCommand ?? (cancelCommand = new Command(async () => await ExecuteCancelAsync()));
+		ICommand cancelCommand;
+		public ICommand CancelCommand =>
+			cancelCommand ?? (cancelCommand = new Command(async () => await ExecuteCancelAsync()));
 
-        async Task ExecuteCancelAsync()
-        {
-            Logger.Track(EvolveLoggerKeys.LoginCancel);
-            if (Settings.FirstRun)
-            {
-                AccountResponse result = await client.LoginAnonymously();
+		async Task ExecuteCancelAsync()
+		{
+			Logger.Track(EvolveLoggerKeys.LoginCancel);
+			if (Settings.FirstRun)
+			{
+				try
+				{
+					MessagingService.Current.SendMessage(MessageKeys.LoggedIn);
+					await StoreManager.SyncAllAsync(false);
+					Settings.Current.LastSync = DateTime.UtcNow;
+					Settings.Current.HasSyncedData = true;
+				}
+				catch (Exception ex)
+				{
+					//if sync doesn't work don't worry it is alright we can recover later
+					Logger.Report(ex);
+				}
+				finally
+				{
+					Message = string.Empty;
+					IsBusy = false;
+				}
 
-                if (result?.Success ?? false)
-                {
-                    try
-                    {
-                        Message = "Updating schedule...";
-                        IsBusy = true;
-                        Settings.UserId = result.User?.Id;
-                        MessagingService.Current.SendMessage(MessageKeys.LoggedIn);
-                        await StoreManager.SyncAllAsync(false);
-                        Settings.Current.LastSync = DateTime.UtcNow;
-                        Settings.Current.HasSyncedData = true;
-                    }
-                    catch (Exception ex)
-                    {
-                        //if sync doesn't work don't worry it is alright we can recover later
-                        Logger.Report(ex);
-                    }
-                    finally
-                    {
-                        Message = string.Empty;
-                        IsBusy = false;
-                    }
+				Settings.FirstRun = false;
+				await Finish();
+			}
 
-					Settings.FirstRun = false;
-                    await Finish();
-                }
-                else
-                {
-                    Logger.Track(EvolveLoggerKeys.LoginFailure, "Reason", result.Error);
-                    MessagingService.Current.SendMessage<MessagingServiceAlert>(MessageKeys.Message, new MessagingServiceAlert
-                    {
-                        Title = "Anonymous Sign In Failed",
-                        Message = result.Error,
-                        Cancel = "OK"
-                    });
-                }
-            }
-            else 
-            {
-                await Finish();
-            }
-        }
+			else
+			{
+				await Finish();
 
-        async Task LoginForProvider(string providerName, Func<Task<AccountResponse>> providerLogin)
+			}
+		}
+
+		async Task LoginForProvider(string providerName, Func<Task<AccountResponse>> providerLogin)
 		{
 			if (IsBusy)
 				return;
@@ -117,7 +101,7 @@ namespace CWITC.Clients.Portable
 					Settings.UserId = result.User?.Id;
 					Settings.FirstName = result.User?.FirstName ?? string.Empty;
 					Settings.LastName = result.User?.LastName ?? string.Empty;
-                    Settings.Email = (result.User?.Email ?? string.Empty).ToLowerInvariant();
+					Settings.Email = (result.User?.Email ?? string.Empty).ToLowerInvariant();
 
 					MessagingService.Current.SendMessage(MessageKeys.LoggedIn);
 					Logger.Track(EvolveLoggerKeys.LoginSuccess);
@@ -134,7 +118,7 @@ namespace CWITC.Clients.Portable
 					}
 
 					Settings.FirstRun = false;
-                    await Finish();
+					await Finish();
 				}
 				else
 				{
@@ -155,7 +139,7 @@ namespace CWITC.Clients.Portable
 				MessagingService.Current.SendMessage<MessagingServiceAlert>(MessageKeys.Message, new MessagingServiceAlert
 				{
 					Title = "Unable to Sign in",
-                    Message = $"{providerName} Sign In Failed",
+					Message = $"{providerName} Sign In Failed",
 					Cancel = "OK"
 				});
 			}
@@ -166,16 +150,16 @@ namespace CWITC.Clients.Portable
 			}
 		}
 
-        async Task Finish()
-        {
-            if (Device.OS == TargetPlatform.iOS && Settings.FirstRun)
-            {
-                await Navigation.PopModalAsync();
-            }
-            else
-            {
-                await Navigation.PopModalAsync();
-            }
-        }
-    }
+		async Task Finish()
+		{
+			if (Device.OS == TargetPlatform.iOS && Settings.FirstRun)
+			{
+				await Navigation.PopModalAsync();
+			}
+			else
+			{
+				await Navigation.PopModalAsync();
+			}
+		}
+	}
 }

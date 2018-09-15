@@ -25,7 +25,7 @@ namespace CWITC.Droid
 {
     public partial class AndroidAuthSSOClient :
         Java.Lang.Object,
-        ISSOClient,
+        IAuthClient,
         GoogleApiClient.IConnectionCallbacks,
         GoogleApiClient.IOnConnectionFailedListener
     {

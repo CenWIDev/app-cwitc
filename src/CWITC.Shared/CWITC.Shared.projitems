@@ -10,22 +10,21 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)EvolveLogger.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)AuthSSOClient.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Datastore.Firebase\CategoryStore.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Datastore.Firebase\EventStore.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Datastore.Firebase\FavoriteStore.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Datastore.Firebase\FeedbackStore.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Datastore.Firebase\NotificationStore.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Datastore.Firebase\SessionStore.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Datastore.Firebase\SpeakerStore.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Datastore.Firebase\SponsorStore.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Datastore.Firebase\StoreManager.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Datastore.Firebase\ReadonlyStore.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Datastore.Firebase\BaseUserDataStore.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Datastore.Firebase\BaseStore.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Datastore.Firebase\LunchStore.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Auth0Client.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Datastore\CategoryStore.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Datastore\EventStore.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Datastore\FavoriteStore.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Datastore\FeedbackStore.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Datastore\NotificationStore.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Datastore\SessionStore.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Datastore\SpeakerStore.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Datastore\SponsorStore.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Datastore\StoreManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Datastore\BaseUserDataStore.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Datastore\BaseStore.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Datastore\LunchStore.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="$(MSBuildThisFileDirectory)Datastore.Firebase\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Datastore\" />
   </ItemGroup>
 </Project>

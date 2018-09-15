@@ -4,15 +4,13 @@ using System.Linq;
 using System.Threading.Tasks;
 using CWITC.DataObjects;
 using CWITC.DataStore.Abstractions;
-using CWITC.Shared.DataStore.Firebase;
-using CWITC.Shared.DataStore.Firebase;
-using Firebase.Database;
+using CWITC.Shared.DataStore;
 using Xamarin.Forms;
 
 [assembly: Dependency(typeof(SpeakerStore))]
-namespace CWITC.Shared.DataStore.Firebase
+namespace CWITC.Shared.DataStore
 {
-    public class SpeakerStore : ReadonlyStore<Speaker>, ISpeakerStore
+    public class SpeakerStore : BaseStore<Speaker>, ISpeakerStore
     {
         public override async Task<IEnumerable<Speaker>> GetItemsAsync(bool forceRefresh = false)
         {
@@ -33,10 +31,5 @@ namespace CWITC.Shared.DataStore.Firebase
         }
 
         public override string Identifier => "sessions";
-
-        protected override DatabaseReference GetEntityNode(DatabaseReference rootNode)
-        {
-            return base.GetEntityNode(rootNode);
-        }
     }
 }

@@ -17,15 +17,12 @@ using CoreSpotlight;
 using CWITC.DataStore.Abstractions;
 using System.Threading.Tasks;
 using Xamarin.Auth;
-using Firebase.RemoteConfig;
 using Microsoft.Azure.Mobile;
 using Microsoft.Azure.Mobile.Analytics;
 using Microsoft.Azure.Mobile.Crashes;
 
 namespace CWITC.iOS
 {
-
-
     [Register("AppDelegate")]
     public partial class AppDelegate : FormsApplicationDelegate
     {
@@ -39,10 +36,7 @@ namespace CWITC.iOS
 
         public override bool OpenUrl(UIApplication application, NSUrl url, string sourceApplication, NSObject annotation)
         {
-            bool isGoogle = Google.SignIn.SignIn.SharedInstance.HandleUrl(url, sourceApplication, annotation);
-            bool isFacebook = Facebook.CoreKit.ApplicationDelegate.SharedInstance.OpenUrl(application, url, sourceApplication, annotation);
-
-            return isGoogle || isFacebook;
+			return false;
         }
 
         public override bool OpenUrl(UIApplication app, NSUrl url, NSDictionary options)
@@ -53,8 +47,6 @@ namespace CWITC.iOS
 
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
-            ConfigureFirebase();
-
             var tint = UIColor.FromRGB(236, 47, 75);
             UINavigationBar.Appearance.BarTintColor = UIColor.FromRGB(47, 46, 46); //bar background
             UINavigationBar.Appearance.TintColor = tint; //Tint color of button items
@@ -86,7 +78,7 @@ namespace CWITC.iOS
             FormsMaps.Init();
             Toolkit.Init();
 
-            DependencyService.Register<ISSOClient, iOSAuthSSOClient>();
+            DependencyService.Register<IAuthClient, Auth0Client>();
 
             ZXing.Net.Mobile.Forms.iOS.Platform.Init();
 
@@ -275,38 +267,6 @@ namespace CWITC.iOS
 
 #endregion
 
-		void ConfigureFirebase()
-		{
-            Firebase.Analytics.App.Configure();
-
-            // we want to persist everything locally
-            Firebase.Database.Database.DefaultInstance.PersistenceEnabled = true;
-
-			// Enabling developer mode, allows for frequent refreshes of the cache
-			Firebase.RemoteConfig.RemoteConfig.SharedInstance.ConfigSettings = new RemoteConfigSettings(true);
-
-			// listen for any changes to the remote config. 
-            // in this case, we only care about the twitter API key auth info
-            RemoteConfig.SharedInstance.Fetch((status, error) =>
-    			{
-				switch (status)
-				{
-					case RemoteConfigFetchStatus.Success:
-						Console.WriteLine("Config Fetched!");
-
-						// Call this method to make fetched parameter values available to your app
-						RemoteConfig.SharedInstance.ActivateFetched();
-
-						break;
-
-					case RemoteConfigFetchStatus.Throttled:
-					case RemoteConfigFetchStatus.NoFetchYet:
-					case RemoteConfigFetchStatus.Failure:
-						Console.WriteLine("Config not fetched...");
-						break;
-				}
-			});
-		}
     }
 }
 

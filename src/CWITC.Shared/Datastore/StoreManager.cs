@@ -2,13 +2,13 @@
 using CWITC.DataStore.Abstractions;
 using System.Threading.Tasks;
 using Xamarin.Forms;
-using CWITC.Shared.DataStore.Firebase;
+using CWITC.Shared.DataStore;
 using System.Collections.Generic;
 using CWITC.Clients.Portable;
 
 [assembly: Dependency(typeof(StoreManager))]
 
-namespace CWITC.Shared.DataStore.Firebase
+namespace CWITC.Shared.DataStore
 {
     public class StoreManager : IStoreManager
     {

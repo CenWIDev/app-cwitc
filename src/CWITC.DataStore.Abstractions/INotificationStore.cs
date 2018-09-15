@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 
 namespace CWITC.DataStore.Abstractions
 {
-    public interface INotificationStore : IBaseStore<Notification>
+	public interface INotificationStore : IReadonlyStore<Notification>
     {
         Task<Notification> GetLatestNotification();
     }

@@ -5,17 +5,20 @@ using CWITC.DataObjects;
 
 namespace CWITC.DataStore.Abstractions
 {
-    public interface IBaseStore<T>
-    {
-        Task InitializeStore();
-        Task<IEnumerable<T>> GetItemsAsync(bool forceRefresh = false);
-        Task<T> GetItemAsync(string id);
-        Task<bool> InsertAsync(T item);
-        Task<bool> UpdateAsync(T item);
-        Task<bool> RemoveAsync(T item);
-        Task<bool> SyncAsync();
+	public interface IReadonlyStore<T>
+	{
+		string Identifier { get; }
+		Task InitializeStore();
+		Task<IEnumerable<T>> GetItemsAsync(bool forceRefresh = false);
+		Task<T> GetItemAsync(string id);
+		Task<bool> SyncAsync();
+	}
 
-        string Identifier { get; }
-    }
+	public interface IBaseStore<T> : IReadonlyStore<T>
+	{
+		Task<bool> InsertAsync(T item);
+		Task<bool> UpdateAsync(T item);
+		Task<bool> RemoveAsync(T item);
+	}
 }
 

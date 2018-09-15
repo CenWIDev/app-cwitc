@@ -5,13 +5,13 @@ using System.Linq;
 using System.Threading.Tasks;
 using System;
 using Xamarin.Forms;
-using CWITC.Shared.DataStore.Firebase;
+using CWITC.Shared.DataStore;
 using CWITC.Clients.Portable;
 
 [assembly: Dependency(typeof(SessionStore))]
-namespace CWITC.Shared.DataStore.Firebase
+namespace CWITC.Shared.DataStore
 {
-    public class SessionStore : ReadonlyStore<Session>, ISessionStore
+    public class SessionStore : BaseStore<Session>, ISessionStore
     {
         public override async Task<IEnumerable<Session>> GetItemsAsync(bool forceRefresh = false)
         {

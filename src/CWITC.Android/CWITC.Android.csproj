@@ -510,7 +510,6 @@
     <Compile Include="Backgrounding\DataRefreshServiceBinder.cs" />
     <Compile Include="Helpers\ListViewSelectionOnTopEffect.cs" />
     <Compile Include="AndroidAuthSSOClient.cs" />
-    <Compile Include="Datastore.Firebase\BaseStore.cs" />
     <Compile Include="Extensions\JavaJsonHelperExtensions.cs" />
     <Compile Include="Renderers\PlaceholderEditorRenderer.cs" />
   </ItemGroup>
@@ -705,7 +704,6 @@
     <AndroidResource Include="Resources\xml\shortcuts.xml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Datastore.Firebase\" />
     <Folder Include="Extensions\" />
     <Folder Include="Resources\drawable-xxxhdpi\" />
   </ItemGroup>

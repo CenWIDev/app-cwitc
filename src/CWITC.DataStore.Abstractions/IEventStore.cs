@@ -3,7 +3,7 @@ using CWITC.DataObjects;
 
 namespace CWITC.DataStore.Abstractions
 {
-    public interface IEventStore : IBaseStore<FeaturedEvent>
+	public interface IEventStore : IReadonlyStore<FeaturedEvent>
     {
     }
 }

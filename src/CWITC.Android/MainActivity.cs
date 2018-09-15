@@ -61,7 +61,7 @@ namespace CWITC.Droid
             FormsMaps.Init(this, savedInstanceState);
             Toolkit.Init();
 
-            DependencyService.Register<ISSOClient, AndroidAuthSSOClient>();
+            DependencyService.Register<IAuthClient, AndroidAuthSSOClient>();
 
             PullToRefreshLayoutRenderer.Init();
             typeof(Color).GetProperty("Accent", BindingFlags.Public | BindingFlags.Static).SetValue(null, Color.FromHex("#757575"));
