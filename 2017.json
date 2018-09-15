@@ -1,48 +1,399 @@
 {
+  "featured_events": [
+    {
+      "Description": "",
+      "EndTime": "2017-09-30T06:45:00-06:00",
+      "IsAllDay": false,
+      "LocationName": "Lobby",
+      "StartTime": "2017-09-30T06:00:00-06:00",
+      "Title": "Registration Check-ins & Exhibits",
+      "Type": "general"
+    },
+    {
+      "Description": "",
+      "EndTime": "2017-09-30T08:00:00-06:00",
+      "IsAllDay": false,
+      "LocationName": "Community Room",
+      "StartTime": "2017-09-30T06:45:00-06:00",
+      "Title": "Opening & Keynote",
+      "Type": "general"
+    },
+    {
+      "Description": "",
+      "EndTime": "2017-09-30T08:10:00-06:00",
+      "IsAllDay": false,
+      "LocationName": "Lobby",
+      "StartTime": "2017-09-30T08:00:00-06:00",
+      "Title": "Break/Exibits",
+      "Type": "break"
+    },
+    {
+      "Description": "",
+      "EndTime": "2017-09-30T09:00:00-06:00",
+      "IsAllDay": false,
+      "LocationName": "Session Rooms",
+      "StartTime": "2017-09-30T08:10:00-06:00",
+      "Title": "Sessions",
+      "Type": "sessions"
+    },
+    {
+      "Description": "",
+      "EndTime": "2017-09-30T09:10:00-06:00",
+      "IsAllDay": false,
+      "LocationName": "Lobby",
+      "StartTime": "2017-09-30T09:00:00-06:00",
+      "Title": "Break/Exibits",
+      "Type": "break"
+    },
+    {
+      "Description": "",
+      "EndTime": "2017-09-30T10:00:00-06:00",
+      "IsAllDay": false,
+      "LocationName": "Session Rooms",
+      "StartTime": "2017-09-30T09:10:00-06:00",
+      "Title": "Sessions",
+      "Type": "sessions"
+    },
+    {
+      "Description": "",
+      "EndTime": "2017-09-30T11:30:00-06:00",
+      "IsAllDay": false,
+      "LocationName": "Lobby & Downtown Stevens Point",
+      "StartTime": "2017-09-30T10:00:00-06:00",
+      "Title": "Lunch & Networking",
+      "Type": "lunch"
+    },
+    {
+      "Description": "",
+      "EndTime": "2017-09-30T12:20:00-06:00",
+      "IsAllDay": false,
+      "LocationName": "Session Rooms",
+      "StartTime": "2017-09-30T11:30:00-06:00",
+      "Title": "Sessions",
+      "Type": "sessions"
+    },
+    {
+      "Description": "",
+      "EndTime": "2017-09-30T12:30:00-06:00",
+      "IsAllDay": false,
+      "LocationName": "Lobby",
+      "StartTime": "2017-09-30T12:20:00-06:00",
+      "Title": "Break/Exibits",
+      "Type": "break"
+    },
+    {
+      "Description": "",
+      "EndTime": "2017-09-30T13:20:00-06:00",
+      "IsAllDay": false,
+      "LocationName": "Session Rooms",
+      "StartTime": "2017-09-30T12:30:00-06:00",
+      "Title": "Sessions",
+      "Type": "sessions"
+    },
+    {
+      "Description": "",
+      "EndTime": "2017-09-30T13:30:00-06:00",
+      "IsAllDay": false,
+      "LocationName": "Lobby",
+      "StartTime": "2017-09-30T13:20:00-06:00",
+      "Title": "Break/Exibits",
+      "Type": "break"
+    },
+    {
+      "Description": "",
+      "EndTime": "2017-09-30T14:00:00-06:00",
+      "IsAllDay": false,
+      "LocationName": "Community Room",
+      "StartTime": "2017-09-30T13:30:00-06:00",
+      "Title": "Closing Session",
+      "Type": "general"
+    },
+    {
+      "Description": "Join sponsors and attendees on the Patio at Guu's on Main for a happy hour and networking. Guu's on Main is located just south of Cobbletone Hotel.",
+      "EndTime": "2017-09-30T16:30-06:00",
+      "IsAllDay": false,
+      "LocationName": "Guu's on Main",
+      "SponsorId": "78a29e04-f16f-4ecd-b2fd-55287177fc09",
+      "StartTime": "2017-09-30T14:30-06:00",
+      "Title": "Happy Hour",
+      "Type": "offsite"
+    }
+  ],
+  "lunch_locations": [
+    {
+      "address1": "900 Block, Clark Street",
+      "address2": "Stevens Point, WI 54481",
+      "category": "Food Truck",
+      "imageUri": "https://www.gannett-cdn.com/-mm-/f7d85f610c6fec9e25cd9504d72dbb25dd375661/c=1-0-959-720&r=x404&c=534x401/local/-/media/2016/05/31/WIGroup/StevensPoint/636003067209178599-13263786-1340256619324828-4126962239843597190-n.jpg",
+      "latitude": 44.522474,
+      "longitude": -89.585493,
+      "name": "Chef C's Munchie Mobile",
+      "website": "https://www.facebook.com/chefcfoodtruck/?fref=ts"
+    },
+    {
+      "address1": "1140 Main St",
+      "address2": "Stevens Point, WI 54481",
+      "category": "Bar & Grill",
+      "imageUri": "http://wiparty.com/Stevens%20Point%20Bars/Guu%27s%20On%20Main/Guu%27s-on-Main-Stevens-Point.jpg",
+      "latitude": 44.523454,
+      "longitude": -89.582776,
+      "name": "Guu's on Main",
+      "website": "https://www.facebook.com/Guus-on-Main-76860951468/"
+    },
+    {
+      "address1": "925 Clark St",
+      "address2": "Stevens Point, WI 54481",
+      "category": "Sandwiches",
+      "imageUri": "http://galaxycomicsandgames.com/wp-content/uploads/2014/06/Galaxy_logo.png",
+      "latitude": 44.522493,
+      "longitude": -89.58529,
+      "name": "Galaxy Comics, Games and More",
+      "website": "http://galaxycomicsandgames.com"
+    },
+    {
+      "address1": "1140 Clark St",
+      "address2": "Stevens Point, WI 54481",
+      "category": "Pizza & Traditional American Food",
+      "imageUri": "https://i2.wp.com/www.midstatesos.org/wp-content/uploads/2015/05/KristinsRiverwalk.jpg",
+      "latitude": 44.522597,
+      "longitude": -89.58261,
+      "name": "Kristin's Riverwalk",
+      "website": "https://www.facebook.com/kristinsriverwalk/"
+    },
+    {
+      "address1": "1059 Main St",
+      "address2": "Stevens Point, WI 54481",
+      "category": "Omelets, pancakes, soups & sandwiches",
+      "imageUri": "http://thewoodenchairstevenspoint.com",
+      "latitude": 44.523334,
+      "longitude": -89.583439,
+      "name": "The Wooden Chair"
+    },
+    {
+      "address1": "1410 3rd St",
+      "address2": "Stevens Point, WI 54481",
+      "category": "Bar & Grill",
+      "imageUri": "https://res.cloudinary.com/simpleview/image/fetch/f_auto,q_75/https://res.cloudinary.com/simpleview/image/upload/crm/spacvb/diningwaterstreetgrille_f0dc2520-5056-a36a-0a33fdcf1307951f.jpg",
+      "latitude": 44.522123,
+      "longitude": -89.584901,
+      "name": "Water Street Grille",
+      "website": "https://www.facebook.com/Water-Street-Grille-160399300654242/"
+    },
+    {
+      "address1": "1410 3rd St",
+      "address2": "Stevens Point, WI 54481",
+      "category": "Coffee & Sandwiches",
+      "imageUri": "http://thecoffeestudio.biz/wp-content/themes/thecoffeestudio/images/logo.png",
+      "latitude": 44.523471,
+      "longitude": -89.583435,
+      "name": "The Coffee Studio",
+      "website": "http://thecoffeestudio.biz"
+    },
+    {
+      "address1": "812 Main St",
+      "address2": "Stevens Point, WI 54481",
+      "category": "Soup & Sandwiches",
+      "imageUri": "https://www.erbertandgerberts.com/wp-content/themes/erbertandgerberts/images/site-logo.png",
+      "latitude": 44.523494,
+      "longitude": -89.586448,
+      "name": "Erbert and Gerberts",
+      "website": "https://www.erbertandgerberts.com/locations/1014/stevens-point/"
+    }
+  ],
+  "notifications": [
+    {
+      "Date": "2017-09-30T08:00:00-06:00",
+      "IsVisible": true,
+      "Text": "Welcome to the Central Wisconsin IT Conference!"
+    }
+  ],
   "sessions": [
     {
-      "Abstract": "Community, is a word we started using at the start of the 14th century, as a way to define a set of common people. In today’s tech scene, we hear this word used everywhere but do you really feel part of one? For the past decade I’ve spent over 10k hours fostering and developing different communities. Some small, and some large efforts such as THAT Conference but what I’ve come to learn is what I’m here to share.\n\nBeing part of a community is easy, being present and active is something completely different. Many will sign up but won’t even bother showing up, The networks, the opportunities, the support are all right in front of you but you have to take the step, that second step. I’ll explain today’s landscape, explore a few techniques, and help you take that second step.",
-      "EndTime": "2018-10-06T14:45:00-06:00",
-      "Id": "b34417eb-dc35-419f-b434-cce65b6155cd",
+      "Abstract": "Ever wonder how your company’s network could be compromised and your data stolen? Come hear tales of hilarity and woe as a hacker reveals naughty ways into the networks of today’s businesses, and what you can do to protect yourself against them.",
+      "EndTime": "2017-09-30T08:00:00-06:00",
+      "Id": "1660f708-849c-4076-a9cb-fa5cfcd48313",
       "MainCategory": {
-        "Color": "#4B637E",
-        "Id": "ba93bcc2-0ca4-4041-be41-8eb885128a5f",
-        "Name": "Community",
-        "ShortName": "Community"
+        "Color": "#F88F73",
+        "Id": "f48b3d7b-a99c-4a69-b0c8-90d066758404",
+        "Name": "Security/DevOps",
+        "ShortName": "Security/DevOps"
       },
       "Room": {
         "Name": "Keynote"
       },
       "Speakers": [
         {
-          "AvatarUrl": "https://pbs.twimg.com/profile_images/633659267292131328/ZKVDMwub_400x400.jpg",
-          "Biography": "People have said, I'm like a fine wine. I just get better with age but that first sip might make you twitch a bit. Founder of Unspecified and That Conference",
-          "CompanyName": "Unspecified",
-          "CompanyWebsiteUrl": "http://unspecified.io",
-          "FirstName": "Clark",
-          "Id": "ae77f207-03a6-46e7-bdd6-067b02fff0a2",
-          "LastName": "Sell",
-          "PhotoUrl": "https://pbs.twimg.com/profile_images/633659267292131328/ZKVDMwub_400x400.jpg",
-          "PositionName": "Founder of THAT Conference"
+          "AvatarUrl": "https://avatars0.githubusercontent.com/u/5608516?v=4&s=150",
+          "Biography": "Jason Lang has worked in enterprise security for more than 10 years in both offensive and defensive roles.  He has a passion for enterprise defenders working tirelessly to protect their organizations, writing bug-free code (never happens), and telling a good story.",
+          "CompanyName": "SynerComm, Inc",
+          "CompanyWebsiteUrl": "https://www.synercomm.com",
+          "FirstName": "Jason",
+          "Id": "32b477e9-940c-4815-901c-cb4814762f0d",
+          "LastName": "Lang",
+          "PhotoUrl": "https://avatars0.githubusercontent.com/u/5608516?v=4&s=400",
+          "PositionName": "Sr. Information Assurance Consultant "
         }
       ],
-      "StartTime": "2018-10-06T13:30:00-06:00",
-      "Title": "Don't just show up."
+      "StartTime": "2017-09-30T07:45:00-06:00",
+      "Title": "From the Desk of a Hacker: Top 5 Ways Businesses Could Stop Me… But Don’t."
     },
     {
-      "Id": "b34417eb-dc35-419f-b434-cce65b6155cd",
-      "Title": "Get the Boring Stuff Right: A Guide to Keeping Up with the Latest Tech",
-      "Abstract": "Technology is a treadmill. Every year, there's a pile of shiny new things to learn. It's impossible to keep up with all of it. You're constantly asking yourself: \"Which technology stack is going to keep me employed?\"\n\nAs a developer, I love chasing shiny new technologies, but over the years I've learned that making my users happy is way more fulfilling than using the latest technology. After over a decade of building software, I've learned the key to good software is getting the boring stuff right.\n\nIn this talk, you'll learn about why you should spend more time working on evergreen skills. These include skills like creating maintainable code, learning how to learn, and building the right thing. You'll learn what skills have maximum impact and how to improve them. You'll learn how to plan your personal education and make the most of your time. After this talk, you'll be able to sort through the morass of new technologies and make the most of your limited time.",
-      "StartTime": "2018-10-06T16:00:00-06:00",
-      "EndTime": "2018-10-06T16:45:00-06:00",
+      "Abstract": "I will describe ways to create, manage, and secure enterprise web sites, portals, and intranets.",
+      "EndTime": "2017-09-30T09:00:00-06:00",
+      "Id": "1660f708-849c-4076-a9cb-fa5cfcd48313",
       "MainCategory": {
-        "Color": "#B8E986",
-        "Id": "a5d66c8b-eef1-4ede-892a-d6e808ac9808",
-        "Name": "Soft Skill",
-        "ShortName": "Soft Skills"
+        "Color": "#F88F73",
+        "Id": "f48b3d7b-a99c-4a69-b0c8-90d066758404",
+        "Name": "Security/DevOps",
+        "ShortName": "Security/DevOps"
       },
       "Room": {
-        "Name": "113"
+        "Name": 115
+      },
+      "Speakers": [
+        {
+          "AvatarUrl": "https://avatars2.githubusercontent.com/u/815418?v=4&s=150",
+          "Biography": "Kim is a longtime contributor to the Plone open source web content management system project, and is on the Plone Foundation Board of Directors. Kim works as a project manager at Wildcard Corp., a provider of cybersecurity, IT and web development services, one of its clients being the federal government.",
+          "CompanyName": "Wild Card Corp",
+          "CompanyWebsiteUrl": "https://www.wildcardcorp.com",
+          "FirstName": "T. Kim",
+          "Id": "43e82cdc-d0f2-436d-b34b-384b6ca19a2a",
+          "LastName": "Nguyen",
+          "PhotoUrl": "https://avatars2.githubusercontent.com/u/815418?v=4&s=400",
+          "PositionName": "Project Manager"
+        }
+      ],
+      "StartTime": "2017-09-30T08:10:00-06:00",
+      "Title": "Deploying Secure, Enterprise-Scale Web Sites"
+    },
+    {
+      "Abstract": "We all use SQL Server every day in our jobs, so it pays to know what SQL Server can do for us that will make our jobs easier.  This talk will introduce you to some key features of SQL Server that you might not know about but will definitely want to use once you learn about them.  First, we’ll discuss temporal tables, which provide a convenient way to track all of the changes made to data in a table.  Second, we’ll talk about the JSON support built into SQL Server 2016 and what capabilities it provides us.  Finally, we’ll talk about the windowing functions in SQL Server, which provide powerful analytic capabilities to use against our data. After this talk, you will better appreciate some of the rich functionality built into SQL Server and understand how to put these capabilities to work in the applications you build.",
+      "EndTime": "2017-09-30T09:00:00-06:00",
+      "Id": "0702f085-3fa6-4a0d-bd42-72518d62805b",
+      "MainCategory": {
+        "Color": "#AC9AD3",
+        "Id": "ba93bcc2-0ca4-4041-be41-8eb885128a5f",
+        "Name": "Data Analytics",
+        "ShortName": "Data Analytics"
+      },
+      "Room": {
+        "Name": 116
+      },
+      "Speakers": [
+        {
+          "AvatarUrl": "https://www.linkedin.com/in/david-berry-a488596/photo/",
+          "Biography": "I'm a Solutions Architect with over 20 years of experience in building software systems. I started out as a Java developer and then switched to .NET in 2003. I've also done significant work with SQL Server and Oracle. I'm a Pluralsight author and have presented at community events throughout the Midwest. I try to bring a pragmatic approach to everything I do, making sure the software I build is simple, understandable and balances responsibilities between different components of the system. When speaking or teaching, I emphasize real world scenarios encountered by developers every day and show how to solve them so you can be more effective at what you do.",
+          "CompanyName": "Robert W. Barid",
+          "CompanyWebsiteUrl": "http://www.rwbaird.com",
+          "FirstName": "David",
+          "Id": "ffc1539e-68ea-4ef3-abbe-473b9515ea3b",
+          "LastName": "Berry",
+          "PhotoUrl": "https://www.linkedin.com/in/david-berry-a488596/photo/",
+          "PositionName": "Solutions Architect"
+        }
+      ],
+      "StartTime": "2017-09-30T08:10:00-06:00",
+      "Title": "Holy Cow!  I Never Knew SQL Server Could Do That!"
+    },
+    {
+      "Abstract": "Human testing is an important part of everyday software building. To support your QA person or team, maybe your developers hard coded some things and they’re using precious development time changing them around every few weeks. Or, after the 50th time setting up the same conditions to test a relatively small part of your application, you might be asking yourself if there’s a better way to do it. Using tools like Postmaster, Telerik Test Studio, or Selenium, you can add automation to save time and nerves on your project. Automation can also be a great opportunity for development and QA to collaborate. We’ll take a look at: when automation is appropriate, how you can integrate it into your regular testing practices and/or regression testing, how to code for test automation, and Telerik’s coded steps.",
+      "EndTime": "2017-09-30T09:00:00-06:00",
+      "Id": "fe0c65c5-ef96-437b-abab-d974de13b136",
+      "MainCategory": {
+        "Color": "#7DD5C9",
+        "Id": "14990b6c-be1d-4db8-8d48-fe0e45d062b5",
+        "Name": "QA/Testing",
+        "ShortName": "QA"
+      },
+      "Room": {
+        "Name": 117
+      },
+      "Speakers": [
+        {
+          "AvatarUrl": "https://www.linkedin.com/in/vanessaradlinger/photo/",
+          "Biography": "Vanessa is a software developer at Red Arrow Labs, where she helps build software that creates a more efficient, effective, and easy to use health experience. While working in international business, she discovered programming and began her career-change by going back to university for computer science. Vanessa started her internship with Red Arrow Labs a semester later. Since then, she was hired full-time and spends her free time volunteering with Girls Who Code.",
+          "CompanyName": "Red Arrow Labs",
+          "CompanyWebsiteUrl": "http://www.redarrowlabs.com",
+          "FirstName": "Vanessa",
+          "Id": "49c0b240-3376-40e5-81df-cc4ab2a62b3c",
+          "LastName": "Radlinger",
+          "PhotoUrl": "https://www.linkedin.com/in/vanessaradlinger/photo/",
+          "PositionName": "Software Developer"
+        }
+      ],
+      "StartTime": "2017-09-30T08:10:00-06:00",
+      "Title": "I’m not criticizing, I’m testing (now automatically)"
+    },
+    {
+      "Abstract": "We’ve heard all the buzz with devices like Oculus, Vive and HoloLens, but there are new Mixed Reality devices from Acer, HP, Dell, Lenova and even more coming. It’s hard to predict the future in technology, but it seems likely the AR/MR/VR devices will grow a lot. Let’s discuss the sweet spots of the various devices and what markets benefit from them. You’ll walk away with a solid understanding of the market place, where you should invest your time according to your interests and what the development platforms look like. This will help you to get started and which device(s) will fit your needs!",
+      "EndTime": "2017-09-30T09:00:00-06:00",
+      "Id": "405404f9-7aef-44c7-9be7-5385011c2698",
+      "MainCategory": {
+        "Color": "#B8E986",
+        "Id": "6466b137-4ddf-4fee-8324-96926baf6fc6",
+        "Name": "General Dev",
+        "ShortName": "Gen Dev"
+      },
+      "Room": {
+        "Name": 118
+      },
+      "Speakers": [
+        {
+          "AvatarUrl": "https://avatars1.githubusercontent.com/u/1812357?v=4&s=150",
+          "Biography": "Greg Levenhagen is a Principal Consultant with Skyline Technologies, a Microsoft Regional Director (RD) and a Microsoft Most Valuable Professional (MVP). He has a great passion for giving back to the community and teaching. A true enthusiast of computer science, with passions and interests including AR/MR/VR, mobile, UX, architecture, distributed computing, automated testing, web, agile, 3D/games, cloud, languages and much more. Greg speaks at conferences like ThatConference, CodeMash, VSLive and Code PaLOUsa. He is also a Microsoft Certified Trainer (MCT), board member of ThatConference, president of the Milwaukee Code Camp, president of the Northeast WI Code Camp, president of the Northeast WI Developers User Group, co-organizer of the Fox Valley Game Development Meetup, co-organizer of the Midwest Azure User Group, organizer of MobileMKE, cofounder of the Northeast WI Agile User Group, INETA speaker and IEEE and ACM member.",
+          "CompanyName": "Skyline Technologies",
+          "CompanyWebsiteUrl": "https://www.skylinetechnologies.com",
+          "FirstName": "Greg",
+          "Id": "bdbf2e4e-8697-48c3-af84-2bfe93ef5723",
+          "LastName": "Levenhagen",
+          "PhotoUrl": "https://avatars1.githubusercontent.com/u/1812357?v=4&s=400",
+          "PositionName": "Principal Consultant"
+        }
+      ],
+      "StartTime": "2017-09-30T08:10:00-06:00",
+      "Title": "Mixed Reality, Augmented Reality, Virtual Reality - What You Need to Know!"
+    },
+    {
+      "Abstract": "Trying to find a path to modernize your applications, simplify your production environment or introduce DevOps?  This session will provide you with a basic understanding of Docker:  what it is, who is using it, why, and when and where it could help you.",
+      "EndTime": "2017-09-30T10:00:00-06:00",
+      "Id": "f7492ab7-11fd-44b6-81b1-ae35272ea052",
+      "MainCategory": {
+        "Color": "#F88F73",
+        "Id": "f48b3d7b-a99c-4a69-b0c8-90d066758404",
+        "Name": "Security/DevOps",
+        "ShortName": "Security/DevOps"
+      },
+      "Room": {
+        "Name": 115
+      },
+      "Speakers": [
+        {
+          "AvatarUrl": "https://media.licdn.com/mpr/mpr/shrinknp_150_150/AAEAAQAAAAAAAAekAAAAJDNhYWVlYjlmLTdiYWQtNGUxNi1iNmRkLWE0NThjMjY1OGE3Yw.jpg",
+          "Biography": "Tracey Barrett is the Managing Director of NVISIA and one of the organizers of Milwaukee Agile.  She has over twenty years experience in application development, and works with companies to introduce new technologies and processes into their IT organizations, with an emphasis on high-quality, yet lightweight, software engineering disciplines.",
+          "CompanyName": "NVISIA",
+          "CompanyWebsiteUrl": "http://www.nvisa.com",
+          "FirstName": "Tracey",
+          "Id": "a34b409a-9e5e-4b52-b817-8248e75bdc53",
+          "LastName": "Barrett",
+          "PhotoUrl": "https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAekAAAAJDNhYWVlYjlmLTdiYWQtNGUxNi1iNmRkLWE0NThjMjY1OGE3Yw.jpg",
+          "PositionName": "Managing Director"
+        }
+      ],
+      "StartTime": "2017-09-30T09:10:00-06:00",
+      "Title": "The 5 W's of Docker"
+    },
+    {
+      "Abstract": "The .NET family of languages covers a wide range of different programming paradigms. Until recently, data analysis wasn't well-represented in the .NET world.  With today's proliferating amounts of data, all developers should consider learning more about data analysis.  Enter R, a language tailor-made for data analysis.  With the release of R Tools for Visual Studio, .NET developers can use this powerful language using familiar tools.",
+      "EndTime": "2017-09-30T10:00:00-06:00",
+      "Id": "ba883767-0499-4ce9-86f0-8c5056acfd25",
+      "MainCategory": {
+        "Color": "#AC9AD3",
+        "Id": "ba93bcc2-0ca4-4041-be41-8eb885128a5f",
+        "Name": "Data Analytics",
+        "ShortName": "Data Analytics"
+      },
+      "Room": {
+        "Name": 116
       },
       "Speakers": [
         {
@@ -56,22 +407,62 @@
           "PhotoUrl": "https://avatars1.githubusercontent.com/u/466287?v=4&s=400",
           "PositionName": "Consultant"
         }
-      ]
+      ],
+      "StartTime": "2017-09-30T09:10:00-06:00",
+      "Title": "R: It's Not Just For Pirates Anymore"
     },
     {
-      "Id": "7f57558d-cc72-4bca-a7c0-2440fd2af2e8",
-      "Title": "Google + Alexa: Cross-Assistant Apps",
-      "Abstract": "Let's develop an Action/Skill for Google and Alexa in one neat little package.\n\nRemember when the Echo was made available back in late 2014? It was invite only, then Prime only, then finally available for everyone the next summer. Only, most people didn't really seem to care. What does it even do? Why should I bother? Can't I just use my phone?\n\nFast forward to 2018, and it seems like everyone at least knows the Echo, and probably the Google Home. People know how to use them and why you'd have one. The question now has become \"Which one should I get?\" rather than \"Why would I ever buy that?\"\n\nWe've hit the point where people can reasonably expect skills to be on both the Amazon Echo and the Google Home. Both devices are in enough houses where it's worth the investment to create skills and actions for each platform. Luckily, this isn't nearly as difficult as it may seem.\n\nWe'll walk through the creation of both Alexa Skills and Actions on Google, look at the differences (there are a few, mostly names), look at what's the same, and see just how we can build a single application to serve both smart assistants. By the end of the session, we'll have a sample application running on both platforms from a single set of REST endpoints.",
-      "StartTime": "2018-10-06T16:00:00-06:00",
-      "EndTime": "2018-10-06T16:45:00-06:00",
+      "Abstract": "The Stevens Point Area Public School District, City of Stevens Point, Mid State Technical College,  and UWSP have  collaborated on work to create a Community Area Network (CAN). The Stevens Point CAN will allow non-profit institutions to  own and maintain  a shared fiber optic network which will allow for low priced, high speed data transport and internet access. The Stevens Point CAN is looking for other Anchor Institutions such non-profits, healthcare and educational institutions to join the CAN. This session will explain the current plans for the CAN as well as how to potentially become a member. A discussion of Fiber-optic construction, maintenance and design will also be included.",
+      "EndTime": "2017-09-30T10:00:00-06:00",
+      "Id": "3b89860c-dfc7-4dc7-8615-750e5a2113f0",
       "MainCategory": {
-        "Color": "#B8E986",
-        "Id": "a5d66c8b-eef1-4ede-892a-d6e808ac9808",
-        "Name": "Soft Skill",
-        "ShortName": "Soft Skills"
+        "Color": "#4B637E",
+        "Id": "ba93bcc2-0ca4-4041-be41-8eb885128a5f",
+        "Name": "Community",
+        "ShortName": "Community"
       },
       "Room": {
-        "Name": "114"
+        "Name": 117
+      },
+      "Speakers": [
+        {
+          "AvatarUrl": "https://media.licdn.com/mpr/mpr/shrinknp_150_150/p/1/000/1a7/372/36af1a8.jpg",
+          "Biography": "Brian is responsible for supervising all technology staff, IT operations and  administration of the  technology Services Department for Stevens Point Area Public School District. The Technology Services Department manages accounts, devices and support for 7,300 students and 1000 staff members",
+          "CompanyName": "Stevens Point Area Public School District",
+          "CompanyWebsiteUrl": "https://www.pointschools.net",
+          "FirstName": "Brian",
+          "Id": "988113b6-6237-437a-87a2-e5e2a4a8407f",
+          "LastName": "Casey",
+          "PhotoUrl": "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/1/000/1a7/372/36af1a8.jpg",
+          "PositionName": "Director of Technology for Stevens Point Area Public School District"
+        },
+        {
+          "AvatarUrl": "https://media.licdn.com/mpr/mpr/shrinknp_150_150/AAEAAQAAAAAAAAbMAAAAJDRlZWVkNTEwLTJkYTUtNDYwYS04NTZiLTIyZjFlNDMyNjRiYw.jpg",
+          "Biography": "Brad is responsible for the day-to-day management of the Information Technology (IT) Department, as well as ensuring technology solutions are designed, implemented, and managed in alignment with the College’s IT strategic plan and WILM initiatives",
+          "CompanyName": "Mid-State Technical College",
+          "CompanyWebsiteUrl": "https://www.mstc.edu",
+          "FirstName": "Brad",
+          "Id": "f44dd0f2-e9c1-4afa-ba7a-825fc1ae24d3",
+          "LastName": "Russel",
+          "PhotoUrl": "https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAbMAAAAJDRlZWVkNTEwLTJkYTUtNDYwYS04NTZiLTIyZjFlNDMyNjRiYw.jpg",
+          "PositionName": "Director of Information Technology"
+        }
+      ],
+      "StartTime": "2017-09-30T09:10:00-06:00",
+      "Title": "Building the Stevens Point CAN (Community Area Network)"
+    },
+    {
+      "Abstract": "The Google Home, Google's smart speaker, was released last October to some fanfare, a number of jokes (Yes, it kind of looks like an air freshener), and a severe lack of customization.  This finally improved a few months later once the Actions SDK was introduced, allowing developers and companies to create their own actions. Things get really interesting, though, once you start looking at api.ai.  This natural language interaction site allows users to create all the Intents (Tie user requests to actions), Entities (Objects used by your action), and configure integrations needed to create a Google Home action.  You can control what happens whenever users say certain expressions, how intents tie together, and even which pieces of data you want to grab from a user's statement. In this session, we'll walk through what api.ai has to offer, how you can use it to configure all the interaction points for a user, and even how you can integrate with external web services.  Combined with the ability to quickly set up your Google Home action settings (and even use the same logic for other integrations), you'll be up and running on your Home in no time!",
+      "EndTime": "2017-09-30T10:00:00-06:00",
+      "Id": "75439e74-f81c-4385-9da9-6d508cfccf4c",
+      "MainCategory": {
+        "Color": "#B8E986",
+        "Id": "6466b137-4ddf-4fee-8324-96926baf6fc6",
+        "Name": "General Dev",
+        "ShortName": "Gen Dev"
+      },
+      "Room": {
+        "Name": 118
       },
       "Speakers": [
         {
@@ -85,120 +476,241 @@
           "PhotoUrl": "https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAJQAAAAJDhjOGQyYmQyLTBmYjktNDZmMy05MGE0LTNlZTY1NWM1M2U2Nw.jpg",
           "PositionName": "Senior Software Engineer"
         }
-      ]
+      ],
+      "StartTime": "2017-09-30T09:10:00-06:00",
+      "Title": "Hey Google, how do I create actions for the Home?"
     },
     {
-      "Id": "b494ae14-2a15-4ec6-b306-8a5a41ba3b8e",
-      "Title": "Using CTFs to enforce security awareness in your organization",
-      "Abstract": "Remember those \"security awareness\" trainings that are sent out to employees at least once a year? These trainings typically require you to answer multiple choice questions, listen to some boring lecture, and then get a participation certificate. Do employees remember anything from these \"trainings\"? The answer is no, they don't. You may choose this method because it is easy and it checks off the proverbial box, but employees gain very little from this type of self-paced learning. During this session, I will be describing authentic learning activities that use CTFs (Capture the Flag) events to engage and motivate students. Furthermore, you will walk away with a new perspective on how to get employees to naturally think critically about security.",
-      "StartTime": "2018-10-06T16:00:00-06:00",
-      "EndTime": "2018-10-06T16:45:00-06:00",
+      "Abstract": "Company executives want to know that you’ve got security covered.  Period. They don’t always want to know how it’s done, or how cool and cutting edge the tools you use are.   Bottom line: No one wants to be in the headlines as the target of a successful breach. The threat landscape of cyber security has been changing in recent years and while there’s never been a silver bullet, it’s important to be reminded of our past, understand the present and prepare for the unknowns of what is to come. We will cover the evolution of modern cyber threats, and the methods by which the industry is responding.",
+      "EndTime": "2017-09-30T12:20:00-06:00",
+      "Id": "980ad6d0-4dac-4a20-9428-e75b0f0d37cb",
       "MainCategory": {
         "Color": "#F88F73",
         "Id": "f48b3d7b-a99c-4a69-b0c8-90d066758404",
-        "Name": "Security",
-        "ShortName": "Security"
+        "Name": "Security/DevOps",
+        "ShortName": "Security/DevOps"
       },
       "Room": {
-        "Name": "115"
+        "Name": 115
       },
       "Speakers": [
         {
-          "AvatarUrl": "https://ncgfonline.org/wp-content/uploads/2017/12/blank-avatar.png",
-          "Biography": "Coming Soon...",
-          "CompanyName": "Midstate Technical College",
-          "CompanyWebsiteUrl": "https://www.mstc.edu",
-          "FirstName": "Casey",
-          "Id": "92d93aef-4125-41b6-87d0-2b143cee320d",
-          "LastName": "Trader",
-          "PhotoUrl": "https://ncgfonline.org/wp-content/uploads/2017/12/blank-avatar.png",
-          "PositionName": "Faculty"
+          "AvatarUrl": "https://media.licdn.com/mpr/mpr/shrinknp_150_150/p/1/000/079/021/364052d.jpg",
+          "Biography": "Jason thrives on building systems and teams that serve as the foundation for business and client success. He has 20-plus years of network design and implementation, security, application virtualization and compliance management experience.",
+          "CompanyName": "Red Arrow Labs",
+          "CompanyWebsiteUrl": "http://www.redarrowlabs.com",
+          "FirstName": "Jason",
+          "Id": "bcdcc560-854a-4bc3-9a93-55ec77b2cc37",
+          "LastName": "Phillips",
+          "PhotoUrl": "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/1/000/079/021/364052d.jpg",
+          "PositionName": "VP - Infrastructure and Security"
         }
-      ]
+      ],
+      "StartTime": "2017-09-30T11:30:00-06:00",
+      "Title": "Cyber Security – Changing threats, changing defenses"
     },
     {
-      "Id": "808124af-11d0-4fc1-978e-b7209d663e9d",
-      "Title": "How Your Corporate Culture Impacts Talent Attraction and Retention - Are You Looking Inside Out?",
-      "Abstract": "An organization and the individuals within the organization need to start looking inside themselves to solve the talent attraction and retention puzzle. How your organization and the people inside it communicate, grow, lead, prioritize shapes people coming to your organization and how long they stay.",
-      "StartTime": "2018-10-06T16:00:00-06:00",
-      "EndTime": "2018-10-06T16:45:00-06:00",
+      "Abstract": "The Internet of Things (IOT) is a hot buzzword these days and it seems that Telemetry is showing up on everything and has become more dependable.  With growing numbers of adopters of sophisticated mobile devices, where are the best opportunities for breakthrough ideas combining these technologies, where should investments of resources be made, and what skills should be developed to remain on the forefront of the technologies?",
+      "EndTime": "2017-09-30T12:20:00-06:00",
+      "Id": "1a8db64c-aa91-4c0a-a7e3-b0157f6865e5",
       "MainCategory": {
-        "Color": "#F88F73",
-        "Id": "47b39781-8876-40e3-83d0-3e0c8845fdfc",
-        "Name": "Leadership",
-        "ShortName": "Leadership"
+        "Color": "#AC9AD3",
+        "Id": "ba93bcc2-0ca4-4041-be41-8eb885128a5f",
+        "Name": "Data Analytics",
+        "ShortName": "Data Analytics"
       },
       "Room": {
-        "Name": "116"
+        "Name": 116
       },
       "Speakers": [
         {
-          "AvatarUrl": "https://portagecountybiz.com/wp-content/uploads/2014/06/Kuckkahn-Todd-225x300.jpg",
-          "Biography": "Coming Soon...",
-          "CompanyName": "Portage County Business Council",
-          "CompanyWebsiteUrl": "https://portagecountybiz.com/",
-          "FirstName": "Todd",
-          "Id": "23c31891-d89c-4f6b-8f2c-ee78b8aa13f1",
-          "LastName": "Kuckkahn",
-          "PhotoUrl": "https://portagecountybiz.com/wp-content/uploads/2014/06/Kuckkahn-Todd-225x300.jpg",
-          "PositionName": "Executive Directory"
+          "AvatarUrl": "https://media.licdn.com/mpr/mpr/shrinknp_150_150/AAEAAQAAAAAAAAeCAAAAJGM2NDJhMjU3LTJlN2MtNDNkMS05ZDA3LTZjZDFhYmZjMTU1NQ.jpg",
+          "Biography": "A balanced information technology executive that has spent 30 years on the forefront of technology.  I have built a number of highly successful teams, developed and released award winning technology products, and have a fascination with everything technology. In addition to working in technology professionally, I have an IOT enabled home that blends several different platforms and allows for some really interesting interactions. With undergraduate work in both Information technology and business I also embrace the importance of ‘right sizing’ technology in the professional environment. Additional information is available on my public LinkedIn Profile.",
+          "CompanyName": "Wysocki Family of Companies",
+          "CompanyWebsiteUrl": "http://wfc.ag",
+          "FirstName": "Ward",
+          "Id": "37ea79bf-d03f-4f38-83a0-5da38ed2b7a1",
+          "LastName": "Neesen",
+          "PhotoUrl": "https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAeCAAAAJGM2NDJhMjU3LTJlN2MtNDNkMS05ZDA3LTZjZDFhYmZjMTU1NQ.jpg",
+          "PositionName": "Chief Information Officer"
         }
-      ]
+      ],
+      "StartTime": "2017-09-30T11:30:00-06:00",
+      "Title": "IOT, Telemetry, and Mobile Devices - Bringing Technology Together"
     },
     {
-      "Id": "b120c811-f817-43b9-9121-0b6cfbf2e1e6",
-      "Title": "Dawn of the Smart Enterprise",
-      "Abstract": "We have a smart phone, even a smart home but why not a smart office? Actually, the dawn of the smart enterprise is here - pragmatic AI will enable companies to draw upon data across marketing, sales, and elsewhere to unify marketing automation, CRM, customer success analytics etc. There is nothing more intuitive in interaction than a conversation, whether it is with a human or a bot. We will share our thoughts on we are seeing with our customers and how the move to smart enterprise is starting to happen. We will demo some use-cases that the folks can relate to and also encourage an open discussion during our session.",
-      "StartTime": "2018-10-06T16:00:00-06:00",
-      "EndTime": "2018-10-06T16:45:00-06:00",
+      "Abstract": "In this talk I will discuss a perspective on Innovation that recognizes the other awesome facets available to us in our industry.  Then I will summarize practices and systems that support these. After joining me I hope you consider investigating and experimenting with these to bolster the excitement that drove you to a career in computing.",
+      "EndTime": "2017-09-30T12:20:00-06:00",
+      "Id": "bb92c230-dfed-4725-9f4a-5a5bd5f6d632",
       "MainCategory": {
-        "Color": "#F88F73",
-        "Id": "f6d520f7-b869-44dc-a46e-5cbb41b83d42",
-        "Name": "Artificial Intelligence",
-        "ShortName": "AI"
+        "Color": "#B8E986",
+        "Id": "a5d66c8b-eef1-4ede-892a-d6e808ac9808",
+        "Name": "Soft Skill",
+        "ShortName": "Soft Skills"
       },
       "Room": {
-        "Name": "117"
+        "Name": 117
       },
       "Speakers": [
         {
-          "AvatarUrl": "https://ncgfonline.org/wp-content/uploads/2017/12/blank-avatar.png",
-          "Biography": "Coming Soon...",
-          "CompanyName": "Probosys, LLC",
-          "FirstName": "Bala",
-          "Id": "c89fb862-3b95-4d1f-9ceb-c93a7106c946",
-          "LastName": "Raghuraman",
-          "PhotoUrl": "https://ncgfonline.org/wp-content/uploads/2017/12/blank-avatar.png"
+          "AvatarUrl": "https://pbs.twimg.com/profile_images/578914631948767232/3AvOluEs_400x400.jpeg",
+          "Biography": "Dean Goodmanson is a Software Engineer who loves systems, electronic to social, that have a positive impact on our world. High School programming a pocket calculator on BASIC and BBS games for friends encouraged him to a college and career in software and business. At Panasonic and then Renaissance, the facets of network and data programming led to appreciation of Systems Thinking, Software Engineering and team collaboration. Dean is inspired by The HP Way, Deming, Ackoff, Goldratt, Arlo Belshee, Ward Cunningham, Diana Larson, Ron Jeffries, Esther Derby, Tim Ottinger and The Dude.",
+          "CompanyName": "Renaissance Learning",
+          "CompanyWebsiteUrl": "http://www.renaissance.com",
+          "FirstName": "Dean",
+          "Id": "2fa81cc5-67ba-49bb-8736-25560ed87aec",
+          "LastName": "Goodmanson",
+          "PhotoUrl": "https://pbs.twimg.com/profile_images/578914631948767232/3AvOluEs_400x400.jpeg",
+          "PositionName": "Sr. Software Engineer"
         }
-      ]
+      ],
+      "StartTime": "2017-09-30T11:30:00-06:00",
+      "Title": "Roadmap to Innovation: Delivering value while embracing innovation"
     },
     {
-      "Id": "b120c811-f817-43b9-9121-0b6cfbf2e1e6",
-      "Title": "Web Developer to Mobile Apps Developer using NativeScript",
-      "Abstract": "Nativescript is a free and open source solution to develop android and IOS based mobile applications. This session will go through the fundamentals of developing Native Mobile Apps using Native Script leveraging the power of Angular, Typescript or JavaScript as your scripting language. A working session will be conducted covering the basics of Native Script and the steps which are required to develop mobile apps.",
-      "StartTime": "2018-10-06T16:00:00-06:00",
-      "EndTime": "2018-10-06T16:45:00-06:00",
+      "Abstract": "For every developer, the day will eventually come where the user experiences an error that just can't be explained.  Even after hours of research and contact with the user, you are left with nothing more than a blurry screenshot of \"Object reference not set to instance of object\" and no idea where to go next.  Even if you are successful at designing your application to be robust and maintainable, the wrong error can sideline you for days while you track down a mystery.  If we put all this thought and effort into making our code work well, why not spend some time thinking about when it breaks? Great design isn't only reserved for code that actually works.  In this talk we'll admit to ourselves that we aren't perfect developers, and face the truth that eventually our code is going to break.  We'll talk about how to make sure we have the right resources to solve the problem when it happens.  We'll go over some design strategies that will make sure errors are as clear and informative as possible.  We'll talk about defensive coding and how to handle other developers' errors.  And we'll look at some code examples along the way to see how others have done it right and wrong.",
+      "EndTime": "2017-09-30T12:20:00-06:00",
+      "Id": "49c69562-aeea-4e83-8053-91ab321f8dd3",
       "MainCategory": {
-        "Color": "#F88F73",
-        "Id": "65af047a-b248-4b28-8a00-ea824fabe37e",
-        "Name": "Mobile Development",
-        "ShortName": "Mobile Dev"
+        "Color": "#B8E986",
+        "Id": "6466b137-4ddf-4fee-8324-96926baf6fc6",
+        "Name": "General Dev",
+        "ShortName": "Gen Dev"
       },
       "Room": {
-        "Name": "212"
+        "Name": 118
       },
       "Speakers": [
         {
-          "AvatarUrl": "https://ncgfonline.org/wp-content/uploads/2017/12/blank-avatar.png",
-          "Biography": "Coming Soon...",
-          "CompanyName": "Compunnel Software Group",
-          "CompanyWebsite": "https://www.compunnel.com/",
-          "FirstName": "Baskar",
-          "Id": "7de1e3ae-54f2-4268-a3aa-dcb51f6c13a1",
-          "LastName": "Rao",
-          "PhotoUrl": "https://ncgfonline.org/wp-content/uploads/2017/12/blank-avatar.png"
+          "AvatarUrl": "https://media.licdn.com/mpr/mpr/shrinknp_150_150/p/6/005/081/013/16f33f3.jpg",
+          "Biography": "I've lived in Stevens Point for nearly 30 years.  Developing for WI companies for over 10 years.",
+          "CompanyName": "Skyward",
+          "CompanyWebsiteUrl": "https://www.skyward.com",
+          "FirstName": "Scott",
+          "Id": "6a60cf99-e675-4a79-b062-e282f671a9e7",
+          "LastName": "Degen",
+          "PhotoUrl": "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/081/013/16f33f3.jpg",
+          "PositionName": "Principal Engineer"
         }
-      ]
+      ],
+      "StartTime": "2017-09-30T11:30:00-06:00",
+      "Title": "Making your code break the right way-- a lesson in error handling in Enterprise-scale applications"
+    },
+    {
+      "Abstract": "Internet facing web applications are the first target attackers seek out when casing a company.  They are often the entry point for high impact attack chains, and start with the use of simple vulnerabilities that could have been detected prior to deploying the application to the public.  Understanding how to detect and mitigate the most common vulnerabilities is key to protecting your business.  Using the Open Web Application Security Project framework as a guide, I will demonstrate the real world use of common tools and frameworks that can be utilized to find the low hanging fruit in a newly developed web application.  I will also show how attackers leverage these vulnerabilities to form complex attack chains leading to the compromise of host servers. Demonstrations: Automated SQL Injection, Broken Session Management, Cross Site Scripting, Scanning for Public Admin pages, Unprotected REST API.",
+      "EndTime": "2017-09-30T13:20:00-06:00",
+      "Id": "ec747a84-24b3-406c-8d55-3d6891bcdc95",
+      "MainCategory": {
+        "Color": "#F88F73",
+        "Id": "f48b3d7b-a99c-4a69-b0c8-90d066758404",
+        "Name": "Security/DevOps",
+        "ShortName": "Security/DevOps"
+      },
+      "Room": {
+        "Name": 115
+      },
+      "Speakers": [
+        {
+          "AvatarUrl": "https://media.licdn.com/mpr/mpr/shrinknp_150_150/p/5/005/0b9/1f0/35cead3.jpg",
+          "Biography": "Technical Consultant for Oracle Cloud HR/ERP Implementations, specializing in data conversion / extracts.  Information Security enthusiast, with a focus on offensive security.",
+          "CompanyName": "New Resources Consulting",
+          "CompanyWebsiteUrl": "http://www.nrconsults.com",
+          "FirstName": "Hank",
+          "Id": "a50a726e-800b-429e-bba6-cb757e10b19d",
+          "LastName": "Wyatt",
+          "PhotoUrl": "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/5/005/0b9/1f0/35cead3.jpg",
+          "PositionName": "Certified Cloud Associate"
+        }
+      ],
+      "StartTime": "2017-09-30T12:30:00-06:00",
+      "Title": "Best Defense is a Good Offense - How to Hack Your Webapp"
+    },
+    {
+      "Abstract": "I will go over the underlying principles behind neural network technology with some examples/live demoing.",
+      "EndTime": "2017-09-30T13:20:00-06:00",
+      "Id": "af6099ff-ce91-4edc-b911-26e33e3629ee",
+      "MainCategory": {
+        "Color": "#AC9AD3",
+        "Id": "ba93bcc2-0ca4-4041-be41-8eb885128a5f",
+        "Name": "Data Analytics",
+        "ShortName": "Data Analytics"
+      },
+      "Room": {
+        "Name": 116
+      },
+      "Speakers": [
+        {
+          "AvatarUrl": "http://vvcexpl.com/wordpress/wp-content/uploads/2013/09/profile-default-male.png",
+          "Biography": "I am a .Net developer, a musician, and a child wrapped into a tall burrito.",
+          "CompanyName": "Skyward",
+          "CompanyWebsiteUrl": "https://www.skyward.com",
+          "FirstName": "Yo",
+          "Id": "719a4b60-a74a-44c6-bd0c-332a023cc57b",
+          "LastName": "Conway",
+          "PhotoUrl": "http://vvcexpl.com/wordpress/wp-content/uploads/2013/09/profile-default-male.png",
+          "PositionName": "Software Engineer"
+        }
+      ],
+      "StartTime": "2017-09-30T12:30:00-06:00",
+      "Title": "Brain algorithms. Computers--get like us"
+    },
+    {
+      "Abstract": "It takes a village to raise a child, or complete a project.  But that Village is made up of a variety of team members with different backgrounds, knowledge levels, generational experiences and expectations.  In addition our villages are changing Villages (teams) are collocated, remote, shared across multiple projects.  In this interactive session gain insight on how to lead the Village (team) and maximize the attributes of individual team members as well as the utilizing the changing dynamic of our Villages to make your projects successful and less stressful for the entire team.",
+      "EndTime": "2017-09-30T13:20:00-06:00",
+      "Id": "3f1f7f17-85f4-4933-a011-1fbdd8586b36",
+      "MainCategory": {
+        "Color": "#B8E986",
+        "Id": "a5d66c8b-eef1-4ede-892a-d6e808ac9808",
+        "Name": "Soft Skill",
+        "ShortName": "Soft Skills"
+      },
+      "Room": {
+        "Name": 117
+      },
+      "Speakers": [
+        {
+          "AvatarUrl": "https://media.licdn.com/mpr/mpr/shrinknp_150_150/AAEAAQAAAAAAAA2aAAAAJDg2NTJhODM0LWM3YmItNDhjZC04YmYyLThhYWE4Y2Y2OGFhZg.jpg",
+          "Biography": "Julie has been actively leading Portfolios, Programs and Projects for the past 15 plus years.   She has had the opportunity to facilitate the conversion of many system through bank mergers, new online banking systems, electronic health record systems and ERP systems.   Julie’s passion for project management has given her the opportunity to implement PMOs, oversee large programs and interact with team members at all levels of organizations.   Julie has held her PMP designation since 2006.  Julie’s commitment to effectively and efficiently execute technology projects is demonstrated through her use of communication and team leadership tools.",
+          "CompanyName": "New Resources Consulting",
+          "CompanyWebsiteUrl": "http://www.nrconsults.com",
+          "FirstName": "Julie",
+          "Id": "97bef6b2-ace5-4ef6-aef0-3159c52a7560",
+          "LastName": "Zurowski",
+          "PhotoUrl": "https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAA2aAAAAJDg2NTJhODM0LWM3YmItNDhjZC04YmYyLThhYWE4Y2Y2OGFhZg.jpg",
+          "PositionName": "VP - Management Consulting"
+        }
+      ],
+      "StartTime": "2017-09-30T12:30:00-06:00",
+      "Title": "Managing Team Dynamics for Successful Projects"
+    },
+    {
+      "Abstract": "Even in a world of micro services and serverless architectures, managing some form of state is unavoidable. As applications scale, issues of concurrency and load distribution can become daunting challenges. This session will provide an overview of the actor model and how it can be applied to help address these problems. Specifically, Microsoft Orleans, a distributed virtual actor model, will be used for demonstration as well as a basis for comparison against the larger actor model ecosystem.",
+      "EndTime": "2017-09-30T13:20:00-06:00",
+      "Id": "939456f6-851c-43bd-a405-d2050f0ad72d",
+      "MainCategory": {
+        "Color": "#B8E986",
+        "Id": "6466b137-4ddf-4fee-8324-96926baf6fc6",
+        "Name": "General Dev",
+        "ShortName": "Gen Dev"
+      },
+      "Room": {
+        "Name": 118
+      },
+      "Speakers": [
+        {
+          "AvatarUrl": "https://media.licdn.com/mpr/mpr/shrinknp_150_150/p/3/000/044/1a4/39db74e.jpg",
+          "Biography": "Full stack developer for 15+ years with a penchant for distributed systems.",
+          "CompanyName": "Red Arrow Labs",
+          "CompanyWebsiteUrl": "http://www.redarrowlabs.com",
+          "FirstName": "Matthew",
+          "Id": "e4437090-c2cc-4a0c-b631-917069e42df0",
+          "LastName": "Kowalski",
+          "PhotoUrl": "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/3/000/044/1a4/39db74e.jpg",
+          "PositionName": "Software Developer"
+        }
+      ],
+      "StartTime": "2017-09-30T12:30:00-06:00",
+      "Title": "Making the A-List: using actors to achieve fame and fortune"
     }
   ],
   "sponsors": [
@@ -260,11 +772,24 @@
       "Name": "Renaissance Learning",
       "Rank": 4,
       "SponsorLevel": {
-        "Name": "Silver Sponsor",
+        "Name": "Platinum Sponsor",
         "Rank": 0
       },
       "TwitterUrl": "RenLearnUS",
       "WebsiteUrl": "https://www.renaissance.com"
+    },
+    {
+      "Description": "We are developers, designers, project managers, researchers, analysts and social innovators. We are experts in our fields with diverse backgrounds. While each of us is unique, the one thing we all share is a passion to create great software that positively impacts people’s health. We view every new project as an opportunity to do our best work. The goal, to develop solutions that use technology the right way, employ creative solutions and empower the people who use them.",
+      "Id": "4a90c936-bfcc-4b3a-b554-e8840c2e512d",
+      "ImageUrl": "https://static.wixstatic.com/media/615d66_bd03accec2de4645bceace5107b9098b~mv2.jpg/v1/fill/w_214,h_93,al_c,q_80,usm_0.66_1.00_0.01/615d66_bd03accec2de4645bceace5107b9098b~mv2.jpg",
+      "Name": "Red Arrow Labs",
+      "Rank": 5,
+      "SponsorLevel": {
+        "Name": "Gold Sponsor",
+        "Rank": 0
+      },
+      "TwitterUrl": "RedArrowLabs",
+      "WebsiteUrl": "http://redarrowlabs.com"
     },
     {
       "Description": "A better SIS and ERP experience for school districts and municipalities. We're about more than just software.",
@@ -280,25 +805,40 @@
       "WebsiteUrl": "https://www.skyward.com"
     },
     {
-      "Description": "Heartland Farms mission is to produce a healthy and safe food product, maximize profitability, and maintain good ethical values. We are a family-owned and operated farm and plan to ensure this opportunity to the next generation. We strive to make efficient use of inputs, maintain excellent land stewardship practices, and produce high quality commodities for the end user.",
-      "ImageUrl": "https://static.wixstatic.com/media/615d66_4757288db2714da7ad76d07711cd834a~mv2.jpg/v1/fill/w_261,h_166,al_c,q_80,usm_0.66_1.00_0.01/615d66_4757288db2714da7ad76d07711cd834a~mv2.webp",
-      "Name": "Heartland Farms",
-      "Rank": 9,
+      "Description": "We make it easy to choose the right trip protection for you, and then we add fast claims processing and speedy claims payment. It's travel insurance your way.",
+      "ImageUrl": "https://static.wixstatic.com/media/615d66_2eea6f2ae1d14d78a3c89b8b2cd70da5~mv2.jpg/v1/fill/w_220,h_70,al_c,q_80,usm_0.66_1.00_0.01/615d66_2eea6f2ae1d14d78a3c89b8b2cd70da5~mv2.jpg",
+      "Name": "BHTP",
+      "Rank": 6,
       "SponsorLevel": {
-        "Name": "Silver Sponsor",
-        "Rank": 2
+        "Name": "Gold Sponsor",
+        "Rank": 1
       },
-      "WebsiteUrl": "http://www.hfinc.biz/"
+      "TwitterUrl": "BHTP",
+      "WebsiteUrl": "https://www.bhtp.com"
     },
     {
-      "ImageUrl": "https://static.wixstatic.com/media/615d66_83d4a1f106c84adbad97514067d650b1~mv2.png/v1/fill/w_468,h_46,al_c,q_80,usm_0.66_1.00_0.01/615d66_83d4a1f106c84adbad97514067d650b1~mv2.webp",
-      "Name": "Delta Dental",
-      "Rank": 9,
+      "Description": "MCIS, Inc. is a healthcare information technology company dedicated to delivering and managing cutting edge products and services. MCIS is a wholly-owned subsidiary of the Marshfield Clinic Health System.\n\nMarshfield Clinic has already utilized MCIS’ products and services to deliver better outcomes at lower costs during the CMS Demonstration Project. This history underscores our fundamental belief that for a healthcare IT company to revolutionize healthcare through improved services, it must be intimately associated with its core constituents: patients and providers.\n\nThis history of collaboration between healthcare provider and the IT service is paramount to the success of MCIS. From inception this model provides access to numerous practicing physicians across more than 80 medical specialties. This access is not just for advice and improvements, but also to test and demonstrate what works in the real world to improve patient care.",
+      "ImageUrl": "https://static.wixstatic.com/media/615d66_645e512f539141b4aef05295e68261c0~mv2.png/v1/fill/w_302,h_87,al_c,lg_1/615d66_645e512f539141b4aef05295e68261c0~mv2.png",
+      "Name": "MCSI",
+      "Rank": 7,
+      "SponsorLevel": {
+        "Name": "Silver Sponsor",
+        "Rank": 1
+      },
+      "TwitterUrl": "mcis_it",
+      "WebsiteUrl": "https://www.mcis.com"
+    },
+    {
+      "Description": "Northcentral Technical College is a premier two-year college of choice. NTC Programs are designed to build a competitive, technologically advanced workforce.",
+      "ImageUrl": "https://static.wixstatic.com/media/615d66_3ea21274f2e84950a981cc0a135c81b0~mv2.jpg/v1/fill/w_300,h_78,al_c,q_80,usm_0.66_1.00_0.01/615d66_3ea21274f2e84950a981cc0a135c81b0~mv2.jpg",
+      "Name": "Northcentral Technical College",
+      "Rank": 8,
       "SponsorLevel": {
         "Name": "Silver Sponsor",
         "Rank": 2
       },
-      "WebsiteUrl": "https://www.deltadentalwi.com/"
+      "TwitterUrl": "NTCNews",
+      "WebsiteUrl": "https://www.ntc.edu"
     },
     {
       "Description": "CyberOne Data owns and operates it's own private data center with multiple carriers, redundant power, climate controlled cooling, clean agent fire suppression and network systems that allow us to quickly deploy dedicated servers, facilitate simple colocation arrangements and provide reliable performance at all times.",
@@ -306,10 +846,22 @@
       "Name": "CyberOne Data",
       "Rank": 9,
       "SponsorLevel": {
-        "Name": "Silver Sponsor",
+        "Name": "Bronze Sponsor",
         "Rank": 2
       },
       "WebsiteUrl": "https://www.cyberonedata.com"
+    },
+    {
+      "Description": "DiGiApp Technologies empowers organizations by taking full advantage of the latest cutting-edge technology. As an innovative leader in IT managed and cloud based services, we provide the expertise to help make the right decisions about where to invest in technology and the ability to execute seamlessly and flawlessly with a winning design, engineering and project management resources.",
+      "ImageUrl": "https://www.digiapps.net/wp-content/uploads/2016/09/digiapps-logo.png",
+      "Name": "DigiApp Technologies",
+      "Rank": 10,
+      "SponsorLevel": {
+        "Name": "Bronze Sponsor",
+        "Rank": 1
+      },
+      "TwitterUrl": "digiappstech",
+      "WebsiteUrl": "https://www.digiapps.net"
     },
     {
       "Id": "78a29e04-f16f-4ecd-b2fd-55287177fc09",
@@ -328,11 +880,23 @@
       "Name": "EO Johnson Business Technologies",
       "Rank": 11,
       "SponsorLevel": {
-        "Name": "Sponsor",
+        "Name": "Lanyard Sponsor",
         "Rank": 1
       },
       "TwitterUrl": "EOJohnsonCo",
       "WebsiteUrl": "https://www.eojohnson.com"
+    },
+    {
+      "Description": "grouve helps coworkers, event-goers and friends create shared moments by bringing real time photos and videos together in one place so everyone can become more visually connected.",
+      "ImageUrl": "https://static.wixstatic.com/media/615d66_6f6b6959c7674373a360a5f276ef8fde~mv2.png/v1/fill/w_307,h_136,al_c,usm_0.66_1.00_0.01/615d66_6f6b6959c7674373a360a5f276ef8fde~mv2.png",
+      "Name": "Grove",
+      "Rank": 12,
+      "SponsorLevel": {
+        "Name": "Media Sponsor",
+        "Rank": 1
+      },
+      "TwitterUrl": "EOJohnsonCo",
+      "WebsiteUrl": "https://grouve.tech"
     }
   ]
 }
