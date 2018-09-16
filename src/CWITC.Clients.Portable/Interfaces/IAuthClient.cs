@@ -5,7 +5,7 @@ namespace CWITC.Clients.Portable
 {
     public interface IAuthClient
     {
-		Task<AccountResponse> LoginAsync();
+		Task LoginAsync();
 
         Task LogoutAsync();
     }

@@ -23,7 +23,7 @@ namespace CWITC.Shared.DataStore
 
 		public virtual async Task InitializeStore()
 		{
-			if(loadedData != null)
+			if(loadedData == null)
 				loadedData = await this.GetDataFile();
 		}
 
@@ -38,14 +38,21 @@ namespace CWITC.Shared.DataStore
 		{
 			if (!initialized) await InitializeStore();
 
-			if (this.loadedData.ContainsKey(this.Identifier))
+			try
 			{
-				var section = json[this.Identifier];
+				if (this.loadedData.ContainsKey(this.Identifier))
+				{
+					var section = loadedData[this.Identifier];
 
-				return section.ToObject<IEnumerable<T>>();
+					return section.ToObject<IEnumerable<T>>();
+				}
+
+				return new List<T>();
 			}
-
-			return new List<T>();
+			catch
+			{
+				return new List<T>();
+			}
 		}
 
 		public virtual async Task<bool> SyncAsync()
@@ -81,7 +88,7 @@ namespace CWITC.Shared.DataStore
 					string response = await client.GetStringAsync(this.github_file_url);
 
 					File.WriteAllText(fileName, response, System.Text.Encoding.UTF8);
-
+					 
 					return JObject.Parse(response);
 				}
 			}

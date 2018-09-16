@@ -111,10 +111,8 @@ namespace CWITC.Clients.Portable
                     await ssoClient.LogoutAsync();
                 }
 
-                // clear sign in data first!
-                Settings.FirstName = string.Empty;
-                Settings.LastName = string.Empty;
-                Settings.Email = string.Empty; //this triggers login text changed!
+				// clear sign in data first!
+				Settings.ClearUserData();
 
                 await ExecuteSyncCommandAsync();
             }

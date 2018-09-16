@@ -17,19 +17,19 @@ namespace CWITC.Shared.DataStore
         public async Task<bool> SyncAllAsync(bool syncUserSpecific)
         {
             var tasks = new List<Task> {
-                CategoryStore.GetItemsAsync(true),
-                SessionStore.GetItemsAsync(true),
-                SpeakerStore.GetItemsAsync(true),
-                SponsorStore.GetItemsAsync(true),
-                EventStore.GetItemsAsync(true),
-                NotificationStore.GetItemsAsync(true),
-                LunchStore.GetItemsAsync(true)
+				CategoryStore.SyncAsync(),
+				SessionStore.SyncAsync(),
+				SpeakerStore.SyncAsync(),
+				SponsorStore.SyncAsync(),
+				EventStore.SyncAsync(),
+				NotificationStore.SyncAsync(),
+				LunchStore.SyncAsync()
             };
 
             if (syncUserSpecific && Settings.Current.IsLoggedIn)
             {
-                tasks.Add(FavoriteStore.GetItemsAsync(true));
-                tasks.Add(FeedbackStore.GetItemsAsync(true));
+				tasks.Add(FavoriteStore.SyncAsync());
+				tasks.Add(FeedbackStore.SyncAsync());
             }
 
             await Task.WhenAll(tasks);

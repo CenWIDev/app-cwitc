@@ -38,7 +38,6 @@
     <Compile Include="Model\SSOUser.cs" />
     <Compile Include="Model\Extensions\DateTimeExtensions.cs" />
     <Compile Include="Model\Extensions\SessionExtensions.cs" />
-    <Compile Include="ViewModel\LoginViewModel.cs" />
     <Compile Include="ViewModel\FilterSessionsViewModel.cs" />
     <Compile Include="Services\FavoriteService.cs" />
     <Compile Include="ViewModel\AboutViewModel.cs" />
@@ -65,6 +64,7 @@
     <Compile Include="ViewModel\LunchLocationsViewModel.cs" />
     <Compile Include="ViewModel\LunchLocationsDetailViewModel.cs" />
     <Compile Include="ViewModel\ILocationViewModel.cs" />
+    <Compile Include="Constants.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
@@ -188,11 +188,6 @@
       <Project>{dfa0f0f6-c396-412e-86a9-e9095f71cc36}</Project>
       <Name>CWITC.Utils</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="sampletweets.txt">
-      <LogicalName>sampletweets.txt</LogicalName>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="..\packages\Xamarin.Forms.2.5.1.527436\build\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.5.1.527436\build\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.targets')" />
 </Project>

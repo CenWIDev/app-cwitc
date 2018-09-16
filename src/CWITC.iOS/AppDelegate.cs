@@ -17,9 +17,8 @@ using CoreSpotlight;
 using CWITC.DataStore.Abstractions;
 using System.Threading.Tasks;
 using Xamarin.Auth;
-using Microsoft.Azure.Mobile;
-using Microsoft.Azure.Mobile.Analytics;
-using Microsoft.Azure.Mobile.Crashes;
+using Microsoft.AppCenter.Analytics;
+using Microsoft.AppCenter.Crashes;
 
 namespace CWITC.iOS
 {
@@ -36,7 +35,9 @@ namespace CWITC.iOS
 
         public override bool OpenUrl(UIApplication application, NSUrl url, string sourceApplication, NSObject annotation)
         {
-			return false;
+			Auth0.OidcClient.ActivityMediator.Instance.Send(url.AbsoluteString);
+
+			return true;
         }
 
         public override bool OpenUrl(UIApplication app, NSUrl url, NSDictionary options)
@@ -64,14 +65,13 @@ namespace CWITC.iOS
             UIView.AppearanceWhenContainedIn(typeof(SLComposeViewController)).TintColor = tint;
 
 #if !DEBUG
-            if (!string.IsNullOrWhiteSpace(ApiKeys.VSMobileCenterApiKeyIOS) && ApiKeys.VSMobileCenterApiKeyIOS != nameof(ApiKeys.VSMobileCenterApiKeyIOS)) 
-            {
-				MobileCenter
-                    .Start(
-                        ApiKeys.VSMobileCenterApiKeyIOS,
-				        typeof(Analytics), 
-                        typeof(Crashes));
-            }
+			if (!string.IsNullOrWhiteSpace(ApiKeys.VSMobileCenterApiKeyIOS))
+			{
+				Microsoft.AppCenter.AppCenter
+				         .Start(ApiKeys.VSMobileCenterApiKeyIOS,
+					typeof(Analytics),
+					typeof(Crashes));
+			}
 #endif
 
             Forms.Init();
@@ -81,8 +81,6 @@ namespace CWITC.iOS
             DependencyService.Register<IAuthClient, Auth0Client>();
 
             ZXing.Net.Mobile.Forms.iOS.Platform.Init();
-
-            SetMinimumBackgroundFetchInterval();
 
             //Random Inits for Linking out.
             Plugin.Share.ShareImplementation.ExcludedUIActivityTypes = new List<NSString>
@@ -220,53 +218,5 @@ namespace CWITC.iOS
 
 #endregion
 
-#region Background Refresh
-
-        private void SetMinimumBackgroundFetchInterval()
-        {
-            UIApplication.SharedApplication.SetMinimumBackgroundFetchInterval(MINIMUM_BACKGROUND_FETCH_INTERVAL);
-        }
-
-        // Minimum number of seconds between a background refresh this is shorter than Android because it is easily killed off.
-        // 20 minutes = 20 * 60 = 1200 seconds
-        private const double MINIMUM_BACKGROUND_FETCH_INTERVAL = 1200;
-
-        // Called whenever your app performs a background fetch
-        public override async void PerformFetch(UIApplication application, Action<UIBackgroundFetchResult> completionHandler)
-        {
-            // Do Background Fetch
-            var downloadSuccessful = false;
-            try
-            {
-                Xamarin.Forms.Forms.Init();//need for dependency services
-                // Download data
-                var manager = DependencyService.Get <IStoreManager>();
-
-                downloadSuccessful = await manager.SyncAllAsync(Settings.Current.IsLoggedIn);
-            }
-            catch (Exception ex)
-            {
-                var logger = DependencyService.Get <ILogger>();
-                ex.Data["Method"] = "PerformFetch";
-                logger.Report(ex);
-            }
-
-            // If you don't call this, your application will be terminated by the OS.
-            // Allows OS to collect stats like data cost and power consumption
-            if (downloadSuccessful)
-            {
-                completionHandler(UIBackgroundFetchResult.NewData);
-                Settings.Current.HasSyncedData = true;
-                Settings.Current.LastSync = DateTime.UtcNow;
-            }
-            else
-            {
-                completionHandler(UIBackgroundFetchResult.Failed);
-            }
-        }
-
-#endregion
-
     }
 }
-

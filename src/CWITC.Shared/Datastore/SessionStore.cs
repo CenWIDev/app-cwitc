@@ -61,7 +61,7 @@ namespace CWITC.Shared.DataStore
         {
             await InitializeStore().ConfigureAwait(false);
 
-            var sessions = (await GetItemsAsync(true)).Where(s => s.Id == id || s.RemoteId == id).ToList();
+            var sessions = (await GetItemsAsync(true)).Where(s => s.Id == id).ToList();
 
             if (sessions == null || sessions.Count == 0)
                 return null;
