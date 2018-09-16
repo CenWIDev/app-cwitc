@@ -1,138 +1,208 @@
 {
-"sponsors": [
-    {
-      "Description": "CWITA is a group of action focused employers in central Wisconsin working together to enhance the image of IT careers and position the region as a hub for IT opportunities. CWITA collaborates with the K-16 education system to strengthen IT career pathways and assist in growing our regional IT workforce.",
-      "Id": "ebd8e1f6-0b60-4f92-bc0f-9916f68f678f",
-      "ImageUrl": "https://static.wixstatic.com/media/615d66_0a380afe71f24ec3a4438aac44d0da0f~mv2.png/v1/fill/w_220,h_68,al_c,usm_0.66_1.00_0.01/615d66_0a380afe71f24ec3a4438aac44d0da0f~mv2.png",
-      "Name": "CWITA",
-      "Rank": 0,
-      "SponsorLevel": {
-        "Name": "Organizer",
-        "Rank": 0
-      },
-      "WebsiteUrl": "http://cwita.org"
-    },
-    {
-      "Description": "Central Wisconsin is FULL of technical enthusists. Let's meet and learn from one another. Great minds are in your backyard!",
-      "Id": "eed0480d-220c-430a-b1b1-8d332462edcd",
-      "ImageUrl": "https://static.wixstatic.com/media/615d66_25923432d6974e4d9babd26c8e608f3d~mv2.jpg/v1/fill/w_208,h_97,al_c,q_80,usm_0.66_1.00_0.01/615d66_25923432d6974e4d9babd26c8e608f3d~mv2.jpg",
-      "Name": "CENWIDEV",
-      "Rank": 1,
-      "SponsorLevel": {
-        "Name": "Organizer",
-        "Rank": 1
-      },
-      "TwitterUrl": "cenwidev",
-      "WebsiteUrl": "http://cenwidev.org"
-    },
-    {
-      "Description": "Mid-State is one of 16 colleges in the Wisconsin Technical College System. It is a leading provider of higher education offering many career opportunities through associate degrees, technical diplomas and certificates. Student-focused and community-based, Mid-State serves a resident population of approximately 165,000 in central Wisconsin.\n\nThe college has campuses in Marshfield, Stevens Point and Wisconsin Rapids, and a learning center in Adams. Visit the College’s website at mstc.edu.\n\n92% of Mid-State alumni are employed within six months after graduation; 79% of graduates work in the Mid-State District comprising all or portions of Adams, Clark, Jackson, Juneau, Marathon, Portage, Waushara, and Wood Counties.",
-      "Id": "3941eb01-ba31-4374-ae9b-57dce7d475f2",
-      "ImageUrl": "https://static.wixstatic.com/media/615d66_7e995f8d8fef408985da8bfaefd4d561~mv2.jpg/v1/fill/w_219,h_50,al_c,q_80,usm_0.66_1.00_0.01/615d66_7e995f8d8fef408985da8bfaefd4d561~mv2.jpg",
-      "Name": "Mid-State Technical College",
-      "Rank": 2,
-      "SponsorLevel": {
-        "Name": "Organizer",
-        "Rank": 2
-      },
-      "TwitterUrl": "followmstc",
-      "WebsiteUrl": "https://www.mstc.edu"
-    },
-    {
-      "Description": "CREATE is a 501(c)3 nonprofit that sees community challenges as opportunities to envision a more vibrant and engaging community. We are building partnerships and streamlining resources to ensure that those creative visions have a real impact on Central Wisconsin. We are making creativity central to community development, economic growth, and our quality of life.",
-      "Id": "0e766c8a-15f6-43de-b10d-2aefd6814299",
-      "ImageUrl": "https://static.wixstatic.com/media/615d66_2cc6da6194ff4187b631ee21e9218a4a~mv2.png/v1/fill/w_207,h_78,al_c,usm_0.66_1.00_0.01/615d66_2cc6da6194ff4187b631ee21e9218a4a~mv2.png",
-      "Name": "Create Portage County",
-      "Rank": 3,
-      "SponsorLevel": {
-        "Name": "Community Partner",
-        "Rank": 0
-      },
-      "TwitterUrl": "createpoco",
-      "WebsiteUrl": "http://www.createportagecounty.org"
-    },
-    {
-        "Description": "A better SIS and ERP experience for school districts and municipalities. We're about more than just software.",
-        "Id": "57e28728-701f-4d9a-9a2e-7fb4a0cae7fd",
-        "ImageUrl": "https://static.wixstatic.com/media/615d66_4bd0173adda347bbb3184523a7f8e91a~mv2.jpg/v1/fill/w_204,h_110,al_c,q_80,usm_0.66_1.00_0.01/615d66_4bd0173adda347bbb3184523a7f8e91a~mv2.jpg",
-        "Name": "Skyward",
-        "Rank": 4,
-        "SponsorLevel": {
-          "Name": "Gold Sponsor",
-          "Rank": 1
+    "featured_events": [
+        {
+            "StartTime": "2017-10-06T07:30:00-06:00",
+            "EndTime": "2017-10-06T08:30:00-06:00",
+            "Title": "Registration Check-ins & Exhibits"
         },
-        "TwitterUrl": "skyward_inc",
-        "WebsiteUrl": "https://www.skyward.com"
-      },
-    {
-      "Description": "Every student can become their most amazing self with the guidance of an expert teacher to unlock their full potential. Renaissance exists to salute those teachers at the heart of every classroom.\n\nWe bring the best of data analytics and research-based practice to support teachers nationwide. Teachers take it from there – after all, their guidance and warmth are the key component of student growth.",
-      "Id": "a83098df-e346-4e6a-9537-dff0e7f5710e",
-      "ImageUrl": "https://static.wixstatic.com/media/615d66_fd56f3314ec44641a613005d88090194~mv2.jpg/v1/fill/w_579,h_52,al_c,q_80,usm_0.66_1.00_0.01/615d66_fd56f3314ec44641a613005d88090194~mv2.jpg",
-      "Name": "Renaissance Learning",
-      "Rank": 5,
-      "SponsorLevel": {
-        "Name": "Silver Sponsor",
-        "Rank": 0
-      },
-      "TwitterUrl": "RenLearnUS",
-      "WebsiteUrl": "https://www.renaissance.com"
-    },   
-    {
-      "Description": "CyberOne Data owns and operates it's own private data center with multiple carriers, redundant power, climate controlled cooling, clean agent fire suppression and network systems that allow us to quickly deploy dedicated servers, facilitate simple colocation arrangements and provide reliable performance at all times.",
-      "ImageUrl": "https://static.wixstatic.com/media/615d66_3385b6dae94d44e5955e97751fb3d76c~mv2.jpg/v1/fill/w_307,h_56,al_c,q_80,usm_0.66_1.00_0.01/615d66_3385b6dae94d44e5955e97751fb3d76c~mv2.jpg",
-      "Name": "CyberOne Data",
-      "Rank": 6,
-      "SponsorLevel": {
-        "Name": "Silver Sponsor",
-        "Rank": 2
-      },
-      "WebsiteUrl": "https://www.cyberonedata.com"
-    },
-    {
-        "Description": "Heartland Farms mission is to produce a healthy and safe food product, maximize profitability, and maintain good ethical values. We are a family-owned and operated farm and plan to ensure this opportunity to the next generation. We strive to make efficient use of inputs, maintain excellent land stewardship practices, and produce high quality commodities for the end user.",
-        "ImageUrl": "https://static.wixstatic.com/media/615d66_4757288db2714da7ad76d07711cd834a~mv2.jpg/v1/fill/w_261,h_166,al_c,q_80,usm_0.66_1.00_0.01/615d66_4757288db2714da7ad76d07711cd834a~mv2.webp",
-        "Name": "Heartland Farms, Inc",
-        "Rank": 7,
-        "SponsorLevel": {
-          "Name": "Silver Sponsor",
-          "Rank": 2
+        {
+            "StartTime": "2017-10-6T08:30:00-06:00",
+            "EndTime": "2017-09-30T9:45:00-06:00",
+            "Title": "Opening & Keynote"
         },
-        "WebsiteUrl": "https://www.cyberonedata.com"
-      },
-    {
-      "Id": "78a29e04-f16f-4ecd-b2fd-55287177fc09",
-      "ImageUrl": "http://www.nrconsults.com/wp-content/themes/nrc_theme-2/images/logo-nrc.png",
-      "Name": "New Resources Consulting",
-      "Rank": 10,
-      "SponsorLevel": {
-        "Name": "Additional Sponsor",
-        "Rank": 1
-      },
-      "WebsiteUrl": "http://www.nrconsults.com"
-    },
-    {
-      "Description": "CyberOne Data owns and operates it's own private data center with multiple carriers, redundant power, climate controlled cooling, clean agent fire suppression and network systems that allow us to quickly deploy dedicated servers, facilitate simple colocation arrangements and provide reliable performance at all times.",
-      "ImageUrl": "https://static.wixstatic.com/media/615d66_93905e998df046078b5ef3cbf67abfc5~mv2.jpg/v1/fill/w_307,h_74,al_c,q_80,usm_0.66_1.00_0.01/615d66_93905e998df046078b5ef3cbf67abfc5~mv2.jpg",
-      "Name": "EO Johnson Business Technologies",
-      "Rank": 11,
-      "SponsorLevel": {
-        "Name": "Additional Sponsor",
-        "Rank": 1
-      },
-      "TwitterUrl": "EOJohnsonCo",
-      "WebsiteUrl": "https://www.eojohnson.com"
-    },
-    {
-        "Description": "Delta Dental is the nation's oldest & largest dental benefits provider. Tweets on oral health tips, industry trends & community benefit news.",
-        "ImageUrl": "https://static.wixstatic.com/media/615d66_83d4a1f106c84adbad97514067d650b1~mv2.png/v1/fill/w_468,h_46,al_c,q_80,usm_0.66_1.00_0.01/615d66_83d4a1f106c84adbad97514067d650b1~mv2.webp",
-        "Name": "Delta Dental",
-        "Rank": 11,
-        "SponsorLevel": {
-          "Name": "Additional Sponsor",
-          "Rank": 1
+        {
+            "StartTime": "2017-10-06T09:45:00-06:00",
+            "EndTime": "2017-09-30T10:00:00-06:00",
+            "Title": "Break/Exibits"
         },
-        "TwitterUrl": "deltadental",
-        "WebsiteUrl": "https://www.eojohnson.com"
-      }
-  ]
-  }
+        {
+            "StartTime": "2017-09-30T10:00:00-06:00",
+            "EndTime": "2017-09-30T10:45:00-06:00",
+            "Title": "Sessions"
+        },
+        {
+            "StartTime": "2017-10-06T10:45:00-06:00",
+            "EndTime": "2017-09-30T11:00:00-06:00",
+            "Title": "Break/Exibits"
+        },
+        {
+            "StartTime": "2017-09-30T11:00:00-06:00",
+            "EndTime": "2017-09-30T11:45:00-06:00",
+            "Title": "Sessions"
+        },
+        {
+            "StartTime": "2017-09-30T11:45:00-06:00",
+            "EndTime": "2017-09-30T13:30:00-06:00",
+            "Title": "Lunch & Networking"
+        },
+        {
+            "StartTime": "2017-09-30T13:30:00-06:00",
+            "EndTime": "2017-09-30T04:15:00-06:00",
+            "Title": "Sessions"
+        },
+        {
+            "StartTime": "2017-10-06T14:15:00-06:00",
+            "EndTime": "2017-09-30T14:30:00-06:00",
+            "Title": "Break/Exibits"
+        },
+        {
+            "StartTime": "2017-09-30T14:30:00-06:00",
+            "EndTime": "2017-09-30T15:15:00-06:00",
+            "Title": "Sessions"
+        },
+        {
+            "StartTime": "2017-10-06T15:15:00-06:00",
+            "EndTime": "2017-09-30T15:30:00-06:00",
+            "Title": "Break/Exibits"
+        },
+        {
+            "StartTime": "2017-09-30T15:30:00-06:00",
+            "EndTime": "2017-09-30T16:00:00-06:00",
+            "Title": "Closing Session"
+        },
+        {
+            "Description": "Join sponsors and attendees on the Patio at Guu's on Main for a happy hour and networking. Guu's on Main is located just south of Cobbletone Hotel.",
+            "StartTime": "2017-09-30T16:00-06:00",
+            "EndTime": "2017-09-30T16:30-06:00",
+            "LocationName": "Guu's on Main",
+            "SponsorId": "78a29e04-f16f-4ecd-b2fd-55287177fc09",
+            "Title": "Networking Social"
+        }
+    ],
+    "sponsors": [
+        {
+            "Description": "CWITA is a group of action focused employers in central Wisconsin working together to enhance the image of IT careers and position the region as a hub for IT opportunities. CWITA collaborates with the K-16 education system to strengthen IT career pathways and assist in growing our regional IT workforce.",
+            "Id": "ebd8e1f6-0b60-4f92-bc0f-9916f68f678f",
+            "ImageUrl": "https://static.wixstatic.com/media/615d66_0a380afe71f24ec3a4438aac44d0da0f~mv2.png/v1/fill/w_220,h_68,al_c,usm_0.66_1.00_0.01/615d66_0a380afe71f24ec3a4438aac44d0da0f~mv2.png",
+            "Name": "CWITA",
+            "Rank": 0,
+            "SponsorLevel": {
+                "Name": "Organizer",
+                "Rank": 0
+            },
+            "WebsiteUrl": "http://cwita.org"
+        },
+        {
+            "Description": "Central Wisconsin is FULL of technical enthusists. Let's meet and learn from one another. Great minds are in your backyard!",
+            "Id": "eed0480d-220c-430a-b1b1-8d332462edcd",
+            "ImageUrl": "https://static.wixstatic.com/media/615d66_25923432d6974e4d9babd26c8e608f3d~mv2.jpg/v1/fill/w_208,h_97,al_c,q_80,usm_0.66_1.00_0.01/615d66_25923432d6974e4d9babd26c8e608f3d~mv2.jpg",
+            "Name": "CENWIDEV",
+            "Rank": 1,
+            "SponsorLevel": {
+                "Name": "Organizer",
+                "Rank": 1
+            },
+            "TwitterUrl": "cenwidev",
+            "WebsiteUrl": "http://cenwidev.org"
+        },
+        {
+            "Description": "Mid-State is one of 16 colleges in the Wisconsin Technical College System. It is a leading provider of higher education offering many career opportunities through associate degrees, technical diplomas and certificates. Student-focused and community-based, Mid-State serves a resident population of approximately 165,000 in central Wisconsin.\n\nThe college has campuses in Marshfield, Stevens Point and Wisconsin Rapids, and a learning center in Adams. Visit the College’s website at mstc.edu.\n\n92% of Mid-State alumni are employed within six months after graduation; 79% of graduates work in the Mid-State District comprising all or portions of Adams, Clark, Jackson, Juneau, Marathon, Portage, Waushara, and Wood Counties.",
+            "Id": "3941eb01-ba31-4374-ae9b-57dce7d475f2",
+            "ImageUrl": "https://static.wixstatic.com/media/615d66_7e995f8d8fef408985da8bfaefd4d561~mv2.jpg/v1/fill/w_219,h_50,al_c,q_80,usm_0.66_1.00_0.01/615d66_7e995f8d8fef408985da8bfaefd4d561~mv2.jpg",
+            "Name": "Mid-State Technical College",
+            "Rank": 2,
+            "SponsorLevel": {
+                "Name": "Organizer",
+                "Rank": 2
+            },
+            "TwitterUrl": "followmstc",
+            "WebsiteUrl": "https://www.mstc.edu"
+        },
+        {
+            "Description": "CREATE is a 501(c)3 nonprofit that sees community challenges as opportunities to envision a more vibrant and engaging community. We are building partnerships and streamlining resources to ensure that those creative visions have a real impact on Central Wisconsin. We are making creativity central to community development, economic growth, and our quality of life.",
+            "Id": "0e766c8a-15f6-43de-b10d-2aefd6814299",
+            "ImageUrl": "https://static.wixstatic.com/media/615d66_2cc6da6194ff4187b631ee21e9218a4a~mv2.png/v1/fill/w_207,h_78,al_c,usm_0.66_1.00_0.01/615d66_2cc6da6194ff4187b631ee21e9218a4a~mv2.png",
+            "Name": "Create Portage County",
+            "Rank": 3,
+            "SponsorLevel": {
+                "Name": "Community Partner",
+                "Rank": 0
+            },
+            "TwitterUrl": "createpoco",
+            "WebsiteUrl": "http://www.createportagecounty.org"
+        },
+        {
+            "Description": "A better SIS and ERP experience for school districts and municipalities. We're about more than just software.",
+            "Id": "57e28728-701f-4d9a-9a2e-7fb4a0cae7fd",
+            "ImageUrl": "https://static.wixstatic.com/media/615d66_4bd0173adda347bbb3184523a7f8e91a~mv2.jpg/v1/fill/w_204,h_110,al_c,q_80,usm_0.66_1.00_0.01/615d66_4bd0173adda347bbb3184523a7f8e91a~mv2.jpg",
+            "Name": "Skyward",
+            "Rank": 4,
+            "SponsorLevel": {
+                "Name": "Gold Sponsor",
+                "Rank": 1
+            },
+            "TwitterUrl": "skyward_inc",
+            "WebsiteUrl": "https://www.skyward.com"
+        },
+        {
+            "Description": "Every student can become their most amazing self with the guidance of an expert teacher to unlock their full potential. Renaissance exists to salute those teachers at the heart of every classroom.\n\nWe bring the best of data analytics and research-based practice to support teachers nationwide. Teachers take it from there – after all, their guidance and warmth are the key component of student growth.",
+            "Id": "a83098df-e346-4e6a-9537-dff0e7f5710e",
+            "ImageUrl": "https://static.wixstatic.com/media/615d66_fd56f3314ec44641a613005d88090194~mv2.jpg/v1/fill/w_579,h_52,al_c,q_80,usm_0.66_1.00_0.01/615d66_fd56f3314ec44641a613005d88090194~mv2.jpg",
+            "Name": "Renaissance Learning",
+            "Rank": 5,
+            "SponsorLevel": {
+                "Name": "Silver Sponsor",
+                "Rank": 0
+            },
+            "TwitterUrl": "RenLearnUS",
+            "WebsiteUrl": "https://www.renaissance.com"
+        },
+        {
+            "Description": "CyberOne Data owns and operates it's own private data center with multiple carriers, redundant power, climate controlled cooling, clean agent fire suppression and network systems that allow us to quickly deploy dedicated servers, facilitate simple colocation arrangements and provide reliable performance at all times.",
+            "ImageUrl": "https://static.wixstatic.com/media/615d66_3385b6dae94d44e5955e97751fb3d76c~mv2.jpg/v1/fill/w_307,h_56,al_c,q_80,usm_0.66_1.00_0.01/615d66_3385b6dae94d44e5955e97751fb3d76c~mv2.jpg",
+            "Name": "CyberOne Data",
+            "Rank": 6,
+            "SponsorLevel": {
+                "Name": "Silver Sponsor",
+                "Rank": 2
+            },
+            "WebsiteUrl": "https://www.cyberonedata.com"
+        },
+        {
+            "Description": "Heartland Farms mission is to produce a healthy and safe food product, maximize profitability, and maintain good ethical values. We are a family-owned and operated farm and plan to ensure this opportunity to the next generation. We strive to make efficient use of inputs, maintain excellent land stewardship practices, and produce high quality commodities for the end user.",
+            "ImageUrl": "https://static.wixstatic.com/media/615d66_4757288db2714da7ad76d07711cd834a~mv2.jpg/v1/fill/w_261,h_166,al_c,q_80,usm_0.66_1.00_0.01/615d66_4757288db2714da7ad76d07711cd834a~mv2.webp",
+            "Name": "Heartland Farms, Inc",
+            "Rank": 7,
+            "SponsorLevel": {
+                "Name": "Silver Sponsor",
+                "Rank": 2
+            },
+            "WebsiteUrl": "https://www.cyberonedata.com"
+        },
+        {
+            "Id": "78a29e04-f16f-4ecd-b2fd-55287177fc09",
+            "ImageUrl": "http://www.nrconsults.com/wp-content/themes/nrc_theme-2/images/logo-nrc.png",
+            "Name": "New Resources Consulting",
+            "Rank": 10,
+            "SponsorLevel": {
+                "Name": "Additional Sponsor",
+                "Rank": 1
+            },
+            "WebsiteUrl": "http://www.nrconsults.com"
+        },
+        {
+            "Description": "CyberOne Data owns and operates it's own private data center with multiple carriers, redundant power, climate controlled cooling, clean agent fire suppression and network systems that allow us to quickly deploy dedicated servers, facilitate simple colocation arrangements and provide reliable performance at all times.",
+            "ImageUrl": "https://static.wixstatic.com/media/615d66_93905e998df046078b5ef3cbf67abfc5~mv2.jpg/v1/fill/w_307,h_74,al_c,q_80,usm_0.66_1.00_0.01/615d66_93905e998df046078b5ef3cbf67abfc5~mv2.jpg",
+            "Name": "EO Johnson Business Technologies",
+            "Rank": 11,
+            "SponsorLevel": {
+                "Name": "Additional Sponsor",
+                "Rank": 1
+            },
+            "TwitterUrl": "EOJohnsonCo",
+            "WebsiteUrl": "https://www.eojohnson.com"
+        },
+        {
+            "Description": "Delta Dental is the nation's oldest & largest dental benefits provider. Tweets on oral health tips, industry trends & community benefit news.",
+            "ImageUrl": "https://static.wixstatic.com/media/615d66_83d4a1f106c84adbad97514067d650b1~mv2.png/v1/fill/w_468,h_46,al_c,q_80,usm_0.66_1.00_0.01/615d66_83d4a1f106c84adbad97514067d650b1~mv2.webp",
+            "Name": "Delta Dental",
+            "Rank": 11,
+            "SponsorLevel": {
+                "Name": "Additional Sponsor",
+                "Rank": 1
+            },
+            "TwitterUrl": "deltadental",
+            "WebsiteUrl": "https://www.eojohnson.com"
+        }
+    ]
+}
