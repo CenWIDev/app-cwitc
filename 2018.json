@@ -1,69 +1,69 @@
 {
     "featured_events": [
         {
-            "StartTime": "2017-10-06T07:30:00-06:00",
-            "EndTime": "2017-10-06T08:30:00-06:00",
+            "StartTime": "2018-10-06T07:30:00-06:00",
+            "EndTime": "2018-10-06T08:30:00-06:00",
             "Title": "Registration Check-ins & Exhibits"
         },
         {
-            "StartTime": "2017-10-6T08:30:00-06:00",
-            "EndTime": "2017-09-30T9:45:00-06:00",
+            "StartTime": "2018-10-06T08:30:00-06:00",
+            "EndTime": "2018-10-06T9:45:00-06:00",
             "Title": "Opening & Keynote"
         },
         {
-            "StartTime": "2017-10-06T09:45:00-06:00",
-            "EndTime": "2017-09-30T10:00:00-06:00",
+            "StartTime": "2018-10-06T09:45:00-06:00",
+            "EndTime": "2018-10-06T10:00:00-06:00",
             "Title": "Break/Exibits"
         },
         {
-            "StartTime": "2017-09-30T10:00:00-06:00",
-            "EndTime": "2017-09-30T10:45:00-06:00",
+            "StartTime": "2018-10-06T10:00:00-06:00",
+            "EndTime": "2018-10-06T10:45:00-06:00",
             "Title": "Sessions"
         },
         {
-            "StartTime": "2017-10-06T10:45:00-06:00",
-            "EndTime": "2017-09-30T11:00:00-06:00",
+            "StartTime": "2018-10-06T10:45:00-06:00",
+            "EndTime": "2018-10-06T11:00:00-06:00",
             "Title": "Break/Exibits"
         },
         {
-            "StartTime": "2017-09-30T11:00:00-06:00",
-            "EndTime": "2017-09-30T11:45:00-06:00",
+            "StartTime": "2018-10-06T11:00:00-06:00",
+            "EndTime": "2018-10-06T11:45:00-06:00",
             "Title": "Sessions"
         },
         {
-            "StartTime": "2017-09-30T11:45:00-06:00",
-            "EndTime": "2017-09-30T13:30:00-06:00",
+            "StartTime": "2018-10-06T11:45:00-06:00",
+            "EndTime": "2018-10-06T13:30:00-06:00",
             "Title": "Lunch & Networking"
         },
         {
-            "StartTime": "2017-09-30T13:30:00-06:00",
-            "EndTime": "2017-09-30T04:15:00-06:00",
+            "StartTime": "2018-10-06T13:30:00-06:00",
+            "EndTime": "2018-10-06T04:15:00-06:00",
             "Title": "Sessions"
         },
         {
-            "StartTime": "2017-10-06T14:15:00-06:00",
-            "EndTime": "2017-09-30T14:30:00-06:00",
+            "StartTime": "2018-10-06T14:15:00-06:00",
+            "EndTime": "2018-10-06T14:30:00-06:00",
             "Title": "Break/Exibits"
         },
         {
-            "StartTime": "2017-09-30T14:30:00-06:00",
-            "EndTime": "2017-09-30T15:15:00-06:00",
+            "StartTime": "2018-10-06T14:30:00-06:00",
+            "EndTime": "2018-10-06T15:15:00-06:00",
             "Title": "Sessions"
         },
         {
-            "StartTime": "2017-10-06T15:15:00-06:00",
-            "EndTime": "2017-09-30T15:30:00-06:00",
+            "StartTime": "2018-10-06T15:15:00-06:00",
+            "EndTime": "2018-10-06T15:30:00-06:00",
             "Title": "Break/Exibits"
         },
         {
-            "StartTime": "2017-09-30T15:30:00-06:00",
-            "EndTime": "2017-09-30T16:00:00-06:00",
+            "StartTime": "2018-10-06T15:30:00-06:00",
+            "EndTime": "2018-10-06T16:00:00-06:00",
             "Title": "Closing Session"
         },
         {
             "Description": "Join sponsors and attendees on the Patio at Guu's on Main for a happy hour and networking. Guu's on Main is located just south of Cobbletone Hotel.",
-            "StartTime": "2017-09-30T16:00-06:00",
-            "EndTime": "2017-09-30T16:30-06:00",
+            "StartTime": "2018-10-06T16:00-06:00",
+            "EndTime": "2018-10-06T16:30-06:00",
             "LocationName": "Guu's on Main",
             "SponsorId": "78a29e04-f16f-4ecd-b2fd-55287177fc09",
             "Title": "Networking Social"
