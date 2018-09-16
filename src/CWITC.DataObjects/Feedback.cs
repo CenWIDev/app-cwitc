@@ -5,9 +5,14 @@
     /// </summary>
     public class Feedback : BaseDataObject
     {
-        public string UserId { get; set; }
         public string SessionId { get; set; }
+
+		public string SessionName { get; set; }
+
+		public string SpeakerNames { get; set; }
+
         public double SessionRating { get; set; }
-        public string FeedbackText { get; set; }
+
+		public string FeedbackText { get; set; }
     }
 }
