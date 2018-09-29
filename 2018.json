@@ -3,8 +3,8 @@
         {
             "Title": "Don't just show up. ",
             "Abstract": "Community, is a word we started using at the start of the 14th century, as a way to define a set of common people. In today’s tech scene, we hear this word used everywhere but do you really feel part of one? For the past decade I’ve spent over 10k hours fostering and developing different communities. Some small, and some large efforts such as THAT Conference but what I’ve come to learn is what I’m here to share.\n\nBeing part of a community is easy, being present and active is something completely different. Many will sign up but won’t even bother showing up, The networks, the opportunities, the support are all right in front of you but you have to take the step, that second step. I’ll explain today’s landscape, explore a few techniques, and help you take that second step.",
-            "StartTime": "2018-10-06T08:30:00-06:00",
-            "EndTime": "2018-10-06T09:45:00-06:00",
+            "StartTime": "2018-10-06T07:30:00-06:00",
+            "EndTime": "2018-10-06T08:45:00-06:00",
             "Id": "1660f708-849c-4076-a9cb-fa5cfcd48313",
             "MainCategory": {
                 "Color": "#4B637E",
@@ -26,6 +26,34 @@
                     "PhotoUrl": "https://mbevivino.files.wordpress.com/2011/08/silhouette_i-m-congnito.jpg",
                     "PositionName": "Founder of THAT Conference"
                 }
+            ]
+        },
+        {
+            "Title": "Get the Boring Stuff Right: A Guide to Keeping Up with the Latest Tech",
+            "Abstract": "Technology is a treadmill. Every year, there's a pile of shiny new things to learn. It's impossible to keep up with all of it. You're constantly asking yourself: \"Which technology stack is going to keep me employed?\"\n\nAs a developer, I love chasing shiny new technologies, but over the years I've learned that making my users happy is way more fulfilling than using the latest technology. After over a decade of building software, I've learned the key to good software is getting the boring stuff right.\n\nIn this talk, you'll learn about why you should spend more time working on evergreen skills. These include skills like creating maintainable code, learning how to learn, and building the right thing. You'll learn what skills have maximum impact and how to improve them. You'll learn how to plan your personal education and make the most of your time. After this talk, you'll be able to sort through the morass of new technologies and make the most of your limited time.",
+            "StartTime": "2018-10-06T09:00:00-06:00",
+            "EndTime": "2018-10-06T09:45:00-06:00",
+            "Id": "629e5a5b-4d88-4e8a-b6bf-5c765abaa455",
+            "MainCategory" : {
+                "Color" : "#B8E986",
+                "Id" : "a5d66c8b-eef1-4ede-892a-d6e808ac9808",
+                "Name" : "Soft Skill",
+                "ShortName" : "Soft Skills"
+              },
+            "Room": {
+                "Name": "Room 113"
+            },  
+            "Speakers": [
+                {
+                    "AvatarUrl": "https://mbevivino.files.wordpress.com/2011/08/silhouette_i-m-congnito.jpg",
+                    "Biography": "Dustin Ewers is a consultant at Centare, where he works to help businesses build better software. Dustin has been building software for over 10 years, specializing in Microsoft technologies. He is an active member of the technical community, speaking at user groups and conferences in and around Wisconsin.",
+                    "CompanyName": "Centare",
+                    "FirstName": "Dustin",
+                    "Id": "bac1d6b0-07f3-4638-8d5a-56a153e5d4c7",
+                    "LastName": "Ewers",
+                    "PhotoUrl": "https://mbevivino.files.wordpress.com/2011/08/silhouette_i-m-congnito.jpg",
+                    "PositionName": "Consultant"
+                  }
             ]
         }
     ],
