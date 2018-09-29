@@ -34,17 +34,11 @@ namespace CWITC.DataObjects
         /// <value>The end time.</value>
         public DateTime? EndTime { get; set; }
 
-        /// <summary>
-        /// Gets or sets a value indicating whether this instance is all day.
-        /// Such as Darwin Lounge for instance
-        /// </summary>
-        /// <value><c>true</c> if this instance is all day; otherwise, <c>false</c>.</value>
-        public bool IsAllDay { get; set; }
-
         public string LocationName { get; set; }
 
         public string SponsorId { get; set; }
 
+		[JsonIgnore]
         /// <summary>
         /// Gets or sets the sponsor if there is one for the event
         /// </summary>

@@ -13,7 +13,7 @@ namespace CWITC.Shared.DataStore
 	public abstract partial class BaseStore<T> : IReadonlyStore<T>
 		where T : IBaseDataObject
 	{
-		string year => "2017";
+		string year => "2018";
 		string github_file_url => $"https://raw.githubusercontent.com/CenWIDev/app-cwitc/app_data/{year}.json";
 
 		JObject loadedData;
@@ -29,7 +29,7 @@ namespace CWITC.Shared.DataStore
 
 		public virtual async Task<T> GetItemAsync(string id)
 		{
-			if (!initialized) await InitializeStore();
+			if (!initialized) await this.InitializeStore();
 
 			return (await GetItemsAsync(false)).FirstOrDefault(x => x.Id == id);
 		}
@@ -37,6 +37,7 @@ namespace CWITC.Shared.DataStore
 		public virtual async Task<IEnumerable<T>> GetItemsAsync(bool forceRefresh)
 		{
 			if (!initialized) await InitializeStore();
+			if (forceRefresh) loadedData = await this.GetDataFile();
 
 			try
 			{
@@ -49,8 +50,10 @@ namespace CWITC.Shared.DataStore
 
 				return new List<T>();
 			}
-			catch
+			catch(Exception ex)
 			{
+				Console.WriteLine(ex.Message);
+				Console.WriteLine(ex.StackTrace);
 				return new List<T>();
 			}
 		}
