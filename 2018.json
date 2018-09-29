@@ -1,4 +1,34 @@
 {
+    "sessions": [
+        {
+            "Title": "Don't just show up. ",
+            "Abstract": "Community, is a word we started using at the start of the 14th century, as a way to define a set of common people. In today’s tech scene, we hear this word used everywhere but do you really feel part of one? For the past decade I’ve spent over 10k hours fostering and developing different communities. Some small, and some large efforts such as THAT Conference but what I’ve come to learn is what I’m here to share.\n\nBeing part of a community is easy, being present and active is something completely different. Many will sign up but won’t even bother showing up, The networks, the opportunities, the support are all right in front of you but you have to take the step, that second step. I’ll explain today’s landscape, explore a few techniques, and help you take that second step.",
+            "EndTime": "2017-09-30T08:00:00-06:00",
+            "StartTime": "2017-09-30T07:45:00-06:00",
+            "Id": "1660f708-849c-4076-a9cb-fa5cfcd48313",
+            "MainCategory": {
+                "Color": "#4B637E",
+                "Id": "ba93bcc2-0ca4-4041-be41-8eb885128a5f",
+                "Name": "Community",
+                "ShortName": "Community"
+            },
+            "Room": {
+                "Name": "Keynote"
+            },  
+            "Speakers": [
+                {
+                    "AvatarUrl": "https://mbevivino.files.wordpress.com/2011/08/silhouette_i-m-congnito.jpg",
+                    "Biography": "Jason Lang has worked in enterprise security for more than 10 years in both offensive and defensive roles.  He has a passion for enterprise defenders working tirelessly to protect their organizations, writing bug-free code (never happens), and telling a good story.",
+                    "CompanyName": "Unspecified",
+                    "FirstName": "Clark",
+                    "Id": "32b477e9-940c-4815-901c-cb4814762f0d",
+                    "LastName": "Sell",
+                    "PhotoUrl": "https://mbevivino.files.wordpress.com/2011/08/silhouette_i-m-congnito.jpg",
+                    "PositionName": "Founder of THAT Conference"
+                }
+            ]
+        }
+    ],
     "featured_events": [
         {
             "StartTime": "2018-10-06T07:30:00-06:00",
@@ -203,6 +233,67 @@
             },
             "TwitterUrl": "deltadental",
             "WebsiteUrl": "https://www.eojohnson.com"
+        }
+    ],
+    "lunch_locations": [
+        {
+            "address1": "900 Block, Clark Street",
+            "address2": "Stevens Point, WI 54481",
+            "category": "Food Truck",
+            "imageUri": "https://www.gannett-cdn.com/-mm-/f7d85f610c6fec9e25cd9504d72dbb25dd375661/c=1-0-959-720&r=x404&c=534x401/local/-/media/2016/05/31/WIGroup/StevensPoint/636003067209178599-13263786-1340256619324828-4126962239843597190-n.jpg",
+            "latitude": 44.522474,
+            "longitude": -89.585493,
+            "name": "Chef C's Munchie Mobile",
+            "website": "https://www.facebook.com/chefcfoodtruck/?fref=ts"
+        },
+        {
+            "address1": "1140 Main St",
+            "address2": "Stevens Point, WI 54481",
+            "category": "Bar & Grill",
+            "imageUri": "http://wiparty.com/Stevens%20Point%20Bars/Guu%27s%20On%20Main/Guu%27s-on-Main-Stevens-Point.jpg",
+            "latitude": 44.523454,
+            "longitude": -89.582776,
+            "name": "Guu's on Main",
+            "website": "https://www.facebook.com/Guus-on-Main-76860951468/"
+        },
+        {
+            "address1": "925 Clark St",
+            "address2": "Stevens Point, WI 54481",
+            "category": "Sandwiches",
+            "imageUri": "http://galaxycomicsandgames.com/wp-content/uploads/2014/06/Galaxy_logo.png",
+            "latitude": 44.522493,
+            "longitude": -89.58529,
+            "name": "Galaxy Comics, Games and More",
+            "website": "http://galaxycomicsandgames.com"
+        },
+        {
+            "address1": "1059 Main St",
+            "address2": "Stevens Point, WI 54481",
+            "category": "Omelets, pancakes, soups & sandwiches",
+            "imageUri": "http://thewoodenchairstevenspoint.com",
+            "latitude": 44.523334,
+            "longitude": -89.583439,
+            "name": "The Wooden Chair"
+        },
+        {
+            "address1": "1410 3rd St",
+            "address2": "Stevens Point, WI 54481",
+            "category": "Coffee & Sandwiches",
+            "imageUri": "http://thecoffeestudio.biz/wp-content/themes/thecoffeestudio/images/logo.png",
+            "latitude": 44.523471,
+            "longitude": -89.583435,
+            "name": "The Coffee Studio",
+            "website": "http://thecoffeestudio.biz"
+        },
+        {
+            "address1": "956 Main St",
+            "address2": "Stevens Point, WI 54481",
+            "category": "Bar & Grill",
+            "imageUri": "https://scontent.feau1-1.fna.fbcdn.net/v/t1.0-9/38297831_317830048957247_2637664722144460800_n.jpg?_nc_cat=104&oh=0a10fd9388ef7356d9eb896244f98eb9&oe=5C52ACD7",
+            "latitude": 44.523614,
+            "longitude": -89.584758,
+            "name": "Main Street Taps",
+            "website": "https://www.facebook.com/MainStreetTaps/"
         }
     ]
 }
