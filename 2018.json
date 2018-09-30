@@ -351,6 +351,174 @@
                     "PositionName": "Senior .Net Consultant"
                 }
             ]
+        },
+        {
+            "Title": "How to build honest business Reporting software?",
+            "Abstract": "Brief introduction of my work with QlikView, along with examples of proper source control operations and design, testing and control optimization, and efficient expressions.",
+            "StartTime": "2018-10-06T13:30:00-06:00",
+            "EndTime": "2018-10-06T14:15:00-06:00",
+            "Id": "0116b985-2e34-415e-8b7c-55e998902394",
+            "MainCategory": {
+                "Color": "#B8E986",
+                "Id": "5292b471-251d-4a79-9859-0a1cd72aa164",
+                "Name": "General Dev",
+                "ShortName": "General Dev"
+            },
+            "Room": {
+                "Name": "Room 113"
+            },
+            "Speakers": [
+                {
+                    "AvatarUrl": "https://mbevivino.files.wordpress.com/2011/08/silhouette_i-m-congnito.jpg",
+                    "Biography": "QlikView developer for retail business analytics. Computer engineering at U of I at Springfield.",
+                    "CompanyName": "Team Schierl Companies",
+                    "FirstName": "Sam",
+                    "Id": "e7ed0cfd-ca76-41dd-824e-569d1eb881aa",
+                    "LastName": "Klein",
+                    "PhotoUrl": "https://mbevivino.files.wordpress.com/2011/08/silhouette_i-m-congnito.jpg",
+                    "PositionName": "Software Development Specialist"
+                }
+            ]
+        },
+        {
+            "Title": "Career growth opportunities through remote work",
+            "Abstract": "Significant opportunities are available for both organizations and professionals around the subject of remote work. Remote work offers organizations the ability to acquire industry leading talent and have a competitive advantage over non-remote work organizations. For professionals, remote work offers opportunities for career advancement and being competitive in a tight labor market. At the end of this session, both managers and professionals will understand the best places to find remote work opportunities, understand the types of remote work engagements, the key approaches for a successful engagement, and the key characteristics to look for in a remote team environment. Entrepreneurs will also gain from this session by learning practical approaches they can apply towards automating their business.",
+            "StartTime": "2018-10-06T13:30:00-06:00",
+            "EndTime": "2018-10-06T14:15:00-06:00",
+            "Id": "0d863fca-3701-4d40-b972-923e31f7f26b",
+            "MainCategory": {
+                "Color": "#B8E986",
+                "Id": "5292b471-251d-4a79-9859-0a1cd72aa164",
+                "Name": "General Dev",
+                "ShortName": "General Dev"
+            },
+            "Room": {
+                "Name": "Room 114"
+            },
+            "Speakers": [
+                {
+                    "AvatarUrl": "https://mbevivino.files.wordpress.com/2011/08/silhouette_i-m-congnito.jpg",
+                    "Biography": "Jonathan Sharp is a remote Senior Software Engineer for NVIDIA working from his home office in Three Lakes, WI. Jonathan has worked remotely since 2008 and is a former entrepreneur having co-founded an enterprise consulting company in 2010. This former organization grew to a staff size of 23 with everyone in the organization working remote and included clients such as: Microsoft, E*TRADE, WalMart, Lowes, Pearson, Scripts Network, AOL, and Purdue Pharma. Jonathan's passion has been growing relationships over distances in the field of IT to find the best talent. He loves the Northwoods and Wisconsin and all that is has to offer his family.",
+                    "CompanyName": "NVIDIA",
+                    "FirstName": "Jonathan",
+                    "Id": "4e58d682-b5db-4f8a-9e5c-6d30b9f62459",
+                    "LastName": "Sharp",
+                    "PhotoUrl": "https://mbevivino.files.wordpress.com/2011/08/silhouette_i-m-congnito.jpg",
+                    "PositionName": "Senior Software Engineer"
+                }
+            ]
+        },
+        {
+            "Title": "Agile for System Administrators/Teams",
+            "Abstract": "How to take the best traits from Agile and apply them to everyday work for System Administrator and System Operations team. What works and what you can leave at the off. How to use tools like Git, Ansible, Chat to better facilitate projects in reaching your end goal.",
+            "StartTime": "2018-10-06T13:30:00-06:00",
+            "EndTime": "2018-10-06T14:15:00-06:00",
+            "Id": "995af047-727a-418b-bc86-a296c92ad752",
+            "MainCategory": {
+                "Color": "#B8E986",
+                "Id": "5292b471-251d-4a79-9859-0a1cd72aa164",
+                "Name": "General Dev",
+                "ShortName": "General Dev"
+            },
+            "Room": {
+                "Name": "Room 115"
+            },
+            "Speakers": [
+                {
+                    "AvatarUrl": "https://mbevivino.files.wordpress.com/2011/08/silhouette_i-m-congnito.jpg",
+                    "Biography": "Father, husband, want to be gear head and laid back recumbent biker who enjoys putting lines of code together and making systems talk to each other. ",
+                    "CompanyName": "Wildcard Corp.",
+                    "FirstName": "Timothy",
+                    "Id": "b650b468-1225-4836-8eac-aa43858c8f66",
+                    "LastName": "Pangburn",
+                    "PhotoUrl": "https://mbevivino.files.wordpress.com/2011/08/silhouette_i-m-congnito.jpg",
+                    "PositionName": "Systems Administrator Sr."
+                }
+            ]
+        },
+        {
+            "Title": "Ready Player Two: VR Game Dev",
+            "Abstract": "In the year 2044, the world is in crisis. To escape that reality, the populace turns to the OASIS, a virtual reality MMORPG that is more than just a game – it is a completely immersive virtual society.\n\nBack in 2018, at the dawn of VR, the seeds of our future were planted. What would come to be a billion dollar market, that changed the world forever, began then…\n\nJoin us in viewing the 2018 talk by the Microsoft MVP Lance Larsen (www.LanceLarsen.com), one of the founders of HOLOSOFT (www.HOLOSOFT.net)\n\nThis historic presentation inspired a generation of VR developers – leading at least in part to the OASIS we have today.\n\nCode focused talk that will get everyone started making Microsoft Mixed Reality VR games…\n\nFocus on the latest and greatest VR hardware and software\nFocus on creating VR experiences within Unity / C# and Visual Studio\nFocus on integrating VR controllers\nFocus on creating your own 3D VR launch icons\n\nTarget Audience and Takeaways: Talk will accommodate a wide range of experience levels, introducing many for the first time to amazing XR/AR/VR technologies – getting them started with the tools and information to get them engaged. Additionally for the more experienced developers, we’ll include strong coding examples and resources to grow quickly and start their development futures in this emerging billion dollar field.",
+            "StartTime": "2018-10-06T13:30:00-06:00",
+            "EndTime": "2018-10-06T14:15:00-06:00",
+            "Id": "55c33cf1-54eb-4f22-ab78-196ad1253399",
+            "MainCategory": {
+                "Color": "#B8E986",
+                "Id": "5292b471-251d-4a79-9859-0a1cd72aa164",
+                "Name": "General Dev",
+                "ShortName": "General Dev"
+            },
+            "Room": {
+                "Name": "Room 116"
+            },
+            "Speakers": [
+                {
+                    "AvatarUrl": "https://mbevivino.files.wordpress.com/2011/08/silhouette_i-m-congnito.jpg",
+                    "Biography": "Lance Larsen (Microsoft MVP) is the Chief Visionary Officer (CVO) of HOLOSOFT (www.HOLOSOFT.net) as well avid community speaker, technology evangelist -and- president of MADdotNET, the Madison .NET developer community www.MADdotNET.com! Specialization in Mixed Reality – Hololens and UX.\n\nAt HOLOSOFT, we’ve thrown ourselves into the deep end of MR/AR/VR; Mixed Reality, Augmented Reality and Virtual Reality – and we’ll catch you up on what we’ve learned, available technologies, emerging technologies and the tools we use to write beautiful applications.\n\nLance is also one of the original organizers of That Conference (www.ThatConference.com) – the original Summer Camp for Geeks in the Wisconsin Dells!\n\n@holosoftnet | www.HOLOSOFT.net\n@lancelarsen | www.LanceLarsen.com | lance@holosoft.net",
+                    "CompanyName": "HOLOSOFT",
+                    "FirstName": "Lance",
+                    "Id": "c896bee7-6185-4893-8429-ab1a5618bed9",
+                    "LastName": "Larsen",
+                    "PhotoUrl": "https://mbevivino.files.wordpress.com/2011/08/silhouette_i-m-congnito.jpg",
+                    "PositionName": "Chief Visionary Officer"
+                }
+            ]
+        },
+        {
+            "Title": "C# Everywhere with Blazor",
+            "Abstract": "C# has long been recognized as a robust and powerful language, favored by developers across the globe. What if you were able to write C# across the stack, even replacing JavaScript code? With the new experimental Blazor framework, you can do it! Come to learn about Blazor, where it is headed, and learn about the power of writing a single-page application (SPA) in C# without any non-standard plugins or extensions.",
+            "StartTime": "2018-10-06T13:30:00-06:00",
+            "EndTime": "2018-10-06T14:15:00-06:00",
+            "Id": "a65e9955-4c38-4af6-a043-9c1d936cfc41",
+            "MainCategory": {
+                "Color": "#B8E986",
+                "Id": "5292b471-251d-4a79-9859-0a1cd72aa164",
+                "Name": "General Dev",
+                "ShortName": "General Dev"
+            },
+            "Room": {
+                "Name": "Room 117"
+            },
+            "Speakers": [
+                {
+                    "AvatarUrl": "https://mbevivino.files.wordpress.com/2011/08/silhouette_i-m-congnito.jpg",
+                    "Biography": "Dave Brock is a software engineer at CUNA Mutual Group in Madison, Wisconsin, where he is a full-stack developer in the Microsoft stack - working on C#, SQL Server, as well as front-end work with JS and TypeScript. He enjoys speaking and sharing his knowledge and blogs at his site (daveabrock.com). When not at his day job, he enjoys various side coding projects and being ordered around by his two small children and his not-so-small dog. ",
+                    "CompanyName": "CUNA Mutual Group",
+                    "FirstName": "Dave",
+                    "Id": "eef92722-4958-4b66-bb5c-867886531e87",
+                    "LastName": "Brock",
+                    "PhotoUrl": "https://mbevivino.files.wordpress.com/2011/08/silhouette_i-m-congnito.jpg",
+                    "PositionName": "Software Engineer"
+                }
+            ]
+        },
+        {
+            "Title": "Applying Design Patterns to Everyday Problems",
+            "Abstract": "Have you read about design patterns but weren’t quite sure how or where to apply them in your application? Have you heard of principles like loose coupling and programming to an abstraction, but didn’t know if you were really doing it right? If so, this talk is for you.\n\nIn this talk, I’ll work from several example code segments and show how to recognize which design pattern would be appropriate. I’ll then show how to refactor the existing code to use the chosen design pattern and demonstrate how the resulting code is more understandable, easier to maintain and easier to test.\n\nAmong the examples I will show is how a dependency on an external system can be refactored using an interface and applying the bridge and adaptor pattern. I’ll also show how to use the decorator pattern to cache results from an external call. Finally, I’ll show examples of how patterns like the strategy pattern and chain of responsibility pattern can replace large blocks of if/else if statements to create a simpler design that is easier to test.\n\nWhen this talk is complete, you will have a good idea of how to recognize where these patterns can be applied in your codebase and how you go about implementing them.",
+            "StartTime": "2018-10-06T13:30:00-06:00",
+            "EndTime": "2018-10-06T14:15:00-06:00",
+            "Id": "8e30775f-f422-47ee-9edf-f2199b847773",
+            "MainCategory": {
+                "Color": "#B8E986",
+                "Id": "5292b471-251d-4a79-9859-0a1cd72aa164",
+                "Name": "General Dev",
+                "ShortName": "General Dev"
+            },
+            "Room": {
+                "Name": "Room 118"
+            },
+            "Speakers": [
+                {
+                    "AvatarUrl": "https://mbevivino.files.wordpress.com/2011/08/silhouette_i-m-congnito.jpg",
+                    "Biography": "I'm a Solutions Architect with over 20 years of experience in building software systems. I started out as a Java developer and then switched to .NET in 2003. I've also done significant work with SQL Server and Oracle. I'm a Pluralsight author and have presented at community events throughout the Midwest.\n\nI try to bring a pragmatic approach to everything I do, making sure the software I build is simple, understandable and balances responsibilities between different components of the system. When speaking or teaching, I emphasize real world scenarios encountered by developers every day and show how to solve them so you can be more effective at what you do.",
+                    "CompanyName": "AdvantEdge Analytics",
+                    "FirstName": "David",
+                    "Id": "d61ec515-6fc1-4483-afd1-a28b1791df09",
+                    "LastName": "Berry",
+                    "PhotoUrl": "https://mbevivino.files.wordpress.com/2011/08/silhouette_i-m-congnito.jpg",
+                    "PositionName": "Solutions Architect"
+                }
+            ]
         }
     ],
     "featured_events": [
