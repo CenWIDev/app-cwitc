@@ -519,6 +519,192 @@
                     "PositionName": "Solutions Architect"
                 }
             ]
+        },
+        {
+            "Title": "Stacking the Deck",
+            "Abstract": "Wildcard debuts and demonstrates experimental and production, in-house, security technologies and tools. We'll go over design considerations, implementation, use cases, and real world scenarios.",
+            "StartTime": "2018-10-06T14:30:00-06:00",
+            "EndTime": "2018-10-06T15:15:00-06:00",
+            "Id": "820cb274-cb96-4a13-8337-de456106aa3d",
+            "MainCategory": {
+                "Color": "#B8E986",
+                "Id": "5292b471-251d-4a79-9859-0a1cd72aa164",
+                "Name": "General Dev",
+                "ShortName": "General Dev"
+            },
+            "Room": {
+                "Name": "Room 113"
+            },
+            "Speakers": [
+                {
+                    "AvatarUrl": "https://mbevivino.files.wordpress.com/2011/08/silhouette_i-m-congnito.jpg",
+                    "Biography": "Daniel Cronce is a penetration tester for Wildcard Corp. He likes to push the boundaries and test assumptions in everything he does.\n\nWhen he isn't actively red-teaming for a client, he hacks on tools and toys to make his job easier.",
+                    "CompanyName": "WildCard Corp.",
+                    "FirstName": "Daniel",
+                    "Id": "42cfc1d1-b6c1-4715-b677-63af43bef4e2",
+                    "LastName": "Cronce",
+                    "PhotoUrl": "https://mbevivino.files.wordpress.com/2011/08/silhouette_i-m-congnito.jpg",
+                    "PositionName": "Penetration Tester"
+                },
+                {
+                    "AvatarUrl": "https://mbevivino.files.wordpress.com/2011/08/silhouette_i-m-congnito.jpg",
+                    "Biography": "Justin Moravec is an information security specialist at Wildcard Corp. Justin has worked in information security and information technology for the last 8 years. His background stems from working with with Wildcard Corp and government entities such as DoD and NGA.",
+                    "CompanyName": "WildCard Corp.",
+                    "FirstName": "Justin",
+                    "Id": "7bb56f78-3131-4718-95da-24b215d287f3",
+                    "LastName": "Moravec",
+                    "PhotoUrl": "https://mbevivino.files.wordpress.com/2011/08/silhouette_i-m-congnito.jpg",
+                    "PositionName": "Information Security Specialist"
+                }
+            ]
+        },
+        {
+            "Title": "Integrating Machine and Statistical Learning with Analytics Knowledge Management",
+            "Abstract": "This talk is based on the work developed (Edwards and Rodriguez, 2018) on the relationship between analytics, big data and knowledge management. The presentation includes a conceptual action-orientated model connecting data, analytics techniques, knowledge and patterns/insights. In the conversation, there is an illustration of categories and examples of analytics/big data projects, comparing several applications.\n\nA particular focus is the difference between one-off projects, even if they lead to ongoing results, such as sensor monitoring, and ongoing activity or a series of projects. In the latter, we expect to find influences of knowledge on data (what to collect, and standardization of meaning), knowledge on techniques (new techniques developed in the light of past examples) and action on knowledge (learning from skilled practice).\n\nLinks will also be made to the higher-level issues that drive analytics efforts - or at least should do. These include a definition of problems, goals, and objectives, and measurement of organizational/project performance. This raises the question of the relationship between knowledge management and strategic risk management.",
+            "StartTime": "2018-10-06T14:30:00-06:00",
+            "EndTime": "2018-10-06T15:15:00-06:00",
+            "Id": "fa845b7d-c44b-47fb-9b53-1c65b044d81b",
+            "MainCategory": {
+                "Color": "#B8E986",
+                "Id": "5292b471-251d-4a79-9859-0a1cd72aa164",
+                "Name": "General Dev",
+                "ShortName": "General Dev"
+            },
+            "Room": {
+                "Name": "Room 114"
+            },
+            "Speakers": [
+                {
+                    "AvatarUrl": "https://mbevivino.files.wordpress.com/2011/08/silhouette_i-m-congnito.jpg",
+                    "Biography": "Eduardo Rodriguez is the Sentry Insurance Endowed Chair in Business Analytics at the University of Wisconsin - Stevens Point.  He is Analytics Adjunct Professor at Telfer School of Management, University of Ottawa, Canada; Principal of IQAnalytics Inc., a Research Centre and Consultancy in Canada ad Senior Associate-Faculty of the Center for Dynamic Leadership Models in Global Business at The Leadership Alliance Inc. He holds a BMath and an MBA, from Los Andes University, Colombia, an MSc. in Mathematics, from Concordia University, Canada, and a Ph.D. from Aston Business School, UK. He has extensive experience in knowledge and risk management and in analytics in financial institutions. He has been Knowledge Management Advisor and Quantitative Analyst at EDC Canada, and Regional Director of PRMIA in Ottawa, and is the creator of the Think-Tank in Analytics, author of six books in analytics, reviewer for four journals and with publications in various peer-reviewed journals and conferences. His main research interest is in the application of knowledge management to risk management and business analytics.",
+                    "CompanyName": "University of Wisconsin Stevens Point",
+                    "FirstName": "Eduardo",
+                    "Id": "b5da110f-3135-4a94-b775-8d6efa15ca24",
+                    "LastName": "Rodriguez",
+                    "PhotoUrl": "https://mbevivino.files.wordpress.com/2011/08/silhouette_i-m-congnito.jpg"
+                }
+            ]
+        },
+        {
+            "Title": "Setting Priority in the Enterprise",
+            "Abstract": "Mature enterprises will always have more work requested from their IT teams than can actually be delivered at any one time. I'll discuss some how a Product Owner can get a handle on all the work, create visibility to the entire organization and prioritize so there is always just one \"number one priority\".",
+            "StartTime": "2018-10-06T14:30:00-06:00",
+            "EndTime": "2018-10-06T15:15:00-06:00",
+            "Id": "2d48c220-a96e-4d11-84f2-c96fa264c672",
+            "MainCategory": {
+                "Color": "#B8E986",
+                "Id": "5292b471-251d-4a79-9859-0a1cd72aa164",
+                "Name": "General Dev",
+                "ShortName": "General Dev"
+            },
+            "Room": {
+                "Name": "Room 115"
+            },
+            "Speakers": [
+                {
+                    "AvatarUrl": "https://mbevivino.files.wordpress.com/2011/08/silhouette_i-m-congnito.jpg",
+                    "Biography": "25 years in IT; from programmer to project manager to manager to product owner. I utilize all I know of IT and business to prioritize work that will bring the greatest value to the business.  ",
+                    "CompanyName": "Delta Dental of Wisconsin",
+                    "FirstName": "Aaron",
+                    "Id": "a7f0d363-f4fe-472b-bfc5-bf765468121c",
+                    "LastName": "Kremin",
+                    "PhotoUrl": "https://mbevivino.files.wordpress.com/2011/08/silhouette_i-m-congnito.jpg",
+                    "PositionName" : "Product Owner"
+                },
+                {
+                    "AvatarUrl": "https://mbevivino.files.wordpress.com/2011/08/silhouette_i-m-congnito.jpg",
+                    "CompanyName": "Delta Dental of Wisconsin",
+                    "FirstName": "Michael",
+                    "Id": "8f8a2700-c2fd-4648-9a67-510c5ada0c29",
+                    "LastName": "Upright",
+                    "PhotoUrl": "https://mbevivino.files.wordpress.com/2011/08/silhouette_i-m-congnito.jpg",
+                    "PositionName" : "Director of IT"
+                }
+            ]
+        },
+        {
+            "Title": "How to build a highly scalable web and mobile-ended application without managing servers",
+            "Abstract": "Starting a new web or mobile project is always fun for a developer. However, as the project moves on, requirements can get increasingly complex fast. Building a highly secure login experience, user analytics, managing storage, offline support, caching, defining APIs, and making everything scalable and secure are all non-trivial exercises. Further, many of these non-functional requirements are really just table stakes, and not what sets your app apart in the market. In this session, we will show you how to build a web and mobile application that enables all of these non-functional requirements in just a few lines of code using cloud-based backend services that enable you to move faster in getting your unique application features to market without worrying about the heavy lifting on the backend.",
+            "StartTime": "2018-10-06T14:30:00-06:00",
+            "EndTime": "2018-10-06T15:15:00-06:00",
+            "Id": "39f80bc1-fa97-4443-ab56-763e4609463d",
+            "MainCategory": {
+                "Color": "#B8E986",
+                "Id": "5292b471-251d-4a79-9859-0a1cd72aa164",
+                "Name": "General Dev",
+                "ShortName": "General Dev"
+            },
+            "Room": {
+                "Name": "Room 116"
+            },
+            "Speakers": [
+                {
+                    "AvatarUrl": "https://mbevivino.files.wordpress.com/2011/08/silhouette_i-m-congnito.jpg",
+                    "Biography": "Andrew has 20+ years of experience building consumer-facing web applications as a full-stack developer and architect. He has held various software engineering, architecture, and leadership roles in companies large and small, including Wisconsin-based Renaissance Learning.\n\nAndy worked for 11 years for Pearson, a global education company, and was privileged to lead an architecture team that spanned the globe and supported a $1B part of the business. During that time, he worked extensively on API standards, architecture and DevOps practices, and content strategy.\n\nAndy currently works remotely from Rhinelander, WI, as a solutions architect for Amazon Web Services.",
+                    "CompanyName": "Amazon Web Services",
+                    "FirstName": "Andrew",
+                    "Id": "727e71c7-ce46-49c2-a288-330adc901c1d",
+                    "LastName": "Elmhorst",
+                    "PhotoUrl": "https://mbevivino.files.wordpress.com/2011/08/silhouette_i-m-congnito.jpg",
+                    "PositionName" : "Senior Solutions Architect"
+                }
+            ]
+        },
+        {
+            "Title": "Exception Driven Development",
+            "Abstract": "What is \"Exception Driven Development\"? If customer-facing issues are your top priority, then you already adhere to the primary principle of Exception Driven Development.\n\nIt's a pretty simple concept: Collect application data, especially regarding errors and crashes, and then focus on fixing those problems that your users are actually experiencing. Join me for 60 minutes and I'll walk you through what you're doing wrong with your current log collection approach, and how you should be doing it. Additionally, we'll cover visualizing errors in a more meaningful manner that eliminates all the noise.",
+            "StartTime": "2018-10-06T14:30:00-06:00",
+            "EndTime": "2018-10-06T15:15:00-06:00",
+            "Id": "4dca843f-2643-49d5-812a-89c3b0d096c0",
+            "MainCategory": {
+                "Color": "#B8E986",
+                "Id": "5292b471-251d-4a79-9859-0a1cd72aa164",
+                "Name": "General Dev",
+                "ShortName": "General Dev"
+            },
+            "Room": {
+                "Name": "Room 117"
+            },
+            "Speakers": [
+                {
+                    "AvatarUrl": "https://mbevivino.files.wordpress.com/2011/08/silhouette_i-m-congnito.jpg",
+                    "Biography": "MVP, ❤ OSS, Distributed Newbie, Pilot, Snowboarder & Bee Keeper!",
+                    "CompanyName": "Exceptionless",
+                    "FirstName": "Blake",
+                    "Id": "aa0e3d62-c118-4129-b85a-0d4a090846be",
+                    "LastName": "Niemyjski",
+                    "PhotoUrl": "https://mbevivino.files.wordpress.com/2011/08/silhouette_i-m-congnito.jpg",
+                    "PositionName" : "Vice President"
+                }
+            ]
+        },
+        {
+            "Title": "Get Started with Windows 10 IoT Core!",
+            "Abstract": "Microsoft has a special version of Windows 10 to target Internet of Things (IoT) devices, where you can develop using your favorite tech like Visual Studio and C#.\n\nThis session will provide a concise walk-through of getting started with Win10 IoT Core on a Rasberry Pi while discussing pros/cons from burnt-fingers in the field. We’ll discuss the development side of IoT, meaning from the device, to the code and sending it to the cloud, like Azure. We will not be covering the Big Data and reporting side of IoT in this session other than mentions of how that fits into the bigger picture.\n\nYou’ll leave understanding how to quickly get started and remove the barriers to entry for you own side-project or even a pitch to make at your job.",
+            "StartTime": "2018-10-06T14:30:00-06:00",
+            "EndTime": "2018-10-06T15:15:00-06:00",
+            "Id": "0477026e-d3cb-4380-917f-e7035208531b",
+            "MainCategory": {
+                "Color": "#B8E986",
+                "Id": "5292b471-251d-4a79-9859-0a1cd72aa164",
+                "Name": "General Dev",
+                "ShortName": "General Dev"
+            },
+            "Room": {
+                "Name": "Room 117"
+            },
+            "Speakers": [
+                {
+                    "AvatarUrl": "https://mbevivino.files.wordpress.com/2011/08/silhouette_i-m-congnito.jpg",
+                    "Biography": "Greg Levenhagen is a Principal Consultant with Skyline Technologies, a Microsoft Regional Director (RD) and a Microsoft Most Valuable Professional (MVP). He has a great passion for giving back to the community and teaching. A true enthusiast of computer science, with passions and interests including AR/MR/VR, mobile, UX, architecture, distributed computing, automated testing, web, agile, 3D/games, cloud, languages and much more. Greg speaks at conferences like ThatConference, CodeMash, VSLive and Code PaLOUsa. He is also a Microsoft Certified Trainer (MCT), board member of ThatConference, president of the Milwaukee Code Camp, president of the Northeast WI Code Camp, president of the Northeast WI Developers User Group, co-organizer of the Fox Valley Game Development Meetup, co-organizer of the Midwest Azure User Group, organizer of MobileMKE, cofounder of the Northeast WI Agile User Group, INETA speaker and IEEE and ACM member.",
+                    "CompanyName": "Skyline Technologies",
+                    "FirstName": "Greg",
+                    "Id": "bdbf2e4e-8697-48c3-af84-2bfe93ef5723",
+                    "LastName": "Levenhagen",
+                    "PhotoUrl": "https://mbevivino.files.wordpress.com/2011/08/silhouette_i-m-congnito.jpg",
+                    "PositionName": "Principal Consultant"
+                }
+            ]
         }
     ],
     "featured_events": [
