@@ -48,6 +48,9 @@ namespace CWITC.DataObjects
         [JsonIgnore]
         public bool HasSponsor => Sponsor != null;
 
+		[JsonIgnore]
+		public bool HasLocation => !string.IsNullOrEmpty(LocationName);
+
         [JsonIgnore]
         public DateTime StartTimeOrderBy { get { return StartTime.HasValue ? StartTime.Value : DateTime.MinValue; } }
     }

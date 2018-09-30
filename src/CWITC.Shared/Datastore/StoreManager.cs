@@ -22,7 +22,6 @@ namespace CWITC.Shared.DataStore
 				SpeakerStore.SyncAsync(),
 				SponsorStore.SyncAsync(),
 				EventStore.SyncAsync(),
-				NotificationStore.SyncAsync(),
 				LunchStore.SyncAsync()
             };
 
@@ -44,9 +43,6 @@ namespace CWITC.Shared.DataStore
         }
 
         #endregion
-
-        INotificationStore notificationStore;
-        public INotificationStore NotificationStore => notificationStore ?? (notificationStore  = DependencyService.Get<INotificationStore>());
 
         ICategoryStore categoryStore;
         public ICategoryStore CategoryStore => categoryStore ?? (categoryStore  = DependencyService.Get<ICategoryStore>());

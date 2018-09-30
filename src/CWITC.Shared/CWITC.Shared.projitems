@@ -15,7 +15,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)Datastore\EventStore.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Datastore\FavoriteStore.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Datastore\FeedbackStore.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Datastore\NotificationStore.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Datastore\SessionStore.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Datastore\SpeakerStore.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Datastore\SponsorStore.cs" />

@@ -21,7 +21,6 @@ namespace CWITC.Clients.Portable
         Sponsor,
         Login,
         Event,
-        Notification,
         TweetImage,
         Filter,
         Information,

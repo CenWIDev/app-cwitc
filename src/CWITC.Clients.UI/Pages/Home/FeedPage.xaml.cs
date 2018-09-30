@@ -50,15 +50,6 @@ namespace CWITC.Clients.UI
                     await NavigationService.PushAsync(Navigation, sessionDetails);
                     ListViewSessions.SelectedItem = null;
                 }; 
-
-            NotificationStack.GestureRecognizers.Add(new TapGestureRecognizer
-                {
-                    Command = new Command(async () => 
-                        {
-                            App.Logger.TrackPage(AppPage.Notification.ToString());
-                            await NavigationService.PushAsync(Navigation, new NotificationsPage());
-                        })
-                });
         }
 
         protected override void OnAppearing()
@@ -66,19 +57,11 @@ namespace CWITC.Clients.UI
             base.OnAppearing();
 
             UpdatePage();
-
-            MessagingService.Current.Subscribe<string>(MessageKeys.NavigateToImage, async (m, image) =>
-                {
-                    App.Logger.TrackPage(AppPage.TweetImage.ToString(), image);
-                    await NavigationService.PushModalAsync(Navigation, new EvolveNavigationPage(new TweetImagePage(image)));
-                });
-
         }
 
         protected override void OnDisappearing()
         {
             base.OnDisappearing();
-            MessagingService.Current.Unsubscribe<string>(MessageKeys.NavigateToImage);
         }
 
         bool firstLoad = true;
@@ -104,9 +87,6 @@ namespace CWITC.Clients.UI
                     favoritesTime = Settings.Current.LastFavoriteTime;
                     ViewModel.LoadSessionsCommand.Execute(null);
                 }
-
-                if (ViewModel.Notification == null)
-                    ViewModel.LoadNotificationsCommand.Execute(null);
             }
 
         }

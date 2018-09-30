@@ -39,7 +39,6 @@
     <Compile Include="ICategoryStore.cs" />
     <Compile Include="IStoreManager.cs" />
     <Compile Include="IEventStore.cs" />
-    <Compile Include="INotificationStore.cs" />
     <Compile Include="ILunchStore.cs" />
   </ItemGroup>
   <Import Project="..\CWITC.DataObjects\CWITC.Backend.Shared.projitems" Label="Shared" Condition="Exists('..\CWITC.DataObjects\CWITC.Backend.Shared.projitems')" />
@@ -48,9 +47,6 @@
   <ItemGroup>
     <Reference Include="System.Net.Http.Primitives">
       <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\portable-net45+win8\System.Net.Http.Primitives.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Net.Http.Extensions">
-      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\portable-net45+win8\System.Net.Http.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="SQLitePCL">
       <HintPath>..\packages\SQLitePCL.3.8.7.2\lib\portable-net45+sl50+win+wpa81+wp80+MonoAndroid10+xamarinios10+MonoTouch10\SQLitePCL.dll</HintPath>
@@ -99,6 +95,9 @@
     </Reference>
     <Reference Include="Microsoft.Azure.Mobile.Client.SQLiteStore">
       <HintPath>..\packages\Microsoft.Azure.Mobile.Client.SQLiteStore.4.0.2\lib\portable-net45+win8+wp8+wpa81\Microsoft.Azure.Mobile.Client.SQLiteStore.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Extensions">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\portable-net45+win8\System.Net.Http.Extensions.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

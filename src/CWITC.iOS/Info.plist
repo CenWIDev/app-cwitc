@@ -37,16 +37,6 @@
 	<array>
 		<dict>
 			<key>UIApplicationShortcutItemTitle</key>
-			<string>Tweet</string>
-			<key>UIApplicationShortcutItemType</key>
-			<string>org.cenwidev.cwitc.tweet</string>
-			<key>UIApplicationShortcutItemIconFile</key>
-			<string>quickaction_tweet</string>
-			<key>UIApplicationShortcutItemSubtitle</key>
-			<string>#CWITC</string>
-		</dict>
-		<dict>
-			<key>UIApplicationShortcutItemTitle</key>
 			<string>Schedule</string>
 			<key>UIApplicationShortcutItemType</key>
 			<string>org.cenwidev.cwitc.schedule</string>
@@ -110,7 +100,7 @@
 	<key>CFBundleIdentifier</key>
 	<string>org.cenwidev.cwitc</string>
 	<key>CFBundleName</key>
-	<string>CWITC 18</string>
+	<string>CWITC &apos;18</string>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
@@ -132,7 +122,7 @@
 		<string>fbshareextension</string>
 	</array>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0.5</string>
+	<string>1.1.0</string>
 	<key>CFBundleVersion</key>
 	<string>0</string>
 </dict>

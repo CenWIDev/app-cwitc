@@ -471,6 +471,9 @@
     <BundleResource Include="Resources\ic_view_list.png" />
     <BundleResource Include="Resources\ic_view_list%402x.png" />
     <BundleResource Include="Resources\ic_view_list%403x.png" />
+    <BundleResource Include="Resources\tab_lunch.png" />
+    <BundleResource Include="Resources\tab_lunch%402x.png" />
+    <BundleResource Include="Resources\tab_lunch%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

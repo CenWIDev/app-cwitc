@@ -27,8 +27,6 @@ namespace CWITC.iOS
     {
         public static class ShortcutIdentifier
         {
-            public const string Tweet = "org.cenwidev.cwitc.tweet";
-            public const string Announcements = "org.cenwidev.cwitc.announcements";
             public const string Schedule = "org.cenwidev.cwitc.schedule";
             public const string Lunch = "org.cenwidev.cwitc.lunch";
         }
@@ -158,41 +156,13 @@ namespace CWITC.iOS
             // Take action based on the shortcut type
             switch (shortcutItem.Type)
             {
-                case ShortcutIdentifier.Tweet:
-                    Console.WriteLine("QUICKACTION: Tweet");
-                    var slComposer = SLComposeViewController.FromService(SLServiceType.Twitter);
-                    if (slComposer == null)
-                    {
-                        new UIAlertView("Unavailable", "Twitter is not available, please sign in on your devices settings screen.", null, "OK").Show();
-                    }
-                    else
-                    {
-                        slComposer.SetInitialText("#CWITC");
-                        if (slComposer.EditButtonItem != null)
-                        {
-                            slComposer.EditButtonItem.TintColor = UIColor.FromRGB(118, 53, 235);
-                        }
-                        slComposer.CompletionHandler += (result) =>
-                        {
-                            InvokeOnMainThread(() => UIApplication.SharedApplication.KeyWindow.RootViewController.DismissViewController(true, null));
-                        };
-                        
-                        UIApplication.SharedApplication.KeyWindow.RootViewController.PresentViewControllerAsync(slComposer, true);
-                    }
-                    handled = true;
-                    break;
-                case ShortcutIdentifier.Announcements:
-                    Console.WriteLine("QUICKACTION: Accouncements");
-                    ContinueNavigation(AppPage.Notification);
-                    handled = true;
-                    break;
                 case ShortcutIdentifier.Schedule:
                     Console.WriteLine("QUICKACTION: Schedule");
                     ContinueNavigation(AppPage.Schedule);
                     handled = true;
                     break;
                 case ShortcutIdentifier.Lunch:
-					Console.WriteLine("QUICKACTION: Lunhc Locations");
+					Console.WriteLine("QUICKACTION: Lunch Locations");
                     ContinueNavigation(AppPage.LunchLocations);
 					handled = true;
 					break;

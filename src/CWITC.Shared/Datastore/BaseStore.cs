@@ -13,18 +13,21 @@ namespace CWITC.Shared.DataStore
 	public abstract partial class BaseStore<T> : IReadonlyStore<T>
 		where T : IBaseDataObject
 	{
+		// all data for the app is in a single json file
+		// i know, gross. deal with it (⌐■_■)
+		static JObject LoadedData;
+
 		string year => "2018";
 		string github_file_url => $"https://raw.githubusercontent.com/CenWIDev/app-cwitc/app_data/{year}.json";
 
-		JObject loadedData;
-		bool initialized => loadedData != null;
+		bool initialized => LoadedData != null;
 
 		public abstract string Identifier { get; }
 
 		public virtual async Task InitializeStore()
 		{
-			if(loadedData == null)
-				loadedData = await this.GetDataFile();
+			if(LoadedData == null)
+				LoadedData = await this.GetDataFile();
 		}
 
 		public virtual async Task<T> GetItemAsync(string id)
@@ -37,13 +40,13 @@ namespace CWITC.Shared.DataStore
 		public virtual async Task<IEnumerable<T>> GetItemsAsync(bool forceRefresh)
 		{
 			if (!initialized) await InitializeStore();
-			if (forceRefresh) loadedData = await this.GetDataFile();
+			if (forceRefresh) LoadedData = await this.GetDataFile();
 
 			try
 			{
-				if (this.loadedData.ContainsKey(this.Identifier))
+				if (LoadedData.ContainsKey(this.Identifier))
 				{
-					var section = loadedData[this.Identifier];
+					var section = LoadedData[this.Identifier];
 
 					return section.ToObject<IEnumerable<T>>();
 				}
@@ -61,12 +64,12 @@ namespace CWITC.Shared.DataStore
 		public virtual async Task<bool> SyncAsync()
 		{
 			// todo: ??
-			loadedData = await GetDataFile(true);
+			LoadedData = await GetDataFile(true);
 
 			return true;
 		}
 
-		private async Task<JObject> GetDataFile(bool forceDownload = false)
+		async Task<JObject> GetDataFile(bool forceDownload = false)
 		{
 			string fileName = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), $"{this.year}.json");
 

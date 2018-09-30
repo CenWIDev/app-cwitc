@@ -56,11 +56,9 @@
     <Compile Include="Interfaces\IWiFIConfig.cs" />
     <Compile Include="Model\AppPage.cs" />
     <Compile Include="Interfaces\IToast.cs" />
-    <Compile Include="ViewModel\NotificationsViewModel.cs" />
     <Compile Include="ViewModel\FeedbackViewModel.cs" />
     <Compile Include="Interfaces\ILaunchTwitter.cs" />
     <Compile Include="Language.cs" />
-    <Compile Include="Model\Tweet.cs" />
     <Compile Include="ViewModel\LunchLocationsViewModel.cs" />
     <Compile Include="ViewModel\LunchLocationsDetailViewModel.cs" />
     <Compile Include="ViewModel\ILocationViewModel.cs" />
@@ -75,9 +73,6 @@
   <ItemGroup>
     <Reference Include="System.Net.Http.Primitives">
       <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\portable-net45+win8+wpa81\System.Net.Http.Primitives.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Net.Http.Extensions">
-      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\portable-net45+win8+wpa81\System.Net.Http.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="SQLitePCL">
       <HintPath>..\packages\SQLitePCL.3.8.7.2\lib\portable-net45+sl50+win+wpa81+wp80+MonoAndroid10+xamarinios10+MonoTouch10\SQLitePCL.dll</HintPath>
@@ -172,6 +167,9 @@
     </Reference>
     <Reference Include="Xamarin.Forms.Maps">
       <HintPath>..\packages\Xamarin.Forms.Maps.2.5.1.527436\lib\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.Maps.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Extensions">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\portable-net45+win8+wpa81\System.Net.Http.Extensions.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

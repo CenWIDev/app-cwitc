@@ -38,7 +38,6 @@ namespace CWITC.Clients.Portable
 				IsBusy = true;
 				var tasks = new Task[]
 					{
-						ExecuteLoadNotificationsCommandAsync(),
 						ExecuteLoadSessionsCommandAsync()
 					};
 
@@ -52,61 +51,6 @@ namespace CWITC.Clients.Portable
 			finally
 			{
 				IsBusy = false;
-			}
-		}
-
-		Notification notification;
-		public Notification Notification
-		{
-			get { return notification; }
-			set { SetProperty(ref notification, value); }
-		}
-
-		bool loadingNotifications;
-		public bool LoadingNotifications
-		{
-			get { return loadingNotifications; }
-			set { SetProperty(ref loadingNotifications, value); }
-		}
-
-		bool noNotifications;
-		public bool NoNotifications
-		{
-			get { return noNotifications; }
-			set { SetProperty(ref noNotifications, value); }
-		}
-
-		ICommand loadNotificationsCommand;
-		public ICommand LoadNotificationsCommand =>
-			loadNotificationsCommand ?? (loadNotificationsCommand = new Command(async () => await ExecuteLoadNotificationsCommandAsync()));
-
-		async Task ExecuteLoadNotificationsCommandAsync()
-		{
-			if (LoadingNotifications)
-				return;
-			LoadingNotifications = true;
-#if DEBUG
-			await Task.Delay(1000);
-#endif
-
-			try
-			{
-				Notification = await StoreManager.NotificationStore.GetLatestNotification();
-			}
-			catch (Exception ex)
-			{
-				ex.Data["method"] = "ExecuteLoadNotificationsCommandAsync";
-				Logger.Report(ex);
-				Notification = new Notification
-				{
-					Date = DateTime.UtcNow,
-					Text = "Welcome to CWITC!"
-				};
-			}
-			finally
-			{
-				LoadingNotifications = false;
-				NoNotifications = Notification == null;
 			}
 		}
 
