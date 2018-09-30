@@ -40,7 +40,7 @@ namespace CWITC.Shared.DataStore
 		public virtual async Task<IEnumerable<T>> GetItemsAsync(bool forceRefresh)
 		{
 			if (!initialized) await InitializeStore();
-			if (forceRefresh) LoadedData = await this.GetDataFile();
+			if (forceRefresh) LoadedData = await this.GetDataFile(forceRefresh);
 
 			try
 			{
