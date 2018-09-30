@@ -3,8 +3,8 @@
         {
             "Title": "Don't just show up. ",
             "Abstract": "Community, is a word we started using at the start of the 14th century, as a way to define a set of common people. In today’s tech scene, we hear this word used everywhere but do you really feel part of one? For the past decade I’ve spent over 10k hours fostering and developing different communities. Some small, and some large efforts such as THAT Conference but what I’ve come to learn is what I’m here to share.\n\nBeing part of a community is easy, being present and active is something completely different. Many will sign up but won’t even bother showing up, The networks, the opportunities, the support are all right in front of you but you have to take the step, that second step. I’ll explain today’s landscape, explore a few techniques, and help you take that second step.",
-            "StartTime": "2018-10-06T07:30:00-06:00",
-            "EndTime": "2018-10-06T08:45:00-06:00",
+            "StartTime": "2018-10-06T08:30:00-05:00",
+            "EndTime": "2018-10-06T09:45:00-05:00",
             "Id": "1660f708-849c-4076-a9cb-fa5cfcd48313",
             "MainCategory": {
                 "Color": "#4B637E",
@@ -31,8 +31,8 @@
         {
             "Title": "Get the Boring Stuff Right: A Guide to Keeping Up with the Latest Tech",
             "Abstract": "Technology is a treadmill. Every year, there's a pile of shiny new things to learn. It's impossible to keep up with all of it. You're constantly asking yourself: \"Which technology stack is going to keep me employed?\"\n\nAs a developer, I love chasing shiny new technologies, but over the years I've learned that making my users happy is way more fulfilling than using the latest technology. After over a decade of building software, I've learned the key to good software is getting the boring stuff right.\n\nIn this talk, you'll learn about why you should spend more time working on evergreen skills. These include skills like creating maintainable code, learning how to learn, and building the right thing. You'll learn what skills have maximum impact and how to improve them. You'll learn how to plan your personal education and make the most of your time. After this talk, you'll be able to sort through the morass of new technologies and make the most of your limited time.",
-            "StartTime": "2018-10-06T09:00:00-06:00",
-            "EndTime": "2018-10-06T09:45:00-06:00",
+            "StartTime": "2018-10-06T10:00:00-05:00",
+            "EndTime": "2018-10-06T10:45:00-05:00",
             "Id": "629e5a5b-4d88-4e8a-b6bf-5c765abaa455",
             "MainCategory" : {
                 "Color" : "#B8E986",
@@ -53,6 +53,146 @@
                     "LastName": "Ewers",
                     "PhotoUrl": "https://mbevivino.files.wordpress.com/2011/08/silhouette_i-m-congnito.jpg",
                     "PositionName": "Consultant"
+                  }
+            ]
+        },
+        {
+            "Title": "Google + Alexa: Cross-Assistant Apps",
+            "Abstract": "Let's develop an Action/Skill for Google and Alexa in one neat little package\n\nRemember when the Echo was made available back in late 2014? It was invite only, then Prime only, then finally available for everyone the next summer. Only, most people didn't really seem to care. What does it even do? Why should I bother? Can't I just use my phone?\n\nFast forward to 2018, and it seems like everyone at least knows the Echo, and probably the Google Home. People know how to use them and why you'd have one. The question now has become \"Which one should I get?\" rather than \"Why would I ever buy that?\"\n\nWe've hit the point where people can reasonably expect skills to be on both the Amazon Echo and the Google Home. Both devices are in enough houses where it's worth the investment to create skills and actions for each platform. Luckily, this isn't nearly as difficult as it may seem.\n\nWe'll walk through the creation of both Alexa Skills and Actions on Google, look at the differences (there are a few, mostly names), look at what's the same, and see just how we can build a single application to serve both smart assistants. By the end of the session, we'll have a sample application running on both platforms from a single set of REST endpoints.",
+            "StartTime": "2018-10-06T10:00:00-05:00",
+            "EndTime": "2018-10-06T10:45:00-05:00",
+            "Id": "3d5689c6-beb1-4c6b-937e-30c9811c5fca",
+            "MainCategory" : {
+                "Color" : "#B8E986",
+                "Id" : "b040c5c1-0628-4f33-bed6-bafeae750960",
+                "Name" : "General Dev",
+                "ShortName" : "General Dev"
+              },
+            "Room": {
+                "Name": "Room 114"
+            },  
+            "Speakers": [
+                {
+                    "AvatarUrl": "https://mbevivino.files.wordpress.com/2011/08/silhouette_i-m-congnito.jpg",
+                    "Biography": "Michael Fazio is a Senior Software Engineer with Skyline Technologies, where he helps clients solve all kinds of problems in the web, mobile, and cloud spaces. Fazio is also an organizing committee member for Chicago Code Camp and Milwaukee Code Camp, as well as a presenter at user groups, code camps, and That Conference. Fazio has a love of all things mobile, voice assistants, JavaScript, and REST APIs. Outside of technology, he's always up for a chat about board games, video games, baseball, and late-90s metal bands.",
+                    "CompanyName": "Skyline Technologies",
+                    "FirstName": "Michael",
+                    "Id": "bac1d6b0-07f3-4638-8d5a-56a153e5d4c7",
+                    "LastName": "Fazio",
+                    "PhotoUrl": "https://mbevivino.files.wordpress.com/2011/08/silhouette_i-m-congnito.jpg",
+                    "PositionName": "Senior Software Engineer"
+                  }
+            ]
+        },
+        {
+            "Title": "Using CTFs to enforce security awareness in your organization",
+            "Abstract": "Remember those \"security awareness\" trainings that are sent out to employees at least once a year? These trainings typically require you to answer multiple choice questions, listen to some boring lecture, and then get a participation certificate. Do employees remember anything from these \"trainings\"? The answer is no, they don't. You may choose this method because it is easy and it checks off the proverbial box, but employees gain very little from this type of self-paced learning. During this session, I will be describing authentic learning activities that use CTFs (Capture the Flag) events to engage and motivate students. Furthermore, you will walk away with a new perspective on how to get employees to naturally think critically about security.",
+            "StartTime": "2018-10-06T10:00:00-05:00",
+            "EndTime": "2018-10-06T10:45:00-05:00",
+            "Id": "bc464510-0ed4-4c3c-883a-b51eeedf4b49",
+            "MainCategory" : {
+                "Color" : "#B8E986",
+                "Id" : "b040c5c1-0628-4f33-bed6-bafeae750960",
+                "Name" : "General Dev",
+                "ShortName" : "General Dev"
+              },
+            "Room": {
+                "Name": "Room 115"
+            },  
+            "Speakers": [
+                {
+                    "AvatarUrl": "https://mbevivino.files.wordpress.com/2011/08/silhouette_i-m-congnito.jpg",
+                    "Biography": "Casey is an IT Instructor at Mid-State Technical College with over 13 years of experience in IT.  He began his career working for a local ISP as a Network Engineer and was eventually introduced to the world of teaching.  Casey has always been passionate about technology and educating those around him. He fails regularly and imparts on his students that failure is not a bad thing.  Recently, Casey graduated from UW-Stout with a degree in Information Communication Technologies.",
+                    "CompanyName": "Mid-State Technical College",
+                    "FirstName": "Casey",
+                    "Id": "460aa4c4-358a-4a90-9026-c8bb769c4603",
+                    "LastName": "Trader",
+                    "PhotoUrl": "https://mbevivino.files.wordpress.com/2011/08/silhouette_i-m-congnito.jpg",
+                    "PositionName": "IT Instructor"
+                  }
+            ]
+        },
+        {
+            "Title": "How Your Corporate Culture Impacts Talent Attraction and Retention - Are You Looking Inside Out?",
+            "Abstract": "An organization and the individuals within the organization need to start looking inside themselves to solve the talent attraction and retention puzzle. How your organization and the people inside it communicate, grow, lead, prioritize shapes people coming to your organization and how long they stay.",
+            "StartTime": "2018-10-06T10:00:00-05:00",
+            "EndTime": "2018-10-06T10:45:00-05:00",
+            "Id": "81dee90b-a7d8-49d2-9bd8-5a603332e4cf",
+            "MainCategory" : {
+                "Color" : "#B8E986",
+                "Id" : "b040c5c1-0628-4f33-bed6-bafeae750960",
+                "Name" : "General Dev",
+                "ShortName" : "General Dev"
+              },
+            "Room": {
+                "Name": "Room 116"
+            },  
+            "Speakers": [
+                {
+                    "AvatarUrl": "https://mbevivino.files.wordpress.com/2011/08/silhouette_i-m-congnito.jpg",
+                    "Biography": "Todd Kuckkahn, Executive Director, Portage County Business Council, is also an independent certified coach, teacher, trainer and speaker with The John Maxwell Team. Todd's experiences and perspective give him a unique vantage point into the business world and leadership. His leadership roles include President of a Catholic School and his current role. He also has experience in three state universities at Wisconsin, UW-Platteville and UW-Stevens Point. Todd's undergraduate is a BS-Education from Wisconsin and a MS-Education from UW-Platteville. He is a member of the UW-Platteville Athletic Hall of Fame and has coached first graders through college athletes.",
+                    "CompanyName": "Portage County Business Council",
+                    "FirstName": "Todd",
+                    "Id": "927f8ed6-1526-4e9e-96d7-46c9f3854348",
+                    "LastName": "Kuckkahn",
+                    "PhotoUrl": "https://mbevivino.files.wordpress.com/2011/08/silhouette_i-m-congnito.jpg",
+                    "PositionName": "Executive Director"
+                  }
+            ]
+        },
+        {
+            "Title": "Dawn of the Smart Enterprise",
+            "Abstract": "We have a smart phone, even a smart home but why not a smart office? Actually, the dawn of the smart enterprise is here - pragmatic AI will enable companies to draw upon data across marketing, sales, and elsewhere to unify marketing automation, CRM, customer success analytics etc. There is nothing more intuitive in interaction than a conversation, whether it is with a human or a bot. We will share our thoughts on we are seeing with our customers and how the move to smart enterprise is starting to happen. We will demo some use-cases that the folks can relate to and also encourage an open discussion during our session.",
+            "StartTime": "2018-10-06T10:00:00-05:00",
+            "EndTime": "2018-10-06T10:45:00-05:00",
+            "Id": "3d1f822a-8a6d-4b91-88ea-d1b2a08f2ade",
+            "MainCategory" : {
+                "Color" : "#B8E986",
+                "Id" : "b040c5c1-0628-4f33-bed6-bafeae750960",
+                "Name" : "General Dev",
+                "ShortName" : "General Dev"
+              },
+            "Room": {
+                "Name": "Room 116"
+            },  
+            "Speakers": [
+                {
+                    "AvatarUrl": "https://mbevivino.files.wordpress.com/2011/08/silhouette_i-m-congnito.jpg",
+                    "Biography": "Founder at Probosys - an ex-IBMer. Providing expert solutions several emerging tech areas. Several clients in WI like Kohler, SCJ, Menasha. Would love to share our experiences.",
+                    "CompanyName": "Probosys, LLC",
+                    "FirstName": "Bala",
+                    "Id": "3162df9a-64bb-43cb-ac95-4ec73ac0bb85",
+                    "LastName": "Raghuraman",
+                    "PhotoUrl": "https://mbevivino.files.wordpress.com/2011/08/silhouette_i-m-congnito.jpg",
+                    "PositionName": "Magaging Partner"
+                  }
+            ]
+        },
+        {
+            "Title": "Web Developer to Mobile Apps Developer using NativeScript",
+            "Abstract": "Nativescript is a free and open source solution to develop android and IOS based mobile applications. This session will go through the fundamentals of developing Native Mobile Apps using Native Script leveraging the power of Angular, Typescript or JavaScript as your scripting language. A working session will be conducted covering the basics of Native Script and the steps which are required to develop mobile apps.",
+            "StartTime": "2018-10-06T10:00:00-05:00",
+            "EndTime": "2018-10-06T10:45:00-05:00",
+            "Id": "3d1f822a-8a6d-4b91-88ea-d1b2a08f2ade",
+            "MainCategory" : {
+                "Color" : "#B8E986",
+                "Id" : "5292b471-251d-4a79-9859-0a1cd72aa164",
+                "Name" : "General Dev",
+                "ShortName" : "General Dev"
+              },
+            "Room": {
+                "Name": "Room 116"
+            },  
+            "Speakers": [
+                {
+                    "AvatarUrl": "https://mbevivino.files.wordpress.com/2011/08/silhouette_i-m-congnito.jpg",
+                    "Biography": "With over 10 years of experience developing software applications and designing solutions , he solves complex problems faced by enterprise applications on a day to day basis. He is a technologist and tries to keep himself updated with latest technology advancements. His interest areas include Azure, Kubernetes and NativeScript.",
+                    "CompanyName": "Compunnel Software Group",
+                    "FirstName": "Baskar",
+                    "Id": "5ccfed40-2e7f-48cb-b0c2-0f83b8006378",
+                    "LastName": "Rao",
+                    "PhotoUrl": "https://mbevivino.files.wordpress.com/2011/08/silhouette_i-m-congnito.jpg",
+                    "PositionName": "Senior .Net Consultant"
                   }
             ]
         }
