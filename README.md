@@ -1,6 +1,6 @@
-# Central Wisconsin IT Conference 2017 Mobile App
+# Central Wisconsin IT Conference Mobile App
 
-This is the companion mobile app for the 2017 Central Wisconsin IT Conference. Event date is September 30th, 2017.
+This is the companion mobile app for the Central Wisconsin IT Conference.
 
 [Conference Website](https://cwitc.org)
 
