@@ -163,7 +163,7 @@
                                     <RowDefinition Height="Auto"/>
                                 </Grid.RowDefinitions> 
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="3*"/>
                                     <ColumnDefinition Width="24"/>
                                 </Grid.ColumnDefinitions>
                                <Grid.IsVisible>
@@ -180,7 +180,7 @@
                                  <local:FavoriteImage StyleId="FavoriteIcon"
                                         x:Name="FavoriteIconAndroid"
                                         Source="{Binding Session.IsFavorite, Converter={StaticResource IsFilledIconConverter}, ConverterParameter='heart'}"
-                                        Grid.Row="1" Grid.Column="1">
+                                        Grid.Row="0" Grid.Column="1">
                                      <local:FavoriteImage.GestureRecognizers>
                                          <TapGestureRecognizer Command="{Binding FavoriteCommand}"/>
                                      </local:FavoriteImage.GestureRecognizers>

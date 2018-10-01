@@ -5,11 +5,11 @@ using System.Threading.Tasks;
 using CWITC.Clients.Portable;
 using CWITC.DataObjects;
 using CWITC.DataStore.Abstractions;
-using CWITC.Shared.DataStore.Firebase;
+using CWITC.Shared.DataStore;
 using Xamarin.Forms;
 
 [assembly:Dependency(typeof(FavoriteStore))]
-namespace CWITC.Shared.DataStore.Firebase
+namespace CWITC.Shared.DataStore
 {
     public class FavoriteStore : BaseUserDataStore<Favorite>, IFavoriteStore
     {

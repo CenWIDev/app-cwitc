@@ -3,11 +3,12 @@
 using Android.App;
 using Android.OS;
 using Android.Runtime;
-using Plugin.CurrentActivity;
 using CWITC.Clients.Portable;
-using Firebase;
-using Microsoft.Azure.Mobile;
-using Microsoft.Azure.Mobile.Crashes;
+using Microsoft.AppCenter.Analytics;
+using Microsoft.AppCenter.Crashes;
+using Plugin.CurrentActivity;
+//using Microsoft.Azure.Mobile;
+//using Microsoft.Azure.Mobile.Crashes;
 
 namespace CWITC.Droid
 {
@@ -26,11 +27,11 @@ namespace CWITC.Droid
             RegisterActivityLifecycleCallbacks(this);
 
 #if !DEBUG
-            if (!string.IsNullOrWhiteSpace(ApiKeys.VSMobileCenterApiKeyAndroid) && ApiKeys.VSMobileCenterApiKeyIOS != nameof(ApiKeys.VSMobileCenterApiKeyAndroid))
+			if (!string.IsNullOrWhiteSpace(ApiKeys.VSMobileCenterApiKeyAndroid))
 			{
-				MobileCenter
+				Microsoft.AppCenter.AppCenter
 					.Start(ApiKeys.VSMobileCenterApiKeyAndroid,
-					typeof(Microsoft.Azure.Mobile.Analytics.Analytics),
+					typeof(Analytics),
 					typeof(Crashes));
 			}
 #endif

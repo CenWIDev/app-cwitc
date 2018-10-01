@@ -2,7 +2,7 @@
 
 namespace CWITC.DataStore.Abstractions
 {
-    public interface ICategoryStore : IBaseStore<Category>
+	public interface ICategoryStore : IReadonlyStore<Category>
     {
        
     }

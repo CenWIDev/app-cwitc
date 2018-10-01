@@ -4,14 +4,14 @@ using System.Linq;
 using System.Threading.Tasks;
 using CWITC.DataObjects;
 using CWITC.DataStore.Abstractions;
-using CWITC.Shared.DataStore.Firebase;
-using CWITC.Shared.DataStore.Firebase;
+using CWITC.Shared.DataStore;
+using CWITC.Shared.DataStore;
 using Xamarin.Forms;
 
 [assembly: Dependency(typeof(CategoryStore))]
-namespace CWITC.Shared.DataStore.Firebase
+namespace CWITC.Shared.DataStore
 {
-    public class CategoryStore : ReadonlyStore<Category>, ICategoryStore
+    public class CategoryStore : BaseStore<Category>, ICategoryStore
     {
         public override string Identifier => "sessions";
 

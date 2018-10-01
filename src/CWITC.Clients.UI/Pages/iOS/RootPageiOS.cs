@@ -16,33 +16,18 @@ namespace CWITC.Clients.UI
             Children.Add(new EvolveNavigationPage(new FeedPage()));
             Children.Add(new EvolveNavigationPage(new SessionsPage()));
             Children.Add(new EvolveNavigationPage(new EventsPage()));
-            Children.Add(new EvolveNavigationPage(new GalleryPage()));
+			Children.Add(new EvolveNavigationPage(new LunchLocationsPage()));
             Children.Add(new EvolveNavigationPage(new AboutPage()));
 
             MessagingService.Current.Subscribe<DeepLinkPage>("DeepLinkPage", async (m, p) =>
                 {
                     switch (p.Page)
                     {
-                        case AppPage.Notification:
-                            NavigateAsync(AppPage.Notification);
-                            await CurrentPage.Navigation.PopToRootAsync();
-                            await CurrentPage.Navigation.PushAsync(new NotificationsPage());
-                            break;
                         case AppPage.Schedule:
 						    NavigateAsync(AppPage.Schedule);
                             await CurrentPage.Navigation.PopToRootAsync();
                             break;
-                        case AppPage.LunchLocations:
-						    NavigateAsync(AppPage.LunchLocations);
-                            await CurrentPage.Navigation.PopToRootAsync();
-                            //await System.Threading.Tasks.Task.Delay(TimeSpan.FromSeconds(1));
-                            await NavigationService.PushModalAsync(
-                                Navigation,
-                                new EvolveModalNavigationPage(new LunchLocationsPage()),
-                                true);
-                            break;
                     }
-
                 });
 
             MessagingService.Current.Subscribe(MessageKeys.NavigateToSessionList, m =>
@@ -63,10 +48,10 @@ namespace CWITC.Clients.UI
                     App.Logger.TrackPage(AppPage.Sessions.ToString());
                     break;
                 case 2:
-                    App.Logger.TrackPage(AppPage.Schedule.ToString());
+					App.Logger.TrackPage(AppPage.LunchLocations.ToString());
                     break;
 				case 3:
-					App.Logger.TrackPage(AppPage.Gallery.ToString());
+					App.Logger.TrackPage(AppPage.Schedule.ToString());
 					break;
                 case 4:
                     App.Logger.TrackPage(AppPage.Information.ToString());
@@ -79,7 +64,6 @@ namespace CWITC.Clients.UI
             switch ((int)menuId)
             {
                 case (int)AppPage.Feed: 
-                case (int)AppPage.Notification: 
                 case (int)AppPage.LunchLocations:
                     CurrentPage = Children[0]; 
                     break;

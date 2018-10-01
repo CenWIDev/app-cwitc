@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace CWITC.DataStore.Abstractions
 {
-    public interface ISessionStore : IBaseStore<Session>
+	public interface ISessionStore : IReadonlyStore<Session>
     {
         Task<IEnumerable<Session>> GetSpeakerSessionsAsync(string speakerId);
         Task<IEnumerable<Session>> GetNextSessions();

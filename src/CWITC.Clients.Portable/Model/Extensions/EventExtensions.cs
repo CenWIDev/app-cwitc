@@ -47,9 +47,6 @@ namespace CWITC.Clients.Portable
 
             var start = e.StartTime.Value.ToEasternTimeZone();
 
-            if (e.IsAllDay)
-                return "All Day";
-
             var startString = start.ToString("t"); 
             var end = e.EndTime.Value.ToEasternTimeZone();
             var endString = end.ToString("t");
@@ -75,10 +72,6 @@ namespace CWITC.Clients.Portable
                 return "To be announced";
 
             var start = e.StartTime.Value.ToEasternTimeZone();
-
-
-            if (e.IsAllDay)
-                return "All Day";
 
             var startString = start.ToString("t"); 
             var end = e.EndTime.Value.ToEasternTimeZone();
