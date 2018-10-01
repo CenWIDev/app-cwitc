@@ -2,13 +2,13 @@
 using CWITC.DataStore.Abstractions;
 using System.Threading.Tasks;
 using Xamarin.Forms;
-using CWITC.Shared.DataStore.Firebase;
+using CWITC.Shared.DataStore;
 using System.Collections.Generic;
 using CWITC.Clients.Portable;
 
 [assembly: Dependency(typeof(StoreManager))]
 
-namespace CWITC.Shared.DataStore.Firebase
+namespace CWITC.Shared.DataStore
 {
     public class StoreManager : IStoreManager
     {
@@ -17,19 +17,18 @@ namespace CWITC.Shared.DataStore.Firebase
         public async Task<bool> SyncAllAsync(bool syncUserSpecific)
         {
             var tasks = new List<Task> {
-                CategoryStore.GetItemsAsync(true),
-                SessionStore.GetItemsAsync(true),
-                SpeakerStore.GetItemsAsync(true),
-                SponsorStore.GetItemsAsync(true),
-                EventStore.GetItemsAsync(true),
-                NotificationStore.GetItemsAsync(true),
-                LunchStore.GetItemsAsync(true)
+				CategoryStore.SyncAsync(),
+				SessionStore.SyncAsync(),
+				SpeakerStore.SyncAsync(),
+				SponsorStore.SyncAsync(),
+				EventStore.SyncAsync(),
+				LunchStore.SyncAsync()
             };
 
             if (syncUserSpecific && Settings.Current.IsLoggedIn)
             {
-                tasks.Add(FavoriteStore.GetItemsAsync(true));
-                tasks.Add(FeedbackStore.GetItemsAsync(true));
+				tasks.Add(FavoriteStore.SyncAsync());
+				tasks.Add(FeedbackStore.SyncAsync());
             }
 
             await Task.WhenAll(tasks);
@@ -44,9 +43,6 @@ namespace CWITC.Shared.DataStore.Firebase
         }
 
         #endregion
-
-        INotificationStore notificationStore;
-        public INotificationStore NotificationStore => notificationStore ?? (notificationStore  = DependencyService.Get<INotificationStore>());
 
         ICategoryStore categoryStore;
         public ICategoryStore CategoryStore => categoryStore ?? (categoryStore  = DependencyService.Get<ICategoryStore>());

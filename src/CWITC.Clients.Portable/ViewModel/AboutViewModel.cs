@@ -26,7 +26,7 @@ namespace CWITC.Clients.Portable
                 {
                     new MenuItem { Name = "Sponsors", Icon = "icon_venue.png", Parameter="sponsors"},
                     new MenuItem { Name = "Event Map", Icon = "icon_venue.png", Parameter = "floor-maps"},
-                    new MenuItem { Name = "Lunch Locations", Icon = "ic_restaurant_menu.png", Parameter = "lunch-locations"},
+                    //new MenuItem { Name = "Lunch Locations", Icon = "ic_restaurant_menu.png", Parameter = "lunch-locations"},
                     new MenuItem { Name = "Venue", Icon = "icon_venue.png", Parameter = "venue"},
                 });
 

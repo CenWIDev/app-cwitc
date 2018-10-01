@@ -105,19 +105,14 @@ namespace CWITC.Clients.Portable
 
             try
             {
-                ISSOClient ssoClient = DependencyService.Get<ISSOClient>();
+                IAuthClient ssoClient = DependencyService.Get<IAuthClient>();
                 if (ssoClient != null)
                 {
                     await ssoClient.LogoutAsync();
                 }
 
-                // clear sign in data first!
-                Settings.FirstName = string.Empty;
-                Settings.LastName = string.Empty;
-                Settings.Email = string.Empty; //this triggers login text changed!
-
-                // then log back in as an anonymous user.
-                await DoAnonymousLogin();
+				// clear sign in data first!
+				Settings.ClearUserData();
 
                 await ExecuteSyncCommandAsync();
             }
@@ -126,46 +121,6 @@ namespace CWITC.Clients.Portable
                 ex.Data["method"] = "ExecuteLoginCommandAsync";
                 //TODO validate here.
                 Logger.Report(ex);
-            }
-        }
-
-        async Task DoAnonymousLogin()
-        {
-            ISSOClient client = DependencyService.Get<ISSOClient>();
-            AccountResponse result = await client.LoginAnonymously();
-
-            if (result?.Success ?? false)
-            {
-                try
-                {
-                    IsBusy = true;
-                    Settings.UserId = result.User?.Id;
-                    MessagingService.Current.SendMessage(MessageKeys.LoggedIn);
-                    await StoreManager.SyncAllAsync(false);
-                    Settings.Current.LastSync = DateTime.UtcNow;
-                    Settings.Current.HasSyncedData = true;
-                }
-                catch (Exception ex)
-                {
-                    //if sync doesn't work don't worry it is alright we can recover later
-                    Logger.Report(ex);
-                }
-                finally
-                {
-                    IsBusy = false;
-                }
-
-                Settings.FirstRun = false;
-            }
-            else
-            {
-                Logger.Track(EvolveLoggerKeys.LoginFailure, "Reason", result.Error);
-                MessagingService.Current.SendMessage<MessagingServiceAlert>(MessageKeys.Message, new MessagingServiceAlert
-                {
-                    Title = "Anonymous Sign In Failed",
-                    Message = result.Error,
-                    Cancel = "OK"
-                });
             }
         }
 
@@ -199,8 +154,6 @@ namespace CWITC.Clients.Portable
 
             try
             {
-
-
 #if DEBUG
                 await Task.Delay(1000);
 #endif

@@ -70,7 +70,9 @@ namespace CWITC.Clients.Portable
                 {
                     SessionId = session.Id,
                     SessionRating = rating,
-                    FeedbackText = Text
+                    FeedbackText = Text,
+					SessionName = session.Title,
+					SpeakerNames = session.SpeakerNames
                 });
             }
             catch(Exception ex)

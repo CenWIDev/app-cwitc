@@ -15,7 +15,6 @@ namespace CWITC.DataStore.Abstractions
         ISponsorStore SponsorStore { get; }
         IEventStore EventStore { get; }
         ILunchStore LunchStore { get; }
-        INotificationStore NotificationStore { get; }
 
         Task<bool> SyncAllAsync(bool syncUserSpecific);
     }

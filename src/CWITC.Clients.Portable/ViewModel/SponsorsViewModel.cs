@@ -19,9 +19,6 @@ namespace CWITC.Clients.Portable
 
 
         public ObservableRangeCollection<Sponsor> Sponsors { get; } = new ObservableRangeCollection<Sponsor>();
-        public ObservableRangeCollection<Grouping<string, Sponsor>> SponsorsGrouped { get; } = new ObservableRangeCollection<Grouping<string, Sponsor>>();
-
-
 
         #region Properties
         Sponsor selectedSponsor;
@@ -49,19 +46,9 @@ namespace CWITC.Clients.Portable
 
         void SortSponsors(IEnumerable<Sponsor> sponsors)
         {
-            var sponsorsRanked = from sponsor in sponsors
-                                          orderby sponsor.Name, sponsor.Rank
-                                          orderby sponsor.SponsorLevel.Rank
-                                          select sponsor;
+			var sponsorsRanked = sponsors.OrderBy(x => x.Name).ThenBy(x => x.Rank);
 
             Sponsors.ReplaceRange(sponsorsRanked);
-
-            var groups = from sponsor in Sponsors
-                group sponsor by sponsor.SponsorLevel.Name
-                into sponsorGroup
-                select new Grouping<string, Sponsor>(sponsorGroup.Key, sponsorGroup); 
-            
-            SponsorsGrouped.ReplaceRange(groups);
         }
 
 

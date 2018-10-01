@@ -19,7 +19,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)Sponsor.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)SponsorLevel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)FeaturedEvent.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Notification.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)LunchLocation.cs" />
   </ItemGroup>
 </Project>

@@ -1,14 +1,16 @@
-# Central Wisconsin IT Conference 2017 Mobile App
+# Central Wisconsin IT Conference Mobile App
 
-This is the companion mobile app for the 2017 Central Wisconsin IT Conference. Event date is September 30th, 2017.
+This is the companion mobile app for the Central Wisconsin IT Conference.
 
 [Conference Website](https://cwitc.org)
 
 #### iOS
-[![Build status](https://build.mobile.azure.com/v0.1/apps/2ab09ac6-1ba5-4d77-82f5-9554271abe51/branches/development/badge)](https://mobile.azure.com)
+Development: [![Build status](https://build.appcenter.ms/v0.1/apps/2ab09ac6-1ba5-4d77-82f5-9554271abe51/branches/development/badge)](https://appcenter.ms)
+Master: [![Build status](https://build.appcenter.ms/v0.1/apps/2ab09ac6-1ba5-4d77-82f5-9554271abe51/branches/master/badge)](https://appcenter.ms)
 
 #### Android
-[![Build status](https://build.mobile.azure.com/v0.1/apps/a42bb2d5-c340-4639-9ff3-7e91361e4fb2/branches/development/badge)](https://mobile.azure.com)
+Development: [![Build status](https://build.appcenter.ms/v0.1/apps/a42bb2d5-c340-4639-9ff3-7e91361e4fb2/branches/development/badge)](https://appcenter.ms)
+Master: [![Build status](https://build.appcenter.ms/v0.1/apps/a42bb2d5-c340-4639-9ff3-7e91361e4fb2/branches/master/badge)](https://appcenter.ms)
 
 # About
 This mobile app was forked and modified from the [Xamarin Evolve Mobile App](https://github.com/xamarinhq/app-evolve). 

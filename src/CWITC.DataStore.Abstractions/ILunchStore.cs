@@ -3,7 +3,7 @@ using CWITC.DataObjects;
 
 namespace CWITC.DataStore.Abstractions
 {
-    public interface ILunchStore : IBaseStore<LunchLocation>
+	public interface ILunchStore : IReadonlyStore<LunchLocation>
     {
     }
 }

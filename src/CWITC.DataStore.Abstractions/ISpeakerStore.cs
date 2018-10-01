@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace CWITC.DataStore.Abstractions
 {
-    public interface ISpeakerStore : IBaseStore<Speaker>
+	public interface ISpeakerStore : IReadonlyStore<Speaker>
     {
     }
 }

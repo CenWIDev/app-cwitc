@@ -1,100 +1,200 @@
 {
   "featured_events": [
     {
-      "Title": "Registration Check-ins & Exhibits",
       "Description": "",
-      "StartTime": "2017-09-30T06:00:00-06:00",
       "EndTime": "2017-09-30T06:45:00-06:00",
       "IsAllDay": false,
-      "LocationName": "Lobby"
+      "LocationName": "Lobby",
+      "StartTime": "2017-09-30T06:00:00-06:00",
+      "Title": "Registration Check-ins & Exhibits",
+      "Type": "general"
     },
     {
-      "Title": "Opening & Keynote",
       "Description": "",
-      "StartTime": "2017-09-30T06:45:00-06:00",
       "EndTime": "2017-09-30T08:00:00-06:00",
       "IsAllDay": false,
-      "LocationName": "Community Room"
+      "LocationName": "Community Room",
+      "StartTime": "2017-09-30T06:45:00-06:00",
+      "Title": "Opening & Keynote",
+      "Type": "general"
     },
     {
-      "Title": "Break/Exibits",
       "Description": "",
-      "StartTime": "2017-09-30T08:00:00-06:00",
       "EndTime": "2017-09-30T08:10:00-06:00",
       "IsAllDay": false,
-      "LocationName": "Lobby"
+      "LocationName": "Lobby",
+      "StartTime": "2017-09-30T08:00:00-06:00",
+      "Title": "Break/Exibits",
+      "Type": "break"
     },
     {
-      "Title": "Sessions",
       "Description": "",
-      "StartTime": "2017-09-30T08:10:00-06:00",
       "EndTime": "2017-09-30T09:00:00-06:00",
       "IsAllDay": false,
-      "LocationName": "Session Rooms"
+      "LocationName": "Session Rooms",
+      "StartTime": "2017-09-30T08:10:00-06:00",
+      "Title": "Sessions",
+      "Type": "sessions"
     },
     {
-      "Title": "Break/Exibits",
       "Description": "",
-      "StartTime": "2017-09-30T09:00:00-06:00",
       "EndTime": "2017-09-30T09:10:00-06:00",
       "IsAllDay": false,
-      "LocationName": "Lobby"
+      "LocationName": "Lobby",
+      "StartTime": "2017-09-30T09:00:00-06:00",
+      "Title": "Break/Exibits",
+      "Type": "break"
     },
     {
-      "Title": "Sessions",
       "Description": "",
-      "StartTime": "2017-09-30T09:10:00-06:00",
       "EndTime": "2017-09-30T10:00:00-06:00",
       "IsAllDay": false,
-      "LocationName": "Session Rooms"
+      "LocationName": "Session Rooms",
+      "StartTime": "2017-09-30T09:10:00-06:00",
+      "Title": "Sessions",
+      "Type": "sessions"
     },
     {
-      "Title": "Lunch & Networking",
       "Description": "",
-      "StartTime": "2017-09-30T10:00:00-06:00",
       "EndTime": "2017-09-30T11:30:00-06:00",
       "IsAllDay": false,
-      "LocationName": "Lobby & Downtown Stevens Point"
+      "LocationName": "Lobby & Downtown Stevens Point",
+      "StartTime": "2017-09-30T10:00:00-06:00",
+      "Title": "Lunch & Networking",
+      "Type": "lunch"
     },
     {
-      "Title": "Sessions",
       "Description": "",
-      "StartTime": "2017-09-30T11:30:00-06:00",
       "EndTime": "2017-09-30T12:20:00-06:00",
       "IsAllDay": false,
-      "LocationName": "Session Rooms"
+      "LocationName": "Session Rooms",
+      "StartTime": "2017-09-30T11:30:00-06:00",
+      "Title": "Sessions",
+      "Type": "sessions"
     },
     {
-      "Title": "Break/Exibits",
       "Description": "",
-      "StartTime": "2017-09-30T12:20:00-06:00",
       "EndTime": "2017-09-30T12:30:00-06:00",
       "IsAllDay": false,
-      "LocationName": "Lobby"
+      "LocationName": "Lobby",
+      "StartTime": "2017-09-30T12:20:00-06:00",
+      "Title": "Break/Exibits",
+      "Type": "break"
     },
     {
-      "Title": "Sessions",
       "Description": "",
-      "StartTime": "2017-09-30T12:30:00-06:00",
       "EndTime": "2017-09-30T13:20:00-06:00",
       "IsAllDay": false,
-      "LocationName": "Session Rooms"
+      "LocationName": "Session Rooms",
+      "StartTime": "2017-09-30T12:30:00-06:00",
+      "Title": "Sessions",
+      "Type": "sessions"
     },
     {
-      "Title": "Break/Exibits",
       "Description": "",
-      "StartTime": "2017-09-30T13:20:00-06:00",
       "EndTime": "2017-09-30T13:30:00-06:00",
       "IsAllDay": false,
-      "LocationName": "Lobby"
+      "LocationName": "Lobby",
+      "StartTime": "2017-09-30T13:20:00-06:00",
+      "Title": "Break/Exibits",
+      "Type": "break"
     },
     {
-      "Title": "Closing Session",
       "Description": "",
-      "StartTime": "2017-09-30T13:30:00-06:00",
       "EndTime": "2017-09-30T14:00:00-06:00",
       "IsAllDay": false,
-      "LocationName": "Community Room"
+      "LocationName": "Community Room",
+      "StartTime": "2017-09-30T13:30:00-06:00",
+      "Title": "Closing Session",
+      "Type": "general"
+    },
+    {
+      "Description": "Join sponsors and attendees on the Patio at Guu's on Main for a happy hour and networking. Guu's on Main is located just south of Cobbletone Hotel.",
+      "EndTime": "2017-09-30T16:30-06:00",
+      "IsAllDay": false,
+      "LocationName": "Guu's on Main",
+      "SponsorId": "78a29e04-f16f-4ecd-b2fd-55287177fc09",
+      "StartTime": "2017-09-30T14:30-06:00",
+      "Title": "Happy Hour",
+      "Type": "offsite"
+    }
+  ],
+  "lunch_locations": [
+    {
+      "address1": "900 Block, Clark Street",
+      "address2": "Stevens Point, WI 54481",
+      "category": "Food Truck",
+      "imageUri": "https://www.gannett-cdn.com/-mm-/f7d85f610c6fec9e25cd9504d72dbb25dd375661/c=1-0-959-720&r=x404&c=534x401/local/-/media/2016/05/31/WIGroup/StevensPoint/636003067209178599-13263786-1340256619324828-4126962239843597190-n.jpg",
+      "latitude": 44.522474,
+      "longitude": -89.585493,
+      "website": "https://www.facebook.com/chefcfoodtruck/?fref=ts",
+      "name": "Chef C's Munchie Mobile"
+    },
+    {
+      "address1": "1140 Main St",
+      "address2": "Stevens Point, WI 54481",
+      "category": "Bar & Grill",
+      "imageUri": "http://wiparty.com/Stevens%20Point%20Bars/Guu%27s%20On%20Main/Guu%27s-on-Main-Stevens-Point.jpg",
+      "latitude": 44.523454,
+      "longitude": -89.582776,
+      "website": "https://www.facebook.com/Guus-on-Main-76860951468/",
+      "name": "Guu's on Main"
+    },
+    {
+      "address1": "925 Clark St",
+      "address2": "Stevens Point, WI 54481",
+      "category": "Sandwiches",
+      "imageUri": "http://galaxycomicsandgames.com/wp-content/uploads/2014/06/Galaxy_logo.png",
+      "latitude": 44.522493,
+      "longitude": -89.585290,
+      "website": "http://galaxycomicsandgames.com",
+      "name": "Galaxy Comics, Games and More"
+    },
+    {
+      "address1": "1140 Clark St",
+      "address2": "Stevens Point, WI 54481",
+      "category": "Pizza & Traditional American Food",
+      "imageUri": "https://i2.wp.com/www.midstatesos.org/wp-content/uploads/2015/05/KristinsRiverwalk.jpg",
+      "latitude": 44.522597,
+      "longitude": -89.582610,
+      "website": "https://www.facebook.com/kristinsriverwalk/",
+      "name": "Kristin's Riverwalk"
+    },
+    {
+      "address1": "1059 Main St",
+      "address2": "Stevens Point, WI 54481",
+      "category": "Omelets, pancakes, soups & sandwiches",
+      "imageUri": "http://thewoodenchairstevenspoint.com",
+      "latitude": 44.523334,
+      "longitude": -89.583439,
+      "name": "The Wooden Chair"
+    },
+    {
+      "address1": "1410 3rd St",
+      "address2": "Stevens Point, WI 54481",
+      "category": "Bar & Grill",
+      "imageUri": "https://res.cloudinary.com/simpleview/image/fetch/f_auto,q_75/https://res.cloudinary.com/simpleview/image/upload/crm/spacvb/diningwaterstreetgrille_f0dc2520-5056-a36a-0a33fdcf1307951f.jpg",
+      "latitude": 44.522123,
+      "longitude": -89.584901,
+      "website": "https://www.facebook.com/Water-Street-Grille-160399300654242/",
+      "name": "Water Street Grille"
+    },
+    {
+      "address1": "1410 3rd St",
+      "address2": "Stevens Point, WI 54481",
+      "category": "Coffee & Sandwiches",
+      "imageUri": "http://thecoffeestudio.biz/wp-content/themes/thecoffeestudio/images/logo.png",
+      "latitude": 44.523471,
+      "longitude": -89.583435,
+      "website": "http://thecoffeestudio.biz",
+      "name": "The Coffee Studio"
+    }
+  ],
+  "notifications": [
+    {
+      "Date": "2017-09-30T08:00:00-06:00",
+      "IsVisible": true,
+      "Text": "Welcome to the Central Wisconsin IT Conference!"
     }
   ],
   "sessions": [
@@ -103,10 +203,10 @@
       "EndTime": "2017-09-30T08:00:00-06:00",
       "Id": "1660f708-849c-4076-a9cb-fa5cfcd48313",
       "MainCategory": {
+        "Color": "#F88F73",
         "Id": "f48b3d7b-a99c-4a69-b0c8-90d066758404",
         "Name": "Security/DevOps",
-        "ShortName": "Security/DevOps",
-        "Color": "#F88F73"
+        "ShortName": "Security/DevOps"
       },
       "Room": {
         "Name": "Keynote"
@@ -115,12 +215,12 @@
         {
           "AvatarUrl": "https://avatars0.githubusercontent.com/u/5608516?v=4&s=150",
           "Biography": "Jason Lang has worked in enterprise security for more than 10 years in both offensive and defensive roles.  He has a passion for enterprise defenders working tirelessly to protect their organizations, writing bug-free code (never happens), and telling a good story.",
+          "CompanyName": "SynerComm, Inc",
+          "CompanyWebsiteUrl": "https://www.synercomm.com",
           "FirstName": "Jason",
           "Id": "32b477e9-940c-4815-901c-cb4814762f0d",
           "LastName": "Lang",
           "PhotoUrl": "https://avatars0.githubusercontent.com/u/5608516?v=4&s=400",
-          "CompanyName": "SynerComm, Inc",
-          "CompanyWebsiteUrl": "https://www.synercomm.com",
           "PositionName": "Sr. Information Assurance Consultant "
         }
       ],
@@ -132,10 +232,10 @@
       "EndTime": "2017-09-30T09:00:00-06:00",
       "Id": "1660f708-849c-4076-a9cb-fa5cfcd48313",
       "MainCategory": {
+        "Color": "#F88F73",
         "Id": "f48b3d7b-a99c-4a69-b0c8-90d066758404",
         "Name": "Security/DevOps",
-        "ShortName": "Security/DevOps",
-        "Color": "#F88F73"
+        "ShortName": "Security/DevOps"
       },
       "Room": {
         "Name": 115
@@ -144,12 +244,12 @@
         {
           "AvatarUrl": "https://avatars2.githubusercontent.com/u/815418?v=4&s=150",
           "Biography": "Kim is a longtime contributor to the Plone open source web content management system project, and is on the Plone Foundation Board of Directors. Kim works as a project manager at Wildcard Corp., a provider of cybersecurity, IT and web development services, one of its clients being the federal government.",
+          "CompanyName": "Wild Card Corp",
+          "CompanyWebsiteUrl": "https://www.wildcardcorp.com",
           "FirstName": "T. Kim",
           "Id": "43e82cdc-d0f2-436d-b34b-384b6ca19a2a",
           "LastName": "Nguyen",
           "PhotoUrl": "https://avatars2.githubusercontent.com/u/815418?v=4&s=400",
-          "CompanyName": "Wild Card Corp",
-          "CompanyWebsiteUrl": "https://www.wildcardcorp.com",
           "PositionName": "Project Manager"
         }
       ],
@@ -161,10 +261,10 @@
       "EndTime": "2017-09-30T09:00:00-06:00",
       "Id": "0702f085-3fa6-4a0d-bd42-72518d62805b",
       "MainCategory": {
+        "Color": "#AC9AD3",
         "Id": "ba93bcc2-0ca4-4041-be41-8eb885128a5f",
         "Name": "Data Analytics",
-        "ShortName": "Data Analytics",
-        "Color": "#AC9AD3"
+        "ShortName": "Data Analytics"
       },
       "Room": {
         "Name": 116
@@ -173,12 +273,12 @@
         {
           "AvatarUrl": "https://www.linkedin.com/in/david-berry-a488596/photo/",
           "Biography": "I'm a Solutions Architect with over 20 years of experience in building software systems. I started out as a Java developer and then switched to .NET in 2003. I've also done significant work with SQL Server and Oracle. I'm a Pluralsight author and have presented at community events throughout the Midwest. I try to bring a pragmatic approach to everything I do, making sure the software I build is simple, understandable and balances responsibilities between different components of the system. When speaking or teaching, I emphasize real world scenarios encountered by developers every day and show how to solve them so you can be more effective at what you do.",
+          "CompanyName": "Robert W. Barid",
+          "CompanyWebsiteUrl": "http://www.rwbaird.com",
           "FirstName": "David",
           "Id": "ffc1539e-68ea-4ef3-abbe-473b9515ea3b",
           "LastName": "Berry",
           "PhotoUrl": "https://www.linkedin.com/in/david-berry-a488596/photo/",
-          "CompanyName": "Robert W. Barid",
-          "CompanyWebsiteUrl": "http://www.rwbaird.com",
           "PositionName": "Solutions Architect"
         }
       ],
@@ -190,10 +290,10 @@
       "EndTime": "2017-09-30T09:00:00-06:00",
       "Id": "fe0c65c5-ef96-437b-abab-d974de13b136",
       "MainCategory": {
+        "Color": "#7DD5C9",
         "Id": "14990b6c-be1d-4db8-8d48-fe0e45d062b5",
         "Name": "QA/Testing",
-        "ShortName": "QA",
-        "Color": "#7DD5C9"
+        "ShortName": "QA"
       },
       "Room": {
         "Name": 117
@@ -202,12 +302,12 @@
         {
           "AvatarUrl": "https://www.linkedin.com/in/vanessaradlinger/photo/",
           "Biography": "Vanessa is a software developer at Red Arrow Labs, where she helps build software that creates a more efficient, effective, and easy to use health experience. While working in international business, she discovered programming and began her career-change by going back to university for computer science. Vanessa started her internship with Red Arrow Labs a semester later. Since then, she was hired full-time and spends her free time volunteering with Girls Who Code.",
+          "CompanyName": "Red Arrow Labs",
+          "CompanyWebsiteUrl": "http://www.redarrowlabs.com",
           "FirstName": "Vanessa",
           "Id": "49c0b240-3376-40e5-81df-cc4ab2a62b3c",
           "LastName": "Radlinger",
           "PhotoUrl": "https://www.linkedin.com/in/vanessaradlinger/photo/",
-          "CompanyName": "Red Arrow Labs",
-          "CompanyWebsiteUrl": "http://www.redarrowlabs.com",
           "PositionName": "Software Developer"
         }
       ],
@@ -219,10 +319,10 @@
       "EndTime": "2017-09-30T09:00:00-06:00",
       "Id": "405404f9-7aef-44c7-9be7-5385011c2698",
       "MainCategory": {
+        "Color": "#B8E986",
         "Id": "6466b137-4ddf-4fee-8324-96926baf6fc6",
         "Name": "General Dev",
-        "ShortName": "Gen Dev",
-        "Color": "#B8E986"
+        "ShortName": "Gen Dev"
       },
       "Room": {
         "Name": 118
@@ -231,12 +331,12 @@
         {
           "AvatarUrl": "https://avatars1.githubusercontent.com/u/1812357?v=4&s=150",
           "Biography": "Greg Levenhagen is a Principal Consultant with Skyline Technologies, a Microsoft Regional Director (RD) and a Microsoft Most Valuable Professional (MVP). He has a great passion for giving back to the community and teaching. A true enthusiast of computer science, with passions and interests including AR/MR/VR, mobile, UX, architecture, distributed computing, automated testing, web, agile, 3D/games, cloud, languages and much more. Greg speaks at conferences like ThatConference, CodeMash, VSLive and Code PaLOUsa. He is also a Microsoft Certified Trainer (MCT), board member of ThatConference, president of the Milwaukee Code Camp, president of the Northeast WI Code Camp, president of the Northeast WI Developers User Group, co-organizer of the Fox Valley Game Development Meetup, co-organizer of the Midwest Azure User Group, organizer of MobileMKE, cofounder of the Northeast WI Agile User Group, INETA speaker and IEEE and ACM member.",
+          "CompanyName": "Skyline Technologies",
+          "CompanyWebsiteUrl": "https://www.skylinetechnologies.com",
           "FirstName": "Greg",
           "Id": "bdbf2e4e-8697-48c3-af84-2bfe93ef5723",
           "LastName": "Levenhagen",
           "PhotoUrl": "https://avatars1.githubusercontent.com/u/1812357?v=4&s=400",
-          "CompanyName": "Skyline Technologies",
-          "CompanyWebsiteUrl": "https://www.skylinetechnologies.com",
           "PositionName": "Principal Consultant"
         }
       ],
@@ -248,10 +348,10 @@
       "EndTime": "2017-09-30T10:00:00-06:00",
       "Id": "f7492ab7-11fd-44b6-81b1-ae35272ea052",
       "MainCategory": {
+        "Color": "#F88F73",
         "Id": "f48b3d7b-a99c-4a69-b0c8-90d066758404",
         "Name": "Security/DevOps",
-        "ShortName": "Security/DevOps",
-        "Color": "#F88F73"
+        "ShortName": "Security/DevOps"
       },
       "Room": {
         "Name": 115
@@ -260,12 +360,12 @@
         {
           "AvatarUrl": "https://media.licdn.com/mpr/mpr/shrinknp_150_150/AAEAAQAAAAAAAAekAAAAJDNhYWVlYjlmLTdiYWQtNGUxNi1iNmRkLWE0NThjMjY1OGE3Yw.jpg",
           "Biography": "Tracey Barrett is the Managing Director of NVISIA and one of the organizers of Milwaukee Agile.  She has over twenty years experience in application development, and works with companies to introduce new technologies and processes into their IT organizations, with an emphasis on high-quality, yet lightweight, software engineering disciplines.",
+          "CompanyName": "NVISIA",
+          "CompanyWebsiteUrl": "http://www.nvisa.com",
           "FirstName": "Tracey",
           "Id": "a34b409a-9e5e-4b52-b817-8248e75bdc53",
           "LastName": "Barrett",
           "PhotoUrl": "https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAekAAAAJDNhYWVlYjlmLTdiYWQtNGUxNi1iNmRkLWE0NThjMjY1OGE3Yw.jpg",
-          "CompanyName": "NVISIA",
-          "CompanyWebsiteUrl": "http://www.nvisa.com",
           "PositionName": "Managing Director"
         }
       ],
@@ -277,10 +377,10 @@
       "EndTime": "2017-09-30T10:00:00-06:00",
       "Id": "ba883767-0499-4ce9-86f0-8c5056acfd25",
       "MainCategory": {
+        "Color": "#AC9AD3",
         "Id": "ba93bcc2-0ca4-4041-be41-8eb885128a5f",
         "Name": "Data Analytics",
-        "ShortName": "Data Analytics",
-        "Color": "#AC9AD3"
+        "ShortName": "Data Analytics"
       },
       "Room": {
         "Name": 116
@@ -289,12 +389,12 @@
         {
           "AvatarUrl": "https://avatars1.githubusercontent.com/u/466287?v=4&s=150",
           "Biography": "Dustin Ewers is a consultant at Centare, where he works to help businesses build better software. Dustin has been building software for over 10 years, specializing in Microsoft technologies. He is an active member of the technical community, speaking at user groups and conferences in and around Wisconsin.",
+          "CompanyName": "Centare",
+          "CompanyWebsiteUrl": "http://www.centare.com",
           "FirstName": "Dustin",
           "Id": "bac1d6b0-07f3-4638-8d5a-56a153e5d4c7",
           "LastName": "Ewers",
           "PhotoUrl": "https://avatars1.githubusercontent.com/u/466287?v=4&s=400",
-          "CompanyName": "Centare",
-          "CompanyWebsiteUrl": "http://www.centare.com",
           "PositionName": "Consultant"
         }
       ],
@@ -306,10 +406,10 @@
       "EndTime": "2017-09-30T10:00:00-06:00",
       "Id": "3b89860c-dfc7-4dc7-8615-750e5a2113f0",
       "MainCategory": {
+        "Color": "#4B637E",
         "Id": "ba93bcc2-0ca4-4041-be41-8eb885128a5f",
         "Name": "Community",
-        "ShortName": "Community",
-        "Color": "#4B637E"
+        "ShortName": "Community"
       },
       "Room": {
         "Name": 117
@@ -318,23 +418,23 @@
         {
           "AvatarUrl": "https://media.licdn.com/mpr/mpr/shrinknp_150_150/p/1/000/1a7/372/36af1a8.jpg",
           "Biography": "Brian is responsible for supervising all technology staff, IT operations and  administration of the  technology Services Department for Stevens Point Area Public School District. The Technology Services Department manages accounts, devices and support for 7,300 students and 1000 staff members",
+          "CompanyName": "Stevens Point Area Public School District",
+          "CompanyWebsiteUrl": "https://www.pointschools.net",
           "FirstName": "Brian",
           "Id": "988113b6-6237-437a-87a2-e5e2a4a8407f",
           "LastName": "Casey",
           "PhotoUrl": "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/1/000/1a7/372/36af1a8.jpg",
-          "CompanyName": "Stevens Point Area Public School District",
-          "CompanyWebsiteUrl": "https://www.pointschools.net",
           "PositionName": "Director of Technology for Stevens Point Area Public School District"
         },
         {
           "AvatarUrl": "https://media.licdn.com/mpr/mpr/shrinknp_150_150/AAEAAQAAAAAAAAbMAAAAJDRlZWVkNTEwLTJkYTUtNDYwYS04NTZiLTIyZjFlNDMyNjRiYw.jpg",
           "Biography": "Brad is responsible for the day-to-day management of the Information Technology (IT) Department, as well as ensuring technology solutions are designed, implemented, and managed in alignment with the College’s IT strategic plan and WILM initiatives",
+          "CompanyName": "Mid-State Technical College",
+          "CompanyWebsiteUrl": "https://www.mstc.edu",
           "FirstName": "Brad",
           "Id": "f44dd0f2-e9c1-4afa-ba7a-825fc1ae24d3",
           "LastName": "Russel",
           "PhotoUrl": "https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAbMAAAAJDRlZWVkNTEwLTJkYTUtNDYwYS04NTZiLTIyZjFlNDMyNjRiYw.jpg",
-          "CompanyName": "Mid-State Technical College",
-          "CompanyWebsiteUrl": "https://www.mstc.edu",
           "PositionName": "Director of Information Technology"
         }
       ],
@@ -346,10 +446,10 @@
       "EndTime": "2017-09-30T10:00:00-06:00",
       "Id": "75439e74-f81c-4385-9da9-6d508cfccf4c",
       "MainCategory": {
+        "Color": "#B8E986",
         "Id": "6466b137-4ddf-4fee-8324-96926baf6fc6",
         "Name": "General Dev",
-        "ShortName": "Gen Dev",
-        "Color": "#B8E986"
+        "ShortName": "Gen Dev"
       },
       "Room": {
         "Name": 118
@@ -358,12 +458,12 @@
         {
           "AvatarUrl": "https://media.licdn.com/mpr/mpr/shrinknp_150_150/AAEAAQAAAAAAAAJQAAAAJDhjOGQyYmQyLTBmYjktNDZmMy05MGE0LTNlZTY1NWM1M2U2Nw.jpg",
           "Biography": "Web + mobile + cloud developer with an affinity for JavaScript, Android, and REST APIs",
+          "CompanyName": "Skyline Technologies",
+          "CompanyWebsiteUrl": "https://www.skylinetechnologies.com",
           "FirstName": "Michael",
           "Id": "00dd7e69-68eb-47ec-b064-481124d817e5",
           "LastName": "Fazio",
           "PhotoUrl": "https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAJQAAAAJDhjOGQyYmQyLTBmYjktNDZmMy05MGE0LTNlZTY1NWM1M2U2Nw.jpg",
-          "CompanyName": "Skyline Technologies",
-          "CompanyWebsiteUrl": "https://www.skylinetechnologies.com",
           "PositionName": "Senior Software Engineer"
         }
       ],
@@ -375,10 +475,10 @@
       "EndTime": "2017-09-30T12:20:00-06:00",
       "Id": "980ad6d0-4dac-4a20-9428-e75b0f0d37cb",
       "MainCategory": {
+        "Color": "#F88F73",
         "Id": "f48b3d7b-a99c-4a69-b0c8-90d066758404",
         "Name": "Security/DevOps",
-        "ShortName": "Security/DevOps",
-        "Color": "#F88F73"
+        "ShortName": "Security/DevOps"
       },
       "Room": {
         "Name": 115
@@ -387,12 +487,12 @@
         {
           "AvatarUrl": "https://media.licdn.com/mpr/mpr/shrinknp_150_150/p/1/000/079/021/364052d.jpg",
           "Biography": "Jason thrives on building systems and teams that serve as the foundation for business and client success. He has 20-plus years of network design and implementation, security, application virtualization and compliance management experience.",
+          "CompanyName": "Red Arrow Labs",
+          "CompanyWebsiteUrl": "http://www.redarrowlabs.com",
           "FirstName": "Jason",
           "Id": "bcdcc560-854a-4bc3-9a93-55ec77b2cc37",
           "LastName": "Phillips",
           "PhotoUrl": "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/1/000/079/021/364052d.jpg",
-          "CompanyName": "Red Arrow Labs",
-          "CompanyWebsiteUrl": "http://www.redarrowlabs.com",
           "PositionName": "VP - Infrastructure and Security"
         }
       ],
@@ -404,10 +504,10 @@
       "EndTime": "2017-09-30T12:20:00-06:00",
       "Id": "1a8db64c-aa91-4c0a-a7e3-b0157f6865e5",
       "MainCategory": {
+        "Color": "#AC9AD3",
         "Id": "ba93bcc2-0ca4-4041-be41-8eb885128a5f",
         "Name": "Data Analytics",
-        "ShortName": "Data Analytics",
-        "Color": "#AC9AD3"
+        "ShortName": "Data Analytics"
       },
       "Room": {
         "Name": 116
@@ -416,12 +516,12 @@
         {
           "AvatarUrl": "https://media.licdn.com/mpr/mpr/shrinknp_150_150/AAEAAQAAAAAAAAeCAAAAJGM2NDJhMjU3LTJlN2MtNDNkMS05ZDA3LTZjZDFhYmZjMTU1NQ.jpg",
           "Biography": "A balanced information technology executive that has spent 30 years on the forefront of technology.  I have built a number of highly successful teams, developed and released award winning technology products, and have a fascination with everything technology. In addition to working in technology professionally, I have an IOT enabled home that blends several different platforms and allows for some really interesting interactions. With undergraduate work in both Information technology and business I also embrace the importance of ‘right sizing’ technology in the professional environment. Additional information is available on my public LinkedIn Profile.",
+          "CompanyName": "Wysocki Family of Companies",
+          "CompanyWebsiteUrl": "http://wfc.ag",
           "FirstName": "Ward",
           "Id": "37ea79bf-d03f-4f38-83a0-5da38ed2b7a1",
           "LastName": "Neesen",
           "PhotoUrl": "https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAeCAAAAJGM2NDJhMjU3LTJlN2MtNDNkMS05ZDA3LTZjZDFhYmZjMTU1NQ.jpg",
-          "CompanyName": "Wysocki Family of Companies",
-          "CompanyWebsiteUrl": "http://wfc.ag",
           "PositionName": "Chief Information Officer"
         }
       ],
@@ -433,10 +533,10 @@
       "EndTime": "2017-09-30T12:20:00-06:00",
       "Id": "bb92c230-dfed-4725-9f4a-5a5bd5f6d632",
       "MainCategory": {
+        "Color": "#B8E986",
         "Id": "a5d66c8b-eef1-4ede-892a-d6e808ac9808",
         "Name": "Soft Skill",
-        "ShortName": "Soft Skills",
-        "Color": "#B8E986"
+        "ShortName": "Soft Skills"
       },
       "Room": {
         "Name": 117
@@ -445,12 +545,12 @@
         {
           "AvatarUrl": "https://pbs.twimg.com/profile_images/578914631948767232/3AvOluEs_400x400.jpeg",
           "Biography": "Dean Goodmanson is a Software Engineer who loves systems, electronic to social, that have a positive impact on our world. High School programming a pocket calculator on BASIC and BBS games for friends encouraged him to a college and career in software and business. At Panasonic and then Renaissance, the facets of network and data programming led to appreciation of Systems Thinking, Software Engineering and team collaboration. Dean is inspired by The HP Way, Deming, Ackoff, Goldratt, Arlo Belshee, Ward Cunningham, Diana Larson, Ron Jeffries, Esther Derby, Tim Ottinger and The Dude.",
+          "CompanyName": "Renaissance Learning",
+          "CompanyWebsiteUrl": "http://www.renaissance.com",
           "FirstName": "Dean",
           "Id": "2fa81cc5-67ba-49bb-8736-25560ed87aec",
           "LastName": "Goodmanson",
           "PhotoUrl": "https://pbs.twimg.com/profile_images/578914631948767232/3AvOluEs_400x400.jpeg",
-          "CompanyName": "Renaissance Learning",
-          "CompanyWebsiteUrl": "http://www.renaissance.com",
           "PositionName": "Sr. Software Engineer"
         }
       ],
@@ -462,10 +562,10 @@
       "EndTime": "2017-09-30T12:20:00-06:00",
       "Id": "49c69562-aeea-4e83-8053-91ab321f8dd3",
       "MainCategory": {
+        "Color": "#B8E986",
         "Id": "6466b137-4ddf-4fee-8324-96926baf6fc6",
         "Name": "General Dev",
-        "ShortName": "Gen Dev",
-        "Color": "#B8E986"
+        "ShortName": "Gen Dev"
       },
       "Room": {
         "Name": 118
@@ -474,12 +574,12 @@
         {
           "AvatarUrl": "https://media.licdn.com/mpr/mpr/shrinknp_150_150/p/6/005/081/013/16f33f3.jpg",
           "Biography": "I've lived in Stevens Point for nearly 30 years.  Developing for WI companies for over 10 years.",
+          "CompanyName": "Skyward",
+          "CompanyWebsiteUrl": "https://www.skyward.com",
           "FirstName": "Scott",
           "Id": "6a60cf99-e675-4a79-b062-e282f671a9e7",
           "LastName": "Degen",
           "PhotoUrl": "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/081/013/16f33f3.jpg",
-          "CompanyName": "Skyward",
-          "CompanyWebsiteUrl": "https://www.skyward.com",
           "PositionName": "Principal Engineer"
         }
       ],
@@ -491,10 +591,10 @@
       "EndTime": "2017-09-30T13:20:00-06:00",
       "Id": "ec747a84-24b3-406c-8d55-3d6891bcdc95",
       "MainCategory": {
+        "Color": "#F88F73",
         "Id": "f48b3d7b-a99c-4a69-b0c8-90d066758404",
         "Name": "Security/DevOps",
-        "ShortName": "Security/DevOps",
-        "Color": "#F88F73"
+        "ShortName": "Security/DevOps"
       },
       "Room": {
         "Name": 115
@@ -503,12 +603,12 @@
         {
           "AvatarUrl": "https://media.licdn.com/mpr/mpr/shrinknp_150_150/p/5/005/0b9/1f0/35cead3.jpg",
           "Biography": "Technical Consultant for Oracle Cloud HR/ERP Implementations, specializing in data conversion / extracts.  Information Security enthusiast, with a focus on offensive security.",
+          "CompanyName": "New Resources Consulting",
+          "CompanyWebsiteUrl": "http://www.nrconsults.com",
           "FirstName": "Hank",
           "Id": "a50a726e-800b-429e-bba6-cb757e10b19d",
           "LastName": "Wyatt",
           "PhotoUrl": "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/5/005/0b9/1f0/35cead3.jpg",
-          "CompanyName": "New Resources Consulting",
-          "CompanyWebsiteUrl": "http://www.nrconsults.com",
           "PositionName": "Certified Cloud Associate"
         }
       ],
@@ -520,10 +620,10 @@
       "EndTime": "2017-09-30T13:20:00-06:00",
       "Id": "af6099ff-ce91-4edc-b911-26e33e3629ee",
       "MainCategory": {
+        "Color": "#AC9AD3",
         "Id": "ba93bcc2-0ca4-4041-be41-8eb885128a5f",
         "Name": "Data Analytics",
-        "ShortName": "Data Analytics",
-        "Color": "#AC9AD3"
+        "ShortName": "Data Analytics"
       },
       "Room": {
         "Name": 116
@@ -532,12 +632,12 @@
         {
           "AvatarUrl": "http://vvcexpl.com/wordpress/wp-content/uploads/2013/09/profile-default-male.png",
           "Biography": "I am a .Net developer, a musician, and a child wrapped into a tall burrito.",
+          "CompanyName": "Skyward",
+          "CompanyWebsiteUrl": "https://www.skyward.com",
           "FirstName": "Yo",
           "Id": "719a4b60-a74a-44c6-bd0c-332a023cc57b",
           "LastName": "Conway",
           "PhotoUrl": "http://vvcexpl.com/wordpress/wp-content/uploads/2013/09/profile-default-male.png",
-          "CompanyName": "Skyward",
-          "CompanyWebsiteUrl": "https://www.skyward.com",
           "PositionName": "Software Engineer"
         }
       ],
@@ -549,10 +649,10 @@
       "EndTime": "2017-09-30T13:20:00-06:00",
       "Id": "3f1f7f17-85f4-4933-a011-1fbdd8586b36",
       "MainCategory": {
+        "Color": "#B8E986",
         "Id": "a5d66c8b-eef1-4ede-892a-d6e808ac9808",
         "Name": "Soft Skill",
-        "ShortName": "Soft Skills",
-        "Color": "#B8E986"
+        "ShortName": "Soft Skills"
       },
       "Room": {
         "Name": 117
@@ -561,12 +661,12 @@
         {
           "AvatarUrl": "https://media.licdn.com/mpr/mpr/shrinknp_150_150/AAEAAQAAAAAAAA2aAAAAJDg2NTJhODM0LWM3YmItNDhjZC04YmYyLThhYWE4Y2Y2OGFhZg.jpg",
           "Biography": "Julie has been actively leading Portfolios, Programs and Projects for the past 15 plus years.   She has had the opportunity to facilitate the conversion of many system through bank mergers, new online banking systems, electronic health record systems and ERP systems.   Julie’s passion for project management has given her the opportunity to implement PMOs, oversee large programs and interact with team members at all levels of organizations.   Julie has held her PMP designation since 2006.  Julie’s commitment to effectively and efficiently execute technology projects is demonstrated through her use of communication and team leadership tools.",
+          "CompanyName": "New Resources Consulting",
+          "CompanyWebsiteUrl": "http://www.nrconsults.com",
           "FirstName": "Julie",
           "Id": "97bef6b2-ace5-4ef6-aef0-3159c52a7560",
           "LastName": "Zurowski",
           "PhotoUrl": "https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAA2aAAAAJDg2NTJhODM0LWM3YmItNDhjZC04YmYyLThhYWE4Y2Y2OGFhZg.jpg",
-          "CompanyName": "New Resources Consulting",
-          "CompanyWebsiteUrl": "http://www.nrconsults.com",
           "PositionName": "VP - Management Consulting"
         }
       ],
@@ -578,10 +678,10 @@
       "EndTime": "2017-09-30T13:20:00-06:00",
       "Id": "939456f6-851c-43bd-a405-d2050f0ad72d",
       "MainCategory": {
+        "Color": "#B8E986",
         "Id": "6466b137-4ddf-4fee-8324-96926baf6fc6",
         "Name": "General Dev",
-        "ShortName": "Gen Dev",
-        "Color": "#B8E986"
+        "ShortName": "Gen Dev"
       },
       "Room": {
         "Name": 118
@@ -590,12 +690,12 @@
         {
           "AvatarUrl": "https://media.licdn.com/mpr/mpr/shrinknp_150_150/p/3/000/044/1a4/39db74e.jpg",
           "Biography": "Full stack developer for 15+ years with a penchant for distributed systems.",
+          "CompanyName": "Red Arrow Labs",
+          "CompanyWebsiteUrl": "http://www.redarrowlabs.com",
           "FirstName": "Matthew",
           "Id": "e4437090-c2cc-4a0c-b631-917069e42df0",
           "LastName": "Kowalski",
           "PhotoUrl": "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/3/000/044/1a4/39db74e.jpg",
-          "CompanyName": "Red Arrow Labs",
-          "CompanyWebsiteUrl": "http://www.redarrowlabs.com",
           "PositionName": "Software Developer"
         }
       ],
@@ -605,106 +705,176 @@
   ],
   "sponsors": [
     {
-      "Name": "CWITA",
       "Description": "CWITA is a group of action focused employers in central Wisconsin working together to enhance the image of IT careers and position the region as a hub for IT opportunities. CWITA collaborates with the K-16 education system to strengthen IT career pathways and assist in growing our regional IT workforce.",
+      "Id": "ebd8e1f6-0b60-4f92-bc0f-9916f68f678f",
+      "ImageUrl": "https://static.wixstatic.com/media/615d66_0a380afe71f24ec3a4438aac44d0da0f~mv2.png/v1/fill/w_220,h_68,al_c,usm_0.66_1.00_0.01/615d66_0a380afe71f24ec3a4438aac44d0da0f~mv2.png",
+      "Name": "CWITA",
+      "Rank": 0,
       "SponsorLevel": {
         "Name": "Organizer",
         "Rank": 0
       },
-      "ImageUrl": "https://static.wixstatic.com/media/615d66_0a380afe71f24ec3a4438aac44d0da0f~mv2.png/v1/fill/w_220,h_68,al_c,usm_0.66_1.00_0.01/615d66_0a380afe71f24ec3a4438aac44d0da0f~mv2.png",
-      "WebsiteUrl": "http://cwita.org",
-      "Rank": 0
+      "WebsiteUrl": "http://cwita.org"
     },
     {
-      "Name": "CENWIDEV",
       "Description": "Central Wisconsin is FULL of technical enthusists. Let's meet and learn from one another. Great minds are in your backyard!",
+      "Id": "eed0480d-220c-430a-b1b1-8d332462edcd",
+      "ImageUrl": "https://static.wixstatic.com/media/615d66_25923432d6974e4d9babd26c8e608f3d~mv2.jpg/v1/fill/w_208,h_97,al_c,q_80,usm_0.66_1.00_0.01/615d66_25923432d6974e4d9babd26c8e608f3d~mv2.jpg",
+      "Name": "CENWIDEV",
+      "Rank": 1,
       "SponsorLevel": {
         "Name": "Organizer",
         "Rank": 1
       },
-      "ImageUrl": "https://static.wixstatic.com/media/615d66_25923432d6974e4d9babd26c8e608f3d~mv2.jpg/v1/fill/w_208,h_97,al_c,q_80,usm_0.66_1.00_0.01/615d66_25923432d6974e4d9babd26c8e608f3d~mv2.jpg",
-      "WebsiteUrl": "http://cenwidev.org",
       "TwitterUrl": "cenwidev",
-      "Rank": 1
+      "WebsiteUrl": "http://cenwidev.org"
     },
     {
-      "Name": "Mid-State Technical College",
       "Description": "Mid-State is one of 16 colleges in the Wisconsin Technical College System. It is a leading provider of higher education offering many career opportunities through associate degrees, technical diplomas and certificates. Student-focused and community-based, Mid-State serves a resident population of approximately 165,000 in central Wisconsin.\n\nThe college has campuses in Marshfield, Stevens Point and Wisconsin Rapids, and a learning center in Adams. Visit the College’s website at mstc.edu.\n\n92% of Mid-State alumni are employed within six months after graduation; 79% of graduates work in the Mid-State District comprising all or portions of Adams, Clark, Jackson, Juneau, Marathon, Portage, Waushara, and Wood Counties.",
+      "Id": "3941eb01-ba31-4374-ae9b-57dce7d475f2",
+      "ImageUrl": "https://static.wixstatic.com/media/615d66_7e995f8d8fef408985da8bfaefd4d561~mv2.jpg/v1/fill/w_219,h_50,al_c,q_80,usm_0.66_1.00_0.01/615d66_7e995f8d8fef408985da8bfaefd4d561~mv2.jpg",
+      "Name": "Mid-State Technical College",
+      "Rank": 2,
       "SponsorLevel": {
         "Name": "Organizer",
         "Rank": 2
       },
-      "ImageUrl": "https://static.wixstatic.com/media/615d66_7e995f8d8fef408985da8bfaefd4d561~mv2.jpg/v1/fill/w_219,h_50,al_c,q_80,usm_0.66_1.00_0.01/615d66_7e995f8d8fef408985da8bfaefd4d561~mv2.jpg",
-      "WebsiteUrl": "https://www.mstc.edu",
       "TwitterUrl": "followmstc",
-      "Rank": 2
+      "WebsiteUrl": "https://www.mstc.edu"
     },
     {
-      "Name": "Create Portage County",
       "Description": "CREATE is a 501(c)3 nonprofit that sees community challenges as opportunities to envision a more vibrant and engaging community. We are building partnerships and streamlining resources to ensure that those creative visions have a real impact on Central Wisconsin. We are making creativity central to community development, economic growth, and our quality of life.",
+      "Id": "0e766c8a-15f6-43de-b10d-2aefd6814299",
+      "ImageUrl": "https://static.wixstatic.com/media/615d66_2cc6da6194ff4187b631ee21e9218a4a~mv2.png/v1/fill/w_207,h_78,al_c,usm_0.66_1.00_0.01/615d66_2cc6da6194ff4187b631ee21e9218a4a~mv2.png",
+      "Name": "Create Portage County",
+      "Rank": 3,
       "SponsorLevel": {
         "Name": "Community Partner",
         "Rank": 0
       },
-      "ImageUrl": "https://static.wixstatic.com/media/615d66_2cc6da6194ff4187b631ee21e9218a4a~mv2.png/v1/fill/w_207,h_78,al_c,usm_0.66_1.00_0.01/615d66_2cc6da6194ff4187b631ee21e9218a4a~mv2.png",
-      "WebsiteUrl": "http://www.createportagecounty.org",
       "TwitterUrl": "createpoco",
-      "Rank": 3
+      "WebsiteUrl": "http://www.createportagecounty.org"
     },
     {
-      "Name": "Renaissance Learning",
       "Description": "Every student can become their most amazing self with the guidance of an expert teacher to unlock their full potential. Renaissance exists to salute those teachers at the heart of every classroom.\n\nWe bring the best of data analytics and research-based practice to support teachers nationwide. Teachers take it from there – after all, their guidance and warmth are the key component of student growth.",
+      "Id": "a83098df-e346-4e6a-9537-dff0e7f5710e",
+      "ImageUrl": "https://static.wixstatic.com/media/615d66_fd56f3314ec44641a613005d88090194~mv2.jpg/v1/fill/w_579,h_52,al_c,q_80,usm_0.66_1.00_0.01/615d66_fd56f3314ec44641a613005d88090194~mv2.jpg",
+      "Name": "Renaissance Learning",
+      "Rank": 4,
       "SponsorLevel": {
         "Name": "Platinum Sponsor",
         "Rank": 0
       },
-      "ImageUrl": "https://static.wixstatic.com/media/615d66_fd56f3314ec44641a613005d88090194~mv2.jpg/v1/fill/w_579,h_52,al_c,q_80,usm_0.66_1.00_0.01/615d66_fd56f3314ec44641a613005d88090194~mv2.jpg",
-      "WebsiteUrl": "https://www.renaissance.com",
       "TwitterUrl": "RenLearnUS",
-      "Rank": 4
+      "WebsiteUrl": "https://www.renaissance.com"
     },
     {
-      "Name": "Red Arrow Labs",
       "Description": "We are developers, designers, project managers, researchers, analysts and social innovators. We are experts in our fields with diverse backgrounds. While each of us is unique, the one thing we all share is a passion to create great software that positively impacts people’s health. We view every new project as an opportunity to do our best work. The goal, to develop solutions that use technology the right way, employ creative solutions and empower the people who use them.",
+      "Id": "4a90c936-bfcc-4b3a-b554-e8840c2e512d",
+      "ImageUrl": "https://static.wixstatic.com/media/615d66_bd03accec2de4645bceace5107b9098b~mv2.jpg/v1/fill/w_214,h_93,al_c,q_80,usm_0.66_1.00_0.01/615d66_bd03accec2de4645bceace5107b9098b~mv2.jpg",
+      "Name": "Red Arrow Labs",
+      "Rank": 5,
       "SponsorLevel": {
         "Name": "Gold Sponsor",
         "Rank": 0
       },
-      "ImageUrl": "https://static.wixstatic.com/media/615d66_bd03accec2de4645bceace5107b9098b~mv2.jpg/v1/fill/w_214,h_93,al_c,q_80,usm_0.66_1.00_0.01/615d66_bd03accec2de4645bceace5107b9098b~mv2.jpg",
-      "WebsiteUrl": "http://redarrowlabs.com",
       "TwitterUrl": "RedArrowLabs",
-      "Rank": 5
+      "WebsiteUrl": "http://redarrowlabs.com"
     },
     {
-      "Name": "Skyward",
       "Description": "A better SIS and ERP experience for school districts and municipalities. We're about more than just software.",
+      "Id": "57e28728-701f-4d9a-9a2e-7fb4a0cae7fd",
+      "ImageUrl": "https://static.wixstatic.com/media/615d66_4bd0173adda347bbb3184523a7f8e91a~mv2.jpg/v1/fill/w_204,h_110,al_c,q_80,usm_0.66_1.00_0.01/615d66_4bd0173adda347bbb3184523a7f8e91a~mv2.jpg",
+      "Name": "Skyward",
+      "Rank": 6,
       "SponsorLevel": {
         "Name": "Gold Sponsor",
         "Rank": 1
       },
-      "ImageUrl": "https://static.wixstatic.com/media/615d66_4bd0173adda347bbb3184523a7f8e91a~mv2.jpg/v1/fill/w_204,h_110,al_c,q_80,usm_0.66_1.00_0.01/615d66_4bd0173adda347bbb3184523a7f8e91a~mv2.jpg",
-      "WebsiteUrl": "https://www.skyward.com",
       "TwitterUrl": "skyward_inc",
-      "Rank": 6
+      "WebsiteUrl": "https://www.skyward.com"
     },
     {
-      "Name": "BHTP",
       "Description": "We make it easy to choose the right trip protection for you, and then we add fast claims processing and speedy claims payment. It's travel insurance your way.",
+      "ImageUrl": "https://static.wixstatic.com/media/615d66_2eea6f2ae1d14d78a3c89b8b2cd70da5~mv2.jpg/v1/fill/w_220,h_70,al_c,q_80,usm_0.66_1.00_0.01/615d66_2eea6f2ae1d14d78a3c89b8b2cd70da5~mv2.jpg",
+      "Name": "BHTP",
+      "Rank": 6,
       "SponsorLevel": {
         "Name": "Gold Sponsor",
         "Rank": 1
       },
-      "ImageUrl": "https://static.wixstatic.com/media/615d66_2eea6f2ae1d14d78a3c89b8b2cd70da5~mv2.jpg/v1/fill/w_220,h_70,al_c,q_80,usm_0.66_1.00_0.01/615d66_2eea6f2ae1d14d78a3c89b8b2cd70da5~mv2.jpg",
-      "WebsiteUrl": "https://www.bhtp.com",
       "TwitterUrl": "BHTP",
-      "Rank": 6
-    }
-  ],
-  "notifications" : [
+      "WebsiteUrl": "https://www.bhtp.com"
+    },
     {
-      "Text": "Welcome to the Central Wisconsin IT Conference!",
-      "Date" : "2017-09-30T08:00:00-06:00",
-      "IsVisible" : true
+      "Description": "MCIS, Inc. is a healthcare information technology company dedicated to delivering and managing cutting edge products and services. MCIS is a wholly-owned subsidiary of the Marshfield Clinic Health System.\n\nMarshfield Clinic has already utilized MCIS’ products and services to deliver better outcomes at lower costs during the CMS Demonstration Project. This history underscores our fundamental belief that for a healthcare IT company to revolutionize healthcare through improved services, it must be intimately associated with its core constituents: patients and providers.\n\nThis history of collaboration between healthcare provider and the IT service is paramount to the success of MCIS. From inception this model provides access to numerous practicing physicians across more than 80 medical specialties. This access is not just for advice and improvements, but also to test and demonstrate what works in the real world to improve patient care.",
+      "ImageUrl": "https://static.wixstatic.com/media/615d66_645e512f539141b4aef05295e68261c0~mv2.png/v1/fill/w_302,h_87,al_c,lg_1/615d66_645e512f539141b4aef05295e68261c0~mv2.png",
+      "Name": "MCSI",
+      "Rank": 7,
+      "SponsorLevel": {
+        "Name": "Silver Sponsor",
+        "Rank": 1
+      },
+      "TwitterUrl": "mcis_it",
+      "WebsiteUrl": "https://www.mcis.com"
+    },
+    {
+      "Description": "Northcentral Technical College is a premier two-year college of choice. NTC Programs are designed to build a competitive, technologically advanced workforce.",
+      "ImageUrl": "https://static.wixstatic.com/media/615d66_3ea21274f2e84950a981cc0a135c81b0~mv2.jpg/v1/fill/w_300,h_78,al_c,q_80,usm_0.66_1.00_0.01/615d66_3ea21274f2e84950a981cc0a135c81b0~mv2.jpg",
+      "Name": "Northcentral Technical College",
+      "Rank": 8,
+      "SponsorLevel": {
+        "Name": "Silver Sponsor",
+        "Rank": 2
+      },
+      "TwitterUrl": "NTCNews",
+      "WebsiteUrl": "https://www.ntc.edu"
+    },
+    {
+      "Description": "CyberOne Data owns and operates it's own private data center with multiple carriers, redundant power, climate controlled cooling, clean agent fire suppression and network systems that allow us to quickly deploy dedicated servers, facilitate simple colocation arrangements and provide reliable performance at all times.",
+      "ImageUrl": "https://static.wixstatic.com/media/615d66_3385b6dae94d44e5955e97751fb3d76c~mv2.jpg/v1/fill/w_307,h_56,al_c,q_80,usm_0.66_1.00_0.01/615d66_3385b6dae94d44e5955e97751fb3d76c~mv2.jpg",
+      "Name": "CyberOne Data",
+      "Rank": 9,
+      "SponsorLevel": {
+        "Name": "Bronze Sponsor",
+        "Rank": 2
+      },
+      "WebsiteUrl": "https://www.cyberonedata.com"
+    },
+    {
+      "Id": "78a29e04-f16f-4ecd-b2fd-55287177fc09",
+      "ImageUrl": "http://www.nrconsults.com/wp-content/themes/nrc_theme-2/images/logo-nrc.png",
+      "Name": "New Resources Consulting",
+      "Rank": 10,
+      "SponsorLevel": {
+        "Name": "Networking Sponsor",
+        "Rank": 1
+      },
+      "WebsiteUrl": "http://www.nrconsults.com"
+    },
+    {
+      "Description": "CyberOne Data owns and operates it's own private data center with multiple carriers, redundant power, climate controlled cooling, clean agent fire suppression and network systems that allow us to quickly deploy dedicated servers, facilitate simple colocation arrangements and provide reliable performance at all times.",
+      "ImageUrl": "https://static.wixstatic.com/media/615d66_93905e998df046078b5ef3cbf67abfc5~mv2.jpg/v1/fill/w_307,h_74,al_c,q_80,usm_0.66_1.00_0.01/615d66_93905e998df046078b5ef3cbf67abfc5~mv2.jpg",
+      "Name": "EO Johnson Business Technologies",
+      "Rank": 11,
+      "SponsorLevel": {
+        "Name": "Lanyard Sponsor",
+        "Rank": 1
+      },
+      "TwitterUrl": "EOJohnsonCo",
+      "WebsiteUrl": "https://www.eojohnson.com"
+    },
+    {
+      "Description": "grouve helps coworkers, event-goers and friends create shared moments by bringing real time photos and videos together in one place so everyone can become more visually connected.",
+      "ImageUrl": "https://static.wixstatic.com/media/615d66_6f6b6959c7674373a360a5f276ef8fde~mv2.png/v1/fill/w_307,h_136,al_c,usm_0.66_1.00_0.01/615d66_6f6b6959c7674373a360a5f276ef8fde~mv2.png",
+      "Name": "Grove",
+      "Rank": 12,
+      "SponsorLevel": {
+        "Name": "Media Sponsor",
+        "Rank": 1
+      },
+      "TwitterUrl": "EOJohnsonCo",
+      "WebsiteUrl": "https://grouve.tech"
     }
   ]
 }
