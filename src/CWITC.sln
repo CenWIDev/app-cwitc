@@ -25,6 +25,11 @@ Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "CWITC.Shared", "CWITC.Share
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CWITC.Android", "CWITC.Android\CWITC.Android.csproj", "{C4B4592F-6AC4-4FE6-B63E-5D2DE47FD340}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{4D7FDC10-B264-416F-8041-CE2121C5E66C}"
+	ProjectSection(SolutionItems) = preProject
+		..\README.md = ..\README.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		CWITC.Shared\CWITC.Shared.projitems*{b994592a-84e5-4595-b02d-d2fe99116852}*SharedItemsImports = 13
