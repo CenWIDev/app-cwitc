@@ -543,6 +543,7 @@
     <ImageAsset Include="Images.xcassets\AppIcon.appiconset\Icon-App-76x76%401x.png" />
     <ImageAsset Include="Images.xcassets\AppIcon.appiconset\Icon-App-76x76%402x.png" />
     <ImageAsset Include="Images.xcassets\AppIcon.appiconset\Icon-App-83.5x83.5%402x.png" />
+    <ImageAsset Include="Images.xcassets\AppIcon.appiconset\App store icon.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />
