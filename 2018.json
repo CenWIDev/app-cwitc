@@ -3,8 +3,8 @@
         {
             "Title": "Don't just show up. ",
             "Abstract": "Community, is a word we started using at the start of the 14th century, as a way to define a set of common people. In today’s tech scene, we hear this word used everywhere but do you really feel part of one? For the past decade I’ve spent over 10k hours fostering and developing different communities. Some small, and some large efforts such as THAT Conference but what I’ve come to learn is what I’m here to share.\n\nBeing part of a community is easy, being present and active is something completely different. Many will sign up but won’t even bother showing up, The networks, the opportunities, the support are all right in front of you but you have to take the step, that second step. I’ll explain today’s landscape, explore a few techniques, and help you take that second step.",
-            "StartTime": "2018-10-06T13:30:00Z",
-            "EndTime": "2018-10-06T14:45:00Z",
+            "StartTime": "2018-10-06T12:30:00Z",
+            "EndTime": "2018-10-06T13:45:00Z",
             "Id": "1660f708-849c-4076-a9cb-fa5cfcd48313",
             "MainCategory": {
                 "Color": "#4B637E",
@@ -31,8 +31,8 @@
         {
             "Title": "Get the Boring Stuff Right: A Guide to Keeping Up with the Latest Tech",
             "Abstract": "Technology is a treadmill. Every year, there's a pile of shiny new things to learn. It's impossible to keep up with all of it. You're constantly asking yourself: \"Which technology stack is going to keep me employed?\"\n\nAs a developer, I love chasing shiny new technologies, but over the years I've learned that making my users happy is way more fulfilling than using the latest technology. After over a decade of building software, I've learned the key to good software is getting the boring stuff right.\n\nIn this talk, you'll learn about why you should spend more time working on evergreen skills. These include skills like creating maintainable code, learning how to learn, and building the right thing. You'll learn what skills have maximum impact and how to improve them. You'll learn how to plan your personal education and make the most of your time. After this talk, you'll be able to sort through the morass of new technologies and make the most of your limited time.",
-            "StartTime": "2018-10-06T15:00:00Z",
-            "EndTime": "2018-10-06T15:45:00Z",
+            "StartTime": "2018-10-06T14:00:00Z",
+            "EndTime": "2018-10-06T14:45:00Z",
             "Id": "629e5a5b-4d88-4e8a-b6bf-5c765abaa455",
             "TargetLevel": 100,
             "MainCategory": {
@@ -60,8 +60,8 @@
         {
             "Title": "Google + Alexa: Cross-Assistant Apps",
             "Abstract": "Let's develop an Action/Skill for Google and Alexa in one neat little package\n\nRemember when the Echo was made available back in late 2014? It was invite only, then Prime only, then finally available for everyone the next summer. Only, most people didn't really seem to care. What does it even do? Why should I bother? Can't I just use my phone?\n\nFast forward to 2018, and it seems like everyone at least knows the Echo, and probably the Google Home. People know how to use them and why you'd have one. The question now has become \"Which one should I get?\" rather than \"Why would I ever buy that?\"\n\nWe've hit the point where people can reasonably expect skills to be on both the Amazon Echo and the Google Home. Both devices are in enough houses where it's worth the investment to create skills and actions for each platform. Luckily, this isn't nearly as difficult as it may seem.\n\nWe'll walk through the creation of both Alexa Skills and Actions on Google, look at the differences (there are a few, mostly names), look at what's the same, and see just how we can build a single application to serve both smart assistants. By the end of the session, we'll have a sample application running on both platforms from a single set of REST endpoints.",
-            "StartTime": "2018-10-06T15:00:00Z",
-            "EndTime": "2018-10-06T15:45:00Z",
+            "StartTime": "2018-10-06T14:00:00Z",
+            "EndTime": "2018-10-06T14:45:00Z",
             "Id": "3d5689c6-beb1-4c6b-937e-30c9811c5fca",
             "TargetLevel": 200,
             "MainCategory": {
@@ -89,8 +89,8 @@
         {
             "Title": "Using CTFs to enforce security awareness in your organization",
             "Abstract": "Remember those \"security awareness\" trainings that are sent out to employees at least once a year? These trainings typically require you to answer multiple choice questions, listen to some boring lecture, and then get a participation certificate. Do employees remember anything from these \"trainings\"? The answer is no, they don't. You may choose this method because it is easy and it checks off the proverbial box, but employees gain very little from this type of self-paced learning. During this session, I will be describing authentic learning activities that use CTFs (Capture the Flag) events to engage and motivate students. Furthermore, you will walk away with a new perspective on how to get employees to naturally think critically about security.",
-            "StartTime": "2018-10-06T15:00:00Z",
-            "EndTime": "2018-10-06T15:45:00Z",
+            "StartTime": "2018-10-06T14:00:00Z",
+            "EndTime": "2018-10-06T14:45:00Z",
             "Id": "bc464510-0ed4-4c3c-883a-b51eeedf4b49",
             "TargetLevel": 100,
             "MainCategory": {
@@ -118,8 +118,8 @@
         {
             "Title": "How Your Corporate Culture Impacts Talent Attraction and Retention - Are You Looking Inside Out?",
             "Abstract": "An organization and the individuals within the organization need to start looking inside themselves to solve the talent attraction and retention puzzle. How your organization and the people inside it communicate, grow, lead, prioritize shapes people coming to your organization and how long they stay.",
-            "StartTime": "2018-10-06T15:00:00Z",
-            "EndTime": "2018-10-06T15:45:00Z",
+            "StartTime": "2018-10-06T14:00:00Z",
+            "EndTime": "2018-10-06T14:45:00Z",
             "Id": "81dee90b-a7d8-49d2-9bd8-5a603332e4cf",
             "TargetLevel": 200,
             "MainCategory": {
@@ -147,8 +147,8 @@
         {
             "Title": "Dawn of the Smart Enterprise",
             "Abstract": "We have a smart phone, even a smart home but why not a smart office? Actually, the dawn of the smart enterprise is here - pragmatic AI will enable companies to draw upon data across marketing, sales, and elsewhere to unify marketing automation, CRM, customer success analytics etc. There is nothing more intuitive in interaction than a conversation, whether it is with a human or a bot. We will share our thoughts on we are seeing with our customers and how the move to smart enterprise is starting to happen. We will demo some use-cases that the folks can relate to and also encourage an open discussion during our session.",
-            "StartTime": "2018-10-06T15:00:00Z",
-            "EndTime": "2018-10-06T15:45:00Z",
+            "StartTime": "2018-10-06T14:00:00Z",
+            "EndTime": "2018-10-06T14:45:00Z",
             "Id": "3d1f822a-8a6d-4b91-88ea-d1b2a08f2ade",
             "TargetLevel": 100,
             "MainCategory": {
@@ -176,8 +176,8 @@
         {
             "Title": "Web Developer to Mobile Apps Developer using NativeScript",
             "Abstract": "Nativescript is a free and open source solution to develop android and IOS based mobile applications. This session will go through the fundamentals of developing Native Mobile Apps using Native Script leveraging the power of Angular, Typescript or JavaScript as your scripting language. A working session will be conducted covering the basics of Native Script and the steps which are required to develop mobile apps.",
-            "StartTime": "2018-10-06T15:00:00Z",
-            "EndTime": "2018-10-06T15:45:00Z",
+            "StartTime": "2018-10-06T14:00:00Z",
+            "EndTime": "2018-10-06T14:45:00Z",
             "Id": "3d1f822a-8a6d-4b91-88ea-d1b2a08f2ade",
             "TargetLevel": 100,
             "MainCategory": {
@@ -205,8 +205,8 @@
         {
             "Title": "Agile: Where to Start and Why",
             "Abstract": "Achieving agility almost always involves organizational structure changes that lead to true culture change.\n\nDoing agile is focused on mechanics of frameworks such as Scrum without realizing the true benefits of agility or understanding the “whys” behind the frameworks. Being agile is more about a mindset shift in how we approach work – using agile frameworks with the “whys” in mind and organizing our people to achieve agility.\n\nDoing agile lives within status quo processes; being agile challenges status quo processes with a spirit of continuous improvement.\n\nThis whiteboard talk clarifies what “agile” is, highlights the most important factors in achieving true agility, and why many agile adoptions “fail” to get there.",
-            "StartTime": "2018-10-06T16:00:00Z",
-            "EndTime": "2018-10-06T16:45:00Z",
+            "StartTime": "2018-10-06T15:00:00Z",
+            "EndTime": "2018-10-06T15:45:00Z",
             "Id": "45e61379-19a2-49e8-a1e9-ac30b625adfd",
             "TargetLevel": 100,
             "MainCategory": {
@@ -234,8 +234,8 @@
         {
             "Title": "Kotlin - Less Code, More Fun",
             "Abstract": "Write less (but safer!) code in your Android apps or any JVM-based projects\n\nEver work on an Android app and tire of all the boilerplate code? Or spend hours chasing down NullPointerExceptions in your Java app? Enter Kotlin, JetBrains' new(ish) free, open-source programming language that targets the JVM. This means you can use it everywhere you use Java, but with a modern, succinct syntax.\n\nFor native Android developers, Kotlin is not only available, but it's now considered a first-class language. You're able to write an app completely with Kotlin, or switch over entire components, or even just change your models to Kotlin's data classes (which removes a TON of boilerplate code.)\n\nOh, and for anyone using Java elsewhere, you can add in Kotlin code to your existing application. Kotlin is 100% interoperable with Java, meaning all your existing code/libraries/tests will work with any Kotlin code you write.\n\nDoing JavaScript development? Kotlin can be transpiled into ES5, and there are even libraries available to use React or Angular with Kotlin.\n\nC# dev working on any kind of Java project? You'll feel much more at home with Kotlin, given features like nullable types, properties (rather than getters/setters), and extension methods.\n\nWe'll walk through Kotlin's features, check out the syntax, and even create a small Android application so you can see Kotlin in action.",
-            "StartTime": "2018-10-06T16:00:00Z",
-            "EndTime": "2018-10-06T16:45:00Z",
+            "StartTime": "2018-10-06T15:00:00Z",
+            "EndTime": "2018-10-06T15:45:00Z",
             "Id": "637e5d68-4ea5-4e68-b45d-0d4ee6f68c09",
             "TargetLevel": 200,
             "MainCategory": {
@@ -263,8 +263,8 @@
         {
             "Title": "SQL - Hot Rod Mechanic Mindset",
             "Abstract": "I am a developer and I cannot seem to find why my SQL query is performing poorly, but it feels like it is. What tools can I use to identify areas of the query that are performing poorly, and how can I make this poorly performing situation better? A brief discussion on tools, tips and tricks to squeeze some performance from SQL. This talk will include a brief discussion on query plans, row-store indexing, and how to find queries that are not so hot.",
-            "StartTime": "2018-10-06T16:00:00Z",
-            "EndTime": "2018-10-06T16:45:00Z",
+            "StartTime": "2018-10-06T15:00:00Z",
+            "EndTime": "2018-10-06T15:45:00Z",
             "Id": "bbaa5345-ef05-48ab-ad16-abbd19947c3f",
             "TargetLevel": 200,
             "MainCategory": {
@@ -292,8 +292,8 @@
         {
             "Title": "Perceptions, Partnerships and Pipelines; Apprenticeship in Non-Traditional Fields",
             "Abstract": "IT apprenticeship sounds like a new thing to be fearful of—at least until the 2.0 release—but adopting early may mean creating a new and important niche for the Wisconsin Technical College System. The information technology apprenticeship opportunities under the Wisconsin Apprenticeship Growth and Enhancement Strategies (WAGE$) grant are creating an innovative way to meet the workforce development needs of a hungry-for-talent IT industry while providing a pathway to an associate degree and more.",
-            "StartTime": "2018-10-06T16:00:00Z",
-            "EndTime": "2018-10-06T16:45:00Z",
+            "StartTime": "2018-10-06T15:00:00Z",
+            "EndTime": "2018-10-06T15:45:00Z",
             "Id": "3bea48be-717f-44d6-89d1-6b6e5a29e8d9",
             "TargetLevel": 100,
             "MainCategory": {
@@ -337,8 +337,8 @@
         {
             "Title": "Everything Serverless in Azure with Functions and Cosmos",
             "Abstract": "Server less architecture is a current buzz word and there are various offerings to choose from different cloud vendors. The talk will be focused on Azure Functions and the various integration options available as part of Azure Functions. A working session will be conducted where participants can access and create their azure functions and get a hands on overview to understand the various integration options and diagnostic mechanism available to monitor the functions. Developers can choose their language of choice to create their own functions and take advantage of the features available from the platform. The talk will also focus on transforming a legacy Electronic Data Interchange (EDI) solution to Azure Functions and Azure Cosmos DB.",
-            "StartTime": "2018-10-06T16:00:00Z",
-            "EndTime": "2018-10-06T16:45:00Z",
+            "StartTime": "2018-10-06T15:00:00Z",
+            "EndTime": "2018-10-06T15:45:00Z",
             "Id": "22c8c022-2f59-4854-808b-3bae3c5b133c",
             "TargetLevel": 100,
             "MainCategory": {
@@ -366,8 +366,8 @@
         {
             "Title": "How to build honest business Reporting software?",
             "Abstract": "Brief introduction of my work with QlikView, along with examples of proper source control operations and design, testing and control optimization, and efficient expressions.",
-            "StartTime": "2018-10-06T18:30:00Z",
-            "EndTime": "2018-10-06T19:15:00Z",
+            "StartTime": "2018-10-06T17:30:00Z",
+            "EndTime": "2018-10-06T18:15:00Z",
             "Id": "0116b985-2e34-415e-8b7c-55e998902394",
             "TargetLevel": 100,
             "MainCategory": {
@@ -395,8 +395,8 @@
         {
             "Title": "Career growth opportunities through remote work",
             "Abstract": "Significant opportunities are available for both organizations and professionals around the subject of remote work. Remote work offers organizations the ability to acquire industry leading talent and have a competitive advantage over non-remote work organizations. For professionals, remote work offers opportunities for career advancement and being competitive in a tight labor market. At the end of this session, both managers and professionals will understand the best places to find remote work opportunities, understand the types of remote work engagements, the key approaches for a successful engagement, and the key characteristics to look for in a remote team environment. Entrepreneurs will also gain from this session by learning practical approaches they can apply towards automating their business.",
-            "StartTime": "2018-10-06T18:30:00Z",
-            "EndTime": "2018-10-06T19:15:00Z",
+            "StartTime": "2018-10-06T17:30:00Z",
+            "EndTime": "2018-10-06T18:15:00Z",
             "Id": "0d863fca-3701-4d40-b972-923e31f7f26b",
             "TargetLevel": 200,
             "MainCategory": {
@@ -424,8 +424,8 @@
         {
             "Title": "Agile for System Administrators/Teams",
             "Abstract": "How to take the best traits from Agile and apply them to everyday work for System Administrator and System Operations team. What works and what you can leave at the off. How to use tools like Git, Ansible, Chat to better facilitate projects in reaching your end goal.",
-            "StartTime": "2018-10-06T18:30:00Z",
-            "EndTime": "2018-10-06T19:15:00Z",
+            "StartTime": "2018-10-06T17:30:00Z",
+            "EndTime": "2018-10-06T18:15:00Z",
             "Id": "995af047-727a-418b-bc86-a296c92ad752",
             "TargetLevel": 200,
             "MainCategory": {
@@ -453,8 +453,8 @@
         {
             "Title": "Ready Player Two: VR Game Dev",
             "Abstract": "In the year 2044, the world is in crisis. To escape that reality, the populace turns to the OASIS, a virtual reality MMORPG that is more than just a game – it is a completely immersive virtual society.\n\nBack in 2018, at the dawn of VR, the seeds of our future were planted. What would come to be a billion dollar market, that changed the world forever, began then…\n\nJoin us in viewing the 2018 talk by the Microsoft MVP Lance Larsen (www.LanceLarsen.com), one of the founders of HOLOSOFT (www.HOLOSOFT.net)\n\nThis historic presentation inspired a generation of VR developers – leading at least in part to the OASIS we have today.\n\nCode focused talk that will get everyone started making Microsoft Mixed Reality VR games…\n\nFocus on the latest and greatest VR hardware and software\nFocus on creating VR experiences within Unity / C# and Visual Studio\nFocus on integrating VR controllers\nFocus on creating your own 3D VR launch icons\n\nTarget Audience and Takeaways: Talk will accommodate a wide range of experience levels, introducing many for the first time to amazing XR/AR/VR technologies – getting them started with the tools and information to get them engaged. Additionally for the more experienced developers, we’ll include strong coding examples and resources to grow quickly and start their development futures in this emerging billion dollar field.",
-            "StartTime": "2018-10-06T18:30:00Z",
-            "EndTime": "2018-10-06T19:15:00Z",
+            "StartTime": "2018-10-06T17:30:00Z",
+            "EndTime": "2018-10-06T18:15:00Z",
             "Id": "55c33cf1-54eb-4f22-ab78-196ad1253399",
             "TargetLevel": 200,
             "MainCategory": {
@@ -482,8 +482,8 @@
         {
             "Title": "C# Everywhere with Blazor",
             "Abstract": "C# has long been recognized as a robust and powerful language, favored by developers across the globe. What if you were able to write C# across the stack, even replacing JavaScript code? With the new experimental Blazor framework, you can do it! Come to learn about Blazor, where it is headed, and learn about the power of writing a single-page application (SPA) in C# without any non-standard plugins or extensions.",
-            "StartTime": "2018-10-06T18:30:00Z",
-            "EndTime": "2018-10-06T19:15:00Z",
+            "StartTime": "2018-10-06T17:30:00Z",
+            "EndTime": "2018-10-06T18:15:00Z",
             "Id": "a65e9955-4c38-4af6-a043-9c1d936cfc41",
             "TargetLevel": 100,
             "MainCategory": {
@@ -511,8 +511,8 @@
         {
             "Title": "Applying Design Patterns to Everyday Problems",
             "Abstract": "Have you read about design patterns but weren’t quite sure how or where to apply them in your application? Have you heard of principles like loose coupling and programming to an abstraction, but didn’t know if you were really doing it right? If so, this talk is for you.\n\nIn this talk, I’ll work from several example code segments and show how to recognize which design pattern would be appropriate. I’ll then show how to refactor the existing code to use the chosen design pattern and demonstrate how the resulting code is more understandable, easier to maintain and easier to test.\n\nAmong the examples I will show is how a dependency on an external system can be refactored using an interface and applying the bridge and adaptor pattern. I’ll also show how to use the decorator pattern to cache results from an external call. Finally, I’ll show examples of how patterns like the strategy pattern and chain of responsibility pattern can replace large blocks of if/else if statements to create a simpler design that is easier to test.\n\nWhen this talk is complete, you will have a good idea of how to recognize where these patterns can be applied in your codebase and how you go about implementing them.",
-            "StartTime": "2018-10-06T18:30:00Z",
-            "EndTime": "2018-10-06T19:15:00Z",
+            "StartTime": "2018-10-06T17:30:00Z",
+            "EndTime": "2018-10-06T18:15:00Z",
             "Id": "8e30775f-f422-47ee-9edf-f2199b847773",
             "TargetLevel": 200,
             "MainCategory": {
@@ -540,8 +540,8 @@
         {
             "Title": "Stacking the Deck",
             "Abstract": "Wildcard debuts and demonstrates experimental and production, in-house, security technologies and tools. We'll go over design considerations, implementation, use cases, and real world scenarios.",
-            "StartTime": "2018-10-06T19:30:00Z",
-            "EndTime": "2018-10-06T20:15:00Z",
+            "StartTime": "2018-10-06T18:30:00Z",
+            "EndTime": "2018-10-06T19:15:00Z",
             "Id": "820cb274-cb96-4a13-8337-de456106aa3d",
             "TargetLevel": 300,
             "MainCategory": {
@@ -579,8 +579,8 @@
         {
             "Title": "Integrating Machine and Statistical Learning with Analytics Knowledge Management",
             "Abstract": "This talk is based on the work developed (Edwards and Rodriguez, 2018) on the relationship between analytics, big data and knowledge management. The presentation includes a conceptual action-orientated model connecting data, analytics techniques, knowledge and patterns/insights. In the conversation, there is an illustration of categories and examples of analytics/big data projects, comparing several applications.\n\nA particular focus is the difference between one-off projects, even if they lead to ongoing results, such as sensor monitoring, and ongoing activity or a series of projects. In the latter, we expect to find influences of knowledge on data (what to collect, and standardization of meaning), knowledge on techniques (new techniques developed in the light of past examples) and action on knowledge (learning from skilled practice).\n\nLinks will also be made to the higher-level issues that drive analytics efforts - or at least should do. These include a definition of problems, goals, and objectives, and measurement of organizational/project performance. This raises the question of the relationship between knowledge management and strategic risk management.",
-            "StartTime": "2018-10-06T19:30:00Z",
-            "EndTime": "2018-10-06T20:15:00Z",
+            "StartTime": "2018-10-06T18:30:00Z",
+            "EndTime": "2018-10-06T19:15:00Z",
             "Id": "fa845b7d-c44b-47fb-9b53-1c65b044d81b",
             "MainCategory": {
                 "Color": "#efe00b",
@@ -606,8 +606,8 @@
         {
             "Title": "Setting Priority in the Enterprise",
             "Abstract": "Mature enterprises will always have more work requested from their IT teams than can actually be delivered at any one time. I'll discuss some how a Product Owner can get a handle on all the work, create visibility to the entire organization and prioritize so there is always just one \"number one priority\".",
-            "StartTime": "2018-10-06T19:30:00Z",
-            "EndTime": "2018-10-06T20:15:00Z",
+            "StartTime": "2018-10-06T18:30:00Z",
+            "EndTime": "2018-10-06T19:15:00Z",
             "Id": "2d48c220-a96e-4d11-84f2-c96fa264c672",
             "TargetLevel": 400,
             "MainCategory": {
@@ -644,8 +644,8 @@
         {
             "Title": "How to build a highly scalable web and mobile-ended applications without managing servers",
             "Abstract": "Starting a new web or mobile project is always fun for a developer. However, as the project moves on, requirements can get increasingly complex fast. Building a highly secure login experience, user analytics, managing storage, offline support, caching, defining APIs, and making everything scalable and secure are all non-trivial exercises. Further, many of these non-functional requirements are really just table stakes, and not what sets your app apart in the market. In this session, we will show you how to build a web and mobile application that enables all of these non-functional requirements in just a few lines of code using cloud-based backend services that enable you to move faster in getting your unique application features to market without worrying about the heavy lifting on the backend.",
-            "StartTime": "2018-10-06T19:30:00Z",
-            "EndTime": "2018-10-06T20:15:00Z",
+            "StartTime": "2018-10-06T18:30:00Z",
+            "EndTime": "2018-10-06T19:15:00Z",
             "Id": "39f80bc1-fa97-4443-ab56-763e4609463d",
             "TargetLevel": 200,
             "MainCategory": {
@@ -673,8 +673,8 @@
         {
             "Title": "Exception Driven Development",
             "Abstract": "What is \"Exception Driven Development\"? If customer-facing issues are your top priority, then you already adhere to the primary principle of Exception Driven Development.\n\nIt's a pretty simple concept: Collect application data, especially regarding errors and crashes, and then focus on fixing those problems that your users are actually experiencing. Join me for 60 minutes and I'll walk you through what you're doing wrong with your current log collection approach, and how you should be doing it. Additionally, we'll cover visualizing errors in a more meaningful manner that eliminates all the noise.",
-            "StartTime": "2018-10-06T19:30:00Z",
-            "EndTime": "2018-10-06T20:15:00Z",
+            "StartTime": "2018-10-06T18:30:00Z",
+            "EndTime": "2018-10-06T19:15:00Z",
             "Id": "4dca843f-2643-49d5-812a-89c3b0d096c0",
             "TargetLevel": 100,
             "MainCategory": {
@@ -702,8 +702,8 @@
         {
             "Title": "Get Started with Windows 10 IoT Core!",
             "Abstract": "Microsoft has a special version of Windows 10 to target Internet of Things (IoT) devices, where you can develop using your favorite tech like Visual Studio and C#.\n\nThis session will provide a concise walk-through of getting started with Win10 IoT Core on a Rasberry Pi while discussing pros/cons from burnt-fingers in the field. We’ll discuss the development side of IoT, meaning from the device, to the code and sending it to the cloud, like Azure. We will not be covering the Big Data and reporting side of IoT in this session other than mentions of how that fits into the bigger picture.\n\nYou’ll leave understanding how to quickly get started and remove the barriers to entry for you own side-project or even a pitch to make at your job.",
-            "StartTime": "2018-10-06T19:30:00Z",
-            "EndTime": "2018-10-06T20:15:00Z",
+            "StartTime": "2018-10-06T18:30:00Z",
+            "EndTime": "2018-10-06T19:15:00Z",
             "Id": "0477026e-d3cb-4380-917f-e7035208531b",
             "TargetLevel": 100,
             "MainCategory": {
@@ -731,14 +731,24 @@
     ],
     "featured_events": [
         {
-            "StartTime": "2018-10-06T12:30:00Z",
-            "EndTime": "2018-10-06T13:30:00Z",
+            "StartTime": "2018-10-06T11:30:00Z",
+            "EndTime": "2018-10-06T12:30:00Z",
             "Title": "Registration Check-ins & Exhibits"
         },
         {
-            "StartTime": "2018-10-06T13:30:00Z",
-            "EndTime": "2018-10-06T14:45:00Z",
+            "StartTime": "2018-10-06T12:30:00Z",
+            "EndTime": "2018-10-06T13:45:00Z",
             "Title": "Opening & Keynote"
+        },
+        {
+            "StartTime": "2018-10-06T13:45:00Z",
+            "EndTime": "2018-10-06T14:00:00Z",
+            "Title": "Break/Exibits"
+        },
+        {
+            "StartTime": "2018-10-06T14:00:00Z",
+            "EndTime": "2018-10-06T14:45:00Z",
+            "Title": "Sessions"
         },
         {
             "StartTime": "2018-10-06T14:45:00Z",
@@ -752,18 +762,18 @@
         },
         {
             "StartTime": "2018-10-06T15:45:00Z",
-            "EndTime": "2018-10-06T16:00:00Z",
-            "Title": "Break/Exibits"
+            "EndTime": "2018-10-06T17:30:00Z",
+            "Title": "Lunch & Networking"
         },
         {
-            "StartTime": "2018-10-06T16:00:00Z",
-            "EndTime": "2018-10-06T16:45:00Z",
+            "StartTime": "2018-10-06T17:30:00Z",
+            "EndTime": "2018-10-06T18:15:00Z",
             "Title": "Sessions"
         },
         {
-            "StartTime": "2018-10-06T16:45:00Z",
+            "StartTime": "2018-10-06T18:15:00Z",
             "EndTime": "2018-10-06T18:30:00Z",
-            "Title": "Lunch & Networking"
+            "Title": "Break/Exibits"
         },
         {
             "StartTime": "2018-10-06T18:30:00Z",
@@ -777,23 +787,13 @@
         },
         {
             "StartTime": "2018-10-06T19:30:00Z",
-            "EndTime": "2018-10-06T20:15:00Z",
-            "Title": "Sessions"
-        },
-        {
-            "StartTime": "2018-10-06T20:15:00Z",
-            "EndTime": "2018-10-06T20:30:00Z",
-            "Title": "Break/Exibits"
-        },
-        {
-            "StartTime": "2018-10-06T20:30:00Z",
-            "EndTime": "2018-10-06T21:00:00Z",
+            "EndTime": "2018-10-06T20:00:00Z",
             "Title": "Closing Session"
         },
         {
             "Description": "Join sponsors and attendees on the Patio at Guu's on Main for a happy hour and networking. Guu's on Main is located just south of Cobbletone Hotel.",
-            "StartTime": "2018-10-06T21:00:00Z",
-            "EndTime": "2018-10-06T23:00:00Z",
+            "StartTime": "2018-10-06T20:00:00Z",
+            "EndTime": "2018-10-06T22:00:00Z",
             "LocationName": "Guu's on Main",
             "SponsorId": "78a29e04-f16f-4ecd-b2fd-55287177fc09",
             "Title": "Networking Social"
