@@ -34,12 +34,12 @@
             "StartTime": "2018-10-06T10:00:00-06:00",
             "EndTime": "2018-10-06T10:45:00-06:00",
             "Id": "629e5a5b-4d88-4e8a-b6bf-5c765abaa455",
-            "TargetLevel" : 100,
+            "TargetLevel": 100,
             "MainCategory": {
-                "Color": "#B8E986",
-                "Id": "b040c5c1-0628-4f33-bed6-bafeae750960",
-                "Name": "General Dev",
-                "ShortName": "General Dev"
+                "Color": "#efe00b",
+                "Id": "a5d66c8b-eef1-4ede-892a-d6e808ac9808",
+                "Name": "Soft Skill",
+                "ShortName": "Soft Skills"
             },
             "Room": {
                 "Name": "Room 113"
@@ -63,12 +63,12 @@
             "StartTime": "2018-10-06T10:00:00-06:00",
             "EndTime": "2018-10-06T10:45:00-06:00",
             "Id": "3d5689c6-beb1-4c6b-937e-30c9811c5fca",
-            "TargetLevel" : 200,
+            "TargetLevel": 200,
             "MainCategory": {
-                "Color": "#B8E986",
-                "Id": "b040c5c1-0628-4f33-bed6-bafeae750960",
-                "Name": "General Dev",
-                "ShortName": "General Dev"
+                "Color": "#F88F73",
+                "Id": "f6d520f7-b869-44dc-a46e-5cbb41b83d42",
+                "Name": "Artificial Intelligence",
+                "ShortName": "AI"
             },
             "Room": {
                 "Name": "Room 114"
@@ -92,12 +92,12 @@
             "StartTime": "2018-10-06T10:00:00-06:00",
             "EndTime": "2018-10-06T10:45:00-06:00",
             "Id": "bc464510-0ed4-4c3c-883a-b51eeedf4b49",
-            "TargetLevel" : 100,
+            "TargetLevel": 100,
             "MainCategory": {
-                "Color": "#B8E986",
-                "Id": "b040c5c1-0628-4f33-bed6-bafeae750960",
-                "Name": "General Dev",
-                "ShortName": "General Dev"
+                "Color": "#af0c2d",
+                "Id": "f48b3d7b-a99c-4a69-b0c8-90d066758404",
+                "Name": "Security",
+                "ShortName": "Security"
             },
             "Room": {
                 "Name": "Room 115"
@@ -121,12 +121,12 @@
             "StartTime": "2018-10-06T10:00:00-06:00",
             "EndTime": "2018-10-06T10:45:00-06:00",
             "Id": "81dee90b-a7d8-49d2-9bd8-5a603332e4cf",
-            "TargetLevel" : 200,
+            "TargetLevel": 200,
             "MainCategory": {
-                "Color": "#B8E986",
-                "Id": "b040c5c1-0628-4f33-bed6-bafeae750960",
-                "Name": "General Dev",
-                "ShortName": "General Dev"
+                "Color": "#efe00b",
+                "Id": "a5d66c8b-eef1-4ede-892a-d6e808ac9808",
+                "Name": "Soft Skill",
+                "ShortName": "Soft Skills"
             },
             "Room": {
                 "Name": "Room 116"
@@ -150,12 +150,12 @@
             "StartTime": "2018-10-06T10:00:00-06:00",
             "EndTime": "2018-10-06T10:45:00-06:00",
             "Id": "3d1f822a-8a6d-4b91-88ea-d1b2a08f2ade",
-            "TargetLevel" : 100,
+            "TargetLevel": 100,
             "MainCategory": {
-                "Color": "#B8E986",
-                "Id": "b040c5c1-0628-4f33-bed6-bafeae750960",
-                "Name": "General Dev",
-                "ShortName": "General Dev"
+                "Color": "#F88F73",
+                "Id": "f6d520f7-b869-44dc-a46e-5cbb41b83d42",
+                "Name": "Artificial Intelligence",
+                "ShortName": "AI"
             },
             "Room": {
                 "Name": "Room 117"
@@ -179,12 +179,12 @@
             "StartTime": "2018-10-06T10:00:00-06:00",
             "EndTime": "2018-10-06T10:45:00-06:00",
             "Id": "3d1f822a-8a6d-4b91-88ea-d1b2a08f2ade",
-            "TargetLevel" : 100,
+            "TargetLevel": 100,
             "MainCategory": {
-                "Color": "#B8E986",
-                "Id": "5292b471-251d-4a79-9859-0a1cd72aa164",
-                "Name": "General Dev",
-                "ShortName": "General Dev"
+                "Color": "#d43de5",
+                "Id": "65af047a-b248-4b28-8a00-ea824fabe37e",
+                "Name": "Mobile Development",
+                "ShortName": "Mobile Dev"
             },
             "Room": {
                 "Name": "Room 212"
@@ -210,10 +210,10 @@
             "Id": "45e61379-19a2-49e8-a1e9-ac30b625adfd",
             "TargetLevel": 100,
             "MainCategory": {
-                "Color": "#B8E986",
-                "Id": "5292b471-251d-4a79-9859-0a1cd72aa164",
-                "Name": "General Dev",
-                "ShortName": "General Dev"
+                "Color": "#42f453",
+                "Id": "ad67d798-6710-45f6-b723-6eeae2097aa5",
+                "Name": "Agile",
+                "ShortName": "Agile"
             },
             "Room": {
                 "Name": "Room 113"
@@ -240,9 +240,9 @@
             "TargetLevel": 200,
             "MainCategory": {
                 "Color": "#B8E986",
-                "Id": "5292b471-251d-4a79-9859-0a1cd72aa164",
+                "Id": "6466b137-4ddf-4fee-8324-96926baf6fc6",
                 "Name": "General Dev",
-                "ShortName": "General Dev"
+                "ShortName": "Gen Dev"
             },
             "Room": {
                 "Name": "Room 114"
@@ -269,9 +269,9 @@
             "TargetLevel": 200,
             "MainCategory": {
                 "Color": "#B8E986",
-                "Id": "5292b471-251d-4a79-9859-0a1cd72aa164",
+                "Id": "6466b137-4ddf-4fee-8324-96926baf6fc6",
                 "Name": "General Dev",
-                "ShortName": "General Dev"
+                "ShortName": "Gen Dev"
             },
             "Room": {
                 "Name": "Room 115"
@@ -297,10 +297,10 @@
             "Id": "3bea48be-717f-44d6-89d1-6b6e5a29e8d9",
             "TargetLevel": 100,
             "MainCategory": {
-                "Color": "#B8E986",
-                "Id": "5292b471-251d-4a79-9859-0a1cd72aa164",
-                "Name": "General Dev",
-                "ShortName": "General Dev"
+                "Color": "#4B637E",
+                "Id": "ba93bcc2-0ca4-4041-be41-8eb885128a5f",
+                "Name": "Community",
+                "ShortName": "Community"
             },
             "Room": {
                 "Name": "Room 116"
@@ -343,9 +343,9 @@
             "TargetLevel": 100,
             "MainCategory": {
                 "Color": "#B8E986",
-                "Id": "5292b471-251d-4a79-9859-0a1cd72aa164",
+                "Id": "6466b137-4ddf-4fee-8324-96926baf6fc6",
                 "Name": "General Dev",
-                "ShortName": "General Dev"
+                "ShortName": "Gen Dev"
             },
             "Room": {
                 "Name": "Room 117"
@@ -372,9 +372,9 @@
             "TargetLevel": 100,
             "MainCategory": {
                 "Color": "#B8E986",
-                "Id": "5292b471-251d-4a79-9859-0a1cd72aa164",
+                "Id": "6466b137-4ddf-4fee-8324-96926baf6fc6",
                 "Name": "General Dev",
-                "ShortName": "General Dev"
+                "ShortName": "Gen Dev"
             },
             "Room": {
                 "Name": "Room 113"
@@ -400,10 +400,10 @@
             "Id": "0d863fca-3701-4d40-b972-923e31f7f26b",
             "TargetLevel": 200,
             "MainCategory": {
-                "Color": "#B8E986",
-                "Id": "5292b471-251d-4a79-9859-0a1cd72aa164",
-                "Name": "General Dev",
-                "ShortName": "General Dev"
+                "Color": "#efe00b",
+                "Id": "a5d66c8b-eef1-4ede-892a-d6e808ac9808",
+                "Name": "Soft Skill",
+                "ShortName": "Soft Skills"
             },
             "Room": {
                 "Name": "Room 114"
@@ -429,10 +429,10 @@
             "Id": "995af047-727a-418b-bc86-a296c92ad752",
             "TargetLevel": 200,
             "MainCategory": {
-                "Color": "#B8E986",
-                "Id": "5292b471-251d-4a79-9859-0a1cd72aa164",
-                "Name": "General Dev",
-                "ShortName": "General Dev"
+                "Color": "#42f453",
+                "Id": "ad67d798-6710-45f6-b723-6eeae2097aa5",
+                "Name": "Agile",
+                "ShortName": "Agile"
             },
             "Room": {
                 "Name": "Room 115"
@@ -459,9 +459,9 @@
             "TargetLevel": 200,
             "MainCategory": {
                 "Color": "#B8E986",
-                "Id": "5292b471-251d-4a79-9859-0a1cd72aa164",
+                "Id": "6466b137-4ddf-4fee-8324-96926baf6fc6",
                 "Name": "General Dev",
-                "ShortName": "General Dev"
+                "ShortName": "Gen Dev"
             },
             "Room": {
                 "Name": "Room 116"
@@ -488,9 +488,9 @@
             "TargetLevel": 100,
             "MainCategory": {
                 "Color": "#B8E986",
-                "Id": "5292b471-251d-4a79-9859-0a1cd72aa164",
+                "Id": "6466b137-4ddf-4fee-8324-96926baf6fc6",
                 "Name": "General Dev",
-                "ShortName": "General Dev"
+                "ShortName": "Gen Dev"
             },
             "Room": {
                 "Name": "Room 117"
@@ -517,9 +517,9 @@
             "TargetLevel": 200,
             "MainCategory": {
                 "Color": "#B8E986",
-                "Id": "5292b471-251d-4a79-9859-0a1cd72aa164",
+                "Id": "6466b137-4ddf-4fee-8324-96926baf6fc6",
                 "Name": "General Dev",
-                "ShortName": "General Dev"
+                "ShortName": "Gen Dev"
             },
             "Room": {
                 "Name": "Room 212"
@@ -545,10 +545,10 @@
             "Id": "820cb274-cb96-4a13-8337-de456106aa3d",
             "TargetLevel": 300,
             "MainCategory": {
-                "Color": "#B8E986",
-                "Id": "5292b471-251d-4a79-9859-0a1cd72aa164",
-                "Name": "General Dev",
-                "ShortName": "General Dev"
+                "Color": "#af0c2d",
+                "Id": "f48b3d7b-a99c-4a69-b0c8-90d066758404",
+                "Name": "Security",
+                "ShortName": "Security"
             },
             "Room": {
                 "Name": "Room 113"
@@ -583,10 +583,10 @@
             "EndTime": "2018-10-06T15:15:00-06:00",
             "Id": "fa845b7d-c44b-47fb-9b53-1c65b044d81b",
             "MainCategory": {
-                "Color": "#B8E986",
-                "Id": "5292b471-251d-4a79-9859-0a1cd72aa164",
-                "Name": "General Dev",
-                "ShortName": "General Dev"
+                "Color": "#efe00b",
+                "Id": "a5d66c8b-eef1-4ede-892a-d6e808ac9808",
+                "Name": "Soft Skill",
+                "ShortName": "Soft Skills"
             },
             "Room": {
                 "Name": "Room 114"
@@ -611,10 +611,10 @@
             "Id": "2d48c220-a96e-4d11-84f2-c96fa264c672",
             "TargetLevel": 400,
             "MainCategory": {
-                "Color": "#B8E986",
-                "Id": "5292b471-251d-4a79-9859-0a1cd72aa164",
-                "Name": "General Dev",
-                "ShortName": "General Dev"
+                "Color": "#42f453",
+                "Id": "ad67d798-6710-45f6-b723-6eeae2097aa5",
+                "Name": "Agile",
+                "ShortName": "Agile"
             },
             "Room": {
                 "Name": "Room 115"
@@ -628,7 +628,7 @@
                     "Id": "a7f0d363-f4fe-472b-bfc5-bf765468121c",
                     "LastName": "Kremin",
                     "PhotoUrl": "https://mbevivino.files.wordpress.com/2011/08/silhouette_i-m-congnito.jpg",
-                    "PositionName" : "Product Owner"
+                    "PositionName": "Product Owner"
                 },
                 {
                     "AvatarUrl": "https://mbevivino.files.wordpress.com/2011/08/silhouette_i-m-congnito.jpg",
@@ -637,7 +637,7 @@
                     "Id": "8f8a2700-c2fd-4648-9a67-510c5ada0c29",
                     "LastName": "Upright",
                     "PhotoUrl": "https://mbevivino.files.wordpress.com/2011/08/silhouette_i-m-congnito.jpg",
-                    "PositionName" : "Director of IT"
+                    "PositionName": "Director of IT"
                 }
             ]
         },
@@ -649,10 +649,10 @@
             "Id": "39f80bc1-fa97-4443-ab56-763e4609463d",
             "TargetLevel": 200,
             "MainCategory": {
-                "Color": "#B8E986",
-                "Id": "5292b471-251d-4a79-9859-0a1cd72aa164",
-                "Name": "General Dev",
-                "ShortName": "General Dev"
+                "Color": "#d43de5",
+                "Id": "65af047a-b248-4b28-8a00-ea824fabe37e",
+                "Name": "Mobile Development",
+                "ShortName": "Mobile Dev"
             },
             "Room": {
                 "Name": "Room 116"
@@ -666,7 +666,7 @@
                     "Id": "727e71c7-ce46-49c2-a288-330adc901c1d",
                     "LastName": "Elmhorst",
                     "PhotoUrl": "https://mbevivino.files.wordpress.com/2011/08/silhouette_i-m-congnito.jpg",
-                    "PositionName" : "Senior Solutions Architect"
+                    "PositionName": "Senior Solutions Architect"
                 }
             ]
         },
@@ -679,9 +679,9 @@
             "TargetLevel": 100,
             "MainCategory": {
                 "Color": "#B8E986",
-                "Id": "5292b471-251d-4a79-9859-0a1cd72aa164",
+                "Id": "6466b137-4ddf-4fee-8324-96926baf6fc6",
                 "Name": "General Dev",
-                "ShortName": "General Dev"
+                "ShortName": "Gen Dev"
             },
             "Room": {
                 "Name": "Room 117"
@@ -695,7 +695,7 @@
                     "Id": "aa0e3d62-c118-4129-b85a-0d4a090846be",
                     "LastName": "Niemyjski",
                     "PhotoUrl": "https://mbevivino.files.wordpress.com/2011/08/silhouette_i-m-congnito.jpg",
-                    "PositionName" : "Vice President"
+                    "PositionName": "Vice President"
                 }
             ]
         },
@@ -708,9 +708,9 @@
             "TargetLevel": 100,
             "MainCategory": {
                 "Color": "#B8E986",
-                "Id": "5292b471-251d-4a79-9859-0a1cd72aa164",
+                "Id": "6466b137-4ddf-4fee-8324-96926baf6fc6",
                 "Name": "General Dev",
-                "ShortName": "General Dev"
+                "ShortName": "Gen Dev"
             },
             "Room": {
                 "Name": "Room 212"
