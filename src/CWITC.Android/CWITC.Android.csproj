@@ -380,6 +380,7 @@
     <Compile Include="Helpers\ListViewSelectionOnTopEffect.cs" />
     <Compile Include="Extensions\JavaJsonHelperExtensions.cs" />
     <Compile Include="Renderers\PlaceholderEditorRenderer.cs" />
+    <Compile Include="Renderers\PageRenderer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
@@ -515,7 +516,6 @@
     <AndroidResource Include="Resources\drawable-xxhdpi\profile_generic_big.png" />
     <AndroidResource Include="Resources\drawable-xhdpi\icon_sessions_big_purple.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\icon_sessions_big_purple.png" />
-    <AndroidResource Include="Resources\values-v19\styles.xml" />
     <AndroidResource Include="Resources\drawable-hdpi\profile_pic_shadow.png" />
     <AndroidResource Include="Resources\drawable-mdpi\profile_pic_shadow.png" />
     <AndroidResource Include="Resources\drawable-xhdpi\profile_pic_shadow.png" />
