@@ -55,20 +55,6 @@
                          <StackLayout Spacing="0">
                             <local:LabelSection Text="Speakers"/>
                             <local:HeaderDivider/>
-                            <StackLayout IsVisible="{Binding IsBusy}" 
-                                         HorizontalOptions="FillAndExpand" 
-                                         VerticalOptions="Center" 
-                                          BackgroundColor="White"
-                                          Padding="{StaticResource StandardPadding}">
-                                <ActivityIndicator IsRunning="{Binding IsBusy}">
-                                    <ActivityIndicator.Color>
-                                        <OnPlatform x:TypeArguments="Color" Android="{StaticResource Accent}"/>
-                                    </ActivityIndicator.Color>
-                                </ActivityIndicator>
-                                <Label Text="Loading Speakers..." 
-                                       HorizontalOptions="Center" 
-                                       Style="{DynamicResource EvolveListItemTextStyle}"/>
-                           </StackLayout>
                             <local:NonScrollableListView 
                                 x:Name="ListViewSpeakers"
                                 ItemsSource="{Binding Session.Speakers}"
