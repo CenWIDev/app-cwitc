@@ -174,17 +174,17 @@
             ]
         },
         {
-            "Title": "Web Developer to Mobile Apps Developer using NativeScript",
-            "Abstract": "Nativescript is a free and open source solution to develop android and IOS based mobile applications. This session will go through the fundamentals of developing Native Mobile Apps using Native Script leveraging the power of Angular, Typescript or JavaScript as your scripting language. A working session will be conducted covering the basics of Native Script and the steps which are required to develop mobile apps.",
+            "Title": "Agile for System Administrators/Teams",
+            "Abstract": "How to take the best traits from Agile and apply them to everyday work for System Administrator and System Operations team. What works and what you can leave at the off. How to use tools like Git, Ansible, Chat to better facilitate projects in reaching your end goal.",
             "StartTime": "2018-10-06T14:00:00Z",
             "EndTime": "2018-10-06T14:45:00Z",
-            "Id": "3d1f822a-8a6d-4b91-88ea-d1b2a08f2ade",
-            "TargetLevel": 100,
+            "Id": "995af047-727a-418b-bc86-a296c92ad752",
+            "TargetLevel": 200,
             "MainCategory": {
-                "Color": "#d43de5",
-                "Id": "65af047a-b248-4b28-8a00-ea824fabe37e",
-                "Name": "Mobile Development",
-                "ShortName": "Mobile Dev"
+                "Color": "#42f453",
+                "Id": "ad67d798-6710-45f6-b723-6eeae2097aa5",
+                "Name": "Agile",
+                "ShortName": "Agile"
             },
             "Room": {
                 "Name": "Room 212"
@@ -192,16 +192,16 @@
             "Speakers": [
                 {
                     "AvatarUrl": "https://mbevivino.files.wordpress.com/2011/08/silhouette_i-m-congnito.jpg",
-                    "Biography": "With over 10 years of experience developing software applications and designing solutions , he solves complex problems faced by enterprise applications on a day to day basis. He is a technologist and tries to keep himself updated with latest technology advancements. His interest areas include Azure, Kubernetes and NativeScript.",
-                    "CompanyName": "Compunnel Software Group",
-                    "FirstName": "Baskar",
-                    "Id": "5ccfed40-2e7f-48cb-b0c2-0f83b8006378",
-                    "LastName": "Rao",
+                    "Biography": "Father, husband, want to be gear head and laid back recumbent biker who enjoys putting lines of code together and making systems talk to each other. ",
+                    "CompanyName": "Wildcard Corp.",
+                    "FirstName": "Timothy",
+                    "Id": "b650b468-1225-4836-8eac-aa43858c8f66",
+                    "LastName": "Pangburn",
                     "PhotoUrl": "https://mbevivino.files.wordpress.com/2011/08/silhouette_i-m-congnito.jpg",
-                    "PositionName": "Senior .Net Consultant"
+                    "PositionName": "Systems Administrator Sr."
                 }
             ]
-        },
+        },        
         {
             "Title": "Agile: Where to Start and Why",
             "Abstract": "Achieving agility almost always involves organizational structure changes that lead to true culture change.\n\nDoing agile is focused on mechanics of frameworks such as Scrum without realizing the true benefits of agility or understanding the “whys” behind the frameworks. Being agile is more about a mindset shift in how we approach work – using agile frameworks with the “whys” in mind and organizing our people to achieve agility.\n\nDoing agile lives within status quo processes; being agile challenges status quo processes with a spirit of continuous improvement.\n\nThis whiteboard talk clarifies what “agile” is, highlights the most important factors in achieving true agility, and why many agile adoptions “fail” to get there.",
@@ -335,17 +335,17 @@
             ]
         },
         {
-            "Title": "Everything Serverless in Azure with Functions and Cosmos",
-            "Abstract": "Server less architecture is a current buzz word and there are various offerings to choose from different cloud vendors. The talk will be focused on Azure Functions and the various integration options available as part of Azure Functions. A working session will be conducted where participants can access and create their azure functions and get a hands on overview to understand the various integration options and diagnostic mechanism available to monitor the functions. Developers can choose their language of choice to create their own functions and take advantage of the features available from the platform. The talk will also focus on transforming a legacy Electronic Data Interchange (EDI) solution to Azure Functions and Azure Cosmos DB.",
+            "Title": "Stacking the Deck",
+            "Abstract": "Wildcard debuts and demonstrates experimental and production, in-house, security technologies and tools. We'll go over design considerations, implementation, use cases, and real world scenarios.",
             "StartTime": "2018-10-06T15:00:00Z",
             "EndTime": "2018-10-06T15:45:00Z",
-            "Id": "22c8c022-2f59-4854-808b-3bae3c5b133c",
-            "TargetLevel": 100,
+            "Id": "820cb274-cb96-4a13-8337-de456106aa3d",
+            "TargetLevel": 300,
             "MainCategory": {
-                "Color": "#B8E986",
-                "Id": "6466b137-4ddf-4fee-8324-96926baf6fc6",
-                "Name": "General Dev",
-                "ShortName": "Gen Dev"
+                "Color": "#af0c2d",
+                "Id": "f48b3d7b-a99c-4a69-b0c8-90d066758404",
+                "Name": "Security",
+                "ShortName": "Security"
             },
             "Room": {
                 "Name": "Room 117"
@@ -353,16 +353,26 @@
             "Speakers": [
                 {
                     "AvatarUrl": "https://mbevivino.files.wordpress.com/2011/08/silhouette_i-m-congnito.jpg",
-                    "Biography": "With over 10 years of experience developing software applications and designing solutions , he solves complex problems faced by enterprise applications on a day to day basis. He is a technologist and tries to keep himself updated with latest technology advancements. His interest areas include Azure, Kubernetes and NativeScript.",
-                    "CompanyName": "Compunnel Software Group",
-                    "FirstName": "Baskar",
-                    "Id": "5ccfed40-2e7f-48cb-b0c2-0f83b8006378",
-                    "LastName": "Rao",
+                    "Biography": "Daniel Cronce is a penetration tester for Wildcard Corp. He likes to push the boundaries and test assumptions in everything he does.\n\nWhen he isn't actively red-teaming for a client, he hacks on tools and toys to make his job easier.",
+                    "CompanyName": "WildCard Corp.",
+                    "FirstName": "Daniel",
+                    "Id": "42cfc1d1-b6c1-4715-b677-63af43bef4e2",
+                    "LastName": "Cronce",
                     "PhotoUrl": "https://mbevivino.files.wordpress.com/2011/08/silhouette_i-m-congnito.jpg",
-                    "PositionName": "Senior .Net Consultant"
+                    "PositionName": "Penetration Tester"
+                },
+                {
+                    "AvatarUrl": "https://mbevivino.files.wordpress.com/2011/08/silhouette_i-m-congnito.jpg",
+                    "Biography": "Justin Moravec is an information security specialist at Wildcard Corp. Justin has worked in information security and information technology for the last 8 years. His background stems from working with with Wildcard Corp and government entities such as DoD and NGA.",
+                    "CompanyName": "WildCard Corp.",
+                    "FirstName": "Justin",
+                    "Id": "7bb56f78-3131-4718-95da-24b215d287f3",
+                    "LastName": "Moravec",
+                    "PhotoUrl": "https://mbevivino.files.wordpress.com/2011/08/silhouette_i-m-congnito.jpg",
+                    "PositionName": "Information Security Specialist"
                 }
             ]
-        },
+        },        
         {
             "Title": "How to build honest business Reporting software?",
             "Abstract": "Brief introduction of my work with QlikView, along with examples of proper source control operations and design, testing and control optimization, and efficient expressions.",
@@ -422,17 +432,17 @@
             ]
         },
         {
-            "Title": "Agile for System Administrators/Teams",
-            "Abstract": "How to take the best traits from Agile and apply them to everyday work for System Administrator and System Operations team. What works and what you can leave at the off. How to use tools like Git, Ansible, Chat to better facilitate projects in reaching your end goal.",
+            "Title": "Web Developer to Mobile Apps Developer using NativeScript",
+            "Abstract": "Nativescript is a free and open source solution to develop android and IOS based mobile applications. This session will go through the fundamentals of developing Native Mobile Apps using Native Script leveraging the power of Angular, Typescript or JavaScript as your scripting language. A working session will be conducted covering the basics of Native Script and the steps which are required to develop mobile apps.",
             "StartTime": "2018-10-06T17:30:00Z",
             "EndTime": "2018-10-06T18:15:00Z",
-            "Id": "995af047-727a-418b-bc86-a296c92ad752",
-            "TargetLevel": 200,
+            "Id": "3d1f822a-8a6d-4b91-88ea-d1b2a08f2ade",
+            "TargetLevel": 100,
             "MainCategory": {
-                "Color": "#42f453",
-                "Id": "ad67d798-6710-45f6-b723-6eeae2097aa5",
-                "Name": "Agile",
-                "ShortName": "Agile"
+                "Color": "#d43de5",
+                "Id": "65af047a-b248-4b28-8a00-ea824fabe37e",
+                "Name": "Mobile Development",
+                "ShortName": "Mobile Dev"
             },
             "Room": {
                 "Name": "Room 115"
@@ -440,16 +450,16 @@
             "Speakers": [
                 {
                     "AvatarUrl": "https://mbevivino.files.wordpress.com/2011/08/silhouette_i-m-congnito.jpg",
-                    "Biography": "Father, husband, want to be gear head and laid back recumbent biker who enjoys putting lines of code together and making systems talk to each other. ",
-                    "CompanyName": "Wildcard Corp.",
-                    "FirstName": "Timothy",
-                    "Id": "b650b468-1225-4836-8eac-aa43858c8f66",
-                    "LastName": "Pangburn",
+                    "Biography": "With over 10 years of experience developing software applications and designing solutions , he solves complex problems faced by enterprise applications on a day to day basis. He is a technologist and tries to keep himself updated with latest technology advancements. His interest areas include Azure, Kubernetes and NativeScript.",
+                    "CompanyName": "Compunnel Software Group",
+                    "FirstName": "Baskar",
+                    "Id": "5ccfed40-2e7f-48cb-b0c2-0f83b8006378",
+                    "LastName": "Rao",
                     "PhotoUrl": "https://mbevivino.files.wordpress.com/2011/08/silhouette_i-m-congnito.jpg",
-                    "PositionName": "Systems Administrator Sr."
+                    "PositionName": "Senior .Net Consultant"
                 }
             ]
-        },
+        },        
         {
             "Title": "Ready Player Two: VR Game Dev",
             "Abstract": "In the year 2044, the world is in crisis. To escape that reality, the populace turns to the OASIS, a virtual reality MMORPG that is more than just a game – it is a completely immersive virtual society.\n\nBack in 2018, at the dawn of VR, the seeds of our future were planted. What would come to be a billion dollar market, that changed the world forever, began then…\n\nJoin us in viewing the 2018 talk by the Microsoft MVP Lance Larsen (www.LanceLarsen.com), one of the founders of HOLOSOFT (www.HOLOSOFT.net)\n\nThis historic presentation inspired a generation of VR developers – leading at least in part to the OASIS we have today.\n\nCode focused talk that will get everyone started making Microsoft Mixed Reality VR games…\n\nFocus on the latest and greatest VR hardware and software\nFocus on creating VR experiences within Unity / C# and Visual Studio\nFocus on integrating VR controllers\nFocus on creating your own 3D VR launch icons\n\nTarget Audience and Takeaways: Talk will accommodate a wide range of experience levels, introducing many for the first time to amazing XR/AR/VR technologies – getting them started with the tools and information to get them engaged. Additionally for the more experienced developers, we’ll include strong coding examples and resources to grow quickly and start their development futures in this emerging billion dollar field.",
@@ -538,17 +548,17 @@
             ]
         },
         {
-            "Title": "Stacking the Deck",
-            "Abstract": "Wildcard debuts and demonstrates experimental and production, in-house, security technologies and tools. We'll go over design considerations, implementation, use cases, and real world scenarios.",
+            "Title": "Everything Serverless in Azure with Functions and Cosmos",
+            "Abstract": "Server less architecture is a current buzz word and there are various offerings to choose from different cloud vendors. The talk will be focused on Azure Functions and the various integration options available as part of Azure Functions. A working session will be conducted where participants can access and create their azure functions and get a hands on overview to understand the various integration options and diagnostic mechanism available to monitor the functions. Developers can choose their language of choice to create their own functions and take advantage of the features available from the platform. The talk will also focus on transforming a legacy Electronic Data Interchange (EDI) solution to Azure Functions and Azure Cosmos DB.",
             "StartTime": "2018-10-06T18:30:00Z",
             "EndTime": "2018-10-06T19:15:00Z",
-            "Id": "820cb274-cb96-4a13-8337-de456106aa3d",
-            "TargetLevel": 300,
+            "Id": "22c8c022-2f59-4854-808b-3bae3c5b133c",
+            "TargetLevel": 100,
             "MainCategory": {
-                "Color": "#af0c2d",
-                "Id": "f48b3d7b-a99c-4a69-b0c8-90d066758404",
-                "Name": "Security",
-                "ShortName": "Security"
+                "Color": "#B8E986",
+                "Id": "6466b137-4ddf-4fee-8324-96926baf6fc6",
+                "Name": "General Dev",
+                "ShortName": "Gen Dev"
             },
             "Room": {
                 "Name": "Room 113"
@@ -556,26 +566,16 @@
             "Speakers": [
                 {
                     "AvatarUrl": "https://mbevivino.files.wordpress.com/2011/08/silhouette_i-m-congnito.jpg",
-                    "Biography": "Daniel Cronce is a penetration tester for Wildcard Corp. He likes to push the boundaries and test assumptions in everything he does.\n\nWhen he isn't actively red-teaming for a client, he hacks on tools and toys to make his job easier.",
-                    "CompanyName": "WildCard Corp.",
-                    "FirstName": "Daniel",
-                    "Id": "42cfc1d1-b6c1-4715-b677-63af43bef4e2",
-                    "LastName": "Cronce",
+                    "Biography": "With over 10 years of experience developing software applications and designing solutions , he solves complex problems faced by enterprise applications on a day to day basis. He is a technologist and tries to keep himself updated with latest technology advancements. His interest areas include Azure, Kubernetes and NativeScript.",
+                    "CompanyName": "Compunnel Software Group",
+                    "FirstName": "Baskar",
+                    "Id": "5ccfed40-2e7f-48cb-b0c2-0f83b8006378",
+                    "LastName": "Rao",
                     "PhotoUrl": "https://mbevivino.files.wordpress.com/2011/08/silhouette_i-m-congnito.jpg",
-                    "PositionName": "Penetration Tester"
-                },
-                {
-                    "AvatarUrl": "https://mbevivino.files.wordpress.com/2011/08/silhouette_i-m-congnito.jpg",
-                    "Biography": "Justin Moravec is an information security specialist at Wildcard Corp. Justin has worked in information security and information technology for the last 8 years. His background stems from working with with Wildcard Corp and government entities such as DoD and NGA.",
-                    "CompanyName": "WildCard Corp.",
-                    "FirstName": "Justin",
-                    "Id": "7bb56f78-3131-4718-95da-24b215d287f3",
-                    "LastName": "Moravec",
-                    "PhotoUrl": "https://mbevivino.files.wordpress.com/2011/08/silhouette_i-m-congnito.jpg",
-                    "PositionName": "Information Security Specialist"
+                    "PositionName": "Senior .Net Consultant"
                 }
             ]
-        },
+        },        
         {
             "Title": "Integrating Machine and Statistical Learning with Analytics Knowledge Management",
             "Abstract": "This talk is based on the work developed (Edwards and Rodriguez, 2018) on the relationship between analytics, big data and knowledge management. The presentation includes a conceptual action-orientated model connecting data, analytics techniques, knowledge and patterns/insights. In the conversation, there is an illustration of categories and examples of analytics/big data projects, comparing several applications.\n\nA particular focus is the difference between one-off projects, even if they lead to ongoing results, such as sensor monitoring, and ongoing activity or a series of projects. In the latter, we expect to find influences of knowledge on data (what to collect, and standardization of meaning), knowledge on techniques (new techniques developed in the light of past examples) and action on knowledge (learning from skilled practice).\n\nLinks will also be made to the higher-level issues that drive analytics efforts - or at least should do. These include a definition of problems, goals, and objectives, and measurement of organizational/project performance. This raises the question of the relationship between knowledge management and strategic risk management.",
@@ -642,7 +642,7 @@
             ]
         },
         {
-            "Title": "How to build a highly scalable web and mobile-ended applications without managing servers",
+            "Title": "How to build a highly scalable web and mobile-enabled applications without managing servers",
             "Abstract": "Starting a new web or mobile project is always fun for a developer. However, as the project moves on, requirements can get increasingly complex fast. Building a highly secure login experience, user analytics, managing storage, offline support, caching, defining APIs, and making everything scalable and secure are all non-trivial exercises. Further, many of these non-functional requirements are really just table stakes, and not what sets your app apart in the market. In this session, we will show you how to build a web and mobile application that enables all of these non-functional requirements in just a few lines of code using cloud-based backend services that enable you to move faster in getting your unique application features to market without worrying about the heavy lifting on the backend.",
             "StartTime": "2018-10-06T18:30:00Z",
             "EndTime": "2018-10-06T19:15:00Z",
