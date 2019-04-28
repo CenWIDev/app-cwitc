@@ -1,17 +1,17 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage 
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="CWITC.Clients.UI.FloorMapsPage"
     xmlns:local="clr-namespace:CWITC.Clients.UI;assembly=CWITC.Clients.UI"
-    xmlns:carousel="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.CarouselView"
-    Title="Event Map"
+    Title="Campus Map"
     BackgroundColor="White">
-  <carousel:CarouselView x:Name="CarouselMaps">
-    <carousel:CarouselView.ItemTemplate>
-      <DataTemplate>
-        <local:FloorMap/>
-      </DataTemplate>
-    </carousel:CarouselView.ItemTemplate>
-  </carousel:CarouselView>
+    <CarouselView
+        x:Name="CarouselMaps">
+        <CarouselView.ItemTemplate>
+            <DataTemplate>
+                <local:FloorMap />
+            </DataTemplate>
+        </CarouselView.ItemTemplate>
+    </CarouselView>
 </ContentPage>

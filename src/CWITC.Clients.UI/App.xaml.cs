@@ -6,6 +6,8 @@ using Plugin.Connectivity.Abstractions;
 using Xamarin.Forms;
 using CWITC.Clients.Portable;
 
+[assembly: Xamarin.Forms.Xaml.XamlCompilation(Xamarin.Forms.Xaml.XamlCompilationOptions.Compile)]
+
 namespace CWITC.Clients.UI
 {
 	public partial class App : Application

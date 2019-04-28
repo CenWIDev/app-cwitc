@@ -14,6 +14,8 @@ namespace CWITC.Clients.UI
         {
             InitializeComponent();
 
+			this.Title = "CampusMap";
+
             CarouselMaps.ItemsSource = new List<EvolveMap>
             {
                 new EvolveMap
