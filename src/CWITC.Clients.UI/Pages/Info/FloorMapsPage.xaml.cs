@@ -19,20 +19,9 @@ namespace CWITC.Clients.UI
                 new EvolveMap
                 {
                     Local = "campus_map.jpg",
-                    Title = "Campus Maps"
+                    Title = "Campus Map"
                 }
             };
-
-            if (Device.OS == TargetPlatform.Android || Device.OS == TargetPlatform.iOS)
-            {
-                CarouselMaps.ItemSelected += (sender, args) =>
-                {
-                    var current = args.SelectedItem as EvolveMap;
-                    if (current == null)
-                        return;
-                    Title = current.Title;
-                };
-            }
         }
     }
 }

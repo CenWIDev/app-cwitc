@@ -61,9 +61,7 @@ namespace CWITC.Droid
 			typeof(Color).GetProperty("Accent", BindingFlags.Public | BindingFlags.Static).SetValue(null, Color.FromHex("#757575"));
 
 			ImageCircle.Forms.Plugin.Droid.ImageCircleRenderer.Init();
-
-			ZXing.Net.Mobile.Forms.Android.Platform.Init();
-
+			
 			LoadApplication(new App());
 
 			OnNewIntent(Intent);
@@ -97,7 +95,6 @@ namespace CWITC.Droid
 
 		public override void OnRequestPermissionsResult(int requestCode, string[] permissions, Permission[] grantResults)
 		{
-			global::ZXing.Net.Mobile.Forms.Android.PermissionsHandler.OnRequestPermissionsResult(requestCode, permissions, grantResults);
 			PermissionsImplementation.Current.OnRequestPermissionsResult(requestCode, permissions, grantResults);
 		}
 	}

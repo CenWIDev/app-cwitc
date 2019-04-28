@@ -5,7 +5,7 @@
              xmlns:toolkit="clr-namespace:FormsToolkit;assembly=FormsToolkit"
              xmlns:local="clr-namespace:CWITC.Clients.UI;assembly=CWITC.Clients.UI"
              x:Class="CWITC.Clients.UI.AboutPage"
-             x:Name="AboutPage"
+             x:Name="aboutPage"
              Title="Info"
              Icon="tab_about.png"
              NavigationPage.BackButtonTitle="Info"

@@ -77,9 +77,7 @@ namespace CWITC.iOS
             Toolkit.Init();
 
             DependencyService.Register<IAuthClient, Auth0Client>();
-
-            ZXing.Net.Mobile.Forms.iOS.Platform.Init();
-
+            
             //Random Inits for Linking out.
             Plugin.Share.ShareImplementation.ExcludedUIActivityTypes = new List<NSString>
             {
@@ -91,7 +89,6 @@ namespace CWITC.iOS
                 UIActivityType.SaveToCameraRoll
             };
             ImageCircle.Forms.Plugin.iOS.ImageCircleRenderer.Init();
-            ZXing.Net.Mobile.Forms.iOS.Platform.Init();
             NonScrollableListViewRenderer.Initialize();
             SelectedTabPageRenderer.Initialize();
             TextViewValue1Renderer.Init();
