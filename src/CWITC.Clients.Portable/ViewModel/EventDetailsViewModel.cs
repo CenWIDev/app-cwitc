@@ -38,9 +38,9 @@ namespace CWITC.Clients.Portable
 
         ICommand  loadEventDetailsCommand;
         public ICommand LoadEventDetailsCommand =>
-            loadEventDetailsCommand ?? (loadEventDetailsCommand = new Command(async () => await ExecuteLoadEventDetailsCommandAsync())); 
+            loadEventDetailsCommand ?? (loadEventDetailsCommand = new Command(() => ExecuteLoadEventDetailsCommand())); 
 
-        async Task ExecuteLoadEventDetailsCommandAsync()
+        void ExecuteLoadEventDetailsCommand()
         {
 
             if(IsBusy)

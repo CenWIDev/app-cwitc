@@ -19,7 +19,7 @@ namespace CWITC.Clients.UI
                 if(session == null)
                     return string.Empty;
 
-                return Device.OS == TargetPlatform.iOS ? session.GetDisplayTime() : session.GetDisplayName();
+                return Device.RuntimePlatform == "iOS" ? session.GetDisplayTime() : session.GetDisplayName();
             }
             catch (Exception ex)
             {

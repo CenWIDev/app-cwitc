@@ -7,9 +7,6 @@ namespace CWITC.Clients.UI
     {
         public PinchToZoomContainer ()
         {
-            if (Device.OS == TargetPlatform.Windows || Device.OS == TargetPlatform.WinPhone)
-                return;
-
             var pinchGesture = new PinchGestureRecognizer ();
             pinchGesture.PinchUpdated += OnPinchUpdated;
             GestureRecognizers.Add (pinchGesture);

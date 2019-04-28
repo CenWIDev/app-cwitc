@@ -46,7 +46,7 @@ namespace CWITC.Clients.UI
             base.OnBindingContextChanged();
             vm = null;
 
-            var adjust = Device.OS != TargetPlatform.Android ? 1 : -ViewModel.Sponsors.Count + 1;
+            var adjust = Device.RuntimePlatform != "Android" ? 1 : -ViewModel.Sponsors.Count + 1;
             ListViewSponsors.HeightRequest = ListViewSponsors.RowHeight - adjust;
         }
 

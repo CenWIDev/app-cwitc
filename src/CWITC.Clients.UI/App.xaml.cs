@@ -17,17 +17,13 @@ namespace CWITC.Clients.UI
 			InitializeComponent();
 			ViewModelBase.Init();
 			// The root page of your application
-			switch (Device.OS)
+			switch (Device.RuntimePlatform)
 			{
-				case TargetPlatform.Android:
+				case "Android":
 					MainPage = new RootPageAndroid();
 					break;
-				case TargetPlatform.iOS:
+				case "iOS":
 					MainPage = new EvolveNavigationPage(new RootPageiOS());
-					break;
-				case TargetPlatform.Windows:
-				case TargetPlatform.WinPhone:
-					MainPage = new RootPageWindows();
 					break;
 				default:
 					throw new NotImplementedException();
@@ -94,7 +90,7 @@ namespace CWITC.Clients.UI
 
 			MessagingService.Current.Subscribe(MessageKeys.NavigateLogin, async m =>
 				{
-					if (Device.OS == TargetPlatform.Android)
+					if (Device.RuntimePlatform == "Android")
 					{
 						((RootPageAndroid)MainPage).IsPresented = false;
 					}
@@ -115,7 +111,7 @@ namespace CWITC.Clients.UI
 
 			try
 			{
-				if (firstRun || Device.OS != TargetPlatform.iOS)
+				if (firstRun || Device.RuntimePlatform != "iOS")
 					return;
 
 				var mainNav = MainPage as NavigationPage;

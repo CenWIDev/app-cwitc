@@ -2,7 +2,6 @@
 using Xamarin.Forms;
 using CWITC.DataObjects;
 using System.Threading.Tasks;
-using Xamarin.Forms;
 using System.Windows.Input;
 using FormsToolkit;
 using System.Collections.Generic;
@@ -60,7 +59,7 @@ namespace CWITC.Clients.Portable
                         OnCompleted = async () => 
                         {
                             await Navigation.PopModalAsync ();
-                            if (Device.OS == TargetPlatform.Android)
+                            if (Device.RuntimePlatform == "Android")
                                 MessagingService.Current.SendMessage ("eval_finished");
                         }
                     });

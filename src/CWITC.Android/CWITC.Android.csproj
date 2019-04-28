@@ -456,7 +456,6 @@
     <Compile Include="Renderers\EvolveSearchBarRenderer.cs" />
     <Compile Include="Helpers\ListViewSelectionOnTopEffect.cs" />
     <Compile Include="Extensions\JavaJsonHelperExtensions.cs" />
-    <Compile Include="Renderers\PlaceholderEditorRenderer.cs" />
     <Compile Include="Renderers\PageRenderer.cs" />
   </ItemGroup>
   <ItemGroup>

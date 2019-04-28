@@ -115,9 +115,6 @@
     <EmbeddedResource Update="Pages\Sponsors\SponsorsPage.xaml">
       <LogicalName>SponsorsPage.xaml</LogicalName>
     </EmbeddedResource>
-    <EmbeddedResource Update="Pages\Windows\MenuPageUWP.xaml">
-      <LogicalName>MenuPageUWP.xaml</LogicalName>
-    </EmbeddedResource>
     <EmbeddedResource Update="Pages\iOS\AboutPage.xaml">
       <LogicalName>AboutPage.xaml</LogicalName>
     </EmbeddedResource>

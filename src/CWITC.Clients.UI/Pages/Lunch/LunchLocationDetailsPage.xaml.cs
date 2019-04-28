@@ -39,7 +39,7 @@ namespace CWITC.Clients.UI
             if (!didInit)
             {
                 Title = ViewModel.Location.Name;
-                if (Device.OS == TargetPlatform.Android)
+                if (Device.RuntimePlatform == "Android")
                 {
                     ToolbarItems.Add(new ToolbarItem
                     {
@@ -67,7 +67,7 @@ namespace CWITC.Clients.UI
                         });
                     }
                 }
-                else if (Device.OS == TargetPlatform.iOS)
+                else if (Device.RuntimePlatform == "iOS")
                 {
                     ToolbarItems.Add(new ToolbarItem
                     {

@@ -80,7 +80,7 @@ namespace CWITC.Clients.UI
             ListViewSpeakers.ItemTapped += ListViewTapped;
 
             var count = ViewModel?.Session?.Speakers?.Count ?? 0;
-            var adjust = Device.OS != TargetPlatform.Android ? 1 : -count + 1;
+            var adjust = Device.RuntimePlatform != "Android" ? 1 : -count + 1;
             if((ViewModel?.Session?.Speakers?.Count ?? 0) > 0)
                 ListViewSpeakers.HeightRequest = (count * ListViewSpeakers.RowHeight) - adjust;
 
