@@ -75,8 +75,6 @@ namespace CWITC.iOS
             Forms.Init();
             FormsMaps.Init();
             Toolkit.Init();
-
-            DependencyService.Register<IAuthClient, Auth0Client>();
             
             //Random Inits for Linking out.
             Plugin.Share.ShareImplementation.ExcludedUIActivityTypes = new List<NSString>

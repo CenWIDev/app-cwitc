@@ -15,15 +15,11 @@ namespace CWITC.Clients.UI
             InitializeComponent();
 
 			this.Title = "CampusMap";
-
-            CarouselMaps.ItemsSource = new List<EvolveMap>
-            {
-                new EvolveMap
-                {
-                    Local = "campus_map.jpg",
-                    Title = "Campus Map"
-                }
-            };
+			this.floorMap.BindingContext = new EvolveMap
+			{
+				Local = "campus_map.jpg",
+				Title = "Campus Map"
+			};
         }
     }
 }

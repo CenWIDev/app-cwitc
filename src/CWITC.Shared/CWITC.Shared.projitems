@@ -10,7 +10,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)EvolveLogger.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Auth0Client.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Datastore\CategoryStore.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Datastore\EventStore.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Datastore\FavoriteStore.cs" />

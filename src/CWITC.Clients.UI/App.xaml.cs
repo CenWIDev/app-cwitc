@@ -5,6 +5,7 @@ using Plugin.Connectivity;
 using Plugin.Connectivity.Abstractions;
 using Xamarin.Forms;
 using CWITC.Clients.Portable;
+using Plugin.Settings;
 
 [assembly: Xamarin.Forms.Xaml.XamlCompilation(Xamarin.Forms.Xaml.XamlCompilationOptions.Compile)]
 
@@ -18,18 +19,19 @@ namespace CWITC.Clients.UI
 			current = this;
 			InitializeComponent();
 			ViewModelBase.Init();
-			// The root page of your application
+
 			switch (Device.RuntimePlatform)
 			{
 				case "Android":
-					MainPage = new RootPageAndroid();
+					MainPage = Settings.Current.IsLoggedIn ? (Page)new RootPageAndroid() : (Page)new LoginPage();
 					break;
 				case "iOS":
-					MainPage = new EvolveNavigationPage(new RootPageiOS());
+					MainPage = new EvolveNavigationPage(Settings.Current.IsLoggedIn ? (Page)new RootPageiOS() : new LoginPage());
 					break;
 				default:
 					throw new NotImplementedException();
 			}
+
 		}
 
 		static ILogger logger;
@@ -88,7 +90,20 @@ namespace CWITC.Clients.UI
 					q?.OnCompleted?.Invoke(result);
 				});
 
-
+			MessagingService.Current.Subscribe(MessageKeys.LoggedIn, (m) =>
+			{
+				switch (Device.RuntimePlatform)
+				{
+					case "Android":
+						MainPage = new RootPageAndroid();
+						break;
+					case "iOS":
+						MainPage = new EvolveNavigationPage(new RootPageiOS());
+						break;
+					default:
+						throw new NotImplementedException();
+				}
+			});
 
 			MessagingService.Current.Subscribe(MessageKeys.NavigateLogin, async m =>
 				{
@@ -97,18 +112,18 @@ namespace CWITC.Clients.UI
 						((RootPageAndroid)MainPage).IsPresented = false;
 					}
 
-					var auth = DependencyService.Get<IAuthClient>();
+					Page page = null;
+					if (Settings.Current.FirstRun && Device.RuntimePlatform == "Android")
+						page = new LoginPage();
+					else
+						page = new EvolveNavigationPage(new LoginPage());
 
-					bool shouldSignIn = true;
-					if (Settings.Current.FirstRun)
-					{
-						shouldSignIn = await this.MainPage.DisplayAlert("Sign In?", "Sign in to save and sync favorites and leave session feedback.", "Ok", "Maybe Later");
-					}
 
-					if (shouldSignIn)
-					{
-						await auth.LoginAsync();
-					}
+					var nav = Application.Current?.MainPage?.Navigation;
+					if (nav == null)
+						return;
+
+					await NavigationService.PushModalAsync(nav, page);
 				});
 
 			try

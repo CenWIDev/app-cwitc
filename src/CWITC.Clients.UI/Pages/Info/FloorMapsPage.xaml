@@ -6,12 +6,5 @@
     xmlns:local="clr-namespace:CWITC.Clients.UI;assembly=CWITC.Clients.UI"
     Title="Campus Map"
     BackgroundColor="White">
-    <CarouselView
-        x:Name="CarouselMaps">
-        <CarouselView.ItemTemplate>
-            <DataTemplate>
-                <local:FloorMap />
-            </DataTemplate>
-        </CarouselView.ItemTemplate>
-    </CarouselView>
+	<local:FloorMap x:Name="floorMap" />
 </ContentPage>

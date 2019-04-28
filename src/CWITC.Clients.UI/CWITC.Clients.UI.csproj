@@ -124,6 +124,9 @@
     <EmbeddedResource Update="App.xaml">
       <LogicalName>App.xaml</LogicalName>
     </EmbeddedResource>
+    <EmbeddedResource Update="Pages\Info\LoginPage.xaml">
+      <LogicalName>LoginPage.xaml</LogicalName>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CWITC.Utils\CWITC.Utils.csproj" />

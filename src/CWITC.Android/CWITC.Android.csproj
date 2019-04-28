@@ -457,6 +457,7 @@
     <Compile Include="Helpers\ListViewSelectionOnTopEffect.cs" />
     <Compile Include="Extensions\JavaJsonHelperExtensions.cs" />
     <Compile Include="Renderers\PageRenderer.cs" />
+    <Compile Include="AndroidSSOClient.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
