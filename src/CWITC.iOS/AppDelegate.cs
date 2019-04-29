@@ -71,8 +71,9 @@ namespace CWITC.iOS
 					typeof(Crashes));
 			}
 #endif
+			Firebase.Core.App.Configure();
 
-            Forms.Init();
+			Forms.Init();
             FormsMaps.Init();
             Toolkit.Init();
             

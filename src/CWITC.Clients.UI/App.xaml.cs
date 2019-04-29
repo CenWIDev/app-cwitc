@@ -20,23 +20,11 @@ namespace CWITC.Clients.UI
 			InitializeComponent();
 			ViewModelBase.Init();
 
-			switch (Device.RuntimePlatform)
-			{
-				case "Android":
-					MainPage = Settings.Current.IsLoggedIn ? (Page)new RootPageAndroid() : (Page)new LoginPage();
-					break;
-				case "iOS":
-					MainPage = new EvolveNavigationPage(Settings.Current.IsLoggedIn ? (Page)new RootPageiOS() : new LoginPage());
-					break;
-				default:
-					throw new NotImplementedException();
-			}
-
+			this.ResetMainPage();
 		}
 
 		static ILogger logger;
 		public static ILogger Logger => logger ?? (logger = DependencyService.Get<ILogger>());
-
 
 		protected override void OnStart()
 		{
@@ -92,39 +80,13 @@ namespace CWITC.Clients.UI
 
 			MessagingService.Current.Subscribe(MessageKeys.LoggedIn, (m) =>
 			{
-				switch (Device.RuntimePlatform)
-				{
-					case "Android":
-						MainPage = new RootPageAndroid();
-						break;
-					case "iOS":
-						MainPage = new EvolveNavigationPage(new RootPageiOS());
-						break;
-					default:
-						throw new NotImplementedException();
-				}
+				this.ResetMainPage();
 			});
 
-			MessagingService.Current.Subscribe(MessageKeys.NavigateLogin, async m =>
-				{
-					if (Device.RuntimePlatform == "Android")
-					{
-						((RootPageAndroid)MainPage).IsPresented = false;
-					}
-
-					Page page = null;
-					if (Settings.Current.FirstRun && Device.RuntimePlatform == "Android")
-						page = new LoginPage();
-					else
-						page = new EvolveNavigationPage(new LoginPage());
-
-
-					var nav = Application.Current?.MainPage?.Navigation;
-					if (nav == null)
-						return;
-
-					await NavigationService.PushModalAsync(nav, page);
-				});
+			MessagingService.Current.Subscribe(MessageKeys.LoggedOut, (m) =>
+			{
+				this.ResetMainPage();
+			});
 
 			try
 			{
@@ -182,6 +144,8 @@ namespace CWITC.Clients.UI
 			MessagingService.Current.Unsubscribe<MessagingServiceQuestion>(MessageKeys.Question);
 			MessagingService.Current.Unsubscribe<MessagingServiceAlert>(MessageKeys.Message);
 			MessagingService.Current.Unsubscribe<MessagingServiceChoice>(MessageKeys.Choice);
+			MessagingService.Current.Unsubscribe<MessagingServiceChoice>(MessageKeys.LoggedIn);
+			MessagingService.Current.Unsubscribe<MessagingServiceChoice>(MessageKeys.LoggedOut);
 
 			// Handle when your app sleeps
 			CrossConnectivity.Current.ConnectivityChanged -= ConnectivityChanged;
@@ -201,6 +165,20 @@ namespace CWITC.Clients.UI
 			}
 		}
 
+		private void ResetMainPage()
+		{
+			switch (Device.RuntimePlatform)
+			{
+				case "Android":
+					MainPage = Settings.Current.IsLoggedIn ? (Page)new RootPageAndroid() : (Page)new LoginPage();
+					break;
+				case "iOS":
+					MainPage = new EvolveNavigationPage(Settings.Current.IsLoggedIn ? (Page)new RootPageiOS() : new LoginPage());
+					break;
+				default:
+					throw new NotImplementedException();
+			}
+		}
 	}
 }
 

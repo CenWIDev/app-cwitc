@@ -78,7 +78,7 @@ namespace CWITC.Clients.Portable
 					Message = "Updating schedule...";
 					Settings.FirstName = result.User?.FirstName ?? string.Empty;
 					Settings.LastName = result.User?.LastName ?? string.Empty;
-					Settings.Email = result.User?.Email.ToLowerInvariant();
+					Settings.Email = result.User?.Email?.ToLowerInvariant();
 					Settings.UserId = result.User?.Id;
 
 					Logger.Track(EvolveLoggerKeys.LoginSuccess);

@@ -24,6 +24,7 @@ using CWITC.DataObjects;
 using Xamarin;
 using Android.Gms.Auth.Api.SignIn;
 using Android.Gms.Tasks;
+using Firebase;
 
 namespace CWITC.Droid
 {
@@ -51,9 +52,12 @@ namespace CWITC.Droid
 
 			base.OnCreate(savedInstanceState);
 
+			FirebaseApp.InitializeApp(this.ApplicationContext);
+
 			Forms.Init(this, savedInstanceState);
 			FormsMaps.Init(this, savedInstanceState);
 			Toolkit.Init();
+
 
 			PullToRefreshLayoutRenderer.Init();
 			typeof(Color).GetProperty("Accent", BindingFlags.Public | BindingFlags.Static).SetValue(null, Color.FromHex("#757575"));

@@ -381,7 +381,7 @@ namespace CWITC.Clients.Portable
 
 		public string UserAvatar => IsLoggedIn ? Gravatar.GetURL(Email) : "profile_generic.png";
 
-		public bool IsLoggedIn => !string.IsNullOrWhiteSpace(Email);
+		public bool IsLoggedIn => !string.IsNullOrWhiteSpace(UserId);
 
 		public bool HasFilters => (ShowPastSessions || FavoritesOnly || (!string.IsNullOrWhiteSpace(FilteredCategories) && !ShowAllCategories));
 

@@ -366,6 +366,30 @@
     <Reference Include="ImageCircle.Forms.Plugin">
       <HintPath>..\packages\Xam.Plugins.Forms.ImageCircle.3.0.0.5\lib\xamarinios10\ImageCircle.Forms.Plugin.dll</HintPath>
     </Reference>
+    <Reference Include="Firebase.Core">
+      <HintPath>..\packages\Xamarin.Firebase.iOS.Core.5.1.8\lib\Xamarin.iOS10\Firebase.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Firebase.Auth">
+      <HintPath>..\packages\Xamarin.Firebase.iOS.Auth.5.0.4.1\lib\Xamarin.iOS10\Firebase.Auth.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.SignIn">
+      <HintPath>..\packages\Xamarin.Google.iOS.SignIn.4.4.0\lib\Xamarin.iOS10\Google.SignIn.dll</HintPath>
+    </Reference>
+    <Reference Include="Facebook.CoreKit">
+      <HintPath>..\packages\Xamarin.Facebook.CoreKit.iOS.4.39.1\lib\Xamarin.iOS10\Facebook.CoreKit.dll</HintPath>
+    </Reference>
+    <Reference Include="Facebook.LoginKit">
+      <HintPath>..\packages\Xamarin.Facebook.LoginKit.iOS.4.39.1\lib\Xamarin.iOS10\Facebook.LoginKit.dll</HintPath>
+    </Reference>
+    <Reference Include="Facebook.MarketingKit">
+      <HintPath>..\packages\Xamarin.Facebook.MarketingKit.iOS.4.39.1\lib\Xamarin.iOS10\Facebook.MarketingKit.dll</HintPath>
+    </Reference>
+    <Reference Include="Facebook.PlacesKit">
+      <HintPath>..\packages\Xamarin.Facebook.PlacesKit.iOS.4.39.1\lib\Xamarin.iOS10\Facebook.PlacesKit.dll</HintPath>
+    </Reference>
+    <Reference Include="Facebook.ShareKit">
+      <HintPath>..\packages\Xamarin.Facebook.ShareKit.iOS.4.39.1\lib\Xamarin.iOS10\Facebook.ShareKit.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\heart_empty.png" />
@@ -452,6 +476,9 @@
     <BundleResource Include="Resources\tab_lunch.png" />
     <BundleResource Include="Resources\tab_lunch%402x.png" />
     <BundleResource Include="Resources\tab_lunch%403x.png" />
+    <BundleResource Include="GoogleService-Info.plist">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </BundleResource>
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
@@ -531,4 +558,5 @@
   <Import Project="..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets" Condition="Exists('..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets')" />
   <Import Project="..\packages\Xamarin.Build.Download.0.4.11\build\Xamarin.Build.Download.targets" Condition="Exists('..\packages\Xamarin.Build.Download.0.4.11\build\Xamarin.Build.Download.targets')" />
   <Import Project="..\packages\Xamarin.Forms.3.6.0.344457\build\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.3.6.0.344457\build\Xamarin.Forms.targets')" />
+  <Import Project="..\packages\Xamarin.Google.iOS.SignIn.4.4.0\build\Xamarin.Google.iOS.SignIn.targets" Condition="Exists('..\packages\Xamarin.Google.iOS.SignIn.4.4.0\build\Xamarin.Google.iOS.SignIn.targets')" />
 </Project>
