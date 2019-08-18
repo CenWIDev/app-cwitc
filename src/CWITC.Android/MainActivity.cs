@@ -44,6 +44,7 @@ namespace CWITC.Droid
 	public class MainActivity : FormsAppCompatActivity
 	{
 		const int RC_SIGN_IN = 9001;
+		private TaskCompletionSource<GoogleSignInAccount> googleSignInTask;
 
 		protected override void OnCreate(Bundle savedInstanceState)
 		{
@@ -57,7 +58,7 @@ namespace CWITC.Droid
 			Forms.Init(this, savedInstanceState);
 			FormsMaps.Init(this, savedInstanceState);
 			Toolkit.Init();
-
+			global::Xamarin.Auth.Presenters.XamarinAndroid.AuthenticationConfiguration.Init(this, savedInstanceState);
 
 			PullToRefreshLayoutRenderer.Init();
 			typeof(Color).GetProperty("Accent", BindingFlags.Public | BindingFlags.Static).SetValue(null, Color.FromHex("#757575"));
@@ -86,18 +87,92 @@ namespace CWITC.Droid
 						break;
 				}
 			}
+
+			InitializeFirebase();
+		}
+
+		protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)
+		{
+			base.OnActivityResult(requestCode, resultCode, data);
+
+			// Result returned from launching the Intent from GoogleSignInApi.getSignInIntent(...);
+			if (requestCode == RC_SIGN_IN)
+			{
+				var result = Android.Gms.Auth.Api.Auth.GoogleSignInApi.GetSignInResultFromIntent(data);
+				if (result.IsSuccess)
+				{
+					//result.SignInAccount.
+					googleSignInTask.SetResult(result.SignInAccount);
+				}
+				else
+				{
+					googleSignInTask.SetCanceled();
+				}
+			}
+			else
+			{
+				//CallbackManager.OnActivityResult(requestCode, (int)resultCode, data);
+			}
 		}
 
 		protected override void OnNewIntent(Intent intent)
 		{
 			base.OnNewIntent(intent);
 
-			Auth0.OidcClient.ActivityMediator.Instance.Send(intent.DataString);
 		}
 
 		public override void OnRequestPermissionsResult(int requestCode, string[] permissions, Permission[] grantResults)
 		{
 			PermissionsImplementation.Current.OnRequestPermissionsResult(requestCode, permissions, grantResults);
 		}
+
+		public bool IsPlayServicesAvailable()
+		{
+			int resultCode = GoogleApiAvailability.Instance.IsGooglePlayServicesAvailable(this);
+			if (resultCode != ConnectionResult.Success)
+			{
+				if (GoogleApiAvailability.Instance.IsUserResolvableError(resultCode))
+				{
+					if (Settings.Current.GooglePlayChecked)
+						return false;
+
+					Settings.Current.GooglePlayChecked = true;
+					Toast.MakeText(this, "Google Play services is not installed, push notifications have been disabled.", ToastLength.Long).Show();
+				}
+				return false;
+			}
+			else
+			{
+				return true;
+			}
+		}
+		
+		public void GoogleSignIn(GoogleApiClient apiClient, TaskCompletionSource<GoogleSignInAccount> tcs)
+		{
+			this.googleSignInTask = tcs;
+
+			Intent signInIntent = Android.Gms.Auth.Api.Auth.GoogleSignInApi.GetSignInIntent(apiClient);
+			StartActivityForResult(signInIntent, RC_SIGN_IN);
+		}
+
+		public void OnComplete(Android.Gms.Tasks.Task task)
+		{
+			//if (task.IsSuccessful)
+			//{
+			//	bool isFetched = FirebaseRemoteConfig.Instance.ActivateFetched();
+			//}
+			//else
+			//{
+
+			//}
+		}
+
+		async void InitializeFirebase()
+		{
+			//FirebaseRemoteConfig.Instance
+			//					.Fetch()
+			//					.AddOnCompleteListener(this, this);
+		}
+
 	}
 }

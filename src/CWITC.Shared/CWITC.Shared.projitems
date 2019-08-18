@@ -21,6 +21,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Datastore\BaseUserDataStore.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Datastore\BaseStore.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Datastore\LunchStore.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SSOClient.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Datastore\" />

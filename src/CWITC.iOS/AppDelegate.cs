@@ -16,9 +16,9 @@ using Social;
 using CoreSpotlight;
 using CWITC.DataStore.Abstractions;
 using System.Threading.Tasks;
-using Xamarin.Auth;
 using Microsoft.AppCenter.Analytics;
 using Microsoft.AppCenter.Crashes;
+using Xamarin.Auth;
 
 namespace CWITC.iOS
 {
@@ -31,18 +31,33 @@ namespace CWITC.iOS
             public const string Lunch = "org.cenwidev.cwitc.lunch";
         }
 
-        public override bool OpenUrl(UIApplication application, NSUrl url, string sourceApplication, NSObject annotation)
-        {
-			Auth0.OidcClient.ActivityMediator.Instance.Send(url.AbsoluteString);
+		public static Action<string> CallbackHandler { get; internal set; }
 
+		public override bool OpenUrl(UIApplication application, NSUrl url, string sourceApplication, NSObject annotation)
+		{
 			return true;
-        }
+		}
 
-        public override bool OpenUrl(UIApplication app, NSUrl url, NSDictionary options)
+		public override bool OpenUrl(UIApplication app, NSUrl url, NSDictionary options)
         {
-            var openUrlOptions = new UIApplicationOpenUrlOptions(options);
-            return OpenUrl(app, url, openUrlOptions.SourceApplication, options);
-        }
+			var openUrlOptions = new UIApplicationOpenUrlOptions(options);
+			return OpenUrl(app, url, openUrlOptions.SourceApplication, options);
+			////var openUrlOptions = new UIApplicationOpenUrlOptions(options);
+			////return OpenUrl(app, url, openUrlOptions.SourceApplication, options);
+
+			//var urlString = url.AbsoluteString;
+			//if (urlString.Contains("login-callback"))
+			//{
+			//	// Convert NSUrl to Uri
+			//	var uri = new Uri(url.AbsoluteString);
+			//	// Load redirectUrl page
+			//	AuthenticationState.Authenticator.OnPageLoading(uri);
+			//}
+
+			//// todo: other urls
+
+			//return true;
+		}
 
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
@@ -76,9 +91,10 @@ namespace CWITC.iOS
 			Forms.Init();
             FormsMaps.Init();
             Toolkit.Init();
-            
-            //Random Inits for Linking out.
-            Plugin.Share.ShareImplementation.ExcludedUIActivityTypes = new List<NSString>
+			global::Xamarin.Auth.Presenters.XamarinIOS.AuthenticationConfiguration.Init();
+
+			//Random Inits for Linking out.
+			Plugin.Share.ShareImplementation.ExcludedUIActivityTypes = new List<NSString>
             {
                 UIActivityType.PostToFacebook,
                 UIActivityType.AssignToContact,
@@ -120,7 +136,7 @@ namespace CWITC.iOS
 
         public UIApplicationShortcutItem LaunchedShortcutItem { get; set; }
 
-        public override void OnActivated(UIApplication application)
+		public override void OnActivated(UIApplication application)
         {
             Console.WriteLine("OnActivated");
 

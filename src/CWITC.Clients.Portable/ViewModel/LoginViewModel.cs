@@ -68,9 +68,7 @@ namespace CWITC.Clients.Portable
 			{
 				IsBusy = true;
 				Message = "Signing in...";
-#if DEBUG
-				await Task.Delay(1000);
-#endif
+
 				AccountResponse result = await providerLogin();
 
 				if (result?.Success ?? false)
@@ -80,6 +78,7 @@ namespace CWITC.Clients.Portable
 					Settings.LastName = result.User?.LastName ?? string.Empty;
 					Settings.Email = result.User?.Email?.ToLowerInvariant();
 					Settings.UserId = result.User?.Id;
+					Settings.UserAvatar = result.User?.AvatarUrl;
 
 					Logger.Track(EvolveLoggerKeys.LoginSuccess);
 					try

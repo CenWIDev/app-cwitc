@@ -1,19 +1,23 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using CWITC.Clients.Portable;
+using CWITC.Clients.UI;
 using CWITC.iOS;
 using Firebase.Auth;
 using Foundation;
 using Google.SignIn;
+using IdentityModel.OidcClient;
 using SafariServices;
 using UIKit;
+using Xamarin.Auth;
 using Xamarin.Forms;
 
 [assembly: Dependency(typeof(iOSAuthSSOClient))]
 namespace CWITC.iOS
 {
-	public class iOSAuthSSOClient : NSObject, ISSOClient,
+	public partial class iOSAuthSSOClient : NSObject, ISSOClient,
 		ISFSafariViewControllerDelegate, ISignInDelegate, ISignInUIDelegate
 	{
 		static iOSAuthSSOClient()
@@ -22,8 +26,37 @@ namespace CWITC.iOS
 			Google.SignIn.SignIn.SharedInstance.ClientID = googleServiceDictionary["CLIENT_ID"].ToString();
 		}
 
+		#region Facebook Auth
+
 		public async Task<AccountResponse> LoginWithFacebook()
 		{
+			//_facebookAuth = new OAuth2Authenticator(
+			//		"1391179434308637",
+			//		"email",
+			//		authorizeUrl: new Uri("https://www.facebook.com/dialog/oauth/"),
+			//		redirectUrl: new Uri("https://central-wi-it-conference.firebaseapp.com/__/auth/handler"),
+			//		isUsingNativeUI: false);
+
+			//_facebookAuth.Completed += OnOAuth2AuthCompleted;
+			//_facebookAuth.Error += OnOAuth2AuthError;
+
+			//var presenter = new Xamarin.Auth.Presenters.OAuthLoginPresenter();
+			//presenter.Login(_facebookAuth);
+
+			//this.loginTCS = new TaskCompletionSource<Account>();
+			//var account = await this.loginTCS.Task;
+
+			//var accessToken = account.Properties["access_token"];
+
+			//var credential = Firebase.Auth.FacebookAuthProvider.GetCredential(accessToken);
+			//var firebaseResult = await LoginToFirebase(credential);
+			//if (firebaseResult.Success)
+			//{
+			//	Settings.Current.AuthType = "facebook";
+			//	//firebaseResult.User.Email = emailAddress;
+			//}
+
+			//return firebaseResult;
 			try
 			{
 				var topVC = GetViewController();
@@ -32,7 +65,7 @@ namespace CWITC.iOS
 
 				var loginResult = fbLogin.LogInWithReadPermissionsAsync(new string[] { "public_profile email" }, topVC);
 
-				while(loginResult.Status != TaskStatus.RanToCompletion &&
+				while (loginResult.Status != TaskStatus.RanToCompletion &&
 					loginResult.Status != TaskStatus.Faulted &&
 					loginResult.Status != TaskStatus.Canceled)
 				{
@@ -53,8 +86,8 @@ namespace CWITC.iOS
 				TaskCompletionSource<string> getEmailTask = new TaskCompletionSource<string>();
 				// gets the email & name for this user
 				var graphRequest = new Facebook.CoreKit.GraphRequest(
-					"me", 
-					NSDictionary.FromObjectAndKey(new NSString("id,email"), 
+					"me",
+					NSDictionary.FromObjectAndKey(new NSString("id,email"),
 					new NSString("fields")));
 
 				graphRequest.Start((connection, graphResult, error) =>
@@ -91,7 +124,7 @@ namespace CWITC.iOS
 
 				return firebaseResult;
 			}
-			catch(Exception ex)
+			catch (Exception ex)
 			{
 				return new AccountResponse
 				{
@@ -101,17 +134,9 @@ namespace CWITC.iOS
 			}
 		}
 
-		public Task<AccountResponse> LoginWithGithub()
-		{
-			throw new NotImplementedException();
-		}
+		#endregion
 
-		public Task<AccountResponse> LoginWithTwitter()
-		{
-			throw new NotImplementedException();
-		}
-
-		public Task LogoutAsync()
+		public async Task LogoutAsync()
 		{
 			NSError error;
 			if (Firebase.Auth.Auth.DefaultInstance.SignOut(out error))
@@ -119,24 +144,31 @@ namespace CWITC.iOS
 				if (Settings.Current.AuthType == "facebook")
 				{
 					new Facebook.LoginKit.LoginManager().LogOut();
-					Settings.Current.AuthType = string.Empty;
 				}
-				else if(Settings.Current.AuthType == "google")
+				else if (Settings.Current.AuthType == "google")
 				{
 					Google.SignIn.SignIn.SharedInstance.SignOutUser();
-					Settings.Current.AuthType = string.Empty;
 				}
+				else if (Settings.Current.AuthType == "github")
+				{
+					await LogoutGithub();
+				}
+				else if (Settings.Current.AuthType == "twitter")
+				{
+					await LogoutTwitter();
+				}
+
+				Settings.Current.AuthType = string.Empty;
 			}
 			else
 			{
 				throw new Exception(error.LocalizedDescription);
 			}
-
-			return Task.CompletedTask;
 		}
 
 		#region Google Sign In
 		TaskCompletionSource<GoogleUser> googleSignInTask;
+
 		public async Task<AccountResponse> LoginWithGoogle()
 		{
 			googleSignInTask = new TaskCompletionSource<GoogleUser>();
@@ -211,7 +243,7 @@ namespace CWITC.iOS
 				// Do your magic to handle authentication result
 				var split = user.DisplayName.Split(' ');
 
-				return new AccountResponse
+				var account = new AccountResponse
 				{
 					Success = true,
 					User = new Clients.Portable.User()
@@ -219,9 +251,26 @@ namespace CWITC.iOS
 						Id = user.Uid,
 						Email = user.Email,
 						FirstName = split?.FirstOrDefault(),
-						LastName = split?.LastOrDefault()
+						LastName = split?.LastOrDefault(),
+						AvatarUrl = user.PhotoUrl.ToString()
 					}
 				};
+
+				// extract email and/or photo url if null
+				foreach (var provider in user.ProviderData)
+				{
+					if (string.IsNullOrEmpty(account.User.Email))
+					{
+						account.User.Email = provider.Email;
+					}
+
+					if (string.IsNullOrEmpty(account.User.AvatarUrl))
+					{
+						account.User.AvatarUrl = provider.PhotoUrl.ToString();
+					}
+				}
+
+				return account;
 			}
 			catch (Exception ex)
 			{

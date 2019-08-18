@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage 
     xmlns="http://xamarin.com/schemas/2014/forms" 
     xmlns:local="clr-namespace:CWITC.Clients.UI;assembly=CWITC.Clients.UI"
@@ -71,7 +71,7 @@
                 
 				<Button 
                     Text="GitHub"
-                    Command="{Binding GithubLoginCommand}"
+                    Command="{Binding GitHubLoginCommand}"
                     HorizontalOptions="FillAndExpand"
                     IsEnabled="{Binding IsNotBusy}"
                     StyleId="GithubSignInButton"
