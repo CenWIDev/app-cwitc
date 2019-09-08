@@ -100,7 +100,7 @@
 	<key>CFBundleIdentifier</key>
 	<string>org.cenwidev.cwitc</string>
 	<key>CFBundleName</key>
-	<string>CWITC &apos;18</string>
+	<string>CWITC &apos;19</string>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
@@ -116,10 +116,6 @@
 			</array>
 		</dict>
 	</array>
-	<key>FacebookAppID</key>
-	<string>1391179434308637</string>
-	<key>FacebookDisplayName</key>
-	<string>CWITC Mobile</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>fbapi</string>
@@ -128,7 +124,7 @@
 		<string>fbshareextension</string>
 	</array>
 	<key>CFBundleShortVersionString</key>
-	<string>1.1.0</string>
+	<string>1.2.0</string>
 	<key>CFBundleVersion</key>
 	<string>41</string>
 </dict>

@@ -26,8 +26,6 @@ namespace CWITC.Droid
 		
 		public static void UpdateIdValues()
 		{
-			global::Auth0.OidcClient.Resource.String.ApplicationName = global::CWITC.Droid.Resource.String.ApplicationName;
-			global::Auth0.OidcClient.Resource.String.Hello = global::CWITC.Droid.Resource.String.Hello;
 			global::PCLStorage.Resource.String.ApplicationName = global::CWITC.Droid.Resource.String.ApplicationName;
 			global::PCLStorage.Resource.String.Hello = global::CWITC.Droid.Resource.String.Hello;
 			global::Syncfusion.XForms.Android.Core.Resource.Drawable.inputlayout_togglecollapseicon = global::CWITC.Droid.Resource.Drawable.inputlayout_togglecollapseicon;

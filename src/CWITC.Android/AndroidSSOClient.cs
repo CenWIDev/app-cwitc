@@ -21,63 +21,49 @@ namespace CWITC.Droid
 		private TaskCompletionSource<GoogleSignInAccount> googleSignInTask;
 		private GoogleApiClient _apiClient;
 
-		public Task<AccountResponse> LoginWithFacebook()
+		public async Task LogoutAsync()
 		{
-			throw new NotImplementedException();
-			//var mainActivity = Plugin.CurrentActivity.CrossCurrentActivity.Current.Activity as MainActivity;
+			bool success = true;
+			string error = null;
+			try
+			{
+				FirebaseAuth.Instance.SignOut();
+					}
+			catch(Exception ex)
+			{
+				error = ex.Message;
+				success = false;
+			}
 
-			//var tokenTask = new TaskCompletionSource<AccessToken>();
+			if (success)
+			{
+				if (Settings.Current.AuthType == "facebook")
+				{
+					await this.LogoutFacebook();
+				}
+				else if (Settings.Current.AuthType == "google")
+				{
+					//GoogleSignInApi.
+					//Google.SignIn.SignIn.SharedInstance.SignOutUser();
+				}
+				else if (Settings.Current.AuthType == "github")
+				{
+					await LogoutGithub();
+				}
+				else if (Settings.Current.AuthType == "twitter")
+				{
+					await LogoutTwitter();
+				}
 
-			//var loginManager = DeviceLoginManager.Instance;
-
-			//loginManager.RegisterCallback(
-			//	mainActivity.CallbackManager, new FacebookLoginCallback(tokenTask));
-
-			//loginManager
-			//	   .LogInWithReadPermissions(
-			//		   Plugin.CurrentActivity.CrossCurrentActivity.Current.Activity,
-			//		 new List<string>
-			//		{
-			//			"public_profile",
-			//			"email"
-			//		});
-			//try
-			//{
-			//	var accessToken = await tokenTask.Task;
-			//	loginManager.UnregisterCallback(mainActivity.CallbackManager);
-
-			//	TaskCompletionSource<string> getEmailTask = new TaskCompletionSource<string>();
-
-			//	Bundle parameters = new Bundle();
-			//	parameters.PutString("fields", "id,email");
-			//	var graphRequestResult = (await new GraphRequest(accessToken, "me", parameters, HttpMethod.Get)
-			//		.ExecuteAsync()
-			//		.GetAsync() as ArrayList).ToArray();
-
-			//	var graphResponse = graphRequestResult.FirstOrDefault() as GraphResponse;
-
-			//	string emailAddress = graphResponse.JSONObject.GetString("email");
-
-			//	var credential = FacebookAuthProvider.GetCredential(accessToken.Token);
-
-			//	var firebaseResult = await LoginToFirebase(credential);
-			//	if (firebaseResult.Success)
-			//	{
-			//		Settings.Current.AuthType = "facebook";
-			//		firebaseResult.User.Email = emailAddress;
-			//	}
-
-			//	return firebaseResult;
-			//}
-			//catch (System.Exception ex)
-			//{
-			//	return new AccountResponse
-			//	{
-			//		Success = false,
-			//		Error = ex.Message
-			//	};
-			//}
+				Settings.Current.AuthType = string.Empty;
+			}
+			else
+			{
+				throw new Exception(error);
+			}
 		}
+
+		#region Google Login
 
 		public async Task<AccountResponse> LoginWithGoogle()
 		{
@@ -92,16 +78,10 @@ namespace CWITC.Droid
 					.Build();
 
 				_apiClient = new GoogleApiClient.Builder(activity)
-					//.EnableAutoManage() //activity,  this /* OnCon    nectionFailedListener */)
 					.AddConnectionCallbacks(this)
 					.AddOnConnectionFailedListener(this)
 					.AddApi(Android.Gms.Auth.Api.Auth.GOOGLE_SIGN_IN_API, gso)
 					.Build();
-
-				//_apiClient = new GoogleApiClient.Builder(Xamarin.Forms.Forms.Context)
-
-				//   .AddApi(Android.Gms.Auth.Api.Auth.GOOGLE_SIGN_IN_API)
-				//    .Build();
 
 				_apiClient.Connect();
 
@@ -127,10 +107,21 @@ namespace CWITC.Droid
 			}
 		}
 
-		public Task LogoutAsync()
+		void GoogleApiClient.IConnectionCallbacks.OnConnected(Bundle connectionHint)
 		{
-			throw new NotImplementedException();
+			var activity = Plugin.CurrentActivity.CrossCurrentActivity.Current.Activity as MainActivity;
+			activity.GoogleSignIn(_apiClient, googleSignInTask);
 		}
+
+		void GoogleApiClient.IConnectionCallbacks.OnConnectionSuspended(int cause)
+		{
+		}
+
+		void GoogleApiClient.IOnConnectionFailedListener.OnConnectionFailed(ConnectionResult result)
+		{
+		}
+
+		#endregion
 
 		async Task<AccountResponse> LoginToFirebase(AuthCredential credential)
 		{
@@ -179,29 +170,5 @@ namespace CWITC.Droid
 				};
 			}
 		}
-
-		#region Google Login
-
-		void GoogleApiClient.IConnectionCallbacks.OnConnected(Bundle connectionHint)
-		{
-			var activity = Plugin.CurrentActivity.CrossCurrentActivity.Current.Activity as MainActivity;
-			activity.GoogleSignIn(_apiClient, googleSignInTask);
-
-			//Xamarin.Forms.Forms.Context.StartActivityForResult(signInIntent, RC_SIGN_IN);
-			//Intent signInIntent =  GoogleSignInApi. .getSignInIntent(mGoogleApiClient);
-			//startActivityForResult(signInIntent, RC_AUTHORIZE_CONTACTS);
-		}
-
-		void GoogleApiClient.IConnectionCallbacks.OnConnectionSuspended(int cause)
-		{
-			//throw new NotImplementedException();
-		}
-
-		void GoogleApiClient.IOnConnectionFailedListener.OnConnectionFailed(ConnectionResult result)
-		{
-			//throw new NotImplementedException();
-		}
-
-		#endregion
 	}
 }

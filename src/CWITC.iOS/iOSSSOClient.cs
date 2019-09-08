@@ -26,116 +26,6 @@ namespace CWITC.iOS
 			Google.SignIn.SignIn.SharedInstance.ClientID = googleServiceDictionary["CLIENT_ID"].ToString();
 		}
 
-		#region Facebook Auth
-
-		public async Task<AccountResponse> LoginWithFacebook()
-		{
-			//_facebookAuth = new OAuth2Authenticator(
-			//		"1391179434308637",
-			//		"email",
-			//		authorizeUrl: new Uri("https://www.facebook.com/dialog/oauth/"),
-			//		redirectUrl: new Uri("https://central-wi-it-conference.firebaseapp.com/__/auth/handler"),
-			//		isUsingNativeUI: false);
-
-			//_facebookAuth.Completed += OnOAuth2AuthCompleted;
-			//_facebookAuth.Error += OnOAuth2AuthError;
-
-			//var presenter = new Xamarin.Auth.Presenters.OAuthLoginPresenter();
-			//presenter.Login(_facebookAuth);
-
-			//this.loginTCS = new TaskCompletionSource<Account>();
-			//var account = await this.loginTCS.Task;
-
-			//var accessToken = account.Properties["access_token"];
-
-			//var credential = Firebase.Auth.FacebookAuthProvider.GetCredential(accessToken);
-			//var firebaseResult = await LoginToFirebase(credential);
-			//if (firebaseResult.Success)
-			//{
-			//	Settings.Current.AuthType = "facebook";
-			//	//firebaseResult.User.Email = emailAddress;
-			//}
-
-			//return firebaseResult;
-			try
-			{
-				var topVC = GetViewController();
-
-				var fbLogin = new Facebook.LoginKit.LoginManager();
-
-				var loginResult = fbLogin.LogInWithReadPermissionsAsync(new string[] { "public_profile email" }, topVC);
-
-				while (loginResult.Status != TaskStatus.RanToCompletion &&
-					loginResult.Status != TaskStatus.Faulted &&
-					loginResult.Status != TaskStatus.Canceled)
-				{
-					await Task.Delay(TimeSpan.FromMilliseconds(500));
-				}
-
-				if (loginResult.IsCanceled)
-				{
-					return new AccountResponse
-					{
-						Success = false,
-						Error = "Login Cancelled"
-					};
-				}
-
-				var accessToken = Facebook.CoreKit.AccessToken.CurrentAccessToken;
-
-				TaskCompletionSource<string> getEmailTask = new TaskCompletionSource<string>();
-				// gets the email & name for this user
-				var graphRequest = new Facebook.CoreKit.GraphRequest(
-					"me",
-					NSDictionary.FromObjectAndKey(new NSString("id,email"),
-					new NSString("fields")));
-
-				graphRequest.Start((connection, graphResult, error) =>
-				{
-					if (error != null)
-					{
-						NSObject message;
-						error.UserInfo.TryGetValue(new NSString("com.facebook.sdk:FBSDKErrorDeveloperMessageKey"), out message);
-
-						string exMessage = null;
-						if (message != null)
-							exMessage = message?.ToString();
-						else
-							exMessage = error.LocalizedDescription;
-
-						throw new Exception(exMessage);
-					}
-
-					var email = (NSString)graphResult.ValueForKey(new NSString("email"));
-
-					getEmailTask.SetResult(email);
-				});
-
-				string emailAddress = await getEmailTask.Task;
-
-				// Get access token for the signed-in user and exchange it for a Firebase credential
-				var credential = Firebase.Auth.FacebookAuthProvider.GetCredential(accessToken.TokenString);
-				var firebaseResult = await LoginToFirebase(credential);
-				if (firebaseResult.Success)
-				{
-					Settings.Current.AuthType = "facebook";
-					firebaseResult.User.Email = emailAddress;
-				}
-
-				return firebaseResult;
-			}
-			catch (Exception ex)
-			{
-				return new AccountResponse
-				{
-					Success = false,
-					Error = ex.Message
-				};
-			}
-		}
-
-		#endregion
-
 		public async Task LogoutAsync()
 		{
 			NSError error;
@@ -143,7 +33,7 @@ namespace CWITC.iOS
 			{
 				if (Settings.Current.AuthType == "facebook")
 				{
-					new Facebook.LoginKit.LoginManager().LogOut();
+					await LogoutFacebook();
 				}
 				else if (Settings.Current.AuthType == "google")
 				{
@@ -167,6 +57,7 @@ namespace CWITC.iOS
 		}
 
 		#region Google Sign In
+
 		TaskCompletionSource<GoogleUser> googleSignInTask;
 
 		public async Task<AccountResponse> LoginWithGoogle()
@@ -226,7 +117,7 @@ namespace CWITC.iOS
 
 		#endregion
 
-		private UIViewController GetViewController()
+		UIViewController GetViewController()
 		{
 			var vc = TrackCurrentViewControllerRenderer.CurrentViewController;
 

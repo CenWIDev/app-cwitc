@@ -141,12 +141,6 @@
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\netstandard2.0\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="Auth0.Core">
-      <HintPath>..\packages\Auth0.Core.6.0.0\lib\netstandard2.0\Auth0.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Auth0.ManagementApi">
-      <HintPath>..\packages\Auth0.ManagementApi.6.0.0\lib\netstandard2.0\Auth0.ManagementApi.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions">
       <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.2.2.0\lib\netstandard2.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
     </Reference>
@@ -183,12 +177,6 @@
     </Reference>
     <Reference Include="IdentityModel.OidcClient">
       <HintPath>..\packages\IdentityModel.OidcClient.2.9.0\lib\netstandard2.0\IdentityModel.OidcClient.dll</HintPath>
-    </Reference>
-    <Reference Include="Auth0.OidcClient.Core">
-      <HintPath>..\packages\Auth0.OidcClient.Core.2.3.1\lib\netstandard2.0\Auth0.OidcClient.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Auth0.OidcClient">
-      <HintPath>..\packages\Auth0.OidcClient.Android.2.3.1\lib\MonoAndroid10\Auth0.OidcClient.dll</HintPath>
     </Reference>
     <Reference Include="FastAndroidCamera">
       <HintPath>..\packages\FastAndroidCamera.2.0.0\lib\MonoAndroid403\FastAndroidCamera.dll</HintPath>

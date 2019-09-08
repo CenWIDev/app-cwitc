@@ -320,18 +320,6 @@
     <Reference Include="Syncfusion.SfRating.iOS">
       <HintPath>..\packages\Syncfusion.Xamarin.SfRating.IOS.17.1.0.42\lib\Xamarin.iOS10\Syncfusion.SfRating.iOS.dll</HintPath>
     </Reference>
-    <Reference Include="Auth0.OidcClient.Core">
-      <HintPath>..\packages\Auth0.OidcClient.Core.2.3.1\lib\netstandard2.0\Auth0.OidcClient.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Auth0.OidcClient">
-      <HintPath>..\packages\Auth0.OidcClient.iOS.2.3.1\lib\Xamarin.iOS10\Auth0.OidcClient.dll</HintPath>
-    </Reference>
-    <Reference Include="Auth0.Core">
-      <HintPath>..\packages\Auth0.Core.6.0.0\lib\netstandard2.0\Auth0.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Auth0.ManagementApi">
-      <HintPath>..\packages\Auth0.ManagementApi.6.0.0\lib\netstandard2.0\Auth0.ManagementApi.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.AppCenter">
       <HintPath>..\packages\Microsoft.AppCenter.1.14.0\lib\Xamarin.iOS10\Microsoft.AppCenter.dll</HintPath>
     </Reference>
@@ -367,21 +355,6 @@
     </Reference>
     <Reference Include="Google.SignIn">
       <HintPath>..\packages\Xamarin.Google.iOS.SignIn.4.4.0\lib\Xamarin.iOS10\Google.SignIn.dll</HintPath>
-    </Reference>
-    <Reference Include="Facebook.CoreKit">
-      <HintPath>..\packages\Xamarin.Facebook.CoreKit.iOS.4.39.1\lib\Xamarin.iOS10\Facebook.CoreKit.dll</HintPath>
-    </Reference>
-    <Reference Include="Facebook.LoginKit">
-      <HintPath>..\packages\Xamarin.Facebook.LoginKit.iOS.4.39.1\lib\Xamarin.iOS10\Facebook.LoginKit.dll</HintPath>
-    </Reference>
-    <Reference Include="Facebook.MarketingKit">
-      <HintPath>..\packages\Xamarin.Facebook.MarketingKit.iOS.4.39.1\lib\Xamarin.iOS10\Facebook.MarketingKit.dll</HintPath>
-    </Reference>
-    <Reference Include="Facebook.PlacesKit">
-      <HintPath>..\packages\Xamarin.Facebook.PlacesKit.iOS.4.39.1\lib\Xamarin.iOS10\Facebook.PlacesKit.dll</HintPath>
-    </Reference>
-    <Reference Include="Facebook.ShareKit">
-      <HintPath>..\packages\Xamarin.Facebook.ShareKit.iOS.4.39.1\lib\Xamarin.iOS10\Facebook.ShareKit.dll</HintPath>
     </Reference>
     <Reference Include="Xamarin.Auth">
       <HintPath>..\packages\Xamarin.Auth.1.7.0\lib\Xamarin.iOS10\Xamarin.Auth.dll</HintPath>

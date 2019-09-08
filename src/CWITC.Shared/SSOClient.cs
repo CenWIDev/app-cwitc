@@ -5,7 +5,11 @@ using CWITC.Clients.Portable;
 using Xamarin.Auth;
 
 #if __ANDROID__
+using FacebookAuthProvider = Firebase.Auth.FacebookAuthProvider;
 using GitHubAuthProvider = Firebase.Auth.GithubAuthProvider;
+#elif __IOS__
+using FacebookAuthProvider = Firebase.Auth.FacebookAuthProvider;
+using GitHubAuthProvider = Firebase.Auth.GitHubAuthProvider;
 #endif
 
 #if __IOS__
@@ -17,125 +21,160 @@ namespace CWITC.Droid
 #if __IOS__
 	public partial class iOSAuthSSOClient
 #elif __ANDROID__
-	public partial class AndroidSSOClient 
+	public partial class AndroidSSOClient
 #endif
 		: ISSOClient
 	{
 		private TaskCompletionSource<Account> loginTCS;
 		private OAuth2Authenticator _githubAuth;
 		private OAuth1Authenticator _twitterAuth;
+		private OAuth2Authenticator _facebookAuth;
 
-		#region Github Auth
+		#region Facebook Auth
 
-		public async Task<AccountResponse> LoginWithGithub()
+		public async Task<AccountResponse> LoginWithFacebook()
 		{
 			try
 			{
-				_githubAuth = new OAuth2Authenticator(
-					clientId: "40c527d407bf23a53b88",
-					clientSecret: "3596d1579cc2cf82c892ad9e1b17fede60d9233a",
-					scope: "read:user user:email",
-					authorizeUrl: new Uri("https://github.com/login/oauth/authorize"),
-					redirectUrl: new Uri("https://central-wi-it-conference.firebaseapp.com/__/auth/handler"),
-					accessTokenUrl: new Uri("https://github.com/login/oauth/access_token"),
-					isUsingNativeUI: false,
-					getUsernameAsync: null);
+				_facebookAuth = new OAuth2Authenticator(
+						                   CConstants.FacebookAppId,
+                        "email",
+                        new Uri("https://www.facebook.com/dialog/oauth/"),
+                        new Uri("https://central-wi-it-conference.firebaseapp.com/__/auth/handler"),
+                        isUsingNativeUI: false,
+                        getUsernameAsync: null);
 
-				_githubAuth.Completed += OnOAuth2AuthCompleted;
-				_githubAuth.Error += OnOAuth2AuthError;
+        _facebookAuth.Completed += OnOAuth2AuthCompleted;
+        _facebookAuth.Error += OnOAuth2AuthError;
 
-				var presenter = new Xamarin.Auth.Presenters.OAuthLoginPresenter();
-				presenter.Login(_githubAuth);
+        var presenter = new Xamarin.Auth.Presenters.OAuthLoginPresenter();
+        presenter.Login(_facebookAuth);
 
-				this.loginTCS = new TaskCompletionSource<Account>();
-				var account = await this.loginTCS.Task;
+        this.loginTCS = new TaskCompletionSource<Account>();
+        var account = await this.loginTCS.Task;
 
-				var token = account.Properties["access_token"];
-				var emailAddress = account.Properties["email"];
+        var token = account.Properties["access_token"];
 
-				var creds = GitHubAuthProvider.GetCredential(token);
+        var creds = FacebookAuthProvider.GetCredential(token);
 
-				var firebaseResult = await this.LoginToFirebase(creds);
+        var firebaseResult = await this.LoginToFirebase(creds);
 
-				if (firebaseResult.Success)
-				{
-					AccountStore.Create()
-						.Save(account, "CWITC-Github-Account");
+        if (firebaseResult.Success)
+        {
+            AccountStore.Create()
+                .Save(account, "CWITC-Facebook-Account");
 
-					Settings.Current.AuthType = "github";
-					firebaseResult.User.Email = emailAddress;
-				}
+            Settings.Current.AuthType = "facebook";
+        }
 
-				return firebaseResult;
-			}
-			catch (Exception ex)
-			{
-				return new AccountResponse
-				{
-					Success = false,
-					Error = ex.Message
-				};
-			}
-		}
+        return firebaseResult;
+    }
+    catch (Exception ex)
+    {
+        return new AccountResponse
+        {
+            Success = false,
+            Error = ex.Message
+        };
+    }
+}
 
-		void OnOAuth2AuthError(object sender, AuthenticatorErrorEventArgs e)
-		{
-			var authenticator = sender as OAuth2Authenticator;
-			if (authenticator != null)
-			{
-				authenticator.Completed -= OnOAuth2AuthCompleted;
-				authenticator.Error -= OnOAuth2AuthError;
-			}
+async Task LogoutFacebook()
+{
+    var accountStore = AccountStore.Create();
+    var accounts = await accountStore
+        .FindAccountsForServiceAsync("CWITC-Facebook-Account");
 
-			loginTCS.TrySetException(e.Exception);
-		}
+    var account = accounts.FirstOrDefault();
 
-		void OnOAuth2AuthCompleted(object sender, AuthenticatorCompletedEventArgs e)
-		{
-			var authenticator = sender as OAuth2Authenticator;
-			if (authenticator != null)
-			{
-				authenticator.Completed -= OnOAuth2AuthCompleted;
-				authenticator.Error -= OnOAuth2AuthError;
-			}
+    await accountStore.DeleteAsync(account, "CWITC-Facebook-Account");
+}
 
-			//User user = null;
-			if (e.IsAuthenticated)
-			{
-				loginTCS.TrySetResult(e.Account);
-			}
-		}
+#endregion
 
-		async Task LogoutGithub()
-		{
-			var accountStore = AccountStore.Create();
-			var accounts = await accountStore
-				.FindAccountsForServiceAsync("CWITC-Github-Account");
+#region Github Auth
 
-			var account = accounts.FirstOrDefault();
+public async Task<AccountResponse> LoginWithGithub()
+{
+    try
+    {
+        _githubAuth = new OAuth2Authenticator(
+            clientId:  CConstants.GithubClientId,
+            clientSecret:  CConstants.GithubClientSecret,
+            scope: "read:user user:email",
+            authorizeUrl: new Uri("https://github.com/login/oauth/authorize"),
+            accessTokenUrl: new Uri("https://github.com/login/oauth/access_token"),
+            redirectUrl: new Uri("https://central-wi-it-conference.firebaseapp.com/__/auth/handler"),
+            isUsingNativeUI: false,
+            getUsernameAsync: null);
 
-			await accountStore.DeleteAsync(account, "CWITC-Github-Account");
-		}
+        _githubAuth.Completed += OnOAuth2AuthCompleted;
+        _githubAuth.Error += OnOAuth2AuthError;
 
-		#endregion
+        var presenter = new Xamarin.Auth.Presenters.OAuthLoginPresenter();
+        presenter.Login(_githubAuth);
 
-		#region Twitter Auth
+        this.loginTCS = new TaskCompletionSource<Account>();
+        var account = await this.loginTCS.Task;
 
-		public async Task<AccountResponse> LoginWithTwitter()
-		{
-			try
-			{
-				_twitterAuth = new Xamarin.Auth.OAuth1Authenticator(
-					"DOirvDQts9ncdphpKxH7PT8X1",
-					"gUecmloB7soEsjwMNagxrKJO9nTYx7jf51FDBlKJIn63hnPyE9",
-					  new Uri("https://api.twitter.com/oauth/request_token"),
-					   new Uri("https://api.twitter.com/oauth/authorize"),
-					   new Uri("https://api.twitter.com/oauth/access_token"),
-					   new Uri("https://central-wi-it-conference.firebaseapp.com/__/auth/handler"),
-					   isUsingNativeUI: false);
+        var token = account.Properties["access_token"];
+        var emailAddress = account.Properties["email"];
 
-				_twitterAuth.Completed += OnTwitterAuthCompleted;
-				_twitterAuth.Error += OnTwitterAuthError;
+        var creds = GitHubAuthProvider.GetCredential(token);
+
+        var firebaseResult = await this.LoginToFirebase(creds);
+
+        if (firebaseResult.Success)
+        {
+            AccountStore.Create()
+                .Save(account, "CWITC-Github-Account");
+
+            Settings.Current.AuthType = "github";
+            firebaseResult.User.Email = emailAddress;
+        }
+
+        return firebaseResult;
+    }
+    catch (Exception ex)
+    {
+        return new AccountResponse
+        {
+            Success = false,
+            Error = ex.Message
+        };
+    }
+}
+
+async Task LogoutGithub()
+{
+    var accountStore = AccountStore.Create();
+    var accounts = await accountStore
+        .FindAccountsForServiceAsync("CWITC-Github-Account");
+
+    var account = accounts.FirstOrDefault();
+
+    await accountStore.DeleteAsync(account, "CWITC-Github-Account");
+}
+
+#endregion
+
+#region Twitter Auth
+
+public async Task<AccountResponse> LoginWithTwitter()
+{
+    try
+    {
+        _twitterAuth = new Xamarin.Auth.OAuth1Authenticator(
+            consumerKey:  CConstants.TwitterClientId,
+            consumerSecret:  CConstants.TwitterClientSecret,
+					requestTokenUrl: new Uri("https://api.twitter.com/oauth/request_token"),
+					authorizeUrl: new Uri("https://api.twitter.com/oauth/authorize"),
+					accessTokenUrl: new Uri("https://api.twitter.com/oauth/access_token"),
+					callbackUrl: new Uri("https://central-wi-it-conference.firebaseapp.com/__/auth/handler"),
+					isUsingNativeUI: false);
+
+				_twitterAuth.Completed += OnOAuth1AuthCompleted;
+				_twitterAuth.Error += OnOAuth1AuthError;
 				var presenter = new Xamarin.Auth.Presenters.OAuthLoginPresenter();
 				presenter.Login(_twitterAuth);
 
@@ -166,35 +205,7 @@ namespace CWITC.Droid
 				};
 			}
 		}
-
-		private void OnTwitterAuthError(object sender, AuthenticatorErrorEventArgs e)
-		{
-			var authenticator = sender as OAuth1Authenticator;
-			if (authenticator != null)
-			{
-				authenticator.Completed -= OnTwitterAuthCompleted;
-				authenticator.Error -= OnTwitterAuthError;
-			}
-
-			loginTCS.TrySetException(e.Exception);
-		}
-
-		private void OnTwitterAuthCompleted(object sender, AuthenticatorCompletedEventArgs e)
-		{
-			var authenticator = sender as OAuth1Authenticator;
-			if (authenticator != null)
-			{
-				authenticator.Completed -= OnTwitterAuthCompleted;
-				authenticator.Error -= OnTwitterAuthError;
-			}
-
-			//User user = null;
-			if (e.IsAuthenticated)
-			{
-				loginTCS.TrySetResult(e.Account);
-			}
-		}
-
+		
 		async Task LogoutTwitter()
 		{
 			var accountStore = AccountStore.Create();
@@ -207,5 +218,69 @@ namespace CWITC.Droid
 		}
 
 		#endregion
+
+		void OnOAuth2AuthError(object sender, AuthenticatorErrorEventArgs e)
+		{
+			var authenticator = sender as OAuth2Authenticator;
+			if (authenticator != null)
+			{
+				authenticator.Completed -= OnOAuth2AuthCompleted;
+				authenticator.Error -= OnOAuth2AuthError;
+			}
+
+			loginTCS.TrySetException(e.Exception);
+		}
+
+		void OnOAuth2AuthCompleted(object sender, AuthenticatorCompletedEventArgs e)
+		{
+			var authenticator = sender as OAuth2Authenticator;
+			if (authenticator != null)
+			{
+				authenticator.Completed -= OnOAuth2AuthCompleted;
+				authenticator.Error -= OnOAuth2AuthError;
+			}
+
+			//User user = null;
+			if (e.IsAuthenticated)
+			{
+				loginTCS.TrySetResult(e.Account);
+			}
+			else
+			{
+				loginTCS.TrySetCanceled();
+			}
+		}
+
+		void OnOAuth1AuthError(object sender, AuthenticatorErrorEventArgs e)
+		{
+			var authenticator = sender as OAuth1Authenticator;
+			if (authenticator != null)
+			{
+				authenticator.Completed -= OnOAuth1AuthCompleted;
+				authenticator.Error -= OnOAuth1AuthError;
+			}
+
+			loginTCS.TrySetException(e.Exception);
+		}
+
+		void OnOAuth1AuthCompleted(object sender, AuthenticatorCompletedEventArgs e)
+		{
+			var authenticator = sender as OAuth1Authenticator;
+			if (authenticator != null)
+			{
+				authenticator.Completed -= OnOAuth1AuthCompleted;
+				authenticator.Error -= OnOAuth1AuthError;
+			}
+
+			//User user = null;
+			if (e.IsAuthenticated)
+			{
+				loginTCS.TrySetResult(e.Account);
+			}
+			else
+			{
+				loginTCS.TrySetCanceled();
+			}
+		}
 	}
 }
