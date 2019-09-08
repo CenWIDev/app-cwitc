@@ -26,23 +26,12 @@ namespace CWITC.Clients.UI
 
             BindingContext = vm = new SessionsViewModel(Navigation);
 
-            if (Device.OS == TargetPlatform.Windows || Device.OS == TargetPlatform.WinPhone)
-            {
-                ToolbarItems.Add(new ToolbarItem
-                {
-                    Text = "Refresh",
-                    Icon = "toolbar_refresh.png",
-                    Command = vm.ForceRefreshCommand
-                });
-            }
-
-
             filterItem = new ToolbarItem
             {
                     Text = "Filter"
             };
 
-            if (Device.OS != TargetPlatform.iOS)
+            if (Device.RuntimePlatform != "iOS")
                 filterItem.Icon = "toolbar_filter.png";
 
             filterItem.Command = new Command(async () => 
@@ -83,7 +72,7 @@ namespace CWITC.Clients.UI
 
             ListViewSessions.ItemTapped += ListViewTapped;
 
-            if (Device.OS == TargetPlatform.Android)
+            if (Device.RuntimePlatform == "Android")
                 MessagingService.Current.Subscribe("filter_changed", (d) => UpdatePage());
             
             UpdatePage();
@@ -121,7 +110,7 @@ namespace CWITC.Clients.UI
         {
             base.OnDisappearing();
             ListViewSessions.ItemTapped -= ListViewTapped;
-            if (Device.OS == TargetPlatform.Android)
+            if (Device.RuntimePlatform == "Android")
                 MessagingService.Current.Unsubscribe("filter_changed");
         }
 

@@ -18,16 +18,6 @@ namespace CWITC.Clients.UI
             InitializeComponent();
             BindingContext = new EventsViewModel(Navigation);
 
-            if (Device.OS == TargetPlatform.Windows || Device.OS == TargetPlatform.WinPhone)
-            {
-                ToolbarItems.Add(new ToolbarItem
-                {
-                    Text = "Refresh",
-                    Icon ="toolbar_refresh.png",
-                    Command = ViewModel.ForceRefreshCommand
-                });
-            }
-
             ListViewEvents.ItemTapped += (sender, e) => ListViewEvents.SelectedItem = null;
             ListViewEvents.ItemSelected += async (sender, e) => 
                 {

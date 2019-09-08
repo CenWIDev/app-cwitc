@@ -18,7 +18,7 @@ namespace CWITC.Clients.UI
             InitializeComponent();
             BindingContext = vm = new VenueViewModel();
 
-            if (Device.OS == TargetPlatform.Android)
+            if (Device.RuntimePlatform == "Android")
             {
                 ToolbarItems.Add(new ToolbarItem
                 {
@@ -39,7 +39,7 @@ namespace CWITC.Clients.UI
                     });
                 }
             }
-            else if (Device.OS == TargetPlatform.iOS)
+            else if (Device.RuntimePlatform == "iOS")
             {
                 ToolbarItems.Add(new ToolbarItem
                 {

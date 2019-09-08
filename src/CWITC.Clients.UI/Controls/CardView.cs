@@ -7,10 +7,10 @@ namespace CWITC.Clients.UI
         public CardView()
         {
             Padding = 0;
-            if (Device.OS == TargetPlatform.iOS)
+            if (Device.RuntimePlatform == "iOS")
             {
                 HasShadow = false;
-                OutlineColor = Color.Transparent;
+				BorderColor = Color.Transparent;
                 BackgroundColor = Color.Transparent;
             }
         }

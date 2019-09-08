@@ -7,8 +7,6 @@ using CWITC.Clients.Portable;
 using Microsoft.AppCenter.Analytics;
 using Microsoft.AppCenter.Crashes;
 using Plugin.CurrentActivity;
-//using Microsoft.Azure.Mobile;
-//using Microsoft.Azure.Mobile.Crashes;
 
 namespace CWITC.Droid
 {

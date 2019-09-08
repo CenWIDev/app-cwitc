@@ -17,16 +17,13 @@ namespace CWITC.Shared.DataStore
 		// i know, gross. deal with it (⌐■_■)
 		static JObject LoadedData;
 
-		string year => "2018";
-		string github_file_url => $"https://raw.githubusercontent.com/CenWIDev/app-cwitc/app_data/{year}.json";
-
 		bool initialized => LoadedData != null;
 
 		public abstract string Identifier { get; }
 
 		public virtual async Task InitializeStore()
 		{
-			if(LoadedData == null)
+			if (LoadedData == null)
 				LoadedData = await this.GetDataFile();
 		}
 
@@ -53,7 +50,7 @@ namespace CWITC.Shared.DataStore
 
 				return new List<T>();
 			}
-			catch(Exception ex)
+			catch (Exception ex)
 			{
 				Console.WriteLine(ex.Message);
 				Console.WriteLine(ex.StackTrace);
@@ -71,35 +68,7 @@ namespace CWITC.Shared.DataStore
 
 		async Task<JObject> GetDataFile(bool forceDownload = false)
 		{
-			string fileName = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), $"{this.year}.json");
-
-			if (!forceDownload && File.Exists(fileName))
-			{
-				var data = File.ReadAllText(fileName);
-
-				return JObject.Parse(data);
-			}
-			else
-			{
-				using (var fs = File.Create(fileName))
-				{
-					fs.Close();
-				}
-			}
-
-			if (Plugin.Connectivity.CrossConnectivity.Current.IsConnected)
-			{
-				using (var client = new HttpClient())
-				{
-					string response = await client.GetStringAsync(this.github_file_url);
-
-					File.WriteAllText(fileName, response, System.Text.Encoding.UTF8);
-					 
-					return JObject.Parse(response);
-				}
-			}
-			else
-				return new JObject();
+			return new JObject();
 		}
 	}
 }

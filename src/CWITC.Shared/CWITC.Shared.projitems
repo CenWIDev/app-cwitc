@@ -10,7 +10,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)EvolveLogger.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Auth0Client.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Datastore\CategoryStore.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Datastore\EventStore.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Datastore\FavoriteStore.cs" />
@@ -22,6 +21,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Datastore\BaseUserDataStore.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Datastore\BaseStore.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Datastore\LunchStore.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SSOClient.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Datastore\" />

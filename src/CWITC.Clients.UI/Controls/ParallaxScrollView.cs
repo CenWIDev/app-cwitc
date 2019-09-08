@@ -24,7 +24,7 @@ namespace CWITC.Clients.UI
         double height;
         public void Parallax()
         {
-            if (ParallaxView == null || Device.OS == TargetPlatform.Windows || Device.OS == TargetPlatform.WinPhone)
+            if (ParallaxView == null)
                 return;
             
             if(height <= 0)
@@ -37,7 +37,7 @@ namespace CWITC.Clients.UI
                 ParallaxView.Scale = 1;
                 ParallaxView.TranslationY = y;
             }
-            else if (Device.OS == TargetPlatform.iOS)
+            else if (Device.RuntimePlatform == "iOS")
             {
                 //Calculate a scale that equalizes the height vs scroll
                 double newHeight = height + (ScrollY * -1);

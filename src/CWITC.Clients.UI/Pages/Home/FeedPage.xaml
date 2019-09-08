@@ -7,7 +7,7 @@
     xmlns:pull="clr-namespace:Refractored.XamForms.PullToRefresh;assembly=Refractored.XamForms.PullToRefresh"
     xmlns:imagecircle="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
     x:Class="CWITC.Clients.UI.FeedPage"
-    x:Name="FeedPage"
+    x:Name="feedPage"
     Title="CWITC Feed"
     Icon="tab_feed.png"
     BackgroundColor="{DynamicResource WindowBackgroundTable}">
@@ -76,7 +76,7 @@
                         <local:NonScrollableListView.ItemTemplate>
                              <DataTemplate>
                               <ViewCell>
-                                <local:SessionCellView FavoriteCommand="{Binding Path=BindingContext.FavoriteCommand, Source={x:Reference FeedPage}}"/>
+                                <local:SessionCellView FavoriteCommand="{Binding Path=BindingContext.FavoriteCommand, Source={x:Reference feedPage}}"/>
                               </ViewCell>
                             </DataTemplate>
                         </local:NonScrollableListView.ItemTemplate>

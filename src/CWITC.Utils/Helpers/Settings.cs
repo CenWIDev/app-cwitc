@@ -268,7 +268,7 @@ namespace CWITC.Clients.Portable
 		readonly string LastNameDefault = string.Empty;
 		public string LastName
 		{
-			get { return AppSettings.GetValueOrDefault(LastNameKey, LastNameDefault); }
+			get { return AppSettings.GetValueOrDefault(LastNameKey, UserAvatarDefault); }
 			set
 			{
 				if (AppSettings.AddOrUpdateValue(LastNameKey, value))
@@ -379,9 +379,22 @@ namespace CWITC.Clients.Portable
 
 		public string UserDisplayName => IsLoggedIn ? $"{FirstName} {LastName}" : "Sign In";
 
-		public string UserAvatar => IsLoggedIn ? Gravatar.GetURL(Email) : "profile_generic.png";
+		//public string UserAvatar => IsLoggedIn ? Gravatar.GetURL(Email) : "profile_generic.png";
+		const string UserAvatarKey = "useravatar_key";
+		readonly string UserAvatarDefault = "profile_generic.png";
+		public string UserAvatar
+		{
+			get { return AppSettings.GetValueOrDefault(UserAvatarKey, LastNameDefault); }
+			set
+			{
+				if (AppSettings.AddOrUpdateValue(UserAvatarKey, value))
+				{
+					OnPropertyChanged();
+				}
+			}
+		}
 
-		public bool IsLoggedIn => !string.IsNullOrWhiteSpace(Email);
+		public bool IsLoggedIn => !string.IsNullOrWhiteSpace(UserId);
 
 		public bool HasFilters => (ShowPastSessions || FavoritesOnly || (!string.IsNullOrWhiteSpace(FilteredCategories) && !ShowAllCategories));
 

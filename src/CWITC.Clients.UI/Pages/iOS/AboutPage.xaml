@@ -5,13 +5,13 @@
              xmlns:toolkit="clr-namespace:FormsToolkit;assembly=FormsToolkit"
              xmlns:local="clr-namespace:CWITC.Clients.UI;assembly=CWITC.Clients.UI"
              x:Class="CWITC.Clients.UI.AboutPage"
-             x:Name="AboutPage"
+             x:Name="aboutPage"
              Title="Info"
              Icon="tab_about.png"
              NavigationPage.BackButtonTitle="Info"
              BackgroundColor="{DynamicResource WindowBackgroundTable}">
     <ContentPage.ToolbarItems>
-        <ToolbarItem Command="{Binding LoginCommand}" Text="{Binding LoginText}"/>
+        <ToolbarItem Command="{Binding LogoutCommand}" Text="Log Out"/>
     </ContentPage.ToolbarItems>
     <local:AlwaysScrollView  Grid.RowSpan="2">
         <StackLayout Spacing="0"> 
@@ -76,10 +76,6 @@
                         </Grid.GestureRecognizers>
                         </Grid>
                         <local:FooterDivider/>
-                        <StackLayout Padding="16,8,16,0">
-                            <Label Text="Sign in with your CWITC account to save and sync favorites and session feedback." 
-                                   Style="{DynamicResource EvolveListItemDetailTextStyle}"/>
-                        </StackLayout>
                     </StackLayout>
                 </local:CardView>
            

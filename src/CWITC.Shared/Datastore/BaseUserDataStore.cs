@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
-using Auth0.ManagementApi;
 using CWITC.Clients.Portable;
 using CWITC.DataObjects;
 using CWITC.DataStore.Abstractions;
@@ -14,15 +13,15 @@ namespace CWITC.Shared.DataStore
 {
 	public abstract class BaseUserDataStore<T> : IBaseStore<T> where T : IBaseDataObject
 	{
-		ManagementApiClient apiClient = null;
-		bool initialized => apiClient != null;
+		//ManagementApiClient apiClient = null;
+		bool initialized => false;// apiClient != null;
 
 		public abstract string Identifier { get; }
 
 		public System.Threading.Tasks.Task InitializeStore()
 		{
-			if (apiClient == null)
-				apiClient = new ManagementApiClient(Settings.Current.IdToken, new Uri("https://cwitc.auth0.com/api/v2"));
+			//if (apiClient == null)
+			//	apiClient = new ManagementApiClient(Settings.Current.IdToken, new Uri("https://cwitc.auth0.com/api/v2"));
 
 			MessagingService.Current.Subscribe(MessageKeys.LoggedIn, (m) =>
 			{
@@ -145,10 +144,10 @@ namespace CWITC.Shared.DataStore
 			JObject toSend = new JObject();
 			toSend.Add(this.Identifier, JArray.FromObject(data));
 
-			await apiClient.Users.UpdateAsync(Settings.Current.UserId, new Auth0.ManagementApi.Models.UserUpdateRequest
-			{
-				UserMetadata = toSend
-			});
+			//await apiClient.Users.UpdateAsync(Settings.Current.UserId, new Auth0.ManagementApi.Models.UserUpdateRequest
+			//{
+			//	UserMetadata = toSend
+			//});
 
 			string fileName = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), $"{this.Identifier}.json");
 			File.WriteAllText(fileName, data.ToString(), System.Text.Encoding.UTF8);
@@ -179,32 +178,32 @@ namespace CWITC.Shared.DataStore
 
 			if (Plugin.Connectivity.CrossConnectivity.Current.IsConnected)
 			{
-				var user = await GetUser();
+				//var user = await GetUser();
 
-				if (user.UserMetadata == null)
-					return new JArray();
+				//if (user.UserMetadata == null)
+				//	return new JArray();
 				
-				var metadata = JArray.FromObject(user.UserMetadata);
+				//var metadata = JArray.FromObject(user.UserMetadata);
 
-				if (metadata.ContainsKey(this.Identifier))
-				{
-					var section = metadata[this.Identifier];
+				//if (metadata.ContainsKey(this.Identifier))
+				//{
+				//	var section = metadata[this.Identifier];
 
-					string data = section.ToString();
+				//	string data = section.ToString();
 
-					File.WriteAllText(fileName, data, System.Text.Encoding.UTF8);
+				//	File.WriteAllText(fileName, data, System.Text.Encoding.UTF8);
 
-					return JArray.Parse(data);
-				}
+				//	return JArray.Parse(data);
+				//}
 			}
 
 			return new JArray();
 		}
 
-		async Task<Auth0.ManagementApi.Models.User> GetUser()
-		{
-			var user = await apiClient.Users.GetAsync(Settings.Current.UserId);
-			return user;
-		}
+		//async Task<Auth0.ManagementApi.Models.User> GetUser()
+		//{
+		//	var user = await apiClient.Users.GetAsync(Settings.Current.UserId);
+		//	return user;
+		//}
 	}
 }

@@ -3,7 +3,6 @@ using CWITC.DataObjects;
 using System.Linq;
 using CWITC.DataStore.Abstractions;
 using CWITC.Shared.DataStore;
-using CWITC.Shared.DataStore;
 using Xamarin.Forms;
 
 [assembly: Dependency(typeof(EventStore))]

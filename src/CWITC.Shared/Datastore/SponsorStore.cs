@@ -2,7 +2,6 @@
 using CWITC.DataObjects;
 using CWITC.DataStore.Abstractions;
 using CWITC.Shared.DataStore;
-using CWITC.Shared.DataStore;
 using Xamarin.Forms;
 
 [assembly: Dependency(typeof(SponsorStore))]

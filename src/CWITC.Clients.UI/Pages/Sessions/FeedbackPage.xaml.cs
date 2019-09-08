@@ -24,7 +24,7 @@ namespace CWITC.Clients.UI
                 TextEditor.Layout(frame);
             };
 
-            if (Device.OS != TargetPlatform.iOS)
+            if (Device.RuntimePlatform != "iOS")
                 ToolbarDone.Icon = "toolbar_close.png";
 
 
