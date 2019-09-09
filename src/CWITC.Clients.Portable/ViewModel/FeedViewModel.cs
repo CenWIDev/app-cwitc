@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Windows.Input;
 using System.Threading.Tasks;
 using MvvmHelpers;
@@ -6,8 +6,6 @@ using System.Linq;
 using Xamarin.Forms;
 using FormsToolkit;
 using System.Reflection;
-using PCLStorage;
-using Plugin.EmbeddedResource;
 using Newtonsoft.Json;
 using CWITC.DataObjects;
 using System.Net.Http;
