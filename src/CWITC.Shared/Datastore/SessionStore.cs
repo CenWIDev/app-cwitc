@@ -7,68 +7,92 @@ using System;
 using Xamarin.Forms;
 using CWITC.Shared.DataStore;
 using CWITC.Clients.Portable;
+using Contentful.Core.Models;
+using Contentful.Core.Search;
 
 [assembly: Dependency(typeof(SessionStore))]
 namespace CWITC.Shared.DataStore
 {
-    public class SessionStore : BaseStore<Session>, ISessionStore
-    {
-        public override async Task<IEnumerable<Session>> GetItemsAsync(bool forceRefresh = false)
-        {
-            var sessions = await base.GetItemsAsync(forceRefresh);
+	public class SessionStore : ContentfulDataStore<SessionEntity, Session>, ISessionStore
+	{
+		public async Task<IEnumerable<Session>> GetSpeakerSessionsAsync(string speakerId)
+		{
+			await InitializeStore()
+				.ConfigureAwait(false);
 
-            if (sessions != null)
-            {
-                if (Settings.Current.IsLoggedIn)
-                {
-                    var favStore = DependencyService.Get<IFavoriteStore>();
-                    await favStore.GetItemsAsync(true).ConfigureAwait(false);//pull latest
+			var sessions = await GetItemsAsync()
+				.ConfigureAwait(false);
 
-                    foreach (var session in sessions)
-                    {
-                        var isFav = await favStore.IsFavorite(session.Id).ConfigureAwait(false);
-                        session.IsFavorite = isFav;
-                    }
-                }
-            }
+			return sessions
+				.Where(s => s.Speakers != null && s.Speakers.Any(speak => speak.Id == speakerId)).OrderBy(s => s.StartTimeOrderBy);
+		}
 
-            return sessions ?? new List<Session>();
-        }
+		public async Task<IEnumerable<Session>> GetNextSessions()
+		{
+			var date = DateTime.UtcNow.AddMinutes(-30);//about to start in next 30
 
-        public async Task<IEnumerable<Session>> GetSpeakerSessionsAsync(string speakerId)
-        {
-            await InitializeStore().ConfigureAwait(false);
+			var sessions = await GetItemsAsync().ConfigureAwait(false);
 
-            var speakers = await GetItemsAsync().ConfigureAwait(false);
+			var result = sessions.Where(s => s.StartTimeOrderBy > date && s.IsFavorite).Take(2);
 
-            return speakers.Where(s => s.Speakers != null && s.Speakers.Any(speak => speak.Id == speakerId))
-                .OrderBy(s => s.StartTimeOrderBy);
-        }
+			var enumerable = result as Session[] ?? result.ToArray();
+			return enumerable.Any() ? enumerable : null;
+		}
 
-        public async Task<IEnumerable<Session>> GetNextSessions()
-        {
-            var date = DateTime.UtcNow.AddMinutes(-30);//about to start in next 30
+		public async Task<Session> GetAppIndexSession(string id)
+		{
+			await InitializeStore().ConfigureAwait(false);
 
-            var sessions = await GetItemsAsync().ConfigureAwait(false);
+			var sessions = (await GetItemsAsync(true)).Where(s => s.Id == id).ToList();
 
-            var result = sessions.Where(s => s.StartTimeOrderBy > date && s.IsFavorite).Take(2);
+			if (sessions == null || sessions.Count == 0)
+				return null;
 
-            var enumerable = result as Session[] ?? result.ToArray();
-            return enumerable.Any() ? enumerable : null;
-        }
+			return sessions[0];
+		}
 
-        public async Task<Session> GetAppIndexSession(string id)
-        {
-            await InitializeStore().ConfigureAwait(false);
+		protected override QueryBuilder<SessionEntity> GetYearFilter()
+		{
+			return new QueryBuilder<SessionEntity>()
+				.FieldGreaterThan(s => s.StartTime, new DateTime(2019, 1, 1).ToString("o"));
+		}
 
-            var sessions = (await GetItemsAsync(true)).Where(s => s.Id == id).ToList();
+		protected override async Task<Session> Map(SessionEntity entity)
+		{
+			var htmlRenderer = new HtmlRenderer();
+			var html = await htmlRenderer.ToHtml(entity.Description);
 
-            if (sessions == null || sessions.Count == 0)
-                return null;
+			return new Session
+			{
+				Id = entity.Sys.Id,
+				Title = entity.Title,
+				ShortTitle = entity.Title,
+				Abstract = html,
+				Room = new Room
+				{
+					Name = entity.Room
+				},
+				StartTime = entity.StartTime,
+				EndTime = entity.EndTime,
+				MainCategory = new Category
+				{
+					Id = entity.Category?.Sys.Id,
+					Name = entity.Category?.Name,
+					ShortName = entity.Category?.ShortName,
+					Color = entity.Category?.Color
+				},
+				Speakers = entity.Speakers?.Select(s => new Speaker
+				{
+					Id = s?.Sys.Id,
+					Name = s?.Name,
+					Biography = s?.Biography,
+					CompanyName = s?.CompanyName,
+					CompanyWebsiteUrl = s?.CompanyWebsiteURL,
+					//PhotoUrl = s.p
+				})?.ToList()
+			};
+		}
 
-            return sessions[0];
-        }
-
-        public override string Identifier => "sessions";
-    }
+		public override string Identifier => "session";
+	}
 }

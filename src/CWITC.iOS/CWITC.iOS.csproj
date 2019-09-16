@@ -357,6 +357,12 @@
     <Reference Include="Xamarin.Auth">
       <HintPath>..\packages\Xamarin.Auth.1.7.0\lib\Xamarin.iOS10\Xamarin.Auth.dll</HintPath>
     </Reference>
+    <Reference Include="Contentful.Core">
+      <HintPath>..\packages\contentful.csharp.4.1.1\lib\netstandard2.0\Contentful.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlLabel.Forms.Plugin">
+      <HintPath>..\packages\Xam.Plugin.HtmlLabel.3.0.2.2\lib\xamarinios10\HtmlLabel.Forms.Plugin.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\heart_empty.png" />

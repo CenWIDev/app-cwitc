@@ -49,6 +49,18 @@ then
     exit
 fi
 
+if [ -z "$CONTENTFUL_SPACEKEY" ]
+then
+    echo "You need define the CONTENTFUL_SPACEKEY variable in App Center"
+    exit
+fi
+
+if [ -z "$CONTENTFUL_DELIVERYAPIKEY" ]
+then
+    echo "You need define the CONTENTFUL_DELIVERYAPIKEY variable in App Center"
+    exit
+fi
+
 APP_CONSTANT_FILE=$APPCENTER_SOURCE_DIRECTORY/CWITC.Clients.Portable/Constants.cs
 
 if [ -e "$APP_CONSTANT_FILE" ]
@@ -67,6 +79,12 @@ then
 
     echo "Updating TwitterClientSecret to $TWITTER_CLIENTSECRET in AppConstant.cs"
     sed -i '' 's#TwitterClientSecret = "[-A-Za-z0-9:_./]*"#TwitterClientSecret = "'$TWITTER_CLIENTSECRET'"#' $APP_CONSTANT_FILE
+
+    echo "Updating ContentfulSpaceKey to $CONTENTFUL_SPACEKEY in AppConstant.cs"
+    sed -i '' 's#ContentfulSpaceKey = "[-A-Za-z0-9:_./]*"#ContentfulSpaceKey = "'$CONTENTFUL_SPACEKEY'"#' $APP_CONSTANT_FILE
+
+    echo "Updating ContentfulDeliveryApiKey to $CONTENTFUL_DELIVERYAPIKEY in AppConstant.cs"
+    sed -i '' 's#ContentfulDeliveryApiKey = "[-A-Za-z0-9:_./]*"#ContentfulDeliveryApiKey = "'$CONTENTFUL_DELIVERYAPIKEY'"#' $APP_CONSTANT_FILE
 
     echo "File content:"
     cat $APP_CONSTANT_FILE
