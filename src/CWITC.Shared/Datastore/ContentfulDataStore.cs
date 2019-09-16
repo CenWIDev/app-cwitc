@@ -17,9 +17,8 @@ namespace CWITC.Shared.DataStore
 	{
 		private ContentfulClient client;
 
-		//public ContentfulDataStore()
-		//{
-		//}
+		public abstract string Identifier { get; }
+
 		public override Task InitializeStore()
 		{
 			if (this.client == null)

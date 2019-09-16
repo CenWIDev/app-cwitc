@@ -7,7 +7,6 @@ namespace CWITC.DataStore.Abstractions
 {
 	public interface IReadonlyStore<T>
 	{
-		string Identifier { get; }
 		Task InitializeStore();
 		Task<IEnumerable<T>> GetItemsAsync(bool forceRefresh = false);
 		Task<T> GetItemAsync(string id);

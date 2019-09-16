@@ -88,7 +88,8 @@ namespace CWITC.Shared.DataStore
 					Biography = s?.Biography,
 					CompanyName = s?.CompanyName,
 					CompanyWebsiteUrl = s?.CompanyWebsiteURL,
-					//PhotoUrl = s.p
+					PhotoUrl = !string.IsNullOrEmpty(s.Photo?.File.Url) ?
+						$"http://{s.Photo.File.Url}" : null
 				})?.ToList()
 			};
 		}

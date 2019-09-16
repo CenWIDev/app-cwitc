@@ -38,6 +38,7 @@ namespace CWITC.Clients.Portable
 					new MenuItem { Name = "Open source on GitHub!", Command=LaunchBrowserCommand, Parameter="https://github.com/CenWIDev/app-cwitc"},
 					new MenuItem { Name = "Terms of Use", Command=LaunchBrowserCommand, Parameter="https://github.com/CenWIDev/app-cwitc/wiki/Terms-&-Conditions"},
 					new MenuItem { Name = "Privacy Policy", Command=LaunchBrowserCommand, Parameter="https://github.com/CenWIDev/app-cwitc/wiki/Privacy-Policy"},
+					new MenuItem { Name = "Code of Conduct", Command=LaunchBrowserCommand, Parameter="https://cwitc.org/code-of-conduct"},
 					new MenuItem { Name = "Open Source Notice", Command=LaunchBrowserCommand, Parameter="https://github.com/CenWIDev/app-cwitc/tree/master/oss-licenses"}
 				});
 		}

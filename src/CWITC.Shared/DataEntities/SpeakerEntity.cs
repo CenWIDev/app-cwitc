@@ -9,6 +9,8 @@ namespace CWITC.Shared
 
 		public string Name { get; set; }
 
+		public Asset Photo { get; set; }
+
 		public string PositionName { get; set; }
 
 		public string Biography { get; set; }
