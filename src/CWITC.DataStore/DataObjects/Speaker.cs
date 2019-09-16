@@ -1,22 +1,24 @@
 ﻿using System.Collections.Generic;
 ﻿using System;
+using System.Linq;
 
 namespace CWITC.DataObjects
 {
     public class Speaker : BaseDataObject
     {
-        /// <summary>
-        /// Gets or sets the first name.
-        /// </summary>
-        /// <value>The first name.</value>
-        public string FirstName { get; set; }
+		/// <summary>
+		/// Gets or sets the first name.
+		/// </summary>
+		/// <value>The first name.</value>
+		public string FirstName => Name?.Split()?.FirstOrDefault();
 
-        /// <summary>
-        /// Gets or sets the last name.
-        /// </summary>
-        /// <value>The last name.</value>
-        public string LastName { get; set; }
+		/// <summary>
+		/// Gets or sets the last name.
+		/// </summary>
+		/// <value>The last name.</value>
+		public string LastName => Name?.Split()?.LastOrDefault();
 
+		public string Name { get; set; }
 
         /// <summary>
         /// Gets or sets the biography.
@@ -82,10 +84,14 @@ namespace CWITC.DataObjects
         {
             get
             {
-                if (string.IsNullOrWhiteSpace (CompanyName))
-                    return PositionName;
-                
-                return $"{PositionName}, {CompanyName}"; 
+				if (string.IsNullOrWhiteSpace(CompanyName) && !string.IsNullOrWhiteSpace(PositionName))
+					return PositionName;
+				else if (string.IsNullOrWhiteSpace(PositionName) && !string.IsNullOrWhiteSpace(CompanyName))
+					return CompanyName;
+				else if (!string.IsNullOrWhiteSpace(CompanyName) && !string.IsNullOrWhiteSpace(PositionName))
+					return $"{PositionName}, {CompanyName}";
+				else
+					return string.Empty;
             } 
         }
 
@@ -121,6 +127,5 @@ namespace CWITC.DataObjects
                 return null;
             } 
         }
-
     }
 }

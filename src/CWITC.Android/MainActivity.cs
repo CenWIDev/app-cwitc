@@ -55,6 +55,7 @@ namespace CWITC.Droid
 
 			FirebaseApp.InitializeApp(this.ApplicationContext);
 
+			LabelHtml.Forms.Plugin.Droid.HtmlLabelRenderer.Initialize();
 			Forms.Init(this, savedInstanceState);
 			FormsMaps.Init(this, savedInstanceState);
 			Toolkit.Init();

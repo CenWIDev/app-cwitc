@@ -104,8 +104,9 @@
                             <StackLayout.Padding>
                                 <OnPlatform x:TypeArguments="Thickness" iOS="16,8,16,0" Android="16,8" WinPhone="16,8"/>
                             </StackLayout.Padding>
-                            <Label Text="Copyright 2017 - CENWIDEV." 
-                                   Style="{DynamicResource EvolveListItemDetailTextStyle}"/>
+                            <Label 
+								Text="{Binding Copyright}" 
+									Style="{DynamicResource EvolveListItemDetailTextStyle}"/>
                         </StackLayout>
                     </StackLayout>
                 </local:CardView>

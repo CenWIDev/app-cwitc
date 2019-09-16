@@ -5,8 +5,8 @@
     xmlns:local="clr-namespace:CWITC.Clients.UI;assembly=CWITC.Clients.UI"
     x:Class="CWITC.Clients.UI.SessionsPage"
     x:Name="sessionsPage"
-    Title="Sessions"
-    Icon="tab_sessions.png"
+    Title="Schedule"
+    Icon="tab_events.png"
     BackgroundColor="{DynamicResource WindowBackground}">
     <ContentPage.Resources>
      <ResourceDictionary>

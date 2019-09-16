@@ -131,9 +131,6 @@ namespace CWITC.Droid
 				case Resource.Id.nav_sessions:
 					id = (int)AppPage.Sessions;
 					break;
-				case Resource.Id.nav_events:
-					id = (int)AppPage.Schedule;
-					break;
 				case Resource.Id.nav_sponsors:
 					id = (int)AppPage.Sponsors;
 					break;

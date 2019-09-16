@@ -9,12 +9,8 @@
             android:title="CWITC Feed"/>
         <item
             android:id="@+id/nav_sessions"
-            android:icon="@drawable/menu_sessions"
-            android:title="Sessions"/>
-        <item
-            android:id="@+id/nav_events"
             android:icon="@drawable/menu_events"
-            android:title="Schedule" />
+            android:title="Schedule"/>
     </group>
 
      <item android:title="Information" >

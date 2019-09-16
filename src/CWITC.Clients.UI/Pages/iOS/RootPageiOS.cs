@@ -15,7 +15,6 @@ namespace CWITC.Clients.UI
             NavigationPage.SetHasNavigationBar(this, false);
             Children.Add(new EvolveNavigationPage(new FeedPage()));
             Children.Add(new EvolveNavigationPage(new SessionsPage()));
-            Children.Add(new EvolveNavigationPage(new EventsPage()));
 			Children.Add(new EvolveNavigationPage(new LunchLocationsPage()));
             Children.Add(new EvolveNavigationPage(new AboutPage()));
 

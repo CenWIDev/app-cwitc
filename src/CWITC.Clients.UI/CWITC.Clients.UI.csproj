@@ -19,6 +19,7 @@
     <PackageReference Include="Humanizer" Version="2.6.2" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
     <PackageReference Include="Xamarin.Auth" Version="1.7.0" />
+    <PackageReference Include="Xam.Plugin.HtmlLabel" Version="3.0.2.2" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Images\error.png">
@@ -67,12 +68,6 @@
     </EmbeddedResource>
     <EmbeddedResource Update="Pages\Android\MenuPage.xaml">
       <LogicalName>MenuPage.xaml</LogicalName>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Pages\Events\EventDetailsPage.xaml">
-      <LogicalName>EventDetailsPage.xaml</LogicalName>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Pages\Events\EventsPage.xaml">
-      <LogicalName>EventsPage.xaml</LogicalName>
     </EmbeddedResource>
     <EmbeddedResource Update="Pages\Home\FeedPage.xaml">
       <LogicalName>FeedPage.xaml</LogicalName>

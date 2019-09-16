@@ -118,7 +118,8 @@ namespace CWITC.DataObjects
             }
         }
         bool isFavorite;
-        [Newtonsoft.Json.JsonIgnore]
+
+		[Newtonsoft.Json.JsonIgnore]
         public bool IsFavorite
         {
             get { return isFavorite; }

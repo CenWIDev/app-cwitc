@@ -21,7 +21,6 @@ namespace CWITC.Shared.DataStore
 				SessionStore.SyncAsync(),
 				SpeakerStore.SyncAsync(),
 				SponsorStore.SyncAsync(),
-				EventStore.SyncAsync(),
 				LunchStore.SyncAsync()
             };
 
@@ -58,9 +57,6 @@ namespace CWITC.Shared.DataStore
 
         ISpeakerStore speakerStore;
         public ISpeakerStore SpeakerStore => speakerStore ?? (speakerStore  = DependencyService.Get<ISpeakerStore>());
-
-        IEventStore eventStore;
-        public IEventStore EventStore => eventStore ?? (eventStore = DependencyService.Get<IEventStore>());
 
         ISponsorStore sponsorStore;
         public ISponsorStore SponsorStore => sponsorStore ?? (sponsorStore  = DependencyService.Get<ISponsorStore>());

@@ -445,6 +445,12 @@
     <Reference Include="Xamarin.GooglePlayServices.Auth">
       <HintPath>..\packages\Xamarin.GooglePlayServices.Auth.60.1142.1\lib\MonoAndroid80\Xamarin.GooglePlayServices.Auth.dll</HintPath>
     </Reference>
+    <Reference Include="Contentful.Core">
+      <HintPath>..\packages\contentful.csharp.4.1.1\lib\netstandard2.0\Contentful.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlLabel.Forms.Plugin">
+      <HintPath>..\packages\Xam.Plugin.HtmlLabel.3.0.2.2\lib\monoandroid81\HtmlLabel.Forms.Plugin.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainActivity.cs" />

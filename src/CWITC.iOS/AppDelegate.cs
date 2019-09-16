@@ -88,6 +88,7 @@ namespace CWITC.iOS
 #endif
 			Firebase.Core.App.Configure();
 
+			LabelHtml.Forms.Plugin.iOS.HtmlLabelRenderer.Initialize();
 			Forms.Init();
             FormsMaps.Init();
             Toolkit.Init();
