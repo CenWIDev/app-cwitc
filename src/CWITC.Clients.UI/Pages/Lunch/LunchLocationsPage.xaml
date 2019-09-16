@@ -7,8 +7,13 @@
     xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
     x:Class="CWITC.Clients.UI.LunchLocationsPage"
     BackgroundColor="{DynamicResource WindowBackground}"
-    Title="Lunch Locations"
-    Icon="tab_lunch.png">
+    Title="Lunch Locations">
+		<ContentPage.Icon>
+		<OnPlatform x:TypeArguments="FileImageSource">
+			<On Platform="iOS" Value="tab_lunch.png" />
+			<On Platform="Android" Value="menu_lunch.png" />
+		</OnPlatform>
+	</ContentPage.Icon>
     <AbsoluteLayout  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
 
     <StackLayout

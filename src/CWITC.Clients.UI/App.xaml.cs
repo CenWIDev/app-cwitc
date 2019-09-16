@@ -90,14 +90,14 @@ namespace CWITC.Clients.UI
 
 			try
 			{
-				if (firstRun || Device.RuntimePlatform != "iOS")
+				if (firstRun)
 					return;
 
 				var mainNav = MainPage as NavigationPage;
 				if (mainNav == null)
 					return;
 
-				var rootPage = mainNav.CurrentPage as RootPageiOS;
+				var rootPage = mainNav.CurrentPage as RootPage;
 				if (rootPage == null)
 					return;
 
@@ -167,17 +167,7 @@ namespace CWITC.Clients.UI
 
 		private void ResetMainPage()
 		{
-			switch (Device.RuntimePlatform)
-			{
-				case "Android":
-					MainPage = Settings.Current.IsLoggedIn ? (Page)new RootPageAndroid() : (Page)new LoginPage();
-					break;
-				case "iOS":
-					MainPage = new EvolveNavigationPage(Settings.Current.IsLoggedIn ? (Page)new RootPageiOS() : new LoginPage());
-					break;
-				default:
-					throw new NotImplementedException();
-			}
+			MainPage = new EvolveNavigationPage(Settings.Current.IsLoggedIn ? (Page)new RootPage() : new LoginPage());
 		}
 	}
 }
