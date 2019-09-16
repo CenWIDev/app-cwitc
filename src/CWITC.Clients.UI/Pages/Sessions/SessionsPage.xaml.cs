@@ -81,7 +81,7 @@ namespace CWITC.Clients.UI
 
         void UpdatePage()
         {
-            Title = Settings.Current.FavoritesOnly ? "Favorite Sessions" : "Sessions";
+            Title = Settings.Current.FavoritesOnly ? "Favorite Sessions" : "Schedule";
 
             bool forceRefresh = (DateTime.UtcNow > (ViewModel?.NextForceRefresh ?? DateTime.UtcNow)) ||
                 loggedIn != Settings.Current.Email;

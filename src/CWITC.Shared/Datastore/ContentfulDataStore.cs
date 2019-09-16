@@ -51,7 +51,7 @@ namespace CWITC.Shared.DataStore
 			{
 				if (client == null) await InitializeStore();
 
-				var entries = (await client.GetEntriesByType<TEntityType>(this.Identifier, GetYearFilter()))
+				var entries = (await client.GetEntriesByType(this.Identifier, GetYearFilter()))
 					?.ToList();
 
 				List<T> results = new List<T>();

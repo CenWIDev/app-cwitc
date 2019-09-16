@@ -69,12 +69,6 @@
     <EmbeddedResource Update="Pages\Android\MenuPage.xaml">
       <LogicalName>MenuPage.xaml</LogicalName>
     </EmbeddedResource>
-    <EmbeddedResource Update="Pages\Events\EventDetailsPage.xaml">
-      <LogicalName>EventDetailsPage.xaml</LogicalName>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Pages\Events\EventsPage.xaml">
-      <LogicalName>EventsPage.xaml</LogicalName>
-    </EmbeddedResource>
     <EmbeddedResource Update="Pages\Home\FeedPage.xaml">
       <LogicalName>FeedPage.xaml</LogicalName>
     </EmbeddedResource>

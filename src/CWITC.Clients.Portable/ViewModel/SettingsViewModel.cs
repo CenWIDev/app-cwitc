@@ -156,6 +156,8 @@ namespace CWITC.Clients.Portable
 				IsBusy = false;
 			}
 		}
+
+		public string Copyright => $"Copyright {DateTime.Today.Year} - CENWIDEV.";
 	}
 }
 

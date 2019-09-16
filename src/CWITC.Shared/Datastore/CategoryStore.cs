@@ -10,27 +10,19 @@ using Xamarin.Forms;
 [assembly: Dependency(typeof(CategoryStore))]
 namespace CWITC.Shared.DataStore
 {
-    public class CategoryStore : BaseStore<Category>, ICategoryStore
+    public class CategoryStore : ContentfulDataStore<CategoryEntity, Category>, ICategoryStore
     {
-        public override string Identifier => "sessions";
+        public override string Identifier => "sessionCategory";
 
-        public override async Task<IEnumerable<Category>> GetItemsAsync(bool forceRefresh = false)
+		protected override Task<Category> Map(CategoryEntity entity)
 		{
-			var sessionStore = DependencyService.Get<ISessionStore>();
-			var sessions = await sessionStore.GetItemsAsync();
-
-            var categories = sessions.Select(s => s.MainCategory).ToList();
-            var categoryIds = categories.Select(x => x.Id).Distinct();
-
-            return categoryIds.Select(id => categories.FirstOrDefault(x2 => x2.Id == id)).ToList();
+			return Task.FromResult(new Category
+			{
+				Id = entity?.Sys.Id,
+				Name = entity?.Name,
+				ShortName = entity?.ShortName,
+				Color = entity?.Color
+			});
 		}
-
-        public override async Task<Category> GetItemAsync(string id)
-		{
-			var speakers = await GetItemsAsync();
-            var category = speakers.FirstOrDefault(s => s.Id == id);
-
-			return category;
-		}
-    }
+	}
 }
