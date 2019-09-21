@@ -1,17 +1,40 @@
 ﻿using System;
+using System.IO;
+using System.Runtime.CompilerServices;
+using Newtonsoft.Json.Linq;
+
 namespace CWITC.Clients.Portable
 {
-	public static class Constants
+	public static class Config
 	{
-		public const string FacebookAppId = "";
+		static JObject Values { get; }
 
-		public const string GithubClientId = "";
-		public const string GithubClientSecret = "";
+		static Config()
+		{
+			var thisAssembly = typeof(Config).Assembly;
+			using (var stream = thisAssembly.GetManifestResourceStream("CWITC.Clients.Portable.Config.json"))
+			{
+				using (var reader = new StreamReader(stream))
+				{
+					var json = reader.ReadToEnd();
 
-		public const string TwitterClientId = "";
-		public const string TwitterClientSecret = "";
+					Values = JObject.Parse(json);
+				}
+			}
+		}
 
-		public const string ContentfulSpaceKey = "";
-		public const string ContentfulDeliveryApiKey = "";
+		public static string FacebookAppId => GetConfigValue();
+
+		public static string GithubClientId => GetConfigValue();
+		public static string GithubClientSecret => GetConfigValue();
+
+		public static string TwitterClientId => GetConfigValue();
+		public static string TwitterClientSecret => GetConfigValue();
+
+		public static string ContentfulSpaceKey => GetConfigValue();
+		public static string ContentfulDeliveryApiKey => GetConfigValue();
+
+		static string GetConfigValue([CallerMemberName]string property = null) =>
+			Values[nameof(property)].ToString();
 	}
 }

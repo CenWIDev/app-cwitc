@@ -286,3 +286,4 @@ typings/
 
 # dotenv environment variables file
 .env
+/src/CWITC.Clients.Portable/Config.json
