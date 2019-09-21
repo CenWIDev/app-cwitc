@@ -29,4 +29,14 @@
     <ProjectReference Include="..\CWITC.Utils\CWITC.Utils.csproj" />
     <ProjectReference Include="..\CWITC.DataStore\CWITC.DataStore.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <None Remove="Config.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Config.json">
+      <LogicalName>Config.json</LogicalName>
+      <CustomToolNamespace>CWITC.Clients.Portable</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
 </Project>
