@@ -27,12 +27,14 @@
                 Spacing="{DynamicResource CardSpacing}"
                 Padding="{DynamicResource CardPadding}">
 
-             
-               <local:CardView>
+                <local:CardView>
+                    <local:CardView.IsVisible>
+                        <OnPlatform x:TypeArguments="x:Boolean" Android="true" iOS="false" WinPhone="true"/>
+                    </local:CardView.IsVisible>
                      <StackLayout Spacing="0">
-                        <local:LabelSection Text="My Account"/>
+                        <local:LabelSection Text="Account"/>
                         <local:HeaderDivider/>
-                        <local:NonScrollableListView 
+						 <local:NonScrollableListView 
                             x:Name="ListViewAccount"
                             ItemsSource="{Binding AccountItems}"
                             RowHeight="44"> 
@@ -47,39 +49,30 @@
                                 </DataTemplate>
                             </local:NonScrollableListView.ItemTemplate>
                         </local:NonScrollableListView>
-                        <local:FooterDivider/>
-                    </StackLayout>
-                </local:CardView>
+						 
 
-                <local:CardView Padding="0,32,0,0">
-                     <StackLayout Spacing="0">
-                        <local:HeaderDivider/>
-                        <Grid Padding="16,0" BackgroundColor="White">
+                        <local:SectionDivider/>
+						 <Grid Padding="{StaticResource StandardPadding}" 
+                               ColumnSpacing="{StaticResource StandardSpacing}" 
+                               BackgroundColor="White">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
-                        
-                        <Button Text="{Binding SyncText}" FontAttributes="Bold"
-                            FontSize="{DynamicResource EvolveListItemTextStyleSize}"
-                            HorizontalOptions="StartAndExpand"
-                            TextColor="{DynamicResource Primary}"
-                            Command="{Binding SyncCommand}"
-                            IsEnabled="{Binding IsNotBusy}"
-                            BackgroundColor="White"/>
-                            <ActivityIndicator Grid.Column="1"
-                                IsRunning="{Binding IsBusy}"
-                                IsVisible="{Binding IsBusy}">
-                            <ActivityIndicator.Color>
-                                <OnPlatform x:TypeArguments="Color" Android="{StaticResource Accent}"/>
-                            </ActivityIndicator.Color>
-                        </ActivityIndicator>
+                            <Button Text="Log Out" 
+                                    Command="{Binding LogoutCommand}"
+                                    BackgroundColor="{StaticResource Accent}"
+                                    IsEnabled="{Binding IsNotBusy}"
+                                    TextColor="White"/>
+                            <Button Grid.Column="1"
+                                    Text="Sync Now" 
+                                    Command="{Binding SyncCommand}"
+                                    BackgroundColor="{StaticResource Accent}"
+                                    IsEnabled="{Binding IsNotBusy}"
+                                    TextColor="White"/>
+                         </Grid>
 
-                        <Grid.GestureRecognizers>
-                            <TapGestureRecognizer 
-                            Command="{Binding SyncCommand}"/>
-                        </Grid.GestureRecognizers>
-                        </Grid>
+
                         <local:FooterDivider/>
                     </StackLayout>
                 </local:CardView>

@@ -21,9 +21,6 @@ namespace CWITC.Clients.UI
             ListViewAbout.ItemTapped += (sender, e) => ListViewAbout.SelectedItem = null;
             ListViewInfo.HeightRequest = (vm.InfoItems.Count * ListViewInfo.RowHeight) - adjust;
 
-            ListViewAccount.HeightRequest = (vm.AccountItems.Count * ListViewAccount.RowHeight) - adjust;
-            ListViewAccount.ItemTapped += (sender, e) => ListViewAccount.SelectedItem = null;;
-
             ListViewAbout.ItemSelected += async (sender, e) => 
                 {
                     if(ListViewAbout.SelectedItem == null)
@@ -63,6 +60,7 @@ namespace CWITC.Clients.UI
 
                     if(page == null)
                         return;
+
                     if(Device.RuntimePlatform == "iOS" && page is VenuePage)
                         await NavigationService.PushAsync(((Page)this.Parent.Parent).Navigation, page);
                     else

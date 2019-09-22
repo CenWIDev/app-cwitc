@@ -39,8 +39,3 @@ using Android.App;
 
 // Gives the app permission to register and receive messages.
 [assembly: UsesPermission(Name = "com.google.android.c2dm.permission.RECEIVE")]
-
-// NOTE: Facebook SDK rquires that the 'Value' point to a string resource
-//       in your values/ folder (eg: strings.xml file).
-//       It will not allow you to use the app_id value directly here!
-[assembly: MetaData("com.facebook.sdk.ApplicationId", Value = "@string/facebook_app_id")]
