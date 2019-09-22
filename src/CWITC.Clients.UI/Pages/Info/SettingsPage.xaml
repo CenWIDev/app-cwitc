@@ -25,55 +25,6 @@
                 Spacing="{DynamicResource CardSpacing}"
                 Padding="{DynamicResource CardPadding}">
 
-                 <local:CardView>
-                    <local:CardView.IsVisible>
-                        <OnPlatform x:TypeArguments="x:Boolean" Android="true" iOS="false" WinPhone="true"/>
-                    </local:CardView.IsVisible>
-                     <StackLayout Spacing="0">
-                        <local:LabelSection Text="Data Sync"/>
-                        <local:HeaderDivider/>   
-                        <Grid Padding="{StaticResource StandardPadding}" 
-                               ColumnSpacing="{StaticResource StandardSpacing}" 
-                               BackgroundColor="White">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="*"/>
-                            </Grid.ColumnDefinitions>
-                            <Button Text="Log Out" 
-                                    Command="{Binding LogoutCommand}"
-                                    BackgroundColor="{StaticResource Accent}"
-                                    IsEnabled="{Binding IsNotBusy}"
-                                    TextColor="White"/>
-                            <Button Grid.Column="1"
-                                    Text="Sync Now" 
-                                    Command="{Binding SyncCommand}"
-                                    BackgroundColor="{StaticResource Accent}"
-                                    IsEnabled="{Binding IsNotBusy}"
-                                    TextColor="White"/>
-                         </Grid>
-
-                        <local:SectionDivider/>
-                        <Grid Padding="{StaticResource StandardPadding}" BackgroundColor="White">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="Auto"/>
-                            </Grid.ColumnDefinitions>
-                            <StackLayout VerticalOptions="Center">
-                            <Label Text="{Binding SyncText}" Style="{DynamicResource EvolveListItemTextStyle}"/>
-                            <Label Text="{Binding LastSyncDisplay}"
-                                    Style="{DynamicResource EvolveListItemDetailTextStyle}"/>
-                            </StackLayout>
-                            <ActivityIndicator Grid.Column="1" IsRunning="{Binding IsBusy}" HorizontalOptions="Center" VerticalOptions="Center" >
-                                <ActivityIndicator.Color>
-                                    <OnPlatform x:TypeArguments="Color" Android="{StaticResource Accent}"/>
-                                </ActivityIndicator.Color>
-                            </ActivityIndicator>
-
-                        </Grid>
-                        <local:FooterDivider/>
-                    </StackLayout>
-                </local:CardView>
-
                 <local:CardView>
                      <StackLayout Spacing="0">
                         <local:LabelSection>

@@ -34,8 +34,6 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Config.json">
-      <LogicalName>Config.json</LogicalName>
-      <CustomToolNamespace>CWITC.Clients.Portable</CustomToolNamespace>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
   </ItemGroup>

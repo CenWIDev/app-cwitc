@@ -35,6 +35,6 @@ namespace CWITC.Clients.Portable
 		public static string ContentfulDeliveryApiKey => GetConfigValue();
 
 		static string GetConfigValue([CallerMemberName]string property = null) =>
-			Values[nameof(property)].ToString();
+			Values[property].ToString();
 	}
 }

@@ -6,8 +6,13 @@
     x:Class="CWITC.Clients.UI.SessionsPage"
     x:Name="sessionsPage"
     Title="Schedule"
-    Icon="tab_events.png"
     BackgroundColor="{DynamicResource WindowBackground}">
+		<ContentPage.Icon>
+		<OnPlatform x:TypeArguments="FileImageSource">
+			<On Platform="iOS" Value="tab_events.png" />
+			<On Platform="Android" Value="menu_events.png" />
+		</OnPlatform>
+	</ContentPage.Icon>
     <ContentPage.Resources>
      <ResourceDictionary>
         <local:IsFavoriteTextConverter x:Key="IsFavoriteTextConverter" />

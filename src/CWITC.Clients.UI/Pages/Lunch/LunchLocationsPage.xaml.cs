@@ -16,33 +16,6 @@ namespace CWITC.Clients.UI
         {
             InitializeComponent();
 
-            this.Map.MoveToRegion(MapSpan.FromCenterAndRadius(
-                new Position(44.523411, -89.583897),
-                Distance.FromMiles(0.25)));
-            
-            ToolbarItem showList = null;
-            ToolbarItem showMap = null;
-
-            showList = new ToolbarItem("Show List", "ic_view_list.png", () => 
-            {
-                ListViewLocations.IsVisible = true;
-                MapWrapper.IsVisible = false; 
-
-                ToolbarItems.Remove(showList);
-                ToolbarItems.Add(showMap);
-            });
-
-			showMap = new ToolbarItem("Show Map", "ic_map.png", () =>
-			{
-                ListViewLocations.IsVisible = false;
-				MapWrapper.IsVisible = true;
-
-                ToolbarItems.Remove(showMap);
-                ToolbarItems.Add(showList);
-			});
-
-            ToolbarItems.Add(showMap);
-
             BindingContext = new LunchLocationsViewModel(this.Navigation);
 
 			ListViewLocations.ItemTapped += (sender, e) => ListViewLocations.SelectedItem = null;
@@ -56,13 +29,6 @@ namespace CWITC.Clients.UI
 
 				ListViewLocations.SelectedItem = null;
 			};
-
-            MapBehavior.ShowDetailCommand = new Command<ILocationViewModel>((x) =>
-            {
-                var ev = (x as LunchLocationsViewModel.LunchLocationPinViewModel);
-
-                ShowDetail(ev.Location);
-            });
         }
 
         async void ShowDetail(LunchLocation ev)

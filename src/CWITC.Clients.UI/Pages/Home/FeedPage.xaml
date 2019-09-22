@@ -5,12 +5,17 @@
     xmlns:local="clr-namespace:CWITC.Clients.UI;assembly=CWITC.Clients.UI"
     xmlns:toolkit="clr-namespace:FormsToolkit;assembly=FormsToolkit"
     xmlns:pull="clr-namespace:Refractored.XamForms.PullToRefresh;assembly=Refractored.XamForms.PullToRefresh"
-    xmlns:imagecircle="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
+    xmlns:imagecircle="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
     x:Class="CWITC.Clients.UI.FeedPage"
     x:Name="feedPage"
     Title="Home"
-    Icon="tab_feed.png"
     BackgroundColor="{DynamicResource WindowBackgroundTable}">
+	<ContentPage.Icon>
+		<OnPlatform x:TypeArguments="FileImageSource">
+			<On Platform="iOS" Value="tab_feed.png" />
+			<On Platform="Android" Value="menu_feed.png" />
+		</OnPlatform>
+	</ContentPage.Icon>
     <ContentPage.Resources>
      <ResourceDictionary>
         <toolkit:InvertedBooleanConverter x:Key="InvertedBooleanConverter" />
