@@ -11,7 +11,7 @@ namespace CWITC.Shared.DataStore
 {
     public class FeedbackStore : BaseUserDataStore<Feedback>, IFeedbackStore
     {
-        public override string Identifier => "user_session_feedback";
+        public override string Identifier => "session-feedback";
 
         public async Task<bool> LeftFeedback(Session session)
         {

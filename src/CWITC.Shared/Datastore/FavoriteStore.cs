@@ -13,7 +13,7 @@ namespace CWITC.Shared.DataStore
 {
     public class FavoriteStore : BaseUserDataStore<Favorite>, IFavoriteStore
     {
-        public override string Identifier => "user_favorites";
+        public override string Identifier => "favorite-sessions";
 
         public async Task<bool> IsFavorite(string sessionId)
         {
