@@ -11,11 +11,12 @@ namespace CWITC.DataObjects
         public Session() {
             this.Speakers = new List<Speaker>();
         }
-        /// <summary>
-        /// Gets or sets the title.
-        /// </summary>
-        /// <value>The title.</value>
-        public string Title { get; set; }
+
+		/// <summary>
+		/// Gets or sets the title.
+		/// </summary>
+		/// <value>The title.</value>
+		public string Title { get; set; }
 
         /// <summary>
         /// Gets or sets the short title that is displayed in the navigation bar

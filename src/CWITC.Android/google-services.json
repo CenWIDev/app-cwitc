@@ -30,6 +30,13 @@
             {
               "client_id": "850583225961-ves81nc1cf6etc0tf1tl1ce3cq97sdlm.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "850583225961-lp4d0vrf8ik354v9tasrbvjrjni1n8ui.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "org.cenwidev.cwitc"
+              }
             }
           ]
         }

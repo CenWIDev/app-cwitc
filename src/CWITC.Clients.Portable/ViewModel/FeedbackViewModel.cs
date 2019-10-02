@@ -67,11 +67,9 @@ namespace CWITC.Clients.Portable
                 Session.FeedbackLeft = true;
                 await StoreManager.FeedbackStore.InsertAsync(new Feedback
                 {
-                    SessionId = session.Id,
+                    ContentfulId = session.Id,
                     SessionRating = rating,
                     FeedbackText = Text,
-					SessionName = session.Title,
-					SpeakerNames = session.SpeakerNames
                 });
             }
             catch(Exception ex)

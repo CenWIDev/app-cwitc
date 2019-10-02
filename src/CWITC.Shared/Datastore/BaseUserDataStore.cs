@@ -31,7 +31,7 @@ namespace CWITC.Shared.DataStore
 			var existingItems = (await GetItemsAsync(true))?.ToList() ?? new List<T>();
 			existingItems.Add(item);
 
-			return await SaveValues(GetArray(existingItems));
+			return await SaveValues(GetSaveValue(existingItems));
 		}
 
 		public virtual async Task<bool> RemoveAsync(T item)
@@ -48,7 +48,7 @@ namespace CWITC.Shared.DataStore
 
 				existingItems.RemoveAt(index);
 
-				return await SaveValues(GetArray(existingItems));
+				return await SaveValues(GetSaveValue(existingItems));
 			}
 			return false;
 		}
@@ -75,10 +75,15 @@ namespace CWITC.Shared.DataStore
 
 				existingItems[index] = item;
 
-				return await SaveValues(GetArray(existingItems));
+				return await SaveValues(GetSaveValue(existingItems));
 			}
 
 			return false;
+		}
+
+		protected virtual IEnumerable<T> ParseJsonResults(JToken json)
+		{
+			return (IEnumerable<T>)json.ToObject(typeof(List<T>));
 		}
 
 		protected void ReloadEntityNode()

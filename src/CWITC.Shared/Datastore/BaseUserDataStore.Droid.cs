@@ -11,6 +11,7 @@ using GoogleGson.Reflect;
 using Java.Lang;
 using Java.Util;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using Org.Json;
 using JsonHelper = CWITC.Droid.JavaJsonHelperExtensions;
 
@@ -31,7 +32,7 @@ namespace CWITC.Shared.DataStore
 
 			var query = entityNode.OrderByPriority();
 			query
-				.AddListenerForSingleValueEvent(new ValueEventListenerCallback(getData));
+				.AddListenerForSingleValueEvent(new ValueEventListenerCallback(getData, this.ParseJsonResults));
 
 			return getData.Task;
 		}
@@ -49,7 +50,7 @@ namespace CWITC.Shared.DataStore
 			return Task.CompletedTask;
 		}
 
-		Task<bool> SaveValues(ArrayList data)
+		Task<bool> SaveValues(Java.Lang.Object data)
 		{
 			saveTask = new TaskCompletionSource<bool>();
 
@@ -67,29 +68,23 @@ namespace CWITC.Shared.DataStore
 			return JsonHelper.ToJavaMap(jsonObject);
 		}
 
-		ArrayList GetArray(IEnumerable<T> existingItems)
-		{
-			var arrayList = new ArrayList();
-
-			string jsonString = JsonConvert.SerializeObject(existingItems);
-			var jsonArray = new JSONArray(jsonString);
-
-			return JsonHelper.ToJavaList(jsonArray);
-		}
+		protected abstract Java.Lang.Object GetSaveValue(IEnumerable<T> existingItems);
 
 		class ValueEventListenerCallback : Java.Lang.Object, IValueEventListener
 		{
 			TaskCompletionSource<bool> saveTask;
 			TaskCompletionSource<IEnumerable<T>> getTask;
+			private readonly Func<JToken, IEnumerable<T>> parseResultsFunc;
 
 			public ValueEventListenerCallback(TaskCompletionSource<bool> saveTask)
 			{
 				this.saveTask = saveTask;
 			}
 
-			public ValueEventListenerCallback(TaskCompletionSource<IEnumerable<T>> getTask)
+			public ValueEventListenerCallback(TaskCompletionSource<IEnumerable<T>> getTask, Func<JToken, IEnumerable<T>> parseJsonResults)
 			{
 				this.getTask = getTask;
+				this.parseResultsFunc = parseJsonResults;
 			}
 
 			void IValueEventListener.OnCancelled(DatabaseError error)
@@ -104,13 +99,12 @@ namespace CWITC.Shared.DataStore
 				if (values != null)
 				{
 					List<T> items = new List<T>();
-
-					foreach (var value in values)
+					var data = new GoogleGson.Gson().ToJson(values);
+					var json = JToken.Parse(data);
+					var parsedresults = this.parseResultsFunc?.Invoke(json);
+					if (parsedresults != null)
 					{
-						var data = new GoogleGson.Gson().ToJson(value);
-
-						var item = JsonConvert.DeserializeObject<T>(data);
-						items.Add(item);
+						items.AddRange(parsedresults);
 					}
 
 					getTask.TrySetResult(items);

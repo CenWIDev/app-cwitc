@@ -6,6 +6,7 @@ namespace CWITC.DataObjects
 {
     public class Speaker : BaseDataObject
     {
+
 		/// <summary>
 		/// Gets or sets the first name.
 		/// </summary>
