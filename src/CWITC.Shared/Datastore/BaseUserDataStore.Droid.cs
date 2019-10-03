@@ -41,6 +41,8 @@ namespace CWITC.Shared.DataStore
 		{
 			var rootNode = FirebaseDatabase.Instance.Reference;
 
+			Console.WriteLine($"Initializing store for 2019.{UserId}.{Identifier}");
+
 			entityNode = rootNode.Child("2019")
 				.Child(UserId)
 				.Child(Identifier);
@@ -94,7 +96,9 @@ namespace CWITC.Shared.DataStore
 
 			void IValueEventListener.OnDataChange(DataSnapshot snapshot)
 			{
-				var values = (snapshot.Value as ArrayList)?.ToArray();
+				var dataDataType = snapshot.Value?.GetType();
+				Console.WriteLine($"data type of snapshot is: {dataDataType?.Name}");
+				var values = snapshot.Value as Android.Runtime.JavaDictionary;
 
 				if (values != null)
 				{

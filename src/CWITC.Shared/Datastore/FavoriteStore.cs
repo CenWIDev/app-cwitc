@@ -52,15 +52,19 @@ namespace CWITC.Shared.DataStore
 		protected override Java.Lang.Object GetSaveValue(IEnumerable<Favorite> existingItems)
 		{
 			var dict = GetSaveDictionary(existingItems);
+
 			var map = new HashMap();
 
 			foreach (var key in dict.Keys)
-				map.Put(new Java.Lang.String(key), new FavoriteJavaObj { ContentfulId = dict[key].ContentfulId });
+			{
+				var item = new HashMap();
+				item.Put(new Java.Lang.String("contentfulId"), new Java.Lang.String(dict[key].ContentfulId));
+
+				map.Put(key, item);
+			}
 
 			return map;
-		}
-
-		
+		}		
 #endif
 
 		Dictionary<string, Favorite> GetSaveDictionary(IEnumerable<Favorite> items)
