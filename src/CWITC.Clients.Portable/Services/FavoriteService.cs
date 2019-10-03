@@ -26,36 +26,44 @@ namespace CWITC.Clients.Portable
 
         public async Task<bool> ToggleFavorite(Session session)
         {
-            if(!Settings.Current.IsLoggedIn)
-            {
-                sessionQueued = session;
-                DependencyService.Get<ILogger>().TrackPage(AppPage.Login.ToString(), "Favorite");
-                MessagingService.Current.SendMessage(MessageKeys.NavigateLogin);
-                return false;
-            }
+			try
+			{
+				if (!Settings.Current.IsLoggedIn)
+				{
+					sessionQueued = session;
+					DependencyService.Get<ILogger>().TrackPage(AppPage.Login.ToString(), "Favorite");
+					MessagingService.Current.SendMessage(MessageKeys.NavigateLogin);
+					return false;
+				}
 
-            sessionQueued = null;
+				sessionQueued = null;
 
-            var store = DependencyService.Get<IFavoriteStore>();
-            session.IsFavorite = !session.IsFavorite;//switch first so UI updates :)
-            if (!session.IsFavorite)
-            {
-                DependencyService.Get<ILogger>().Track(EvolveLoggerKeys.FavoriteRemoved, "Title", session.Title);
+				var store = DependencyService.Get<IFavoriteStore>();
+				session.IsFavorite = !session.IsFavorite;//switch first so UI updates :)
+				if (!session.IsFavorite)
+				{
+					DependencyService.Get<ILogger>().Track(EvolveLoggerKeys.FavoriteRemoved, "Title", session.Title);
 
-                var items = await store.GetItemsAsync ();
-                foreach (var item in items.Where (s => s.SessionId == session.Id)) 
-                {
-                    await store.RemoveAsync (item);
-                }
-            }
-            else
-            {
-                DependencyService.Get<ILogger>().Track(EvolveLoggerKeys.FavoriteAdded, "Title", session.Title);
-                await store.InsertAsync(new Favorite{ SessionId = session.Id });
-            }
+					var items = await store.GetItemsAsync();
+					foreach (var item in items.Where(s => s.ContentfulId == session.Id))
+					{
+						await store.RemoveAsync(item);
+					}
+				}
+				else
+				{
+					DependencyService.Get<ILogger>().Track(EvolveLoggerKeys.FavoriteAdded, "Title", session.Title);
+					await store.InsertAsync(new Favorite { ContentfulId = session.Id });
+				}
 
-            Settings.Current.LastFavoriteTime = DateTime.UtcNow;
-            return true;
+				Settings.Current.LastFavoriteTime = DateTime.UtcNow;
+				return true;
+			}
+			catch(Exception ex)
+			{
+				// todo: log
+				return false;
+			}
         }
     }
 }

@@ -15,6 +15,28 @@ namespace CWITC.Shared.DataStore
 {
 	public class SessionStore : ContentfulDataStore<SessionEntity, Session>, ISessionStore
 	{
+		public override async Task<IEnumerable<Session>> GetItemsAsync(bool forceRefresh = false)
+		{
+			var sessions = await base.GetItemsAsync(forceRefresh);
+
+			if (sessions != null)
+			{
+				if (Settings.Current.IsLoggedIn)
+				{
+					var favStore = DependencyService.Get<IFavoriteStore>();
+					await favStore.GetItemsAsync(true).ConfigureAwait(false);//pull latest
+
+					foreach (var session in sessions)
+					{
+						var isFav = await favStore.IsFavorite(session.Id).ConfigureAwait(false);
+						session.IsFavorite = isFav;
+					}
+				}
+			}
+
+			return sessions ?? new List<Session>();
+		}
+
 		public async Task<IEnumerable<Session>> GetSpeakerSessionsAsync(string speakerId)
 		{
 			await InitializeStore()

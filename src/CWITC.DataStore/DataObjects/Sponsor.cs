@@ -4,11 +4,11 @@ namespace CWITC.DataObjects
 {
     public class Sponsor : BaseDataObject
     {
-        /// <summary>
-        /// Gets or sets the name of sponsor
-        /// </summary>
-        /// <value>The name.</value>
-        public string Name { get; set; }
+		/// <summary>
+		/// Gets or sets the name of sponsor
+		/// </summary>
+		/// <value>The name.</value>
+		public string Name { get; set; }
 
         /// <summary>
         /// Gets or sets the sponsor level.

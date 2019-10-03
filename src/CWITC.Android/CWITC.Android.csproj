@@ -451,6 +451,15 @@
     <Reference Include="HtmlLabel.Forms.Plugin">
       <HintPath>..\packages\Xam.Plugin.HtmlLabel.3.0.2.2\lib\monoandroid81\HtmlLabel.Forms.Plugin.dll</HintPath>
     </Reference>
+    <Reference Include="Xamarin.Firebase.Database.Connection">
+      <HintPath>..\packages\Xamarin.Firebase.Database.Connection.60.1142.1\lib\MonoAndroid80\Xamarin.Firebase.Database.Connection.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Firebase.Database">
+      <HintPath>..\packages\Xamarin.Firebase.Database.60.1142.1\lib\MonoAndroid80\Xamarin.Firebase.Database.dll</HintPath>
+    </Reference>
+    <Reference Include="GoogleGson">
+      <HintPath>..\packages\GoogleGson.2.8.5\lib\monoandroid44\GoogleGson.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainActivity.cs" />
@@ -718,4 +727,6 @@
   <Import Project="..\packages\Xamarin.GooglePlayServices.Auth.Api.Phone.60.1142.1\build\MonoAndroid80\Xamarin.GooglePlayServices.Auth.Api.Phone.targets" Condition="Exists('..\packages\Xamarin.GooglePlayServices.Auth.Api.Phone.60.1142.1\build\MonoAndroid80\Xamarin.GooglePlayServices.Auth.Api.Phone.targets')" />
   <Import Project="..\packages\Xamarin.GooglePlayServices.Auth.Base.60.1142.1\build\MonoAndroid80\Xamarin.GooglePlayServices.Auth.Base.targets" Condition="Exists('..\packages\Xamarin.GooglePlayServices.Auth.Base.60.1142.1\build\MonoAndroid80\Xamarin.GooglePlayServices.Auth.Base.targets')" />
   <Import Project="..\packages\Xamarin.GooglePlayServices.Auth.60.1142.1\build\MonoAndroid80\Xamarin.GooglePlayServices.Auth.targets" Condition="Exists('..\packages\Xamarin.GooglePlayServices.Auth.60.1142.1\build\MonoAndroid80\Xamarin.GooglePlayServices.Auth.targets')" />
+  <Import Project="..\packages\Xamarin.Firebase.Database.Connection.60.1142.1\build\MonoAndroid80\Xamarin.Firebase.Database.Connection.targets" Condition="Exists('..\packages\Xamarin.Firebase.Database.Connection.60.1142.1\build\MonoAndroid80\Xamarin.Firebase.Database.Connection.targets')" />
+  <Import Project="..\packages\Xamarin.Firebase.Database.60.1142.1\build\MonoAndroid80\Xamarin.Firebase.Database.targets" Condition="Exists('..\packages\Xamarin.Firebase.Database.60.1142.1\build\MonoAndroid80\Xamarin.Firebase.Database.targets')" />
 </Project>

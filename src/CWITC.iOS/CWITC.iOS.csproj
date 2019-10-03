@@ -363,6 +363,9 @@
     <Reference Include="HtmlLabel.Forms.Plugin">
       <HintPath>..\packages\Xam.Plugin.HtmlLabel.3.0.2.2\lib\xamarinios10\HtmlLabel.Forms.Plugin.dll</HintPath>
     </Reference>
+    <Reference Include="Firebase.Database">
+      <HintPath>..\packages\Xamarin.Firebase.iOS.Database.5.0.3\lib\Xamarin.iOS10\Firebase.Database.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\heart_empty.png" />

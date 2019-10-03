@@ -4,11 +4,11 @@ namespace CWITC.DataObjects
 {
     public class Category : BaseDataObject
     {
-        /// <summary>
-        /// Gets or sets the name that is displayed during filtering
-        /// </summary>
-        /// <value>The name.</value>
-        public string Name { get; set; }
+		/// <summary>
+		/// Gets or sets the name that is displayed during filtering
+		/// </summary>
+		/// <value>The name.</value>
+		public string Name { get; set; }
 
 
         /// <summary>
