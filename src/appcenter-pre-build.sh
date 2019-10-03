@@ -46,4 +46,4 @@ then
 fi
 
 echo "{\"FacebookAppId\": \""$FACEBOOK_APPID"\",\"GithubClientId\": \""$GITHUB_CLIENTID"\",\"GithubClientSecret\": \""$GITHUB_CLIENTSECRET"\",\"TwitterClientId\": \""$TWITTER_CLIENTID"\",\"TwitterClientSecret\": \""$TWITTER_CLIENTSECRET"\",\"ContentfulSpaceKey\": \""$CONTENTFUL_SPACEKEY"\",\"ContentfulDeliveryApiKey\": \""$CONTENTFUL_DELIVERYAPIKEY"\"}" > cp Config.json
-cp Config.json $APPCENTER_SOURCE_DIRECTORY'/CWITC.Clients.Portable/Config.json"
+cp Config.json $APPCENTER_SOURCE_DIRECTORY"/CWITC.Clients.Portable/Config.json"
