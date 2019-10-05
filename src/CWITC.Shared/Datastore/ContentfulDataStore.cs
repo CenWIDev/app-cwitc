@@ -8,7 +8,7 @@ using Contentful.Core;
 using CWITC.DataObjects;
 using CWITC.DataStore.Abstractions;
 
-using static CWITC.Clients.Portable.Config;
+using static CWITC.Clients.Portable.Secrets;
 
 namespace CWITC.Shared.DataStore
 {
