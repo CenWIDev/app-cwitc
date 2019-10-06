@@ -3,6 +3,10 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
+	<PropertyGroup>
+  <!-- This will allow output of your actual secrets to the Build Log -->
+  <MobileBuildToolsDebug>true</MobileBuildToolsDebug>
+</PropertyGroup>
   <ItemGroup>
     <Folder Include="Helpers\" />
     <Folder Include="Interfaces\" />
