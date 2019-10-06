@@ -23,87 +23,157 @@ using CWITC.Clients.UI;
 using CWITC.DataObjects;
 using Xamarin;
 using Android.Gms.Auth.Api.SignIn;
-//using Microsoft.Azure.Mobile;
-//using Microsoft.Azure.Mobile.Crashes;
-//using Microsoft.Azure.Mobile.Analytics;
 using Android.Gms.Tasks;
+using Firebase;
 
 namespace CWITC.Droid
 {
 
 
-    [Activity(Label = "@string/app_name",
-        Name = "org.cenwidev.cwitc.MainActivity",
-        Exported = true,
-        Icon = "@drawable/ic_launcher",
-        LaunchMode = LaunchMode.SingleTask,
-        ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+	[Activity(Name = "org.cenwidev.cwitc.MainActivity",
+		Exported = true,
+		Icon = "@drawable/ic_launcher",
+		LaunchMode = LaunchMode.SingleTask,
+		ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation,
+	    ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
 	[IntentFilter(new[] { Intent.ActionView },
 			Categories = new[] { Intent.CategoryDefault, Intent.CategoryBrowsable },
 			DataScheme = "org.cenwidev.cwitc",
 			DataHost = "cwitc.auth0.com",
 			DataPathPrefix = "/android/org.cenwidev.cwitc/callback")]
-    public class MainActivity : FormsAppCompatActivity
-    {
-        const int RC_SIGN_IN = 9001;
-        TaskCompletionSource<GoogleSignInAccount> googleSignInTask = null;
+	public class MainActivity : FormsAppCompatActivity
+	{
+		const int RC_SIGN_IN = 9001;
+		private TaskCompletionSource<GoogleSignInAccount> googleSignInTask;
 
+		protected override void OnCreate(Bundle savedInstanceState)
+		{
+			ToolbarResource = Resource.Layout.toolbar;
+			TabLayoutResource = Resource.Layout.tabs;
 
-        protected override void OnCreate(Bundle savedInstanceState)
-        {
-            ToolbarResource = Resource.Layout.toolbar;
-            TabLayoutResource = Resource.Layout.tabs;
+			base.OnCreate(savedInstanceState);
 
-            base.OnCreate(savedInstanceState);
+			FirebaseApp.InitializeApp(this.ApplicationContext);
 
-            Forms.Init(this, savedInstanceState);
-            FormsMaps.Init(this, savedInstanceState);
-            Toolkit.Init();
+			LabelHtml.Forms.Plugin.Droid.HtmlLabelRenderer.Initialize();
+			Forms.Init(this, savedInstanceState);
+			FormsMaps.Init(this, savedInstanceState);
+			Toolkit.Init();
+			global::Xamarin.Auth.Presenters.XamarinAndroid.AuthenticationConfiguration.Init(this, savedInstanceState);
 
-            DependencyService.Register<IAuthClient, Auth0Client>();
+			PullToRefreshLayoutRenderer.Init();
+			typeof(Color).GetProperty("Accent", BindingFlags.Public | BindingFlags.Static).SetValue(null, Color.FromHex("#757575"));
 
-            PullToRefreshLayoutRenderer.Init();
-            typeof(Color).GetProperty("Accent", BindingFlags.Public | BindingFlags.Static).SetValue(null, Color.FromHex("#757575"));
+			ImageCircle.Forms.Plugin.Droid.ImageCircleRenderer.Init();
+			
+			LoadApplication(new App());
 
-            ImageCircle.Forms.Plugin.Droid.ImageCircleRenderer.Init();
+			OnNewIntent(Intent);
 
-            ZXing.Net.Mobile.Forms.Android.Platform.Init();
+			if (!string.IsNullOrWhiteSpace(Intent?.Data?.LastPathSegment))
+			{
+				switch (Intent.Data.LastPathSegment)
+				{
+					case "sessions":
+						MessagingService.Current.SendMessage<DeepLinkPage>("DeepLinkPage", new DeepLinkPage
+						{
+							Page = AppPage.Sessions
+						});
+						break;
+					case "events":
+						MessagingService.Current.SendMessage<DeepLinkPage>("DeepLinkPage", new DeepLinkPage
+						{
+							Page = AppPage.Schedule
+						});
+						break;
+				}
+			}
 
-            LoadApplication(new App());
+			InitializeFirebase();
+		}
 
-            OnNewIntent(Intent);
+		protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)
+		{
+			base.OnActivityResult(requestCode, resultCode, data);
 
-            if (!string.IsNullOrWhiteSpace(Intent?.Data?.LastPathSegment))
-            {
-                switch (Intent.Data.LastPathSegment)
-                {
-                    case "sessions":
-                        MessagingService.Current.SendMessage<DeepLinkPage>("DeepLinkPage", new DeepLinkPage
-                        {
-                            Page = AppPage.Sessions
-                        });
-                        break;
-                    case "events":
-                        MessagingService.Current.SendMessage<DeepLinkPage>("DeepLinkPage", new DeepLinkPage
-                        {
-                            Page = AppPage.Schedule
-                        });
-                        break;
-                }
-            }
-        }
+			// Result returned from launching the Intent from GoogleSignInApi.getSignInIntent(...);
+			if (requestCode == RC_SIGN_IN)
+			{
+				var result = Android.Gms.Auth.Api.Auth.GoogleSignInApi.GetSignInResultFromIntent(data);
+				if (result.IsSuccess)
+				{
+					//result.SignInAccount.
+					googleSignInTask.SetResult(result.SignInAccount);
+				}
+				else
+				{
+					googleSignInTask.SetCanceled();
+				}
+			}
+			else
+			{
+				//CallbackManager.OnActivityResult(requestCode, (int)resultCode, data);
+			}
+		}
 
 		protected override void OnNewIntent(Intent intent)
 		{
 			base.OnNewIntent(intent);
 
-			Auth0.OidcClient.ActivityMediator.Instance.Send(intent.DataString);
 		}
 
-        public override void OnRequestPermissionsResult(int requestCode, string[] permissions, Permission[] grantResults)
-        {
-            global::ZXing.Net.Mobile.Forms.Android.PermissionsHandler.OnRequestPermissionsResult(requestCode, permissions, grantResults);
-            PermissionsImplementation.Current.OnRequestPermissionsResult(requestCode, permissions, grantResults);
-        }
-    }
+		public override void OnRequestPermissionsResult(int requestCode, string[] permissions, Permission[] grantResults)
+		{
+			PermissionsImplementation.Current.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+		}
+
+		public bool IsPlayServicesAvailable()
+		{
+			int resultCode = GoogleApiAvailability.Instance.IsGooglePlayServicesAvailable(this);
+			if (resultCode != ConnectionResult.Success)
+			{
+				if (GoogleApiAvailability.Instance.IsUserResolvableError(resultCode))
+				{
+					if (Settings.Current.GooglePlayChecked)
+						return false;
+
+					Settings.Current.GooglePlayChecked = true;
+					Toast.MakeText(this, "Google Play services is not installed, push notifications have been disabled.", ToastLength.Long).Show();
+				}
+				return false;
+			}
+			else
+			{
+				return true;
+			}
+		}
+		
+		public void GoogleSignIn(GoogleApiClient apiClient, TaskCompletionSource<GoogleSignInAccount> tcs)
+		{
+			this.googleSignInTask = tcs;
+
+			Intent signInIntent = Android.Gms.Auth.Api.Auth.GoogleSignInApi.GetSignInIntent(apiClient);
+			StartActivityForResult(signInIntent, RC_SIGN_IN);
+		}
+
+		public void OnComplete(Android.Gms.Tasks.Task task)
+		{
+			//if (task.IsSuccessful)
+			//{
+			//	bool isFetched = FirebaseRemoteConfig.Instance.ActivateFetched();
+			//}
+			//else
+			//{
+
+			//}
+		}
+
+		async void InitializeFirebase()
+		{
+			//FirebaseRemoteConfig.Instance
+			//					.Fetch()
+			//					.AddOnCompleteListener(this, this);
+		}
+
+	}
 }

@@ -30,7 +30,7 @@ namespace CWITC.Clients.UI
         {
             base.OnBindingContextChanged();
             vm = null;
-            var adjust = Device.OS != TargetPlatform.Android ? 1 : -ViewModel.FollowItems.Count + 1;
+            var adjust = Device.RuntimePlatform != "Android" ? 1 : -ViewModel.FollowItems.Count + 1;
             ListViewFollow.HeightRequest = (ViewModel.FollowItems.Count * ListViewFollow.RowHeight) - adjust;
         }
     }

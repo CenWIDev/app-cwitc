@@ -20,7 +20,7 @@ namespace CWITC.Clients.UI
         void Init()
         {
             
-    //        if (Device.OS == TargetPlatform.iOS)
+    //        if (Device.RuntimePlatform == "iOS")
     //        {
 				//BarBackgroundColor = Color.FromHex("FAFAFA");
             //}

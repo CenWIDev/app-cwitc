@@ -8,8 +8,6 @@ namespace CWITC.Clients.UI
         public NonScrollableListView()
             :base(ListViewCachingStrategy.RecycleElement)
         {
-            if (Device.OS == TargetPlatform.Windows || Device.OS == TargetPlatform.WinPhone)
-                BackgroundColor = Color.White;
         }
     }
 }

@@ -20,21 +20,11 @@ namespace CWITC.Clients.UI
             loggedIn = Settings.Current.Email;
             BindingContext = new FeedViewModel();
 
-            if (Device.OS == TargetPlatform.Windows || Device.OS == TargetPlatform.WinPhone)
-            {
-                ToolbarItems.Add(new ToolbarItem
-                {
-                    Text = "Refresh",
-                    Icon = "toolbar_refresh.png",
-                    Command = ViewModel.RefreshCommand
-                });
-            }
-
             favoritesTime = Settings.Current.LastFavoriteTime;
 
             ViewModel.Sessions.CollectionChanged += (sender, e) => 
                 {
-                    var adjust = Device.OS != TargetPlatform.Android ? 1 : -ViewModel.Sessions.Count + 1;
+                    var adjust = Device.RuntimePlatform != "Android" ? 1 : -ViewModel.Sessions.Count + 1;
                     ListViewSessions.HeightRequest = (ViewModel.Sessions.Count * ListViewSessions.RowHeight) - adjust;
                 };
 

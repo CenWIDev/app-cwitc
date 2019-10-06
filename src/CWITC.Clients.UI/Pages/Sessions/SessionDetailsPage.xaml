@@ -5,6 +5,7 @@
     x:Class="CWITC.Clients.UI.SessionDetailsPage"
     xmlns:local="clr-namespace:CWITC.Clients.UI;assembly=CWITC.Clients.UI"
     xmlns:imagecircle="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
+	xmlns:htmlLabel="clr-namespace:LabelHtml.Forms.Plugin.Abstractions;assembly=HtmlLabel.Forms.Plugin"
     xmlns:toolkit="clr-namespace:FormsToolkit;assembly=FormsToolkit"
     Title="Session Details"
     NavigationPage.BackButtonTitle="Back"
@@ -55,20 +56,6 @@
                          <StackLayout Spacing="0">
                             <local:LabelSection Text="Speakers"/>
                             <local:HeaderDivider/>
-                            <StackLayout IsVisible="{Binding IsBusy}" 
-                                         HorizontalOptions="FillAndExpand" 
-                                         VerticalOptions="Center" 
-                                          BackgroundColor="White"
-                                          Padding="{StaticResource StandardPadding}">
-                                <ActivityIndicator IsRunning="{Binding IsBusy}">
-                                    <ActivityIndicator.Color>
-                                        <OnPlatform x:TypeArguments="Color" Android="{StaticResource Accent}"/>
-                                    </ActivityIndicator.Color>
-                                </ActivityIndicator>
-                                <Label Text="Loading Speakers..." 
-                                       HorizontalOptions="Center" 
-                                       Style="{DynamicResource EvolveListItemTextStyle}"/>
-                           </StackLayout>
                             <local:NonScrollableListView 
                                 x:Name="ListViewSpeakers"
                                 ItemsSource="{Binding Session.Speakers}"
@@ -95,7 +82,7 @@
                             <local:LabelSection Text="Abstract"/> 
                             <local:HeaderDivider/>
                              <StackLayout Padding="{StaticResource StandardPadding}" BackgroundColor="White">
-                                <Label Text="{Binding Session.Abstract}" Style="{DynamicResource EvolveListItemTextStyle}" StyleId="SessionAbstract"/>
+                                <htmlLabel:HtmlLabel Text="{Binding Session.Abstract}" Style="{DynamicResource EvolveListItemTextStyle}" StyleId="SessionAbstract"/>
                              </StackLayout>
                             <local:FooterDivider/>
                          </StackLayout>

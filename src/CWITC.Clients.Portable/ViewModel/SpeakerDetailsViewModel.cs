@@ -54,7 +54,7 @@ namespace CWITC.Clients.Portable
             {
                 FollowItems.Add(new MenuItem
                     {
-                        Name = Device.OS == TargetPlatform.iOS ? "Twitter" : speaker.TwitterUrl,
+                        Name = Device.RuntimePlatform == "iOS" ? "Twitter" : speaker.TwitterUrl,
                         Subtitle = $"@{speaker.TwitterUrl}",
                         Parameter = "http://twitter.com/" + speaker.TwitterUrl,
                         Icon = "icon_twitter.png"

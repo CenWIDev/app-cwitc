@@ -14,7 +14,7 @@ namespace CWITC.Clients.UI
         {
             InitializeComponent();
 
-            if (Device.OS != TargetPlatform.iOS)
+            if (Device.RuntimePlatform != "iOS")
                 ToolbarDone.Icon = "toolbar_close.png";
 
             ToolbarDone.Command = new Command (async () =>
@@ -23,7 +23,7 @@ namespace CWITC.Clients.UI
                 Settings.Current.ShowPastSessions = showPast.IsFiltered;
                 vm.Save ();
                 await Navigation.PopModalAsync ();
-                if (Device.OS == TargetPlatform.Android)
+                if (Device.RuntimePlatform == "Android")
                     MessagingService.Current.SendMessage ("filter_changed");
 
             });
@@ -60,7 +60,7 @@ namespace CWITC.Clients.UI
                                     });
                             }
 
-                            var color = Device.OS == TargetPlatform.Windows || Device.OS == TargetPlatform.WinPhone ? "#7635EB" : string.Empty;
+                            var color = string.Empty;
                              
                             showPast = new Category
                             {

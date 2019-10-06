@@ -23,13 +23,6 @@
     -->
   </style>
 
-  <style name="MyTheme.ActionBar" parent="style/Widget.AppCompat.Light.ActionBar.Solid">
-    <!-- remove shadow below action bar -->
-    <!-- <item name="android:elevation">0dp</item> -->
-    <!-- Support library compatibility -->
-    <item name="elevation">0dp</item>
-  </style>
-
    <style name="SplashTheme" parent="SplashTheme.Base">
     <!-- Set theme colors from http://www.google.com/design/spec/style/color.html#color-color-palette-->
     <!-- colorPrimary is used for the default action bar background -->

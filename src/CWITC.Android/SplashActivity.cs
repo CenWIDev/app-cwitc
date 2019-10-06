@@ -14,8 +14,10 @@ using Android.Support.V7.App;
 
 namespace CWITC.Droid
 {
-    [Activity(Label = "CWITC 17", Icon = "@drawable/ic_launcher", Theme="@style/SplashTheme", MainLauncher=true)]            
-    //[MetaData ("android.app.shortcuts", Resource ="@xml/shortcuts")]
+    [Activity(Icon = "@drawable/ic_launcher", 
+	          Theme="@style/SplashTheme", 
+	          MainLauncher=true,
+	          ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class SplashActivity : AppCompatActivity
     {
         protected override void OnCreate(Bundle savedInstanceState)

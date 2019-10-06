@@ -3,12 +3,17 @@
     xmlns="http://xamarin.com/schemas/2014/forms" 
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
     xmlns:local="clr-namespace:CWITC.Clients.UI;assembly=CWITC.Clients.UI"
-    xmlns:imagecircle="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
+	xmlns:imagecircle="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
     xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
     x:Class="CWITC.Clients.UI.LunchLocationsPage"
     BackgroundColor="{DynamicResource WindowBackground}"
-    Title="Lunch Locations"
-    Icon="tab_lunch.png">
+    Title="Lunch Locations">
+		<ContentPage.Icon>
+		<OnPlatform x:TypeArguments="FileImageSource">
+			<On Platform="iOS" Value="tab_lunch.png" />
+			<On Platform="Android" Value="ic_restaurant_menu.png" />
+		</OnPlatform>
+	</ContentPage.Icon>
     <AbsoluteLayout  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
 
     <StackLayout
@@ -60,25 +65,6 @@
         </DataTemplate>
       </ListView.ItemTemplate>
     </ListView>
-
-        <ContentView
-            x:Name="MapWrapper"
-            VerticalOptions="FillAndExpand"
-            HorizontalOptions="FillAndExpand"
-                IsVisible="false">
-            <maps:Map
-                x:Name="Map"
-                MapType="Street" 
-                VerticalOptions="Fill"
-                HorizontalOptions="Fill"
-                IsShowingUser ="true">
-              <maps:Map.Behaviors>
-                <local:MapBehavior 
-                    x:Name="MapBehavior"   
-                    ItemsSource="{Binding PinLocations}" />
-              </maps:Map.Behaviors>
-            </maps:Map>
-        </ContentView>
 
     </StackLayout>
     <StackLayout IsVisible="{Binding IsBusy}"

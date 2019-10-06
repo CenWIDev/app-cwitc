@@ -5,6 +5,9 @@ using Plugin.Connectivity;
 using Plugin.Connectivity.Abstractions;
 using Xamarin.Forms;
 using CWITC.Clients.Portable;
+using Plugin.Settings;
+
+[assembly: Xamarin.Forms.Xaml.XamlCompilation(Xamarin.Forms.Xaml.XamlCompilationOptions.Compile)]
 
 namespace CWITC.Clients.UI
 {
@@ -16,27 +19,12 @@ namespace CWITC.Clients.UI
 			current = this;
 			InitializeComponent();
 			ViewModelBase.Init();
-			// The root page of your application
-			switch (Device.OS)
-			{
-				case TargetPlatform.Android:
-					MainPage = new RootPageAndroid();
-					break;
-				case TargetPlatform.iOS:
-					MainPage = new EvolveNavigationPage(new RootPageiOS());
-					break;
-				case TargetPlatform.Windows:
-				case TargetPlatform.WinPhone:
-					MainPage = new RootPageWindows();
-					break;
-				default:
-					throw new NotImplementedException();
-			}
+
+			this.ResetMainPage();
 		}
 
 		static ILogger logger;
 		public static ILogger Logger => logger ?? (logger = DependencyService.Get<ILogger>());
-
 
 		protected override void OnStart()
 		{
@@ -90,39 +78,26 @@ namespace CWITC.Clients.UI
 					q?.OnCompleted?.Invoke(result);
 				});
 
+			MessagingService.Current.Subscribe(MessageKeys.LoggedIn, (m) =>
+			{
+				this.ResetMainPage();
+			});
 
-
-			MessagingService.Current.Subscribe(MessageKeys.NavigateLogin, async m =>
-				{
-					if (Device.OS == TargetPlatform.Android)
-					{
-						((RootPageAndroid)MainPage).IsPresented = false;
-					}
-
-					var auth = DependencyService.Get<IAuthClient>();
-
-					bool shouldSignIn = true;
-					if (Settings.Current.FirstRun)
-					{
-						shouldSignIn = await this.MainPage.DisplayAlert("Sign In?", "Sign in to save and sync favorites and leave session feedback.", "Ok", "Maybe Later");
-					}
-
-					if (shouldSignIn)
-					{
-						await auth.LoginAsync();
-					}
-				});
+			MessagingService.Current.Subscribe(MessageKeys.LoggedOut, (m) =>
+			{
+				this.ResetMainPage();
+			});
 
 			try
 			{
-				if (firstRun || Device.OS != TargetPlatform.iOS)
+				if (firstRun)
 					return;
 
 				var mainNav = MainPage as NavigationPage;
 				if (mainNav == null)
 					return;
 
-				var rootPage = mainNav.CurrentPage as RootPageiOS;
+				var rootPage = mainNav.CurrentPage as RootPage;
 				if (rootPage == null)
 					return;
 
@@ -169,6 +144,8 @@ namespace CWITC.Clients.UI
 			MessagingService.Current.Unsubscribe<MessagingServiceQuestion>(MessageKeys.Question);
 			MessagingService.Current.Unsubscribe<MessagingServiceAlert>(MessageKeys.Message);
 			MessagingService.Current.Unsubscribe<MessagingServiceChoice>(MessageKeys.Choice);
+			MessagingService.Current.Unsubscribe<MessagingServiceChoice>(MessageKeys.LoggedIn);
+			MessagingService.Current.Unsubscribe<MessagingServiceChoice>(MessageKeys.LoggedOut);
 
 			// Handle when your app sleeps
 			CrossConnectivity.Current.ConnectivityChanged -= ConnectivityChanged;
@@ -188,6 +165,10 @@ namespace CWITC.Clients.UI
 			}
 		}
 
+		private void ResetMainPage()
+		{
+			MainPage = new EvolveNavigationPage(Settings.Current.IsLoggedIn ? (Page)new RootPage() : new LoginPage());
+		}
 	}
 }
 

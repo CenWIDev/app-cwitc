@@ -5,7 +5,6 @@
     x:Class="CWITC.Clients.UI.SponsorsPage"
     xmlns:local="clr-namespace:CWITC.Clients.UI;assembly=CWITC.Clients.UI"
     Title="Sponsors"
-    x:Name="SponsorsPage"
     Icon="tab_sponsors.png"
     BackgroundColor="{DynamicResource WindowBackground}">
     <AbsoluteLayout
