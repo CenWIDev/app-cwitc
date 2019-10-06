@@ -38,7 +38,7 @@ namespace CWITC.Droid
 			try
 			{
 				_facebookAuth = new OAuth2Authenticator(
-						FacebookAppId,
+						FacebookAppId.ToString(),
                         "email",
                         new Uri("https://www.facebook.com/dialog/oauth/"),
                         new Uri("https://central-wi-it-conference.firebaseapp.com/__/auth/handler"),
