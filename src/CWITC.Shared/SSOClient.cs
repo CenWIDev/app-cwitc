@@ -37,8 +37,11 @@ namespace CWITC.Droid
 		{
 			try
 			{
+				// stupid issue with the id being recognized as an int in appcenter
+				// so add underscoreds as prefixes & suffixes to force it as a string
+				var appId = FacebookAppId.ToString().Replace("_", string.Empty);
 				_facebookAuth = new OAuth2Authenticator(
-						FacebookAppId.Trim(),
+						appId,
                         "email",
                         new Uri("https://www.facebook.com/dialog/oauth/"),
                         new Uri("https://central-wi-it-conference.firebaseapp.com/__/auth/handler"),
