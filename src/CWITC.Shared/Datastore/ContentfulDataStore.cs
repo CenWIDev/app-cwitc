@@ -7,8 +7,7 @@ using System.Threading.Tasks;
 using Contentful.Core;
 using CWITC.DataObjects;
 using CWITC.DataStore.Abstractions;
-
-using static CWITC.Clients.Portable.Secrets;
+using static CWITC.Clients.Portable.Helpers.Secrets;
 
 namespace CWITC.Shared.DataStore
 {
