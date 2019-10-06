@@ -38,7 +38,7 @@ namespace CWITC.Droid
 			try
 			{
 				_facebookAuth = new OAuth2Authenticator(
-						FacebookAppId.ToString(),
+						FacebookAppId.Trim(),
                         "email",
                         new Uri("https://www.facebook.com/dialog/oauth/"),
                         new Uri("https://central-wi-it-conference.firebaseapp.com/__/auth/handler"),
@@ -100,8 +100,8 @@ public async Task<AccountResponse> LoginWithGithub()
     try
     {
         _githubAuth = new OAuth2Authenticator(
-            clientId: GithubClientId,
-            clientSecret: GithubClientSecret,
+            clientId: GithubClientId.Trim(),
+            clientSecret: GithubClientSecret.Trim(),
             scope: "read:user user:email",
             authorizeUrl: new Uri("https://github.com/login/oauth/authorize"),
             accessTokenUrl: new Uri("https://github.com/login/oauth/access_token"),
@@ -166,8 +166,8 @@ public async Task<AccountResponse> LoginWithTwitter()
     try
     {
         _twitterAuth = new Xamarin.Auth.OAuth1Authenticator(
-            consumerKey: TwitterClientId,
-            consumerSecret: TwitterClientSecret,
+            consumerKey: TwitterClientId.Trim(),
+            consumerSecret: TwitterClientSecret.Trim(),
 					requestTokenUrl: new Uri("https://api.twitter.com/oauth/request_token"),
 					authorizeUrl: new Uri("https://api.twitter.com/oauth/authorize"),
 					accessTokenUrl: new Uri("https://api.twitter.com/oauth/access_token"),

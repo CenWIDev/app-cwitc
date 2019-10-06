@@ -25,8 +25,8 @@ namespace CWITC.Shared.DataStore
 				var httpClient = new HttpClient(new MessageHandler());
 				this.client = new ContentfulClient(httpClient, new Contentful.Core.Configuration.ContentfulOptions
 				{
-					DeliveryApiKey = ContentfulDeliveryApiKey,
-					SpaceId = ContentfulSpaceKey
+					DeliveryApiKey = ContentfulDeliveryApiKey.Trim(),
+					SpaceId = ContentfulSpaceKey.Trim()
 				});
 			}
 
