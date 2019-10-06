@@ -8,10 +8,7 @@ namespace CWITC.Clients.UI
     {
         public CategoryCell ()
         {
-            if (Device.OS == TargetPlatform.Windows || Device.OS == TargetPlatform.WinPhone)
-                Height = 50;
-            else
-                Height = 44;
+            Height = 44;
             View = new CategoryCellView ();
         }
     }

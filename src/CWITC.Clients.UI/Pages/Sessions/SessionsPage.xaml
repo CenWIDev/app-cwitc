@@ -1,13 +1,18 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage 
     xmlns="http://xamarin.com/schemas/2014/forms" 
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:CWITC.Clients.UI;assembly=CWITC.Clients.UI"
     x:Class="CWITC.Clients.UI.SessionsPage"
-    x:Name="SessionsPage"
-    Title="Sessions"
-    Icon="tab_sessions.png"
+    x:Name="sessionsPage"
+    Title="Schedule"
     BackgroundColor="{DynamicResource WindowBackground}">
+		<ContentPage.Icon>
+		<OnPlatform x:TypeArguments="FileImageSource">
+			<On Platform="iOS" Value="tab_events.png" />
+			<On Platform="Android" Value="menu_events.png" />
+		</OnPlatform>
+	</ContentPage.Icon>
     <ContentPage.Resources>
      <ResourceDictionary>
         <local:IsFavoriteTextConverter x:Key="IsFavoriteTextConverter" />
@@ -76,7 +81,7 @@
         <DataTemplate>
           <ViewCell>
              <!--Inflate main Session Cell here-->
-             <local:SessionCellView FavoriteCommand="{Binding Path=BindingContext.FavoriteCommand, Source={x:Reference SessionsPage}}"/>
+             <local:SessionCellView FavoriteCommand="{Binding Path=BindingContext.FavoriteCommand, Source={x:Reference sessionsPage}}"/>
           </ViewCell>
         </DataTemplate>
       </ListView.ItemTemplate>

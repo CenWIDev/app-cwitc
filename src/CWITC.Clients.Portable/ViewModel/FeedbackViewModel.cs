@@ -2,7 +2,6 @@
 using Xamarin.Forms;
 using CWITC.DataObjects;
 using System.Threading.Tasks;
-using Xamarin.Forms;
 using System.Windows.Input;
 using FormsToolkit;
 using System.Collections.Generic;
@@ -60,7 +59,7 @@ namespace CWITC.Clients.Portable
                         OnCompleted = async () => 
                         {
                             await Navigation.PopModalAsync ();
-                            if (Device.OS == TargetPlatform.Android)
+                            if (Device.RuntimePlatform == "Android")
                                 MessagingService.Current.SendMessage ("eval_finished");
                         }
                     });
@@ -68,11 +67,9 @@ namespace CWITC.Clients.Portable
                 Session.FeedbackLeft = true;
                 await StoreManager.FeedbackStore.InsertAsync(new Feedback
                 {
-                    SessionId = session.Id,
+                    ContentfulId = session.Id,
                     SessionRating = rating,
                     FeedbackText = Text,
-					SessionName = session.Title,
-					SpeakerNames = session.SpeakerNames
                 });
             }
             catch(Exception ex)

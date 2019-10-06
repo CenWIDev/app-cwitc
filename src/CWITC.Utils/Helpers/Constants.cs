@@ -19,11 +19,13 @@ namespace CWITC.Clients.Portable
         public const string NavigateToSession = "navigate_session";
         public const string NavigateToSpeaker = "navigate_speaker";
         public const string NavigateToSponsor = "navigate_sponsor";
+		[Obsolete("user must always be logged in now, navigating directly to login isn't necessary anymore")]
         public const string NavigateLogin = "navigate_login";
         public const string Error = "error";
         public const string Connection = "connection";
         public const string LoggedIn = "loggedin";
-        public const string Message = "message";
+		public const string LoggedOut = "loggedout";
+		public const string Message = "message";
         public const string Question = "question";
         public const string Choice = "choice";
     }

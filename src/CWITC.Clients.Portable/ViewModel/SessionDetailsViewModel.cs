@@ -61,7 +61,7 @@ namespace CWITC.Clients.Portable
         {
             Logger.Track(EvolveLoggerKeys.Share, "Title", Session.Title);
             await CrossShare.Current.Share(
-                new ShareMessage { Title = "Share", Text = $"Can't wait for {Session.Title} at #CWITC!" },
+                new ShareMessage { Title = "Share" },
                 new ShareOptions { });
         }
 
@@ -96,9 +96,5 @@ namespace CWITC.Clients.Portable
             }
 
         }
-
-       
-
     }
 }
-

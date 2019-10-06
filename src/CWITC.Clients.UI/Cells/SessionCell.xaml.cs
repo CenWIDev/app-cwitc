@@ -36,8 +36,6 @@ namespace CWITC.Clients.UI
         public SessionCellView()
         {
             InitializeComponent();
-            if (Device.OS == TargetPlatform.WinPhone || Device.OS == TargetPlatform.Windows)
-                LabelBadgetName.FontSize = 10;
         }
 
 

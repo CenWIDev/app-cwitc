@@ -16,18 +16,9 @@ namespace CWITC.Clients.UI
             InitializeComponent();
             BindingContext = new SponsorsViewModel(Navigation);
 
-            if (Device.OS == TargetPlatform.Android)
+            if (Device.RuntimePlatform == "Android")
                 ListViewSponsors.Effects.Add (Effect.Resolve ("Xamarin.ListViewSelectionOnTopEffect"));
 
-            if (Device.OS == TargetPlatform.Windows || Device.OS == TargetPlatform.WinPhone)
-            {
-                ToolbarItems.Add(new ToolbarItem
-                {
-                    Text = "Refresh",
-                    Icon = "toolbar_refresh.png",
-                    Command = ViewModel.ForceRefreshCommand
-                });
-            }
             ListViewSponsors.ItemSelected += async (sender, e) => 
             {
                     var sponsor = ListViewSponsors.SelectedItem as Sponsor;

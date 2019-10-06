@@ -56,7 +56,7 @@
 
             <ContentView
                 VerticalOptions="Fill">
-                <local:PlaceholderEditor 
+                <Editor 
                     x:Name="TextEditor"
                     Placeholder="Leave Feedback (Optional)" 
                     Text="{Binding Text}"

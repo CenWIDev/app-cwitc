@@ -22,7 +22,7 @@ namespace CWITC.Clients.UI
 
             tapGesture.Tapped += (sender, e) => 
             {
-                Device.BeginInvokeOnMainThread (() => Grow ());
+                Device.BeginInvokeOnMainThread (() => Grow());
             };
 
         }

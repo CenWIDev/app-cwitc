@@ -50,7 +50,7 @@ namespace CWITC.Clients.Portable
             Logger.Track(EvolveLoggerKeys.LaunchedBrowser, "Url", arg);
 
             var lower = arg.ToLowerInvariant();
-            if (Device.OS == TargetPlatform.iOS && lower.Contains("twitter.com"))
+            if (Device.RuntimePlatform == "iOS" && lower.Contains("twitter.com"))
             {
                 try
                 {

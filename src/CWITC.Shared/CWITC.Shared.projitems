@@ -10,9 +10,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)EvolveLogger.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Auth0Client.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Datastore\CategoryStore.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Datastore\EventStore.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Datastore\FavoriteStore.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Datastore\FeedbackStore.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Datastore\SessionStore.cs" />
@@ -22,8 +20,17 @@
     <Compile Include="$(MSBuildThisFileDirectory)Datastore\BaseUserDataStore.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Datastore\BaseStore.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Datastore\LunchStore.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SSOClient.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Datastore\ContentfulDataStore.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DataEntities\SessionEntity.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DataEntities\CategoryEntity.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DataEntities\SpeakerEntity.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DataEntities\PartnerEntity.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Datastore\BaseUserDataStore.iOS.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Datastore\BaseUserDataStore.Droid.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Datastore\" />
+    <Folder Include="$(MSBuildThisFileDirectory)DataEntities\" />
   </ItemGroup>
 </Project>

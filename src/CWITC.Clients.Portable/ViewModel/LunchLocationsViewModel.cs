@@ -29,8 +29,6 @@ namespace CWITC.Clients.Portable
 
         public ObservableRangeCollection<LunchLocation> Locations { get; } = new ObservableRangeCollection<LunchLocation>();
 
-        public ObservableRangeCollection<ILocationViewModel> PinLocations { get; } = new ObservableRangeCollection<ILocationViewModel>();
-
         ICommand loadLocationsCommand;
         public ICommand LoadLocationsCommand =>
             loadLocationsCommand ?? (loadLocationsCommand = new Command(async () => await ExeucteLoadLocationsCommand(true)));
@@ -49,14 +47,6 @@ namespace CWITC.Clients.Portable
                 var items = await StoreManager.LunchStore.GetItemsAsync(force);
 
                 Locations.ReplaceRange(items);
-                PinLocations.ReplaceRange(items.Select(x => new LunchLocationPinViewModel
-                {
-                    Title = x.Name,
-                    Latitude = x.Latitude,
-                    Longitude = x.Longitude,
-                    Description = x.Address1,
-                    Location = x
-                }));
 
                 didLoadLocations = true;
             }
@@ -88,21 +78,6 @@ namespace CWITC.Clients.Portable
 
         public LunchLocationsViewModel(INavigation navigation) : base(navigation)
         {
-        }
-
-        public class LunchLocationPinViewModel : ILocationViewModel
-        {
-            public string Title { get; set; }
-
-            public string Description { get; set; }
-
-            public double Latitude { get; set; }
-
-            public double Longitude { get; set; }
-
-            public ICommand Command { get; set; }
-
-            public LunchLocation Location { get; set; }
         }
     }
 }
