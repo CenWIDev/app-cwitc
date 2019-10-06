@@ -7,7 +7,7 @@ using Xamarin.Auth;
 
 #if __ANDROID__
 using FacebookAuthProvider = Firebase.Auth.FacebookAuthProvider;
-using GitHubAuthProvidaer = Firebase.Auth.GithubAuthProvider;
+using GitHubAuthProvider = Firebase.Auth.GithubAuthProvider;
 #elif __IOS__
 using FacebookAuthProvider = Firebase.Auth.FacebookAuthProvider;
 using GitHubAuthProvider = Firebase.Auth.GitHubAuthProvider;
