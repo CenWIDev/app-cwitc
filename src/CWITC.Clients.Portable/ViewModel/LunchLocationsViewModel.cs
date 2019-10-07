@@ -46,7 +46,8 @@ namespace CWITC.Clients.Portable
 
                 var items = await StoreManager.LunchStore.GetItemsAsync(force);
 
-                Locations.ReplaceRange(items);
+				Locations.Clear();
+				Locations.AddRange(items);
 
 				OnPropertyChanged(nameof(Locations));
 

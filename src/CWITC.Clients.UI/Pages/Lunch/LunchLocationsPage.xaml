@@ -40,8 +40,7 @@
             </ListView.SeparatorColor>
        <ListView.ItemTemplate>
         <DataTemplate>
-             <ViewCell StyleId="disclosure"
-                        Height="85">
+             <ViewCell StyleId="disclosure">
                 <StackLayout Grid.Column="1" VerticalOptions="Center" HorizontalOptions="FillAndExpand"
 							 Padding="{StaticResource StandardPadding}">
                         <Label Text="{Binding Name}" 

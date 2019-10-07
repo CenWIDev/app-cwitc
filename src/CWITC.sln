@@ -16,7 +16,6 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{4D7FDC10-B264-416F-8041-CE2121C5E66C}"
 	ProjectSection(SolutionItems) = preProject
 		..\README.md = ..\README.md
-		appcenter-pre-build.sh = appcenter-pre-build.sh
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CWITC.Utils", "CWITC.Utils\CWITC.Utils.csproj", "{1BB000E0-2356-4716-9A5E-376C4F182C06}"

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Web;
 using CWITC.Clients.Portable;
 using CWITC.DataObjects;
 using Xamarin.Forms;
@@ -37,12 +38,28 @@ namespace CWITC.Clients.UI
 				"View Website",
 				"Open Maps");
 
-			var addr = ev.Address.Replace("\n", " ").Replace(" ", "+");
+			//var addr = ev.Address.Replace("\n", " ").Replace(" ", "+").Replace(",", string.Empty);
+			var q = HttpUtility.UrlEncode($"{ev.Name} Stevens Point, WI");
 
 			if (result == "Cancel")
 				return;
 
-			Uri uri = result == "View Website" ? new Uri(ev.Website) : new Uri($"geo:0,0?q={addr}");
+			Uri uri;
+			if (result == "View Website")
+			{
+				uri = new Uri(ev.Website);
+			}
+			else if (Xamarin.Forms.Device.RuntimePlatform == Device.iOS)
+			{
+				// launch address w/ walking directions
+				uri = new Uri($"http://maps.apple.com/?q={q}");
+			}
+			else if (Xamarin.Forms.Device.RuntimePlatform == Device.Android)
+			{
+				uri = new Uri($"geo:0,0?q={q}");
+			}
+			else return;
+
 			Xamarin.Forms.Device.OpenUri(uri);
 		}
 
