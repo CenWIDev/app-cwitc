@@ -22,12 +22,18 @@ namespace CWITC.Shared
 
 		protected override Task<LunchLocation> Map(PartnerEntity entity)
 		{
-			return Task.FromResult(new LunchLocation
+			var loc = new LunchLocation
 			{
 				Name = entity.Name,
 				Website = entity.SiteURL,
+				Address = entity.Address
+
 				// todo: the rest of these fields
-			});
+			};
+			if (entity.Logo != null)
+				loc.ImageUri = $"https:{entity.Logo.File.Url}";
+
+			return Task.FromResult(loc);
 		}
 	}
 }

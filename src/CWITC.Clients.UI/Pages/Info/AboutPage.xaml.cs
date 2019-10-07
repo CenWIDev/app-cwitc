@@ -17,21 +17,8 @@ namespace CWITC.Clients.UI
             BindingContext = vm = new AboutViewModel();
 
             var adjust = Device.RuntimePlatform != "Android" ? 1 : -vm.AboutItems.Count + 1;
-            ListViewAbout.HeightRequest = (vm.AboutItems.Count * ListViewAbout.RowHeight) - adjust;
-            ListViewAbout.ItemTapped += (sender, e) => ListViewAbout.SelectedItem = null;
+
             ListViewInfo.HeightRequest = (vm.InfoItems.Count * ListViewInfo.RowHeight) - adjust;
-
-            ListViewAbout.ItemSelected += async (sender, e) => 
-                {
-                    if(ListViewAbout.SelectedItem == null)
-                        return;
-
-                    App.Logger.TrackPage(AppPage.Settings.ToString());
-                    await NavigationService.PushAsync(Navigation, new SettingsPage());
-
-                    ListViewAbout.SelectedItem = null;
-                };
-
             ListViewInfo.ItemSelected += async (sender, e) => 
                 {
                     var item = ListViewInfo.SelectedItem as CWITC.Clients.Portable.MenuItem;
@@ -40,6 +27,10 @@ namespace CWITC.Clients.UI
                     Page page = null;
                     switch(item.Parameter)
                     {
+						case "about":
+							App.Logger.TrackPage(AppPage.Settings.ToString());
+							page = new SettingsPage();
+							break;
                         case "venue":
                             App.Logger.TrackPage(AppPage.Venue.ToString());
                             page = new VenuePage();

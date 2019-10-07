@@ -114,10 +114,10 @@ namespace CWITC.Clients.Portable
 		public AboutViewModel()
 		{
 			AboutItems.Clear();
-			AboutItems.Add(new MenuItem { Name = "About this app", Icon = "icon_venue.png" });
 
 			InfoItems.AddRange(new[]
 				{
+					new MenuItem { Name = "About this app", Icon = "icon_venue.png", Parameter ="about" },
 					new MenuItem { Name = "Sponsors", Icon = "icon_venue.png", Parameter="sponsors"},
 					new MenuItem { Name = "Event Map", Icon = "icon_venue.png", Parameter = "floor-maps"},
                     //new MenuItem { Name = "Lunch Locations", Icon = "ic_restaurant_menu.png", Parameter = "lunch-locations"},

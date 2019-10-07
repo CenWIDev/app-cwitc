@@ -40,27 +40,16 @@
             </ListView.SeparatorColor>
        <ListView.ItemTemplate>
         <DataTemplate>
-             <ViewCell StyleId="disclosure"
-                        Height="85">
-            <Grid Padding="{StaticResource StandardPadding}" ColumnSpacing="{StaticResource StandardSpacing}">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="50"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-                <StackLayout Spacing="{StaticResource SmallSpacing}" VerticalOptions="Center">
-                    <Grid>
-                        <imagecircle:CircleImage WidthRequest="35" HeightRequest="35" VerticalOptions="Center" HorizontalOptions="Center"
-                            Source="{Binding ImageUri}" FillColor="White"/>
-                    </Grid>
-                </StackLayout>
-
-                <StackLayout Grid.Column="1" VerticalOptions="Center" HorizontalOptions="FillAndExpand">
+             <ViewCell StyleId="disclosure">
+                <StackLayout Grid.Column="1" VerticalOptions="Center" HorizontalOptions="FillAndExpand"
+							 Padding="{StaticResource StandardPadding}">
                         <Label Text="{Binding Name}" 
                                Style="{DynamicResource EvolveListItemTextStyle}" StyleId="EventItemTitle"/>
-                        <Label Text="{Binding Category}" 
+                        <Label Text="{Binding Address}" 
+                               Style="{DynamicResource EvolveListItemDetailTextStyle}" StyleId="EventItemTime"/>
+					<Label Text="{Binding Website}" 
                                Style="{DynamicResource EvolveListItemDetailTextStyle}" StyleId="EventItemTime"/>
                 </StackLayout>
-            </Grid>
           </ViewCell>
         </DataTemplate>
       </ListView.ItemTemplate>
