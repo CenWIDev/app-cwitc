@@ -15,12 +15,8 @@
 			<On Platform="Android" Value="menu_info.png" />
 		</OnPlatform>
 	</ContentPage.Icon>
-    <ContentPage.ToolbarItems>
-        <ToolbarItem Command="{Binding LogoutCommand}" Text="Log Out"/>
-    </ContentPage.ToolbarItems>
     <local:AlwaysScrollView  Grid.RowSpan="2">
         <StackLayout Spacing="0"> 
-         
 
             <StackLayout 
                 BackgroundColor="{DynamicResource WindowBackgroundTable}"
@@ -28,9 +24,6 @@
                 Padding="{DynamicResource CardPadding}">
 
                 <local:CardView>
-                    <local:CardView.IsVisible>
-                        <OnPlatform x:TypeArguments="x:Boolean" Android="true" iOS="false" WinPhone="true"/>
-                    </local:CardView.IsVisible>
                      <StackLayout Spacing="0">
                         <local:LabelSection Text="Account"/>
                         <local:HeaderDivider/>
@@ -73,28 +66,6 @@
                          </Grid>
 
 
-                        <local:FooterDivider/>
-                    </StackLayout>
-                </local:CardView>
-           
-
-                <local:CardView Padding="0,32,0,0">
-                     <StackLayout Spacing="0">
-                        <local:HeaderDivider/>
-                        <local:NonScrollableListView 
-                            x:Name="ListViewAbout"
-                            ItemsSource="{Binding AboutItems}"
-                            RowHeight="44"> 
-                            <local:NonScrollableListView.SeparatorColor>
-                                <OnPlatform x:TypeArguments="Color" iOS="{StaticResource ListSeparator}"/>
-                            </local:NonScrollableListView.SeparatorColor>
-                            <local:NonScrollableListView.ItemTemplate>
-                                <DataTemplate>
-                                    <TextCell Text="{Binding Name}" 
-                                               StyleId="disclosure"/>
-                                </DataTemplate>
-                            </local:NonScrollableListView.ItemTemplate>
-                        </local:NonScrollableListView>
                         <local:FooterDivider/>
                     </StackLayout>
                 </local:CardView>

@@ -641,7 +641,7 @@
       <Name>CWITC.Clients.Portable</Name>
     </ProjectReference>
     <ProjectReference Include="..\CWITC.DataStore\CWITC.DataStore.csproj">
-      <Project>{96932A9D-C04E-4DFA-A1CB-1E39C8D865C7}</Project>
+      <Project>{9A4678F8-B2A4-4D41-83C2-33929CEF4CB5}</Project>
       <Name>CWITC.DataStore</Name>
     </ProjectReference>
   </ItemGroup>
