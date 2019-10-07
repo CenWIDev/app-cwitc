@@ -26,6 +26,8 @@ namespace CWITC.Shared
 			{
 				Name = entity.Name,
 				Website = entity.SiteURL,
+				Address = entity.Address,
+				ImageUri = $"https:{entity.Logo.File.Url}"
 				// todo: the rest of these fields
 			});
 		}

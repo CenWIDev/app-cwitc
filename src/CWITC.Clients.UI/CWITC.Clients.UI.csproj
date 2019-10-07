@@ -81,9 +81,6 @@
     <EmbeddedResource Update="Pages\Info\VenuePage.xaml">
       <LogicalName>VenuePage.xaml</LogicalName>
     </EmbeddedResource>
-    <EmbeddedResource Update="Pages\Lunch\LunchLocationDetailsPage.xaml">
-      <LogicalName>LunchLocationDetailsPage.xaml</LogicalName>
-    </EmbeddedResource>
     <EmbeddedResource Update="Pages\Lunch\LunchLocationsPage.xaml">
       <LogicalName>LunchLocationsPage.xaml</LogicalName>
     </EmbeddedResource>

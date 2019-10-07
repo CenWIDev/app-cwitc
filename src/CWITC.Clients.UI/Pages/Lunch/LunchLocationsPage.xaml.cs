@@ -7,16 +7,16 @@ using Xamarin.Forms.Maps;
 
 namespace CWITC.Clients.UI
 {
-    public partial class LunchLocationsPage : ContentPage
-    {
+	public partial class LunchLocationsPage : ContentPage
+	{
 		LunchLocationsViewModel vm;
 		LunchLocationsViewModel ViewModel => vm ?? (vm = BindingContext as LunchLocationsViewModel);
 
 		public LunchLocationsPage()
-        {
-            InitializeComponent();
+		{
+			InitializeComponent();
 
-            BindingContext = new LunchLocationsViewModel(this.Navigation);
+			BindingContext = new LunchLocationsViewModel(this.Navigation);
 
 			ListViewLocations.ItemTapped += (sender, e) => ListViewLocations.SelectedItem = null;
 			ListViewLocations.ItemSelected += (sender, e) =>
@@ -25,32 +25,33 @@ namespace CWITC.Clients.UI
 				if (ev == null)
 					return;
 
-                ShowDetail(ev);
+				ShowDetail(ev);
 
 				ListViewLocations.SelectedItem = null;
 			};
-        }
+		}
 
-        async void ShowDetail(LunchLocation ev)
-        {
-			var eventDetails = new LunchLocationDetailsPage();
+		async void ShowDetail(LunchLocation ev)
+		{
+			var result = await this.DisplayActionSheet(ev.Name, "Cancel", null,
+				"View Website",
+				"Open Maps");
 
-			eventDetails.Location = ev;
-			App.Logger.TrackPage(AppPage.LunchLocation.ToString(), ev.Name);
-			await NavigationService.PushAsync(Navigation, eventDetails);
-        }
+			var addr = ev.Address.Replace("\n", " ").Replace(" ", "+");
+
+			if (result == "Cancel")
+				return;
+
+			Uri uri = result == "View Website" ? new Uri(ev.Website) : new Uri($"geo:0,0?q={addr}");
+			Xamarin.Forms.Device.OpenUri(uri);
+		}
 
 		protected override void OnAppearing()
 		{
 			base.OnAppearing();
 
-                if (ViewModel.Locations.Count == 0)
-                ViewModel.LoadLocationsCommand.Execute(false);
+			if (ViewModel.Locations.Count == 0)
+				ViewModel.LoadLocationsCommand.Execute(false);
 		}
-
-		protected override void OnDisappearing()
-		{
-			base.OnDisappearing();
-		}
-    }
+	}
 }

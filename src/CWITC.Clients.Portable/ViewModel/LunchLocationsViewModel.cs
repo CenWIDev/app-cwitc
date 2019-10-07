@@ -48,6 +48,8 @@ namespace CWITC.Clients.Portable
 
                 Locations.ReplaceRange(items);
 
+				OnPropertyChanged(nameof(Locations));
+
                 didLoadLocations = true;
             }
             catch (Exception ex)
