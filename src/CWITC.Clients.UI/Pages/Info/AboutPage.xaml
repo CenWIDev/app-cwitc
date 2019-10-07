@@ -69,28 +69,6 @@
                         <local:FooterDivider/>
                     </StackLayout>
                 </local:CardView>
-           
-
-                <local:CardView Padding="0,32,0,0">
-                     <StackLayout Spacing="0">
-                        <local:HeaderDivider/>
-                        <local:NonScrollableListView 
-                            x:Name="ListViewAbout"
-                            ItemsSource="{Binding AboutItems}"
-                            RowHeight="44"> 
-                            <local:NonScrollableListView.SeparatorColor>
-                                <OnPlatform x:TypeArguments="Color" iOS="{StaticResource ListSeparator}"/>
-                            </local:NonScrollableListView.SeparatorColor>
-                            <local:NonScrollableListView.ItemTemplate>
-                                <DataTemplate>
-                                    <TextCell Text="{Binding Name}" 
-                                               StyleId="disclosure"/>
-                                </DataTemplate>
-                            </local:NonScrollableListView.ItemTemplate>
-                        </local:NonScrollableListView>
-                        <local:FooterDivider/>
-                    </StackLayout>
-                </local:CardView>
 
                 <local:CardView>
                      <StackLayout Spacing="0">
